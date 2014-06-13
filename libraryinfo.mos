@@ -1,0 +1,15 @@
+LibraryInfoMenuSeparator(
+  category="libraries",
+  pos=100)
+
+LibraryInfoMenuCommand(
+  category="libraries",
+  text="Noise 0.2.0",
+  reference="Noise",
+  version="0.2.0",
+  isModel=true,
+  description="Noise Library for Modelica 0.2.0",
+  ModelicaVersion="3.2.1",
+  pos=1111)
+
+// LibraryInfoPreload(reference="Modelica_LinearSystems2")
