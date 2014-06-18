@@ -62,7 +62,7 @@ equation
   annotation (
     experiment(
       StopTime=8,
-      __Dymola_NumberOfIntervals=800,
+      Interval=0.01,
       Tolerance=1e-005),
 Documentation(info="<html>
 <p>No noise simulation of an Actuator</p>
