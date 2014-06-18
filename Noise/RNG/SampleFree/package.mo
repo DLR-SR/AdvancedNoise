@@ -1,5 +1,5 @@
 within Noise.RNG;
-package SampleFree 
+package SampleFree
   extends Modelica.Icons.Package;
 
 

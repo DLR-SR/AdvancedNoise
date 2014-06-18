@@ -18,9 +18,9 @@ table   { solid #000; border-collapse: collapse;}
 </style>
 </head>
 
-<p>All files in this directory (Noise) and in all subdirectories, especially all 
-files that build package &QUOT;Noise&QUOT; and all files in &QUOT;Noise/Resources/*&QUOT; 
-and &QUOT;Noise/UsersGuide&QUOT; are licensed by the <u><b>DLR German Aerospace Center</b></u> 
+<p>All files in this directory (Noise) and in all subdirectories, especially all
+files that build package &QUOT;Noise&QUOT; and all files in &QUOT;Noise/Resources/*&QUOT;
+and &QUOT;Noise/UsersGuide&QUOT; are licensed by the <u><b>DLR German Aerospace Center</b></u>
 under the <u><b>Modelica License 2</b></u>. </p>
 
 <p style=\"margin-left: 40px;\"><b>Licensor:</b><br>

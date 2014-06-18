@@ -40,7 +40,7 @@ equation
           extent={{-90,38},{40,18}},
           lineColor={0,0,255},
           fontSize=14,
-          textString="Equivalent model of a sampled noisy signal 
+          textString="Equivalent model of a sampled noisy signal
 averaged using a 20 point average filter"),
         Text(
           extent={{46,38},{92,18}},
@@ -51,7 +51,7 @@ averaged using a 20 point average filter"),
           extent={{-100,96},{96,56}},
           lineColor={0,0,255},
           fontSize=16,
-          textString="Sample free noise generator. The resulting signal mimics the noise of a sampled noisy 
+          textString="Sample free noise generator. The resulting signal mimics the noise of a sampled noisy
 signal with 6000 Samples/s between [-0.05 0.05]
 that is filtered using a FIR filter to average the signal with 20 averages.")}),
       Documentation(revisions="<html>
