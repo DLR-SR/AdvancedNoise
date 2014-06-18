@@ -1,6 +1,6 @@
 within Noise.Examples;
 model CompareRNG
-  "An example to compare the generated random numbers of differenzt RNGs"
+  "An example to compare the generated random numbers of different RNGs"
   extends Modelica.Icons.Example;
 protected
   model RNG_Design0
