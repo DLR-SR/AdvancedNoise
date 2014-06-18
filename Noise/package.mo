@@ -2,13 +2,11 @@ within ;
 package Noise "An open Library for the Generation of Stochastic Signals in Modelica"
   extends Modelica.Icons.Package;
 
-
 annotation (version =                        "0.2",
             versionDate =                    "2014-06-13",
             versionBuild =                   1,
             revisionId =                     "$Id: package.mo 23235 2014-06-13 12:38:31Z kloe_ad $",
     uses(Modelica(version="3.2.1"),
-         Modelica_StateGraph2(version="2.0.2"),
          Design(version="1.0.3"),
          Modelica_LinearSystems2(version="2.3.1")),
   Icon(graphics={Line(
