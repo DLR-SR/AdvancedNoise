@@ -1,5 +1,5 @@
 within Noise.Examples;
-package Actuator 
+package Actuator
 extends Modelica.Icons.ExamplesPackage;
 
 
