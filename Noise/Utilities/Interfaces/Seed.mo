@@ -9,7 +9,7 @@ partial function Seed "The basic interface for a seeding function"
     "A Real value to use as a seed for continuous seeding";
   input Integer n = 33 "The number of initial state values to be generated";
   output Integer states[n] "The generated initial states";
-  annotation (Icon(graphics), Documentation(revisions="<html>
+  annotation ( Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end Seed;

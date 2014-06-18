@@ -28,50 +28,38 @@ model Controller
 equation
   connect(positionToSpeed.y, speedFeedback.u2) annotation (Line(
       points={{1,-60},{20,-60},{20,-8}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(speedFeedback.y, speed_PI.u) annotation (Line(
       points={{29,0},{38,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(positionFeedback.u2, positionToSpeed.u) annotation (Line(
       points={{-30,52},{-30,-60},{-22,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(positionReference, positionFeedback.u1) annotation (Line(
       points={{-100,60},{-38,60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(positionFeedback.y, position_PI.u) annotation (Line(
       points={{-21,60},{-12,60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(position_PI.y, speedFeedback.u1) annotation (Line(
       points={{11,60},{20,60},{20,32},{0,32},{0,0},{12,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(positionMeasured, addNoise.u2) annotation (Line(
       points={{-100,-60},{-62,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(addNoise.y, positionToSpeed.u) annotation (Line(
       points={{-39,-54},{-30,-54},{-30,-60},{-22,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noiseModel.y, addNoise.u1) annotation (Line(
       points={{-79,0},{-68,0},{-68,-48},{-62,-48}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(speed_PI.y, busdelay.u) annotation (Line(
       points={{61,0},{66,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(y1, busdelay.y) annotation (Line(
       points={{100,0},{89,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics), Icon(coordinateSystem(
+      color={0,0,127}));
+  annotation ( Icon(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
         Text(

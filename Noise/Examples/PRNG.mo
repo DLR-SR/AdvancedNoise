@@ -14,8 +14,6 @@ equation
       __Dymola_NumberOfIntervals=10000,
       __Dymola_fixedstepsize=0.001,
       __Dymola_Algorithm="Euler"),
-                          __Dymola_experimentSetupOutput,
-    Diagram(graphics),
     Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>", info="<html>

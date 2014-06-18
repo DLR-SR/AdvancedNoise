@@ -11,8 +11,7 @@ model PRNG "PRNG noise modeling"
 equation
   connect(prng.y, y) annotation (Line(
       points={{9,0},{110,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   annotation (Icon(graphics={           Text(
         extent={{-150,150},{150,110}},
         textString="%name",
@@ -91,9 +90,7 @@ equation
               {46,-42},{68,38},{96,-2}},
           color={255,0,0},
           thickness=0.5,
-          smooth=Smooth.Bezier)}), Diagram(coordinateSystem(preserveAspectRatio=
-           false, extent={{-100,-100},{100,100}}), graphics),
-    Documentation(revisions="<html>
+          smooth=Smooth.Bezier)}),    Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>", info="<html>
 <p>A noise block. With noise.</p>

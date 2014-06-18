@@ -4,8 +4,7 @@ function PSD_LinearInterpolation
   extends PSD_Interpolation(redeclare function Kernel = Kernels.Linear, n=1);
   annotation (Icon(graphics={Line(
           points={{-60,-60},{60,60}},
-          color={255,0,0},
-          smooth=Smooth.None),
+          color={255,0,0}),
         Ellipse(
           extent={{-64,-56},{-56,-64}},
           lineColor={255,0,0},

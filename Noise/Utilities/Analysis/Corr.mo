@@ -81,10 +81,7 @@ public
   Real p = 1 - 2*abs(P - 0.5)
     "Probability to find the current correlation coefficient r, assuming the two signals to be uncorrelated. If p < 0.05, we have strong evidence for the signals being correlated";
 
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-            {100,100}}), graphics), Diagram(coordinateSystem(
-          preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    Documentation(revisions="<html>
+  annotation (    Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end Corr;

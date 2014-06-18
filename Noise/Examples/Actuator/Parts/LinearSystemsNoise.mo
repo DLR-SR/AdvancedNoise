@@ -17,14 +17,11 @@ model LinearSystemsNoise
 equation
   connect(noise.y, filter1.u) annotation (Line(
       points={{-19,0},{-2,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(filter1.y, y) annotation (Line(
       points={{21,0},{110,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics), Icon(graphics={
+      color={0,0,127}));
+  annotation ( Icon(graphics={
         Line(points={{-100,0},{-45,0}}, color={0,0,127}),
         Ellipse(
           extent={{-25,-10},{-45,10}},

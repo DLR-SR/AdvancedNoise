@@ -14,8 +14,7 @@ algorithm
   rand              := rand*(interval[2] - interval[1]) + interval[1];
   annotation (Icon(graphics={Line(
           points={{-80,-80},{-80,60},{60,60},{60,-80}},
-          color={255,0,0},
-          smooth=Smooth.None)}), Documentation(revisions="<html>
+          color={255,0,0})}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end PDF_Uniform;

@@ -19,10 +19,8 @@ model ComparePSD "Compares different PSDs"
     redeclare function PDF = Noise.PDF.PDF_Uniform (interval={-1,1}))
     annotation (Placement(transformation(extent={{-40,-50},{-20,-30}})));
   annotation (
-    Diagram(graphics),
     experiment(StopTime=100, Interval=0.001),
-    __Dymola_experimentSetupOutput,
-    Documentation(revisions="<html>
+Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>", info="<html>
 <p>This example compares all currently available Power Spectral Density functions, so distributions of frequencies in the random numbers.</p>

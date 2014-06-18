@@ -19,11 +19,9 @@ algorithm
 
   annotation (Icon(graphics={Line(
           points={{-10,74},{-22,60},{-34,28},{-42,2},{-56,-4},{-88,-10}},
-          color={255,0,0},
-          smooth=Smooth.None), Line(
+          color={255,0,0}), Line(
           points={{-10,74},{2,60},{14,28},{22,2},{36,-4},{68,-10}},
-          color={255,0,0},
-          smooth=Smooth.None)}), Documentation(revisions="<html>
+          color={255,0,0})}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end Gaussian;

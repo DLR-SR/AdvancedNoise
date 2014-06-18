@@ -21,7 +21,6 @@ extends Modelica.Icons.Example;
   Modelica.Mechanics.Translational.Sources.ConstantForce constantForce(
       f_constant=10000) annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
-        rotation=0,
         origin={86,0})));
   Modelica.Blocks.Nonlinear.SlewRateLimiter slewRateLimiter(Rising=50)
     annotation (Placement(transformation(extent={{-40,66},{-20,86}})));
@@ -32,53 +31,40 @@ extends Modelica.Icons.Example;
 equation
   connect(controller.y1, Motor.iq_rms1) annotation (Line(
       points={{20,70},{34,70},{34,20},{-94,20},{-94,6}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(Motor.phi, controller.positionMeasured) annotation (Line(
       points={{-79,8},{-72,8},{-72,52},{-8,52},{-8,64},{0,64}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(Motor.flange, gearbox.flange_a) annotation (Line(
       points={{-74,0},{-68,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(gearbox.flange_b, idealGearR2T.flangeR) annotation (Line(
       points={{-48,0},{-40,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      color={0,0,0}));
   connect(constantForce.flange, mass.flange_b) annotation (Line(
       points={{76,0},{70,0}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(Speed.y, slewRateLimiter.u) annotation (Line(
       points={{-51,76},{-42,76}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(slewRateLimiter.y, controller.positionReference) annotation (Line(
       points={{-19,76},{0,76}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(rodMass.flange_a, idealGearR2T.flangeT) annotation (Line(
       points={{-10,0},{-20,0}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(rodMass.flange_b, elastoGap.flange_a) annotation (Line(
       points={{10,0},{20,0}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(elastoGap.flange_b, mass.flange_a) annotation (Line(
       points={{40,0},{50,0}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
     experiment(
       StopTime=8,
       __Dymola_NumberOfIntervals=800,
       Tolerance=1e-005),
-    __Dymola_experimentSetupOutput,
-    Documentation(info="<html>
+Documentation(info="<html>
 <p>No noise simulation of an Actuator</p>
 </html>", revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>

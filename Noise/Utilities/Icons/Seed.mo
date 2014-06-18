@@ -31,7 +31,6 @@ annotation(Icon(graphics={
           lineColor={0,0,0}),
         Line(
           points={{0,-24},{80,-24}},
-          smooth=Smooth.None,
           color={255,0,0})}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));

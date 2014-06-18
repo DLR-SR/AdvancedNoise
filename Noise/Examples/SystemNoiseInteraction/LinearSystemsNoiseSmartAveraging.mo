@@ -160,92 +160,70 @@ model LinearSystemsNoiseSmartAveraging
 equation
   connect(gain.u, NoiseAdd.y) annotation (Line(
       points={{10,50},{3.02,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(gain.y, criticalDamping.u) annotation (Line(
       points={{33,50},{54,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise1.y, NoiseAdd.u[1]) annotation (Line(
       points={{-59.1,41},{-54,41},{-54,53.99},{-10,53.99}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise2.y, NoiseAdd.u[2]) annotation (Line(
       points={{-59.1,29},{-54,29},{-54,53.57},{-10,53.57}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise3.y, NoiseAdd.u[3]) annotation (Line(
       points={{-59.1,17},{-54,17},{-54,53.15},{-10,53.15}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise4.y, NoiseAdd.u[4]) annotation (Line(
       points={{-59.1,5},{-54,5},{-54,52.73},{-10,52.73}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise5.y, NoiseAdd.u[5]) annotation (Line(
       points={{-59.1,-7},{-54,-7},{-54,52.31},{-10,52.31}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise6.y, NoiseAdd.u[6]) annotation (Line(
       points={{-59.1,-19},{-54,-19},{-54,51.89},{-10,51.89}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise7.y, NoiseAdd.u[8]) annotation (Line(
       points={{-59.1,-31},{-54,-31},{-54,51.05},{-10,51.05}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise8.y, NoiseAdd.u[9]) annotation (Line(
       points={{-59.1,-43},{-54,-43},{-54,50.63},{-10,50.63}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise9.y, NoiseAdd.u[10]) annotation (Line(
       points={{-59.1,-55},{-54,-55},{-54,50.21},{-10,50.21}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise10.y, NoiseAdd.u[11]) annotation (Line(
       points={{-59.1,-67},{-54,-67},{-54,49.79},{-10,49.79}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise11.y, NoiseAdd.u[12]) annotation (Line(
       points={{-25.1,41},{-20,41},{-20,49.37},{-10,49.37}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise12.y, NoiseAdd.u[13]) annotation (Line(
       points={{-25.1,29},{-20,29},{-20,48.95},{-10,48.95}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise13.y, NoiseAdd.u[14]) annotation (Line(
       points={{-25.1,17},{-20,17},{-20,48.53},{-10,48.53}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise14.y, NoiseAdd.u[15]) annotation (Line(
       points={{-25.1,5},{-20,5},{-20,48.11},{-10,48.11}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise15.y, NoiseAdd.u[16]) annotation (Line(
       points={{-25.1,-7},{-20,-7},{-20,47.69},{-10,47.69}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise16.y, NoiseAdd.u[17]) annotation (Line(
       points={{-25.1,-19},{-20,-19},{-20,47.27},{-10,47.27}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise17.y, NoiseAdd.u[18]) annotation (Line(
       points={{-25.1,-31},{-20,-31},{-20,46.85},{-10,46.85}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise18.y, NoiseAdd.u[19]) annotation (Line(
       points={{-25.1,-43},{-20,-43},{-20,46.43},{-10,46.43}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise19.y, NoiseAdd.u[7]) annotation (Line(
       points={{-25.1,-55},{-20,-55},{-20,51.47},{-10,51.47}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise20.y, NoiseAdd.u[20]) annotation (Line(
       points={{-25.1,-67},{-20,-67},{-20,46},{-20,46.01},{-16,46.01},{-10,46.01}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   annotation (  Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}),
             graphics={                    Rectangle(

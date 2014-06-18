@@ -106,7 +106,7 @@ algorithm
 // Make sure, the output states_out for recurrent generators are senseful
   (rand_hold, states_out)    := PDF(states_in=states_in,   instance=floor(t/dt)*dt+dt);
 
-  annotation (Icon(graphics), Documentation(revisions="<html>
+  annotation ( Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end PSD_Convolution;

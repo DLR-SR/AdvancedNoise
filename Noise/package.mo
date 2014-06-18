@@ -13,8 +13,7 @@ annotation (version =                        "0.2",
         points={{-80,-52},{-70,22},{-64,-46},{-54,6},{-46,-58},{-40,36},{-34,
             -44},{-22,50},{-20,-60},{-8,24},{2,-58},{10,34},{14,-22},{26,14},{
             30,-38},{42,20},{50,-62},{56,26}},
-        color={0,0,255},
-        smooth=Smooth.None)}),
+        color={0,0,255})}),
     Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>", info="<html>

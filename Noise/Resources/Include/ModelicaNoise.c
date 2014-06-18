@@ -16,9 +16,9 @@ typedef unsigned long    u_long;
 typedef unsigned __int64 u_int64;
 #include <stdio.h>
 #include <limits.h>
-#include  "ModelicaUtilities.h"  
-#include <windows.h> 
-#include <math.h> 
+#include  "ModelicaUtilities.h"
+#include <windows.h>
+#include <math.h>
 
 
 // NOISE_SeedReal
@@ -30,7 +30,7 @@ void NOISE_SeedReal(int local_seed, int global_seed, double real_seed, int n, in
   u_int32  x1;
   u_int32  x2;
   int      i;
-  
+
   // Take the square root in order to remove sampling effects
   x0 = sqrt(real_seed);
   // Point a 32 bit integer to the double number
@@ -42,11 +42,11 @@ void NOISE_SeedReal(int local_seed, int global_seed, double real_seed, int n, in
   xp++;
   // Bit-wise XOR this information into the second integer
   x2 ^= *xp;
-  
+
   // Use the seeds to bit-wier XOR them to the two integers
   x1 ^= (u_int32)local_seed;
   x2 ^= (u_int32)global_seed;
-  
+
   // Fill the states vector
   for (i = 0; i < n; i++){
     states[i] = (i%2 == 0) ? x1 : x2;
@@ -78,17 +78,17 @@ double NOISE_shuffleDouble(double x, u_int32 seed)
   // Bit-wise XOR this information into the second integer
   x2 ^= *xp;
   x2 ^= seed;
-  
+
   // Do single steps
   x1 = x1*134775813 + 1;
   x2 = x2*134775813 + 1;
-  
+
   // Do combined steps!
   xt = x2; x2 = x1*134775813 + x2*134775813 + 1; x1 = x2;
-  
+
   // Divide the integer by its maximum value
   vmax =  UINT_MAX;
-  y = x2 / vmax; 
+  y = x2 / vmax;
 
   return y;
 }
@@ -96,7 +96,7 @@ double NOISE_shuffleDouble(double x, u_int32 seed)
 
 // NOISE_combineSeedLCG
 // This is used to combine two seeds
-int NOISE_combineSeedLCG(int x1, int x2) 
+int NOISE_combineSeedLCG(int x1, int x2)
 {
   int ret;
   ret = x1*134775813 + x2*134775813 + 1;
