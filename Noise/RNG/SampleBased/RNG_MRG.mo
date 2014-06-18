@@ -30,7 +30,7 @@ algorithm
   // Calculate the random number
   rand              := abs(states_out[1] / (m-1)); // m is sometimes negative?!
 
-  annotation (Icon(graphics), Documentation(revisions="<html>
+  annotation ( Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end RNG_MRG;

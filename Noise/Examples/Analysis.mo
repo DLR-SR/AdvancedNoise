@@ -20,31 +20,22 @@ model Analysis "Shows how to analyze a noise signal"
 equation
   connect(prng.y, mu.u) annotation (Line(
       points={{-59,50},{18,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(var.u, prng.y) annotation (Line(
       points={{18,10},{-20,10},{-20,50},{-59,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(std.u, prng.y) annotation (Line(
       points={{18,-30},{-20,-30},{-20,50},{-59,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(corr.u, prng.y) annotation (Line(
       points={{18,-70},{-20,-70},{-20,50},{-59,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(corr.u1, prng.y) annotation (Line(
       points={{18,-76},{10,-76},{10,-70},{-20,-70},{-20,50},{-59,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}),
-            graphics),
     experiment(StopTime=100, Tolerance=1e-006),
-    __Dymola_experimentSetupOutput,
-    Documentation(revisions="<html>
+Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>", info="<html>
 <p>This example uses some simple analysis block to analyse the mean and variance of the generated random numbers. You can used it to check the quality of a parametrization of the PRNG block.</p>

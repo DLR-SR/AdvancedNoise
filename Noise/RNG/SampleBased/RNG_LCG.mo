@@ -12,7 +12,7 @@ function RNG_LCG
 algorithm
   (rand, states_out) := RNG_MRG(instance, states_in, a={a}, c=c, m=m);
 
-  annotation (Icon(graphics), Documentation(revisions="<html>
+  annotation ( Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end RNG_LCG;

@@ -27,12 +27,10 @@ model LinearSystemsNoise "Shows the modelling of a noisy sensor"
 equation
  connect(noise.y, filter.u) annotation (Line(
      points={{-29,0},{-22,0}},
-     color={0,0,127},
-     smooth=Smooth.None));
+     color={0,0,127}));
   connect(filter.y, criticalDamping.u) annotation (Line(
       points={{1,0},{58,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
  annotation (  Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}),
            graphics={                    Rectangle(

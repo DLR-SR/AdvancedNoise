@@ -30,8 +30,7 @@ algorithm
   annotation (Icon(graphics={Line(
           points={{-74,-10},{-10,-10},{-10,68},{-4,44},{6,14},{24,-2},{44,-8},{
               70,-8}},
-          color={255,0,0},
-          smooth=Smooth.None)}), Documentation(revisions="<html>
+          color={255,0,0})}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end FirstOrder;

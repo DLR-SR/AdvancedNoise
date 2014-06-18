@@ -12,8 +12,7 @@ algorithm
           points={{-70,-10},{-64,-2},{-60,0},{-56,-2},{-50,-10},{-44,-20},{-40,-24},
               {-36,-20},{-30,-10},{-20,50},{-10,60},{0,50},{10,-10},{16,-20},{20,
               -24},{24,-20},{30,-10},{36,-2},{40,0},{44,-2},{50,-10}},
-          color={255,0,0},
-          smooth=Smooth.None)}), Documentation(revisions="<html>
+          color={255,0,0})}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end IdealLowPass;
