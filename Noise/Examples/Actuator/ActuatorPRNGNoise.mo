@@ -5,7 +5,7 @@ model ActuatorPRNGNoise
   annotation (
     experiment(
       StopTime=8,
-      __Dymola_NumberOfIntervals=800,
+      Interval=0.01,
       Tolerance=1e-005),Documentation(info="<html>
 <p>Simulation of the same actuator with a noisy position sensor using the <a href=\"Noise.PRNG\">PRNG</a> block.</p>
 </html>", revisions="<html>

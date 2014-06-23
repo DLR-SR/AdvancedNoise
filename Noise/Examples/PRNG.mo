@@ -11,7 +11,7 @@ equation
 
   annotation (experiment(
       StopTime=5,
-      __Dymola_NumberOfIntervals=10000,
+      Interval=0.0005,
       __Dymola_fixedstepsize=0.001,
       __Dymola_Algorithm="Euler"),
     Documentation(revisions="<html>
