@@ -6,16 +6,15 @@ model LinearSystemsNoiseSmartAveraging
    parameter Real y_max= 0.05 "maximal noise value";
    parameter Real y_min=-y_max "minimal noise value";
 
-  Modelica_LinearSystems2.Controller.Noise noise1(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise1(
     y_min=y_min,
     y_max=y_max,
     firstSeed={23,87,10},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-78,38},{-60,44}})));
 
-  inner Modelica_LinearSystems2.Controller.SampleClock
-                                                    sampleClock(
-      sampleTime=1/300, blockType=Modelica_LinearSystems2.Controller.Types.BlockType.Discrete)
+  inner Parts.Modelica_LinearSystems2.Controller.SampleClock sampleClock(
+      sampleTime=1/300, blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockType.Discrete)
     annotation (Placement(transformation(extent={{8,-60},{28,-40}})));
   Modelica.Blocks.Continuous.CriticalDamping criticalDamping(f=10, n=50,
     initType=Modelica.Blocks.Types.Init.InitialState)
@@ -24,137 +23,137 @@ model LinearSystemsNoiseSmartAveraging
     annotation (Placement(transformation(extent={{-10,44},{2,56}})));
   Modelica.Blocks.Math.Gain gain(k=1/20)
     annotation (Placement(transformation(extent={{12,40},{32,60}})));
-  Modelica_LinearSystems2.Controller.Noise noise2(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise2(
     y_min=y_min,
     y_max=y_max,
     firstSeed={23,87,20},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-78,26},{-60,32}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise3(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise3(
     y_min=y_min,
     y_max=y_max,
     firstSeed={23,87,30},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-78,14},{-60,20}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise4(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise4(
     y_min=y_min,
     y_max=y_max,
     firstSeed={23,87,40},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-78,2},{-60,8}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise5(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise5(
     y_min=y_min,
     y_max=y_max,
     firstSeed={23,87,50},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-78,-10},{-60,-4}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise6(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise6(
     y_min=y_min,
     y_max=y_max,
     firstSeed={23,87,60},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-78,-22},{-60,-16}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise7(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise7(
     y_min=y_min,
     y_max=y_max,
     firstSeed={23,87,70},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-78,-34},{-60,-28}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise8(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise8(
     y_min=y_min,
     y_max=y_max,
     firstSeed={23,87,80},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-78,-46},{-60,-40}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise9(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise9(
     y_min=y_min,
     y_max=y_max,
     firstSeed={23,87,90},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-78,-58},{-60,-52}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise10(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise10(
     y_min=y_min,
     y_max=y_max,
     firstSeed={23,87,100},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-78,-70},{-60,-64}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise11(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise11(
     y_min=y_min,
     y_max=y_max,
     firstSeed={10,87,187},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-44,38},{-26,44}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise12(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise12(
     y_min=y_min,
     y_max=y_max,
     firstSeed={20,87,187},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-44,26},{-26,32}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise13(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise13(
     y_min=y_min,
     y_max=y_max,
     firstSeed={30,87,187},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-44,14},{-26,20}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise14(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise14(
     y_min=y_min,
     y_max=y_max,
     firstSeed={40,87,187},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-44,2},{-26,8}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise15(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise15(
     y_min=y_min,
     y_max=y_max,
     firstSeed={50,87,187},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-44,-10},{-26,-4}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise16(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise16(
     y_min=y_min,
     y_max=y_max,
     firstSeed={60,87,187},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-44,-22},{-26,-16}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise17(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise17(
     y_min=y_min,
     y_max=y_max,
     firstSeed={70,87,187},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-44,-34},{-26,-28}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise18(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise18(
     y_min=y_min,
     y_max=y_max,
     firstSeed={80,87,187},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-44,-46},{-26,-40}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise19(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise19(
     y_min=y_min,
     y_max=y_max,
     firstSeed={90,87,187},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-44,-58},{-26,-52}})));
 
-  Modelica_LinearSystems2.Controller.Noise noise20(
+  Parts.Modelica_LinearSystems2.Controller.Noise noise20(
     y_min=y_min,
     y_max=y_max,
     firstSeed={100,87,187},
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
     annotation (Placement(transformation(extent={{-44,-70},{-26,-64}})));
 
 equation

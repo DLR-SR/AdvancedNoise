@@ -2,13 +2,20 @@ within ;
 package Noise "An open Library for the Generation of Stochastic Signals in Modelica"
   extends Modelica.Icons.Package;
 
+
+
+
+
+
+
+
+
+
 annotation (version =                        "0.2",
             versionDate =                    "2014-06-13",
             versionBuild =                   1,
             revisionId =                     "$Id: package.mo 23235 2014-06-13 12:38:31Z kloe_ad $",
-    uses(Modelica(version="3.2.1"),
-         Design(version="1.0.3"),
-         Modelica_LinearSystems2(version="2.3.1")),
+    uses(Modelica(version="3.2.1")),
   Icon(graphics={Line(
         points={{-80,-52},{-70,22},{-64,-46},{-54,6},{-46,-58},{-40,36},{-34,
             -44},{-22,50},{-20,-60},{-8,24},{2,-58},{10,34},{14,-22},{26,14},{

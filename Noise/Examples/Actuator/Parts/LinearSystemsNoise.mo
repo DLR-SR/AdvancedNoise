@@ -1,18 +1,20 @@
 within Noise.Examples.Actuator.Parts;
 model LinearSystemsNoise
+  import Noise;
   extends NoiseModel;
-  Modelica_LinearSystems2.Controller.Noise noise(
+  Noise.Examples.Parts.Modelica_LinearSystems2.Controller.Noise noise(
     y_max=0.01,
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.Discrete,
+    blockType=Noise.Examples.Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.Discrete,
+
     y_min=-0.01)
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
 
-  inner Modelica_LinearSystems2.Controller.SampleClock sampleClock(blockType=
-        Modelica_LinearSystems2.Controller.Types.BlockType.Discrete, sampleTime=
-       1/2000)
+  inner Noise.Examples.Parts.Modelica_LinearSystems2.Controller.SampleClock
+    sampleClock(blockType=Noise.Examples.Parts.Modelica_LinearSystems2.Controller.Types.BlockType.Discrete,
+      sampleTime=1/2000)
     annotation (Placement(transformation(extent={{-60,60},{-40,80}})));
-  Modelica_LinearSystems2.Controller.FilterFIR filter1(blockType=
-        Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.Discrete,
+  Noise.Examples.Parts.Modelica_LinearSystems2.Controller.FilterFIR filter1(
+      blockType=Noise.Examples.Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.Discrete,
       L=10) annotation (Placement(transformation(extent={{0,-10},{20,10}})));
 equation
   connect(noise.y, filter1.u) annotation (Line(
