@@ -98,7 +98,7 @@ is generated, where y_min and y_max are parameters. A typical
 noise signal is shown in the next figure:
 </p>
 <p align=\"center\">
-<img src=\"modelica://Modelica_LinearSystems2/Resources/Images/Controllers/Noise_typicalSignal.png\">
+<img src=\"modelica://Noise/Resources/Images/Controllers/Noise_typicalSignal.png\">
 </p>
 <p>
 The Integer[3] parameter vector <b>firstSeed</b> is used to initialize the

@@ -74,7 +74,7 @@ Modelica Standard Library.
 <p>
 <table border=\"0\" cellpadding=\"2\" cellspacing=\"2\">
 <tr><td colspan=\"1\" rowspan=\"3\" style=\"vertical-align: middle;\">
-    <img src=\"modelica://Modelica_LinearSystems2/Resources/Images/dlr_logo.png\">
+    <img src=\"modelica://Noise/Resources/Images/dlr_logo.png\">
     </td>
     <td style=\"vertical-align: top;\"><br><b>Licensed by DLR under the Modelica License 2</b></td>
 </tr>
