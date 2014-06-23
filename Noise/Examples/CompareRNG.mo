@@ -2,18 +2,7 @@ within Noise.Examples;
 model CompareRNG
   "An example to compare the generated random numbers of different RNGs"
   extends Modelica.Icons.Example;
-protected
-  model RNG_Design0
-    extends Modelica.Blocks.Interfaces.SO;
-    extends Modelica.Blocks.Interfaces.DiscreteBlockIcon;
-    //output Real y;
-    Design.Experimentation.RandomNumber.Functions.seed s;
-  equation
-    when sample(0,0.01) then
-      (y,s) = .Design.Experimentation.RandomNumber.Functions.random(pre(s));
-    end when;
-  end RNG_Design0;
-public
+
   Noise.PRNG Weyl(useSampleBasedMethods=false, redeclare function SampleFreeRNG
       = Noise.RNG.SampleFree.RNG_Weyl)
     annotation (Placement(transformation(extent={{-32,2},{-12,22}})));
@@ -31,8 +20,6 @@ public
   inner Modelica_LinearSystems2.Controller.SampleClock sampleClock(blockType=
         Modelica_LinearSystems2.Controller.Types.BlockType.Discrete, sampleTime=
        0.01) annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
-  RNG_Design0 Design
-    annotation (Placement(transformation(extent={{0,70},{20,90}})));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}),
                       graphics={Rectangle(
