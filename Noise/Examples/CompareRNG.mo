@@ -15,11 +15,12 @@ model CompareRNG
   Noise.PRNG VAX(useSampleBasedMethods=true, redeclare function SampleBasedRNG
       = Noise.RNG.SampleBased.RNG_LCG_VAX)
     annotation (Placement(transformation(extent={{-34,-78},{-14,-58}})));
-  Modelica_LinearSystems2.Controller.Noise LinearSystems2(y_min=0, y_max=1)
-    annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
-  inner Modelica_LinearSystems2.Controller.SampleClock sampleClock(blockType=
-        Modelica_LinearSystems2.Controller.Types.BlockType.Discrete, sampleTime=
-       0.01) annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
+  Parts.Modelica_LinearSystems2.Controller.Noise LinearSystems2(y_min=0, y_max=
+        1) annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
+  inner Parts.Modelica_LinearSystems2.Controller.SampleClock sampleClock(
+      blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockType.Discrete,
+      sampleTime=0.01)
+    annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}),
                       graphics={Rectangle(

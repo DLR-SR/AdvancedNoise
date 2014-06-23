@@ -3,23 +3,21 @@ model LinearSystemsNoise "Shows the modelling of a noisy sensor"
   extends Modelica.Icons.Example;
   parameter Integer downSampling = 20;
 
- Modelica_LinearSystems2.Controller.Noise
-                                      noise(
-   y_min=-0.05,
-   y_max=0.05,
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
-   annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
- Modelica_LinearSystems2.Controller.FilterFIR
-                                       filter(
-   L=downSampling,
-    blockType=Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption,
-    specType=Modelica_LinearSystems2.Controller.Types.FIRspec.MeanValue)
-   annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
+  Parts.Modelica_LinearSystems2.Controller.Noise noise(
+    y_min=-0.05,
+    y_max=0.05,
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption)
+    annotation (Placement(transformation(extent={{-50,-10},{-30,10}})));
+  Parts.Modelica_LinearSystems2.Controller.FilterFIR filter(
+    L=downSampling,
+    blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption,
 
- inner Modelica_LinearSystems2.Controller.SampleClock
-                                                  sampleClock(sampleTime=1/6000,
-      blockType=Modelica_LinearSystems2.Controller.Types.BlockType.Discrete)
-   annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
+    specType=Parts.Modelica_LinearSystems2.Controller.Types.FIRspec.MeanValue)
+    annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
+
+  inner Parts.Modelica_LinearSystems2.Controller.SampleClock sampleClock(
+      sampleTime=1/6000, blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockType.Discrete)
+    annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
  Modelica.Blocks.Continuous.CriticalDamping criticalDamping(f=10,
     n=50,
     initType=Modelica.Blocks.Types.Init.InitialState)
