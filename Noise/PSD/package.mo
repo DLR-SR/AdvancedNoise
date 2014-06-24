@@ -1,9 +1,13 @@
 within Noise;
 package PSD "Power spectral density functions"
-  extends Modelica.Icons.Package;
 
 
-  extends Utilities.Icons.PSD;
+  extends Noise.Utilities.Icons.PSDPackage;
+
+
+
+
+
 
 
 annotation (Documentation(revisions="<html>

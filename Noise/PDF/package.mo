@@ -1,9 +1,12 @@
 within Noise;
 package PDF "Probability density functions"
-  extends Modelica.Icons.Package;
+  extends Noise.Utilities.Icons.PDFPackage;
 
 
-  extends Utilities.Icons.PDF;
+
+
+
+
 
 
 annotation (Documentation(revisions="<html>

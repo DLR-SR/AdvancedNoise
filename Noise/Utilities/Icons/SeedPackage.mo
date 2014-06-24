@@ -1,6 +1,6 @@
 within Noise.Utilities.Icons;
-partial function Seed "Icon for Seed"
-
+partial package SeedPackage "Icon for SeedPackage"
+  extends Modelica.Icons.Package;
 annotation(Icon(graphics={
         Line(points={{0,-100},{0,100}},     color={0,0,0}),
         Polygon(
@@ -8,14 +8,14 @@ annotation(Icon(graphics={
           lineColor={0,0,0},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid),
-        Line(points={{-20,-80},{92,-80}},
+        Line(points={{-20,-80},{100,-80}},
                                         color={0,0,0}),
         Polygon(
-          points={{92,-80},{72,-70},{72,-90},{92,-80}},
+          points={{100,-80},{80,-70},{80,-90},{100,-80}},
           lineColor={0,0,0},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid),
-        Line(points={{0,70},{90,70}},   color={0,0,0}),
+        Line(points={{0,70},{100,70}},  color={0,0,0}),
         Line(points={{-96,24},{-10,-20}},
                                         color={0,0,0}),
         Polygon(
@@ -31,11 +31,7 @@ annotation(Icon(graphics={
           lineColor={0,0,0}),
         Line(
           points={{0,-24},{80,-24}},
-          color={255,0,0}),
-        Rectangle(
-          lineColor={255,128,0},
-          extent={{-100,-100},{100,100}},
-          radius=25)}),       Documentation(revisions="<html>
+          color={255,0,0})}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end Seed;
+end SeedPackage;

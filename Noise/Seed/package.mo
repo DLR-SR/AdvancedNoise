@@ -1,9 +1,7 @@
 within Noise;
 package Seed "A number of seeding functions"
-  extends Modelica.Icons.Package;
+  extends Noise.Utilities.Icons.SeedPackage;
 
-
-  extends Utilities.Icons.Seed;
 
 
 annotation (Icon(graphics={

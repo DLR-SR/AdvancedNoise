@@ -1,20 +1,26 @@
 within Noise.Utilities.Icons;
-partial class PDF "Icon for PDF"
+partial function PDF "Icon for PDF"
 
-annotation(Icon(graphics={
-        Line(points={{-10,-100},{-10,100}}, color={0,0,0}),
+annotation(Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+            {100,100}}),
+                graphics={
+        Line(points={{-10,-92},{-10,90}},   color={0,0,0}),
         Polygon(
-          points={{-10,100},{-20,80},{0,80},{-10,100}},
+          points={{-10,90},{-20,70},{0,70},{-10,90}},
           lineColor={0,0,0},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid),
-        Line(points={{-100,-80},{100,-80}},
+        Line(points={{-90,-80},{90,-80}},
                                         color={0,0,0}),
         Polygon(
-          points={{100,-80},{80,-70},{80,-90},{100,-80}},
+          points={{90,-80},{70,-70},{70,-90},{90,-80}},
           lineColor={0,0,0},
           fillColor={0,0,0},
-          fillPattern=FillPattern.Solid)}), Documentation(revisions="<html>
+          fillPattern=FillPattern.Solid),
+        Rectangle(
+          lineColor={255,128,0},
+          extent={{-100,-100},{100,100}},
+          radius=25)}),                     Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end PDF;

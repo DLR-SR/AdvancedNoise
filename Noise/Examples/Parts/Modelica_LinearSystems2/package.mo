@@ -2,8 +2,8 @@ within Noise.Examples.Parts;
 package Modelica_LinearSystems2 "Modelica_LinearSystems2 (Version 2.3.1) - Analysis, Synthesis and Modeling of Continuous and Discrete Linear Systems"
   extends Modelica.Icons.Package;
 
-  extends Modelica.Icons.UnderConstruction;
 
+  extends Modelica.Icons.UnderConstruction;
 
 
 annotation (

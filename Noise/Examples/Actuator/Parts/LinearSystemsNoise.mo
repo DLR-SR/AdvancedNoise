@@ -5,7 +5,6 @@ model LinearSystemsNoise
   Noise.Examples.Parts.Modelica_LinearSystems2.Controller.Noise noise(
     y_max=0.01,
     blockType=Noise.Examples.Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.Discrete,
-
     y_min=-0.01)
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
 

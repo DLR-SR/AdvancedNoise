@@ -11,7 +11,6 @@ model LinearSystemsNoise "Shows the modelling of a noisy sensor"
   Parts.Modelica_LinearSystems2.Controller.FilterFIR filter(
     L=downSampling,
     blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockTypeWithGlobalDefault.UseSampleClockOption,
-
     specType=Parts.Modelica_LinearSystems2.Controller.Types.FIRspec.MeanValue)
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
 
