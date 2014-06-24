@@ -1,5 +1,5 @@
 within Noise.Utilities;
-package Seedings 
+package Seedings
   extends Modelica.Icons.Package;
 
 
