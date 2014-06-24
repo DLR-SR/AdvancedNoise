@@ -3,12 +3,6 @@ package Controller "Package of continuous and discrete input/output blocks"
   extends Modelica.Icons.Package;
 
 
-
-
-
-
-
-
   annotation (Documentation(info="<html>
 <p>
 This package provides input/output blocks where every

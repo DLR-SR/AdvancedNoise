@@ -4,16 +4,16 @@ partial function SampleBasedRNG
   extends RNG;
   annotation (Icon(graphics={
         Line(
+          points={{70,60},{70,-80}},
+          color={95,95,95}),
+        Line(
           points={{-40,60},{-40,-80}},
           color={95,95,95}),
         Line(
-          points={{0,60},{0,-80}},
+          points={{-2,60},{-2,-80}},
           color={95,95,95}),
         Line(
-          points={{40,60},{40,-80}},
-          color={95,95,95}),
-        Line(
-          points={{80,60},{80,-80}},
+          points={{36,60},{36,-80}},
           color={95,95,95}),
         Ellipse(
           extent={{-82,42},{-78,38}},
@@ -31,25 +31,25 @@ partial function SampleBasedRNG
           fillColor={255,0,0},
           lineColor={0,0,0}),
         Line(
-          points={{-40,-40},{0,-40}},
+          points={{-40,-40},{-2,-40}},
           color={255,0,0}),
         Ellipse(
-          extent={{-2,-18},{2,-22}},
+          extent={{-4,-18},{0,-22}},
           pattern=LinePattern.None,
           fillPattern=FillPattern.Solid,
           fillColor={255,0,0},
           lineColor={0,0,0}),
         Line(
-          points={{0,-20},{40,-20}},
+          points={{-2,-20},{36,-20}},
           color={255,0,0}),
         Ellipse(
-          extent={{38,28},{42,24}},
+          extent={{34,28},{38,24}},
           pattern=LinePattern.None,
           fillPattern=FillPattern.Solid,
           fillColor={255,0,0},
           lineColor={0,0,0}),
         Line(
-          points={{40,26},{80,26}},
+          points={{36,26},{70,26}},
           color={255,0,0})}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
