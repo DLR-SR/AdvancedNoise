@@ -17,7 +17,11 @@ partial function Kernel
           points={{100,-10},{80,0},{80,-20},{100,-10}},
           lineColor={0,0,0},
           fillColor={0,0,0},
-          fillPattern=FillPattern.Solid)}), Documentation(revisions="<html>
+          fillPattern=FillPattern.Solid),
+        Rectangle(
+          lineColor={255,128,0},
+          extent={{-100,-100},{100,100}},
+          radius=25)}),                     Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end Kernel;
