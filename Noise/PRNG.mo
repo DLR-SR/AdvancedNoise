@@ -144,7 +144,7 @@ public
   parameter Boolean useGlobalSeed = true
     "Combine local seed value with global seed" annotation(choices(checkBox=true),Dialog(group = "Initialization"));
   final parameter Integer seed=if useGlobalSeed then
-      Noise.Utilities.Seedings.combineSeedLCG(localSeed, globalSeed.seed)
+      Noise.Utilities.Auxiliary.combineSeedLCG(localSeed, globalSeed.seed)
        else localSeed;
 initial equation
   if useSampleBasedMethods then
