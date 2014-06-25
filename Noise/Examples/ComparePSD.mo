@@ -19,7 +19,7 @@ model ComparePSD "Compares different PSDs"
     redeclare function PDF = Noise.PDF.PDF_Uniform (interval={-1,1}))
     annotation (Placement(transformation(extent={{-40,-50},{-20,-30}})));
   inner Noise.GlobalSeed globalSeed
-    annotation (Placement(transformation(extent={{60,60},{80,80}})));
+    annotation (Placement(transformation(extent={{70,70},{90,90}})));
   annotation (
     experiment(StopTime=100, Interval=0.001),
 Documentation(revisions="<html>

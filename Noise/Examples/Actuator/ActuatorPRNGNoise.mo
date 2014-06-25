@@ -3,7 +3,7 @@ model ActuatorPRNGNoise
   extends Actuator(controller(redeclare Noise.Examples.Actuator.Parts.PRNG
         noiseModel));
   inner GlobalSeed globalSeed
-    annotation (Placement(transformation(extent={{60,60},{80,80}})));
+    annotation (Placement(transformation(extent={{70,70},{90,90}})));
   annotation (
     experiment(
       StopTime=8,
