@@ -38,6 +38,12 @@ public
   Real int_x2 "The integral of x^2";
   Real int_y2 "The integral of y^2";
   Real int_xy "The integral of x*y";
+initial equation
+  int_x  = 0;
+  int_y  = 0;
+  int_x2 = 0;
+  int_y2 = 0;
+  int_xy = 0;
 equation
   der(int_x)  = if t <= 0 then 0 else x;
   der(int_y)  = if t <= 0 then 0 else y;

@@ -21,6 +21,8 @@ model CompareRNG
       blockType=Parts.Modelica_LinearSystems2.Controller.Types.BlockType.Discrete,
       sampleTime=0.01)
     annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
+  inner GlobalSeed globalSeed
+    annotation (Placement(transformation(extent={{70,70},{90,90}})));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}),
                       graphics={Rectangle(

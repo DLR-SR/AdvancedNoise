@@ -24,6 +24,8 @@ model ComparePDF "Compares different PSDs"
   Noise.PRNG DiscreteDistribution(useSampleBasedMethods=false, redeclare
       function PDF = Noise.PDF.PDF_Discrete)
     annotation (Placement(transformation(extent={{20,30},{40,50}})));
+  inner Noise.GlobalSeed globalSeed
+    annotation (Placement(transformation(extent={{70,70},{90,90}})));
   annotation (
     experiment(StopTime=100, Interval=0.001),
 Documentation(revisions="<html>

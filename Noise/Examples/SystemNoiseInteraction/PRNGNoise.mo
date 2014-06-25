@@ -18,6 +18,8 @@ model PRNGNoise "Shows the modelling of a noisy sensor"
     n=50,
     initType=Modelica.Blocks.Types.Init.InitialState)
     annotation (Placement(transformation(extent={{60,-10},{80,10}})));
+  inner GlobalSeed globalSeed
+    annotation (Placement(transformation(extent={{-70,-10},{-50,10}})));
 equation
   connect(prng.y, criticalDamping.u) annotation (Line(
       points={{-17,0},{58,0}},
