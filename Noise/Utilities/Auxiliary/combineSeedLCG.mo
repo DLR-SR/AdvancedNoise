@@ -1,4 +1,4 @@
-within Noise.Utilities.Seedings;
+within Noise.Utilities.Auxiliary;
 function combineSeedLCG "combines two seed values in an LCG fashion"
   extends Interfaces.combineSeed;
 
