@@ -1,7 +1,7 @@
 within Noise.Utilities.Interfaces;
 partial function SampleBasedRNG
   "The interface for sample based random number generators"
-  extends RNG;
+  extends Interfaces.RNG;
   annotation (Icon(graphics={
         Line(
           points={{70,60},{70,-80}},
