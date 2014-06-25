@@ -4,7 +4,7 @@ function PSD_WhiteNoise
   extends Noise.Utilities.Interfaces.PSD;
 algorithm
 
-  // Make ure, we can pass highest-frequency noise!
+  // Make sure, we can pass highest-frequency noise!
   if dt > 0 then
     (rand, states_out) := PDF(instance=floor(t/dt)*dt, states_in=states_in);
   else
