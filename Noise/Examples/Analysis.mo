@@ -17,6 +17,8 @@ model Analysis "Shows how to analyze a noise signal"
     annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
   Noise.Utilities.Analysis.Corr corr
     annotation (Placement(transformation(extent={{20,-80},{40,-60}})));
+  inner Noise.GlobalSeed globalSeed
+    annotation (Placement(transformation(extent={{60,60},{80,80}})));
 equation
   connect(prng.y, mu.u) annotation (Line(
       points={{-59,50},{18,50}},
