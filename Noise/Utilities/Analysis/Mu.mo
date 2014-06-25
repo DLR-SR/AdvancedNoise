@@ -9,7 +9,8 @@ protected
   Real mu_0 "Internal integrator variable";
   parameter Real t_0(fixed=false) "Start time";
 initial equation
-  t_0 = time;
+  t_0  = time;
+  mu_0 = 0;
 equation
   der(mu_0) = u;
   mu = if time > t_0 then mu_0/(time-t_0) else u;
