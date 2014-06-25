@@ -25,22 +25,18 @@ initial equation
     Documentation(info="<html>
 </html>"), Icon(graphics={Line(
           points={{86,-84},{-94,-84}},
-          color={175,175,175},
-          smooth=Smooth.None),
+          color={175,175,175}),
         Line(
           points={{-84,76},{-84,-92}},
-          color={175,175,175},
-          smooth=Smooth.None),
+          color={175,175,175}),
         Polygon(
           points={{-84,90},{-92,68},{-76,68},{-84,90}},
           lineColor={175,175,175},
-          smooth=Smooth.None,
           fillColor={175,175,175},
           fillPattern=FillPattern.Solid),
         Polygon(
           points={{90,-84},{68,-92},{68,-76},{90,-84}},
           lineColor={175,175,175},
-          smooth=Smooth.None,
           fillColor={175,175,175},
           fillPattern=FillPattern.Solid),
         Rectangle(
@@ -49,19 +45,16 @@ initial equation
         Line(
           points={{-84,28},{-72,28},{-52,26},{-32,18},{-26,14},{-22,10},{-18,4},
               {-14,-6},{-4,-48},{0,-66},{2,-84}},
-          color={0,0,127},
-          smooth=Smooth.None),
+          color={0,0,127}),
         Line(
           points={{2,-84},{4,-66},{8,-58},{12,-58},{16,-62},{18,-68},{20,-84}},
-          color={0,0,127},
-          smooth=Smooth.None),
+          color={0,0,127}),
         Line(
           points={{20,-82},{20,-80},{20,-74},{22,-68},{24,-66},{28,-66},{32,-68},
               {34,-72},{36,-80},{36,-84},{36,-76},{38,-70},{40,-68},{44,-68},{46,
               -70},{48,-74},{50,-80},{50,-84},{50,-80},{52,-72},{54,-70},{58,-70},
               {62,-74},{64,-78},{64,-80},{64,-82},{64,-84}},
-          color={0,0,127},
-          smooth=Smooth.None),
+          color={0,0,127}),
         Text(
           extent={{-20,60},{80,30}},
           lineColor={95,95,95},
