@@ -3,17 +3,17 @@ model CompareRNG
   "An example to compare the generated random numbers of different RNGs"
   extends Modelica.Icons.Example;
 
-  Noise.PRNG Weyl(useSampleBasedMethods=false, redeclare function SampleFreeRNG
-      = Noise.RNG.SampleFree.RNG_Weyl)
+  Noise.RandomNoise Weyl(useSampleBasedMethods=false, redeclare function
+      SampleFreeRNG = Noise.RNG.SampleFree.RNG_Weyl)
     annotation (Placement(transformation(extent={{-32,2},{-12,22}})));
-  Noise.PRNG DIRCS(useSampleBasedMethods=false, redeclare function
+  Noise.RandomNoise DIRCS(useSampleBasedMethods=false, redeclare function
       SampleFreeRNG = Noise.RNG.SampleFree.RNG_DIRCS)
     annotation (Placement(transformation(extent={{-72,2},{-52,22}})));
-  Noise.PRNG NumericalRecipes(useSampleBasedMethods=true, redeclare function
-      SampleBasedRNG = Noise.RNG.SampleBased.RNG_LCG_NumericalRecipes)
+  Noise.RandomNoise NumericalRecipes(useSampleBasedMethods=true, redeclare
+      function SampleBasedRNG = Noise.RNG.SampleBased.RNG_LCG_NumericalRecipes)
     annotation (Placement(transformation(extent={{-72,-78},{-52,-58}})));
-  Noise.PRNG VAX(useSampleBasedMethods=true, redeclare function SampleBasedRNG
-      = Noise.RNG.SampleBased.RNG_LCG_VAX)
+  Noise.RandomNoise VAX(useSampleBasedMethods=true, redeclare function
+      SampleBasedRNG = Noise.RNG.SampleBased.RNG_LCG_VAX)
     annotation (Placement(transformation(extent={{-34,-78},{-14,-58}})));
   Parts.Modelica_LinearSystems2.Controller.Noise LinearSystems2(y_min=0, y_max=
         1) annotation (Placement(transformation(extent={{-40,70},{-20,90}})));

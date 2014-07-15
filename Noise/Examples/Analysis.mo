@@ -3,7 +3,7 @@ model Analysis "Shows how to analyze a noise signal"
   import Noise;
   extends Modelica.Icons.Example;
 
-  Noise.PRNG prng(
+  Noise.RandomNoise prng(
     redeclare function PSD = Noise.PSD.PSD_WhiteNoise,
     redeclare function PDF = Noise.PDF.PDF_BoxMuller,
     redeclare function SampleBasedRNG = Noise.RNG.SampleBased.RNG_MRG,

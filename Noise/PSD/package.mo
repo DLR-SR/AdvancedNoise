@@ -5,11 +5,6 @@ package PSD "Power spectral density functions"
   extends Noise.Utilities.Icons.PSDPackage;
 
 
-
-
-
-
-
 annotation (Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>", info="<html>

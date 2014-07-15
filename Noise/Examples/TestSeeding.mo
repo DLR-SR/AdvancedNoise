@@ -2,7 +2,7 @@ within Noise.Examples;
 model TestSeeding
     extends Modelica.Icons.Example;
 
-  Noise.PRNG prng(
+  Noise.RandomNoise prng(
     redeclare function SampleBasedRNG =
         Noise.RNG.SampleBased.RNG_LCG_NumericalRecipes,
     redeclare function PDF = Noise.PDF.PDF_Uniform,
@@ -13,7 +13,7 @@ model TestSeeding
     infiniteFreq=false,
     localSeed=66)
     annotation (Placement(transformation(extent={{-40,40},{-20,60}})));
-  Noise.PRNG prng1(
+  Noise.RandomNoise prng1(
     useGlobalSeed=true,
     useSampleBasedMethods=false,
     localSeed=25634)

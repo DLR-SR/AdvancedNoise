@@ -2,9 +2,11 @@ within Noise.Examples.Actuator.Parts;
 model PRNG "PRNG noise modeling"
   import Noise;
   extends NoiseModel;
-  Noise.PRNG prng(useGlobalSeed=true,
+  Noise.RandomNoise prng(
+    useGlobalSeed=true,
     samplePeriod=1/200,
     redeclare function PDF = Noise.PDF.PDF_Bates (interval={-0.01,0.01}, n=10),
+
     redeclare function PSD = Noise.PSD.PSD_IdealLowPass)
     annotation (Placement(transformation(extent={{-12,-10},{8,10}})));
 
