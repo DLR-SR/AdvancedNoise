@@ -1,3 +1,6 @@
 shuffleDouble
 SeedReal
 combineSeedLCG
+gettime
+getpid
+automaticSeed

@@ -6,27 +6,100 @@
 #ifndef MODELICANOISE_H
 #define MODELICANOISE_H
 
+/* Define a MODELICA_EXPORT function prefix */
+#if !defined(MODELICA_EXPORT)
+#   define MODELICA_EXPORT
+#endif
+
 /* Define to 1 if <stdint.h> header file is available */
 #if defined(_WIN32)
-#if defined(_MSC_VER) && _MSC_VER >= 1600
-#define NOISE_HAVE_STDINT_H 1
-#elif defined(__WATCOMC__)
-#define NOISE_HAVE_STDINT_H 1
+#   if defined(_MSC_VER) && _MSC_VER >= 1600
+#       define NOISE_HAVE_STDINT_H 1
+#   elif defined(__WATCOMC__)
+#       define NOISE_HAVE_STDINT_H 1
+#   else
+#       undef NOISE_HAVE_STDINT_H
+#   endif
 #else
-#undef NOISE_HAVE_STDINT_H
-#endif
-#else
-#define NOISE_HAVE_STDINT_H 1
+#   define NOISE_HAVE_STDINT_H 1
 #endif
 
+/* Include integer type header */
 #if NOISE_HAVE_STDINT_H
-#include <stdint.h>
+#   include <stdint.h>
 #else
-#define uint32_t unsigned int
+#   define int32_t  int
+#   define uint32_t unsigned int
+#   define uint64_t unsigned long long
 #endif
 
+/* Include some math headers */
 #include <limits.h>
 #include <math.h>
+
+/* Include some string headers */
+#include <string.h>
+
+/* Include Modelica utilities */
+#include "ModelicaUtilities.h"
+
+/* Low-level time and PID functions */
+/* FOR MICROSOFT */
+#if defined(_MSC_VER)
+#   include <sys/types.h>
+#   include <sys/timeb.h>
+#   include <time.h>
+#   include <process.h>
+#   define NOISE_getpid _getpid
+    static void NOISE_getTime(int* ms, int* sec, int* min, int* hour, int* mday, int* mon, int* year) {
+        struct _timeb timebuffer;
+        struct tm* tlocal;
+        time_t calendarTime;
+        int ms0;
+
+        _ftime( &timebuffer );                 /* Retrieve ms time */
+        time( &calendarTime );                 /* Retrieve sec time */
+        tlocal   = localtime( &calendarTime ); /* Time fields in local time zone */
+        ms0 = (int)(timebuffer.millitm);       /* Convert unsigned int to int */
+        tlocal->tm_mon  = tlocal->tm_mon +1;   /* Correct for month starting at 1 */
+        tlocal->tm_year = tlocal->tm_year+1900;/* Correct for 4-digit year */
+       
+        memcpy(ms,   &(ms0),                sizeof(int));
+        memcpy(sec,  &(tlocal->tm_sec),     sizeof(int));
+        memcpy(min,  &(tlocal->tm_min),     sizeof(int));
+        memcpy(hour, &(tlocal->tm_hour),    sizeof(int));
+        memcpy(mday, &(tlocal->tm_mday),    sizeof(int));
+        memcpy(mon,  &(tlocal->tm_mon),     sizeof(int));
+        memcpy(year, &(tlocal->tm_year),    sizeof(int));
+    }
+
+/* FOR OTHER COMPILERS */
+#else
+#   include <sys/time.h>
+#   include <time.h>
+#   include <unistd.h>
+#   define NOISE_getpid getpid
+    static void NOISE_getTime(int* ms, int* sec, int* min, int* hour, int* mday, int* mon, int* year) {
+        struct timeval tm;
+        int ms0;
+       
+        gettimeofday( &tm, NULL ); /* Retrieve current local time */
+        ms0 = tm.tv_usec/1000;     /* Convert microseconds to milliseconds */
+
+        memcpy(ms,   &(ms0),                sizeof(int));
+        memcpy(sec,  &(tm.tv_sec.tm_sec),   sizeof(int));
+        memcpy(min,  &(tm.tv_sec.tm_min),   sizeof(int));
+        memcpy(hour, &(tm.tv_sec.tm_hour),  sizeof(int));
+        memcpy(mday, &(tm.tv_sec.tm_mday),  sizeof(int));
+        memcpy(mon,  &(tm.tv_sec.tm_mon),   sizeof(int));
+        memcpy(year, &(tm.tv_sec.tm_year),  sizeof(int));
+    }
+
+#endif
+
+
+
+
 
 #define NOISE_LCG_MULTIPLIER (134775813)
 
