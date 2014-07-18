@@ -104,33 +104,36 @@
 #endif
 
 static int NOISE_APHash(char* str)
-{ /* Compute an unsigned int hash code from a character string
-   *
-   * Author: Arash Partow - 2002                                            *
-   * URL: http://www.partow.net                                             *
-   * URL: http://www.partow.net/programming/hashfunctions/index.html        *
-   *                                                                        *
-   * Copyright notice:                                                      *
-   * Free use of the General Purpose Hash Function Algorithms Library is    *
-   * permitted under the guidelines and in accordance with the most current *
-   * version of the Common Public License.                                  *
-   * http://www.opensource.org/licenses/cpl1.0.php                          */
+{  /* Compute an unsigned int hash code from a character string
+    *
+    * Author: Arash Partow - 2002                                            *
+    * URL: http://www.partow.net                                             *
+    * URL: http://www.partow.net/programming/hashfunctions/index.html        *
+    *                                                                        *
+    * Copyright notice:                                                      *
+    * Free use of the General Purpose Hash Function Algorithms Library is    *
+    * permitted under the guidelines and in accordance with the most current *
+    * version of the Common Public License.                                  *
+    * http://www.opensource.org/licenses/cpl1.0.php                          */
 
-   int hash = 0xAAAAAAAA;
-   int i    = 0;
-   int len  = strlen(str);
+    unsigned int hash = 0xAAAAAAAA;
+    unsigned int i    = 0;
+    unsigned int len  = strlen(str);
+    
+    union hash_tag{
+       unsigned int iu;
+       int          is;
+    } h;
+   
+    for(i = 0; i < len; str++, i++)
+    {
+       hash ^= ((i & 1) == 0) ? (  (hash <<  7) ^  (*str) * (hash >> 3)) :
+                                (~((hash << 11) + ((*str) ^ (hash >> 5))));
+    }
 
-   for(i = 0; i < len; str++, i++)
-   {
-      hash ^= ((i & 1) == 0) ? (  (hash <<  7) ^  (*str) * (hash >> 3)) :
-                               (~((hash << 11) + ((*str) ^ (hash >> 5))));
-   }
-
-   return hash;
+    h.iu = hash;
+    return h.is;
 }
-
-
-
 
 #define NOISE_LCG_MULTIPLIER (134775813)
 
