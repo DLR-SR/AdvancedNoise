@@ -44,6 +44,12 @@
 #include "ModelicaUtilities.h"
 
 /* Low-level time and PID functions */
+/* Some parts from: http://nadeausoftware.com/articles/2012/04/c_c_tip_how_measure_elapsed_real_time_benchmarking
+
+   Get current time in (ms, sec, min, hour, day, mon, year)
+   Get process id as int
+*/
+
 /* FOR MICROSOFT */
 #if defined(_MSC_VER)
 #   include <sys/types.h>
