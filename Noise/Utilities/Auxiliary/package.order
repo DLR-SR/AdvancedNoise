@@ -1,8 +1,8 @@
 shuffleDouble
 SeedReal
 combineSeedLCG
-gettime
 getpid
+gettime
 automaticSeed
 removePackageName
 hashString

@@ -1,8 +1,6 @@
 within Noise.Utilities.Auxiliary;
-function automaticSeed
+impure function automaticSeed
   "Creates an automatic integer seed from the current time and process id"
-
-  input Real dummy=0 "Input the simulation time to ensure, this is evaluated";
   output Integer seed "Automatic seed";
 protected
   Integer ms;
@@ -11,8 +9,8 @@ protected
   Integer hour;
   Integer pid;
 algorithm
-  (ms, sec, min, hour) := gettime(dummy);
-  pid                  := getpid( dummy);
+  (ms, sec, min, hour) := gettime();
+  pid                  := getpid();
   seed := 1 + ms + 1000*sec + 1000*60*min + 1000*60*60*hour
             + 6007*pid;
 
