@@ -135,6 +135,139 @@ static int NOISE_APHash(char* str)
     return h.is;
 }
 
+/* xorshift algorithms */
+
+/* For details see http://xorshift.di.unimi.it/
+
+   Written in 2014 by Sebastiano Vigna (vigna@acm.org)
+
+   To the extent possible under law, the author has dedicated all copyright
+   and related and neighboring rights to this software to the public domain
+   worldwide. This software is distributed without any warranty.
+
+   See <http://creativecommons.org/publicdomain/zero/1.0/>.
+   
+   Adapted by Martin Otter and Andreas Klöckner for use with Modelica:
+   - Inputs and outputs must be int's, that is int32_t.
+   - Inputs are casted accordingly. 
+   - Outputs are casted accordingly.
+   - An additional input is given: n = number of elements in state vector.
+   - The additional double between 0 and 1 is output.
+   
+   transform 64-bit unsigned integer to double such that zero cannot appear, by
+   first transforming to a 64-bit signed integer, then to a double in the range 0 .. 1.
+   (using the algorithm given here: http://www.doornik.com/research/randomdouble.pdf)
+*/
+
+#define NOISE_INVM64 5.42101086242752217004e-20 /* = 2^(-64) */
+#define NOISE_RAND(INT64) ( (int64_t)(INT64) * NOISE_INVM64 + 0.5 )
+
+
+MODELICA_EXPORT void NOISE_xorshift64star(int state_in[], int state_out[], double* y) {
+    /*  xorshift64* random number generator.
+        For details see http://xorshift.di.unimi.it/
+
+        Written in 2014 by Sebastiano Vigna (vigna@acm.org)
+
+        To the extent possible under law, the author has dedicated all copyright
+        and related and neighboring rights to this software to the public domain
+        worldwide. This software is distributed without any warranty.
+
+        See <http://creativecommons.org/publicdomain/zero/1.0/>.
+
+        Adapted by Martin Otter and Andreas Klöckner (DLR) 
+        for the Modelica external function interface.
+    */
+
+    /*  This is a good generator if you're short on memory, but otherwise we
+        rather suggest to use a xorshift128+ (for maximum speed) or
+        xorshift1024* (for speed and very long period) generator. */
+
+    /* Convert inputs */
+    union s_tag{
+        int32_t  s32[2];
+        uint64_t s64;
+    } s;
+    uint64_t x;
+    s.s32[0] = state_in[0];
+    s.s32[1] = state_in[1];
+    x = s.s64;
+      
+    /* The actual algorithm */
+    x ^= x >> 12; // a
+    x ^= x << 25; // b
+    x ^= x >> 27; // c
+    x  = x * 2685821657736338717LL;
+    
+    /* Convert outputs */
+    s.s64 = x;
+    state_out[0] = s.s32[0];
+    state_out[1] = s.s32[1];
+    *y           = NOISE_RAND(x);
+}
+
+
+
+MODELICA_EXPORT void NOISE_xorshift128plus(int state_in[], int state_out[], double* y) {
+    /*  xorshift128+ random number generator.
+        For details see http://xorshift.di.unimi.it
+        Arguments seed and newSeed must be int32_t vectors with at least 4 elements each.
+
+        Written in 2014 by Sebastiano Vigna (vigna@acm.org)
+
+        To the extent possible under law, the author has dedicated all copyright
+        and related and neighboring rights to this software to the public domain
+        worldwide. This software is distributed without any warranty.
+
+        See <http://creativecommons.org/publicdomain/zero/1.0/>.
+
+        Adapted by Martin Otter and Andreas Klöckner (DLR) 
+        for the Modelica external function interface.
+    */
+
+    /*  This is the fastest generator passing BigCrush without systematic
+        errors, but due to the relatively short period it is acceptable only
+        for applications with a very mild amount of parallelism; otherwise, use
+        a xorshift1024* generator. */
+
+    /*  The state must be seeded so that it is not everywhere zero. If you have
+        a 64-bit seed, we suggest to pass it twice through MurmurHash3's
+        avalanching function. */
+
+    /* Convert inputs */
+    union s_tag{
+        int32_t  s32[4];
+        uint64_t s64[2];
+    } s;
+    uint64_t s1;
+    uint64_t s0;
+    s.s32[0] = state_in[0];
+    s.s32[1] = state_in[1];
+    s.s32[2] = state_in[2];
+    s.s32[3] = state_in[3];
+      
+    /* The actual algorithm */
+    s1       = s.s64[0];
+    s0 = s.s64[1];
+    s.s64[0] = s.s64[1];
+    s1 ^= s1 << 23; // a
+    s.s64[1] = ( s1 ^ s0 ^ ( s1 >> 17 ) ^ ( s0 >> 26 ) ) + s0; // b, c
+    
+    /* Convert outputs */
+    state_out[0] = s.s32[0];
+    state_out[1] = s.s32[1];
+    state_out[2] = s.s32[2];
+    state_out[3] = s.s32[3];
+    *y           = NOISE_RAND(s.s64[1]);
+
+    //return (int64_t)(s[1] + s0) * ModelicaRandom_INVM64 + 0.5;
+}
+
+
+
+
+
+
 #define NOISE_LCG_MULTIPLIER (134775813)
 
 /* NOISE_SeedReal */

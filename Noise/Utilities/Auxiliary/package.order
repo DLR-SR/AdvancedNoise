@@ -6,3 +6,5 @@ gettime
 automaticSeed
 removePackageName
 hashString
+xorshift64star
+xorshift128plus
