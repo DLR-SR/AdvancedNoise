@@ -188,9 +188,10 @@ MODELICA_EXPORT void NOISE_xorshift64star(int state_in[], int state_out[], doubl
         int32_t  s32[2];
         uint64_t s64;
     } s;
+    int i;
     uint64_t x;
-    s.s32[0] = state_in[0];
-    s.s32[1] = state_in[1];
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
+        s.s32[i] = state_in[i];}
     x = s.s64;
       
     /* The actual algorithm */
@@ -201,8 +202,8 @@ MODELICA_EXPORT void NOISE_xorshift64star(int state_in[], int state_out[], doubl
     
     /* Convert outputs */
     s.s64 = x;
-    state_out[0] = s.s32[0];
-    state_out[1] = s.s32[1];
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
+        state_out[i] = s.s32[i];}
     *y           = NOISE_RAND(x);
 }
 
@@ -239,28 +240,83 @@ MODELICA_EXPORT void NOISE_xorshift128plus(int state_in[], int state_out[], doub
         int32_t  s32[4];
         uint64_t s64[2];
     } s;
+    int i;
     uint64_t s1;
     uint64_t s0;
-    s.s32[0] = state_in[0];
-    s.s32[1] = state_in[1];
-    s.s32[2] = state_in[2];
-    s.s32[3] = state_in[3];
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
+        s.s32[i] = state_in[i];}
       
     /* The actual algorithm */
     s1       = s.s64[0];
-    s0 = s.s64[1];
+    s0       = s.s64[1];
     s.s64[0] = s.s64[1];
-    s1 ^= s1 << 23; // a
+    s1      ^= s1 << 23; // a
     s.s64[1] = ( s1 ^ s0 ^ ( s1 >> 17 ) ^ ( s0 >> 26 ) ) + s0; // b, c
     
     /* Convert outputs */
-    state_out[0] = s.s32[0];
-    state_out[1] = s.s32[1];
-    state_out[2] = s.s32[2];
-    state_out[3] = s.s32[3];
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
+        state_out[i] = s.s32[i];}
     *y           = NOISE_RAND(s.s64[1]);
+}
 
-    //return (int64_t)(s[1] + s0) * ModelicaRandom_INVM64 + 0.5;
+MODELICA_EXPORT void NOISE_xorshift1024star(int state_in[], int state_out[], double* y) {
+    /*  xorshift1024* random number generator.
+        For details see http://xorshift.di.unimi.it
+        
+        Argument "id" is provided to guarantee the right calling sequence
+        of the function in a Modelica environment (first calling function
+        ModelicaRandom_initialize_xorshift1024star that must return "dummy" which is passed
+        as input argument to ModelicaRandom_xorshift1024star. As a result, the ordering
+        of the function is correct.
+
+        Written in 2014 by Sebastiano Vigna (vigna@acm.org)
+    
+        To the extent possible under law, the author has dedicated all copyright
+        and related and neighboring rights to this software to the public domain
+        worldwide. This software is distributed without any warranty.
+
+        See <http://creativecommons.org/publicdomain/zero/1.0/>.
+
+        Adapted by Martin Otter and Andreas Klöckner (DLR) 
+        for the Modelica external function interface.
+    */
+
+    /*  This is a fast, top-quality generator. If 1024 bits of state are too
+        much, try a xorshift128+ or a xorshift64* generator. */
+
+    /*  The state must be seeded so that it is not everywhere zero. If you have
+        a 64-bit seed,  we suggest to seed a xorshift64* generator and use its
+        output to fill s. */
+        
+        
+    /* Convert inputs */
+    union s_tag{
+        int32_t  s32[32];
+        uint64_t s64[16];
+    } s;
+    int i;
+    uint64_t s0;
+    uint64_t s1;
+    int p;
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
+        s.s32[i] = state_in[i];}
+    p = state_in[32];
+    
+    /* The actual algorithm */
+    s0 = s.s64[p];
+    s1 = s.s64[p = (p + 1) & 15];
+        
+    s1 ^= s1 << 31; // a
+    s1 ^= s1 >> 11; // b
+    s0 ^= s0 >> 30; // c
+    
+    s.s64[p] = s0 ^ s1;
+        
+    /* Convert outputs */
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
+        state_out[i] = s.s32[i];}
+    state_out[32] = p;
+    *y            = NOISE_RAND(s.s64[p]*1181783497276652981LL);
 }
 
 

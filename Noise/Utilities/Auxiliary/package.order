@@ -8,3 +8,4 @@ removePackageName
 hashString
 xorshift64star
 xorshift128plus
+xorshift1024star
