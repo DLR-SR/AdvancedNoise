@@ -300,7 +300,7 @@ MODELICA_EXPORT void NOISE_xorshift1024star(int state_in[], int state_out[], dou
     int p;
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
         s.s32[i] = state_in[i];}
-    p = state_in[32];
+    p = state_in[32]&15;
     
     /* The actual algorithm */
     s0 = s.s64[p];

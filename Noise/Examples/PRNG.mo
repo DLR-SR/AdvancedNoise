@@ -5,7 +5,8 @@ model PRNG "Shows the use of the basic PRNG block"
 
   inner GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{70,70},{90,90}})));
-  Noise.PRNG prng
+  Noise.PRNG prng(useSampleBasedMethods=true, redeclare function SampleBasedRNG
+      = Noise.RNG.SampleBased.RNG_xorshift1024star)
     annotation (Placement(transformation(extent={{-10,-12},{10,8}})));
 equation
 

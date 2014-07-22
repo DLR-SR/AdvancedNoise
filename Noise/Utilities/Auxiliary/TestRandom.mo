@@ -4,7 +4,7 @@ model TestRandom
   Real r;
 equation
   when initial() then
-    srand(4);
+    srand(automaticSeed());
   end when;
   when sample(0,0.01) then
     r = rand();
