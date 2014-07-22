@@ -9,3 +9,8 @@ hashString
 xorshift64star
 xorshift128plus
 xorshift1024star
+setExternalState
+getExternalState
+rand
+srand
+TestRandom

@@ -321,8 +321,32 @@ MODELICA_EXPORT void NOISE_xorshift1024star(int state_in[], int state_out[], dou
 
 
 
+/* external seed algorithms */
 
+/* these functions give access to an external random number state
+   you should be very careful about using them... 
+*/
 
+# define NOISE_SIZE 33
+static int NOISE_s[NOISE_SIZE];
+
+void NOISE_getExternalState(int* state, size_t p){
+    /* delivers the external states to Modelica */
+    int i;
+    if ( p > NOISE_SIZE ) ModelicaFormatError("External state vector is too large. Should be %d.",NOISE_SIZE);    
+    for (i=0; i<p; i++){
+        state[i] = NOISE_s[i];}    
+}
+
+void NOISE_setExternalState(int* state, size_t p){
+    /* receives the external states from Modelica*/
+    int i;
+    if ( p > NOISE_SIZE ) ModelicaFormatError("External state vector is too large. Should be %d.",NOISE_SIZE);    
+    for (i=0; i<p; i++){
+        NOISE_s[i] = state[i];}    
+}
+
+/* original algorithms */
 
 #define NOISE_LCG_MULTIPLIER (134775813)
 
