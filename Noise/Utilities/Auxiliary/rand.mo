@@ -1,11 +1,13 @@
 within Noise.Utilities.Auxiliary;
 impure function rand "Implements an impure random number generator"
   output Real y "The uniform random number";
+  input xorshift1024star generator = xorshift1024star
+    "The random number generator algorithm";
 protected
   Integer state[33];
 algorithm
   state      := getExternalState();
-  (state, y) := xorshift1024star(state);
+  (state, y) := generator(state);
   setExternalState(state);
 
   annotation (Documentation(revisions="<html>
