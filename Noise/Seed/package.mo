@@ -3,7 +3,6 @@ package Seed "A number of seeding functions"
   extends Noise.Utilities.Icons.SeedPackage;
 
 
-
 annotation (Icon(graphics={
                           Text(
           extent={{0,118},{110,-62}},
