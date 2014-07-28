@@ -3,7 +3,26 @@ block TimeBasedNoise
   "A noise generator based on the simulation time (without events)"
   extends Modelica.Blocks.Interfaces.SO;
 
+//
+//
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// We require an inner globalSeed
   outer GlobalSeed globalSeed;
+
+//
+//
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// Define distribution
+
+//
+//
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// Define interpolation
+
+//
+//
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// Call the interpolation
 
 //
 //
