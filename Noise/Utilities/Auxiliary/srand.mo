@@ -1,6 +1,6 @@
 within Noise.Utilities.Auxiliary;
 function srand "Seeds the impure random number generator"
-  input Integer s "The uniform random number";
+  input Integer s "The input seed";
 protected
   constant Integer p=20 "The number of iterations";
   Integer state[33] "The state vector";

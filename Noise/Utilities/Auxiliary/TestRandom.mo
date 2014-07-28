@@ -4,10 +4,10 @@ model TestRandom
   Real r;
 equation
   when initial() then
-    srand(automaticSeed());
+    srand(hashString(removePackageName(getInstanceName()))+0*automaticSeed());
   end when;
   when sample(0,0.01) then
-    r = rand();
+    r = hashString(removePackageName(getInstanceName()))+0*automaticSeed()+rand()*0;
   end when;
 
 end TestRandom;
