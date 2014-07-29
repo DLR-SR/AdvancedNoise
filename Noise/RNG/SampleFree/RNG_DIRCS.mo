@@ -1,7 +1,7 @@
 within Noise.RNG.SampleFree;
 function RNG_DIRCS "DIRCS Immediate Random with Continuous Seed"
   extends Noise.Utilities.Interfaces.SampleFreeRNG;
-  replaceable function Seed = Noise.Seed.Seed_Real
+  replaceable function Seed = Noise.Seed.Real2Seed
     constrainedby Noise.Utilities.Interfaces.Seed
     "The seeding function to be used"
     annotation(choicesAllMatching=true, Dialog,

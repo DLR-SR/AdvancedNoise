@@ -146,7 +146,7 @@ public
 //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // The seeding function
-  replaceable function Seed = Noise.Seed.Seed_MRG(real_seed=0.0) constrainedby
+  replaceable function Seed = Noise.Seed.MRG (    real_seed=0.0) constrainedby
     Noise.Utilities.Interfaces.Seed "Choice of the seeding function"
     annotation(choicesAllMatching=true, Dialog(tab = "Advanced", group = "Seed (This specifies how local and global seed should be combined and the intial state vector should be filled.)"),
     Documentation(revisions="<html>

@@ -1,6 +1,7 @@
 within Noise;
 block EventBasedNoise "A noise generator based on discrete time events"
   extends Modelica.Blocks.Interfaces.SO;
+  import Noise.Utilities.Auxiliary;
 
 //
 //
@@ -12,6 +13,25 @@ block EventBasedNoise "A noise generator based on discrete time events"
 //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Define a seeding function (this is hidden from the user)
+public
+  parameter Boolean useGlobalSeed = true
+    "= true, if the global seed shall be combined with the local seed. = false, if the globalSeed shall be ignored"
+    annotation(choices(checkBox=true),Dialog(tab="Advanced",group = "Initialization"));
+  parameter Integer localSeed = Auxiliary.hashString(Auxiliary.removePackageName(getInstanceName()))
+    "The local seed for initializing the random number generator"
+    annotation(Dialog(tab="Advanced",group = "Initialization"));
+  final parameter Integer globalSeed0 = if useGlobalSeed then globalSeed.seed else 0
+    "The global seed, which is atually used";
+protected
+  parameter Integer stateSize = 33
+    "The number of states used in the random number generator";
+  Integer state[stateSize] "The internal states of the random number generator";
+protected
+  replaceable function Seed = Noise.Seed.xorshift64star
+    constrainedby Noise.Utilities.Interfaces.Seed
+    "The seeding function to be used";
+initial equation
+  pre(state) = Seed();
 
 //
 //
@@ -145,7 +165,7 @@ public
 //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // The seeding function
-  replaceable function Seed = Noise.Seed.Seed_MRG(real_seed=0.0) constrainedby
+  replaceable function Seed4 = Noise.Seed.MRG (    real_seed=0.0) constrainedby
     Noise.Utilities.Interfaces.Seed "Choice of the seeding function"
     annotation(choicesAllMatching=true, Dialog(tab = "Advanced", group = "Seed (This specifies how local and global seed should be combined and the intial state vector should be filled.)"),
     Documentation(revisions="<html>
@@ -163,18 +183,7 @@ public
 // The parameter state_size should be set, so that it is big enough to hold the maximum.
 // This should not influence the speed too much, because the variables are just passed around.
 protected
-  parameter Integer state_size = 33
-    "The number of internal (sample-based) RNG states";
-  Integer state[state_size] "The internal state of the (sample-based) RNG";
   Real t_last "The last time a random number was generated";
-public
-  parameter Integer localSeed = 123456789
-    "The local seed to the RNG initialization" annotation(Dialog(group = "Initialization"),choices(checkBox=true));
-  parameter Boolean useGlobalSeed = true
-    "Combine local seed value with global seed" annotation(choices(checkBox=true),Dialog(group = "Initialization"));
-  final parameter Integer seed=if useGlobalSeed then
-      Noise.Utilities.Auxiliary.combineSeedLCG(localSeed, globalSeed.seed)
-       else localSeed;
 initial equation
   if useSampleBasedMethods then
     pre(state)  = Seed(local_seed=localSeed, global_seed=if useGlobalSeed then globalSeed.seed else 0, n=state_size, real_seed=0.0);

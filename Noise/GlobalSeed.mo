@@ -11,13 +11,13 @@ public
 
 // The global seed value
 public
-  parameter Boolean useGlobalInitialSeed = true
+  parameter Boolean useGlobalSeed = true
     "= true, if reproducible sequence with the given global initial seed (otherwise global initial seed is randomly chosen based on system time and process id)"
     annotation(choices(checkBox=true));
-  parameter Integer globalInitialSeed = 67867967
+  parameter Integer globalSeed = 67867967
     "Global initial seed for random number generator"  annotation(Dialog(enable=useGlobalInitialSeed));
 public
-  final parameter Integer seed = if useGlobalInitialSeed then globalInitialSeed else Auxiliary.automaticSeed();
+  final parameter Integer seed = if useGlobalSeed then globalSeed else Auxiliary.automaticSeed();
 
 // The impure global random function
 public

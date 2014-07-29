@@ -1,2 +1,3 @@
-Seed_MRG
-Seed_Real
+xorshift64star
+MRG
+Real2Seed

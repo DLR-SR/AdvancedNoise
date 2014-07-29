@@ -1,5 +1,5 @@
 within Noise.Seed;
-function Seed_MRG "Uses an MRG for seeding"
+function MRG "Uses an MRG for seeding"
   extends Utilities.Interfaces.Seed;
   input Integer[:] a = fill(134775813,n)
     "The multiplier for the linear congruential generator"
@@ -37,4 +37,4 @@ algorithm
 </html>", info="<html>
 <p>This function fills the initial state vector using the <a href=\"Noise.RNG.SampleBased.RNG_MRG\">MRG</a> random number generator.</p>
 </html>"));
-end Seed_MRG;
+end MRG;

@@ -1,5 +1,5 @@
 within Noise.Seed;
-function Seed_Real "Uses the real value for seeding"
+function Real2Seed "Uses the real value for seeding"
   extends Utilities.Interfaces.Seed;
 algorithm
   states := Noise.Utilities.Auxiliary.SeedReal(local_seed=  local_seed,
@@ -12,4 +12,4 @@ algorithm
 </html>", info="<html>
 <p>This function converts the Real value to Integer values and fills the state vector with them.</p>
 </html>"));
-end Seed_Real;
+end Real2Seed;
