@@ -10,7 +10,6 @@ model PRNGNoise "Shows the modelling of a noisy sensor"
         Noise.RNG.SampleBased.RNG_LCG_NumericalRecipes,
     useSampleBasedMethods=false,
     redeclare function PDF = Noise.PDF.PDF_Bates (interval={-0.05,0.05}, n=20),
-
     samplePeriod=1/6000*downSampling,
     redeclare function PSD = Noise.PSD.PSD_WhiteNoise)
     annotation (Placement(transformation(extent={{-38,-10},{-18,10}})));
