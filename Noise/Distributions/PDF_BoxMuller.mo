@@ -1,4 +1,4 @@
-within Noise.PDF;
+within Noise.Distributions;
 function PDF_BoxMuller
   "A random number with approximate normal distribution using the BoxMuller method"
   extends Noise.Utilities.Interfaces.PDF;

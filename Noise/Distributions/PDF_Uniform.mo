@@ -1,4 +1,4 @@
-within Noise.PDF;
+within Noise.Distributions;
 function PDF_Uniform
   "A random number with a uniform distribution in a given interval"
   extends Noise.Utilities.Interfaces.PDF;

@@ -1,4 +1,4 @@
-within Noise.PDF;
+within Noise.Distributions;
 function PDF_CauchyLorentz "A random number with Cauchy-Lorentz distribution"
   extends Noise.Utilities.Interfaces.PDF;
   import Modelica.Constants.pi;

@@ -4,25 +4,27 @@ model ComparePDF "Compares different PSDs"
   extends Modelica.Icons.Example;
 
   Noise.RandomNoise UniformNoise(useSampleBasedMethods=false, redeclare
-      function PDF = Noise.PDF.PDF_Uniform)
+      function PDF = Noise.Distributions.PDF_Uniform)
     annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
   Noise.RandomNoise BoxMueller(useSampleBasedMethods=false, redeclare function
-      PDF = Noise.PDF.PDF_BoxMuller)
+      PDF = Noise.Distributions.PDF_BoxMuller)
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   Noise.RandomNoise CauchyLorenz(useSampleBasedMethods=false, redeclare
-      function PDF = Noise.PDF.PDF_CauchyLorentz)
+      function PDF = Noise.Distributions.PDF_CauchyLorentz)
     annotation (Placement(transformation(extent={{-60,-50},{-40,-30}})));
   Noise.RandomNoise Weibull(useSampleBasedMethods=false, redeclare function PDF
-      = Noise.PDF.PDF_Weibull)
+      = Noise.Distributions.PDF_Weibull)
     annotation (Placement(transformation(extent={{-20,30},{0,50}})));
   Noise.RandomNoise IrwinHall(useSampleBasedMethods=false, redeclare function
-      PDF = Noise.PDF.PDF_IrwinHall (n=10))
+      PDF = Noise.Distributions.PDF_IrwinHall (
+                                     n=10))
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   Noise.RandomNoise Bates(useSampleBasedMethods=false, redeclare function PDF
-      = Noise.PDF.PDF_Bates (n=10))
+      = Noise.Distributions.PDF_Bates (
+                             n=10))
     annotation (Placement(transformation(extent={{-20,-50},{0,-30}})));
   Noise.RandomNoise DiscreteDistribution(useSampleBasedMethods=false,
-      redeclare function PDF = Noise.PDF.PDF_Discrete)
+      redeclare function PDF = Noise.Distributions.PDF_Discrete)
     annotation (Placement(transformation(extent={{20,30},{40,50}})));
   inner Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{70,70},{90,90}})));

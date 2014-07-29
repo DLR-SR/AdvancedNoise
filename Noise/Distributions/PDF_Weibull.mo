@@ -1,4 +1,4 @@
-within Noise.PDF;
+within Noise.Distributions;
 function PDF_Weibull "A random number with Weibull distribution"
   extends Noise.Utilities.Interfaces.PDF;
   input Real lambda(min=0) = 1 "The scale parameter of the distribution" annotation(Dialog);

@@ -1,5 +1,5 @@
 within Noise;
-package PDF "Probability density functions"
+package Distributions "Distributions of random variables"
   extends Noise.Utilities.Icons.PDFPackage;
 
 
@@ -11,4 +11,4 @@ annotation (Documentation(revisions="<html>
           extent={{-10,100},{100,-80}},
           lineColor={255,0,0},
         textString="?")}));
-end PDF;
+end Distributions;

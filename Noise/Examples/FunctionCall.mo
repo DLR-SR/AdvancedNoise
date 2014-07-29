@@ -2,7 +2,7 @@ within Noise.Examples;
 model FunctionCall "Shows how to use the internal random functions"
   extends Modelica.Icons.Example;
   import Noise.RNG.*;
-  import Noise.PDF.*;
+  import Noise.Distributions.*;
 
 //
 //

@@ -10,7 +10,7 @@ partial function PSD
     "The intended period of the raw random number";
   input Modelica.SIunits.Time t_last
     "The last time a random number was generated";
-  replaceable function PDF = Noise.PDF.PDF_Uniform
+  replaceable function PDF = Noise.Distributions.PDF_Uniform
     constrainedby Interfaces.PDF "The probability density function to be used"
     annotation(choicesAllMatching=true,
                Dialog(enable=false,

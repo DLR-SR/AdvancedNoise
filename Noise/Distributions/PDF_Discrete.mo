@@ -1,4 +1,4 @@
-within Noise.PDF;
+within Noise.Distributions;
 function PDF_Discrete
   "A random number with discrete values of given probability"
   extends Noise.Utilities.Interfaces.PDF;
