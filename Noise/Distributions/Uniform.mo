@@ -1,5 +1,5 @@
 within Noise.Distributions;
-function PDF_Uniform
+function Uniform
   "A random number with a uniform distribution in a given interval"
   extends Noise.Utilities.Interfaces.PDF;
   input Real[2] interval = {0,1}
@@ -17,4 +17,4 @@ algorithm
           color={255,0,0})}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end PDF_Uniform;
+end Uniform;

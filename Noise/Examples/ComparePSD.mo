@@ -6,19 +6,19 @@ model ComparePSD "Compares different PSDs"
   Noise.RandomNoise WhiteNoise(
     redeclare function PSD = Noise.PSD.PSD_WhiteNoise,
     useSampleBasedMethods=false,
-    redeclare function PDF = Noise.Distributions.PDF_Uniform (
+    redeclare function PDF = Noise.Distributions.Uniform (
                                                     interval={-1,1}))
     annotation (Placement(transformation(extent={{-40,30},{-20,50}})));
   Noise.RandomNoise IdealLowPass(
     redeclare function PSD = Noise.PSD.PSD_IdealLowPass (n=10),
     useSampleBasedMethods=false,
-    redeclare function PDF = Noise.Distributions.PDF_Uniform (
+    redeclare function PDF = Noise.Distributions.Uniform (
                                                     interval={-1,1}))
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Noise.RandomNoise Linear(
     redeclare function PSD = Noise.PSD.PSD_LinearInterpolation (n=5),
     useSampleBasedMethods=false,
-    redeclare function PDF = Noise.Distributions.PDF_Uniform (
+    redeclare function PDF = Noise.Distributions.Uniform (
                                                     interval={-1,1}))
     annotation (Placement(transformation(extent={{-40,-50},{-20,-30}})));
   inner Noise.GlobalSeed globalSeed

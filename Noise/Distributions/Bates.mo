@@ -1,5 +1,5 @@
 within Noise.Distributions;
-function PDF_Bates
+function Bates
   "A random number with Bates distribution (mean of uniform variables)"
   extends Noise.Utilities.Interfaces.PDF;
   input Real[2] interval = {0,1}
@@ -28,4 +28,4 @@ algorithm
           smooth=Smooth.Bezier)}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end PDF_Bates;
+end Bates;

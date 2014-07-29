@@ -47,7 +47,7 @@ protected
 // is no such thing as "conditional redeclaration".
 // The internal functions are used later in redeclarations
 public
-  replaceable function distribution = Noise.Distributions.PDF_Uniform
+  replaceable function distribution = Noise.Distributions.Uniform
     constrainedby Noise.Utilities.Interfaces.PDF
     "Select a distribution of the random values"
     annotation(choicesAllMatching=true, Dialog,

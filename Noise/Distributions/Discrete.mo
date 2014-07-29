@@ -1,6 +1,5 @@
 within Noise.Distributions;
-function PDF_Discrete
-  "A random number with discrete values of given probability"
+function Discrete "A random number with discrete values of given probability"
   extends Noise.Utilities.Interfaces.PDF;
   import Noise.Utilities.Math.cumsum;
   input Real x[:] = {0,1} "Discrete values to be chosen from" annotation(Dialog);
@@ -57,4 +56,4 @@ algorithm
           fillPattern=FillPattern.Solid)}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end PDF_Discrete;
+end Discrete;

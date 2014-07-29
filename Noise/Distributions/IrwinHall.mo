@@ -1,5 +1,5 @@
 within Noise.Distributions;
-function PDF_IrwinHall
+function IrwinHall
   "A random number with Irwin-Hall distribution (sum of uniform variables)"
   extends Noise.Utilities.Interfaces.PDF;
   input Real[2] interval = {0,1}
@@ -28,4 +28,4 @@ algorithm
           smooth=Smooth.Bezier)}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end PDF_IrwinHall;
+end IrwinHall;

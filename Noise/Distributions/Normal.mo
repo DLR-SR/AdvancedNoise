@@ -1,5 +1,5 @@
 within Noise.Distributions;
-function PDF_BoxMuller
+function Normal
   "A random number with approximate normal distribution using the BoxMuller method"
   extends Noise.Utilities.Interfaces.PDF;
   input Real mu = 0 "The expectation (mean) value of the normal distribution" annotation(Dialog);
@@ -22,4 +22,4 @@ algorithm
           smooth=Smooth.Bezier)}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end PDF_BoxMuller;
+end Normal;

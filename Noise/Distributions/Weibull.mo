@@ -1,5 +1,5 @@
 within Noise.Distributions;
-function PDF_Weibull "A random number with Weibull distribution"
+function Weibull "A random number with Weibull distribution"
   extends Noise.Utilities.Interfaces.PDF;
   input Real lambda(min=0) = 1 "The scale parameter of the distribution" annotation(Dialog);
   input Real k(min=0) = 1 "The shape parameter of the normal distribution" annotation(Dialog);
@@ -18,4 +18,4 @@ algorithm
           smooth=Smooth.Bezier)}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end PDF_Weibull;
+end Weibull;

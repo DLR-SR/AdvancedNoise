@@ -1,5 +1,5 @@
 within Noise.Distributions;
-function PDF_CauchyLorentz "A random number with Cauchy-Lorentz distribution"
+function CauchyLorentz "A random number with Cauchy-Lorentz distribution"
   extends Noise.Utilities.Interfaces.PDF;
   import Modelica.Constants.pi;
   input Real mu = 0 "The expectation (mean) value of the distribution" annotation(Dialog);
@@ -19,4 +19,4 @@ algorithm
           smooth=Smooth.Bezier)}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end PDF_CauchyLorentz;
+end CauchyLorentz;

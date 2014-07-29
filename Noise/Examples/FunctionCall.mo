@@ -14,7 +14,7 @@ model FunctionCall "Shows how to use the internal random functions"
 //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Using the state-less random number generators
-  function my_continuous_random = PDF_BoxMuller (
+  function my_continuous_random = Distributions.Normal (
     redeclare function RNG = SampleFree.RNG_DIRCS,
     mu = 20, sigma = 10,
     states_in = zeros(0)) "The state-less random number generator" annotation (
@@ -34,7 +34,7 @@ model FunctionCall "Shows how to use the internal random functions"
 //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Using the random number generators with states
-  function my_sampled_random = PDF_BoxMuller (
+  function my_sampled_random = Distributions.Normal (
     redeclare function RNG = SampleBased.RNG_LCG,
     mu = -20, sigma = 10,
     instance = 0) "The state-less random number generator" annotation (
