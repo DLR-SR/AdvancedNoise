@@ -4,16 +4,17 @@ model CompareRNG
   extends Modelica.Icons.Example;
 
   Noise.RandomNoise Weyl(useSampleBasedMethods=false, redeclare function
-      SampleFreeRNG = Noise.RNG.SampleFree.RNG_Weyl)
+      SampleFreeRNG = Noise.Generators.SampleFree.RNG_Weyl)
     annotation (Placement(transformation(extent={{-32,2},{-12,22}})));
   Noise.RandomNoise DIRCS(useSampleBasedMethods=false, redeclare function
-      SampleFreeRNG = Noise.RNG.SampleFree.RNG_DIRCS)
+      SampleFreeRNG = Noise.Generators.SampleFree.RNG_DIRCS)
     annotation (Placement(transformation(extent={{-72,2},{-52,22}})));
   Noise.RandomNoise NumericalRecipes(useSampleBasedMethods=true, redeclare
-      function SampleBasedRNG = Noise.RNG.SampleBased.RNG_LCG_NumericalRecipes)
+      function SampleBasedRNG =
+        Noise.Generators.SampleBased.RNG_LCG_NumericalRecipes)
     annotation (Placement(transformation(extent={{-72,-78},{-52,-58}})));
   Noise.RandomNoise VAX(useSampleBasedMethods=true, redeclare function
-      SampleBasedRNG = Noise.RNG.SampleBased.RNG_LCG_VAX)
+      SampleBasedRNG = Noise.Generators.SampleBased.RNG_LCG_VAX)
     annotation (Placement(transformation(extent={{-34,-78},{-14,-58}})));
   Parts.Modelica_LinearSystems2.Controller.Noise LinearSystems2(y_min=0, y_max=
         1) annotation (Placement(transformation(extent={{-40,70},{-20,90}})));

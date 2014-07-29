@@ -6,7 +6,7 @@ model Analysis "Shows how to analyze a noise signal"
   Noise.RandomNoise prng(
     redeclare function PSD = Noise.PSD.PSD_WhiteNoise,
     redeclare function PDF = Noise.Distributions.Normal,
-    redeclare function SampleBasedRNG = Noise.RNG.SampleBased.RNG_MRG,
+    redeclare function SampleBasedRNG = Noise.Generators.SampleBased.RNG_MRG,
     useSampleBasedMethods=false)
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
   Noise.Utilities.Analysis.Mu mu

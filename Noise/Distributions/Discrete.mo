@@ -11,7 +11,7 @@ protected
 algorithm
 
   // Retrieve a raw uniformly distributed random number
-  (raw,states_out) := RNG(instance=instance, states_in=states_in);
+  (raw,states_out) :=Generators(instance=instance, states_in=states_in);
 
   // Scale raw to range up to max(P)
   raw := raw * max(P);

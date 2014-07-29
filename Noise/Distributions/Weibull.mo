@@ -6,7 +6,7 @@ function Weibull "A random number with Weibull distribution"
 algorithm
 
   // Retrieve uniformly distributed random number
-  (rand,states_out) := RNG(instance=instance, states_in=states_in);
+  (rand,states_out) :=Generators(instance=instance, states_in=states_in);
 
   // Transform by inverse cumulative density function
   // CDF = 1 - exp( -(x/lambda)^k ) for x >= 0

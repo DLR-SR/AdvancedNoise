@@ -1,4 +1,4 @@
-within Noise.RNG.SampleBased;
+within Noise.Generators.SampleBased;
 function RNG_xorshift64star "xorshift64*"
   extends Noise.Utilities.Interfaces.SampleBasedRNG;
 algorithm

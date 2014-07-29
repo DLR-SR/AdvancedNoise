@@ -8,7 +8,7 @@ function Uniform
 algorithm
 
   // Retrieve uniformly distributed random number
-  (rand,states_out) := RNG(instance=instance, states_in=states_in);
+  (rand,stateOut) := generator(stateIn=stateIn);
 
   // Transform limits of distribution
   rand              := rand*(interval[2] - interval[1]) + interval[1];

@@ -1,5 +1,5 @@
 within Noise;
-package RNG "Random number generators"
+package Generators "Random number generators"
   extends Modelica.Icons.Package;
 
 
@@ -38,4 +38,4 @@ annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100}
 <h5>Correlation of randum numbers</h5>
 <p>Are subsequent random numbers correlated? Are random numbers with different seeds correlated?</p>
 </html>"));
-end RNG;
+end Generators;

@@ -1,4 +1,4 @@
-within Noise.RNG.SampleBased;
+within Noise.Generators.SampleBased;
 function RNG_LCG
   "Linear congruential generator implementing the equation i = mod(a*i+c, m)"
   extends Noise.Utilities.Interfaces.SampleBasedRNG;

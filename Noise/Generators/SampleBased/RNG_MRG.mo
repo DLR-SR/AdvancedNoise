@@ -1,4 +1,4 @@
-within Noise.RNG.SampleBased;
+within Noise.Generators.SampleBased;
 function RNG_MRG
   "Multiple recursive generator implementing the equation i = mod( sum(a*i) + c, m)"
   extends Noise.Utilities.Interfaces.SampleBasedRNG;

@@ -1,4 +1,4 @@
-within Noise.RNG.SampleFree;
+within Noise.Generators.SampleFree;
 function RNG_Weyl
   "Number generator based on the Equidistribution Theorem (Weyl's criterion), WARNING: Not random!"
   extends Noise.Utilities.Interfaces.SampleFreeRNG;

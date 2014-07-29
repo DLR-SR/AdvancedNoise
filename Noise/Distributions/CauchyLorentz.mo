@@ -7,7 +7,7 @@ function CauchyLorentz "A random number with Cauchy-Lorentz distribution"
 algorithm
 
   // Retrieve uniformly distributed random number
-  (rand,states_out) := RNG(instance=instance, states_in=states_in);
+  (rand,states_out) :=Generators(instance=instance, states_in=states_in);
 
   // Transform by inverse cumulative density function
   // CDF = 1/pi atan( (x-mu)/gamma ) + 1/2

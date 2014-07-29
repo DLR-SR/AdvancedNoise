@@ -23,8 +23,12 @@ algorithm
 
   // Do the iterations
   for i in 1:k loop
-    (dummy, internal_states) := RNG.SampleBased.RNG_MRG(instance=real_seed, states_in=internal_states,
-                                                        a=a,c=c,m=m);
+    (dummy, internal_states) :=Generators.SampleBased.RNG_MRG(
+      instance=real_seed,
+      states_in=internal_states,
+      a=a,
+      c=c,
+      m=m);
   end for;
 
   // Fill the output state vector

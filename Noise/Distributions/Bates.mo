@@ -15,7 +15,7 @@ algorithm
   rand       := 0;
   states_out := states_in;
   for i in 1:n loop
-    (temp,states_out) := RNG(instance=instance^i, states_in=states_out);
+    (temp,states_out) :=Generators(instance=instance^i, states_in=states_out);
     rand              := rand + temp;
   end for;
 

@@ -46,7 +46,7 @@ public
   parameter Boolean useSampleBasedMethods =  false
     "Use a random number generator with sampling"
     annotation(Dialog(tab = "Advanced", group = "RNG: Random Number Generator. (This has influences on simulation speed and the quality of the random numbers.)"));
-  replaceable function SampleBasedRNG = Noise.RNG.SampleBased.RNG_LCG
+  replaceable function SampleBasedRNG = Noise.Generators.SampleBased.RNG_LCG
     constrainedby Noise.Utilities.Interfaces.SampleBasedRNG
     "Choice of sample based methods for RNG"
     annotation(choicesAllMatching=true, Dialog(tab = "Advanced", group = "RNG: Random Number Generator. (This has influences on simulation speed and the quality of the random numbers.)", enable=useSampleBasedMethods),
@@ -55,7 +55,7 @@ public
 </html>", info="<html>
 <p>This replaceable model is used, if the useSampleBased switch is set to true. You can redeclare any SampleBased RNG from here: <a href=\"Noise.RNG.SampleBased\">Noise.RNG.SampleBased</a>.</p>
 </html>"));
-  replaceable function SampleFreeRNG =  Noise.RNG.SampleFree.RNG_DIRCS
+  replaceable function SampleFreeRNG =  Noise.Generators.SampleFree.RNG_DIRCS
     constrainedby Noise.Utilities.Interfaces.SampleFreeRNG
     "Choice of sample free methods for RNG"
     annotation(choicesAllMatching=true, Dialog(tab = "Advanced", group = "RNG: Random Number Generator. (This has influences on simulation speed and the quality of the random numbers.)",enable=not useSampleBasedMethods),
