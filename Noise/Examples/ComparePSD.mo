@@ -3,17 +3,17 @@ model ComparePSD "Compares different PSDs"
   import Noise;
   extends Modelica.Icons.Example;
 
-  Noise.PRNG WhiteNoise(
+  Noise.RandomNoise WhiteNoise(
     redeclare function PSD = Noise.PSD.PSD_WhiteNoise,
     useSampleBasedMethods=false,
     redeclare function PDF = Noise.PDF.PDF_Uniform (interval={-1,1}))
     annotation (Placement(transformation(extent={{-40,30},{-20,50}})));
-  Noise.PRNG IdealLowPass(
+  Noise.RandomNoise IdealLowPass(
     redeclare function PSD = Noise.PSD.PSD_IdealLowPass (n=10),
     useSampleBasedMethods=false,
     redeclare function PDF = Noise.PDF.PDF_Uniform (interval={-1,1}))
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-  Noise.PRNG Linear(
+  Noise.RandomNoise Linear(
     redeclare function PSD = Noise.PSD.PSD_LinearInterpolation (n=5),
     useSampleBasedMethods=false,
     redeclare function PDF = Noise.PDF.PDF_Uniform (interval={-1,1}))

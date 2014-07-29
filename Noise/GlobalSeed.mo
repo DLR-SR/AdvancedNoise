@@ -5,6 +5,9 @@ model GlobalSeed "Model to define global seed value"
 
   final parameter Integer seed = userSeed;
 
+  parameter Boolean enableNoise = true;
+  parameter Boolean useGlobalSeed = true;
+
   annotation (
    defaultComponentName="globalSeed",
     defaultComponentPrefixes="inner",

@@ -1,6 +1,6 @@
 UsersGuide
 GlobalSeed
-PRNG
+RandomNoise
 TimeBasedNoise
 Examples
 RNG
