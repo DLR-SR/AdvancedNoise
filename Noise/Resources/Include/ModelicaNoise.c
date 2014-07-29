@@ -348,6 +348,20 @@ void NOISE_setExternalState(int* state, size_t p){
 
 /* original algorithms */
 
+MODELICA_EXPORT void NOISE_double2int(double d, int i[]) {
+    /* casts a double to two integers */
+    union d2i{
+        double d;
+        int    i[2];
+    } u;
+    
+    u.d  = d;
+    i[0] = u.i[0];
+    i[1] = u.i[1];
+}
+
+
+
 #define NOISE_LCG_MULTIPLIER (134775813)
 
 /* NOISE_SeedReal */

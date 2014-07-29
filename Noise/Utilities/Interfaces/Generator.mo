@@ -1,5 +1,6 @@
 within Noise.Utilities.Interfaces;
-partial function RNG "The basic interface for the random number generator"
+partial function Generator
+  "The basic interface for the random number generator"
   extends Interfaces.InputOutput;
   annotation (Icon(graphics={
         Line(points={{-80,-90},{-80,90}},   color={0,0,0}),
@@ -23,4 +24,4 @@ partial function RNG "The basic interface for the random number generator"
         revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end RNG;
+end Generator;

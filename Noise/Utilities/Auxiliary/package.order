@@ -13,4 +13,5 @@ setExternalState
 getExternalState
 rand
 srand
+convertRealToIntegers
 TestRandom

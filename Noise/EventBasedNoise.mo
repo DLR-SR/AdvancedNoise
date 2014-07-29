@@ -22,7 +22,7 @@ public
     annotation(Dialog(tab="Advanced",group = "Initialization"));
   final parameter Integer globalSeed0 = if useGlobalSeed then globalSeed.seed else 0
     "The global seed, which is atually used";
-public
+protected
   parameter Integer stateSize = 33
     "The number of states used in the random number generator";
   Integer state[stateSize] "The internal states of the random number generator";

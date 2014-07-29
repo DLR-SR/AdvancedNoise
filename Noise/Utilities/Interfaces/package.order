@@ -1,7 +1,7 @@
 InputOutput
 Seed
+Generator
 Distribution
-RNG
 SampleBasedRNG
 SampleFreeRNG
 PSD
