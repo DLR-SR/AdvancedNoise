@@ -12,7 +12,17 @@ block TimeBasedNoise
 //
 //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
-// Define distribution
+// Define a seeding function (this is hidden from the user)
+
+//
+//
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// Define distribution (implicitly contains the default random number generator)
+
+//
+//
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// Call the distribution function to fill the buffer
 
 //
 //
@@ -22,7 +32,7 @@ block TimeBasedNoise
 //
 //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
-// Call the interpolation
+// Call the interpolation with the buffer as input
 
 //
 //

@@ -149,9 +149,8 @@ protected
 public
   parameter Integer localSeed = Modelica_Random.Math.Random.hashPath(getInstanceName())
     "The local seed to the RNG initialization" annotation(Dialog(tab="Advanced",group = "Initialization"),choices(checkBox=true));
-  parameter Boolean useGlobalSeed = globalSeed.useGlobalSeed
-    "Combine local seed value with global seed" annotation(choices(choice=true "true",choice=false "false",choice=globalSeed.useGlobalSeed
-        "inherit from globalSeed"),Dialog(tab="Advanced",group = "Initialization"));
+  parameter Boolean useGlobalSeed = true
+    "Combine local seed value with global seed" annotation(Dialog(tab="Advanced",group = "Initialization"));
   final parameter Integer seed=if useGlobalSeed then
       Noise.Utilities.Auxiliary.combineSeedLCG(localSeed, globalSeed.seed)
        else localSeed;

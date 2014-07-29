@@ -1,12 +1,31 @@
 within Noise;
-model GlobalSeed "Model to define global seed value"
+model GlobalSeed
+  "Defines a global seed value and provides an impure random number generator"
+  import Noise.Utilities.Auxiliary;
 
-  parameter Integer userSeed =  1 "user defined seed value";
+// Provide a flag to globally disable noise
+public
+  parameter Boolean enableNoise = true
+    "= true, if noise generators shall be enabled. = false, if a constant substitute value shall be used"
+    annotation(choices(checkBox=true));
 
-  final parameter Integer seed = userSeed;
+// The global seed value
+public
+  parameter Boolean useGlobalInitialSeed = true
+    "= true, if reproducible sequence with the given global initial seed (otherwise global initial seed is randomly chosen based on system time and process id)"
+    annotation(choices(checkBox=true));
+  parameter Integer globalInitialSeed = 67867967
+    "Global initial seed for random number generator"  annotation(Dialog(enable=useGlobalInitialSeed));
+public
+  final parameter Integer seed = if useGlobalInitialSeed then globalInitialSeed else Auxiliary.automaticSeed();
 
-  parameter Boolean enableNoise = true;
-  parameter Boolean useGlobalSeed = true;
+// The impure global random function
+public
+  function rand = Auxiliary.rand;
+equation
+  when initial() then
+    Auxiliary.srand(seed);
+  end when;
 
   annotation (
    defaultComponentName="globalSeed",

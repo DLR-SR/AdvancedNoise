@@ -3,7 +3,7 @@ model PRNG "Shows the use of the basic PRNG block"
   import Noise;
    extends Modelica.Icons.Example;
 
-  inner GlobalSeed globalSeed
+  inner GlobalSeed globalSeed(useGlobalInitialSeed=false)
     annotation (Placement(transformation(extent={{70,70},{90,90}})));
   Noise.RandomNoise prng
     annotation (Placement(transformation(extent={{-10,-12},{10,8}})));
