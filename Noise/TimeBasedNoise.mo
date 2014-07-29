@@ -77,7 +77,8 @@ protected
 // The internal functions are used later in redeclarations
 public
   replaceable function PDF = Noise.Distributions.Uniform
-    constrainedby Noise.Utilities.Interfaces.PDF "Choice of various PDFs"
+    constrainedby Noise.Utilities.Interfaces.Distribution
+    "Choice of various PDFs"
     annotation(choicesAllMatching=true, Dialog(tab = "Advanced", group = "PDF: Probability Density Function. (This specifies the distribution of the generated random values.)"),
     Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>

@@ -6,21 +6,8 @@ protected
   Integer state[33] "The state vector";
 algorithm
 
-  // Set the first values
-  state[1:2] := xorshift64star({s,0});
-
-  // Do the iterations
-  for i in 1:p loop
-    state[1:2] := xorshift64star(state[1:2]);
-  end for;
-
-  // Fill the state vector
-  for i in 3:2:31 loop
-    state[i:i+1] := xorshift64star(state[i-2:i-1]);
-  end for;
-
-  // The last value
-  state[33] := 0;
+  // Seed the state
+  state := Noise.Seed.xorshift64star(localSeed=s, globalSeed=0, stateSize=33);
 
   // Set the state
   setExternalState(state);

@@ -11,7 +11,7 @@ partial function PSD
   input Modelica.SIunits.Time t_last
     "The last time a random number was generated";
   replaceable function PDF = Noise.Distributions.Uniform
-    constrainedby Interfaces.PDF "The probability density function to be used"
+    constrainedby Distribution "The probability density function to be used"
     annotation(choicesAllMatching=true,
                Dialog(enable=false,
                       tab = "Do not use"),

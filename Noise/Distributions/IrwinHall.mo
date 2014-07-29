@@ -1,7 +1,7 @@
 within Noise.Distributions;
 function IrwinHall
   "A random number with Irwin-Hall distribution (sum of uniform variables)"
-  extends Noise.Utilities.Interfaces.PDF;
+  extends Noise.Utilities.Interfaces.Distribution;
   input Real[2] interval = {0,1}
     "The interval from which the uniformly distributed random number is generated"
     annotation(Dialog);

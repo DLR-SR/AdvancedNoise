@@ -1,7 +1,7 @@
 within Noise.Distributions;
 function Normal
   "A random number with approximate normal distribution using the BoxMuller method"
-  extends Noise.Utilities.Interfaces.PDF;
+  extends Noise.Utilities.Interfaces.Distribution;
   input Real mu = 0 "The expectation (mean) value of the normal distribution" annotation(Dialog);
   input Real sigma = 1 "The standard deviation of the normal distribution" annotation(Dialog);
 protected

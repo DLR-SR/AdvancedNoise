@@ -1,7 +1,7 @@
 within Noise.Distributions;
 function Uniform
   "A random number with a uniform distribution in a given interval"
-  extends Noise.Utilities.Interfaces.PDF;
+  extends Noise.Utilities.Interfaces.Distribution;
   input Real[2] interval = {0,1}
     "The interval from which the uniformly distributed random number is generated"
    annotation(Dialog);

@@ -1,6 +1,6 @@
 within Noise.Distributions;
 function Discrete "A random number with discrete values of given probability"
-  extends Noise.Utilities.Interfaces.PDF;
+  extends Noise.Utilities.Interfaces.Distribution;
   import Noise.Utilities.Math.cumsum;
   input Real x[:] = {0,1} "Discrete values to be chosen from" annotation(Dialog);
   input Real p[size(x,1)] = ones(size(x,1))/size(x,1)

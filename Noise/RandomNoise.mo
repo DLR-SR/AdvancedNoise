@@ -48,7 +48,7 @@ protected
 // The internal functions are used later in redeclarations
 public
   replaceable function distribution = Noise.Distributions.Uniform
-    constrainedby Noise.Utilities.Interfaces.PDF
+    constrainedby Noise.Utilities.Interfaces.Distribution
     "Select a distribution of the random values"
     annotation(choicesAllMatching=true, Dialog,
     Documentation(revisions="<html>

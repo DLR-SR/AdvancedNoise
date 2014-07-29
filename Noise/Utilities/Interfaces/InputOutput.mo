@@ -11,5 +11,9 @@ partial function InputOutput
     "The new states of a recursive random number generator";
   annotation (Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
-</html>"));
+</html>"), Icon(graphics={
+        Rectangle(
+          lineColor={255,128,0},
+          extent={{-100,-100},{100,100}},
+          radius=25)}));
 end InputOutput;

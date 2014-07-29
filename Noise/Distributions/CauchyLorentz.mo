@@ -1,6 +1,6 @@
 within Noise.Distributions;
 function CauchyLorentz "A random number with Cauchy-Lorentz distribution"
-  extends Noise.Utilities.Interfaces.PDF;
+  extends Noise.Utilities.Interfaces.Distribution;
   import Modelica.Constants.pi;
   input Real mu = 0 "The expectation (mean) value of the distribution" annotation(Dialog);
   input Real gamma = 1 "The standard deviation of the normal distribution" annotation(Dialog);
