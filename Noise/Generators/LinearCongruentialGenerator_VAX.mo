@@ -1,6 +1,6 @@
 within Noise.Generators;
 function LinearCongruentialGenerator_VAX =
-                                    LinearCongruentialGenerator (
+  LinearCongruentialGenerator (
     a=69069,
     c=1,
     m=integer(2^32))
