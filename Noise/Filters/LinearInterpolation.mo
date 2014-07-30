@@ -1,7 +1,6 @@
 within Noise.Filters;
 function LinearInterpolation "Linear interpolation between the noise samples"
-  extends ArbitraryInterpolation(
-                            redeclare function Kernel = Kernels.Linear, n=1);
+  extends ArbitraryInterpolation(kernel = Kernels.Linear, n=1);
   annotation (Icon(graphics={Line(
           points={{-60,-60},{60,60}},
           color={255,0,0}),

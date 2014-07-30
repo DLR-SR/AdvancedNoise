@@ -81,7 +81,7 @@ protected
 public
   replaceable function interpolation = Noise.Filters.SampleAndHold
                                                                 constrainedby
-    Noise.Utilities.Interfaces.PSD
+    Noise.Utilities.Interfaces.Filter
     "Choice of various filters for the frequency domain"
     annotation(choicesAllMatching=true, Dialog(tab = "Advanced", group = "Filter for continuous signal generation", enable = not infiniteFreq or useSampleBasedMethods),
     Documentation(revisions="<html>

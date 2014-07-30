@@ -1,33 +1,17 @@
 within Noise.Filters;
-function PSD_Convolution
-  "Apply an arbitrary filter by convolution with its impulse response"
+function ArbitraryInterpolation334
+  "Apply an arbitrary interpolation by convolution with a Kernel"
   extends Noise.Utilities.Interfaces.Filter;
-  replaceable function Kernel = Noise.Filters.Kernels.IdealLowPass
-    constrainedby Utilities.Interfaces.Kernel
+  input Utilities.Interfaces.Kernel kernel = Noise.Filters.Kernels.IdealLowPass
     annotation(choicesAllMatching=true, Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-
-  input Integer n = 5 "Number of support points for convolution" annotation(Dialog);
-  input Integer max_n = n "Maximum nummber of support points for comparability"
-                                                          annotation(Dialog);
-
-protected
-  Real raw "The raw random numbers from the PDF function";
-  Real coefficient "The convolution coefficients";
-  Real coefficient_l "The convolution coefficients";
-  Real coefficient_r "The convolution coefficients";
-  Real scaling1 "The scaling to make sure, a constant signal remains constant";
-  Real scaling2 "The scaling to make sure, the variance remains";
-  Integer states_temp[size(states_in,1)]
-    "Intermediate states for recurrent RNGs";
-    Integer j;
 algorithm
+  assert(mod(size(samples,1),2) < 0.5, "The number of supplied samples must be even!");
 
 // Initialize the convolution algorithm
   rand        := 0;
-  scaling1    := 0;
-  scaling2    := 0;
+  scaling     := 0;
   states_temp := states_in;
 
 // Make sure, the recurrent generators are centered
@@ -66,47 +50,27 @@ algorithm
 // The random number is for time =     (floor(t/dt) * dt + i * dt)
 // The kernel result is for time = t - (floor(t/dt) * dt + i * dt)
 // or, if sampled:          time = t - (    t_last       + i * dt)
-
-    coefficient_l      := if t_last <= t then Kernel(t=     -              n*dt, dt=dt) else
-                                              Kernel(t=     -              n*dt, dt=dt);
-    coefficient_r      := if t_last <= t then Kernel(t=   t - (    t_last-n *dt)+dt, dt=dt) else
-                                              Kernel(t=   t - (floor(t/dt-n)*dt)+dt, dt=dt);
-//    rand := rand + raw*(coefficient_r - coefficient_l);
-
-    coefficient_l      := if t_last <= t then Kernel(t=   t - (    t_last+j *dt)-dt, dt=dt) else
-                                              Kernel(t=   t - (floor(t/dt+j)*dt)-dt, dt=dt);
-    coefficient_r      := if t_last <= t then Kernel(t=   t - (    t_last+j *dt), dt=dt) else
-                                              Kernel(t=   t - (floor(t/dt+j)*dt), dt=dt);
-
   for i in (-n+1):(n) loop
     (raw, states_temp) := PDF(states_in=states_temp, instance=(floor(t/dt+i)*dt));
     coefficient        := if t_last <= t then Kernel(t=   t - (    t_last+i *dt), dt=dt) else
                                               Kernel(t=   t - (floor(t/dt+i)*dt), dt=dt);
-    coefficient_l      := if t_last <= t then Kernel(t=   t - (    t_last+i *dt), dt=dt) else
-                                              Kernel(t=   t - (floor(t/dt+i)*dt), dt=dt);
-    coefficient_r      := if t_last <= t then Kernel(t=   t - (    t_last+i *dt)+dt, dt=dt) else
-                                              Kernel(t=   t - (floor(t/dt+i)*dt)+dt, dt=dt);
 
   //  Modelica.Utilities.Streams.print("i=" + String(i) + ", raw=" + String(raw));
-//    rand               := rand + raw*coefficient;
-    rand               := rand + raw*(coefficient_r-coefficient_l);
-    scaling1           := scaling1 + coefficient^1;
-    scaling2           := scaling2 + coefficient^2;
+    rand               := rand + raw*coefficient;
+    scaling            := scaling + coefficient;
+
+    if i == 0 then
+      rand_hold := raw;
+    end if;
   end for;
 
-// Scale according to dt and n
-  //rand := rand / 1;//dt;//sqrt((2*n+1) *dt^2);
-
 // Scale the result in order to smooth higher harmonics
-  //rand := rand / scaling1;
-
-// Scale the result in order to match the variance
-  //rand := rand * sqrt(abs(scaling1)) / sqrt(scaling2);
+  rand := rand / scaling;
 
 // Make sure, the output states_out for recurrent generators are senseful
-  (rand_hold, states_out)    := PDF(states_in=states_in,   instance=floor(t/dt)*dt+dt);
+  (raw, states_out)    := PDF(states_in=states_in,   instance=floor(t/dt)*dt);
 
   annotation ( Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end PSD_Convolution;
+end ArbitraryInterpolation334;

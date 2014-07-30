@@ -1,16 +1,11 @@
 within Noise.Filters;
 function SampleAndHold
   "Unmodified white noise with constant power spectral density"
-  extends Noise.Utilities.Interfaces.PSD;
+  extends Noise.Utilities.Interfaces.Filter;
 algorithm
 
   // Make sure, we can pass highest-frequency noise!
-  if dt > 0 then
-    (rand, states_out) := PDF(instance=floor(t/dt)*dt, states_in=states_in);
-  else
-    (rand, states_out) := PDF(instance=t,              states_in=states_in);
-  end if;
-  rand_hold:=rand;
+  y := buffer[integer(offset+1)];
 
   annotation (Icon(graphics={Line(
           points={{-80,60},{-80,-76},{60,-76}},

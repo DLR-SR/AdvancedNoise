@@ -108,7 +108,7 @@ protected
 public
   replaceable function PSD = Noise.Filters.SampleAndHold
                                                       constrainedby
-    Noise.Utilities.Interfaces.PSD
+    Noise.Utilities.Interfaces.Filter
     "Choice of various filters for the frequency domain"
     annotation(choicesAllMatching=true, Dialog(tab = "Advanced", group = "PSD: Power Spectral Density. (This specifies the frequency characteristics of the random signal.)", enable = not infiniteFreq or useSampleBasedMethods),
     Documentation(revisions="<html>
