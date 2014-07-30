@@ -1,4 +1,4 @@
-within Noise.PSD;
+within Noise.Filters;
 function PSD_LinearInterpolation
   "Linear interpolation between the noise samples"
   extends PSD_Interpolation(redeclare function Kernel = Kernels.Linear, n=1);

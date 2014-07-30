@@ -1,4 +1,4 @@
-within Noise.PSD.Kernels;
+within Noise.Filters.Kernels;
 function IdealLowPass "The kernel for an ideal low-pass filter"
   extends Noise.Utilities.Interfaces.Kernel;
   import Noise.Utilities.Math.sinc;

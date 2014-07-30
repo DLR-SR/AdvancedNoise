@@ -4,7 +4,7 @@ model Analysis "Shows how to analyze a noise signal"
   extends Modelica.Icons.Example;
 
   Noise.RandomNoise prng(
-    redeclare function PSD = Noise.PSD.PSD_WhiteNoise,
+    redeclare function PSD = Noise.Filters.PSD_WhiteNoise,
     redeclare function PDF = Noise.Distributions.Normal,
     redeclare function SampleBasedRNG =
         Noise.Generators.MultipleRecursiveGenerator,

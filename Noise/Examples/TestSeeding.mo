@@ -7,7 +7,7 @@ model TestSeeding
         Noise.Generators.LinearCongruentialGenerator_NumericalRecipes,
     redeclare function PDF = Noise.Distributions.Uniform,
     redeclare function SampleFreeRNG = Noise.Generators.SampleFree.RNG_DIRCS,
-    redeclare function PSD = Noise.PSD.PSD_WhiteNoise,
+    redeclare function PSD = Noise.Filters.PSD_WhiteNoise,
     useGlobalSeed=true,
     useSampleBasedMethods=false,
     infiniteFreq=false,

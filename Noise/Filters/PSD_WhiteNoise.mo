@@ -1,4 +1,4 @@
-within Noise.PSD;
+within Noise.Filters;
 function PSD_WhiteNoise
   "Unmodified white noise with constant power spectral density"
   extends Noise.Utilities.Interfaces.PSD;

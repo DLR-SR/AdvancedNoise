@@ -1,9 +1,9 @@
-within Noise.PSD;
+within Noise.Filters;
 function PSD_Convolution
   "Apply an arbitrary filter by convolution with its impulse response"
   extends Noise.Utilities.Interfaces.PSD;
-  replaceable function Kernel = Noise.PSD.Kernels.IdealLowPass constrainedby
-    Utilities.Interfaces.Kernel
+  replaceable function Kernel = Noise.Filters.Kernels.IdealLowPass
+    constrainedby Utilities.Interfaces.Kernel
     annotation(choicesAllMatching=true, Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));

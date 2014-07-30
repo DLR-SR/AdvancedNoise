@@ -1,4 +1,4 @@
-within Noise.PSD.Kernels;
+within Noise.Filters.Kernels;
 function FirstOrder "The kernel for a first order filter"
   extends Noise.Utilities.Interfaces.Kernel;
   input Real k=1 "Gain" annotation(Dialog);

@@ -1,4 +1,4 @@
-within Noise.PSD.Kernels;
+within Noise.Filters.Kernels;
 function Linear "The kernel for linear interpolation"
   extends Noise.Utilities.Interfaces.Kernel;
   import Modelica.Constants.pi;

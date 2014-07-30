@@ -1,4 +1,4 @@
-within Noise.PSD;
+within Noise.Filters;
 function PSD_IdealLowPass
   "An ideal low-pass filter based on the convolution with the sinc function"
   extends PSD_Interpolation(redeclare function Kernel = Kernels.IdealLowPass);

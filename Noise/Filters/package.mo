@@ -1,5 +1,5 @@
 within Noise;
-package PSD "Power spectral density functions"
+package Filters "Power spectral density functions"
 
 
   extends Noise.Utilities.Icons.PSDPackage;
@@ -20,4 +20,4 @@ annotation (Documentation(revisions="<html>
           extent={{-10,100},{100,-80}},
           lineColor={255,0,0},
         textString="?")}));
-end PSD;
+end Filters;

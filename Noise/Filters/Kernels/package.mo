@@ -1,4 +1,4 @@
-within Noise.PSD;
+within Noise.Filters;
 package Kernels "A collection of useful kernels for the convolution filter"
   extends Modelica.Icons.Package;
 

@@ -1,4 +1,4 @@
-within Noise.PSD.Kernels;
+within Noise.Filters.Kernels;
 function Gaussian "The kernel for a Gaussian filter"
   extends Noise.Utilities.Interfaces.Kernel;
   import Modelica.Constants.pi;
