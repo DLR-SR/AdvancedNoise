@@ -52,7 +52,7 @@ public
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Define interpolation
 public
-  replaceable function interpolation = Noise.Filters.SampleAndHold
+  replaceable function interpolation = Noise.Filters.ArbitraryInterpolation(kernel=Noise.Filters.Kernels.IdealLowPass,n=1)
     constrainedby Noise.Utilities.Interfaces.Filter
     "Choice of various filters for the frequency domain"
     annotation(choicesAllMatching=true,
@@ -122,7 +122,7 @@ algorithm
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Call the interpolation with the buffer as input
 equation
-  y = if time >= startTime then interpolation(buffer=buffer,
+  y = if time >= startTime then interpolation(buffer=buffer,kernel=function Noise.Filters.Kernels.IdealLowPass(B=0.5),n=4,
                                               offset=(time-bufferStartTime) / samplePeriod + bufferOverlap) else 0;
 
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},

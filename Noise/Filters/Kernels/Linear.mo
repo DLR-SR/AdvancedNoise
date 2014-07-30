@@ -6,6 +6,9 @@ algorithm
   h := if t < -dt then 0        else
        if t <   0 then (1+t/dt) else
        if t <  dt then (1-t/dt) else 0;
+//   h := if t < -dt then 0        else
+//        if t <   0 then 1 else
+//        if t <  dt then 0 else 0;
 
   annotation (Icon(graphics={Line(
           points={{-80,-10},{-60,-10},{-10,60},{40,-10},{60,-10}},

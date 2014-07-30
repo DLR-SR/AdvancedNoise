@@ -50,13 +50,16 @@ algorithm
   for i in (1-n):(n) loop
     coefficient        := kernel(t=mod(offset,1)+i, dt=1);
 
-    //  Modelica.Utilities.Streams.print("i=" + String(i) + ", raw=" + String(raw));
-    y                  := y + buffer[integer(offset)+i]*coefficient;
+    Modelica.Utilities.Streams.print("i=" + String(i) + ", "
+                                    +"t=" + String(mod(offset,1)+i) + ", "
+                                    +"k=" + String(coefficient));
+    y                  := y + buffer[integer(offset)-i+1]*coefficient;
     scaling            := scaling + coefficient;
   end for;
 
   // Scale the result in order to smooth higher harmonics
-  y := y;// / scaling;
+  y := y / scaling;
+//  y:=buffer[integer(offset)+1];
 
   annotation ( Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
