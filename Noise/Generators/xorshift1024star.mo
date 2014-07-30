@@ -1,5 +1,5 @@
 within Noise.Generators;
-function xorshift1024star "The xorshift1024star generator"
+function xorshift1024star "The xorshift1024* generator"
   extends Noise.Utilities.Interfaces.Generator;
   input Integer p = 1 "Number if iterations to do";
 algorithm

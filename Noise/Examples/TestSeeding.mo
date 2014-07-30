@@ -4,7 +4,7 @@ model TestSeeding
 
   Noise.RandomNoise prng(
     redeclare function SampleBasedRNG =
-        Noise.Generators.SampleBased.RNG_LCG_NumericalRecipes,
+        Noise.Generators.LinearCongruentialGenerator_NumericalRecipes,
     redeclare function PDF = Noise.Distributions.Uniform,
     redeclare function SampleFreeRNG = Noise.Generators.SampleFree.RNG_DIRCS,
     redeclare function PSD = Noise.PSD.PSD_WhiteNoise,

@@ -1,5 +1,5 @@
 within Noise.Generators;
-function xorshift64star "The xorshift64star generator"
+function xorshift64star "The xorshift64* generator"
   extends Noise.Utilities.Interfaces.Generator;
   input Integer p = 1 "Number if itrations to do";
 algorithm

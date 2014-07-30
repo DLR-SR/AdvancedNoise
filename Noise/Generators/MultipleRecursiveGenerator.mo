@@ -1,5 +1,5 @@
-within Noise.Generators.SampleBased;
-function RNG_MRG
+within Noise.Generators;
+function MultipleRecursiveGenerator
   "Multiple recursive generator implementing the equation i = mod( sum(a*i) + c, m)"
   extends Noise.Utilities.Interfaces.SampleBasedRNG;
   input Integer[:] a = {1071064,0,0,0,0,0,2113664}
@@ -33,4 +33,4 @@ algorithm
   annotation ( Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end RNG_MRG;
+end MultipleRecursiveGenerator;

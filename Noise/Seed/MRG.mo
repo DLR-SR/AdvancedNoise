@@ -23,7 +23,7 @@ algorithm
 
   // Do the iterations
   for i in 1:k loop
-    (dummy, internal_states) :=Generators.SampleBased.RNG_MRG(
+    (dummy, internal_states) :=Generators.MultipleRecursiveGenerator(
       instance=real_seed,
       states_in=internal_states,
       a=a,

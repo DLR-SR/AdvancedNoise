@@ -11,10 +11,10 @@ model CompareRNG
     annotation (Placement(transformation(extent={{-72,2},{-52,22}})));
   Noise.RandomNoise NumericalRecipes(useSampleBasedMethods=true, redeclare
       function SampleBasedRNG =
-        Noise.Generators.SampleBased.RNG_LCG_NumericalRecipes)
+        Noise.Generators.LinearCongruentialGenerator_NumericalRecipes)
     annotation (Placement(transformation(extent={{-72,-78},{-52,-58}})));
   Noise.RandomNoise VAX(useSampleBasedMethods=true, redeclare function
-      SampleBasedRNG = Noise.Generators.SampleBased.RNG_LCG_VAX)
+      SampleBasedRNG = Noise.Generators.LinearCongruentialGenerator_VAX)
     annotation (Placement(transformation(extent={{-34,-78},{-14,-58}})));
   Parts.Modelica_LinearSystems2.Controller.Noise LinearSystems2(y_min=0, y_max=
         1) annotation (Placement(transformation(extent={{-40,70},{-20,90}})));

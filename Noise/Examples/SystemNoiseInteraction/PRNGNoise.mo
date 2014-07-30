@@ -7,7 +7,7 @@ model PRNGNoise "Shows the modelling of a noisy sensor"
     infiniteFreq=false,
     redeclare function SampleFreeRNG = Noise.Generators.SampleFree.RNG_DIRCS,
     redeclare function SampleBasedRNG =
-        Noise.Generators.SampleBased.RNG_LCG_NumericalRecipes,
+        Noise.Generators.LinearCongruentialGenerator_NumericalRecipes,
     useSampleBasedMethods=false,
     redeclare function PDF = Noise.Distributions.Bates (
                                                   interval={-0.05,0.05}, n=20),

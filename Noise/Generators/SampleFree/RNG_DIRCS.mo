@@ -10,7 +10,8 @@ function RNG_DIRCS "DIRCS Immediate Random with Continuous Seed"
 </html>", info="<html>
 <p>This replaceable function is used to seed the RNG used in the DIRCS algorithm. You can redeclare any function from here: <a href=\"Noise.Seed\">Noise.Seed</a>.</p>
 </html>"));
-  replaceable function RNG = Noise.Generators.SampleBased.RNG_MRG (a={134775813,
+  replaceable function RNG = Noise.Generators.MultipleRecursiveGenerator (
+                                                                   a={134775813,
           134775813}, c=1) constrainedby Noise.Utilities.Interfaces.Generator
     "The random number generator function to be used"
     annotation(choicesAllMatching=true, Dialog,

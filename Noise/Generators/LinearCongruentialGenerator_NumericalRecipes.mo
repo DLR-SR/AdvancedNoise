@@ -1,5 +1,6 @@
-within Noise.Generators.SampleBased;
-function RNG_LCG_NumericalRecipes = RNG_LCG (
+within Noise.Generators;
+function LinearCongruentialGenerator_NumericalRecipes =
+                                    LinearCongruentialGenerator (
     a=1664525,
     c=1013904223,
     m=integer(2^32))

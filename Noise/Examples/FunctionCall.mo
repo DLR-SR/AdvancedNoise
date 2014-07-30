@@ -35,7 +35,7 @@ model FunctionCall "Shows how to use the internal random functions"
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Using the random number generators with states
   function my_sampled_random = Distributions.Normal (
-    redeclare function RNG = SampleBased.RNG_LCG,
+    redeclare function RNG = Generators.LinearCongruentialGenerator,
     mu = -20, sigma = 10,
     instance = 0) "The state-less random number generator" annotation (
       Documentation(revisions="<html>

@@ -1,4 +1,7 @@
 xorshift64star
 xorshift1024star
-SampleBased
+LinearCongruentialGenerator
+LinearCongruentialGenerator_NumericalRecipes
+LinearCongruentialGenerator_VAX
+MultipleRecursiveGenerator
 SampleFree
