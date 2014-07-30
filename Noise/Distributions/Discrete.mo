@@ -1,5 +1,6 @@
 within Noise.Distributions;
-function Discrete "A random number with discrete values of given probability"
+function Discrete
+  "Discrete distribution with given values of given probability"
   extends Noise.Utilities.Interfaces.Distribution;
   import Noise.Utilities.Math.cumsum;
   input Real x[:] = {0,1} "Discrete values to be chosen from" annotation(Dialog);
@@ -11,7 +12,8 @@ protected
 algorithm
 
   // Retrieve a raw uniformly distributed random number
-  (raw,states_out) :=Generators(instance=instance, states_in=states_in);
+  stateOut       := stateIn;
+  (raw,stateOut) := generator(stateIn=stateOut);
 
   // Scale raw to range up to max(P)
   raw := raw * max(P);

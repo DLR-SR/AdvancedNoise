@@ -6,7 +6,7 @@ algorithm
   assert(size(stateIn,1) >= 2, "State must have at least 2 elements!");
 
   // Calculate new state
-  stateOut           := stateIn;
+  stateOut                := stateIn;
   for i in 1:p loop
     (stateOut[1:2], rand) := Noise.Utilities.Auxiliary.xorshift64star(stateOut[1:2]);
   end for;

@@ -1,12 +1,13 @@
 within Noise.Distributions;
-function Weibull "A random number with Weibull distribution"
+function Weibull "Weibull distribution with given scale and shape parameters"
   extends Noise.Utilities.Interfaces.Distribution;
   input Real lambda(min=0) = 1 "The scale parameter of the distribution" annotation(Dialog);
   input Real k(min=0) = 1 "The shape parameter of the normal distribution" annotation(Dialog);
 algorithm
 
   // Retrieve uniformly distributed random number
-  (rand,states_out) :=Generators(instance=instance, states_in=states_in);
+  stateOut        := stateIn;
+  (rand,stateOut) := generator(stateIn=stateOut);
 
   // Transform by inverse cumulative density function
   // CDF = 1 - exp( -(x/lambda)^k ) for x >= 0

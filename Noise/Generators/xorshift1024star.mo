@@ -6,7 +6,7 @@ algorithm
   assert(size(stateIn,1) >= 33, "State must have at least 33 elements!");
 
   // Calculate new state
-  stateOut           := stateIn;
+  stateOut                 := stateIn;
   for i in 1:p loop
     (stateOut[1:33], rand) := Noise.Utilities.Auxiliary.xorshift1024star(stateOut[1:33]);
   end for;

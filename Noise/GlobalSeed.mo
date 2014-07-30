@@ -27,6 +27,11 @@ equation
     Auxiliary.srand(seed);
   end when;
 
+// The pure global random function
+public
+  replaceable function generator = Noise.Generators.xorshift1024star
+    constrainedby Noise.Utilities.Interfaces.Generator;
+
   annotation (
    defaultComponentName="globalSeed",
     defaultComponentPrefixes="inner",

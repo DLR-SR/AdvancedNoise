@@ -1,13 +1,15 @@
 within Noise.Distributions;
-function CauchyLorentz "A random number with Cauchy-Lorentz distribution"
+function CauchyLorentz
+  "Cauchy-Lorentz distribution with given mean and scale parameters"
   extends Noise.Utilities.Interfaces.Distribution;
   import Modelica.Constants.pi;
   input Real mu = 0 "The expectation (mean) value of the distribution" annotation(Dialog);
-  input Real gamma = 1 "The standard deviation of the normal distribution" annotation(Dialog);
+  input Real gamma = 1 "The scale parameter" annotation(Dialog);
 algorithm
 
   // Retrieve uniformly distributed random number
-  (rand,states_out) :=Generators(instance=instance, states_in=states_in);
+  stateOut        := stateIn;
+  (rand,stateOut) := generator(stateIn=stateOut);
 
   // Transform by inverse cumulative density function
   // CDF = 1/pi atan( (x-mu)/gamma ) + 1/2

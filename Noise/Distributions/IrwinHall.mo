@@ -1,6 +1,6 @@
 within Noise.Distributions;
 function IrwinHall
-  "A random number with Irwin-Hall distribution (sum of uniform variables)"
+  "Irwin-Hall distribution (sum of uniform variables in a given interval)"
   extends Noise.Utilities.Interfaces.Distribution;
   input Real[2] interval = {0,1}
     "The interval from which the uniformly distributed random number is generated"
@@ -13,10 +13,10 @@ algorithm
 
   // Retrieve n uniformly distributed random numbers and sum them up
   rand       := 0;
-  states_out := states_in;
+  stateOut   := stateIn;
   for i in 1:n loop
-    (temp,states_out) :=Generators(instance=instance^i, states_in=states_out);
-    rand              := rand + temp;
+    (temp,stateOut) := generator(stateIn=stateOut);
+    rand            := rand + temp;
   end for;
 
   // Scale with interval boundaries

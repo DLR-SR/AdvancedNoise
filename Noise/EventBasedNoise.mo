@@ -30,8 +30,6 @@ protected
   replaceable function Seed = Noise.Seed.xorshift64star
     constrainedby Noise.Utilities.Interfaces.Seed
     "The seeding function to be used";
-initial equation
-  pre(state) = Seed(localSeed=localSeed, globalSeed=globalSeed0, stateSize=stateSize);
 
 //
 //
@@ -51,16 +49,41 @@ public
 //
 //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
-// Call the distribution function to fill the buffer
+// Define sampling properties
 public
-  parameter Integer bufferSize = 1;
-  //final parameter Integer bufferOverlap = 5;
-  discrete Real buffer[bufferSize];
+  parameter Modelica.SIunits.Time startTime = 0.5
+    "Start time for sampling the raw random numbers"
+    annotation(Dialog);
+  parameter Modelica.SIunits.Time samplePeriod = 0.01*10
+    "Period for sampling the raw random numbers"
+    annotation(Dialog);
+
+//
+//
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// Define a buffer to reduce sampling
+public
+  parameter Integer bufferSize = 1
+    "The size of the random number buffer (reduces generated time events)";
+  final parameter Integer bufferOverlap = 5;
+  discrete Real buffer[bufferSize+2*bufferOverlap];
+
+//
+//
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// Generate the raw random numbers
+initial algorithm
+  state := Seed(localSeed=localSeed, globalSeed=globalSeed0, stateSize=stateSize);
+  for i in 1:size(buffer,1) loop
+    (buffer[i],state) := distribution(generator=globalSeed.generator, stateIn=state);
+  end for;
 algorithm
-  when sample(0,0.1) then
-    for i in 1:bufferSize loop
-      // The generator must be passed due to a bug in Dymola
-      (buffer[i],state) := distribution(generator=Noise.Generators.xorshift1024star, stateIn=state);
+  when sample(startTime,samplePeriod*bufferSize) then
+    buffer[1:size(buffer,1)-bufferSize] := buffer[bufferSize+1:end];
+    for i in (size(buffer,1)-bufferSize+1):size(buffer,1) loop
+      // The generator must be passed due to a bug in Dymola.
+      // So we can as well provide a switch in the globalSeed model.
+      (buffer[i],state) := distribution(generator=globalSeed.generator, stateIn=state);
     end for;
   end when;
 
@@ -73,8 +96,7 @@ algorithm
 //
 // // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
 // Call the interpolation with the buffer as input
-equation
-y= 0;
+y:=0;
 
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
             {100,100}}),
