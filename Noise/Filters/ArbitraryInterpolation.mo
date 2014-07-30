@@ -1,5 +1,5 @@
 within Noise.Filters;
-function PSD_Interpolation
+function ArbitraryInterpolation
   "Apply an arbitrary interpolation by convolution with a Kernel"
   extends Noise.Utilities.Interfaces.PSD;
   replaceable function Kernel = Noise.Filters.Kernels.IdealLowPass
@@ -84,4 +84,4 @@ algorithm
   annotation ( Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end PSD_Interpolation;
+end ArbitraryInterpolation;

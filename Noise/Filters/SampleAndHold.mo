@@ -1,5 +1,5 @@
 within Noise.Filters;
-function PSD_WhiteNoise
+function SampleAndHold
   "Unmodified white noise with constant power spectral density"
   extends Noise.Utilities.Interfaces.PSD;
 algorithm
@@ -17,4 +17,4 @@ algorithm
           color={255,0,0})}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end PSD_WhiteNoise;
+end SampleAndHold;

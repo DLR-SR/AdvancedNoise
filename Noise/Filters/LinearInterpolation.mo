@@ -1,7 +1,7 @@
 within Noise.Filters;
-function PSD_LinearInterpolation
-  "Linear interpolation between the noise samples"
-  extends PSD_Interpolation(redeclare function Kernel = Kernels.Linear, n=1);
+function LinearInterpolation "Linear interpolation between the noise samples"
+  extends ArbitraryInterpolation(
+                            redeclare function Kernel = Kernels.Linear, n=1);
   annotation (Icon(graphics={Line(
           points={{-60,-60},{60,60}},
           color={255,0,0}),
@@ -17,4 +17,4 @@ function PSD_LinearInterpolation
           fillPattern=FillPattern.Solid)}), Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end PSD_LinearInterpolation;
+end LinearInterpolation;

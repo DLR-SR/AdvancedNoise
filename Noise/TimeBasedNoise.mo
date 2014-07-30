@@ -106,7 +106,7 @@ protected
     "Cut-off frequency. Period = 1/(2*freq)"
     annotation(Dialog(tab = "Advanced", group = "PSD: Power Spectral Density. (This specifies the frequency characteristics of the random signal.)", enable = not infiniteFreq or useSampleBasedMethods));
 public
-  replaceable function PSD = Noise.Filters.PSD_WhiteNoise
+  replaceable function PSD = Noise.Filters.SampleAndHold
                                                       constrainedby
     Noise.Utilities.Interfaces.PSD
     "Choice of various filters for the frequency domain"
@@ -122,7 +122,7 @@ protected
   function SampleFreePSD0 =
     PSD (                    redeclare function PDF=SampleFreePDF0);
   function InfiniteFreqPSD0 =
-    Noise.Filters.PSD_WhiteNoise (
+    Noise.Filters.SampleAndHold (
                              redeclare function PDF=SampleFreePDF0);
 
 //

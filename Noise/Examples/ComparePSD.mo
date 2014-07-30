@@ -4,21 +4,20 @@ model ComparePSD "Compares different PSDs"
   extends Modelica.Icons.Example;
 
   Noise.RandomNoise WhiteNoise(
-    redeclare function PSD = Noise.Filters.PSD_WhiteNoise,
+    redeclare function PSD = Noise.Filters.SampleAndHold,
     useSampleBasedMethods=false,
     redeclare function PDF = Noise.Distributions.Uniform (
                                                     interval={-1,1}))
     annotation (Placement(transformation(extent={{-40,30},{-20,50}})));
   Noise.RandomNoise IdealLowPass(
-    redeclare function PSD = Noise.Filters.PSD_IdealLowPass (
+    redeclare function PSD = Noise.Filters.SmoothInterpolation (
                                                          n=10),
     useSampleBasedMethods=false,
     redeclare function PDF = Noise.Distributions.Uniform (
                                                     interval={-1,1}))
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Noise.RandomNoise Linear(
-    redeclare function PSD = Noise.Filters.PSD_LinearInterpolation (
-                                                                n=5),
+    redeclare function PSD = Noise.Filters.LinearInterpolation (n=5),
     useSampleBasedMethods=false,
     redeclare function PDF = Noise.Distributions.Uniform (
                                                     interval={-1,1}))

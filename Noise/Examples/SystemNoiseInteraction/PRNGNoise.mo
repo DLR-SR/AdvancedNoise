@@ -12,7 +12,7 @@ model PRNGNoise "Shows the modelling of a noisy sensor"
     redeclare function PDF = Noise.Distributions.Bates (
                                                   interval={-0.05,0.05}, n=20),
     samplePeriod=1/6000*downSampling,
-    redeclare function PSD = Noise.Filters.PSD_WhiteNoise)
+    redeclare function PSD = Noise.Filters.SampleAndHold)
     annotation (Placement(transformation(extent={{-38,-10},{-18,10}})));
 
   Modelica.Blocks.Continuous.CriticalDamping criticalDamping(f=10,
