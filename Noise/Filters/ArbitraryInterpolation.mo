@@ -50,9 +50,10 @@ algorithm
   for i in (1-n):(n) loop
     coefficient        := kernel(t=mod(offset,1)+i, dt=1);
 
-    Modelica.Utilities.Streams.print("i=" + String(i) + ", "
-                                    +"t=" + String(mod(offset,1)+i) + ", "
-                                    +"k=" + String(coefficient));
+//     Modelica.Utilities.Streams.print("i=" + String(i) + ", "
+//                                     +"t=" + String(mod(offset,1)+i) + ", "
+//                                     +"k=" + String(coefficient)+ ", "
+//                                     +"o=" + String(offset));
     y                  := y + buffer[integer(offset)-i+1]*coefficient;
     scaling            := scaling + coefficient;
   end for;
