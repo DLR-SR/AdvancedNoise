@@ -15,7 +15,7 @@ block EventBasedNoise "A noise generator based on discrete time events"
 // Define a seeding function (this is hidden from the user)
 public
   parameter Boolean useGlobalSeed = true
-    "= true, if the global seed shall be combined with the local seed. = false, if the globalSeed shall be ignored"
+    "= true: global seed influences random numbers. = false: global seeed is ignored"
     annotation(choices(checkBox=true),Dialog(tab="Advanced",group = "Initialization"));
   parameter Integer localSeed = Auxiliary.hashString(Auxiliary.removePackageName(getInstanceName()))
     "The local seed for initializing the random number generator"
@@ -39,7 +39,7 @@ protected
 public
   replaceable function distribution = Noise.Distributions.Uniform
     constrainedby Noise.Utilities.Interfaces.Distribution
-    "Select a distribution of the random values"
+    "Choice of distributions of the random values"
     annotation(choicesAllMatching=true, Dialog,
     Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
@@ -58,6 +58,20 @@ public
   parameter Modelica.SIunits.Time samplePeriod = 0.01*10
     "Period for sampling the raw random numbers"
     annotation(Dialog);
+
+//
+//
+// // // // // // // // // // // // // // // // // // // // // // // // // // // // // //
+// A switch to turn off noise generation
+public
+  parameter Boolean enableNoise = globalSeed.enableNoise
+    "=false: Use constant output signal. =true: Use noise generation"
+    annotation(choices(choice=true "true",
+                       choice=false "false",
+                       choice=globalSeed.enableNoise "inherit from globalSeed"),
+               Dialog(tab="Advanced",group = "Enable/Disable"));
+  parameter Real y_off = 0 "Output value, if disabled"
+    annotation(Dialog(tab="Advanced",group = "Enable/Disable"));
 
 //
 //
