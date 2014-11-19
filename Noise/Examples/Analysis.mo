@@ -7,7 +7,7 @@ model Analysis "Shows how to analyze a noise signal"
     redeclare function PSD = Noise.Filters.SampleAndHold,
     redeclare function PDF = Noise.Distributions.Normal,
     redeclare function SampleBasedRNG =
-        Noise.Generators.MultipleRecursiveGenerator,
+        Noise.Generators.MultipleRecursiveGenerator_f,
     useSampleBasedMethods=false)
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
   Noise.Utilities.Analysis.Mu mu

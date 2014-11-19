@@ -3,7 +3,7 @@ function xorshift64star "Uses the xorshift64star algorithm for seeding"
   extends Utilities.Interfaces.Seed;
   import Noise.Utilities.Auxiliary.xorshift64star;
 protected
-  constant Integer p = 20 "The number of iterations to use";
+  constant Integer p = 20 "The number of iterations to use" annotation(Dialog);
 algorithm
 
   // Set the first values
@@ -20,7 +20,9 @@ algorithm
   end for;
 
   // The last value
-  state[end-1:end] := xorshift64star(state[end-3:end-2]);
+  if stateSize > 3 then
+    state[end-1:end] := xorshift64star(state[end-3:end-2]);
+  end if;
 
   annotation (Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>

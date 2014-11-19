@@ -11,8 +11,8 @@ xorshift128plus
 xorshift1024star
 setExternalState
 getExternalState
-rand
-srand
+random
+seedRandom
 convertRealToIntegers
 TestRandom
 TestIntInTime

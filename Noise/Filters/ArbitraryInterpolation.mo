@@ -2,7 +2,7 @@ within Noise.Filters;
 function ArbitraryInterpolation
   "Apply an arbitrary interpolation by convolution with a Kernel"
   extends Noise.Utilities.Interfaces.Filter;
-  input Utilities.Interfaces.Kernel kernel = Noise.Filters.Kernels.IdealLowPass
+  input Utilities.Interfaces.Kernel kernel
     annotation(choicesAllMatching=true, Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
@@ -59,7 +59,7 @@ algorithm
   end for;
 
   // Scale the result in order to smooth higher harmonics
-  y := y / scaling;
+  y := y;// / scaling;
 //  y:=buffer[integer(offset)+1];
 
   annotation ( Documentation(revisions="<html>

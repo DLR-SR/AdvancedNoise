@@ -3,7 +3,7 @@ package Noise "An open Library for the Generation of Stochastic Signals in Model
   extends Modelica.Icons.Package;
 
 
-annotation (version =                        "0.2",
+annotation (version =                        "0.3.0",
             versionDate =                    "2014-06-13",
             versionBuild =                   1,
             revisionId =                     "$Id: package.mo 23235 2014-06-13 12:38:31Z kloe_ad $",

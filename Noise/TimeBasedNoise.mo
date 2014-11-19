@@ -95,8 +95,10 @@ equation
   state = fill(0,stateSize);
   bufferStartTime = integer(time/samplePeriod)*samplePeriod;
   for i in 1:size(buffer,1) loop
-    buffer[i] = distribution(generator=function Noise.Generators.xorshift64star(p=1),
-                             stateIn=Noise.Utilities.Auxiliary.convertRealToIntegers(floor(time/samplePeriod + i - bufferOverlap - 1) *samplePeriod));
+    buffer[i] =distribution(generator=function
+      Noise.Generators.xorshift64star_f(p=1), stateIn=
+      Noise.Utilities.Auxiliary.convertRealToIntegers(floor(time/samplePeriod +
+      i - bufferOverlap - 1)*samplePeriod));
   end for;
 
 //

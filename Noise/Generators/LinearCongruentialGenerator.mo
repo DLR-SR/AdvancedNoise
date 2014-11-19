@@ -10,7 +10,11 @@ function LinearCongruentialGenerator
     "The modulus for the linear congruential generator"
     annotation(Dialog);
 algorithm
-  (rand,stateOut) := MultipleRecursiveGenerator(stateIn=stateIn,a={a},c=c,m=m);
+  (rand,stateOut) :=MultipleRecursiveGenerator_f(
+    stateIn=stateIn,
+    a={a},
+    c=c,
+    m=m);
 
   annotation ( Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>

@@ -5,7 +5,7 @@ partial function Seed "The basic interface for a seeding function"
     "The local seed to be used for generating initial states";
   input Integer globalSeed = 67890
     "The global seed to be combined with the local seed";
-  input Integer stateSize = 33
+  input Integer stateSize = 23
     "The number of initial state values to be generated";
   output Integer state[stateSize] "The generated initial states";
   annotation ( Documentation(revisions="<html>

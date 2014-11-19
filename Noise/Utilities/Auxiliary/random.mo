@@ -1,5 +1,5 @@
 within Noise.Utilities.Auxiliary;
-impure function rand "Implements an impure random number generator"
+impure function random "Implements an impure random number generator"
   output Real y "The uniform random number";
   input xorshift1024star generator = xorshift1024star
     "The random number generator algorithm";
@@ -15,4 +15,4 @@ algorithm
 </html>", info="<html>
 <p></p>
 </html>"));
-end rand;
+end random;

@@ -1,4 +1,5 @@
 Test
+sdfg
 UsersGuide
 GlobalSeed
 RandomNoise
@@ -10,3 +11,7 @@ Distributions
 Filters
 Seed
 Utilities
+EventBasedNoise_debug
+EventBasedNoise_test
+dodo
+GlobalSeed_bak
