@@ -1,16 +1,10 @@
 within Noise.Utilities.Interfaces;
-partial model PartialGenerator
+partial function PartialGenerator
   //extends Modelica.Icons.Package;
+  input Integer stateSize = 2;
+  input Boolean initializeState = false;
+  extends InputOutput(stateIn=1:stateSize);
 
-  parameter Integer stateSize=0;
-  parameter Integer abcd=0;
-
-  replaceable function seed = Noise.Seed.xorshift64star(stateSize=stateSize)
-  constrainedby Interfaces.Seed;
-
-  replaceable partial function generator
-    extends Interfaces.Generator;
-  end generator;
   annotation (Icon(graphics={
         Line(points={{-80,-90},{-80,90}},   color={0,0,0}),
         Polygon(

@@ -1,7 +1,7 @@
 within Noise.Generators;
 function xorshift64star_f "The xorshift64* generator"
   extends Noise.Utilities.Interfaces.Generator;
-  input Integer p = 1 "Number if itrations to do";
+  input Integer p = 1 "Number if iterations to do";
 algorithm
   assert(size(stateIn,1) >= 2, "State must have at least 2 elements!");
 

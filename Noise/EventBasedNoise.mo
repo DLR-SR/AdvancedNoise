@@ -23,8 +23,7 @@ public
   final parameter Integer globalSeed0 = if useGlobalSeed then globalSeed.seed else 0
     "The global seed, which is atually used";
 public
-  parameter Integer stateSize = globalSeed.generator.stateSize;
-  Integer state[stateSize] "The internal states of the random number generator";
+  Integer state[2] "The internal states of the random number generator";
 
 //
 //
@@ -88,9 +87,9 @@ public
 // Initialize the states and buffers
 initial algorithm
   bufferStartTime := time;
-  state := globalSeed.generator.seed(localSeed=localSeed, globalSeed=globalSeed0);
+  (buffer[1],state) := globalSeed.generator(initializeState=true, stateIn={1,2});
   for i in 1:size(buffer,1) loop
-    (buffer[i],state) := distribution(generator=globalSeed.generator.generator, stateIn=state);
+    (buffer[i],state) := globalSeed.generator( stateIn=state);
   end for;
 
 // Initialize the states and buffers...
@@ -106,7 +105,7 @@ algorithm
     for i in (size(buffer,1)-bufferSize+1):size(buffer,1) loop
       // The generator must be passed due to a bug in Dymola.
       // So we can as well provide a switch in the globalSeed model.
-      (buffer[i],state) := distribution(generator=globalSeed.generator.generator, stateIn=state);
+      (buffer[i],state) := globalSeed.generator( stateIn=state);
     end for;
   end when;
 

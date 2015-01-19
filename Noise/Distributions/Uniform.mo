@@ -7,7 +7,9 @@ function Uniform "Uniform distribution in a given interval"
 algorithm
 
   // Retrieve uniformly distributed random number
-  (rand,stateOut) := generator(stateIn=stateIn);
+  //(rand,stateOut) := generator(stateIn=stateIn);
+  rand := 7;
+  stateOut:=stateIn;
 
   // Transform limits of distribution
   rand              := rand*(interval[2] - interval[1]) + interval[1];

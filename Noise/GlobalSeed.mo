@@ -29,7 +29,7 @@ equation
 
 // The pure global random function and associated parameters
 public
-  replaceable model generator = Noise.Generators.default
+  replaceable function generator = Noise.Generators.default
     constrainedby Noise.Utilities.Interfaces.PartialGenerator
     "The random number generator to be used in the model"
     annotation(choicesAllMatching=true,
