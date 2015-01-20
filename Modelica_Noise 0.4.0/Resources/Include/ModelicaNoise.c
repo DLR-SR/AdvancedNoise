@@ -151,14 +151,12 @@ static int NOISE_APHash(char* str)
    - Inputs and outputs must be int's, that is int32_t.
    - Inputs are casted accordingly. 
    - Outputs are casted accordingly.
-   - An additional input is given: n = number of elements in state vector.
    - The additional double between 0 and 1 is output.
-   
-   transform 64-bit unsigned integer to double such that zero cannot appear, by
-   first transforming to a 64-bit signed integer, then to a double in the range 0 .. 1.
-   (using the algorithm given here: http://www.doornik.com/research/randomdouble.pdf)
 */
-
+   
+/* transform 64-bit unsigned integer to double such that zero cannot appear, by
+   first transforming to a 64-bit signed integer, then to a double in the range 0 .. 1.
+   (using the algorithm given here: http://www.doornik.com/research/randomdouble.pdf) */
 #define NOISE_INVM64 5.42101086242752217004e-20 /* = 2^(-64) */
 #define NOISE_RAND(INT64) ( (int64_t)(INT64) * NOISE_INVM64 + 0.5 )
 
@@ -259,16 +257,14 @@ MODELICA_EXPORT void NOISE_xorshift128plus(int state_in[], int state_out[], doub
     *y = NOISE_RAND(s.s64[1]);
 }
 
-MODELICA_EXPORT void NOISE_xorshift1024star(int state_in[], int state_out[], double* y) {
+
+MODELICA_EXPORT void NOISE_xorshift1024star_internal(uint64_t s[], int* p, double* y) {
     /*  xorshift1024* random number generator.
         For details see http://xorshift.di.unimi.it
         
-        Argument "id" is provided to guarantee the right calling sequence
-        of the function in a Modelica environment (first calling function
-        ModelicaRandom_initialize_xorshift1024star that must return "dummy" which is passed
-        as input argument to ModelicaRandom_xorshift1024star. As a result, the ordering
-        of the function is correct.
-
+        This internal function directly operates on a pointer to the state array, such that
+        no copying of states is needed.
+        
         Written in 2014 by Sebastiano Vigna (vigna@acm.org)
     
         To the extent possible under law, the author has dedicated all copyright
@@ -290,33 +286,60 @@ MODELICA_EXPORT void NOISE_xorshift1024star(int state_in[], int state_out[], dou
         
         
     /* Convert inputs */
-    union s_tag{
-        int32_t  s32[32];
-        uint64_t s64[16];
-    } s;
-    int i;
     uint64_t s0;
     uint64_t s1;
-    int p;
-    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
-        s.s32[i] = state_in[i];}
-    p = state_in[32]&15;
+    *p = *p & 15;
     
     /* The actual algorithm */
-    s0 = s.s64[p];
-    s1 = s.s64[p = (p + 1) & 15];
+    s0 = s[*p];
+    s1 = s[*p = (*p + 1) & 15];
         
     s1 ^= s1 << 31; // a
     s1 ^= s1 >> 11; // b
     s0 ^= s0 >> 30; // c
     
-    s.s64[p] = s0 ^ s1;
+    s[*p] = s0 ^ s1;
+        
+    /* Convert outputs */
+    *y = NOISE_RAND(s[*p]*1181783497276652981LL);
+}
+
+MODELICA_EXPORT void NOISE_xorshift1024star(int state_in[], int state_out[], double* y) {
+    /*  xorshift1024* random number generator.
+        For details see http://xorshift.di.unimi.it
+        
+        This function uses NOISE_xorshift1024star_internal as generator and adapts inputs and outputs.
+
+        Adapted by Martin Otter and Andreas Klöckner (DLR) 
+        for the Modelica external function interface.
+    */
+
+    /*  This is a fast, top-quality generator. If 1024 bits of state are too
+        much, try a xorshift128+ or a xorshift64* generator. */
+
+    /*  The state must be seeded so that it is not everywhere zero. If you have
+        a 64-bit seed,  we suggest to seed a xorshift64* generator and use its
+        output to fill s. */
+        
+        
+    /* Convert inputs */
+    union s_tag{
+        int32_t  s32[32];
+        uint64_t s64[16];
+    } s;
+    int i;
+    int p;
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
+        s.s32[i] = state_in[i];}
+    p = state_in[32];
+    
+    /* The actual algorithm */
+    NOISE_xorshift1024star_internal(&(s.s64), &p, y);
         
     /* Convert outputs */
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
         state_out[i] = s.s32[i];}
     state_out[32] = p;
-    *y = NOISE_RAND(s.s64[p]*1181783497276652981LL);
 }
 
 
@@ -361,14 +384,8 @@ MODELICA_EXPORT double NOISE_impureRandom_xorshift1024star(int id) {
 	   as input argument to ModelicaRandom_xorshift1024star. As a result, the ordering
 	   of the function is correct.
 
-       Written in 2014 by Sebastiano Vigna (vigna@acm.org)
-
-       To the extent possible under law, the author has dedicated all copyright
-       and related and neighboring rights to this software to the public domain
-       worldwide. This software is distributed without any warranty.
-
-       See <http://creativecommons.org/publicdomain/zero/1.0/>.
-
+       This function uses NOISE_xorshift1024star_internal as generator and adapts inputs and outputs.
+       
        Adapted by Martin Otter (DLR) to initialize the seed with ModelicaRandom_initializeRandom
 	   and to return a double in range 0 < randomNumber < 1.0
     */
@@ -379,29 +396,15 @@ MODELICA_EXPORT double NOISE_impureRandom_xorshift1024star(int id) {
     /* The state must be seeded so that it is not everywhere zero. If you have
        a 64-bit seed,  we suggest to seed a xorshift64* generator and use its
        output to fill s. */
-	uint64_t s0;
-	uint64_t s1;
-   int p;   
    
-   /* Check that NOISE_initializeImpureRandome_xorshift1024star was called before */
-	if ( id != NOISE_id ) ModelicaError("Function impureRandom not initialized with function initializeImpureRandom");
-	
-	/* Compute random number */
-   p = NOISE_p & 15;
-	s0 = NOISE_s[ p ];
-	s1 = NOISE_s[ p = ( p + 1 ) & 15 ];
-	
-	s1 ^= s1 << 31; // a
-	s1 ^= s1 >> 11; // b
-	s0 ^= s0 >> 30; // c
-	NOISE_s[ p ] = s0 ^ s1;
-   NOISE_p = p;
-
-	/* transform 64-bit unsigned integer to double such that zero cannot appear, by
-      first transforming to a 64-bit signed integer, then to a double in the range 0 .. 1.
-      (using the algorithm given here: http://www.doornik.com/research/randomdouble.pdf)
-   */
-   return NOISE_RAND(NOISE_s[p]*1181783497276652981LL);
+    double y;
+   
+    /* Check that NOISE_initializeImpureRandome_xorshift1024star was called before */
+    if ( id != NOISE_id ) ModelicaError("Function impureRandom not initialized with function initializeImpureRandom");
+    
+    /* Compute random number */
+    NOISE_xorshift1024star_internal(&NOISE_s, &NOISE_p, &y);
+    return y;
 }
    
 
@@ -422,87 +425,5 @@ MODELICA_EXPORT void NOISE_double2int(double d, int i[]) {
 }
 
 
-
-#define NOISE_LCG_MULTIPLIER (134775813)
-
-/* NOISE_SeedReal */
-/* Converts a Real variable to an Integer seed */
-void NOISE_SeedReal(int local_seed, int global_seed, double real_seed, int n, int* states)
-{
-    double x0;
-    uint32_t* xp;
-    uint32_t x1;
-    uint32_t x2;
-    int i;
-
-    /* Take the square root in order to remove sampling effects */
-    x0 = sqrt(real_seed);
-    /* Point a 32 bit integer to the double number */
-    xp = (uint32_t*)&x0;
-    /* Interpret the first 32 bits as an integer */
-    x1 = *xp;
-    x2 = *xp;
-    /* Advance the pointer to point to the second half of the double */
-    xp++;
-    /* Bit-wise XOR this information into the second integer */
-    x2 ^= *xp;
-
-    /* Use the seeds to bit-wise XOR them to the two integers */
-    x1 ^= (uint32_t)local_seed;
-    x2 ^= (uint32_t)global_seed;
-
-    /* Fill the states vector */
-    for (i = 0; i < n; i++) {
-        states[i] = (i%2 == 0) ? x1 : x2;
-    }
-}
-
-/* NOISE_shuffleDouble */
-/* This is the basic implementation of the DIRCS random number generator */
-double NOISE_shuffleDouble(double x, int seed)
-{
-    double x0;
-    uint32_t* xp;
-    uint32_t x1;
-    uint32_t x2;
-    double vmax;
-    double y;
-
-    /* Take the square root in order to remove sampling effects */
-    x0 = sqrt(x);
-    /* Point a 32 bit integer to the double number */
-    xp = (uint32_t*)&x0;
-    /* Interpret the first 32 bits as an integer */
-    x1 = *xp;
-    x2 = *xp;
-    /* Advance the pointer to point to the second half of the double */
-    xp++;
-    /* Bit-wise XOR this information into the second integer */
-    x2 ^= *xp;
-    x2 ^= (uint32_t)seed;
-
-    /* Do single steps */
-    x1 = x1*NOISE_LCG_MULTIPLIER + 1;
-    x2 = x2*NOISE_LCG_MULTIPLIER + 1;
-
-    /* Do combined steps! */
-    x2 = x1*NOISE_LCG_MULTIPLIER + x2*NOISE_LCG_MULTIPLIER + 1;
-
-    /* Divide the integer by its maximum value */
-    vmax = UINT_MAX;
-    y = x2 / vmax;
-
-    return y;
-}
-
-/* NOISE_combineSeedLCG */
-/* This is used to combine two seeds */
-int NOISE_combineSeedLCG(int x1, int x2)
-{
-    int ret;
-    ret = x1*NOISE_LCG_MULTIPLIER + x2*NOISE_LCG_MULTIPLIER + 1;
-    ret = (((ret < 0) ? ((ret % INT_MAX) + INT_MAX) : ret) % INT_MAX);
-    return ret;
-}
 
 #endif
