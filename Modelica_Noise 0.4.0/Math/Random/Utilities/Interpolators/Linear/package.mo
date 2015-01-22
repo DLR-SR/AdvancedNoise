@@ -2,8 +2,8 @@ within Modelica_Noise.Math.Random.Utilities.Interpolators;
 package Linear "Linear interpolation"
   extends Random.Utilities.Interfaces.PartialInterpolator(
                                                 final continuous=true,
-                                                final nCopy=1,
-                                                final overlap=0);
+                                                final nFuture=1,
+                                                final nPast=0);
 
 
   redeclare function extends interpolate

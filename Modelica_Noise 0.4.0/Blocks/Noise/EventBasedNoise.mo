@@ -70,7 +70,13 @@ protected
     "Sample period of when-clause";
   parameter Boolean continuous = interpolation.continuous
     "= true, if continuous interpolation";
-  parameter Integer nBuffer = if continuous then sampleFactor+interpolation.nCopy
+  parameter Integer nFuture = interpolation.nFuture
+    "Number of buffer elements to be predicted in the future";
+  parameter Integer nPast = interpolation.nPast
+    "Number of buffer elements to be retained from the past";
+  parameter Integer nCopy = nPast + nFuture
+    "Number of buffer entries to retain when re-filling buffer";
+  parameter Integer nBuffer = if continuous then nPast+sampleFactor+nFuture
                                             else 1 "Size of buffer";
   discrete Integer state[generator.nState]
     "Internal state of random number generator";
@@ -97,9 +103,9 @@ algorithm
     // At the following samples, we shift the buffer and fill the end up with new random numbers
     bufferStartTime := time;
     if continuous then
-       buffer[1:interpolation.nCopy] := buffer[nBuffer-interpolation.nCopy+1:nBuffer];
+       buffer[1:nCopy] := buffer[nBuffer-nCopy+1:nBuffer];
     end if;
-    for i in interpolation.nCopy+1:nBuffer loop
+    for i in nCopy+1:nBuffer loop
       (r, state) := generator.random(state);
       buffer[i] := distribution(r);
     end for;
@@ -108,7 +114,7 @@ algorithm
 equation
   y = if generateNoise and time >= startTime then
          interpolation.interpolate(buffer=buffer,
-            offset=(time-bufferStartTime) / samplePeriod + interpolation.overlap)
+            offset=(time-bufferStartTime) / samplePeriod + nPast)
       else y_off;
 
     annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise),
@@ -126,7 +132,7 @@ equation
           lineColor={192,192,192},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid),
-        Line(visible=  enableNoise,
+        Line(visible = enableNoise,
            points={{-75,-13},{-61,-13},{-61,3},{-53,3},{-53,-45},{-45,-45},{-45,
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,

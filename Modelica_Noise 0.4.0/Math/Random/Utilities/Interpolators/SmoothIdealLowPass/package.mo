@@ -2,8 +2,8 @@ within Modelica_Noise.Math.Random.Utilities.Interpolators;
 package SmoothIdealLowPass "Smooth interpolation (with sinc function)"
   extends Random.Utilities.Interfaces.PartialInterpolator(
                                                 final continuous=true,
-                                                final nCopy=9,
-                                                final overlap=5);
+                                                final nFuture=5,
+                                                final nPast=5);
 
 
   redeclare function extends interpolate
@@ -15,7 +15,7 @@ protected
     Real coefficient;
     Integer nBuffer = size(buffer,1);
   algorithm
-    assert(offset >= n-eps and offset <= nBuffer - n + 1 + eps,
+    assert(offset >= n-eps and offset <= nBuffer - n + eps,
           "offset out of range (offset=" + String(offset) + ", nBuffer="+String(nBuffer)+")");
 
     // Initialize the convolution algorithm
@@ -61,7 +61,8 @@ protected
   //                                     +"k=" + String(coefficient)+ ", "
   //                                     +"o=" + String(offset));
 
-      y                  := y + buffer[max(1,min(integer(offset)-i+1,nBuffer))]*coefficient;
+      // y                  := y + buffer[max(1,min(integer(offset)-i+1,nBuffer))]*coefficient;
+      y                  := y + buffer[integer(offset)-i+1]*coefficient;
       scaling            := scaling + coefficient;
     end for;
 
