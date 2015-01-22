@@ -66,15 +66,22 @@ protected
     // The random number is for time =     (floor(t/dt) * dt + i * dt)
     // The kernel result is for time = t - (floor(t/dt) * dt + i * dt)
     // or, if sampled:          time = t - (    t_last       + i * dt)
-    for i in (1-n):(n) loop
-      coefficient        := kernel(t=i-mod(offset,1));
-      y                  := y + buffer[integer(offset)+i]*coefficient;
+
+    // Calculate weighted sum over -nPast...nFuture random samples
+    for i in -nPast:nFuture loop
+
+      // We use the kernel in -i direction to enable step response kernels
+      coefficient        :=     kernel(t=mod(    offset,1)-i);
+
+      // We use the kernel in +i direction for the random samples
+      // The +1 accounts for one-based indizes
+      y                  := y + buffer[  integer(offset)  +i+1]*coefficient;
+
       //  Modelica.Utilities.Streams.print("i=" + String(i) + ", "
       //                                  +"t=" + String(mod(offset,1)+i) + ", "
       //                                  +"k=" + String(coefficient)+ ", "
       //                                  +"o=" + String(offset)+ ", "
       //                                  +"n=" + String(integer(offset)+i));
-
     end for;
     annotation(Inline=true);
   end interpolate;
