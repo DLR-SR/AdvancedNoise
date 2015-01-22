@@ -3,7 +3,8 @@ package Constant "Constant interpolation"
   extends Random.Utilities.Interfaces.PartialInterpolator(
                                                 final continuous=false,
                                                 final nFuture=0,
-                                                final nPast=0);
+                                                final nPast=0,
+                                                final varianceFactor = 1);
 
 
   redeclare function extends interpolate

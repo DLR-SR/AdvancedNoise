@@ -23,11 +23,11 @@ y_max=3)             annotation (Placement(transformation(extent={{-60,-20},{-40
   Noise.EventBasedNoise smoothNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
-    sampleFactor=10,
     redeclare package interpolation =
     Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass,
     y_min=-1,
-    y_max=3)         annotation (Placement(transformation(extent={{-60,-60},{-40,-40}})));
+    y_max=3,
+    sampleFactor=10) annotation (Placement(transformation(extent={{-60,-60},{-40,-40}})));
 equation
   connect(linearNoise.y, filter.u) annotation (Line(
       points={{-39,-10},{-22,-10}},

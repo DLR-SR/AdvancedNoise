@@ -3,33 +3,27 @@ package Linear "Linear interpolation"
   extends Random.Utilities.Interfaces.PartialInterpolator(
                                                 final continuous=true,
                                                 final nFuture=1,
-                                                final nPast=0);
+                                                final nPast=0,
+                                                final varianceFactor = 2/3);
 
 
   redeclare function extends interpolate
   "Linear interpolation in a buffer of random values"
 protected
-    Integer nBuffer = size(buffer,1);
-    Integer ind;
-    Real y1;
-    Real y2;
-    Real eps = 0.001;
+    Integer ind "Index of buffer element just before offset";
+    Real y1 "Value of buffer element just before offset";
+    Real y2 "Value of buffer element just after offset";
   algorithm
-    assert(offset >= -eps and offset <= (nBuffer - 1 + eps),
+    // Ensure that offset is in assumed range
+    assert(offset >= nPast and offset < nBuffer - nFuture,
            "offset out of range (offset=" + String(offset) + ", nBuffer="+String(nBuffer)+")");
-    ind := integer(offset) + 1;
 
-    if ind >= nBuffer then
-       y := buffer[nBuffer];
-    else
-       y1 := buffer[ind];
-       y2 := buffer[ind+1];
-       y  := y1 + (y2-y1)*(offset-ind+1);
-    end if;
-  /*  
-  Modelica.Utilities.Streams.print("... offset="+String(offset)+",ind="+String(ind)+
-                                   ", y1=" + String(y1) + ", y2=" +String(y2)+", y="+String(y));
-*/
+    // We need to interpolate only between two values
+    ind := integer(offset) + 1;
+    y1  := buffer[ind];
+    y2  := buffer[ind+1];
+    y   := y1 + (y2-y1)*(offset-ind+1);
+
     annotation(Inline=true);
   end interpolate;
 

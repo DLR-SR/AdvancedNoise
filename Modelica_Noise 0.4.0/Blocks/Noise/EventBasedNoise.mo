@@ -70,7 +70,7 @@ protected
     "Sample period of when-clause";
   parameter Boolean continuous = interpolation.continuous
     "= true, if continuous interpolation";
-  parameter Integer nFuture = interpolation.nFuture
+  parameter Integer nFuture = if continuous then interpolation.nFuture+1 else 0
     "Number of buffer elements to be predicted in the future";
   parameter Integer nPast = interpolation.nPast
     "Number of buffer elements to be retained from the past";

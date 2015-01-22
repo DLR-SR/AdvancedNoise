@@ -12,9 +12,7 @@ model NormalNoiseProperties
     y_min=y_min,
     y_max=y_min+2*mean,
     redeclare function distribution =
-        Modelica_Noise.Math.Random.TruncatedQuantiles.normal (sigma=sigma),
-redeclare package interpolation =
-    Modelica_Noise.Math.Random.Utilities.Interpolators.Constant)
+        Modelica_Noise.Math.Random.TruncatedQuantiles.normal (sigma=sigma))
 annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
   Statistics.ContinuousMean continuousMean
 annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
@@ -28,7 +26,7 @@ annotation (Placement(transformation(extent={{-40,20},{-20,40}})));
     annotation (Placement(transformation(extent={{-12,50},{8,70}})));
   Modelica.Blocks.Math.Feedback varianceError
     annotation (Placement(transformation(extent={{40,20},{60,40}})));
-  Modelica.Blocks.Sources.Constant realSigma(k=sigma)
+  Modelica.Blocks.Sources.Constant realSigma(k=sigma*sqrt(normalNoise.interpolation.varianceFactor))
     annotation (Placement(transformation(extent={{-18,-10},{2,10}})));
   Statistics.StandardDeviation standardDeviation
 annotation (Placement(transformation(extent={{-40,-40},{-20,-20}})));
