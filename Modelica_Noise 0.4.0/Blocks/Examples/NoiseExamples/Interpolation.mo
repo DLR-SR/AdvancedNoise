@@ -28,6 +28,15 @@ y_max=3)             annotation (Placement(transformation(extent={{-60,-20},{-40
     y_min=-1,
     y_max=3,
     sampleFactor=10) annotation (Placement(transformation(extent={{-60,-60},{-40,-40}})));
+  Noise.EventBasedNoise filteredNoise(
+    useAutomaticLocalSeed=false,
+    samplePeriod=0.1,
+    y_min=-1,
+    y_max=3,
+    sampleFactor=10,
+    redeclare package interpolation =
+        Modelica_Noise.Math.Random.Utilities.Interpolators.LinearFirstOrder)
+    annotation (Placement(transformation(extent={{-60,-96},{-40,-76}})));
 equation
   connect(linearNoise.y, filter.u) annotation (Line(
       points={{-39,-10},{-22,-10}},
