@@ -1,6 +1,6 @@
 within Modelica_Noise.Math.Distributions.Uniform;
 function quantile
-  "Quantile of uniform distribution (= inverse cumulative distribution functions)"
+  "Quantile of uniform distribution (= inverse cumulative distribution function)"
   extends Modelica_Noise.Math.Distributions.Interfaces.partialQuantile;
   input Real y_min=0 "Lower limit of band" annotation (Dialog);
   input Real y_max=1 "Upper limit of band" annotation (Dialog);

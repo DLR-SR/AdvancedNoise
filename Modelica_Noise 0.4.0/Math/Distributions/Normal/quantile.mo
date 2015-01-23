@@ -1,6 +1,6 @@
 within Modelica_Noise.Math.Distributions.Normal;
 function quantile
-  "Quantile of normal distribution (= inverse cumulative distribution functions)"
+  "Quantile of normal distribution (= inverse cumulative distribution function)"
   extends Modelica_Noise.Math.Distributions.Interfaces.partialQuantile;
   input Real mu=0 "Expectation (mean) value of the normal distribution" annotation(Dialog);
   input Real sigma=1 "Standard deviation of the normal distribution" annotation(Dialog);
