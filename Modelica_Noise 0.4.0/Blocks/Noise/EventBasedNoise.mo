@@ -154,5 +154,11 @@ equation
           lineColor={0,0,0},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid,
-          textString="%y_off")}));
+          textString="%y_off")}),
+    Documentation(info="<html>
+<p>Remarks:</p>
+<ul>
+<li>If you use a sampleFactor together with time-varying distribution parameters, these parameters will only take effect at the sampled time instances!</li>
+</ul>
+</html>"));
 end EventBasedNoise;
