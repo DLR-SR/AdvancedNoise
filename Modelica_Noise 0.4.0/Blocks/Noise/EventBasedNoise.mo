@@ -156,9 +156,15 @@ equation
           fillPattern=FillPattern.Solid,
           textString="%y_off")}),
     Documentation(info="<html>
-<p>Remarks:</p>
+<p>Remarks to be included in the documentation:</p>
 <ul>
 <li>If you use a sampleFactor together with time-varying distribution parameters, these parameters will only take effect at the sampled time instances!</li>
+<li>Issue: Variance/standard deviation and/or limits of output signal may change with interpolation method.</li>
+<li>Solution: In every Interpolation package a constant is introduced that describes the relationship between the variances of non-interpolated and interpolated signal (the constant is not used in the Noise package).</li>
+<li>Additionally, in the documentation this is shortly explained:</li>
+<li>LinearInterpolation: Variance becomes smaller; Limits are kept</li>
+<li>SincInterpolation: Variance becomes a bit smaller; Limits are not kept.</li>
+<li>This holds only if an event is generated at every sample instant, or for very small tolrel. Otherwise, the variance depends on the step-size and interpolation method of the integrator.</li>
 </ul>
 </html>"));
 end EventBasedNoise;
