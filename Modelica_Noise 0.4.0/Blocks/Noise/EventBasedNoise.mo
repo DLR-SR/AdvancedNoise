@@ -14,34 +14,34 @@ block EventBasedNoise
   parameter Real y_max(start=1.0) "Maximum value of noise"
     annotation(Dialog(enable=enableNoise));
 
-  // Advanced dialog menu
+  // Advanced dialog menu: Performance
   parameter Boolean enableNoise = true "=true: y = noise, otherwise y = y_off"
-    annotation(choices(checkBox=true),Dialog(tab="Advanced"));
+    annotation(choices(checkBox=true),Dialog(tab="Advanced",group="Performance"));
   parameter Real y_off = 0.0 "Output if time<startTime or enableNoise=false"
-    annotation(Dialog(tab="Advanced"));
+    annotation(Dialog(tab="Advanced",group="Performance"));
   parameter Integer sampleFactor(min=1)=100
     "Events only at samplePeriod*sampleFactor if continuous"
-    annotation(Evaluate=true,Dialog(tab="Advanced", enable=enableNoise));
+    annotation(Evaluate=true,Dialog(tab="Advanced",group="Performance", enable=enableNoise));
 
+  // Advanced dialog menu: Random number properties
   replaceable function distribution =
        Modelica_Noise.Math.Random.TruncatedQuantiles.uniform constrainedby
     Modelica_Noise.Math.Random.Utilities.Interfaces.partialTruncatedQuantile(
       final y_min=y_min, final y_max=y_max)
     "Random number distribution (truncated to y_min..y_max)"
-    annotation(choicesAllMatching=true, Dialog(tab="Advanced",enable=enableNoise));
-
+    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise));
   replaceable package interpolation =
       Modelica_Noise.Math.Random.Utilities.Interpolators.Linear constrainedby
     Modelica_Noise.Math.Random.Utilities.Interfaces.PartialInterpolator
     "Interpolation method in grid of raw random numbers"
-    annotation(choicesAllMatching=true, Dialog(tab="Advanced",enable=enableNoise));
-
+    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise));
   replaceable package generator =
       Modelica_Noise.Math.Random.Generators.Xorshift128plus constrainedby
     Modelica_Noise.Math.Random.Utilities.Interfaces.PartialGenerator
     "Random number generator"
-    annotation(choicesAllMatching=true, Dialog(tab="Advanced",enable=enableNoise));
+    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise));
 
+  // Advanced dialog menu: Initialization
   parameter Boolean useGlobalSeed = true
     "= true: use global seed, otherwise ignore it"
     annotation(choices(checkBox=true),Dialog(tab="Advanced",group = "Initialization",enable=enableNoise));
@@ -51,13 +51,13 @@ block EventBasedNoise
   parameter Integer fixedLocalSeed = 10
     "Local seed if useAutomaticLocalSeed = false"
       annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise and not useAutomaticLocalSeed));
-  final parameter Integer localSeed = if useAutomaticLocalSeed then
-                                    Modelica_Noise.Math.Random.Utilities.automaticLocalSeed(getInstanceName())
-                                 else fixedLocalSeed;
+  final parameter Integer localSeed = if useAutomaticLocalSeed then Modelica_Noise.Math.Random.Utilities.automaticLocalSeed(getInstanceName()) else
+                                                                    fixedLocalSeed;
   parameter Modelica.SIunits.Time startTime = 0.0
     "Start time for sampling the raw random numbers"
     annotation(Dialog(tab="Advanced", group="Initialization",enable=enableNoise));
 
+  // Retrieve values from outer global seed
 protected
   outer Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
     "Definition of global seed via inner/outer";
@@ -65,46 +65,47 @@ protected
     "The global seed, which is atually used";
   parameter Boolean generateNoise = enableNoise and globalSeed.enableNoise
     "= true if noise shall be generated, otherwise no noise";
-  parameter Real actualSamplePeriod = if interpolation.continuous then
-                                         sampleFactor*samplePeriod else samplePeriod
-    "Sample period of when-clause";
+
+  // Construct sizes
   parameter Boolean continuous = interpolation.continuous
     "= true, if continuous interpolation";
-  parameter Integer nFuture = if continuous then interpolation.nFuture+1 else 0
-    "Number of buffer elements to be predicted in the future";
+  parameter Real actualSamplePeriod = if continuous then sampleFactor*samplePeriod else samplePeriod
+    "Sample period of when-clause";
+  parameter Integer nFuture = interpolation.nFuture+1
+    "Number of buffer elements to be predicted in the future (+1 for rounding errors)";
   parameter Integer nPast = interpolation.nPast
     "Number of buffer elements to be retained from the past";
   parameter Integer nCopy = nPast + nFuture
     "Number of buffer entries to retain when re-filling buffer";
   parameter Integer nBuffer = if continuous then nPast+sampleFactor+nFuture
-                                            else 1 "Size of buffer";
+                                            else nPast+      1     +nFuture
+    "Size of buffer";
+
+  // Declare buffers
   discrete Integer state[generator.nState]
     "Internal state of random number generator";
   discrete Real buffer[nBuffer] "Buffer to hold raw random numbers";
   discrete Real bufferStartTime "The last time we have filled the buffer";
   discrete Real r "Uniform random number in the range (0,1]";
-
 algorithm
+
+  // During initialization the buffer is filled with random values
   when initial() then
-    // During initialization the buffer is filled with random values
     state := generator.initialState(localSeed, actualGlobalSeed);
     bufferStartTime := time;
-
     for i in 1:nBuffer loop
       (r, state) := generator.random(state);
       buffer[i] := distribution(r);
     end for;
 
+  // At the first sample, we simply use the initial buffer
   elsewhen generateNoise and time >= startTime then
-    // At the first sample, we simply use the initial buffer
     bufferStartTime := time;
 
+  // At the following samples, we shift the buffer and fill the end up with new random numbers
   elsewhen generateNoise and sample(startTime+actualSamplePeriod, actualSamplePeriod) then
-    // At the following samples, we shift the buffer and fill the end up with new random numbers
     bufferStartTime := time;
-    if continuous then
-       buffer[1:nCopy] := buffer[nBuffer-nCopy+1:nBuffer];
-    end if;
+    buffer[1:nCopy] := buffer[nBuffer-nCopy+1:nBuffer];
     for i in nCopy+1:nBuffer loop
       (r, state) := generator.random(state);
       buffer[i] := distribution(r);
@@ -112,7 +113,11 @@ algorithm
   end when;
 
 equation
+
+  // Generate noise, if requested
   if generateNoise and time >= startTime then
+
+    // Make sure, noise is smooth, if so declared
     if interpolation.continuous then
       y = smooth(interpolation.smoothness,
                  interpolation.interpolate(buffer=buffer,
@@ -121,6 +126,8 @@ equation
       y =        interpolation.interpolate(buffer=buffer,
                                            offset=(time-bufferStartTime) / samplePeriod + nPast);
     end if;
+
+  // Output y_off, if noise is not to be generated
   else
     y = y_off;
   end if;
