@@ -19,13 +19,21 @@ package SmoothIdealLowPass "Smooth interpolation (with sinc function)"
   end kernel;
 
 
+  redeclare function extends der_kernel_offset
+    input Modelica.SIunits.Frequency f=1/2
+    "The cut-off frequency of the filter";
+protected
+    function d = der(kernel, t);
+  algorithm
+    h := d(t,f);
+  end der_kernel_offset;
+
+
   redeclare function extends interpolate
 
     annotation(Inline=true,
                derivative(order=1) = der_interpolate);
   end interpolate;
-
-
 
 
   annotation (Documentation(info=

@@ -39,6 +39,20 @@ protected
   end kernel;
 
 
+  redeclare function extends der_kernel_offset
+protected
+    function d = der(kernel, t);
+  algorithm
+    h := d(t);
+  end der_kernel_offset;
+
+
+  redeclare function extends interpolate
+
+    annotation(Inline=true,
+               derivative(order=1) = der_interpolate);
+  end interpolate;
+
 annotation (Icon(graphics={
                   Line(
       points={{-90,-48},{-22,-48},{-22,-48},{6,46},{88,46}},

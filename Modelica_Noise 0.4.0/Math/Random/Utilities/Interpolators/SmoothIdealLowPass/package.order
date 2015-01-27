@@ -1,5 +1,4 @@
 n
 kernel
-interpolate
 der_kernel_offset
-der_interpolate
+interpolate

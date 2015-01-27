@@ -82,9 +82,16 @@ protected
   end interpolate;
 
 
+
   replaceable partial function kernel "Kernel for interpolation"
     extends Random.Utilities.Interfaces.partialKernel;
   end kernel;
+
+
+  replaceable partial function der_kernel_offset
+  "Partial derivative of the kernel with respect to the offset"
+    extends Random.Utilities.Interfaces.partialKernel;
+  end der_kernel_offset;
 
 
   annotation (Documentation(info=
