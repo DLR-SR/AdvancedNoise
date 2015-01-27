@@ -4,5 +4,6 @@ Distributions
 UniformNoiseProperties
 NormalNoiseProperties
 ImpureGenerator
+SignalBasedNoise
 Densities
 Utilities
