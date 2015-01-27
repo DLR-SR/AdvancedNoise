@@ -37,9 +37,27 @@ y_max=3)             annotation (Placement(transformation(extent={{-60,-20},{-40
     redeclare package interpolation =
         Modelica_Noise.Math.Random.Utilities.Interpolators.LinearFirstOrder)
     annotation (Placement(transformation(extent={{-60,-96},{-40,-76}})));
+  Modelica.Blocks.Continuous.Der der1
+    annotation (Placement(transformation(extent={{28,-48},{48,-28}})));
+  Modelica.Blocks.Continuous.FirstOrder firstOrder(T=0.00001, y_start=0.2)
+    annotation (Placement(transformation(extent={{-20,54},{0,74}})));
+  Modelica.Blocks.Continuous.Der der2
+    annotation (Placement(transformation(extent={{16,72},{36,92}})));
 equation
   connect(linearNoise.y, filter.u) annotation (Line(
       points={{-39,-10},{-22,-10}},
+      color={0,0,127},
+      smooth=Smooth.None));
+  connect(der2.u, firstOrder.y) annotation (Line(
+      points={{14,82},{8,82},{8,64},{1,64}},
+      color={0,0,127},
+      smooth=Smooth.None));
+  connect(firstOrder.u, smoothNoise.y) annotation (Line(
+      points={{-22,64},{-22,7},{-39,7},{-39,-50}},
+      color={0,0,127},
+      smooth=Smooth.None));
+  connect(der1.u, smoothNoise.y) annotation (Line(
+      points={{26,-38},{-6,-38},{-6,-50},{-39,-50}},
       color={0,0,127},
       smooth=Smooth.None));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(

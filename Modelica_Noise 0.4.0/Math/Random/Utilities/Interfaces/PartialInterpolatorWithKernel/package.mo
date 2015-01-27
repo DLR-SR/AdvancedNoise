@@ -3,7 +3,7 @@ partial package PartialInterpolatorWithKernel "Interpolator interface providing 
   extends Random.Utilities.Interfaces.PartialInterpolator;
 
 
-  redeclare function extends interpolate
+  redeclare replaceable function extends interpolate
   "Interpolates the buffer using a replaceable kernel"
 protected
     Real coefficient "The intermediate container for the kernel evaluations";

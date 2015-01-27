@@ -38,6 +38,7 @@ protected
     annotation(Inline=true);
   end kernel;
 
+
 annotation (Icon(graphics={
                   Line(
       points={{-90,-48},{-22,-48},{-22,-48},{6,46},{88,46}},

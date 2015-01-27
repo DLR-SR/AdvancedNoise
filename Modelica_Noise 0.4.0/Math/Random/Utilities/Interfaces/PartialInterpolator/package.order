@@ -2,4 +2,5 @@ continuous
 nFuture
 nPast
 varianceFactor
+smoothness
 interpolate

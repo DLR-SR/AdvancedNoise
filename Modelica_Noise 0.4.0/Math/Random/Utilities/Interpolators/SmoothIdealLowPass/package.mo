@@ -19,6 +19,15 @@ package SmoothIdealLowPass "Smooth interpolation (with sinc function)"
   end kernel;
 
 
+  redeclare function extends interpolate
+
+    annotation(Inline=true,
+               derivative(order=1) = der_interpolate);
+  end interpolate;
+
+
+
+
   annotation (Documentation(info=
                              "<html>
 <p>

@@ -112,10 +112,18 @@ algorithm
   end when;
 
 equation
-  y = if generateNoise and time >= startTime then
-         interpolation.interpolate(buffer=buffer,
-            offset=(time-bufferStartTime) / samplePeriod + nPast)
-      else y_off;
+  if generateNoise and time >= startTime then
+    if interpolation.continuous then
+      y = smooth(interpolation.smoothness,
+                 interpolation.interpolate(buffer=buffer,
+                                           offset=(time-bufferStartTime) / samplePeriod + nPast));
+    else
+      y =        interpolation.interpolate(buffer=buffer,
+                                           offset=(time-bufferStartTime) / samplePeriod + nPast);
+    end if;
+  else
+    y = y_off;
+  end if;
 
     annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise),
               Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},

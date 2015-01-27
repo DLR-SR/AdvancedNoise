@@ -9,6 +9,8 @@ partial package PartialInterpolator "Interfaces of an interpolator in a buffer o
   "Number of buffer values required in the past";
   constant Real varianceFactor = 1
   "The factor by which the variance will be scaled, if this inteprolation is used";
+  constant Integer smoothness = 0
+  "The factor by which the variance will be scaled, if this inteprolation is used";
 
 
   replaceable partial function interpolate

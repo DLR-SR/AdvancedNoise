@@ -24,8 +24,10 @@ protected
     y2  := buffer[ind+1];
     y   := y1 + (y2-y1)*(offset-ind+1);
 
-    annotation(Inline=true);
+    annotation(Inline=true,
+               derivative(order=1) = der_interpolate);
   end interpolate;
+
 
 
   annotation (Documentation(info=
