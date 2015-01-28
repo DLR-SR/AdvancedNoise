@@ -14,14 +14,14 @@ block EventBasedNoise
   parameter Real y_max(start=1.0) "Maximum value of noise"
     annotation(Dialog(enable=enableNoise));
 
-  // Advanced dialog menu: Performance
+  // Advanced dialog menu: Noise generation
   parameter Boolean enableNoise = true "=true: y = noise, otherwise y = y_off"
-    annotation(choices(checkBox=true),Dialog(tab="Advanced",group="Performance"));
+    annotation(choices(checkBox=true),Dialog(tab="Advanced",group="Noise generation"));
   parameter Real y_off = 0.0 "Output if time<startTime or enableNoise=false"
-    annotation(Dialog(tab="Advanced",group="Performance"));
+    annotation(Dialog(tab="Advanced",group="Noise generation"));
   parameter Integer sampleFactor(min=1)=100
     "Events only at samplePeriod*sampleFactor if continuous"
-    annotation(Evaluate=true,Dialog(tab="Advanced",group="Performance", enable=enableNoise));
+    annotation(Evaluate=true,Dialog(tab="Advanced",group="Noise generation", enable=enableNoise));
 
   // Advanced dialog menu: Random number properties
   replaceable function distribution =
@@ -72,7 +72,7 @@ protected
   parameter Real actualSamplePeriod = if continuous then sampleFactor*samplePeriod else samplePeriod
     "Sample period of when-clause";
   parameter Integer nFuture = interpolation.nFuture+1
-    "Number of buffer elements to be predicted in the future (+1 for rounding errors)";
+    "Number of buffer elements to be predicted in the future (+1 for crossing sample events)";
   parameter Integer nPast = interpolation.nPast
     "Number of buffer elements to be retained from the past";
   parameter Integer nCopy = nPast + nFuture
@@ -87,8 +87,8 @@ protected
   discrete Real buffer[nBuffer] "Buffer to hold raw random numbers";
   discrete Real bufferStartTime "The last time we have filled the buffer";
   discrete Real r "Uniform random number in the range (0,1]";
-algorithm
 
+algorithm
   // During initialization the buffer is filled with random values
   when initial() then
     state := generator.initialState(localSeed, actualGlobalSeed);

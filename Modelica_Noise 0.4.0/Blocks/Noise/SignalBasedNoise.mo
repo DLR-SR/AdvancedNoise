@@ -14,11 +14,14 @@ block SignalBasedNoise
   parameter Real y_max(start=1.0) "Maximum value of noise"
     annotation(Dialog(enable=enableNoise));
 
-  // Advanced dialog menu: Performance
+  // Advanced dialog menu: Noise generation
   parameter Boolean enableNoise = true "=true: y = noise, otherwise y = y_off"
-    annotation(choices(checkBox=true),Dialog(tab="Advanced",group="Performance"));
+    annotation(choices(checkBox=true),Dialog(tab="Advanced",group="Noise generation"));
   parameter Real y_off = 0.0 "Output if time<startTime or enableNoise=false"
-    annotation(Dialog(tab="Advanced",group="Performance"));
+    annotation(Dialog(tab="Advanced",group="Noise generation"));
+  //parameter Integer sampleFactor(min=1)=100
+  //  "Events only at samplePeriod*sampleFactor if continuous"
+  //  annotation(Evaluate=true,Dialog(tab="Advanced",group="Noise generation", enable=enableNoise));
 
   // Advanced dialog menu: Random number properties
   replaceable function distribution =
@@ -66,55 +69,121 @@ protected
   // Construct sizes
   parameter Boolean continuous = interpolation.continuous
     "= true, if continuous interpolation";
-  parameter Integer nFuture = interpolation.nFuture+1
+  //parameter Real actualSamplePeriod = if continuous then sampleFactor*samplePeriod else samplePeriod
+  //  "Sample period of when-clause";
+  parameter Integer nFuture = interpolation.nFuture
     "Number of buffer elements to be predicted in the future (+1 for rounding errors)";
   parameter Integer nPast = interpolation.nPast
     "Number of buffer elements to be retained from the past";
+  //parameter Integer nCopy = nPast + nFuture
+  //  "Number of buffer entries to retain when re-filling buffer";
   parameter Integer nBuffer = nPast+1+nFuture "Size of buffer";
+  //parameter Integer nBuffer = if continuous then nPast+sampleFactor+nFuture
+  //                                          else nPast+      1     +nFuture;
+
   // Declare buffers
-public
+  //discrete Integer state[generator.nState]
+  //  "Internal state of random number generator";
   Real buffer[nBuffer] "Buffer to hold raw random numbers";
-  //Real bufferStartTime "The last time we have filled the buffer";
-  Real r "Uniform random number in the range (0,1]";
+  //discrete Real bufferStartTime "The last time we have filled the buffer";
+  Real r[nBuffer] "Uniform random number in the range (0,1]";
 
+  // Declare the input signal
+public
+  parameter Boolean useTime = true
+    "= true: u = time otherwise use input connector"
+    annotation(choices(checkBox=true),Dialog(tab="Advanced",group="Noise generation"));
+  Modelica.Blocks.Interfaces.RealInput u if not useTime
+    "Connector of Real input signal"
+    annotation (Placement(transformation(extent={{-140,-20},{-100,20}}, rotation=0)));
 protected
-  function initialState
-    input Integer localSeed;
-    input Integer globalSeed;
-    input Real signal;
-    output Integer state[generator.nState];
-  protected
-    Integer ints[2] = Modelica_Noise.Utilities.System.convertRealToIntegers(signal);
-  algorithm
-    state := generator.initialState(localSeed+ints[1], globalSeed+ints[2]);
-  end initialState;
+  Modelica.Blocks.Interfaces.RealInput signal
+    "The input signal to the random number generator";
+  Real offset = (signal-startTime) / samplePeriod;
+equation
+   if useTime then
+     signal = time;
+   else
+     connect(signal,u);
+   end if;
 
-algorithm
-  // Fill the buffer with random numbers
+  // Continuously fill the buffer with random numbers
   for i in 1:nBuffer loop
-    r         := generator.random(initialState(localSeed, actualGlobalSeed, noEvent(integer( (time-startTime) / samplePeriod + i) * samplePeriod + startTime)));
-    buffer[i] := distribution(r);
+    r[i]      = smoothRandom(initialState(localSeed=localSeed,
+                                          globalSeed=actualGlobalSeed,
+                                          signal=(noEvent(integer(offset))  + i) * samplePeriod + startTime));
+    buffer[i] = distribution(r[i]);
   end for;
 
-equation
-
   // Generate noise, if requested
-  if generateNoise and time >= startTime then
+  if true and generateNoise and time >= startTime then
 
     // Make sure, noise is smooth, if so declared
     if interpolation.continuous then
       y = smooth(interpolation.smoothness,
                  interpolation.interpolate(buffer=buffer,
-                                           offset=mod((time-startTime), samplePeriod)/samplePeriod + nPast));
+                                           offset=smoothmod1(offset) + nPast));
     else
       y =        interpolation.interpolate(buffer=buffer,
-                                           offset=mod((time-startTime), samplePeriod)/samplePeriod + nPast - 1);
+                                           offset=smoothmod1(offset) + nPast);
     end if;
 
   // Output y_off, if noise is not to be generated
   else
     y = y_off;
   end if;
+
+  // We require a few smooth functions for derivatives
+protected
+  function smoothmod1 "A modulo 1 operator with defined derivative"
+    input Real dividend "The dividend";
+    output Real remainder "The remainder = mod(divident,1)";
+  algorithm
+    remainder := dividend - integer( dividend);
+    annotation(Inline=false, derivative = der_smoothmod1);
+  end smoothmod1;
+
+  function der_smoothmod1 "Derivative of modulo 1 operator"
+    input Real dividend "The dividend";
+    input Real der_dividend "der(dividend)";
+    output Real der_remainder "der(remainder)";
+  algorithm
+    der_remainder := der_dividend;
+    annotation(Inline=true);
+  end der_smoothmod1;
+
+  function smoothRandom
+    "A random number generator with defined derivative (=0)"
+    input Integer state[generator.nState] "The previous state of the generator";
+    input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
+    output Real r "A uniform random number";
+  algorithm
+    r := generator.random(state);
+    annotation(Inline=false, derivative(noDerivative = state) = der_smoothRandom);
+  end smoothRandom;
+
+  function der_smoothRandom "Derivative of random number (=0)"
+    input Integer state[generator.nState] "The previous state of the generator";
+    input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
+    input Real der_dummy = 0 "der(dummy)=0";
+    output Real der_r "der(r)";
+  algorithm
+    der_r := 0;
+    annotation(Inline=true);
+  end der_smoothRandom;
+
+  function initialState "Combine Real signal with Integer seeds"
+    input Integer localSeed "The local seed";
+    input Integer globalSeed "the global seed";
+    input Real signal "The Real signal";
+    output Integer state[generator.nState]
+      "The initial state of random number generator";
+  protected
+    Integer ints[2] "Real signal casted to integers";
+  algorithm
+    ints  := Modelica_Noise.Utilities.System.convertRealToIntegers(signal);
+    state := generator.initialState(localSeed+ints[1], globalSeed+ints[2]);
+  end initialState;
 
     annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise),
               Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
