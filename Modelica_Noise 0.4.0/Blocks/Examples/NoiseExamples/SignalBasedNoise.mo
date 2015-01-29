@@ -9,9 +9,12 @@ model SignalBasedNoise
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false, enableNoise=true)
     annotation (Placement(transformation(extent={{0,40},{20,60}})));
 
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise signalBasedNoise(useTime=false,
-      redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.LinearFirstOrder)
+  Modelica_Noise.Blocks.Noise.SignalBasedNoise signalBasedNoise(
+    useTime=false,
+    redeclare function distribution =
+        Modelica_Noise.Math.Random.TruncatedQuantiles.weibull,
+    redeclare package interpolation =
+        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear)
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
   Modelica.Blocks.Sources.Clock clock(offset=0)
     annotation (Placement(transformation(extent={{-84,-6},{-64,14}})));

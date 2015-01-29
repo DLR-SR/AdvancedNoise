@@ -35,7 +35,9 @@ y_max=3)             annotation (Placement(transformation(extent={{-60,-20},{-40
     y_max=3,
     sampleFactor=10,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.LinearFirstOrder)
+        Modelica_Noise.Math.Random.Utilities.Interpolators.LinearFirstOrder,
+    redeclare function distribution =
+        Modelica_Noise.Math.Random.TruncatedQuantiles.weibull)
     annotation (Placement(transformation(extent={{-60,-96},{-40,-76}})));
   Modelica.Blocks.Continuous.Der der1
     annotation (Placement(transformation(extent={{28,-48},{48,-28}})));
@@ -52,12 +54,12 @@ equation
       points={{14,82},{8,82},{8,64},{1,64}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(firstOrder.u, smoothNoise.y) annotation (Line(
-      points={{-22,64},{-22,7},{-39,7},{-39,-50}},
+  connect(firstOrder.u, filteredNoise.y) annotation (Line(
+      points={{-22,64},{-32,64},{-32,-86},{-39,-86}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(der1.u, smoothNoise.y) annotation (Line(
-      points={{26,-38},{-6,-38},{-6,-50},{-39,-50}},
+  connect(der1.u, filteredNoise.y) annotation (Line(
+      points={{26,-38},{-8,-38},{-8,-86},{-39,-86}},
       color={0,0,127},
       smooth=Smooth.None));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(

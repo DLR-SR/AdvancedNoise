@@ -109,23 +109,24 @@ equation
 
   // Continuously fill the buffer with random numbers
   for i in 1:nBuffer loop
-    r[i]      = smoothRandom(initialState(localSeed=localSeed,
-                                          globalSeed=actualGlobalSeed,
-                                          signal=(noEvent(integer(offset))  + i) * samplePeriod + startTime));
-    buffer[i] = distribution(r[i]);
+    r[i]      = zeroDer(generator.random(
+                        initialState(localSeed=localSeed,
+                                     globalSeed=actualGlobalSeed,
+                                     signal=(noEvent(integer(offset))  + i) * samplePeriod + startTime)));
+    buffer[i] = zeroDer(distribution(r[i]));
   end for;
 
   // Generate noise, if requested
-  if true and generateNoise and time >= startTime then
+  if generateNoise and time >= startTime then
 
     // Make sure, noise is smooth, if so declared
     if interpolation.continuous then
       y = smooth(interpolation.smoothness,
                  interpolation.interpolate(buffer=buffer,
-                                           offset=smoothmod1(offset) + nPast));
+                                           offset=offset - zeroDer(noEvent(integer(offset))) + nPast));
     else
       y =        interpolation.interpolate(buffer=buffer,
-                                           offset=smoothmod1(offset) + nPast);
+                                           offset=offset - zeroDer(noEvent(integer(offset))) + nPast);
     end if;
 
   // Output y_off, if noise is not to be generated
@@ -135,43 +136,6 @@ equation
 
   // We require a few smooth functions for derivatives
 protected
-  function smoothmod1 "A modulo 1 operator with defined derivative"
-    input Real dividend "The dividend";
-    output Real remainder "The remainder = mod(divident,1)";
-  algorithm
-    remainder := dividend - integer( dividend);
-    annotation(Inline=false, derivative = der_smoothmod1);
-  end smoothmod1;
-
-  function der_smoothmod1 "Derivative of modulo 1 operator"
-    input Real dividend "The dividend";
-    input Real der_dividend "der(dividend)";
-    output Real der_remainder "der(remainder)";
-  algorithm
-    der_remainder := der_dividend;
-    annotation(Inline=true);
-  end der_smoothmod1;
-
-  function smoothRandom
-    "A random number generator with defined derivative (=0)"
-    input Integer state[generator.nState] "The previous state of the generator";
-    input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
-    output Real r "A uniform random number";
-  algorithm
-    r := generator.random(state);
-    annotation(Inline=false, derivative(noDerivative = state) = der_smoothRandom);
-  end smoothRandom;
-
-  function der_smoothRandom "Derivative of random number (=0)"
-    input Integer state[generator.nState] "The previous state of the generator";
-    input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
-    input Real der_dummy = 0 "der(dummy)=0";
-    output Real der_r "der(r)";
-  algorithm
-    der_r := 0;
-    annotation(Inline=true);
-  end der_smoothRandom;
-
   function initialState "Combine Real signal with Integer seeds"
     input Integer localSeed "The local seed";
     input Integer globalSeed "the global seed";
@@ -184,6 +148,82 @@ protected
     ints  := Modelica_Noise.Utilities.System.convertRealToIntegers(signal);
     state := generator.initialState(localSeed+ints[1], globalSeed+ints[2]);
   end initialState;
+
+  function zeroDer "Declare an expression to have zero derivative"
+    input Real u "Original expression";
+    input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
+    output Real y "=u";
+  algorithm
+    y := u;
+    annotation(Inline=false,derivative(noDerivative = u) = der_zeroDer);
+  end zeroDer;
+
+  function der_zeroDer "Zero derivative for zeroDer(expression)"
+    input Real u "Original expression";
+    input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
+    input Real der_dummy = 0 "der(dummy)";
+    output Real der_y "der(y) = der(u) = 0";
+  algorithm
+    der_y := 0;
+    annotation(Inline=true);
+  end der_zeroDer;
+
+//   function smoothmod1 "A modulo 1 operator with defined derivative"
+//     input Real dividend "The dividend";
+//     output Real remainder "The remainder = mod(divident,1)";
+//   algorithm
+//     remainder := dividend - integer( dividend);
+//     annotation(Inline=false, derivative = der_smoothmod1);
+//   end smoothmod1;
+//
+//   function der_smoothmod1 "Derivative of modulo 1 operator"
+//     input Real dividend "The dividend";
+//     input Real der_dividend "der(dividend)";
+//     output Real der_remainder "der(remainder)";
+//   algorithm
+//     der_remainder := der_dividend;
+//     annotation(Inline=true);
+//   end der_smoothmod1;
+//
+//   function smoothRandom
+//     "A random number generator with defined derivative (=0)"
+//     input Integer state[generator.nState] "The previous state of the generator";
+//     input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
+//     output Real r "A uniform random number";
+//   algorithm
+//     r := generator.random(state);
+//     annotation(Inline=false, derivative(noDerivative = state) = der_smoothRandom);
+//   end smoothRandom;
+//
+//   function der_smoothRandom "Derivative of random number (=0)"
+//     input Integer state[generator.nState] "The previous state of the generator";
+//     input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
+//     input Real der_dummy = 0 "der(dummy)=0";
+//     output Real der_r "der(r)";
+//   algorithm
+//     der_r := 0;
+//     annotation(Inline=true);
+//   end der_smoothRandom;
+//
+//   function smoothDistribution
+//     "A random number generator with defined derivative (=0)"
+//     input Real r "The uniform random number";
+//     input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
+//     output Real y "The transformed random number";
+//   algorithm
+//     y := distribution(r);
+//     annotation(Inline=false, derivative(noDerivative = r) = der_smoothDistribution);
+//   end smoothDistribution;
+//
+//   function der_smoothDistribution "Derivative of random number (=0)"
+//     input Real r "The uniform random number";
+//     input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
+//     input Real der_dummy = 0 "der(dummy)=0";
+//     output Real der_y "der(y)";
+//   algorithm
+//     der_y := 0;
+//     annotation(Inline=true);
+//   end der_smoothDistribution;
 
     annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise),
               Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
