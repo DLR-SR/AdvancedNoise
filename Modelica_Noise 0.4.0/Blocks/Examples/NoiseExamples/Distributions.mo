@@ -37,15 +37,6 @@ y_max=3,
 annotation (Placement(transformation(extent={{-60,-100},{-40,-80}})));
   Statistics.ContinuousMean discreteMean
     annotation (Placement(transformation(extent={{-20,-100},{0,-80}})));
-  Noise.EventBasedNoise batesNoise(
-    samplePeriod=0.01,
-    y_min=-1,
-    y_max=3,
-    redeclare function distribution =
-        Modelica_Noise.Math.Random.TruncatedQuantiles.bates (tol=1e-7, n=n),
-    redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Constant)
-    annotation (Placement(transformation(extent={{20,-20},{40,0}})));
 equation
   connect(normalNoise.y, normalMean.u) annotation (Line(
   points={{-39,-10},{-22,-10}},

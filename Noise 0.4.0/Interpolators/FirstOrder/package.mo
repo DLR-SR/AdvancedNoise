@@ -1,10 +1,9 @@
-within Modelica_Noise.Math.Random.Utilities.Interpolators;
-package LinearFirstOrder "A linear first order filter (k / (Ts + 1))"
-  extends Interfaces.PartialInterpolatorWithKernel(
-                                                final continuous=true,
-                                                final nFuture=0,
-                                                nPast=5,
-                                                varianceFactor = 0.900004539919624);
+within Noise.Interpolators;
+package FirstOrder "A linear first order filter (k / (Ts + 1))"
+  extends Utilities.Interfaces.PartialInterpolatorWithKernel(final continuous=true,
+                                                             final nFuture=0,
+                                                             nPast=5,
+                                                             varianceFactor=0.900004539919624);
 
   constant Real k=1 "Gain";
   constant Modelica.SIunits.Period T=0.1 "Time Constant";
@@ -53,9 +52,10 @@ protected
                derivative(order=1) = der_interpolate);
   end interpolate;
 
+
 annotation (Icon(graphics={
                   Line(
       points={{-90,-48},{-22,-48},{-22,-48},{6,46},{88,46}},
       color={0,0,0},
       smooth=Smooth.Bezier)}));
-end LinearFirstOrder;
+end FirstOrder;

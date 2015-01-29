@@ -3,8 +3,6 @@ package Normal "Library of normal distribution functions"
    extends Modelica.Icons.Package;
 
 
-
-
 annotation (Icon(graphics={Line(
           points={{-70,-63.953},{-66.5,-63.8975},{-63,-63.7852},{-59.5,
           -63.5674},{-56,-63.1631},{-52.5,-62.4442},{-49,-61.2213},{

@@ -3,8 +3,6 @@ package Discrete "Library of discrete distribution functions"
   extends Modelica.Icons.Package;
 
 
-
-
 annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
         -100,-100},{100,100}}), graphics={
         Line(

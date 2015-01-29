@@ -7,7 +7,7 @@ package Linear "Linear interpolation"
                                                 final varianceFactor = 2/3);
 
 
-  redeclare function extends interpolate
+  redeclare replaceable function extends interpolate
   "Linear interpolation in a buffer of random values"
 protected
     Integer ind "Index of buffer element just before offset";
@@ -27,7 +27,6 @@ protected
     annotation(Inline=true,
                derivative(order=1) = der_interpolate);
   end interpolate;
-
 
 
   annotation (Documentation(info=

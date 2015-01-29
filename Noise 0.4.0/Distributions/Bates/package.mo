@@ -1,8 +1,6 @@
-within Modelica_Noise.Math.Distributions;
+within Noise.Distributions;
 package Bates "Library of Bates distribution functions"
   extends Modelica.Icons.Package;
-
-
 
 
 annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{

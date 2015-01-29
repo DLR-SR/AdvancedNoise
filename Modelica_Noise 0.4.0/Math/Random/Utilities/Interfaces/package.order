@@ -1,5 +1,3 @@
 PartialGenerator
 PartialInterpolator
-PartialInterpolatorWithKernel
-partialKernel
 partialTruncatedQuantile

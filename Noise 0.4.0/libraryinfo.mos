@@ -6,11 +6,11 @@ NoiseVersion = "0.4.0";
 
 LibraryInfoMenuCommand(
   category="libraries",
-  text="Modelica_Noise "+NoiseVersion,
-  reference="Modelica_Noise",
+  text="Noise "+NoiseVersion,
+  reference="Noise",
   version=NoiseVersion,
   isModel=true,
-  description="Modelica_Noise modules for the MSL. Version "+NoiseVersion,
+  description="Additional noise modules for Modelica. Version "+NoiseVersion,
   ModelicaVersion="3.2.1",
   pos=1111)
 
