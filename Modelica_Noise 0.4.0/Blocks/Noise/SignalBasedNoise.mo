@@ -22,6 +22,9 @@ block SignalBasedNoise
   //parameter Integer sampleFactor(min=1)=100
   //  "Events only at samplePeriod*sampleFactor if continuous"
   //  annotation(Evaluate=true,Dialog(tab="Advanced",group="Noise generation", enable=enableNoise));
+  parameter Integer shift = 10 - interpolation.nPast
+    "Shift noise samples to account for interpolation buffer"
+    annotation(Dialog(tab="Advanced",group="Noise generation"));
 
   // Advanced dialog menu: Random number properties
   replaceable function distribution =
@@ -112,7 +115,7 @@ equation
     r[i]      = zeroDer(generator.random(
                         initialState(localSeed=localSeed,
                                      globalSeed=actualGlobalSeed,
-                                     signal=(noEvent(integer(offset))  + i) * samplePeriod + startTime)));
+                                     signal=(noEvent(integer(offset))  + i + shift) * samplePeriod + startTime)));
     buffer[i] = zeroDer(distribution(r[i]));
   end for;
 
@@ -240,7 +243,7 @@ protected
           lineColor={192,192,192},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid),
-        Line(visible=  enableNoise,
+        Line(visible = enableNoise,
            points={{-75,-13},{-61,-13},{-61,3},{-53,3},{-53,-45},{-45,-45},{-45,
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,
