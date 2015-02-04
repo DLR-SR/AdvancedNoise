@@ -15,10 +15,10 @@ algorithm
 
   cdf := 0;
   for i in 1:size(x,1) loop
-    if u > cdf then
+    if u > cdf/sum(p) then
       y := xSorted[i];
     end if;
-    cdf := cdf + p[iSorted[i]]/sum(p);
+    cdf := cdf + p[iSorted[i]];
   end for;
 
   annotation (Inline=true,Documentation(info="<html>
