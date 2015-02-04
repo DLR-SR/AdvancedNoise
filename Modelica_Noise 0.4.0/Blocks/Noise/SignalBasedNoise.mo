@@ -126,7 +126,7 @@ equation
                                            offset=offset - zeroDer(noEvent(integer(offset))) + nPast));
     else
       y =        interpolation.interpolate(buffer=buffer,
-                                           offset=offset - zeroDer(noEvent(integer(offset))) + nPast);
+                                           offset=offset - zeroDer(       (integer(offset))) + nPast);
     end if;
 
   // Output y_off, if noise is not to be generated
