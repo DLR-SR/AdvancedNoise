@@ -88,7 +88,6 @@ protected
   end interpolate;
 
 
-
   function kernel "Kernel for ideal low pass (sinc-function)"
     import Modelica_Noise.Math.Special.sinc;
     import Modelica.Constants.pi;
