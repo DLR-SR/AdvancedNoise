@@ -1,7 +1,6 @@
 within Modelica_Noise.Blocks.Statistics;
 block StandardDeviation
   "Calculates the empirical standard deviation of its input signal"
-  import Noise;
   extends Modelica.Blocks.Interfaces.BlockIcon;
 
   Modelica.Blocks.Interfaces.RealInput u "Noisy input signal" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));

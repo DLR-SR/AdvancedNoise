@@ -82,7 +82,6 @@ protected
   end interpolate;
 
 
-
   replaceable partial function kernel "Kernel for interpolation"
     extends partialKernel;
   end kernel;
