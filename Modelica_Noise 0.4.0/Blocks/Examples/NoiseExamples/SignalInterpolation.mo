@@ -10,13 +10,13 @@ model SignalInterpolation
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
 
   Modelica_Noise.Blocks.Noise.SignalBasedNoise constantNoise(
-    useTime=false,
     redeclare package interpolation =
         Modelica_Noise.Math.Random.Utilities.Interpolators.Constant,
-    samplePeriod=0.01,
     y_min=-1,
     y_max=+1,
-    useAutomaticLocalSeed=false)
+    useAutomaticLocalSeed=false,
+    samplePeriod=0.1,
+    useTime=false)
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
   Modelica.Blocks.Continuous.Der derLinear
     annotation (Placement(transformation(extent={{-20,20},{0,40}})));
@@ -24,21 +24,21 @@ model SignalInterpolation
     annotation (Placement(transformation(extent={{-100,70},{-80,90}})));
   Modelica_Noise.Blocks.Noise.SignalBasedNoise linearNoise(
     useTime=false,
-    samplePeriod=0.01,
     y_min=-1,
     y_max=+1,
     redeclare package interpolation =
         Modelica_Noise.Math.Random.Utilities.Interpolators.Linear,
-    useAutomaticLocalSeed=false)
+    useAutomaticLocalSeed=false,
+    samplePeriod=0.1)
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
   Modelica_Noise.Blocks.Noise.SignalBasedNoise smoothNoise(
     useTime=false,
-    samplePeriod=0.01,
     y_min=-1,
     y_max=+1,
     useAutomaticLocalSeed=false,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass)
+        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass,
+    samplePeriod=0.1)
     annotation (Placement(transformation(extent={{-60,-30},{-40,-10}})));
   Modelica.Blocks.Continuous.Der derSmooth
     annotation (Placement(transformation(extent={{-20,-30},{0,-10}})));

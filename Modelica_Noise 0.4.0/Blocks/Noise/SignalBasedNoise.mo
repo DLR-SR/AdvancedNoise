@@ -6,8 +6,8 @@ block SignalBasedNoise
   extends Modelica.Blocks.Interfaces.SO;
 
   // Main dialog menu
-  parameter Modelica.SIunits.Time samplePeriod(start=0.01)
-    "Period for pseudo-sampling the raw random numbers"
+  parameter Real samplePeriod(start=0.01)
+    "Period in signal for pseudo-sampling the raw random numbers"
     annotation(Dialog(enable=enableNoise));
   parameter Real y_min(start=0.0) "Minimum value of noise"
     annotation(Dialog(enable=enableNoise));
@@ -22,7 +22,7 @@ block SignalBasedNoise
   //parameter Integer sampleFactor(min=1)=100
   //  "Events only at samplePeriod*sampleFactor if continuous"
   //  annotation(Evaluate=true,Dialog(tab="Advanced",group="Noise generation", enable=enableNoise));
-  parameter Integer shift = 10 - interpolation.nPast
+  final parameter Integer shift = -interpolation.nPast
     "Shift noise samples to account for interpolation buffer"
     annotation(Dialog(tab="Advanced",group="Noise generation"));
 
@@ -56,8 +56,8 @@ block SignalBasedNoise
       annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise and not useAutomaticLocalSeed));
   final parameter Integer localSeed = if useAutomaticLocalSeed then Modelica_Noise.Math.Random.Utilities.automaticLocalSeed(getInstanceName()) else
                                                                     fixedLocalSeed;
-  parameter Modelica.SIunits.Time startTime = 0.0
-    "Start time for sampling the raw random numbers"
+  parameter Real signalOffset = 0.0
+    "Offset in signal for sampling the raw random numbers"
     annotation(Dialog(tab="Advanced", group="Initialization",enable=enableNoise));
 
   // Retrieve values from outer global seed
@@ -82,7 +82,8 @@ protected
   //  "Number of buffer entries to retain when re-filling buffer";
   parameter Integer nBuffer = nPast+1+nFuture "Size of buffer";
   //parameter Integer nBuffer = if continuous then nPast+sampleFactor+nFuture
-  //                                          else nPast+      1     +nFuture;
+  //                                          else nPast+      1     +nFuture
+  //  "Size of buffer";
 
   // Declare buffers
   //discrete Integer state[generator.nState]
@@ -102,7 +103,7 @@ public
 protected
   Modelica.Blocks.Interfaces.RealInput signal
     "The input signal to the random number generator";
-  Real offset = (signal-startTime) / samplePeriod;
+  Real offset = (signal-signalOffset) / samplePeriod;
 equation
    if useTime then
      signal = time;
@@ -115,12 +116,12 @@ equation
     r[i]      = zeroDer(generator.random(
                         initialState(localSeed=localSeed,
                                      globalSeed=actualGlobalSeed,
-                                     signal=(noEvent(integer(offset))  + i + shift) * samplePeriod + startTime)));
+                                     signal=(noEvent(integer(offset)) + i + shift) * samplePeriod + signalOffset)));
     buffer[i] = zeroDer(distribution(r[i]));
   end for;
 
   // Generate noise, if requested
-  if generateNoise and time >= startTime then
+  if generateNoise then
 
     // Make sure, noise is smooth, if so declared
     if interpolation.continuous then
@@ -255,7 +256,7 @@ protected
           lineColor={0,0,0},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid,
-          textString="%samplePeriod s"),
+          textString=if useTime then "%samplePeriod s" else "%samplePeriod"),
         Line(visible=not enableNoise,
           points={{-76,56},{72,56}},
           color={0,0,0},
