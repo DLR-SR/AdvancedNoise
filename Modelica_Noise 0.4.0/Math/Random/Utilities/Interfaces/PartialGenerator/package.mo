@@ -11,18 +11,18 @@ partial package PartialGenerator "Interfaces of a uniform random number generato
     "The local seed to be used for generating initial states";
     input Integer globalSeed
     "The global seed to be combined with the local seed";
-    output Integer[:] state "The generated initial states";
+    output Integer[nState] state "The generated initial states";
   end initialState;
 
 
   replaceable partial function random
   "Return a random number with a uniform distribution in the range 0.0 < result <= 1.0"
     extends Modelica.Icons.Function;
-    input Integer[:] stateIn
+    input Integer[nState] stateIn
     "The internal states for the random number generator";
     output Real result
     "A random number with a uniform distribution on the interval (0,1]";
-    output Integer[size(stateIn,1)] stateOut
+    output Integer[nState] stateOut
     "The new internal states of the random number generator";
   end random;
 
