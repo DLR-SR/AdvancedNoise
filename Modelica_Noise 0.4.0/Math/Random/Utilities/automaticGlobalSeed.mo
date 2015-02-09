@@ -3,11 +3,8 @@ impure function automaticGlobalSeed
   "Creates an automatic integer seed from the current time and process id"
   output Integer seed "Automatically generated seed";
 protected
-  Integer ms;
-  Integer sec;
-  Integer min;
-  Integer hour;
-  Integer pid;
+  Integer ms,sec,min,hour "Current system time";
+  Integer pid "Current process ID";
 algorithm
   (ms,sec,min,hour) := Modelica_Noise.Utilities.System.gettime();
   pid := Modelica_Noise.Utilities.System.getpid();
