@@ -1,4 +1,4 @@
-within Modelica_Noise.Test;
+within Noise.Test;
 function special "Test functions Math.Special"
    import Modelica.Utilities.Streams.print;
    import Modelica_Noise.Math.Special;

@@ -1,4 +1,4 @@
-within Modelica_Noise;
+within Noise;
 package Test 
 
 end Test;

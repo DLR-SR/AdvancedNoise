@@ -1,4 +1,4 @@
-within Modelica_Noise.Test;
+within Noise.Test;
 function quantiles "Test functions Math.Statistics.Quantiles"
    import Modelica.Utilities.Streams.print;
    import Modelica_Noise.Math.Random.TruncatedQuantiles;
@@ -8,19 +8,19 @@ protected
    Real u[nPoints] = linspace(eps, 1-eps, nPoints);
    Real y[nPoints];
 algorithm
-   y :=Math.Distributions.Uniform.quantile(
+  y := Modelica_Noise.Math.Distributions.Uniform.quantile(
     u,
     y_min=1,
     y_max=3);
    plotArray(u, y, id=1);
 
-   y :=Math.Distributions.Normal.quantile(
+  y := Modelica_Noise.Math.Distributions.Normal.quantile(
     u,
     mu=2,
     sigma=3);
    plotArray(u, y, id=2);
 
-   y :=Math.Distributions.Weibull.quantile(
+  y := Modelica_Noise.Math.Distributions.Weibull.quantile(
     u,
     lambda=1,
     k=1);
