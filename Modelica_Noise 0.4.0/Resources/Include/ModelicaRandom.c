@@ -1,10 +1,31 @@
-/* External functions for Modelica Noise library
+/* External functions for Modelica.Math.Random library
 
-   Copyright (C) 2014, Modelica Association and DLR.
+   The functions in this file are non-portable. The following #define's are used
+   to define the system calls of the operating system
+
+    _MSC_VER       : Microsoft Visual C++
+    MODELICA_EXPORT: Prefix used for function calls. If not defined, blank is used
+                     Useful definitions:
+                     - "static" that is all functions become static
+                       (useful if file is included with other C-sources for an
+                        embedded system)
+                     - "__declspec(dllexport)" if included in a DLL and the
+                       functions shall be visible outside of the DLL
+
+   Release Notes:
+      Feb. 17, 2015: by Andreas Klöckner and Martin Otter, DLR-SR.
+                     Implemented a first version.
+
+   Copyright (C) 2015, Modelica Association and DLR.
+
+   The content of this file is free software; it can be redistributed
+   and/or modified under the terms of the Modelica License 2, see the
+   license conditions and the accompanying disclaimer in file
+   Modelica/ModelicaLicense2.html or in Modelica.UsersGuide.ModelicaLicense2.
 */
 
-#ifndef MODELICANOISE_H
-#define MODELICANOISE_H
+#ifndef MODELICARANDOM_H
+#define MODELICARANDOM_H
 
 /* Define a MODELICA_EXPORT function prefix */
 #if !defined(MODELICA_EXPORT)
@@ -14,18 +35,18 @@
 /* Define to 1 if <stdint.h> header file is available */
 #if defined(_WIN32)
 #   if defined(_MSC_VER) && _MSC_VER >= 1600
-#       define NOISE_HAVE_STDINT_H 1
+#       define ModelicaRandom_HAVE_STDINT_H 1
 #   elif defined(__WATCOMC__)
-#       define NOISE_HAVE_STDINT_H 1
+#       define ModelicaRandom_HAVE_STDINT_H 1
 #   else
-#       undef NOISE_HAVE_STDINT_H
+#       undef ModelicaRandom_HAVE_STDINT_H
 #   endif
 #else
-#   define NOISE_HAVE_STDINT_H 1
+#   define ModelicaRandom_HAVE_STDINT_H 1
 #endif
 
 /* Include integer type header */
-#if NOISE_HAVE_STDINT_H
+#if ModelicaRandom_HAVE_STDINT_H
 #   include <stdint.h>
 #else
 #   define int32_t  int
@@ -56,8 +77,8 @@
 #   include <sys/timeb.h>
 #   include <time.h>
 #   include <process.h>
-#   define NOISE_getpid _getpid
-    static void NOISE_getTime(int* ms, int* sec, int* min, int* hour, int* mday, int* mon, int* year) {
+#   define ModelicaRandom_getpid _getpid
+    static void ModelicaRandom_getTime(int* ms, int* sec, int* min, int* hour, int* mday, int* mon, int* year) {
         struct _timeb timebuffer;
         struct tm* tlocal;
         time_t calendarTime;
@@ -84,8 +105,8 @@
 #   include <sys/time.h>
 #   include <time.h>
 #   include <unistd.h>
-#   define NOISE_getpid getpid
-    static void NOISE_getTime(int* ms, int* sec, int* min, int* hour, int* mday, int* mon, int* year) {
+#   define ModelicaRandom_getpid getpid
+    static void ModelicaRandom_getTime(int* ms, int* sec, int* min, int* hour, int* mday, int* mon, int* year) {
         struct timeval tm;
         int ms0;
        
@@ -103,7 +124,7 @@
 
 #endif
 
-static int NOISE_APHash(char* str)
+static int ModelicaRandom_hashString(char* str)
 {  /* Compute an unsigned int hash code from a character string
     *
     * Author: Arash Partow - 2002                                            *
@@ -157,11 +178,11 @@ static int NOISE_APHash(char* str)
 /* transform 64-bit unsigned integer to double such that zero cannot appear, by
    first transforming to a 64-bit signed integer, then to a double in the range 0 .. 1.
    (using the algorithm given here: http://www.doornik.com/research/randomdouble.pdf) */
-#define NOISE_INVM64 5.42101086242752217004e-20 /* = 2^(-64) */
-#define NOISE_RAND(INT64) ( (int64_t)(INT64) * NOISE_INVM64 + 0.5 )
+#define ModelicaRandom_INVM64 5.42101086242752217004e-20 /* = 2^(-64) */
+#define ModelicaRandom_RAND(INT64) ( (int64_t)(INT64) * ModelicaRandom_INVM64 + 0.5 )
 
 
-MODELICA_EXPORT void NOISE_xorshift64star(int state_in[], int state_out[], double* y) {
+MODELICA_EXPORT void ModelicaRandom_xorshift64star(int state_in[], int state_out[], double* y) {
     /*  xorshift64* random number generator.
         For details see http://xorshift.di.unimi.it/
 
@@ -202,12 +223,12 @@ MODELICA_EXPORT void NOISE_xorshift64star(int state_in[], int state_out[], doubl
     s.s64 = x;
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
         state_out[i] = s.s32[i];}
-    *y = NOISE_RAND(x);
+    *y = ModelicaRandom_RAND(x);
 }
 
 
 
-MODELICA_EXPORT void NOISE_xorshift128plus(int state_in[], int state_out[], double* y) {
+MODELICA_EXPORT void ModelicaRandom_xorshift128plus(int state_in[], int state_out[], double* y) {
     /*  xorshift128+ random number generator.
         For details see http://xorshift.di.unimi.it
         Arguments seed and newSeed must be int32_t vectors with at least 4 elements each.
@@ -254,11 +275,11 @@ MODELICA_EXPORT void NOISE_xorshift128plus(int state_in[], int state_out[], doub
     /* Convert outputs */
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
         state_out[i] = s.s32[i];}
-    *y = NOISE_RAND(s.s64[1]);
+    *y = ModelicaRandom_RAND(s.s64[1]);
 }
 
 
-MODELICA_EXPORT void NOISE_xorshift1024star_internal(uint64_t s[], int* p, double* y) {
+static void ModelicaRandom_xorshift1024star_internal(uint64_t s[], int* p, double* y) {
     /*  xorshift1024* random number generator.
         For details see http://xorshift.di.unimi.it
         
@@ -301,14 +322,14 @@ MODELICA_EXPORT void NOISE_xorshift1024star_internal(uint64_t s[], int* p, doubl
     s[*p] = s0 ^ s1;
         
     /* Convert outputs */
-    *y = NOISE_RAND(s[*p]*1181783497276652981LL);
+    *y = ModelicaRandom_RAND(s[*p]*1181783497276652981LL);
 }
 
-MODELICA_EXPORT void NOISE_xorshift1024star(int state_in[], int state_out[], double* y) {
+MODELICA_EXPORT void ModelicaRandom_xorshift1024star(int state_in[], int state_out[], double* y) {
     /*  xorshift1024* random number generator.
         For details see http://xorshift.di.unimi.it
         
-        This function uses NOISE_xorshift1024star_internal as generator and adapts inputs and outputs.
+        This function uses ModelicaRandom_xorshift1024star_internal as generator and adapts inputs and outputs.
 
         Adapted by Martin Otter and Andreas Klöckner (DLR) 
         for the Modelica external function interface.
@@ -334,7 +355,7 @@ MODELICA_EXPORT void NOISE_xorshift1024star(int state_in[], int state_out[], dou
     p = state_in[32];
     
     /* The actual algorithm */
-    NOISE_xorshift1024star_internal(&(s.s64), &p, y);
+    ModelicaRandom_xorshift1024star_internal(&(s.s64), &p, y);
         
     /* Convert outputs */
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
@@ -351,12 +372,12 @@ MODELICA_EXPORT void NOISE_xorshift1024star(int state_in[], int state_out[], dou
 */
 
 /* Internal state of impure random number generator */
-# define NOISE_SIZE 33
-static uint64_t NOISE_s[ 16 ]; 
-static int NOISE_p;
-static int NOISE_id=0;
+#define ModelicaRandom_SIZE 33
+static uint64_t ModelicaRandom_s[ 16 ]; 
+static int ModelicaRandom_p;
+static int ModelicaRandom_id=0;
 
-MODELICA_EXPORT void NOISE_setInternalState_xorshift1024star(int* state, size_t nState, int id){
+MODELICA_EXPORT void ModelicaRandom_setInternalState_xorshift1024star(int* state, size_t nState, int id){
     /* receives the external states from Modelica*/
     union s_tag{
       int32_t  s32[2];
@@ -364,17 +385,17 @@ MODELICA_EXPORT void NOISE_setInternalState_xorshift1024star(int* state, size_t 
     } s;
     int i;
 
-    if ( nState > NOISE_SIZE ) ModelicaFormatError("External state vector is too large. Should be %d.",NOISE_SIZE);    
+    if ( nState > ModelicaRandom_SIZE ) ModelicaFormatError("External state vector is too large. Should be %d.",ModelicaRandom_SIZE);    
     for (i=0; i<16; i++){
        s.s32[0] = state[2*i];
        s.s32[1] = state[2*i+1];
-       NOISE_s[i] = s.s64;
+       ModelicaRandom_s[i] = s.s64;
     }
-    NOISE_p = state[32];
-    NOISE_id = id;   
+    ModelicaRandom_p = state[32];
+    ModelicaRandom_id = id;   
 }
 
-MODELICA_EXPORT double NOISE_impureRandom_xorshift1024star(int id) { 
+MODELICA_EXPORT double ModelicaRandom_impureRandom_xorshift1024star(int id) { 
     /* xorshift1024* random number generator (same as above, but with internal state, instead of external one).
        For details see http://xorshift.di.unimi.it
 	  
@@ -384,7 +405,7 @@ MODELICA_EXPORT double NOISE_impureRandom_xorshift1024star(int id) {
 	   as input argument to ModelicaRandom_xorshift1024star. As a result, the ordering
 	   of the function is correct.
 
-       This function uses NOISE_xorshift1024star_internal as generator and adapts inputs and outputs.
+       This function uses ModelicaRandom_xorshift1024star_internal as generator and adapts inputs and outputs.
        
        Adapted by Martin Otter (DLR) to initialize the seed with ModelicaRandom_initializeRandom
 	   and to return a double in range 0 < randomNumber < 1.0
@@ -399,11 +420,11 @@ MODELICA_EXPORT double NOISE_impureRandom_xorshift1024star(int id) {
    
     double y;
    
-    /* Check that NOISE_initializeImpureRandome_xorshift1024star was called before */
-    if ( id != NOISE_id ) ModelicaError("Function impureRandom not initialized with function initializeImpureRandom");
+    /* Check that ModelicaRandom_initializeImpureRandome_xorshift1024star was called before */
+    if ( id != ModelicaRandom_id ) ModelicaError("Function impureRandom not initialized with function initializeImpureRandom");
     
     /* Compute random number */
-    NOISE_xorshift1024star_internal(&NOISE_s, &NOISE_p, &y);
+    ModelicaRandom_xorshift1024star_internal(&ModelicaRandom_s, &ModelicaRandom_p, &y);
     return y;
 }
    
@@ -412,7 +433,7 @@ MODELICA_EXPORT double NOISE_impureRandom_xorshift1024star(int id) {
 
 /* original algorithms */
 
-MODELICA_EXPORT void NOISE_double2int(double d, int i[]) {
+MODELICA_EXPORT void ModelicaRandom_convertRealToIntegers(double d, int i[]) {
     /* casts a double to two integers */
     union d2i{
         double d;

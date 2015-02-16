@@ -8,13 +8,53 @@ algorithm
   y := if u >= 0 then 1 - exp(-(u/lambda)^k) else 0.0;
 
   annotation (Inline=true,Documentation(info="<html>
+<h4>Syntax</h4>
+<blockquote><pre>
+Weibull.<b>cumulative</b>(u, lambda=1, k=1);
+</pre></blockquote>
+
+<h4>Description</h4>
 <p>
-This function returns the cumulative distribution function according to a Weibull distribution.
+This function computes the cumulative distribution function 
+according to a <b>Weibull</b> distribution
+with scale parameter <b>lambda</b> and shape parameter <b>k</b>. Equation:
 </p>
 
+<blockquote><pre>
+y := if u >= 0 then 1 - exp(-(u/lambda)^k) else 0.0;
+</pre></blockquote>
+
 <p>
-For more details of this distribution see
+The returned value y is in the range:
+</p>
+
+<p><blockquote>
+0 &le; y &le; 1
+</blockquote></p>
+
+<p>
+Plot of the function:
+</p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/Weibull.cumulative.png\">
+</blockquote></p>
+
+<p>
+For more details, see 
 <a href=\"http://en.wikipedia.org/wiki/Weibull_distribution\">Wikipedia</a>.
+</p>
+
+<h4>Example</h4>
+<blockquote><pre>
+  cumulative(0.5)       // = 0.3934693402873666
+  cumulative(0.5,0.5,1) // = 0.6321205588285577
+</pre></blockquote>
+
+<h4>See also</h4>
+<p>
+<a href=\"modelica://Modelica_Noise.Math.Distributions.Weibull.density\">Weibull.density</a>,
+<a href=\"modelica://Modelica_Noise.Math.Distributions.Weibull.quantile\">Weibull.quantile</a>.
 </p>
 </html>"));
 end cumulative;

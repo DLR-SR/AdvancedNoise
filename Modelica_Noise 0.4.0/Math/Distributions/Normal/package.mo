@@ -16,5 +16,34 @@ annotation (Icon(graphics={Line(
           -62.4442},{56,-63.1631},{59.5,-63.5674},{63,-63.7852},{66.5,
           -63.8975},{70,-63.953}},
           color={0,0,0},
-          smooth=Smooth.Bezier)}));
+          smooth=Smooth.Bezier)}), Documentation(info="<html>
+<p>
+This package provides
+</p>
+<ul>
+<li> probability density function (= derivative of cumulative distribution function),</li>
+<li> cumulative distribution function, and</li>
+<li> quantile (= inverse cumulative distribution function).</li>
+</ul>
+<p>
+of the <b>normal</b> distribution. Examples:
+</p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/Normal.density.png\">
+</blockquote></p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/Normal.cumulative.png\">
+</blockquote></p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/Normal.quantile.png\">
+</blockquote></p>
+
+<p>
+For more details of this distribution see
+<a href=\"http://en.wikipedia.org/wiki/Normal_distribution\">Wikipedia</a>.
+</p>
+</html>"));
 end Normal;

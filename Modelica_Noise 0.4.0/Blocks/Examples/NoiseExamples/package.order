@@ -1,9 +1,12 @@
+TimeBasedNoise
+SignalBasedNoise
 AutomaticSeed
 Interpolation
 Distributions
 UniformNoiseProperties
 NormalNoiseProperties
-ImpureGenerator
 SignalInterpolation
 Densities
+TruncatedDensities
+ImpureGenerator
 Utilities

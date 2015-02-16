@@ -1,3 +1,2 @@
-getpid
-convertRealToIntegers
-gettime
+getPid
+getTime

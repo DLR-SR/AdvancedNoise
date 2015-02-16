@@ -22,17 +22,39 @@ algorithm
 
   // Fill the next elements of the state vector (besides last)
   for i in 3:2:(nState-1) loop
-    (r,state[    i   :  i+1])  := Xorshift64star.random(state[   i   - 2:   i   - 1]);
+    (r,state[i:i+1]) := Xorshift64star.random(state[i-2:i-1]);
   end for;
 
   // Fill the last element of the state vector (to handle the case if nState is uneven)
   if nState >= 3 then
-    (r,state[nState-1:nState]) := Xorshift64star.random(state[nState - 2:nState - 1]);
+    (r,state[nState-1:nState]) := Xorshift64star.random(state[nState-2:nState-1]);
   end if;
 
   annotation (Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>", info="<html>
-<p>This function fills the initial state vector using the <a href=\"Noise.RNG.SampleBased.RNG_MRG\">MRG</a> random number generator.</p>
+<h4>Syntax</h4>
+<blockquote><pre>
+state = Utilities.<b>initialStateWithXorshift6star</b>(localSeed, globalSeed, nState);
+</pre></blockquote>
+
+<h4>Description</h4>
+
+<p>
+The <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64star</a>
+random number generator is used to fill a state vector of length nState (nState &ge;4) with random numbers and return
+this vector. Arguments localSeed and globalSeed are any Integer numbers (including zero or negative number)
+that characterize the initial state.
+If the same localSeed, globalSeed, nState is given, the same state vector is returned.
+</p>
+
+<h4>Example</h4>
+<blockquote><pre>
+  parameter Integer localSeed;
+  parameter Integer globalSeed;
+  Integer state[33];
+<b>initial equation</b>
+  state = Utilities.initialStateWithXorshift64star(localSeed, globalSeed, size(state,1));
+</pre></blockquote>
 </html>"));
 end initialStateWithXorshift64star;

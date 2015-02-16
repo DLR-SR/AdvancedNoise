@@ -10,6 +10,7 @@ protected
   Integer ind "Index of buffer element just before offset";
   Real der_y1 "Value of buffer element just before offset";
   Real der_y2 "Value of buffer element just after offset";
+  Integer nBuffer = size(buffer,1);
 algorithm
   // For a general kernel based interpolation:
   // y   = sum( (K(-o)   * b[i])  )
@@ -20,9 +21,17 @@ algorithm
   //     + sum(                          K(o) * b[i]' )
 
   // We need to interpolate only between two values
-  ind    := integer(offset) + 1;
+  if offset >= nBuffer - nFuture and offset <= (1+1e-6)*(nBuffer - nFuture) then
+     ind :=nBuffer - 1;
+  else
+     assert(offset >= nPast and offset < nBuffer - nFuture,
+            "offset out of range (offset=" + String(offset) + ", nBuffer="+String(nBuffer)+")");
+     ind := integer(offset) + 1;
+  end if;
   der_y1 := der_buffer[ind];
   der_y2 := der_buffer[ind+1];
   der_y := (buffer[ind+1] - buffer[ind]) * der_offset
          +  der_y1 + (der_y2-der_y1)*(offset-ind+1);
+  annotation (Documentation(info="<html>
+</html>"));
 end der_interpolate;

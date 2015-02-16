@@ -1,4 +1,6 @@
 erf
+erfc
 erfInv
-cdfInvNormal
+erfcInv
 sinc
+Internal

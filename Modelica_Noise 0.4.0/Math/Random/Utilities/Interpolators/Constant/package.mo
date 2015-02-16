@@ -4,22 +4,36 @@ package Constant "Constant interpolation"
                                                 final continuous=false,
                                                 final nFuture=0,
                                                 final nPast=0,
-                                                final varianceFactor = 1);
+                                                final varianceFactor = 1,
+                                                final smoothness = -1);
 
 
   redeclare function extends interpolate
   "Constant interpolation in a buffer of random values"
   algorithm
-     y :=buffer[1];
-     annotation(Inline=true);
+     y :=buffer[ if nBuffer == 1 then 1 else integer(offset) + 1];
+     annotation(Inline=true, Documentation(info="<html>
+<h4>Syntax</h4>
+<blockquote><pre>
+y = Constant.<b>interpolation</b>(buffer,offset);
+</pre></blockquote>
+
+<h4>Description</h4>
+<p>
+Interpolate in buffer by using constant interpolation. Input argument offset is a Real number
+marking the point at which interpolation shall take place. offset=0 is the first buffer value
+buffer[1]. offset=size(buffer,1)-1 is the last buffer value buffer[size(buffer,1)]. It is required that
+0 &le; offset &lt; size(buffer,1)-1.
+If the buffer has length 1, the function always returns y=buffer[1]. Otherwise
+the function returns y = buffer[integer(offset)+1]. 
+</p>
+</html>"));
   end interpolate;
 
 
-  annotation (Documentation(info=
-                             "<html>
+  annotation (Documentation(info="<html>
 <p>
-For details of the xorshift64* algorithm see 
-<a href=\"http://xorshift.di.unimi.it/\">http://xorshift.di.unimi.it/</a> .
+This Interpolation package provides <b>constant</b> interpolation in a buffer.
 </p>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
         -100},{100,100}}),

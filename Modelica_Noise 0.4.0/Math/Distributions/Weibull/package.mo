@@ -11,5 +11,34 @@ package Weibull "Library of Weibull distribution functions"
               {33,-4.9424},{36.5,-16.4596},{40,-26.1579},{43.5,-34.1153},{47,-40.4975},{50.5,-45.5133},
               {54,-49.3832},{57.5,-52.3187},{61,-54.5105},{64.5,-56.123},{68,-57.2928}},
           color={0,0,0},
-          smooth=Smooth.Bezier)}));
+          smooth=Smooth.Bezier)}), Documentation(info="<html>
+<p>
+This package provides
+</p>
+<ul>
+<li> probability density function (= derivative of cumulative distribution function),</li>
+<li> cumulative distribution function, and</li>
+<li> quantile (= inverse cumulative distribution function).</li>
+</ul>
+<p>
+of the <b>Weibull</b> distribution. Examples:
+</p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/Weibull.density.png\">
+</blockquote></p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/Weibull.cumulative.png\">
+</blockquote></p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/Weibull.quantile.png\">
+</blockquote></p>
+
+<p>
+For more details of this distribution see
+<a href=\"http://en.wikipedia.org/wiki/Weibull_distribution\">Wikipedia</a>.
+</p>
+</html>"));
 end Weibull;

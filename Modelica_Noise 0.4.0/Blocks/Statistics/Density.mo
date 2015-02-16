@@ -6,7 +6,7 @@ block Density "Calculates the density of a selected distribution"
   replaceable function distribution =
        Modelica_Noise.Math.Distributions.Uniform.density constrainedby
     Modelica_Noise.Math.Distributions.Interfaces.partialDensity
-    "Random number distribution"
+    "Probability density function"
     annotation(choicesAllMatching=true);
 
   Modelica.Blocks.Interfaces.RealInput u "Real input signal" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));

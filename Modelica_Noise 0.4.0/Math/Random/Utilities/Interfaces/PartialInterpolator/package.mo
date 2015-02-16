@@ -8,9 +8,9 @@ partial package PartialInterpolator "Interfaces of an interpolator in a buffer o
   constant Integer nPast(min=0) = 0
   "Number of buffer values required in the past";
   constant Real varianceFactor = 1
-  "The factor by which the variance will be scaled, if this inteprolation is used";
+  "The factor by which the variance will be scaled, if this interpolation is used";
   constant Integer smoothness = 0
-  "The factor by which the variance will be scaled, if this inteprolation is used";
+  "The smoothness of the interpolation. =0: continuous, =1: continuous and differentiable, ...";
 
 
   replaceable partial function interpolate
@@ -21,10 +21,53 @@ partial package PartialInterpolator "Interfaces of an interpolator in a buffer o
     output Real y "Interpolated value at position offset";
 protected
     Integer nBuffer = size(buffer,1) "Size of the buffer";
+    annotation (Documentation(info="<html>
+<p>
+This partial function defines the input and output arguments of 
+the function to interpolate in a buffer of random values.
+</p>
+</html>"));
   end interpolate;
 
 
   annotation (Documentation(info="<html>
-<p>If we only use one overlap, we assume that overlap is the same size for elements in the future and in the past.</p>
+<p>
+This partial package defines the elements and function interface of a package
+to interpolate in buffer of random values. It is assumed that at one point in
+time, a buffer is filled with random values. In order to interpolate in the
+buffer, the following constants need to be defined: 
+</p>
+
+<blockquote>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Name of constant</th>
+    <th>Description</th></tr>
+
+<tr><td>continuous</td>
+    <td>= true if interpolation is continuous, otherwise discontinuous</td></tr>
+
+<tr><td>nFuture</td>
+    <td>= Number of buffer values required at the end of the buffer, in order to
+         interpolate at the last time instant for which the buffer values have
+         been computed.</td></tr>
+
+<tr><td>nPast</td>
+    <td>= Number of buffer values required at the beginning of the buffer, in order to
+        interpolate at the first time instant for which the buffer values have
+        been computed.</td></tr>
+
+<tr><td>varianceFactor</td>
+    <td>A non-constant interpolation is changing the variance of the interpolated
+        random values. varianceFactor is the factor by which the variance of the underlying
+        random distribution needs to be multiplied, in order to arrive
+        at the variance of the interpolated signal.</td></tr>
+
+<tr><td>smoothness</td>
+    <td>The smoothness of the interpolation:<br>
+        =-1: discontinuous<br>
+        = 0: continuous<br>
+        = 1: continuous and differentiable</td></tr>
+</table>
+</blockquote>
 </html>"));
 end PartialInterpolator;

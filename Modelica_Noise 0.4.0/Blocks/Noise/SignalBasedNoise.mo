@@ -1,11 +1,16 @@
 within Modelica_Noise.Blocks.Noise;
 block SignalBasedNoise
+  "Noise generator for Real numbers associated with the input signal (this block computes always the same (random) output y at the same value of the input signal)"
   import Modelica_Noise.Math.Random;
   import Modelica.Utilities.Streams.print;
 
   extends Modelica.Blocks.Interfaces.SO;
 
   // Main dialog menu
+  parameter Boolean useTime = true
+    "= true: u = time otherwise use input connector"
+    annotation(choices(checkBox=true));
+
   parameter Real samplePeriod(start=0.01)
     "Period in signal for pseudo-sampling the raw random numbers"
     annotation(Dialog(enable=enableNoise));
@@ -28,8 +33,8 @@ block SignalBasedNoise
 
   // Advanced dialog menu: Random number properties
   replaceable function distribution =
-       Modelica_Noise.Math.Random.TruncatedQuantiles.uniform constrainedby
-    Modelica_Noise.Math.Random.Utilities.Interfaces.partialTruncatedQuantile(
+       Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile constrainedby
+    Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialQuantile(
       final y_min=y_min, final y_max=y_max)
     "Random number distribution (truncated to y_min..y_max)"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise));
@@ -59,6 +64,10 @@ block SignalBasedNoise
   parameter Real signalOffset = 0.0
     "Offset in signal for sampling the raw random numbers"
     annotation(Dialog(tab="Advanced", group="Initialization",enable=enableNoise));
+
+  Modelica.Blocks.Interfaces.RealInput u if not useTime
+    "Input signal (the noise depends on the value of u at the actual time instant"
+    annotation (Placement(transformation(extent={{-140,-20},{-100,20}}, rotation=0)));
 
   // Retrieve values from outer global seed
 protected
@@ -92,15 +101,6 @@ protected
   //discrete Real bufferStartTime "The last time we have filled the buffer";
   Real r[nBuffer] "Uniform random number in the range (0,1]";
 
-  // Declare the input signal
-public
-  parameter Boolean useTime = true
-    "= true: u = time otherwise use input connector"
-    annotation(choices(checkBox=true),Dialog(tab="Advanced",group="Noise generation"));
-  Modelica.Blocks.Interfaces.RealInput u if not useTime
-    "Connector of Real input signal"
-    annotation (Placement(transformation(extent={{-140,-20},{-100,20}}, rotation=0)));
-protected
   Modelica.Blocks.Interfaces.RealInput signal
     "The input signal to the random number generator";
   Real offset = (signal-signalOffset) / samplePeriod;
@@ -140,6 +140,29 @@ equation
 
   // We require a few smooth functions for derivatives
 protected
+  function convertRealToIntegers "Casts a double value to two integers"
+  input Real real "The Real value";
+  output Integer[2] int "The Integer values";
+
+  external "C" ModelicaRandom_convertRealToIntegers(real,int);
+
+  annotation (Include = "#include \"ModelicaRandom.c\"", Documentation(revisions="<html>
+<p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
+</html>", info="<html>
+<h4>Syntax</h4>
+<blockquote><pre>
+int = <b>convertRealToInteger</b>(real);
+</pre></blockquote>
+<h4>Description</h4>
+<p>
+The Real input argument real is mapped to two Integer values int[1] and int[2].
+The function assumes that two Integer values have exactly the same length
+as one Real value (e.g. one Integer has a lenght of 32 bits and one Real
+value has a lenght of 64 bits).
+</p>
+</html>"));
+  end convertRealToIntegers;
+
   function initialState "Combine Real signal with Integer seeds"
     input Integer localSeed "The local seed";
     input Integer globalSeed "the global seed";
@@ -149,7 +172,7 @@ protected
   protected
     Integer ints[2] "Real signal casted to integers";
   algorithm
-    ints  := Modelica_Noise.Utilities.System.convertRealToIntegers(signal);
+    ints  := convertRealToIntegers(signal);
     state := generator.initialState(localSeed+ints[1], globalSeed+ints[2]);
   end initialState;
 
@@ -244,7 +267,7 @@ protected
           lineColor={192,192,192},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid),
-        Line(visible = enableNoise,
+        Line(visible=  enableNoise,
            points={{-75,-13},{-61,-13},{-61,3},{-53,3},{-53,-45},{-45,-45},{-45,
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,

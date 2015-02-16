@@ -12,6 +12,12 @@ partial package PartialGenerator "Interfaces of a uniform random number generato
     input Integer globalSeed
     "The global seed to be combined with the local seed";
     output Integer[nState] state "The generated initial states";
+  annotation (Documentation(info="<html>
+<p>
+This partial function defines the input and output arguments of an
+initialState(..) function of a random number generator package.
+</p>
+</html>"));
   end initialState;
 
 
@@ -24,6 +30,21 @@ partial package PartialGenerator "Interfaces of a uniform random number generato
     "A random number with a uniform distribution on the interval (0,1]";
     output Integer[nState] stateOut
     "The new internal states of the random number generator";
+  annotation (Documentation(info="<html>
+<p>
+This partial function defines the input and output arguments of a
+random(..) function of a random number generator package.
+</p>
+</html>"));
   end random;
 
+
+annotation (Documentation(info="<html>
+<p>
+This partial package defines the elements and function interfaces of a
+pseudo random number generator package. A random number generator package must
+inherit from this partial package and adapt the constant <b>nState</b>
+to the correct length of the state vector.
+</p>
+</html>"));
 end PartialGenerator;
