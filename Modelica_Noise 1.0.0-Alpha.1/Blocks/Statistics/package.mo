@@ -16,6 +16,7 @@ package Statistics "Library of statistical blocks"
           -63.1631},{57.5,-63.5674},{61,-63.7852},{64.5,-63.8975},{68,
           -63.953}},
           color={0,0,0},
-          smooth=Smooth.Bezier)}), Documentation(info="
-"));
+          smooth=Smooth.Bezier)}), Documentation(info="<html>
+<p>This sublibrary provides blocks to compute the <b>statistical properties</b> of signals. These e.g. can be used to analyse the random signals genareted by the blocks provided in the <a href=\"Noise\">Noise</a> sublibrary.</p>
+</html>"));
 end Statistics;

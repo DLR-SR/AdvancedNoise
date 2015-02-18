@@ -2,13 +2,16 @@ within Modelica_Noise.Blocks.Statistics;
 block StandardDeviation
   "Calculates the empirical standard deviation of its input signal"
   extends Modelica.Blocks.Interfaces.BlockIcon;
+  parameter Modelica.SIunits.Time t_eps(min=0.0)=1e-7
+    "Standard deviation calculation starts at startTime + t_eps"
+    annotation(Dialog(group="Advanced"));
 
   Modelica.Blocks.Interfaces.RealInput u "Noisy input signal" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput y
     "Standard deviation of the input signal"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 
-  Variance variance
+  Variance variance(t_eps=t_eps)
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   Modelica.Blocks.Math.Sqrt sqrt1
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
@@ -29,6 +32,7 @@ equation
 <p>This block calculates the standard deviation of its input signal. The standard deviation is the quare root of the signal&apos;s variance:</p>
 <pre>y = sqrt( variance(u) )</pre>
 <p>The <a href=\"Variance\">Variance</a> block is used to calculate the variance of the signal.</p>
+<p>The parameter t_eps is used to conservatively guard against division by zero. You can also set it to zero, if your solver supports this.</p>
 </html>"),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics),

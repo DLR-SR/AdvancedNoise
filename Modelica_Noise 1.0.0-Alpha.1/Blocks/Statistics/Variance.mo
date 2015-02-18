@@ -1,14 +1,17 @@
 within Modelica_Noise.Blocks.Statistics;
 block Variance "Calculates the empirical variance of its input signal"
   extends Modelica.Blocks.Interfaces.BlockIcon;
+  parameter Modelica.SIunits.Time t_eps(min=0.0)=1e-7
+    "Variance calculation starts at startTime + t_eps"
+    annotation(Dialog(group="Advanced"));
 
   Modelica.Blocks.Interfaces.RealInput u "Noisy input signal" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput y "Variance of the input signal"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 
-  ContinuousMean mean1
+  ContinuousMean mean1(t_eps=t_eps)
     annotation (Placement(transformation(extent={{-80,-40},{-60,-20}})));
-  ContinuousMean mean2
+  ContinuousMean mean2(t_eps=t_eps)
     annotation (Placement(transformation(extent={{10,-10},{30,10}})));
   Modelica.Blocks.Math.MultiProduct squared(nu=2)
     annotation (Placement(transformation(extent={{-20,-6},{-8,6}})));
@@ -56,9 +59,10 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (Documentation(revisions="", info="<html>
-<p>This block calculates the empirical variance of its input signal. it uses the formula:</p>
+<p>This block calculates the empirical variance of its input signal. It uses the formula:</p>
 <pre>y = mean(  (u - mean(u))^2  )</pre>
 <p>The <a href=\"ContinuousMean\">ContinuousMean</a> block is used to calculate the mean values in this formula.</p>
+<p>The parameter t_eps is used to conservatively guard against division by zero. You can also set it to zero, if your solver supports this.</p>
 </html>"),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics),
