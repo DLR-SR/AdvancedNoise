@@ -19,8 +19,6 @@ model SignalInterpolation
     samplePeriod=0.1,
     useTime=false)
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
-  Modelica.Blocks.Continuous.Der derLinear
-    annotation (Placement(transformation(extent={{-20,20},{0,40}})));
   Modelica.Blocks.Sources.RealExpression signal(y=sin(pi*time))
     annotation (Placement(transformation(extent={{-100,70},{-80,90}})));
   Modelica_Noise.Blocks.Noise.SignalBasedNoise linearNoise(
@@ -31,7 +29,7 @@ model SignalInterpolation
         Modelica_Noise.Math.Random.Utilities.Interpolators.Linear,
     useAutomaticLocalSeed=false,
     samplePeriod=0.1)
-    annotation (Placement(transformation(extent={{-58,20},{-38,40}})));
+    annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
   Modelica_Noise.Blocks.Noise.SignalBasedNoise smoothNoise(
     useTime=false,
     y_min=-1,
@@ -41,27 +39,17 @@ model SignalInterpolation
         Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass,
     samplePeriod=0.1)
     annotation (Placement(transformation(extent={{-60,-30},{-40,-10}})));
-  Modelica.Blocks.Continuous.Der derSmooth
-    annotation (Placement(transformation(extent={{-20,-30},{0,-10}})));
 equation
   connect(signal.y, constantNoise.u) annotation (Line(
       points={{-79,80},{-62,80}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(linearNoise.u, signal.y) annotation (Line(
-      points={{-60,30},{-72,30},{-72,80},{-79,80}},
+      points={{-62,30},{-72,30},{-72,80},{-79,80}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(smoothNoise.u, signal.y) annotation (Line(
       points={{-62,-20},{-72,-20},{-72,80},{-79,80}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(linearNoise.y, derLinear.u) annotation (Line(
-      points={{-37,30},{-22,30}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(smoothNoise.y, derSmooth.u) annotation (Line(
-      points={{-39,-20},{-22,-20}},
       color={0,0,127},
       smooth=Smooth.None));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,

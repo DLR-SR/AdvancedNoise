@@ -9,9 +9,9 @@ model Densities
         u_max=4))
 annotation (Placement(transformation(extent={{10,20},{30,40}})));
   Modelica.Blocks.Sources.Clock clock
-annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
+annotation (Placement(transformation(extent={{-80,10},{-60,30}})));
   Modelica.Blocks.Sources.Constant const(k=-10)
-annotation (Placement(transformation(extent={{-80,-50},{-60,-30}})));
+annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
   Modelica.Blocks.Math.Add add
 annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
   Statistics.Density normalDensity(redeclare function distribution =
@@ -22,11 +22,11 @@ annotation (Placement(transformation(extent={{10,-10},{30,10}})));
 annotation (Placement(transformation(extent={{10,-40},{30,-20}})));
 equation
   connect(clock.y, add.u1) annotation (Line(
-  points={{-59,0},{-53.5,0},{-53.5,6},{-48,6}},
+  points={{-59,20},{-53.5,20},{-53.5,6},{-48,6}},
   color={0,0,127},
   smooth=Smooth.None));
   connect(const.y, add.u2) annotation (Line(
-  points={{-59,-40},{-54,-40},{-54,-6},{-48,-6}},
+  points={{-59,-20},{-54,-20},{-54,-6},{-48,-6}},
   color={0,0,127},
   smooth=Smooth.None));
   connect(add.y, uniformDensity.u) annotation (Line(
