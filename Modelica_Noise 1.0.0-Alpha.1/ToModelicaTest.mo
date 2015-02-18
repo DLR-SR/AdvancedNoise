@@ -185,34 +185,6 @@ package ToModelicaTest "Functions to be included in ModelicaTest"
        print("Weibull.cumulative/.quantile: err = " + String(err));
        assert( err < 1e-14, "Weibull.cumulative or .quantile not correctly computed");
 
-       // check Bates
-       n :=12;
-       y1 :=Noise.Distributions.Bates.density(
-            u,
-            -1,
-            2,n=n);
-       y2 :=Noise.Distributions.Bates.cumulative(
-            u,
-            -1,
-            2,n=n);
-       y3 := Internal.derTwoSided(u,y2);
-       plotArrays(u,[y1,y3],legend={"density","dcdf/du = density"});
-       err  := max(abs(y1 - y3));
-       print("Bates.density: err = " + String(err));
-       // assert( err < 4, "Bates.density not correctly computed");
-
-       y1 :=Noise.Distributions.Bates.quantile(
-            u1,
-            -1,
-            2,n=n);
-       u2 :=Noise.Distributions.Bates.cumulative(
-            y1,
-            -1,
-            2,n=n);
-       err :=max(abs(u1 - u2));
-       print("Bates.cumulative/.quantile: err = " + String(err));
-       assert( err < 1e-6, "Bates.cumulative or .quantile not correctly computed");
-
     end distributions;
 
     function truncatedDistributions "Test Math.TruncatedDistributions"

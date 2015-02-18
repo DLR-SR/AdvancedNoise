@@ -3,36 +3,36 @@ model Distributions "Demonstrates noise with different types of distributions"
   extends Modelica.Icons.Example;
   parameter Modelica.SIunits.Time samplePeriod=0.02
     "Sample period of all blocks";
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
+  inner Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
                annotation (Placement(transformation(extent={{40,60},{60,80}})));
 
                Integer n=if time < 0.5 then 12 else 2;
-  Noise.TimeBasedNoise uniformNoise(
+  Blocks.Noise.TimeBasedNoise uniformNoise(
     y_min=-1,
     y_max=3,
     useAutomaticLocalSeed=false,
     fixedLocalSeed=1,
     samplePeriod=samplePeriod)
              annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
-  Noise.TimeBasedNoise normalNoise(
+  Blocks.Noise.TimeBasedNoise normalNoise(
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Normal.quantile,
+        Math.TruncatedDistributions.Normal.quantile,
     useAutomaticLocalSeed=false,
     fixedLocalSeed=1,
     samplePeriod=samplePeriod)
     annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
-  Noise.TimeBasedNoise weibullNoise(
+  Blocks.Noise.TimeBasedNoise weibullNoise(
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Weibull.quantile,
+        Math.TruncatedDistributions.Weibull.quantile,
     useAutomaticLocalSeed=false,
     fixedLocalSeed=1,
     samplePeriod=samplePeriod)
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
-  Statistics.ContinuousMean normalMean
+  Blocks.Statistics.ContinuousMean normalMean
 annotation (Placement(transformation(extent={{-20,30},{0,50}})));
 equation
   connect(normalNoise.y, normalMean.u) annotation (Line(
