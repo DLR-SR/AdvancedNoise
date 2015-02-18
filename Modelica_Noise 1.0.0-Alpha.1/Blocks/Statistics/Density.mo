@@ -8,6 +8,26 @@ block Density "Calculates the density of a selected distribution"
     "Probability density function"
     annotation(choicesAllMatching=true, Documentation(info="<html>
 <p>This is the probability density function to be used in the Density block.</p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
 
   Modelica.Blocks.Interfaces.RealInput u "Real input signal" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
@@ -47,5 +67,25 @@ equation
 <pre>y = density(u)</pre>
 <p>The actual density function is replaceable and can be chosen from all available probability density functions extending <code><a href=\"Modelica_Noise.Math.Distributions.Interfaces.partialDensity\">Modelica_Noise.Math.Distributions.Interfaces.partialDensity</a></code>.</p>
 <p>See also <a href=\"TruncatedDensity\">TruncatedDensity</a> for an implementation with truncated densities.</p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
 end Density;

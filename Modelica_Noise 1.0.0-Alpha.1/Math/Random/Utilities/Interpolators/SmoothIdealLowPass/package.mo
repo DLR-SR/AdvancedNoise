@@ -89,6 +89,26 @@ protected
 <blockquote><code>y = SmoothIdealLowPass.<b>interpolate</b>(buffer,offset);</code> </blockquote>
 <h4>Description</h4>
 <p>Interpolate in buffer by using the <a href=\"modelica://Modelica_Noise.Math.Special.sinc\">sinc</a> function. This is an approximation of an ideal low pass filter that completely blocks frequencies above the cut-off frequency f = 1/T (where T is the sample period with which the buffer was filled). Input argument offset is a Real number marking the point at which interpolation shall take place. offset=0 is the first buffer value buffer[1]. offset=size(buffer,1)-1 is the last buffer value buffer[size(buffer,1)]. It is required that 0 &le; offset &LT; size(buffer,1)-1. The function returns the interpolated value. The interpolation is continuous with a continuous first derivative. In order to avoid issues at the end of the buffer (where a minimally too large offset value triggers an assert), it is best to make the buffer one element larger as needed. For example, if the buffer is filled with a sample period of 1 ms and every 100 samples an event occurs, then the buffer should have length 102 for the samples 0 ms, 1 ms, 2 ms, ...., 100 ms, 101 ms. </p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
   end interpolate;
 
@@ -107,6 +127,26 @@ protected
 <blockquote><code>h = SmoothIdealLowPass.<b>kernel</b>(offset); </code></blockquote>
 <h4>Description</h4>
 <p>This function defines the kernel of the <a href=\"SmoothIdealLowPass\">SmoothIdealLowPass</a> interpolation. It uses the <a href=\"Math.Special.sinc\">sinc</a> function with a specified cut-off frequency.</p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
   end kernel;
 
@@ -125,6 +165,26 @@ protected
 <blockquote><code>der_h = SmoothIdealLowPass.<b>der_kernel_offset</b>(offset); </code></blockquote>
 <h4>Description</h4>
 <p>This function defines the derivative of the <a href=\"kernel\">kernel</a> of the <a href=\"SmoothIdealLowPass\">SmoothIdealLowPass</a> interpolation with respect to its input argument offset. This function is used for determining the derivative of the interpolated signal.</p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
   end der_kernel_offset;
 
@@ -137,6 +197,26 @@ frequency response at the cut-off frequency) using an interpolation with
 the <a href=\"modelica://Modelica_Noise.Math.Special.sinc\">sinc</a> function over
 a finite number of support points (the ideal low pass filter would require
 an infinite number of support points).
+</p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
 </p>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
         graphics={Line(

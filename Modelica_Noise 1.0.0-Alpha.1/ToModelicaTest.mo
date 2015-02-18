@@ -59,6 +59,26 @@ package ToModelicaTest "Functions to be included in ModelicaTest"
       annotation (Documentation(info="<html>
 <p>
 </p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
     end randomNumbers;
 
@@ -123,6 +143,27 @@ package ToModelicaTest "Functions to be included in ModelicaTest"
        print("sinc = " + String(err));
        assert( err < 1e-15, "sinc function computed not precisely enough");
 
+      annotation (Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
     end special;
 
     function distributions "Test Math.Distributions"
@@ -185,6 +226,27 @@ package ToModelicaTest "Functions to be included in ModelicaTest"
        print("Weibull.cumulative/.quantile: err = " + String(err));
        assert( err < 1e-14, "Weibull.cumulative or .quantile not correctly computed");
 
+      annotation (Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
     end distributions;
 
     function truncatedDistributions "Test Math.TruncatedDistributions"
@@ -245,6 +307,27 @@ package ToModelicaTest "Functions to be included in ModelicaTest"
        err :=max(abs(u1 - u2));
        print("Weibull.cumulative/.quantile: err = " + String(err));
        assert( err < 1e-14, "Weibull.cumulative or .quantile not correctly computed");
+      annotation (Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
     end truncatedDistributions;
 
     package Internal
@@ -274,6 +357,26 @@ Computes the error function erf(u)
 with a maximum error of 1.5e−7.
 Implementation is according to Abramowitz and Stegun 
 (see <a href=\"http://people.math.sfu.ca/~cbm/aands/page_299.jpg\">Handbook of Mathematical Functions, page 299, equation 7.1.26</a>).
+</p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
 </p>
 </html>"));
       end erfSimple;
@@ -330,6 +433,26 @@ Implementation according to:
 <a href=\"http://home.online.no/~pjacklam/notes/invnorm/\">Peter John Acklam</a>.
 The relative error is less than 1e-9.
 </p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
       end cdfInvNormal;
 
@@ -340,6 +463,26 @@ The relative error is less than 1e-9.
       algorithm
         y := cdfInvNormal((1 + u)/2)/sqrt(2);
         annotation (Inline=true, Documentation(info="<html>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
       end erfInvSimple;
 
@@ -369,6 +512,26 @@ mu-3*sigma &le; y &le; mu+3*sigma
 For more details of this distribution see
 <a href=\"http://en.wikipedia.org/wiki/Normal_distribution\">Wikipedia</a>.
 </p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
       end quantileNormalSimple;
 
@@ -391,6 +554,27 @@ For more details of this distribution see
               der_y[i] :=(y[i + 1] - y[i - 1])/(u[i + 1] - u[i - 1]);
            end for;
         end if;
+        annotation (Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
       end derOneSided;
 
       function derTwoSided
@@ -411,7 +595,91 @@ For more details of this distribution see
            end for;
            der_y[nu] :=der_y[nu - 1];
         end if;
+        annotation (Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
       end derTwoSided;
+      annotation (Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
     end Internal;
+    annotation (Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
   end Math;
+  annotation (Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
 end ToModelicaTest;

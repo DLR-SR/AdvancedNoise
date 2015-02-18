@@ -37,17 +37,80 @@ block SignalBasedNoise
     Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialQuantile(
       final y_min=y_min, final y_max=y_max)
     "Random number distribution (truncated to y_min..y_max)"
-    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise));
+    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
+    Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
   replaceable package interpolation =
       Modelica_Noise.Math.Random.Utilities.Interpolators.Linear constrainedby
     Modelica_Noise.Math.Random.Utilities.Interfaces.PartialInterpolator
     "Interpolation method in grid of raw random numbers"
-    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise));
+    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
+    Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
   replaceable package generator =
       Modelica_Noise.Math.Random.Generators.Xorshift128plus constrainedby
     Modelica_Noise.Math.Random.Utilities.Interfaces.PartialGenerator
     "Random number generator"
-    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise));
+    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
+    Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
 
   // Advanced dialog menu: Initialization
   parameter Boolean useGlobalSeed = true
@@ -338,5 +401,25 @@ value has a lenght of 64 bits).
 <td><p>The signalOffset parameter can be used to shift the input signal. This can be used, if you wish the pseudo-sampling (see parameter samplePeriod) to happen at specific values of the input signal.</p></td>
 </tr>
 </table>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
 end SignalBasedNoise;

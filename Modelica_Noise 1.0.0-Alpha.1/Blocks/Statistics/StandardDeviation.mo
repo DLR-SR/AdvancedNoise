@@ -28,7 +28,27 @@ equation
       points={{1,0},{110,0}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Documentation(revisions="", info="<html>
+  annotation (Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>",                                 info="<html>
 <p>This block calculates the standard deviation of its input signal. The standard deviation is the quare root of the signal&apos;s variance:</p>
 <pre>y = sqrt( variance(u) )</pre>
 <p>The <a href=\"Variance\">Variance</a> block is used to calculate the variance of the signal.</p>

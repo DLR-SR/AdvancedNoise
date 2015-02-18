@@ -37,5 +37,25 @@ algorithm
 <blockquote><code>der_y = Linear.der_<b>interpolate</b>(buffer,offset,der_buffer,der_offset); </code></blockquote>
 <h4>Description</h4>
 <p>Determine the derivative of a signal interpolated linearly in a buffer (see <a href=\"interpolate\">interpolate</a>). Input argument offset is a Real number marking the point at which interpolation shall take place. Input arguments der_buffer and der_offset are the derivatives of the input arguments buffer and offset. This function is used as derivative of the <a href=\"interpolate\">interpolate</a> function. Please see the description there for an introduction to the interpolation method used and specific remerks in the buffer and offset values.</p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
 end der_interpolate;

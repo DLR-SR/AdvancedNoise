@@ -22,7 +22,27 @@ equation
   der(mu_0) = u;
   y = if time > t_0+t_eps then mu_0/(time-t_0) else u;
 
-  annotation (Documentation(revisions="", info="<html>
+  annotation (Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>",                                 info="<html>
 <p>This block continuously calculates the mean value of its input signal. It uses the function:</p>
 <pre>    integral( u over time)
 y = ----------------------

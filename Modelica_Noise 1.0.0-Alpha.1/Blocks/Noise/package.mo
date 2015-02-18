@@ -59,5 +59,25 @@ package Noise "Library of noise blocks"
 <blockquote>Kl&ouml;ckner A., v.d. Linden F.L.J., and Zimmer D. (2014). <b>Noise Generation for Continuous System Simulation</b>. In Proceedings of the 10th International Modelica Conference, Lund, Sweden. </blockquote>
 <p>This approach is used by the SignalBasedNoise block: The value of the input signal is used as seed, and whenever a random number shall be drawn, the random number generator is newly initialized with this seed (this is possible because the xorshift generators generate statistically relevant random numbers already after drawing only a few random numbers. Whenever a random number is required, random numbers are newly drawn at the defined grid and then interpolated for the desired input signal value. </p>
 <p>A slightly different approach is used by the TimeBasedNoise block: Time events are generated at a few underlying grid points and an internal buffer of a desired size (say 100 elements) is filled with random numbers between such grid points. For the duration represented by the buffer, no time events are generated and the output of the block is computed by interpolation in the buffer. </p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
 </html>"));
 end Noise;
