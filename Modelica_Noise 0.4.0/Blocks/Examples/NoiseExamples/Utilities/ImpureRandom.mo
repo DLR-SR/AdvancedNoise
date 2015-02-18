@@ -13,4 +13,10 @@ equation
    when {initial(), sample(samplePeriod,samplePeriod)} then
       y = globalSeed.random();
    end when;
+  annotation (Documentation(info="<html>
+<p>
+This block demonstrates how to implement an block usign the impure
+random number generator.
+</p>
+</html>"));
 end ImpureRandom;

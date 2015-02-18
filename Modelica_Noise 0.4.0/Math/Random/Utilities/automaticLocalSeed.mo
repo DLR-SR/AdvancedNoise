@@ -22,9 +22,33 @@ algorithm
   seed := Modelica_Noise.Utilities.Strings.hashString(str);
 
  annotation (Documentation(info="<html>
-<p>Returns an automatically computed seed (Integer) from the hash value of 
+<h4>Syntax</h4>
+<blockquote><pre>
+seed = Utilities.<b>automaticLocalSeed</b>(path);
+</pre></blockquote>
+
+<h4>Description</h4>
+<p>
+Returns an automatically computed seed (Integer) from the hash value of 
 the full path name of an instance (has to be inquired in the model or block
-where this function is called by getInstanceName()).
+where this function is called by getInstanceName()). Contrary to automaticGlobalSeed(),
+this is a pure function, that is, the same seed is returned, if an identical
+path is provided.
+</p>
+
+<h4>Example</h4>
+<blockquote><pre>
+<b>parameter</b> Boolean useAutomaticLocalSeed = true;
+<b>parameter</b> Integer fixedLocalSeed        = 10; 
+<b>final parameter</b> Integer localSeed = <b>if</b> useAutomaticLocalSeed <b>then</b> 
+                                       automaticLocalSeed(getInstanceName())
+                                    <b>else</b> 
+                                       fixedLocalSeed;
+</pre></blockquote>
+
+<h4>See also</h4>
+<p>
+<a href=\"modelica://Modelica_Noise.Math.Random.Utilities.automaticGlobalSeed\">automaticGlobalSeed</a>.
 </p>
 </html>"));
 end automaticLocalSeed;

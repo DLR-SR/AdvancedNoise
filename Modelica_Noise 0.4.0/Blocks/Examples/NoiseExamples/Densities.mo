@@ -4,8 +4,9 @@ model Densities
   extends Modelica.Icons.Example;
 
   Statistics.Density uniformDensity(redeclare function distribution =
-    Modelica_Noise.Math.Distributions.Uniform.density (y_min=-5,
-      y_max=5))
+        Modelica_Noise.Math.Distributions.Uniform.density (
+        u_min=-4,
+        u_max=4))
 annotation (Placement(transformation(extent={{10,20},{30,40}})));
   Modelica.Blocks.Sources.Clock clock
 annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
@@ -14,11 +15,10 @@ annotation (Placement(transformation(extent={{-80,-50},{-60,-30}})));
   Modelica.Blocks.Math.Add add
 annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
   Statistics.Density normalDensity(redeclare function distribution =
-    Modelica_Noise.Math.Distributions.Normal.density (mu=0, sigma=2))
+        Modelica_Noise.Math.Distributions.Normal.density (mu=0, sigma=2))
 annotation (Placement(transformation(extent={{10,-10},{30,10}})));
   Statistics.Density weibullDensity(redeclare function distribution =
-    Modelica_Noise.Math.Distributions.Weibull.density (k=1.5, lambda=
-        3))
+        Modelica_Noise.Math.Distributions.Weibull.density (k=1.5, lambda=3))
 annotation (Placement(transformation(extent={{10,-40},{30,-20}})));
 equation
   connect(clock.y, add.u1) annotation (Line(
@@ -44,5 +44,18 @@ equation
  annotation (experiment(StopTime=20, NumberOfIntervals=1000),
                                      Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    Documentation(info=""));
+    Documentation(info="<html>
+<p>
+This example demonstrates how to compute the probability density functions (pdfs) of
+various distributions, by using the block
+<a href=\"modelica://Modelica_Noise.Blocks.Statistics.Density\">Blocks.Statistics.Density</a>.
+In the following diagram simulations results for the uniform, normal, and Weibull distribution
+are shown. The outputs of the blocks are the pdfs that are plotted over one of the
+inputs:
+</p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/Densities.png\">
+</blockquote></p>
+</html>"));
 end Densities;

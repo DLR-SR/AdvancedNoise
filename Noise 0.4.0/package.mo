@@ -6,5 +6,6 @@ package Noise "A library with additional noise modules compatible to the Modelic
   annotation(version =                        "0.4.0",
              versionDate =                    "2015-01-19",
              versionBuild =                   1,
-             uses(Modelica(version="3.2.1"), Modelica_Noise(version="0.4.0")));
+             uses(Modelica(version="3.2.1"), Modelica_Noise(version=
+          "1.0.0-Alpha.1")));
 end Noise;

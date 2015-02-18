@@ -1,5 +1,5 @@
-within Noise.Test;
-function special "Test functions Math.Special"
+within Modelica_Noise.Test;
+function special "Plot functions Math.Special"
    import Modelica.Utilities.Streams.print;
    import Modelica_Noise.Math.Special;
    input Integer nPoints = 1000;
@@ -9,27 +9,27 @@ function special "Test functions Math.Special"
 protected
    Real uErf[nPoints] = linspace(-erfRange, erfRange, nPoints);
    Real yErf[nPoints];
+   Real yErfc[nPoints];
    Real uErfInv[nPoints];
-   Real err;
+   Real uErfcInv[nPoints];
    Real r[nPoints] = linspace(normalEps, 1-normalEps, nPoints);
    Real rn[nPoints];
 algorithm
    yErf := Special.erf(uErf);
-   plotArray(uErf, yErf, id=1);
+   plotArray(uErf, yErf,  legend="y = erf(u)", id=1);
+
+   yErfc := Special.erfc(uErf);
+   plotArray(uErf, yErfc,  legend="y = erfc(u)", id=2);
 
    uErfInv := Special.erfInv(yErf);
-   err :=max(abs(uErf - uErfInv));
-   print("err = " + String(err));
-   plotArray(yErf, uErfInv, id=2);
+   plotArray(yErf, uErfInv, legend="y = erfInv(u)", id=3);
 
-   // Plot normal quantile
-   rn :=Special.cdfInvNormal(r);
-   plotArray(r,rn, id=3);
+   uErfcInv := Special.erfcInv(yErfc);
+   plotArray(yErf, uErfInv, legend="y = erfcInv(u)", id=4);
 
-   // Plot sinc
    r :=linspace(-sincRange,sincRange,nPoints);
    rn :=Special.sinc(r);
-   plotArray(r,rn,id=4);
+   plotArray(r,rn,legend="y=sinc(u)",id=5);
 
    annotation(__Dymola_interactive = true);
 end special;

@@ -1,7 +1,7 @@
 within Noise.Examples;
 model Interpolation "Tests all interpolators"
   extends Modelica_Noise.Blocks.Examples.NoiseExamples.Interpolation;
-  Modelica_Noise.Blocks.Noise.EventBasedNoise filteredNoise(
+  Modelica_Noise.Blocks.Noise.TimeBasedNoise filteredNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     y_min=-1,

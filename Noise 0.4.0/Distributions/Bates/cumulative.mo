@@ -1,5 +1,7 @@
 within Noise.Distributions.Bates;
 function cumulative "Cumulative distribution function of Bates distribution"
+  import Noise.Math.factorial;
+  import Noise.Math.binomial;
   extends Modelica_Noise.Math.Distributions.Interfaces.partialCumulative;
   input Real y_min=0 "Lower limit of band" annotation (Dialog);
   input Real y_max=1 "Upper limit of band" annotation (Dialog);
@@ -23,22 +25,53 @@ algorithm
     // Loop over k = 0 .. floor(n*x)
     for k in 0:integer(n*x) loop
       // Sum up the inner part
-      y := y + (-1)^k*Math.binomial(n, k)*(x - k/n)^(n);
+      y := y + (-1)^k * binomial(n,k) * (x-k/n)^(n);
     end for;
     // Multiply by the outer factor
-    y := n^(n - 1)/Math.factorial(n - 1)*y;
+    y := n^(n-1) / factorial(n-1) * y;
 
   elseif u > y_max then
     y := 1;
   end if;
   annotation (Inline=true,Documentation(info="<html>
+<h4>Syntax</h4>
+<blockquote><pre>
+Bates.<b>cumulative</b>(u, y_min=0, y_max=1, n=12);
+</pre></blockquote>
+
+<h4>Description</h4>
 <p>
-This function returns the cumulative distribution function according to a uniform distribution in a band.
+This function computes the cumulative distribution function 
+according to a <b>Bates</b> distribution (= mean of n uniform distributions).
+The returned value y is in the range:
 </p>
 
+<p><blockquote>
+0 &le; y &le; 1
+</blockquote></p>
+
 <p>
-For more details of this distribution see
-<a href=\"http://en.wikipedia.org/wiki/Uniform_distribution_(continuous)\">Wikipedia</a>.
+Plot of the function:
+</p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/Bates.cumulative.png\">
+</blockquote></p>
+
+<p>
+For more details, see 
+<a href=\"http://en.wikipedia.org/wiki/Bates_distribution\">Wikipedia</a>.
+</p>
+
+<h4>Example</h4>
+<blockquote><pre>
+  cumulative(0,-3,3,12) // = 0.5
+</pre></blockquote>
+
+<h4>See also</h4>
+<p>
+<a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.density\">Bates.density</a>,
+<a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.quantile\">Bates.quantile</a>.
 </p>
 </html>"));
 end cumulative;

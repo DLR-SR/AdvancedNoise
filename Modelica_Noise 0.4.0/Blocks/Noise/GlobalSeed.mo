@@ -1,5 +1,6 @@
 within Modelica_Noise.Blocks.Noise;
-model GlobalSeed "Defines a global seed value"
+model GlobalSeed
+  "Defines global settings for the blocks of sublibrary Noise, especially a global seed value is defined"
   parameter Boolean enableNoise = true
     "= true, if noise blocks generate noise as output; = false, if they generate a constant output"
     annotation(choices(checkBox=true));
@@ -59,9 +60,73 @@ into your model and specify the seed.
           smooth=Smooth.None)}),
     Documentation(revisions="<html>
 </html>", info="<html>
-<p>Inner/Outer Model for Global Seeding.</p>
-<p>This model enables the modeler to define a global seed value for random generators.</p>
-<p>The seed value can then be used (i.e. combined with a local seed value) at local pseudo-random signal generators. If so, then a switch of the global seed changes all pseudo-random signals.</p>
-<p>Remark: Some pseudo-random number generators demand for larger seed values (array of integers). In this case the large seed is automatically generated out of this single integer seed value.</p>
+<p>
+When using one of the blocks of sublibrary <a href=\"modelica://Modelica_Noise.Blocks.Noise\">Noise</a>,
+on the same or a higher hierarchical level,
+block <a href=\"Modelica_Noise.Blocks.Noise.GlobalSeed\">Noise.GlobalSeed</a>
+must be dragged resulting in a declaration
+</p>
+
+<pre>
+   <b>inner</b> Noise.GlobalSeed globalSeed;
+</pre>
+
+<p>
+The GlobalSeed block provides global options for all Noise blocks of the same or a lower
+hierarchical level. The following options can be selected:
+</p>
+
+<blockquote>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Icon</th>
+    <th>Description</th></tr>
+
+<tr><td> <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/GlobalSeed_FixedSeed.png\"> </td>
+    <td> <b>useAutomaticSeed=false</b> (= default):<br>
+         A fixed global seed is defined with Integer parameter fixedSeed. The value of the seed
+         is displayed in the icon. By default all Noise blocks use fixedSeed for initialization of their
+         pseudo random number generators, in combination with a local seed defined for the every instance
+         separately. Therefore, whenever a simulation is performed with the
+         same fixedSeed exactly the same noise is generated in all instances of the Noise
+         blocks (provided the settings of these blocks is not changed as well).<br>
+         This option can be used (a) to design a control system and keep the same
+         noise for all simulations, or (b) perform Monte Carlo Simulations where 
+         fixedSeed is changed from the environment for every simulation, in order to
+         produce different noise at every simulation run.</td></tr>
+
+<tr><td> <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/GlobalSeed_AutomaticSeed.png\"> </td>
+    <td> <b>useAutomaticSeed=true</b>:<br>
+         An automatic global seed is computed by using the ID of the process in which the
+         simulation takes place and the actual local time. As a result, the global seed
+         is changed automatically for every new simulation, including parallelized
+         simulation runs. This option can be used to perform Monte Carlo Simulations
+         with minimal effort (just performinng many simulation runs) where
+         every simulation run uses a different noise.</td></tr>
+
+
+<tr><td> <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/GlobalSeed_NoNoise.png\"> </td>
+    <td> <b>enableNoise=false</b>:<br>
+         The noise in all Noise instances is switched off and the blocks output a constant
+         signal all the time (usually zero). This option is useful, if a model shall be
+         tested without noise and the noise shall be quickly turned off or on.</td></tr>
+</table>
+</p></blockquote>
+
+<p>
+Additionally, the globalSeed instance provides the impure function <b>random</b>().
+This function uses the <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift1024star\">xorshift1024*</a>
+pseudo random number generator. It is initialized with the global seed defined in globalSeed
+(so either with parameter fixedSeed, or automatically computed by process ID and local time).
+Since random() is an impure function, it can only be called in a when-clause (so at an event).
+</p>
+
+<p>
+Remark: Some pseudo-random number generators demand for larger seed values (array of Integers).
+In this case the large seed is automatically generated out of the global and local seed values
+by generating random values with the <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64star</a>
+pseudo random number generator and using the 64-bit state of this generator to fill the elements
+of the state vector of the desired generator.
+</p>
 </html>"));
 end GlobalSeed;

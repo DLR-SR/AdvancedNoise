@@ -1,5 +1,5 @@
 within Modelica_Noise.Math;
-package Distributions "Library of statistical distribution functions"
+package Distributions "Library of distribution functions"
    extends Modelica.Icons.Package;
 
 
@@ -16,5 +16,20 @@ annotation (Icon(graphics={Line(
           -65.1631},{59.5,-65.5674},{63,-65.7852},{66.5,-65.8975},{70,
           -65.953}},
           color={0,0,0},
-          smooth=Smooth.Bezier)}));
+          smooth=Smooth.Bezier)}), Documentation(info="<html>
+<p>
+This package provides
+</p>
+<ul>
+<li> <a href=\"http://en.wikipedia.org/wiki/Probability_density_function\">probability density functions</a>
+     (= derivative of cumulative distribution function),</li>
+<li> <a href=\"http://en.wikipedia.org/wiki/Cumulative_distribution_function\">cumulative distribution functions</a>,
+     and</li>
+<li> <a href=\"http://en.wikipedia.org/wiki/Quantile_function\">quantiles</a>
+     (= inverse cumulative distribution functions).</li>
+</ul>
+<p>
+of different distributions.
+</p>
+</html>"));
 end Distributions;

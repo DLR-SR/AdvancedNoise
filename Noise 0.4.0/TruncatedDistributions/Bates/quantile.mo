@@ -1,12 +1,11 @@
-within Modelica_Noise.Math.Distributions.Bates;
-function quantile
-  "Quantile of Bates distribution (= inverse cumulative distribution function)"
-  extends Modelica_Noise.Math.Distributions.Interfaces.partialQuantile;
+within Noise.TruncatedDistributions.Bates;
+function quantile "Quantile of Bates distribution"
+  extends Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialQuantile;
   input Real y_min=0 "Lower limit of band" annotation (Dialog);
   input Real y_max=1 "Upper limit of band" annotation (Dialog);
   input Integer n=12 "Number of uniform random values" annotation (Dialog);
-  input Real tol = 1e-6 "Required acuracy of the quantile" annotation (Dialog);
 protected
+  Real tol = 1e-6 "Required acuracy of the quantile";
   Real y_l, y_m, y_h "Random values during search";
   Real p_l, p_m, p_h "Probabilities during search";
   Integer i "A counter for debugging";
@@ -35,7 +34,6 @@ algorithm
       // Calculate an intermediate point
       y_m := y_l + (y_h-y_l)/(p_h-p_l)*(u-p_l);
       p_m := cumulative(y_m, y_min, y_max, n);
-      //Modelica.Utilities.Streams.print(String(y_l)+","+String(y_m)+","+String(y_h)+" -- "+String(p_l)+","+String(p_m)+","+String(p_h));
 
       // Select narrower boundaries than before
       if p_m >= u then
@@ -47,7 +45,6 @@ algorithm
         p_l := p_m;
       end if;
     end while;
-    Modelica.Utilities.Streams.print(String(i));
 
     // Select correct boundary
     if abs(u-p_l) < abs(u-p_h) then
@@ -58,9 +55,25 @@ algorithm
   end if;
 
   annotation (Inline=true,Documentation(info="<html>
+<h4>Syntax</h4>
+<blockquote><pre>
+Bates.<b>quantile</b>(u, y_min=0, y_max=1, n=12);
+</pre></blockquote>
+
+<h4>Description</h4>
 <p>
-This function returns a number according to a uniform distribution in a band.
-This means the returned number is in the range:
+This function computes the inverse cumulative distribution function (= quantile) according to a <b>Bates</b>
+distribution (= mean of n uniform distributions). Input argument u must be in the range:
+</p>
+
+<blockquote>
+<p>
+0 &le; u &le; 1
+</p>
+</blockquote>
+
+<p>
+The returned number y is in the range:
 </p>
 
 <blockquote>
@@ -70,8 +83,27 @@ y_min &le; y &le; y_max
 </blockquote>
 
 <p>
-For more details of this distribution see
-<a href=\"http://en.wikipedia.org/wiki/Uniform_distribution_(continuous)\">Wikipedia</a>.
+Plot of the function:
+</p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/Bates.quantile.png\">
+</blockquote></p>
+
+<p>
+For more details, see 
+<a href=\"http://en.wikipedia.org/wiki/Bates_distribution\">Wikipedia</a>.
+</p>
+
+<h4>Example</h4>
+<blockquote><pre>
+  quantile(0.5,-3,3,12) // = -7.450831063238184E-010
+</pre></blockquote>
+
+<h4>See also</h4>
+<p>
+<a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.density\">Bates.density</a>,
+<a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.cumulative\">Bates.cumulative</a>.
 </p>
 </html>"));
 end quantile;

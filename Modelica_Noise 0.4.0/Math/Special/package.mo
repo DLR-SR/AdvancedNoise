@@ -6,5 +6,10 @@ package Special "Library of special mathematical functions"
 annotation (Icon(graphics={Line(
       points={{-80,-80},{-20,-80},{20,80},{80,80}},
       color={0,0,0},
-      smooth=Smooth.Bezier)}));
+      smooth=Smooth.Bezier)}), Documentation(info="<html>
+<p>
+This sublibrary contains functions to compute often used mathematical operators that
+cannot be expressed analytically.
+</p>
+</html>"));
 end Special;

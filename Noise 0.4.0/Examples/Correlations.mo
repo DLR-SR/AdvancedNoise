@@ -2,7 +2,7 @@ within Noise.Examples;
 model Correlations
   extends Modelica.Icons.Example;
 
-  Modelica_Noise.Blocks.Noise.EventBasedNoise noise1(
+  Modelica_Noise.Blocks.Noise.TimeBasedNoise noise1(
     samplePeriod=0.01,
     y_min=0,
     y_max=1,
@@ -11,7 +11,7 @@ model Correlations
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
-  Modelica_Noise.Blocks.Noise.EventBasedNoise noise2(
+  Modelica_Noise.Blocks.Noise.TimeBasedNoise noise2(
     samplePeriod=0.01,
     y_min=0,
     y_max=1,
@@ -19,7 +19,7 @@ model Correlations
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
   Statistics.CorrelationTest crossCorrelationTest
     annotation (Placement(transformation(extent={{-20,40},{0,60}})));
-  Modelica_Noise.Blocks.Noise.EventBasedNoise noise3(
+  Modelica_Noise.Blocks.Noise.TimeBasedNoise noise3(
     samplePeriod=0.01,
     y_min=0,
     y_max=1,

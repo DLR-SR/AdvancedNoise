@@ -17,7 +17,9 @@ algorithm
   // Modelica_Noise.Blocks.Examples.NoiseExamples.Distributions
   // with mu = 10...
   if y > y_max or y < y_min then
-    Modelica.Utilities.Streams.print(String(y));
+    Modelica.Utilities.Streams.print("y = " + String(y) + ", u="+String(u)+
+          ", mu="+String(mu)+", sigma="+String(sigma)+
+          ", cdf_min="+String(cdf_min)+", cdf_max="+String(cdf_max));
   end if;
   y := min(y_max,max(y_min,y));
 
