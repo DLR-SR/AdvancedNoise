@@ -8,7 +8,7 @@ NormalNoiseProperties
 SignalInterpolation
 Densities
 TruncatedDensities
-Actuator
 ImpureGenerator
+Actuator
 ActuatorNoise
 Utilities

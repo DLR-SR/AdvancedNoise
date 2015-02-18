@@ -79,8 +79,6 @@ equation
       Tolerance=1e-005),
     __Dymola_experimentSetupOutput,
     Documentation(info="<html>
-<p>No noise simulation of an Actuator</p>
-</html>", revisions="<html>
-<p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
-</html>"));
+<p>This model simulates a controlled actuator built from Modelica Standard Library models. It moves the actuator at time = 0.5s. This model is only used as a reference for the noisy model. See <a href=\"ActuatorNoise\">ActuatorNoise</a> for the variant with a noisy input signal to the controller and explained results.</p>
+</html>", revisions=""));
 end Actuator;
