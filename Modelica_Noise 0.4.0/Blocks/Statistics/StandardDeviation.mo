@@ -25,7 +25,11 @@ equation
       points={{1,0},{110,0}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Documentation(revisions=""),
+  annotation (Documentation(revisions="", info="<html>
+<p>This block calculates the standard deviation of its input signal. The standard deviation is the quare root of the signal&apos;s variance:</p>
+<pre>y = sqrt( variance(u) )</pre>
+<p>The <a href=\"Variance\">Variance</a> block is used to calculate the variance of the signal.</p>
+</html>"),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics),
     Icon(graphics={

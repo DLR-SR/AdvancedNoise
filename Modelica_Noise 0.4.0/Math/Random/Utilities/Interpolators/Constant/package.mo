@@ -14,19 +14,9 @@ package Constant "Constant interpolation"
      y :=buffer[ if nBuffer == 1 then 1 else integer(offset) + 1];
      annotation(Inline=true, Documentation(info="<html>
 <h4>Syntax</h4>
-<blockquote><pre>
-y = Constant.<b>interpolation</b>(buffer,offset);
-</pre></blockquote>
-
+<blockquote><code>y = Constant.<b>interpolate</b>(buffer,offset);</code> </blockquote>
 <h4>Description</h4>
-<p>
-Interpolate in buffer by using constant interpolation. Input argument offset is a Real number
-marking the point at which interpolation shall take place. offset=0 is the first buffer value
-buffer[1]. offset=size(buffer,1)-1 is the last buffer value buffer[size(buffer,1)]. It is required that
-0 &le; offset &lt; size(buffer,1)-1.
-If the buffer has length 1, the function always returns y=buffer[1]. Otherwise
-the function returns y = buffer[integer(offset)+1]. 
-</p>
+<p>Interpolate in buffer by using constant interpolation. Input argument offset is a Real number marking the point at which interpolation shall take place. offset=0 is the first buffer value buffer[1]. offset=size(buffer,1)-1 is the last buffer value buffer[size(buffer,1)]. It is required that 0 &le; offset &LT; size(buffer,1)-1. If the buffer has length 1, the function always returns y=buffer[1]. Otherwise the function returns y = buffer[integer(offset)+1]. </p>
 </html>"));
   end interpolate;
 

@@ -23,4 +23,10 @@ algorithm
     der_y := der_y + der_kernel_offset(t=mod(offset,1)-i) *     buffer[integer(offset)+i+1] * der_offset
                    +     kernel(       t=mod(offset,1)-i) * der_buffer[integer(offset)+i+1];
   end for;
+  annotation (Documentation(info="<html>
+<h4>Syntax</h4>
+<blockquote><code>der_y = SmoothIdealLowPass.der_<b>interpolate</b>(buffer,offset,der_buffer,der_offset); </code></blockquote>
+<h4>Description</h4>
+<p>Determine the derivative of a signal interpolated smoothly in a buffer (see <a href=\"interpolate\">interpolate</a>). Input argument offset is a Real number marking the point at which interpolation shall take place. Input arguments der_buffer and der_offset are the derivatives of the input arguments buffer and offset. This function is used as derivative of the <a href=\"interpolate\">interpolate</a> function. Please see the description there for an introduction to the interpolation method used and specific remerks in the buffer and offset values.</p>
+</html>"));
 end der_interpolate;

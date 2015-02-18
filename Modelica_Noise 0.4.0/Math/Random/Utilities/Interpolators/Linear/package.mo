@@ -28,22 +28,9 @@ protected
 
     annotation(derivative(order=1) = der_interpolate, Documentation(info="<html>
 <h4>Syntax</h4>
-<blockquote><pre>
-y = Linear.<b>interpolation</b>(buffer,offset);
-</pre></blockquote>
-
+<blockquote><code>y = Linear.<b>interpolate</b>(buffer,offset);</code> </blockquote>
 <h4>Description</h4>
-<p>
-Interpolate in buffer by using linear interpolation. Input argument offset is a Real number
-marking the point at which interpolation shall take place. offset=0 is the first buffer value
-buffer[1]. offset=size(buffer,1)-1 is the last buffer value buffer[size(buffer,1)]. It is required that
-0 &le; offset &lt; size(buffer,1)-1.
-The function returns the lineraly interpolated value.
-In order to avoid issues at the end of the buffer (where a minimally too large offset value
-triggers an assert), it is best to make the buffer one element larger as needed. For example, if the buffer is
-filled with a sample period of 1 ms and every 100 samples an event occurs, then the buffer
-should have length 102 for the samples 0 ms, 1 ms, 2 ms, ...., 100 ms, 101 ms.
-</p>
+<p>Interpolate in buffer by using linear interpolation. Input argument offset is a Real number marking the point at which interpolation shall take place. offset=0 is the first buffer value buffer[1]. offset=size(buffer,1)-1 is the last buffer value buffer[size(buffer,1)]. It is required that 0 &le; offset &LT; size(buffer,1)-1. The function returns the lineraly interpolated value. In order to avoid issues at the end of the buffer (where a minimally too large offset value triggers an assert), it is best to make the buffer one element larger as needed. For example, if the buffer is filled with a sample period of 1 ms and every 100 samples an event occurs, then the buffer should have length 102 for the samples 0 ms, 1 ms, 2 ms, ...., 100 ms, 101 ms. </p>
 </html>"));
   end interpolate;
 

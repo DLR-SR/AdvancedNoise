@@ -34,26 +34,11 @@ model Distributions "Demonstrates noise with different types of distributions"
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
   Statistics.ContinuousMean normalMean
 annotation (Placement(transformation(extent={{-20,30},{0,50}})));
-  Noise.TimeBasedNoise discreteNoise(
-    samplePeriod=0.01,
-    y_min=-1,
-    y_max=3,
-    redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Discrete.quantile,
-    redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Constant)
-    annotation (Placement(transformation(extent={{-60,-50},{-40,-30}})));
-  Statistics.ContinuousMean discreteMean
-    annotation (Placement(transformation(extent={{-20,-50},{0,-30}})));
 equation
   connect(normalNoise.y, normalMean.u) annotation (Line(
   points={{-39,40},{-22,40}},
   color={0,0,127},
   smooth=Smooth.None));
-  connect(discreteNoise.y, discreteMean.u) annotation (Line(
-      points={{-39,-40},{-22,-40}},
-      color={0,0,127},
-      smooth=Smooth.None));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     __Dymola_experimentSetupOutput,

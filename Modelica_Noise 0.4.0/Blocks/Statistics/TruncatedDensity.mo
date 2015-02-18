@@ -1,21 +1,11 @@
 within Modelica_Noise.Blocks.Statistics;
 block TruncatedDensity
   "Calculates the density of a selected truncated distribution"
-
-  extends Modelica.Blocks.Interfaces.BlockIcon;
-
-  replaceable function distribution =
+  extends Density(
+  redeclare replaceable function distribution =
        Modelica_Noise.Math.TruncatedDistributions.Uniform.density constrainedby
-    Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialDensity
-    "Truncated probability density function"
-    annotation(choicesAllMatching=true);
+      Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialDensity);
 
-  Modelica.Blocks.Interfaces.RealInput u "Real input signal" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
-  Modelica.Blocks.Interfaces.RealOutput y
-    "Density of the input signal according to the selected truncated probability density function"
-    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-equation
-  y = distribution(u);
   annotation (Icon(graphics={
         Polygon(
           points={{0,94},{-8,72},{8,72},{0,94}},
@@ -42,5 +32,7 @@ equation
           -74.4442},{56,-75.1631},{59.5,-75.5674},{63,-75.7852},{66.5,
           -75.8975},{70,-75.953}},
           color={0,0,0},
-          smooth=Smooth.Bezier)}));
+          smooth=Smooth.Bezier)}), Documentation(info="<html>
+<p>This block calculates the probability density y of a truncated distribution extending <a href=\"Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialDensity\">Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialDensity</a>. It is an extension of the <a href=\"Density\">Density</a> block with a more specialized constraining clause on the probability density function to be used.</p>
+</html>"));
 end TruncatedDensity;

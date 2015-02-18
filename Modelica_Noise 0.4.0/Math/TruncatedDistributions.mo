@@ -645,11 +645,9 @@ of truncated distributions, see
 
     partial function partialDensity
       "Common interface of truncated probability density functions"
-      extends Modelica.Icons.Function;
-      input Real u "Random number over the real axis (-inf < u < inf)";
+      extends Distributions.Interfaces.partialDensity;
       input Real u_min=0 "Lower limit of u" annotation(Dialog);
       input Real u_max=1 "Upper limit of u" annotation(Dialog);
-      output Real y "Density of u (y=0 if u < u_min or u > u_max)";
       annotation (Documentation(info="<html>
 <p>
 A partial function containing the common
@@ -660,11 +658,9 @@ arguments of the probability density functions.
 
     partial function partialCumulative
       "Common interface of truncated cumulative distribution functions"
-      extends Modelica.Icons.Function;
-      input Real u "Value over the real axis (-inf < u < inf)";
+      extends Distributions.Interfaces.partialCumulative;
       input Real u_min=0 "Lower limit of u" annotation(Dialog);
       input Real u_max=1 "Upper limit of u" annotation(Dialog);
-      output Real y "Value in the range 0 <= y <= 1";
       annotation (Documentation(info="<html>
 <p>
 A partial function containing the common
@@ -675,12 +671,9 @@ arguments of the cumulative distribution functions.
 
     partial function partialQuantile
       "Common interface of truncated quantile functions (= inverse cumulative distribution functions)"
-      extends Modelica.Icons.Function;
-      input Real u(min=0, max=1) "Random number in the range 0 <= u <= 1";
+      extends Distributions.Interfaces.partialQuantile;
       input Real y_min=0 "Lower limit of y" annotation(Dialog);
       input Real y_max=1 "Upper limit of y" annotation(Dialog);
-      output Real y
-        "Random number u transformed according to the given distribution";
       annotation (Documentation(info="<html>
 <p>
 A partial function containing the common

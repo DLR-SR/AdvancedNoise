@@ -86,25 +86,9 @@ protected
     end for;
     annotation(derivative(order=1) = der_interpolate, Documentation(info="<html>
 <h4>Syntax</h4>
-<blockquote><pre>
-y = SmoothIdealLowPass.<b>interpolation</b>(buffer,offset);
-</pre></blockquote>
-
+<blockquote><code>y = SmoothIdealLowPass.<b>interpolate</b>(buffer,offset);</code> </blockquote>
 <h4>Description</h4>
-<p>
-Interpolate in buffer by using the <a href=\"modelica://Modelica_Noise.Math.Special.sinc\">sinc</a> function.
-This is an approximation of an ideal low pass filter that completely blocks frequencies above the cut-off
-frequency f = 1/T (where T is the sample period with which the buffer was filled).
-Input argument offset is a Real number
-marking the point at which interpolation shall take place. offset=0 is the first buffer value
-buffer[1]. offset=size(buffer,1)-1 is the last buffer value buffer[size(buffer,1)]. It is required that
-0 &le; offset &lt; size(buffer,1)-1. The function returns the interpolated value.
-The interpolation is continuous with a continuous first derivative.
-In order to avoid issues at the end of the buffer (where a minimally too large offset value
-triggers an assert), it is best to make the buffer one element larger as needed. For example, if the buffer is
-filled with a sample period of 1 ms and every 100 samples an event occurs, then the buffer
-should have length 102 for the samples 0 ms, 1 ms, 2 ms, ...., 100 ms, 101 ms.
-</p>
+<p>Interpolate in buffer by using the <a href=\"modelica://Modelica_Noise.Math.Special.sinc\">sinc</a> function. This is an approximation of an ideal low pass filter that completely blocks frequencies above the cut-off frequency f = 1/T (where T is the sample period with which the buffer was filled). Input argument offset is a Real number marking the point at which interpolation shall take place. offset=0 is the first buffer value buffer[1]. offset=size(buffer,1)-1 is the last buffer value buffer[size(buffer,1)]. It is required that 0 &le; offset &LT; size(buffer,1)-1. The function returns the interpolated value. The interpolation is continuous with a continuous first derivative. In order to avoid issues at the end of the buffer (where a minimally too large offset value triggers an assert), it is best to make the buffer one element larger as needed. For example, if the buffer is filled with a sample period of 1 ms and every 100 samples an event occurs, then the buffer should have length 102 for the samples 0 ms, 1 ms, 2 ms, ...., 100 ms, 101 ms. </p>
 </html>"));
   end interpolate;
 
@@ -118,7 +102,12 @@ should have length 102 for the samples 0 ms, 1 ms, 2 ms, ...., 100 ms, 101 ms.
     output Real h "The impulse response of the convolution filter";
   algorithm
     h := 2*f*sinc(2*pi*f*t);
-    annotation(Inline=true);
+    annotation(Inline=true, Documentation(info="<html>
+<h4>Syntax</h4>
+<blockquote><code>h = SmoothIdealLowPass.<b>kernel</b>(offset); </code></blockquote>
+<h4>Description</h4>
+<p>This function defines the kernel of the <a href=\"SmoothIdealLowPass\">SmoothIdealLowPass</a> interpolation. It uses the <a href=\"Math.Special.sinc\">sinc</a> function with a specified cut-off frequency.</p>
+</html>"));
   end kernel;
 
 
@@ -131,6 +120,12 @@ protected
     function d = der(kernel, t);
   algorithm
     h := d(t,f);
+  annotation (Documentation(info="<html>
+<h4>Syntax</h4>
+<blockquote><code>der_h = SmoothIdealLowPass.<b>der_kernel_offset</b>(offset); </code></blockquote>
+<h4>Description</h4>
+<p>This function defines the derivative of the <a href=\"kernel\">kernel</a> of the <a href=\"SmoothIdealLowPass\">SmoothIdealLowPass</a> interpolation with respect to its input argument offset. This function is used for determining the derivative of the interpolated signal.</p>
+</html>"));
   end der_kernel_offset;
 
 

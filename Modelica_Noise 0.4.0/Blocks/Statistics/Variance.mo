@@ -55,7 +55,11 @@ equation
       points={{73,0},{110,0}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Documentation(revisions=""),
+  annotation (Documentation(revisions="", info="<html>
+<p>This block calculates the empirical variance of its input signal. it uses the formula:</p>
+<pre>y = mean(  (u - mean(u))^2  )</pre>
+<p>The <a href=\"ContinuousMean\">ContinuousMean</a> block is used to calculate the mean values in this formula.</p>
+</html>"),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
