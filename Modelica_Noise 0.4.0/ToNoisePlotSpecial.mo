@@ -164,7 +164,7 @@ package ToNoisePlotSpecial
     end bates;
 
     function Discrete "Plot functions Math.Distributions.Discrete"
-       import Modelica_Noise.Math.Distributions.Discrete;
+       import Noise.Distributions.Discrete;
        input Integer nPoints(min=2) = 1000 "Number of evaluation points";
     protected
        Real u[nPoints] = linspace(-5, 5, nPoints);

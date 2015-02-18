@@ -1,5 +1,5 @@
-within Modelica_Noise.Math.Distributions;
-package Discrete "Library of discrete distribution functions"
+within Noise.TruncatedDistributions;
+package Discrete "Library of truncated discrete distribution functions"
   extends Modelica.Icons.Package;
 
 

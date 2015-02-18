@@ -638,30 +638,6 @@ of truncated distributions, see
           grid={1,1})));
   end Weibull;
 
-  package Discrete "Library of truncated discrete distribution functions"
-    extends Modelica.Icons.Package;
-
-    function quantile "Quantile of discrete distribution"
-      extends
-        Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialQuantile;
-      input Real x[:] = {0,1} "Discrete values to be chosen from" annotation(Dialog);
-      input Real p[size(x,1)] = ones(size(x,1))/size(x,1)
-        "The probabilities of the discrete values" annotation(Dialog);
-    algorithm
-      y :=Distributions.Discrete.quantile(
-            u,
-            x,
-            p);
-
-      annotation(Inline=true, Documentation(info="<html>
-</html>"));
-    end quantile;
-    annotation (Icon(graphics={             Line(
-        points={{-80,-60},{-40,-60},{-40,60},{40,60},{40,-60},{80,-60}},
-        color={0,0,0},
-        smooth=Smooth.None)}), Documentation(info="<html>
-</html>"));
-  end Discrete;
 
   package Interfaces
     "Library of interfaces for truncated distribution functions"

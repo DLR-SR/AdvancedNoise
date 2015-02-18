@@ -1,4 +1,4 @@
-within Modelica_Noise.Math.Distributions.Discrete;
+within Noise.Distributions.Discrete;
 function quantile
   "Quantile of discrete distribution (= inverse cumulative distribution function)"
   extends Modelica_Noise.Math.Distributions.Interfaces.partialQuantile;

@@ -1,4 +1,4 @@
-within Modelica_Noise.Math.Distributions.Discrete;
+within Noise.Distributions.Discrete;
 function cumulative "Cumulative distribution function of discrete distribution"
   extends Modelica_Noise.Math.Distributions.Interfaces.partialCumulative;
   input Real x[:] = {0,1} "Discrete values to be chosen from" annotation(Dialog);
