@@ -4,7 +4,7 @@ model Interpolation
   extends Modelica.Icons.Example;
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
-  Noise.TimeBasedNoise constantNoise(
+  Blocks.Noise.TimeBasedNoise constantNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
@@ -12,13 +12,13 @@ model Interpolation
         Modelica_Noise.Math.Random.Utilities.Interpolators.Constant,
     y_min=-1,
     y_max=3) annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
-  Noise.TimeBasedNoise linearNoise(
+  Blocks.Noise.TimeBasedNoise linearNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3) annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
-  Noise.TimeBasedNoise smoothNoise(
+  Blocks.Noise.TimeBasedNoise smoothNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     redeclare package interpolation =

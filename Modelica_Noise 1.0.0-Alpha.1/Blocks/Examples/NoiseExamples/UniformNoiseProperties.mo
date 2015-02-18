@@ -12,7 +12,7 @@ model UniformNoiseProperties
     "Theoretical standard deviation of uniform distribution";
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{80,60},{100,80}})));
-  Noise.TimeBasedNoise noise(
+  Blocks.Noise.TimeBasedNoise noise(
     samplePeriod=0.001,
     y_min=y_min,
     y_max=y_max,
