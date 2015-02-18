@@ -7,7 +7,7 @@ function cumulative "Cumulative distribution function of Bates distribution"
   input Real y_max=1 "Upper limit of band" annotation (Dialog);
   input Integer n=12 "Number of uniform random values" annotation (Dialog);
 protected
-  Real x = (u - y_min) / (y_max - y_min) "Abbreviation into the interval (0,1)";
+  Real x "Abbreviation into the interval (0,1)";
 algorithm
 
   // This is the formula for the PDF:
@@ -16,11 +16,15 @@ algorithm
   // The integral is actually only once over x
   // cdf = n^(n-1)/(n-1)!*sum( (-1)^k * binomial(n,k) * (x-k/n)^( n ) , k = 0..floor(n*x))
 
+  // Map the scaled distribution to the stable region
+  x := (u - y_min) / (y_max - y_min);
+  if u > 0.5*(y_min+y_max) then
+    x := 1 - x;
+  end if;
+
   // Only calculate a number within the boundary
   y := 0;
-  if u > y_max then
-    y := 1;
-  elseif u >= y_min and u <= y_max then
+  if u >= y_min and u <= y_max then
 
     // Loop over k = 0 .. floor(n*x)
     for k in 0:integer(n*x) loop
@@ -32,6 +36,11 @@ algorithm
 
   elseif u > y_max then
     y := 1;
+  end if;
+
+  // Invert the CDF for x > 0.5
+  if u > 0.5*(y_min+y_max) and u <= y_max then
+    y := 1 - y;
   end if;
   annotation (Inline=true,Documentation(info="<html>
 <h4>Syntax</h4>

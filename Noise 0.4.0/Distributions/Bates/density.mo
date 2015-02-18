@@ -7,10 +7,16 @@ function density "Density of Bates distribution"
   input Real y_max=1 "Upper limit of band" annotation (Dialog);
   input Integer n=12 "Number of uniform random values" annotation (Dialog);
 protected
-  Real x = (u - y_min) / (y_max - y_min) "Abbreviation into the interval (0,1)";
+  Real x "Abbreviation into the interval (0,1)";
 algorithm
   // This is the formula for the PDF:
-  // pdf = n^n/(n-1)!*sum( (-1)^k * binomial(n,k) * (x-k/n)^(n-1) , k = 0..floor(n*x))
+  // pdf = n^n/(n-1)!*sum( (-1)^k * binomial(n,k) * (x-k/n)^(n-1)               , k = 0..floor(n*x))
+
+  // Map the scaled distribution to the stable region
+  x := (u - y_min) / (y_max - y_min);
+  if u > 0.5*(y_min+y_max) then
+    x := 1 - x;
+  end if;
 
   // Only calculate a number within the boundary
   y := 0;
@@ -22,7 +28,8 @@ algorithm
       y := y + (-1)^k * binomial(n,k) * (x-k/n)^(n-1);
     end for;
     // Multiply by the outer factor
-    y := n^n / factorial(n-1) * y;
+    y := n^(n)/3 / factorial(n-1) * y;
+
   end if;
 
   annotation (Inline=true,Documentation(info="<html>
