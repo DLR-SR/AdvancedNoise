@@ -1,5 +1,5 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
-model Actuator
+model Actuator "An actuator model without noise (as reference)"
 extends Modelica.Icons.Example;
   Blocks.Examples.NoiseExamples.Utilities.Parts.MotorWithCurrentControl Motor
     annotation (Placement(transformation(extent={{-94,-10},{-74,10}})));

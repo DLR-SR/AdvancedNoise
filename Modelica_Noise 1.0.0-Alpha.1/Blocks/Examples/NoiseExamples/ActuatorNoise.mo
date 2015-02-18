@@ -1,5 +1,5 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
-model ActuatorNoise
+model ActuatorNoise "An actuator model with noise in the controller input"
   extends Blocks.Examples.NoiseExamples.Actuator(
                    controller(redeclare
         Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities.Parts.Modelica_Noise
