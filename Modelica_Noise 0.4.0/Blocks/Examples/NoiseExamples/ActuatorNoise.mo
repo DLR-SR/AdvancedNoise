@@ -1,7 +1,9 @@
-within Modelica_Noise.Examples.Actuator;
-model ActuatorModelica_Noise
-  extends Actuator(controller(redeclare
-        Modelica_Noise.Examples.Actuator.Parts.Modelica_Noise noiseModel));
+within Modelica_Noise.Blocks.Examples.NoiseExamples;
+model ActuatorNoise
+  extends Blocks.Examples.NoiseExamples.Actuator(
+                   controller(redeclare
+        Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities.Parts.Modelica_Noise
+        noiseModel));
   annotation (
     experiment(
       StopTime=8,
@@ -11,4 +13,4 @@ model ActuatorModelica_Noise
 </html>", revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
-end ActuatorModelica_Noise;
+end ActuatorNoise;

@@ -1,4 +1,4 @@
-within Modelica_Noise.Examples.Actuator.Parts;
+within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities.Parts;
 model LinearSystemsNoise
   extends NoiseModel;
   Modelica_LinearSystems2.Controller.Noise noise(

@@ -1,9 +1,9 @@
-within Modelica_Noise.Examples.Actuator;
+within Modelica_Noise.Blocks.Examples.NoiseExamples;
 model Actuator
 extends Modelica.Icons.Example;
-  Parts.MotorWithCurrentControl Motor
+  Blocks.Examples.NoiseExamples.Utilities.Parts.MotorWithCurrentControl Motor
     annotation (Placement(transformation(extent={{-94,-10},{-74,10}})));
-  Parts.Controller controller
+  Blocks.Examples.NoiseExamples.Utilities.Parts.Controller controller
     annotation (Placement(transformation(extent={{0,60},{20,80}})));
   Modelica.Blocks.Sources.Step     Speed(startTime=0.5, height=50)
     annotation (Placement(transformation(extent={{-72,66},{-52,86}})));

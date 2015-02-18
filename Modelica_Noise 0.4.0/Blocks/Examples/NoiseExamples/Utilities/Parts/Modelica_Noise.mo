@@ -1,4 +1,4 @@
-within Modelica_Noise.Examples.Actuator.Parts;
+within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities.Parts;
 model Modelica_Noise "Modelica_Noise noise modeling"
   import Noise;
   extends NoiseModel;

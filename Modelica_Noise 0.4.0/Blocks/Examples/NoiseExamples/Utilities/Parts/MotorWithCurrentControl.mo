@@ -1,4 +1,4 @@
-within Modelica_Noise.Examples.Actuator.Parts;
+within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities.Parts;
 model MotorWithCurrentControl
   "Test example: PermanentMagnetSynchronousInductionMachine fed by current source. Based on Modelica.Electrical.Machines.Examples.SynchronousInductionMachines.SMPM_CurrentSource"
   extends Modelica.Electrical.Machines.Icons.TransientMachine;

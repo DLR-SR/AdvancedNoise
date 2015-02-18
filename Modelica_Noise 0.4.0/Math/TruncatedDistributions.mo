@@ -638,7 +638,6 @@ of truncated distributions, see
           grid={1,1})));
   end Weibull;
 
-
   package Interfaces
     "Library of interfaces for truncated distribution functions"
     extends Modelica.Icons.InterfacesPackage;

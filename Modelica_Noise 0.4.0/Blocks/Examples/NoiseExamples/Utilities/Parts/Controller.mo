@@ -1,4 +1,4 @@
-within Modelica_Noise.Examples.Actuator.Parts;
+within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities.Parts;
 model Controller
   import Noise;
   Modelica.Blocks.Continuous.PI speed_PI(k=10, T=5e-2)
