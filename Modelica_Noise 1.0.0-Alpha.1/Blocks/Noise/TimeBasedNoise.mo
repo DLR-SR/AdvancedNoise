@@ -115,7 +115,7 @@ algorithm
     buffer[1:nCopy] := buffer[nBuffer-nCopy+1:nBuffer];
     for i in nCopy+1:nBuffer loop
       (r, state) := generator.random(state);
-      buffer[i] := r;
+      buffer[i]  := distribution(r);
     end for;
   end when;
 
@@ -127,11 +127,11 @@ equation
     // Make sure, noise is smooth, if so declared
     if interpolation.continuous then
       y = smooth(interpolation.smoothness,
-                 distribution(interpolation.interpolate(buffer=buffer,
-                              offset=(time-bufferStartTime) / samplePeriod + nPast)));
+                 interpolation.interpolate(buffer=buffer,
+                                           offset=(time-bufferStartTime) / samplePeriod + nPast));
     else
-      y =        distribution(interpolation.interpolate(buffer=buffer,
-                              offset=(time-bufferStartTime) / samplePeriod + nPast));
+      y =        interpolation.interpolate(buffer=buffer,
+                                           offset=(time-bufferStartTime) / samplePeriod + nPast);
     end if;
 
   // Output y_off, if noise is not to be generated
@@ -154,7 +154,7 @@ equation
           lineColor={192,192,192},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid),
-        Line(visible=  enableNoise,
+        Line(visible = enableNoise,
            points={{-75,-13},{-61,-13},{-61,3},{-53,3},{-53,-45},{-45,-45},{-45,
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,
@@ -195,7 +195,7 @@ equation
 <td><p>Upper and lower bounds for the noise. With the default setting, uniform noise is generated within these bounds.</p></td>
 </tr>
 </table>
-<p><br>As a simple demonstration, see example <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.TimeBasedNoise\">Blocks.Examples.NoiseExamples.TimeBasedNoise</a>. In the next diagram, a simulation result is shown for samplePeriod=0.02 s, y_min=-1, y_max=3: </p>
+<p><br><br>As a simple demonstration, see example <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.TimeBasedNoise\">Blocks.Examples.NoiseExamples.TimeBasedNoise</a>. In the next diagram, a simulation result is shown for samplePeriod=0.02 s, y_min=-1, y_max=3: </p>
 <blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/SimpleTimeBasedNoise.png\"/> </blockquote>
 <h4>Advanced tab: General settings</h4>
 <p>In the <b>Advanced</b> tab of the parameter menu, further options can be set. The general settings are shown in the next table: </p>
@@ -216,7 +216,7 @@ equation
 <td><p>If the drawn random numbers are continuously interpolated (so interpolation &ne; Constant), then a time event is only generated at every sampleFactor sample instant. At such an event a buffer is filled with the next sampleFactor random values and interpolation takes place in this buffer. This approach speeds up the simulation considerably, in many cases (provided not too small relative tolerance is selected for the integrator). If interpolation = Constant, then sampleFactor is ignored and a time event is generated at every sample instant. If sampleFactor = 1, then a time event is also generated at every sample instant, independently of the selected interpolation method (which leads usually to a slow simulation). </p></td>
 </tr>
 </table>
-<p><br><h4>Advanced tab: Random number properties</h4></p>
+<h4>Advanced tab: Random number properties</h4>
 <p>In the group &QUOT;Random number properties&QUOT;, the properties of the random number generation are defined. By default, uniform random numbers with linear interpolation are used, and the random numbers are drawn with the pseudo random number generator algorithm &QUOT;xorshift128+&QUOT;. This random number generator has a period of 2^128, has an internal state of 4 Integer elements, and has excellent statistical properties. If the default behavior is not desired, the following parameters can be set: </p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
 <td><p align=\"center\"><h4>Parameter</h4></p></td>
@@ -224,7 +224,7 @@ equation
 </tr>
 <tr>
 <td><p>distribution </p></td>
-<td><p>Defines the random number distribution to map random numbers from the range 0.0 ... 1.0, to the desired range and distribution. Basically, <b>distribution</b> is a replaceable function that provides the truncated quantile (= truncated inverse cumulative distribution function) of a random distribution. More details of truncated distributions can be found in the documentation of package <a href=\"modelica://Modelica_Noise.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>. The distribution function is called at every time instant where an output value of the block has to be computed. As a result, a distribution may depend also on other variables of a model.</p></td>
+<td><p>Defines the random number distribution to map random numbers from the range 0.0 ... 1.0, to the desired range and distribution. Basically, <b>distribution</b> is a replaceable function that provides the truncated quantile (= truncated inverse cumulative distribution function) of a random distribution. More details of truncated distributions can be found in the documentation of package <a href=\"modelica://Modelica_Noise.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>. </p></td>
 </tr>
 <tr>
 <td><p>interpolation </p></td>
@@ -237,7 +237,7 @@ equation
 <td><p>Defines the pseudo random number generator to be used. This is a replaceable package. The random number generators that are provided in package <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a> can be used here. Properties of the various generators are described in the package description of the Generators package.</p></td>
 </tr>
 </table>
-<p><br>The different interpolation methods are demonstrated with example <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.Interpolation\">Examples.NoiseExamples.Interpolation</a>. A simulation result is shown in the next diagram: </p>
+<p><br><br>The different interpolation methods are demonstrated with example <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.Interpolation\">Examples.NoiseExamples.Interpolation</a>. A simulation result is shown in the next diagram: </p>
 <blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/Interpolation1.png\"/> </blockquote>
 <p>As can be seen, constant (constantNoise.y) and linear (linearNoise.y) interpolation respect the defined band -1 .. 3. Instead, smooth interpolation with the sinc function (smoothNoise.y) may violate the band slightly in order to be able to smoothly interpolate the random values at the sample instants. In practical applications, this is not an issue because the exact band of the noise is usually not exactly known. </p>
 <p>The selected interpolation method does not change the mean value of the noise signal, but it changes its variance with the following factors: </p>
@@ -258,7 +258,7 @@ equation
 <td><p>0.979776342307764 (actual variance = 0.97..*&LT;variance of constantly interpolated noise&GT;)</p></td>
 </tr>
 </table>
-<p><br>The above table holds only if an event is generated at every sample instant (sampleFactor=1), or for very small relative tolerances. Otherwise, the variance depends also slightly on the step-size and the interpolation method of the integrator. Therefore, if the variance of the noise is important for your application, either change the distribution definition to take the factors above into account, or use only constant interpolation. </p>
+<p><br><br>The above table holds only if an event is generated at every sample instant (sampleFactor=1), or for very small relative tolerances. Otherwise, the variance depends also slightly on the step-size and the interpolation method of the integrator. Therefore, if the variance of the noise is important for your application, either change the distribution definition to take the factors above into account, or use only constant interpolation. </p>
 <p><b>Advanced tab: Initialization</b> </p>
 <p>The random number generators must be properly initialized, especially that different instances of the noise block generate uncorrelated noise. For this purpose the following parameters can be defined. </p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>

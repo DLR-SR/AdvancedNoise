@@ -224,7 +224,7 @@ of truncated distributions, see
   */
       y := min(y_max,max(y_min,y));
 
-      annotation (Documentation(info="<html>
+      annotation (smoothOrder = 1,Documentation(info="<html>
 <p>
 <h4>Syntax</h4>
 <blockquote><pre>
@@ -515,7 +515,7 @@ of truncated distributions, see
   */
       y := min(y_max,max(y_min,y));
 
-      annotation (Documentation(info="<html>
+      annotation (smoothOrder=1,Documentation(info="<html>
 <p>
 <h4>Syntax</h4>
 <blockquote><pre>

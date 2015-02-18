@@ -2,12 +2,12 @@ within Modelica_Noise.Math.Special;
 function erfInv "Inverse error function: u = erf(erfInv(u))"
   input Real u "Input argument in the range -1 <= u <= 1";
   output Real y "= inverse of error function";
+protected
+  constant Real eps = 0.1;
 algorithm
-  assert(u >= -1 and u <= 1, "Input argument u not in range -1 <= u <= 1");
-
-  if u == 1 then
+  if u >= 1 then
      y := Modelica.Constants.inf;
-  elseif u == -1 then
+  elseif u <= -1 then
      y := -Modelica.Constants.inf;
   elseif u == 0 then
      y := 0;
@@ -17,7 +17,7 @@ algorithm
      y :=Internal.erfInvUtil(u, 1 - u);
   end if;
 
-  annotation (Documentation(info="<html>
+  annotation (smoothOrder=1, Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
 Special.<b>erfInv</b>(u);

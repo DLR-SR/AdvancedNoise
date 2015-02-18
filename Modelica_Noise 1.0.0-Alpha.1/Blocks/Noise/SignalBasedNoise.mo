@@ -117,7 +117,7 @@ equation
                         initialState(localSeed=localSeed,
                                      globalSeed=actualGlobalSeed,
                                      signal=(noEvent(integer(offset)) + i + shift) * samplePeriod + signalOffset)));
-    buffer[i] = zeroDer(distribution(r[i]));
+    buffer[i] = distribution(r[i]);
   end for;
 
   // Generate noise, if requested
@@ -178,7 +178,7 @@ value has a lenght of 64 bits).
 
   function zeroDer "Declare an expression to have zero derivative"
     input Real u "Original expression";
-    input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
+    input Real dummy = 0 "Dummy variable to have something to derive (=0)";
     output Real y "=u";
   algorithm
     y := u;
@@ -195,63 +195,6 @@ value has a lenght of 64 bits).
     annotation(Inline=true);
   end der_zeroDer;
 
-//   function smoothmod1 "A modulo 1 operator with defined derivative"
-//     input Real dividend "The dividend";
-//     output Real remainder "The remainder = mod(divident,1)";
-//   algorithm
-//     remainder := dividend - integer( dividend);
-//     annotation(Inline=false, derivative = der_smoothmod1);
-//   end smoothmod1;
-//
-//   function der_smoothmod1 "Derivative of modulo 1 operator"
-//     input Real dividend "The dividend";
-//     input Real der_dividend "der(dividend)";
-//     output Real der_remainder "der(remainder)";
-//   algorithm
-//     der_remainder := der_dividend;
-//     annotation(Inline=true);
-//   end der_smoothmod1;
-//
-//   function smoothRandom
-//     "A random number generator with defined derivative (=0)"
-//     input Integer state[generator.nState] "The previous state of the generator";
-//     input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
-//     output Real r "A uniform random number";
-//   algorithm
-//     r := generator.random(state);
-//     annotation(Inline=false, derivative(noDerivative = state) = der_smoothRandom);
-//   end smoothRandom;
-//
-//   function der_smoothRandom "Derivative of random number (=0)"
-//     input Integer state[generator.nState] "The previous state of the generator";
-//     input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
-//     input Real der_dummy = 0 "der(dummy)=0";
-//     output Real der_r "der(r)";
-//   algorithm
-//     der_r := 0;
-//     annotation(Inline=true);
-//   end der_smoothRandom;
-//
-//   function smoothDistribution
-//     "A random number generator with defined derivative (=0)"
-//     input Real r "The uniform random number";
-//     input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
-//     output Real y "The transformed random number";
-//   algorithm
-//     y := distribution(r);
-//     annotation(Inline=false, derivative(noDerivative = r) = der_smoothDistribution);
-//   end smoothDistribution;
-//
-//   function der_smoothDistribution "Derivative of random number (=0)"
-//     input Real r "The uniform random number";
-//     input Real dummy = 0 "Dummy variable to have somthing to derive (=0)";
-//     input Real der_dummy = 0 "der(dummy)=0";
-//     output Real der_y "der(y)";
-//   algorithm
-//     der_y := 0;
-//     annotation(Inline=true);
-//   end der_smoothDistribution;
-
     annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise),
               Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
             {100,100}}), graphics={
@@ -267,7 +210,7 @@ value has a lenght of 64 bits).
           lineColor={192,192,192},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid),
-        Line(visible=  enableNoise,
+        Line(visible = enableNoise,
            points={{-75,-13},{-61,-13},{-61,3},{-53,3},{-53,-45},{-45,-45},{-45,
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,
@@ -312,7 +255,7 @@ value has a lenght of 64 bits).
 <td><p>Upper and lower bounds for the noise. With the default setting, uniform noise is generated within these bounds.</p></td>
 </tr>
 </table>
-<p><br><br><br>As a simple demonstration, see example <a href=\"Blocks.Examples.NoiseExamples.SignalBasedNoise\">Blocks.Examples.NoiseExamples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!</p>
+<p><br><br><br><br>As a simple demonstration, see example <a href=\"Blocks.Examples.NoiseExamples.SignalBasedNoise\">Blocks.Examples.NoiseExamples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!</p>
 <blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/SignalBasedNoise.png\"/> </blockquote>
 <h4>Advanced tab: General settings</h4>
 <p>In the <b>Advanced</b> tab of the parameter menu, further options can be set. The general settings are shown in the next table: </p>
@@ -329,7 +272,7 @@ value has a lenght of 64 bits).
 <td><p>If enableNoise = false, the output of the block instance has the value y_off. Default is y_off = 0.0. Furthermore, if time&LT;startTime, the output of the block is also y_off.</p></td>
 </tr>
 </table>
-<p><br><br><br><br><b>Advanced tab: Random number properties</b></p>
+<p><br><br><br><br><br><b>Advanced tab: Random number properties</b></p>
 <p>In the group &QUOT;Random number properties&QUOT;, the properties of the random number generation are defined. By default, uniform random numbers with linear interpolation are used, and the random numbers are drawn with the pseudo random number generator algorithm &QUOT;xorshift128+&QUOT;. This random number generator has a period of 2^128, has an internal state of 4 Integer elements, and has excellent statistical properties. If the default behavior is not desired, the following parameters can be set: </p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
 <td><p align=\"center\"><h4>Parameter</h4></p></td>
@@ -337,7 +280,7 @@ value has a lenght of 64 bits).
 </tr>
 <tr>
 <td><p>distribution </p></td>
-<td><p>Defines the random number distribution to map random numbers from the range 0.0 ... 1.0, to the desired range and distribution. Basically, <b>distribution</b> is a replaceable function that provides the truncated quantile (= truncated inverse cumulative distribution function) of a random distribution. More details of truncated distributions can be found in the documentation of package <a href=\"modelica://Modelica_Noise.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>. The distribution function is called at every time instant where an output value of the block has to be computed. As a result, a distribution may depend also on other variables of a model.</p></td>
+<td><p>Defines the random number distribution to map random numbers from the range 0.0 ... 1.0, to the desired range and distribution. Basically, <b>distribution</b> is a replaceable function that provides the truncated quantile (= truncated inverse cumulative distribution function) of a random distribution. More details of truncated distributions can be found in the documentation of package <a href=\"modelica://Modelica_Noise.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>. </p></td>
 </tr>
 <tr>
 <td><p>interpolation </p></td>
@@ -350,7 +293,7 @@ value has a lenght of 64 bits).
 <td><p>Defines the pseudo random number generator to be used. This is a replaceable package. The random number generators that are provided in package <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a> can be used here. Properties of the various generators are described in the package description of the Generators package.</p></td>
 </tr>
 </table>
-<p><br><br><br><br>The different interpolation methods are demonstrated with example <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.Interpolation\">Examples.NoiseExamples.Interpolation</a>. The example uses the block <a href=\"TimeBasedNoise\">TimeBasedNoise</a>, but the results also hold for SignalBasedNoise. A simulation result is shown in the next diagram: </p>
+<p><br><br><br><br><br>The different interpolation methods are demonstrated with example <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.Interpolation\">Examples.NoiseExamples.Interpolation</a>. The example uses the block <a href=\"TimeBasedNoise\">TimeBasedNoise</a>, but the results also hold for SignalBasedNoise. A simulation result is shown in the next diagram: </p>
 <blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/Interpolation1.png\"/> </blockquote>
 <p>As can be seen, constant (constantNoise.y) and linear (linearNoise.y) interpolation respect the defined band -1 .. 3. Instead, smooth interpolation with the sinc function (smoothNoise.y) may violate the band slightly in order to be able to smoothly interpolate the random values at the sample instants. In practical applications, this is not an issue because the exact band of the noise is usually not exactly known. </p>
 <p>The selected interpolation method does not change the mean value of the noise signal, but it changes its variance with the following factors: </p>
@@ -371,7 +314,7 @@ value has a lenght of 64 bits).
 <td><p>0.979776342307764 (actual variance = 0.97..*&LT;variance of constantly interpolated noise&GT;)</p></td>
 </tr>
 </table>
-<p><br><br>The above table holds only if an event is generated at every sample instant, or for very small relative tolerances. Otherwise, the variance depends also slightly on the step-size and the interpolation method of the integrator. Therefore, if the variance of the noise is important for your application, either change the distribution definition to take the factors above into account, or use only constant interpolation. </p>
+<p><br><br><br>The above table holds only if an event is generated at every sample instant, or for very small relative tolerances. Otherwise, the variance depends also slightly on the step-size and the interpolation method of the integrator. Therefore, if the variance of the noise is important for your application, either change the distribution definition to take the factors above into account, or use only constant interpolation. </p>
 <p><b>Advanced tab: Initialization</b> </p>
 <p>The random number generators must be properly initialized, especially that different instances of the noise block generate uncorrelated noise. For this purpose the following parameters can be defined. </p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>

@@ -2,9 +2,6 @@ within ;
 package Modelica_Noise "Modelica_Noise version 1.0.0-Alpha.1 (Library for random numbers and noise signals; planned to be included into the Modelica Standard Library)"
 
 
-
-
-
   annotation(version =      "1.0.0-Alpha.1",
              versionDate =  "2015-02-15",
              versionBuild = 1,
@@ -19,5 +16,6 @@ the Modelica Standard Library by just exchanging \"Modelica_Noise\" with \"Model
 The sublibrary \"Modelica_Noise.ToModelicaTest\" shall be copied into the
 ModelicaTest library.
 </p>
+</html>", revisions="<html>
 </html>"));
 end Modelica_Noise;

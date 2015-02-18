@@ -45,5 +45,6 @@ The result of a simulation is show in the next diagram:
 <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/TimeBasedNoise.png\">
 </blockquote>
 </p>
+</html>", revisions="<html>
 </html>"));
 end TimeBasedNoise;

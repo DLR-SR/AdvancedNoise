@@ -38,7 +38,8 @@ statistical properties might be different: In fact, it can be shown that the mea
 still remains the same (so 3 in the example), but the variance of the linearly interpolated
 signal is only 2/3 of the constantly interpolated signal (so 1*2/3 = 0.66 in the example
 above). Simulation results are shown in the next diagram, with good agreement for the
-mean value and not so good agreement for the variance:
+mean value and not so good agreement for the variance (the agreement of the variance
+becomes better for smaller relative tolerances):
 </p>
 
 <p><blockquote>
