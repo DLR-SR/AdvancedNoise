@@ -2,10 +2,13 @@ within ;
 package Modelica_Noise "Modelica_Noise version 1.0.0-Alpha.1 (Library for random numbers and noise signals; planned to be included into the Modelica Standard Library)"
 
 
+
+
+
   annotation(version =      "1.0.0-Alpha.1",
              versionDate =  "2015-02-15",
              versionBuild = 1,
-             uses(Modelica(version="3.2.1"), Noise(version="0.4.0")),
+             uses(Modelica(version="3.2.1")),
   Documentation(info="<html>
 <p>
 This library contains blocks to generate reproducible noise in an efficient way,

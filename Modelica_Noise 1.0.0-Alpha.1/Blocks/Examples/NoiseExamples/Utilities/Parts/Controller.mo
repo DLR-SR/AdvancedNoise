@@ -1,6 +1,5 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities.Parts;
 model Controller
-  import Noise;
   Modelica.Blocks.Continuous.PI speed_PI(k=10, T=5e-2)
     annotation (Placement(transformation(extent={{40,-10},{60,10}})));
   Modelica.Blocks.Math.Feedback speedFeedback

@@ -1,6 +1,5 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities.Parts;
 model Modelica_Noise "Modelica_Noise noise modeling"
-  import Noise;
   extends NoiseModel;
   Blocks.Noise.TimeBasedNoise
              prng(useGlobalSeed=true,
