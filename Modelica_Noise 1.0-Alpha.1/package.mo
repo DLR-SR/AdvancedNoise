@@ -5,7 +5,7 @@ package Modelica_Noise "Modelica_Noise version 1.0.0-Alpha.1 (Library for random
 
 
 
-  annotation(version =      "1.0-Alpha.1",
+  annotation(version =     "1.0-Alpha.1",
              versionDate =  "2015-02-15",
              versionBuild = 1,
              uses(Modelica(version="3.2.1")),
