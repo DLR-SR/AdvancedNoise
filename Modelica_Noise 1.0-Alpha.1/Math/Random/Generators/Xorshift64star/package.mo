@@ -77,7 +77,7 @@ and the returned state is the one from the last iteration.
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
-         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         A. Klouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
 </td></tr>
@@ -137,7 +137,7 @@ same random number r is returned.
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
-         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         A. Klouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
 </td></tr>
@@ -168,7 +168,7 @@ For an overview, comparison with other random number generators, and links to ar
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
-         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         A. Klouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
 </td></tr>

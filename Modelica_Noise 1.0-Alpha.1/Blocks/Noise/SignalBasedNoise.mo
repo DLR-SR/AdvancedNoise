@@ -51,7 +51,7 @@ block SignalBasedNoise
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
-         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         A. Klouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
 </td></tr>
@@ -77,7 +77,7 @@ block SignalBasedNoise
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
-         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         A. Klouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
 </td></tr>
@@ -103,7 +103,7 @@ block SignalBasedNoise
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
-         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         A. Klouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
 </td></tr>
@@ -437,7 +437,7 @@ The above table holds only if an event is generated at every sample instant, or 
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
-         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         A. Klouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
 </td></tr>
