@@ -75,54 +75,49 @@
 #if defined(_MSC_VER)
 #   include <sys/types.h>
 #   include <sys/timeb.h>
-#   include <time.h>
 #   include <process.h>
+/* FOR OTHER COMPILERS */
+#else
+#   include <sys/time.h>
+#endif
+#   include <time.h>
 #   define ModelicaRandom_getpid _getpid
     static void ModelicaRandom_getTime(int* ms, int* sec, int* min, int* hour, int* mday, int* mon, int* year) {
-        struct _timeb timebuffer;
         struct tm* tlocal;
         time_t calendarTime;
         int ms0;
 
-        _ftime( &timebuffer );                 /* Retrieve ms time */
         time( &calendarTime );                 /* Retrieve sec time */
         tlocal   = localtime( &calendarTime ); /* Time fields in local time zone */
-        ms0 = (int)(timebuffer.millitm);       /* Convert unsigned int to int */
-        tlocal->tm_mon  = tlocal->tm_mon +1;   /* Correct for month starting at 1 */
-        tlocal->tm_year = tlocal->tm_year+1900;/* Correct for 4-digit year */
 
-        memcpy(ms,   &(ms0),                sizeof(int));
-        memcpy(sec,  &(tlocal->tm_sec),     sizeof(int));
-        memcpy(min,  &(tlocal->tm_min),     sizeof(int));
-        memcpy(hour, &(tlocal->tm_hour),    sizeof(int));
-        memcpy(mday, &(tlocal->tm_mday),    sizeof(int));
-        memcpy(mon,  &(tlocal->tm_mon),     sizeof(int));
-        memcpy(year, &(tlocal->tm_year),    sizeof(int));
-    }
-
+        /* Get millisecond resolution depending on platform */
+/* FOR MICROSOFT */
+#if defined(_MSC_VER)
+        {
+          struct _timeb timebuffer;
+          _ftime( &timebuffer );                 /* Retrieve ms time */
+          ms0 = (int)(timebuffer.millitm);       /* Convert unsigned int to int */
+          tlocal->tm_mon  = tlocal->tm_mon +1;   /* Correct for month starting at 1 */
+          tlocal->tm_year = tlocal->tm_year+1900;/* Correct for 4-digit year */
+        }
 /* FOR OTHER COMPILERS */
 #else
-#   include <sys/time.h>
-#   include <time.h>
-#   include <unistd.h>
-#   define ModelicaRandom_getpid getpid
-    static void ModelicaRandom_getTime(int* ms, int* sec, int* min, int* hour, int* mday, int* mon, int* year) {
-        struct timeval tm;
-        int ms0;
-
-        gettimeofday( &tm, NULL ); /* Retrieve current local time */
-        ms0 = tm.tv_usec/1000;     /* Convert microseconds to milliseconds */
-
-        memcpy(ms,   &(ms0),                sizeof(int));
-        memcpy(sec,  &(tm.tv_sec.tm_sec),   sizeof(int));
-        memcpy(min,  &(tm.tv_sec.tm_min),   sizeof(int));
-        memcpy(hour, &(tm.tv_sec.tm_hour),  sizeof(int));
-        memcpy(mday, &(tm.tv_sec.tm_mday),  sizeof(int));
-        memcpy(mon,  &(tm.tv_sec.tm_mon),   sizeof(int));
-        memcpy(year, &(tm.tv_sec.tm_year),  sizeof(int));
-    }
-
+        {
+          struct timeval tv;
+          gettimeofday(&tv,NULL);
+          ms0 = tv.tv_usec/1000; /* Convert microseconds to milliseconds */
+        }
 #endif
+
+        /* Do not memcpy as you don't know which sizes are in the struct */
+        *ms = ms0;
+        *sec = tlocal->tm_sec;
+        *min = tlocal->tm_min;
+        *hour = tlocal->tm_hour;
+        *mday = tlocal->tm_mday;
+        *mon = tlocal->tm_mon;
+        *year = tlocal->tm_year;
+    }
 
 static int ModelicaRandom_hashString(const char* str)
 {  /* Compute an unsigned int hash code from a character string
@@ -399,16 +394,16 @@ MODELICA_EXPORT double ModelicaRandom_impureRandom_xorshift1024star(int id) {
     /* xorshift1024* random number generator (same as above, but with internal state, instead of external one).
        For details see http://xorshift.di.unimi.it
 
-	   Argument "id" is provided to guarantee the right calling sequence
-	   of the function in a Modelica environment (first calling function
-	   ModelicaRandom_initialize_xorshift1024star that must return "dummy" which is passed
-	   as input argument to ModelicaRandom_xorshift1024star. As a result, the ordering
-	   of the function is correct.
+       Argument "id" is provided to guarantee the right calling sequence
+       of the function in a Modelica environment (first calling function
+       ModelicaRandom_initialize_xorshift1024star that must return "dummy" which is passed
+       as input argument to ModelicaRandom_xorshift1024star. As a result, the ordering
+       of the function is correct.
 
        This function uses ModelicaRandom_xorshift1024star_internal as generator and adapts inputs and outputs.
 
        Adapted by Martin Otter (DLR) to initialize the seed with ModelicaRandom_initializeRandom
-	   and to return a double in range 0 < randomNumber < 1.0
+       and to return a double in range 0 < randomNumber < 1.0
     */
 
     /* This is a fast, top-quality generator. If 1024 bits of state are too
