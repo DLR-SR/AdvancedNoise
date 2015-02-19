@@ -82,10 +82,9 @@ equation
       points={{11,-30},{18,-30},{18,-42},{50,-42},{50,-62}},
       color={0,0,127},
       smooth=Smooth.None));
- annotation (experiment(StopTime=20, __Dymola_NumberOfIntervals=5000),
+ annotation (experiment(StopTime=20, Interval=0.004),
                                      Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    __Dymola_experimentSetupOutput,
     Documentation(info="<html>
 <p>This example demonstrates statistical properties of time based noise using a <b>uniform</b> random number distribution. Block &QUOT;noise&QUOT; defines a band of 0 .. 6 and from the generated noise the mean and the variance is computed. In a first experiment, constant interpolation is choosen. Simulation results are shown in the next diagram: </p>
 <blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/UniformNoiseProperties1.png\"/> </blockquote>

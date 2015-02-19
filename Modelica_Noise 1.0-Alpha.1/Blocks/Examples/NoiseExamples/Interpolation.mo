@@ -29,7 +29,6 @@ model Interpolation
     annotation (Placement(transformation(extent={{-60,-30},{-40,-10}})));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    __Dymola_experimentSetupOutput,
     Documentation(info="<html>
 <p>This example demonstrates the different interpolation methods that can be selected for a Noise block.All the blocks use samplePeriod = 0.1 s and generated uniform noise in the band y_min=-1 .. y_max=3. Furhtermore, all blocks use the same fixedLocalSeed, so all blocks generate exactly the same random numbers at the sample instants 0 s, 0.1 s, 0.2 s, ... However, these values are differently interpolated as shown in the next diagram: </p>
 <blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/Interpolation1.png\"/> </blockquote>

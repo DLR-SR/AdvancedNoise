@@ -80,11 +80,7 @@ equation
   annotation (
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
             100,100}}), graphics),
-    experiment(
-      StopTime=8,
-      __Dymola_NumberOfIntervals=800,
-      Tolerance=1e-005),
-    __Dymola_experimentSetupOutput,
+    experiment(StopTime=8, Interval = 0.01, Tolerance=1e-005),
     Documentation(info="<html>
 <p>This example models an actuator with a noisy sensor (which is in the Motor):</p>
 <p><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/ActuatorNoiseDiagram.png\"/></p>

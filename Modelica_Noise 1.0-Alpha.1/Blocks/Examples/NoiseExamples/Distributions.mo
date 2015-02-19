@@ -41,7 +41,6 @@ equation
   smooth=Smooth.None));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
-    __Dymola_experimentSetupOutput,
     Documentation(info="<html>
 <p>
 This example demonstrates different noise distributions methods that can be selected
