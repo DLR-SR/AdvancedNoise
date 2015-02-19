@@ -209,9 +209,9 @@ MODELICA_EXPORT void ModelicaRandom_xorshift64star(int state_in[], int state_out
     x = s.s64;
 
     /* The actual algorithm */
-    x ^= x >> 12; // a
-    x ^= x << 25; // b
-    x ^= x >> 27; // c
+    x ^= x >> 12; /* a */
+    x ^= x << 25; /* b */
+    x ^= x >> 27; /* c */
     x  = x * 2685821657736338717LL;
 
     /* Convert outputs */
@@ -264,8 +264,8 @@ MODELICA_EXPORT void ModelicaRandom_xorshift128plus(int state_in[], int state_ou
     s1       = s.s64[0];
     s0       = s.s64[1];
     s.s64[0] = s.s64[1];
-    s1      ^= s1 << 23; // a
-    s.s64[1] = ( s1 ^ s0 ^ ( s1 >> 17 ) ^ ( s0 >> 26 ) ) + s0; // b, c
+    s1      ^= s1 << 23; /* a */
+    s.s64[1] = ( s1 ^ s0 ^ ( s1 >> 17 ) ^ ( s0 >> 26 ) ) + s0; /* b, c */
 
     /* Convert outputs */
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
@@ -310,9 +310,9 @@ static void ModelicaRandom_xorshift1024star_internal(uint64_t s[], int* p, doubl
     s0 = s[*p];
     s1 = s[*p = (*p + 1) & 15];
 
-    s1 ^= s1 << 31; // a
-    s1 ^= s1 >> 11; // b
-    s0 ^= s0 >> 30; // c
+    s1 ^= s1 << 31; /* a */
+    s1 ^= s1 >> 11; /* b */
+    s0 ^= s0 >> 30; /* c */
 
     s[*p] = s0 ^ s1;
 
