@@ -3,10 +3,6 @@ package TruncatedDistributions "Library of truncated distribution functions"
    extends Modelica.Icons.Package;
 
 
-
-
-
-
   annotation (
     Icon(coordinateSystem(
         preserveAspectRatio=false,

@@ -1,71 +1,62 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities.Parts;
 model Controller
-  Modelica.Blocks.Continuous.PI speed_PI(k=10, T=5e-2)
-    annotation (Placement(transformation(extent={{40,-10},{60,10}})));
+  Modelica.Blocks.Continuous.PI speed_PI(k=10, T=5e-2,
+    initType=Modelica.Blocks.Types.Init.InitialOutput)
+    annotation (Placement(transformation(extent={{38,-10},{58,10}})));
   Modelica.Blocks.Math.Feedback speedFeedback
     annotation (Placement(transformation(extent={{10,-10},{30,10}})));
-  Modelica.Blocks.Continuous.Derivative positionToSpeed(T=0.005)
-    annotation (Placement(transformation(extent={{-20,-70},{0,-50}})));
+  Modelica.Blocks.Continuous.Derivative positionToSpeed(initType=Modelica.Blocks.Types.Init.InitialOutput,
+      T=0.01)
+    annotation (Placement(transformation(extent={{-60,-70},{-40,-50}})));
   Modelica.Blocks.Interfaces.RealInput positionMeasured
     "Position signal of motor"
-    annotation (Placement(transformation(extent={{-120,-80},{-80,-40}})));
+    annotation (Placement(transformation(extent={{-140,-80},{-100,-40}})));
   Modelica.Blocks.Interfaces.RealInput positionReference "Reference position"
-    annotation (Placement(transformation(extent={{-120,40},{-80,80}})));
+    annotation (Placement(transformation(extent={{-140,40},{-100,80}})));
   Modelica.Blocks.Interfaces.RealOutput y1 "Connector of Real output signal"
-    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
-  Modelica.Blocks.Continuous.PI position_PI(T=5e-1, k=3)
-    annotation (Placement(transformation(extent={{-10,50},{10,70}})));
+    annotation (Placement(transformation(extent={{100,-10},{120,10}})));
+  Modelica.Blocks.Continuous.PI position_PI(T=5e-1, k=3,
+    initType=Modelica.Blocks.Types.Init.InitialState)
+    annotation (Placement(transformation(extent={{-60,50},{-40,70}})));
   Modelica.Blocks.Math.Feedback positionFeedback
-    annotation (Placement(transformation(extent={{-40,50},{-20,70}})));
-  Modelica.Blocks.Math.Add addNoise
-    annotation (Placement(transformation(extent={{-60,-64},{-40,-44}})));
-  replaceable NoNoise noiseModel constrainedby NoiseModel
-    annotation (choicesAllMatching = true, Placement(transformation(extent={{-100,-10},{-80,10}})));
-  Modelica.Blocks.Continuous.FirstOrder busdelay(T=1e-3)
+    annotation (Placement(transformation(extent={{-90,50},{-70,70}})));
+  Modelica.Blocks.Continuous.FirstOrder busdelay(T=1e-3, initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{68,-10},{88,10}})));
 equation
-  connect(positionToSpeed.y, speedFeedback.u2) annotation (Line(
-      points={{1,-60},{20,-60},{20,-8}},
-      color={0,0,127},
-      smooth=Smooth.None));
   connect(speedFeedback.y, speed_PI.u) annotation (Line(
-      points={{29,0},{38,0}},
+      points={{29,0},{36,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(positionFeedback.u2, positionToSpeed.u) annotation (Line(
-      points={{-30,52},{-30,-60},{-22,-60}},
+      points={{-80,52},{-80,-60},{-62,-60}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(positionReference, positionFeedback.u1) annotation (Line(
-      points={{-100,60},{-38,60}},
+      points={{-120,60},{-88,60}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(positionFeedback.y, position_PI.u) annotation (Line(
-      points={{-21,60},{-12,60}},
+      points={{-71,60},{-62,60}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(position_PI.y, speedFeedback.u1) annotation (Line(
-      points={{11,60},{20,60},{20,32},{0,32},{0,0},{12,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(positionMeasured, addNoise.u2) annotation (Line(
-      points={{-100,-60},{-62,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(addNoise.y, positionToSpeed.u) annotation (Line(
-      points={{-39,-54},{-30,-54},{-30,-60},{-22,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(noiseModel.y, addNoise.u1) annotation (Line(
-      points={{-79,0},{-68,0},{-68,-48},{-62,-48}},
+      points={{-39,60},{0,60},{0,0},{12,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(speed_PI.y, busdelay.u) annotation (Line(
-      points={{61,0},{66,0}},
+      points={{59,0},{66,0}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(y1, busdelay.y) annotation (Line(
-      points={{100,0},{89,0}},
+      points={{110,0},{89,0}},
+      color={0,0,127},
+      smooth=Smooth.None));
+  connect(positionMeasured, positionToSpeed.u) annotation (Line(
+      points={{-120,-60},{-62,-60}},
+      color={0,0,127},
+      smooth=Smooth.None));
+  connect(positionToSpeed.y, speedFeedback.u2) annotation (Line(
+      points={{-39,-60},{20,-60},{20,-8}},
       color={0,0,127},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
@@ -73,11 +64,7 @@ equation
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
         Text(
-          extent={{-80,80},{0,0}},
-          lineColor={0,0,255},
-          textString="PI"),
-        Text(
-          extent={{0,0},{80,-80}},
+          extent={{-40,50},{40,-30}},
           lineColor={0,0,255},
           textString="PI"),             Text(
         extent={{-150,150},{150,110}},

@@ -9,6 +9,5 @@ SignalInterpolation
 Densities
 TruncatedDensities
 ImpureGenerator
-Actuator
-ActuatorNoise
+ActuatorWithNoise
 Utilities

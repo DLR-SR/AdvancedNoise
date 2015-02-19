@@ -1,5 +1,5 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
-model Actuator "An actuator model without noise (as reference)"
+model ActuatorWithNoise "An actuator model with noise in the input signal"
 extends Modelica.Icons.Example;
   Blocks.Examples.NoiseExamples.Utilities.Parts.MotorWithCurrentControl Motor
     annotation (Placement(transformation(extent={{-94,-10},{-74,10}})));
@@ -12,7 +12,9 @@ extends Modelica.Icons.Example;
     c=1e6,
     d=1e4,
     ratio=10,
-    b=0.0017453292519943)
+    w_rel(fixed=true),
+    b=0.0017453292519943,
+    phi_rel(fixed=true))
     annotation (Placement(transformation(extent={{-68,-10},{-48,10}})));
   Modelica.Mechanics.Translational.Components.IdealGearR2T idealGearR2T(ratio=
         300) annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
@@ -28,14 +30,19 @@ extends Modelica.Icons.Example;
   Modelica.Mechanics.Translational.Components.Mass rodMass(m=3)
     annotation (Placement(transformation(extent={{-10,-10},{10,10}})));
   Modelica.Mechanics.Translational.Components.SpringDamper elastoGap(c=1e8, d=
-        1e5) annotation (Placement(transformation(extent={{20,-10},{40,10}})));
+        1e5,
+    v_rel(fixed=true),
+    s_rel(fixed=true))
+             annotation (Placement(transformation(extent={{20,-10},{40,10}})));
+  inner Noise.GlobalSeed globalSeed
+    annotation (Placement(transformation(extent={{60,60},{80,80}})));
 equation
   connect(controller.y1, Motor.iq_rms1) annotation (Line(
-      points={{20,70},{34,70},{34,20},{-94,20},{-94,6}},
+      points={{21,70},{34,70},{34,20},{-96,20},{-96,6}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Motor.phi, controller.positionMeasured) annotation (Line(
-      points={{-79,8},{-72,8},{-72,52},{-8,52},{-8,64},{0,64}},
+      points={{-79,8},{-72,8},{-72,52},{-8,52},{-8,64},{-2,64}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(Motor.flange, gearbox.flange_a) annotation (Line(
@@ -55,7 +62,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(slewRateLimiter.y, controller.positionReference) annotation (Line(
-      points={{-19,76},{0,76}},
+      points={{-19,76},{-2,76}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(rodMass.flange_a, idealGearR2T.flangeT) annotation (Line(
@@ -79,7 +86,13 @@ equation
       Tolerance=1e-005),
     __Dymola_experimentSetupOutput,
     Documentation(info="<html>
-<p>This model simulates a controlled actuator built from Modelica Standard Library models. It moves the actuator at time = 0.5s. This model is only used as a reference for the noisy model. See <a href=\"ActuatorNoise\">ActuatorNoise</a> for the variant with a noisy input signal to the controller and explained results.</p>
+<p>This example models an actuator with a noisy sensor:</p>
+<p><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/ActuatorNoiseDiagram.png\"/></p>
+<p>The drive train consists of a motor with a gear box. These drive a rod through a linear translation model. Softly attached to the rod is another mass representing the actual actuator. The actuator is loaded with a constant force.</p>
+<p>The whole model is steered by a rate limited step command through a controller model. In this controller model, the TimeBasedNoise block is used to implement additive noise on the controllers measurement input, that is the current motor position.</p>
+<p>In the following plot, the position of the actuator and the motor output torque are plotted with and without noise. The noise is not very strong, such that it has no visible effect on the position of the actuator. </p>
+<p>The noise can be seen in the motor torque. Since the gearbox contains a backlash element, the motor works a lot while resting. As soon, as it starts rotating, the backlash is closed and the noise influence decreases.</p>
+<p><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/ActuatorNoise.png\"/></p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
@@ -101,4 +114,4 @@ equation
 </table>
 </p>
 </html>"));
-end Actuator;
+end ActuatorWithNoise;

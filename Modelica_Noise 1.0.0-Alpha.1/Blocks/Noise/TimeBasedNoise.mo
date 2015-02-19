@@ -185,22 +185,30 @@ algorithm
 equation
 
   // Generate noise, if requested
-  if generateNoise and time >= startTime then
-
-    // Make sure, noise is smooth, if so declared
-    if interpolation.continuous then
-      y = smooth(interpolation.smoothness,
+  y = if not generateNoise or time < startTime then y_off else
+      if interpolation.continuous then
+          smooth(interpolation.smoothness,
                  interpolation.interpolate(buffer=buffer,
-                                           offset=(time-bufferStartTime) / samplePeriod + nPast));
-    else
-      y =        interpolation.interpolate(buffer=buffer,
+                                           offset=(time-bufferStartTime) / samplePeriod + nPast)) else
+                 interpolation.interpolate(buffer=buffer,
                                            offset=(time-bufferStartTime) / samplePeriod + nPast);
-    end if;
 
-  // Output y_off, if noise is not to be generated
-  else
-    y = y_off;
-  end if;
+//   if generateNoise and time >= startTime then
+//
+//     // Make sure, noise is smooth, if so declared
+//     if interpolation.continuous then
+//       y = smooth(interpolation.smoothness,
+//                  interpolation.interpolate(buffer=buffer,
+//                                            offset=(time-bufferStartTime) / samplePeriod + nPast));
+//     else
+//       y =        interpolation.interpolate(buffer=buffer,
+//                                            offset=(time-bufferStartTime) / samplePeriod + nPast);
+//     end if;
+//
+//   // Output y_off, if noise is not to be generated
+//   else
+//     y = y_off;
+//   end if;
 
     annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise),
               Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},

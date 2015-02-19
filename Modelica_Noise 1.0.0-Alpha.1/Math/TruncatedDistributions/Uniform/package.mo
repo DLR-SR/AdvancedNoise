@@ -3,8 +3,6 @@ package Uniform "Library of truncated uniform distribution functions (= identica
   extends Modelica.Icons.Package;
 
 
-
-
   annotation (Icon(graphics={             Line(
       points={{-80,-60},{-40,-60},{-40,60},{40,60},{40,-60},{80,-60}},
       color={0,0,0},

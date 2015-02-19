@@ -18,20 +18,15 @@ model MotorWithCurrentControl
     smpm(
     p=smpmData.p,
     fsNominal=smpmData.fsNominal,
-    TsOperational=293.15,
     Rs=smpmData.Rs,
     TsRef=smpmData.TsRef,
-    alpha20s=smpmData.alpha20s,
     Lszero=smpmData.Lszero,
     Lssigma=smpmData.Lssigma,
-    Jr=smpmData.Jr,
-    Js=smpmData.Js,
+    Jr=smpmData.Jr,    Js=smpmData.Js,
     frictionParameters=smpmData.frictionParameters,
-    phiMechanical(fixed=true),
     wMechanical(fixed=true),
     statorCoreParameters=smpmData.statorCoreParameters,
     strayLoadParameters=smpmData.strayLoadParameters,
-    TrOperational=293.15,
     VsOpenCircuit=smpmData.VsOpenCircuit,
     Lmd=smpmData.Lmd,
     Lmq=smpmData.Lmq,
@@ -41,8 +36,12 @@ model MotorWithCurrentControl
     Rrd=smpmData.Rrd,
     Rrq=smpmData.Rrq,
     TrRef=smpmData.TrRef,
-    alpha20r=smpmData.alpha20r,
-    permanentMagnetLossParameters=smpmData.permanentMagnetLossParameters)
+    permanentMagnetLossParameters=smpmData.permanentMagnetLossParameters,
+    phiMechanical(fixed=true),
+    TsOperational=293.15,
+    alpha20s=smpmData.alpha20s,
+    TrOperational=293.15,
+    alpha20r=smpmData.alpha20r)
     annotation (Placement(transformation(extent={{-20,-50},{0,-30}}, rotation=0)));
   Modelica.Electrical.MultiPhase.Sources.SignalCurrent signalCurrent(final m=m)
     annotation (Placement(transformation(
@@ -110,8 +109,8 @@ model MotorWithCurrentControl
   Modelica.Blocks.Sources.Constant id(k=0)
     annotation (Placement(transformation(extent={{-100,20},{-80,40}})));
   Modelica.Blocks.Interfaces.RealInput iq_rms1 annotation (Placement(
-        transformation(extent={{-120,40},{-80,80}}), iconTransformation(extent=
-            {{-120,40},{-80,80}})));
+        transformation(extent={{-140,40},{-100,80}}),iconTransformation(extent={{-140,40},
+            {-100,80}})));
   Modelica.Mechanics.Rotational.Interfaces.Flange_b flange
     "Right flange of shaft"
     annotation (Placement(transformation(extent={{90,-10},{110,10}})));
@@ -120,7 +119,14 @@ model MotorWithCurrentControl
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=0,
-        origin={50,80})));
+        origin={110,80}), iconTransformation(extent={{40,70},{60,90}})));
+  Modelica.Blocks.Math.Add addNoise
+    annotation (Placement(transformation(extent={{60,70},{80,90}})));
+  Noise.TimeBasedNoise                       timeBasedNoise(
+    samplePeriod=1/200,
+    y_min=-0.01,
+    y_max=0.01)
+             annotation (Placement(transformation(extent={{26,76},{46,96}})));
 equation
   w = speedSensor.w;
   phi_motor = angleSensor.phi;
@@ -202,19 +208,26 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(currentController.iq_rms, iq_rms1) annotation (Line(
-      points={{-52,44},{-76,44},{-76,60},{-100,60}},
+      points={{-52,44},{-76,44},{-76,60},{-120,60}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(inertiaLoad.flange_b, flange) annotation (Line(
       points={{70,-40},{86,-40},{86,0},{100,0}},
       color={0,0,0},
       smooth=Smooth.None));
-  connect(angleSensor.phi, phi) annotation (Line(
-      points={{10,11},{10,80},{50,80}},
+  connect(angleSensor.phi, addNoise.u2) annotation (Line(
+      points={{10,11},{10,30},{52,30},{52,74},{58,74}},
+      color={0,0,127},
+      smooth=Smooth.None));
+  connect(addNoise.y, phi) annotation (Line(
+      points={{81,80},{110,80}},
+      color={0,0,127},
+      smooth=Smooth.None));
+  connect(timeBasedNoise.y, addNoise.u1) annotation (Line(
+      points={{47,86},{58,86}},
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
-    experiment(StopTime=2.0, Interval=0.001),
     Documentation(info="<html>
 <p>A synchronous induction machine with permanent magnets accelerates a quadratic speed dependent load from standstill.
 The rms values of d- and q-current in rotor fixed coordinate system are converted to three-phase currents,
@@ -248,7 +261,7 @@ Default machine parameters of model <a href=\"modelica://Modelica.Electrical.Mac
             100,100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(
-          extent={{40,50},{-90,100}},
+          extent={{40,50},{-100,100}},
           fillColor={255,170,85},
           fillPattern=FillPattern.Solid,
           pattern=LinePattern.None,
