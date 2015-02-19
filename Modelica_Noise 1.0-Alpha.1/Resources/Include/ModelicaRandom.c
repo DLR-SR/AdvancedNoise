@@ -32,6 +32,25 @@
 #   define MODELICA_EXPORT
 #endif
 
+/* Have ModelicaRandom int64 / uint64 */
+#if defined (_WIN32)
+#if defined(_MSC_VER)
+#define HAVE_ModelicaRandom_INT64_T 1
+#define HAVE_ModelicaRandom_UINT64_T 1
+#elif defined(__WATCOMC__)
+#define HAVE_ModelicaRandom_INT64_T 1
+#define HAVE_ModelicaRandom_UINT64_T 1
+#elif defined(__BORLANDC__)
+#undef HAVE_ModelicaRandom_INT64_T
+#undef HAVE_ModelicaRandom_UINT64_T
+#else
+#undef HAVE_ModelicaRandom_INT64_T
+#undef HAVE_ModelicaRandom_UINT64_T
+#endif
+#else
+#define HAVE_ModelicaRandom_INT64_T 1
+#define HAVE_ModelicaRandom_UINT64_T 1
+#endif
 /* Define to 1 if <stdint.h> header file is available */
 #if defined(_WIN32)
 #   if defined(_MSC_VER) && _MSC_VER >= 1600
@@ -46,12 +65,25 @@
 #endif
 
 /* Include integer type header */
-#if ModelicaRandom_HAVE_STDINT_H
+#if defined(ModelicaRandom_HAVE_STDINT_H)
 #   include <stdint.h>
 #else
 #   define int32_t  int
 #   define uint32_t unsigned int
-#   define uint64_t unsigned long long
+#if defined(HAVE_ModelicaRandom_INT64_T)
+#if defined(_MSC_VER) && _MSC_VER < 1300
+#define int64_t __int64
+#else
+#define int64_t long long
+#endif
+#endif
+#if defined(HAVE_ModelicaRandom_UINT64_T)
+#if defined(_MSC_VER) && _MSC_VER < 1300
+#define uint64_t unsigned __int64
+#else
+#define uint64_t unsigned long long
+#endif
+#endif
 #endif
 
 /* Include some math headers */
@@ -212,8 +244,11 @@ MODELICA_EXPORT void ModelicaRandom_xorshift64star(int state_in[], int state_out
     x ^= x >> 12; // a
     x ^= x << 25; // b
     x ^= x >> 27; // c
+#if defined(_MSC_VER)
+    x  = x * 2685821657736338717i64;
+#else
     x  = x * 2685821657736338717LL;
-
+#endif
     /* Convert outputs */
     s.s64 = x;
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
@@ -317,7 +352,11 @@ static void ModelicaRandom_xorshift1024star_internal(uint64_t s[], int* p, doubl
     s[*p] = s0 ^ s1;
 
     /* Convert outputs */
+#if defined(_MSC_VER)
+    *y = ModelicaRandom_RAND(s[*p]*1181783497276652981i64);
+#else
     *y = ModelicaRandom_RAND(s[*p]*1181783497276652981LL);
+#endif
 }
 
 MODELICA_EXPORT void ModelicaRandom_xorshift1024star(int state_in[], int state_out[], double* y) {
@@ -373,7 +412,7 @@ static int ModelicaRandom_p;
 static int ModelicaRandom_id=0;
 
 MODELICA_EXPORT void ModelicaRandom_setInternalState_xorshift1024star(int* state, size_t nState, int id){
-    /* receives the external states from Modelica*/
+    /* receives the external states from Modelica */
     union s_tag{
       int32_t  s32[2];
       uint64_t s64;
