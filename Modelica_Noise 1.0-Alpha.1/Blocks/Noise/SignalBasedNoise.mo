@@ -211,8 +211,8 @@ int = <b>convertRealToInteger</b>(real);
 <p>
 The Real input argument real is mapped to two Integer values int[1] and int[2].
 The function assumes that two Integer values have exactly the same length
-as one Real value (e.g. one Integer has a lenght of 32 bits and one Real
-value has a lenght of 64 bits).
+as one Real value (e.g. one Integer has a length of 32 bits and one Real
+value has a length of 64 bits).
 </p>
 </html>"));
   end convertRealToIntegers;
@@ -412,7 +412,7 @@ The above table holds only if an event is generated at every sample instant, or 
 </tr>
 <tr>
 <td><p>useAutomaticLocalSeed </p></td>
-<td><p>An Integer number, called local seed, is needed to generate different random signals with every block instance. Instances using the same local seed produce exactly the same random number values (so the same noise, if the other settings of the instances are the same). If useAutomaticLocalSeed = true, the local seed is determined automatically as hash value of the instance name of the noise block. If useAutomaticLocalSeed = false, the local seed is defined explicitely by parameter fixedLocalSeed. This might be useful, if you use the noise block to model the roughness of a road and the road should be the same for every vehicle.</p></td>
+<td><p>An Integer number, called local seed, is needed to generate different random signals with every block instance. Instances using the same local seed produce exactly the same random number values (so the same noise, if the other settings of the instances are the same). If useAutomaticLocalSeed = true, the local seed is determined automatically as hash value of the instance name of the noise block. If useAutomaticLocalSeed = false, the local seed is defined explicitly by parameter fixedLocalSeed. This might be useful, if you use the noise block to model the roughness of a road and the road should be the same for every vehicle.</p></td>
 </tr>
 <tr>
 <td><p>fixedLocalSeed </p></td>

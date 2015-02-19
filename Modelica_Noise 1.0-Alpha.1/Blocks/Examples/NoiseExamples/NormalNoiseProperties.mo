@@ -19,7 +19,7 @@ This example demonstrates statistical properties of time based noise using a (tr
 <b>normal</b> random number distribution with mu=3, sigma=1.
 Block \"noise\" defines a band of 0 .. 6 and from the generated
 noise the mean and the variance is computed. In a first experiment, constant interpolation
-is choosen. Simulation results are shown in the next diagram:
+is chosen. Simulation results are shown in the next diagram:
 </p>
 
 <p><blockquote>

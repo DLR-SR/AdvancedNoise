@@ -458,7 +458,7 @@ For this purpose the following parameters can be defined.
          of the instances are the same). If useAutomaticLocalSeed = true, the
          local seed is determined automatically as hash value of the instance name of the
          noise block. If useAutomaticLocalSeed = false, the local seed is defined
-         explicitely by parameter fixedLocalSeed.</td></tr>
+         explicitly by parameter fixedLocalSeed.</td></tr>
 
 <tr><td> fixedLocalSeed </td>
     <td> If useAutomaticLocalSeed = false, the local seed to be used.

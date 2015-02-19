@@ -20,7 +20,7 @@ The default setting
 utilizes a new method that only slightly reduces simulation efficiency, provided the selected
 relative tolerance is not too strict (say &ge; 10<sup>-6</sup>) and the control system is designed
 to reduce the effect of noise with a low pass behaviour (which is one of the tasks of
-most real control systemss).
+most real control systems).
 </p>
 
 
