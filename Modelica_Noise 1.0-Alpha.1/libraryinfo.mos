@@ -1,0 +1,17 @@
+LibraryInfoMenuSeparator(
+  category="libraries",
+  pos=100)
+
+NoiseVersion = "1.0-Alpha.1";
+
+LibraryInfoMenuCommand(
+  category="libraries",
+  text="Modelica_Noise "+NoiseVersion,
+  reference="Modelica_Noise",
+  version=NoiseVersion,
+  isModel=true,
+  description="Modelica_Noise modules for the MSL. Version "+NoiseVersion,
+  ModelicaVersion="3.2.1",
+  pos=1111)
+
+// LibraryInfoPreload(reference="Modelica_LinearSystems2")
