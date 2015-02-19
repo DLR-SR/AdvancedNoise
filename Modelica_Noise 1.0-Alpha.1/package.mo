@@ -1,13 +1,14 @@
 within ;
-package Modelica_Noise "Modelica_Noise version 1.0.0-Alpha.1 (Library for random numbers and noise signals; planned to be included into the Modelica Standard Library)"
+package Modelica_Noise "Modelica_Noise version 1.0-Alpha.1 (Library for random numbers and noise signals; planned to be included into the Modelica Standard Library)"
 
 
 
 
 
-  annotation(version =     "1.0-Alpha.1",
-             versionDate =  "2015-02-15",
-             versionBuild = 1,
+  annotation(preferredView="info",
+             version =     "1.0-Alpha.1",
+             versionDate =  "2015-02-19",
+             versionBuild = 0,
              uses(Modelica(version="3.2.1")),
   Documentation(info="<html>
 <p>

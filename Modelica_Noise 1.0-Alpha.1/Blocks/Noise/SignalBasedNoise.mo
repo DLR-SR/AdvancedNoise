@@ -264,7 +264,7 @@ value has a lenght of 64 bits).
           lineColor={192,192,192},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid),
-        Line(visible=  enableNoise,
+        Line(visible = enableNoise,
            points={{-75,-13},{-61,-13},{-61,3},{-53,3},{-53,-45},{-45,-45},{-45,
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,
@@ -290,8 +290,14 @@ value has a lenght of 64 bits).
     Documentation(info="<html>
 <p>A summary of the properties of the noise blocks is provided in the documentation of package <a href=\"modelica://Modelica_Noise.Blocks.Noise\">Blocks.Noise</a>. This SignalBasedNoise block generates reproducible noise at its output. The block can only be used if on the same or a higher hierarchical level, model <a href=\"modelica://Modelica_Noise.Blocks.Noise.GlobalSeed\">Blocks.Noise.GlobalSeed</a> is dragged to provide global settings for all instances. </p>
 <p>The generated random numbers of this block are a function of the input signal. Blocks with different input signals produce uncorrelated noise. This can be used to define e.g. the roughness of a railway track. The random values provided at the output of a SignalBasedNoise instance depend (a) on the <b>actual input signal</b> in the current time instant, (b) on the instance name, and (c) on the settings of the respective instance (as well as the seetings in globalSeed, see above and below). By default, two or more instances produce different, uncorrelated noise for the same input signal. </p>
-<p><b>Parameters that need to be defined</b> </p>
+
+
+<h4>Parameters that need to be defined</h4>
+
 <p>When using this block, at a minimum the following parameters must be defined: </p>
+
+<blockquote>
+<p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
 <td><p align=\"center\"><h4>Parameter</h4></p></td>
 <td><p align=\"center\"><h4>Description</h4></p></td>
@@ -309,25 +315,36 @@ value has a lenght of 64 bits).
 <td><p>Upper and lower bounds for the noise. With the default setting, uniform noise is generated within these bounds.</p></td>
 </tr>
 </table>
-<p><br><br><br><br>As a simple demonstration, see example <a href=\"Blocks.Examples.NoiseExamples.SignalBasedNoise\">Blocks.Examples.NoiseExamples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!</p>
+</p></blockquote>
+
+<p>
+As a simple demonstration, see example <a href=\"Blocks.Examples.NoiseExamples.SignalBasedNoise\">Blocks.Examples.NoiseExamples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!</p>
 <blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/SignalBasedNoise.png\"/> </blockquote>
+
 <h4>Advanced tab: General settings</h4>
 <p>In the <b>Advanced</b> tab of the parameter menu, further options can be set. The general settings are shown in the next table: </p>
+
+<blockquote><p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
 <td><p align=\"center\"><h4>Parameter</h4></p></td>
 <td><p align=\"center\"><h4>Description</h4></p></td>
 </tr>
 <tr>
-<td><p>enableNoise </p></td>
-<td><p>= true, if noise is generated at the output of the block.</p><p>= false, if noise generation is switched off and the constant value y_off is provided as output.</p></td>
+<td>enableNoise</td>
+<td>= true, if noise is generated at the output of the block.</br>= false, if noise generation is switched off and the constant value y_off is provided as output.</td>
 </tr>
 <tr>
-<td><p>y_off </p></td>
-<td><p>If enableNoise = false, the output of the block instance has the value y_off. Default is y_off = 0.0. Furthermore, if time&LT;startTime, the output of the block is also y_off.</p></td>
+<td>y_off</td>
+<td>If enableNoise = false, the output of the block instance has the value y_off. Default is y_off = 0.0. Furthermore, if time&LT;startTime, the output of the block is also y_off.</td>
 </tr>
 </table>
-<p><br><br><br><br><br><b>Advanced tab: Random number properties</b></p>
+</p></blockquote>
+
+<h4>Advanced tab: Random number properties</h4>
+
 <p>In the group &QUOT;Random number properties&QUOT;, the properties of the random number generation are defined. By default, uniform random numbers with linear interpolation are used, and the random numbers are drawn with the pseudo random number generator algorithm &QUOT;xorshift128+&QUOT;. This random number generator has a period of 2^128, has an internal state of 4 Integer elements, and has excellent statistical properties. If the default behavior is not desired, the following parameters can be set: </p>
+
+<blockquote><p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
 <td><p align=\"center\"><h4>Parameter</h4></p></td>
 <td><p align=\"center\"><h4>Description</h4></p></td>
@@ -347,10 +364,16 @@ value has a lenght of 64 bits).
 <td><p>Defines the pseudo random number generator to be used. This is a replaceable package. The random number generators that are provided in package <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a> can be used here. Properties of the various generators are described in the package description of the Generators package.</p></td>
 </tr>
 </table>
-<p><br><br><br><br><br>The different interpolation methods are demonstrated with example <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.Interpolation\">Examples.NoiseExamples.Interpolation</a>. The example uses the block <a href=\"TimeBasedNoise\">TimeBasedNoise</a>, but the results also hold for SignalBasedNoise. A simulation result is shown in the next diagram: </p>
+</p></blockquote>
+
+<p>The different interpolation methods are demonstrated with example <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.Interpolation\">Examples.NoiseExamples.Interpolation</a>. The example uses the block <a href=\"TimeBasedNoise\">TimeBasedNoise</a>, but the results also hold for SignalBasedNoise. A simulation result is shown in the next diagram: </p>
 <blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/Interpolation1.png\"/> </blockquote>
+
 <p>As can be seen, constant (constantNoise.y) and linear (linearNoise.y) interpolation respect the defined band -1 .. 3. Instead, smooth interpolation with the sinc function (smoothNoise.y) may violate the band slightly in order to be able to smoothly interpolate the random values at the sample instants. In practical applications, this is not an issue because the exact band of the noise is usually not exactly known. </p>
+
 <p>The selected interpolation method does not change the mean value of the noise signal, but it changes its variance with the following factors: </p>
+
+<blockquote><p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
 <td><p align=\"center\"><h4>interpolation</h4></p></td>
 <td><p align=\"center\"><h4>variance factor</h4></p></td>
@@ -368,9 +391,17 @@ value has a lenght of 64 bits).
 <td><p>0.979776342307764 (actual variance = 0.97..*&LT;variance of constantly interpolated noise&GT;)</p></td>
 </tr>
 </table>
-<p><br><br><br>The above table holds only if an event is generated at every sample instant, or for very small relative tolerances. Otherwise, the variance depends also slightly on the step-size and the interpolation method of the integrator. Therefore, if the variance of the noise is important for your application, either change the distribution definition to take the factors above into account, or use only constant interpolation. </p>
-<p><b>Advanced tab: Initialization</b> </p>
+</p></blockquote>
+
+<p>
+The above table holds only if an event is generated at every sample instant, or for very small relative tolerances. Otherwise, the variance depends also slightly on the step-size and the interpolation method of the integrator. Therefore, if the variance of the noise is important for your application, either change the distribution definition to take the factors above into account, or use only constant interpolation. </p>
+
+
+<h4>Advanced tab: Initialization</h4>
+
 <p>The random number generators must be properly initialized, especially that different instances of the noise block generate uncorrelated noise. For this purpose the following parameters can be defined. </p>
+
+<blockquote><p>
 <table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
 <td><p align=\"center\"><h4>Parameter</h4></p></td>
 <td><p align=\"center\"><h4>Description</h4></p></td>
@@ -392,6 +423,7 @@ value has a lenght of 64 bits).
 <td><p>The signalOffset parameter can be used to shift the input signal. This can be used, if you wish the pseudo-sampling (see parameter samplePeriod) to happen at specific values of the input signal.</p></td>
 </tr>
 </table>
+</p></blockquote>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
