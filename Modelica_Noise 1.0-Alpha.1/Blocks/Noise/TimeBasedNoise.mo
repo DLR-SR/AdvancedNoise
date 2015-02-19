@@ -165,7 +165,7 @@ algorithm
     end for;
     for i in 1:nBuffer loop
       (r, state) := generator.random(state);
-      buffer[i] := r;
+      buffer[i] := distribution(r);
     end for;
 
   // At the first sample, we simply use the initial buffer
