@@ -183,23 +183,14 @@ equation
     buffer[i] = distribution(r[i]);
   end for;
 
-  // Generate noise, if requested
-  if generateNoise then
-
-    // Make sure, noise is smooth, if so declared
-    if interpolation.continuous then
-      y = smooth(interpolation.smoothness,
+  // Generate noise, if requested, and make it smooth, if it is
+  y = if not generateNoise then y_off else
+      if interpolation.continuous then
+          smooth(interpolation.smoothness,
                  interpolation.interpolate(buffer=buffer,
-                                           offset=offset - zeroDer(noEvent(integer(offset))) + nPast));
-    else
-      y =        interpolation.interpolate(buffer=buffer,
+                                           offset=offset - zeroDer(noEvent(integer(offset))) + nPast)) else
+                 interpolation.interpolate(buffer=buffer,
                                            offset=offset - zeroDer(       (integer(offset))) + nPast);
-    end if;
-
-  // Output y_off, if noise is not to be generated
-  else
-    y = y_off;
-  end if;
 
   // We require a few smooth functions for derivatives
 protected
