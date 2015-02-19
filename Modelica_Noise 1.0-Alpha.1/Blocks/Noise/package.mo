@@ -191,7 +191,7 @@ In the article
 </p>
 
 <p><blockquote>
-v.d.Linden F.L.J, A. Klöckner, D. Zimmer (2015): <b>Effects of Event-Free Noise Signals on
+v.d.Linden F.L.J, A. Klouml;ckner, D. Zimmer (2015): <b>Effects of Event-Free Noise Signals on
 Continuous-Time Simulation Perfomance</b>. MathMod'2015 Conference.
 </blockquote></p>
 
@@ -223,7 +223,7 @@ One approach to implement event-free noise is described in the article
 </p>
 
 <p><blockquote>
-Klöckner A., v.d. Linden F.L.J., and Zimmer D. (2014).
+Klouml;ckner A., v.d. Linden F.L.J., and Zimmer D. (2014).
 <b>Noise Generation for Continuous System Simulation</b>.
 In Proceedings of the 10th International Modelica Conference, 
 Lund, Sweden.
@@ -257,7 +257,7 @@ no time events are generated and the output of the block is computed by interpol
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
-         A. Klöckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         A. Klouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
 </td></tr>
