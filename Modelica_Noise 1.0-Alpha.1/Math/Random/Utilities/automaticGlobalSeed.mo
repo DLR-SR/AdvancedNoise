@@ -20,7 +20,7 @@ seed = Utilities.<b>automaticGlobalSeed</b>();
 <h4>Description</h4>
 <p>Returns an automatically computed seed (Integer) from:</p>
 <ol>
-<li> The current localtime by computing the number of milli-seconds upto the current hour</li>
+<li> The current localtime by computing the number of milli-seconds up to the current hour</li>
 <li> The process id (added to the first part by multiplying it with the prime number 6007).</li>
 </ol>
 <p>Check that worst case combination can be included in an Integer:</p>
