@@ -90,7 +90,7 @@
         ms0 = (int)(timebuffer.millitm);       /* Convert unsigned int to int */
         tlocal->tm_mon  = tlocal->tm_mon +1;   /* Correct for month starting at 1 */
         tlocal->tm_year = tlocal->tm_year+1900;/* Correct for 4-digit year */
-       
+
         memcpy(ms,   &(ms0),                sizeof(int));
         memcpy(sec,  &(tlocal->tm_sec),     sizeof(int));
         memcpy(min,  &(tlocal->tm_min),     sizeof(int));
@@ -109,7 +109,7 @@
     static void ModelicaRandom_getTime(int* ms, int* sec, int* min, int* hour, int* mday, int* mon, int* year) {
         struct timeval tm;
         int ms0;
-       
+
         gettimeofday( &tm, NULL ); /* Retrieve current local time */
         ms0 = tm.tv_usec/1000;     /* Convert microseconds to milliseconds */
 
@@ -124,7 +124,7 @@
 
 #endif
 
-static int ModelicaRandom_hashString(char* str)
+static int ModelicaRandom_hashString(const char* str)
 {  /* Compute an unsigned int hash code from a character string
     *
     * Author: Arash Partow - 2002                                            *
@@ -140,12 +140,12 @@ static int ModelicaRandom_hashString(char* str)
     unsigned int hash = 0xAAAAAAAA;
     unsigned int i    = 0;
     unsigned int len  = strlen(str);
-    
+
     union hash_tag{
        unsigned int iu;
        int          is;
     } h;
-   
+
     for(i = 0; i < len; str++, i++)
     {
        hash ^= ((i & 1) == 0) ? (  (hash <<  7) ^  (*str) * (hash >> 3)) :
@@ -167,14 +167,14 @@ static int ModelicaRandom_hashString(char* str)
    worldwide. This software is distributed without any warranty.
 
    See <http://creativecommons.org/publicdomain/zero/1.0/>.
-   
+
    Adapted by Martin Otter and Andreas Klöckner for use with Modelica:
    - Inputs and outputs must be int's, that is int32_t.
-   - Inputs are casted accordingly. 
+   - Inputs are casted accordingly.
    - Outputs are casted accordingly.
    - The additional double between 0 and 1 is output.
 */
-   
+
 /* transform 64-bit unsigned integer to double such that zero cannot appear, by
    first transforming to a 64-bit signed integer, then to a double in the range 0 .. 1.
    (using the algorithm given here: http://www.doornik.com/research/randomdouble.pdf) */
@@ -194,7 +194,7 @@ MODELICA_EXPORT void ModelicaRandom_xorshift64star(int state_in[], int state_out
 
         See <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-        Adapted by Martin Otter and Andreas Klöckner (DLR) 
+        Adapted by Martin Otter and Andreas Klöckner (DLR)
         for the Modelica external function interface.
     */
 
@@ -212,13 +212,13 @@ MODELICA_EXPORT void ModelicaRandom_xorshift64star(int state_in[], int state_out
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
         s.s32[i] = state_in[i];}
     x = s.s64;
-      
+
     /* The actual algorithm */
     x ^= x >> 12; // a
     x ^= x << 25; // b
     x ^= x >> 27; // c
     x  = x * 2685821657736338717LL;
-    
+
     /* Convert outputs */
     s.s64 = x;
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
@@ -241,7 +241,7 @@ MODELICA_EXPORT void ModelicaRandom_xorshift128plus(int state_in[], int state_ou
 
         See <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-        Adapted by Martin Otter and Andreas Klöckner (DLR) 
+        Adapted by Martin Otter and Andreas Klöckner (DLR)
         for the Modelica external function interface.
     */
 
@@ -264,14 +264,14 @@ MODELICA_EXPORT void ModelicaRandom_xorshift128plus(int state_in[], int state_ou
     uint64_t s0;
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
         s.s32[i] = state_in[i];}
-      
+
     /* The actual algorithm */
     s1       = s.s64[0];
     s0       = s.s64[1];
     s.s64[0] = s.s64[1];
     s1      ^= s1 << 23; // a
     s.s64[1] = ( s1 ^ s0 ^ ( s1 >> 17 ) ^ ( s0 >> 26 ) ) + s0; // b, c
-    
+
     /* Convert outputs */
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
         state_out[i] = s.s32[i];}
@@ -282,19 +282,19 @@ MODELICA_EXPORT void ModelicaRandom_xorshift128plus(int state_in[], int state_ou
 static void ModelicaRandom_xorshift1024star_internal(uint64_t s[], int* p, double* y) {
     /*  xorshift1024* random number generator.
         For details see http://xorshift.di.unimi.it
-        
+
         This internal function directly operates on a pointer to the state array, such that
         no copying of states is needed.
-        
+
         Written in 2014 by Sebastiano Vigna (vigna@acm.org)
-    
+
         To the extent possible under law, the author has dedicated all copyright
         and related and neighboring rights to this software to the public domain
         worldwide. This software is distributed without any warranty.
 
         See <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-        Adapted by Martin Otter and Andreas Klöckner (DLR) 
+        Adapted by Martin Otter and Andreas Klöckner (DLR)
         for the Modelica external function interface.
     */
 
@@ -304,23 +304,23 @@ static void ModelicaRandom_xorshift1024star_internal(uint64_t s[], int* p, doubl
     /*  The state must be seeded so that it is not everywhere zero. If you have
         a 64-bit seed,  we suggest to seed a xorshift64* generator and use its
         output to fill s. */
-        
-        
+
+
     /* Convert inputs */
     uint64_t s0;
     uint64_t s1;
     *p = *p & 15;
-    
+
     /* The actual algorithm */
     s0 = s[*p];
     s1 = s[*p = (*p + 1) & 15];
-        
+
     s1 ^= s1 << 31; // a
     s1 ^= s1 >> 11; // b
     s0 ^= s0 >> 30; // c
-    
+
     s[*p] = s0 ^ s1;
-        
+
     /* Convert outputs */
     *y = ModelicaRandom_RAND(s[*p]*1181783497276652981LL);
 }
@@ -328,10 +328,10 @@ static void ModelicaRandom_xorshift1024star_internal(uint64_t s[], int* p, doubl
 MODELICA_EXPORT void ModelicaRandom_xorshift1024star(int state_in[], int state_out[], double* y) {
     /*  xorshift1024* random number generator.
         For details see http://xorshift.di.unimi.it
-        
+
         This function uses ModelicaRandom_xorshift1024star_internal as generator and adapts inputs and outputs.
 
-        Adapted by Martin Otter and Andreas Klöckner (DLR) 
+        Adapted by Martin Otter and Andreas Klöckner (DLR)
         for the Modelica external function interface.
     */
 
@@ -341,8 +341,8 @@ MODELICA_EXPORT void ModelicaRandom_xorshift1024star(int state_in[], int state_o
     /*  The state must be seeded so that it is not everywhere zero. If you have
         a 64-bit seed,  we suggest to seed a xorshift64* generator and use its
         output to fill s. */
-        
-        
+
+
     /* Convert inputs */
     union s_tag{
         int32_t  s32[32];
@@ -353,10 +353,10 @@ MODELICA_EXPORT void ModelicaRandom_xorshift1024star(int state_in[], int state_o
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
         s.s32[i] = state_in[i];}
     p = state_in[32];
-    
+
     /* The actual algorithm */
-    ModelicaRandom_xorshift1024star_internal(&(s.s64), &p, y);
-        
+    ModelicaRandom_xorshift1024star_internal(s.s64, &p, y);
+
     /* Convert outputs */
     for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
         state_out[i] = s.s32[i];}
@@ -368,12 +368,12 @@ MODELICA_EXPORT void ModelicaRandom_xorshift1024star(int state_in[], int state_o
 /* external seed algorithms */
 
 /* these functions give access to an external random number state
-   you should be very careful about using them... 
+   you should be very careful about using them...
 */
 
 /* Internal state of impure random number generator */
 #define ModelicaRandom_SIZE 33
-static uint64_t ModelicaRandom_s[ 16 ]; 
+static uint64_t ModelicaRandom_s[ 16 ];
 static int ModelicaRandom_p;
 static int ModelicaRandom_id=0;
 
@@ -385,20 +385,20 @@ MODELICA_EXPORT void ModelicaRandom_setInternalState_xorshift1024star(int* state
     } s;
     int i;
 
-    if ( nState > ModelicaRandom_SIZE ) ModelicaFormatError("External state vector is too large. Should be %d.",ModelicaRandom_SIZE);    
+    if ( nState > ModelicaRandom_SIZE ) ModelicaFormatError("External state vector is too large. Should be %d.",ModelicaRandom_SIZE);
     for (i=0; i<16; i++){
        s.s32[0] = state[2*i];
        s.s32[1] = state[2*i+1];
        ModelicaRandom_s[i] = s.s64;
     }
     ModelicaRandom_p = state[32];
-    ModelicaRandom_id = id;   
+    ModelicaRandom_id = id;
 }
 
-MODELICA_EXPORT double ModelicaRandom_impureRandom_xorshift1024star(int id) { 
+MODELICA_EXPORT double ModelicaRandom_impureRandom_xorshift1024star(int id) {
     /* xorshift1024* random number generator (same as above, but with internal state, instead of external one).
        For details see http://xorshift.di.unimi.it
-	  
+
 	   Argument "id" is provided to guarantee the right calling sequence
 	   of the function in a Modelica environment (first calling function
 	   ModelicaRandom_initialize_xorshift1024star that must return "dummy" which is passed
@@ -406,7 +406,7 @@ MODELICA_EXPORT double ModelicaRandom_impureRandom_xorshift1024star(int id) {
 	   of the function is correct.
 
        This function uses ModelicaRandom_xorshift1024star_internal as generator and adapts inputs and outputs.
-       
+
        Adapted by Martin Otter (DLR) to initialize the seed with ModelicaRandom_initializeRandom
 	   and to return a double in range 0 < randomNumber < 1.0
     */
@@ -417,17 +417,17 @@ MODELICA_EXPORT double ModelicaRandom_impureRandom_xorshift1024star(int id) {
     /* The state must be seeded so that it is not everywhere zero. If you have
        a 64-bit seed,  we suggest to seed a xorshift64* generator and use its
        output to fill s. */
-   
+
     double y;
-   
+
     /* Check that ModelicaRandom_initializeImpureRandome_xorshift1024star was called before */
     if ( id != ModelicaRandom_id ) ModelicaError("Function impureRandom not initialized with function initializeImpureRandom");
-    
+
     /* Compute random number */
-    ModelicaRandom_xorshift1024star_internal(&ModelicaRandom_s, &ModelicaRandom_p, &y);
+    ModelicaRandom_xorshift1024star_internal(ModelicaRandom_s, &ModelicaRandom_p, &y);
     return y;
 }
-   
+
 
 
 
@@ -439,7 +439,7 @@ MODELICA_EXPORT void ModelicaRandom_convertRealToIntegers(double d, int i[]) {
         double d;
         int    i[2];
     } u;
-    
+
     u.d  = d;
     i[0] = u.i[0];
     i[1] = u.i[1];
