@@ -114,69 +114,68 @@
 #endif
 #   include <time.h>
 #   define ModelicaRandom_getpid _getpid
-    static void ModelicaRandom_getTime(int* ms, int* sec, int* min, int* hour, int* mday, int* mon, int* year) {
-        struct tm* tlocal;
-        time_t calendarTime;
-        int ms0;
+static void ModelicaRandom_getTime(int* ms, int* sec, int* min, int* hour, int* mday, int* mon, int* year) {
+    struct tm* tlocal;
+    time_t calendarTime;
+    int ms0;
 
-        time( &calendarTime );                 /* Retrieve sec time */
-        tlocal   = localtime( &calendarTime ); /* Time fields in local time zone */
+    time( &calendarTime );                 /* Retrieve sec time */
+    tlocal   = localtime( &calendarTime ); /* Time fields in local time zone */
 
-        /* Get millisecond resolution depending on platform */
-/* FOR MICROSOFT */
+    /* Get millisecond resolution depending on platform */
+    /* FOR MICROSOFT */
 #if defined(_MSC_VER)
-        {
-          struct _timeb timebuffer;
-          _ftime( &timebuffer );                 /* Retrieve ms time */
-          ms0 = (int)(timebuffer.millitm);       /* Convert unsigned int to int */
-          tlocal->tm_mon  = tlocal->tm_mon +1;   /* Correct for month starting at 1 */
-          tlocal->tm_year = tlocal->tm_year+1900;/* Correct for 4-digit year */
-        }
-/* FOR OTHER COMPILERS */
+    {
+        struct _timeb timebuffer;
+        _ftime( &timebuffer );                 /* Retrieve ms time */
+        ms0 = (int)(timebuffer.millitm);       /* Convert unsigned int to int */
+        tlocal->tm_mon  = tlocal->tm_mon +1;   /* Correct for month starting at 1 */
+        tlocal->tm_year = tlocal->tm_year+1900;/* Correct for 4-digit year */
+    }
+    /* FOR OTHER COMPILERS */
 #else
-        {
-          struct timeval tv;
-          gettimeofday(&tv,NULL);
-          ms0 = tv.tv_usec/1000; /* Convert microseconds to milliseconds */
-        }
+    {
+        struct timeval tv;
+        gettimeofday(&tv,NULL);
+        ms0 = tv.tv_usec/1000; /* Convert microseconds to milliseconds */
+    }
 #endif
 
-        /* Do not memcpy as you don't know which sizes are in the struct */
-        *ms = ms0;
-        *sec = tlocal->tm_sec;
-        *min = tlocal->tm_min;
-        *hour = tlocal->tm_hour;
-        *mday = tlocal->tm_mday;
-        *mon = tlocal->tm_mon;
-        *year = tlocal->tm_year;
-    }
+    /* Do not memcpy as you don't know which sizes are in the struct */
+    *ms = ms0;
+    *sec = tlocal->tm_sec;
+    *min = tlocal->tm_min;
+    *hour = tlocal->tm_hour;
+    *mday = tlocal->tm_mday;
+    *mon = tlocal->tm_mon;
+    *year = tlocal->tm_year;
+}
 
-static int ModelicaRandom_hashString(const char* str)
-{  /* Compute an unsigned int hash code from a character string
-    *
-    * Author: Arash Partow - 2002                                            *
-    * URL: http://www.partow.net                                             *
-    * URL: http://www.partow.net/programming/hashfunctions/index.html        *
-    *                                                                        *
-    * Copyright notice:                                                      *
-    * Free use of the General Purpose Hash Function Algorithms Library is    *
-    * permitted under the guidelines and in accordance with the most current *
-    * version of the Common Public License.                                  *
-    * http://www.opensource.org/licenses/cpl1.0.php                          */
+static int ModelicaRandom_hashString(const char* str) {
+    /* Compute an unsigned int hash code from a character string
+     *
+     * Author: Arash Partow - 2002                                            *
+     * URL: http://www.partow.net                                             *
+     * URL: http://www.partow.net/programming/hashfunctions/index.html        *
+     *                                                                        *
+     * Copyright notice:                                                      *
+     * Free use of the General Purpose Hash Function Algorithms Library is    *
+     * permitted under the guidelines and in accordance with the most current *
+     * version of the Common Public License.                                  *
+     * http://www.opensource.org/licenses/cpl1.0.php                          */
 
     unsigned int hash = 0xAAAAAAAA;
     unsigned int i    = 0;
     unsigned int len  = strlen(str);
 
-    union hash_tag{
-       unsigned int iu;
-       int          is;
+    union hash_tag {
+        unsigned int iu;
+        int          is;
     } h;
 
-    for(i = 0; i < len; str++, i++)
-    {
-       hash ^= ((i & 1) == 0) ? (  (hash <<  7) ^  (*str) * (hash >> 3)) :
-                                (~((hash << 11) + ((*str) ^ (hash >> 5))));
+    for(i = 0; i < len; str++, i++) {
+        hash ^= ((i & 1) == 0) ? (  (hash <<  7) ^  (*str) * (hash >> 3)) :
+                (~((hash << 11) + ((*str) ^ (hash >> 5))));
     }
 
     h.iu = hash;
@@ -230,14 +229,15 @@ MODELICA_EXPORT void ModelicaRandom_xorshift64star(int state_in[], int state_out
         xorshift1024* (for speed and very long period) generator. */
 
     /* Convert inputs */
-    union s_tag{
+    union s_tag {
         int32_t  s32[2];
         uint64_t s64;
     } s;
     int i;
     uint64_t x;
-    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
-        s.s32[i] = state_in[i];}
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++) {
+        s.s32[i] = state_in[i];
+    }
     x = s.s64;
 
     /* The actual algorithm */
@@ -251,8 +251,9 @@ MODELICA_EXPORT void ModelicaRandom_xorshift64star(int state_in[], int state_out
 #endif
     /* Convert outputs */
     s.s64 = x;
-    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
-        state_out[i] = s.s32[i];}
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++) {
+        state_out[i] = s.s32[i];
+    }
     *y = ModelicaRandom_RAND(x);
 }
 
@@ -285,15 +286,16 @@ MODELICA_EXPORT void ModelicaRandom_xorshift128plus(int state_in[], int state_ou
         avalanching function. */
 
     /* Convert inputs */
-    union s_tag{
+    union s_tag {
         int32_t  s32[4];
         uint64_t s64[2];
     } s;
     int i;
     uint64_t s1;
     uint64_t s0;
-    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
-        s.s32[i] = state_in[i];}
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++) {
+        s.s32[i] = state_in[i];
+    }
 
     /* The actual algorithm */
     s1       = s.s64[0];
@@ -303,8 +305,9 @@ MODELICA_EXPORT void ModelicaRandom_xorshift128plus(int state_in[], int state_ou
     s.s64[1] = ( s1 ^ s0 ^ ( s1 >> 17 ) ^ ( s0 >> 26 ) ) + s0; /* b, c */
 
     /* Convert outputs */
-    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
-        state_out[i] = s.s32[i];}
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++) {
+        state_out[i] = s.s32[i];
+    }
     *y = ModelicaRandom_RAND(s.s64[1]);
 }
 
@@ -378,22 +381,24 @@ MODELICA_EXPORT void ModelicaRandom_xorshift1024star(int state_in[], int state_o
 
 
     /* Convert inputs */
-    union s_tag{
+    union s_tag {
         int32_t  s32[32];
         uint64_t s64[16];
     } s;
     int i;
     int p;
-    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
-        s.s32[i] = state_in[i];}
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++) {
+        s.s32[i] = state_in[i];
+    }
     p = state_in[32];
 
     /* The actual algorithm */
     ModelicaRandom_xorshift1024star_internal(s.s64, &p, y);
 
     /* Convert outputs */
-    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++){
-        state_out[i] = s.s32[i];}
+    for (i=0; i<sizeof(s)/sizeof(uint32_t); i++) {
+        state_out[i] = s.s32[i];
+    }
     state_out[32] = p;
 }
 
@@ -411,19 +416,21 @@ static uint64_t ModelicaRandom_s[ 16 ];
 static int ModelicaRandom_p;
 static int ModelicaRandom_id=0;
 
-MODELICA_EXPORT void ModelicaRandom_setInternalState_xorshift1024star(int* state, size_t nState, int id){
+MODELICA_EXPORT void ModelicaRandom_setInternalState_xorshift1024star(int* state, size_t nState, int id) {
     /* receives the external states from Modelica */
-    union s_tag{
-      int32_t  s32[2];
-      uint64_t s64;
+    union s_tag {
+        int32_t  s32[2];
+        uint64_t s64;
     } s;
     int i;
 
-    if ( nState > ModelicaRandom_SIZE ) ModelicaFormatError("External state vector is too large. Should be %d.",ModelicaRandom_SIZE);
-    for (i=0; i<16; i++){
-       s.s32[0] = state[2*i];
-       s.s32[1] = state[2*i+1];
-       ModelicaRandom_s[i] = s.s64;
+    if ( nState > ModelicaRandom_SIZE ) {
+        ModelicaFormatError("External state vector is too large. Should be %d.",ModelicaRandom_SIZE);
+    }
+    for (i=0; i<16; i++) {
+        s.s32[0] = state[2*i];
+        s.s32[1] = state[2*i+1];
+        ModelicaRandom_s[i] = s.s64;
     }
     ModelicaRandom_p = state[32];
     ModelicaRandom_id = id;
@@ -455,7 +462,9 @@ MODELICA_EXPORT double ModelicaRandom_impureRandom_xorshift1024star(int id) {
     double y;
 
     /* Check that ModelicaRandom_initializeImpureRandome_xorshift1024star was called before */
-    if ( id != ModelicaRandom_id ) ModelicaError("Function impureRandom not initialized with function initializeImpureRandom");
+    if ( id != ModelicaRandom_id ) {
+        ModelicaError("Function impureRandom not initialized with function initializeImpureRandom");
+    }
 
     /* Compute random number */
     ModelicaRandom_xorshift1024star_internal(ModelicaRandom_s, &ModelicaRandom_p, &y);
@@ -469,7 +478,7 @@ MODELICA_EXPORT double ModelicaRandom_impureRandom_xorshift1024star(int id) {
 
 MODELICA_EXPORT void ModelicaRandom_convertRealToIntegers(double d, int i[]) {
     /* casts a double to two integers */
-    union d2i{
+    union d2i {
         double d;
         int    i[2];
     } u;
