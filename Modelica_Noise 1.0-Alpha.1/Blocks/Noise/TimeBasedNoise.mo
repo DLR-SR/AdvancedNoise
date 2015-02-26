@@ -56,7 +56,7 @@ block TimeBasedNoise
 </p>
 </html>"));
   replaceable package interpolation =
-      Modelica_Noise.Math.Random.Utilities.Interpolators.Linear constrainedby
+      Modelica_Noise.Math.Random.Utilities.Interpolators.Constant constrainedby
     Modelica_Noise.Math.Random.Utilities.Interfaces.PartialInterpolator
     "Interpolation method in grid of raw random numbers"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
