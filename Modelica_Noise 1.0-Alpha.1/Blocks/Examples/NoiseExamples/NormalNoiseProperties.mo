@@ -5,12 +5,13 @@ model NormalNoiseProperties
           noise(redeclare function distribution =
           Modelica_Noise.Math.TruncatedDistributions.Normal.quantile(mu=mu,sigma=sigma),
         redeclare package interpolation =
-          Modelica_Noise.Math.Random.Utilities.Interpolators.Linear));
+          Modelica_Noise.Math.Random.Utilities.Interpolators.Linear),
+        y_min = -Modelica.Constants.inf, y_max = Modelica.Constants.inf);
 
   parameter Real mu = 3 "Mean value for normal distribution";
   parameter Real sigma = 1 "Standard deviation for normal distribution";
 
- annotation (experiment(StopTime=20, NumberOfIntervals=5000),
+ annotation (experiment(StopTime=20, NumberOfIntervals=5000, Tolerance=1e-009),
                                      Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
 Documentation(info="<html>
