@@ -5,26 +5,19 @@ model DrydenContinuousTurbulence
   import SI = Modelica.SIunits;
   import Modelica.Constants.pi;
 
-  parameter SI.Velocity V =            150 * 0.5144
-    "Airspeed of aircraft (typically 150kts during approach)";
+  parameter SI.Velocity V =            140 * 0.5144
+    "Airspeed of aircraft (typically 140kts during approach)";
   parameter SI.Velocity sigma = 0.1 *   30 * 0.5144
     "Turbulence intensity (=0.1 * wind at 20 ft, typically 30 kt)";
   parameter SI.Length   L =            600 * 0.3048
     "Scale length (= flight altitude)";
 
   Modelica.Blocks.Continuous.TransferFunction Hw(b=sigma*sqrt(L/pi/V)*{sqrt(3)*
-        L/V,1}, a={L^2/V^2,2*L/V,1})
+        L/V,1}, a={L^2/V^2,2*L/V,1},
+    initType=Modelica.Blocks.Types.Init.InitialState)
     "Transfer function of vertical turbulence speed according to MIL-F-8785C"
     annotation (Placement(transformation(extent={{-10,0},{10,20}})));
-  Noise.TimeBasedNoise whiteNoise(
-    y_min=-1000,
-    y_max=1000,
-    redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear,
-    samplePeriod=0.001,
-    redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma
-          =1/sqrt(whiteNoise.samplePeriod)/sqrt(whiteNoise.interpolation.varianceFactor)))
+  Noise.BandLimitedWhiteNoise whiteNoise(samplePeriod=0.005)
     annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   Modelica.Blocks.Math.Gain compareToSpeed(k=1/V)
     annotation (Placement(transformation(extent={{40,0},{60,20}})));
@@ -53,6 +46,8 @@ equation
 <p>The input to the filter is white noise with a standard normal distribution, i.e. mean=0 and variance=1.</p>
 <p>However, in order to account for change of noise power due to sampling, the noise must be scaled with sqrt(samplePeriod).</p>
 <p>Additionally, the noise must be scaled with the appropriate factor of the interpolation.</p>
+<h4><span style=\"color:#008000\">Example output</span></h4>
+<p><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/DrydenContinuousTurbulence.PNG\"/></p>
 <h4><span style=\"color:#008000\">Reference</span></h4>
 <ol>
 <li>Dryden Wind Turbulence Model in the Matlab Aerospace blockset<br><a href=\"
