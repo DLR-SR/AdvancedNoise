@@ -5,12 +5,13 @@ model NormalNoiseProperties
           noise(redeclare function distribution =
           Modelica_Noise.Math.TruncatedDistributions.Normal.quantile(mu=mu,sigma=sigma),
         redeclare package interpolation =
-          Modelica_Noise.Math.Random.Utilities.Interpolators.Linear));
+          Modelica_Noise.Math.Random.Utilities.Interpolators.Linear),
+        y_min = -Modelica.Constants.inf, y_max = Modelica.Constants.inf);
 
   parameter Real mu = 3 "Mean value for normal distribution";
   parameter Real sigma = 1 "Standard deviation for normal distribution";
 
- annotation (experiment(StopTime=20, NumberOfIntervals=5000),
+ annotation (experiment(StopTime=20, NumberOfIntervals=5000, Tolerance=1e-009),
                                      Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
 Documentation(info="<html>
@@ -58,7 +59,7 @@ becomes better for smaller relative tolerances):
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
-         A. Klouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
 </td></tr>

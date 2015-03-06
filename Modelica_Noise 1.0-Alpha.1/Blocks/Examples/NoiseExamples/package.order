@@ -10,4 +10,5 @@ Densities
 TruncatedDensities
 ImpureGenerator
 ActuatorWithNoise
+DrydenContinuousTurbulence
 Utilities

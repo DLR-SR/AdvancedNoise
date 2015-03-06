@@ -82,7 +82,7 @@ equation
       points={{11,-30},{18,-30},{18,-42},{50,-42},{50,-62}},
       color={0,0,127},
       smooth=Smooth.None));
- annotation (experiment(StopTime=20, Interval=0.004),
+ annotation (experiment(StopTime=20, NumberOfIntervals=5000, Tolerance=1e-009),
                                      Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
@@ -104,7 +104,7 @@ equation
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
-         A. Klouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
 </td></tr>
