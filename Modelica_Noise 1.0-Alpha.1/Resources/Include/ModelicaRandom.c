@@ -32,6 +32,12 @@
 #   define MODELICA_EXPORT
 #endif
 
+
+
+
+
+/* INTEGER DEFINITIONS */
+
 /* Have ModelicaRandom int64 / uint64 */
 #if defined (_WIN32)
 #if defined(_MSC_VER)
@@ -51,6 +57,7 @@
 #define HAVE_ModelicaRandom_INT64_T 1
 #define HAVE_ModelicaRandom_UINT64_T 1
 #endif
+
 /* Define to 1 if <stdint.h> header file is available */
 #if defined(_WIN32)
 #   if defined(_MSC_VER) && _MSC_VER >= 1600
@@ -86,6 +93,12 @@
 #endif
 #endif
 
+
+
+
+
+/* USEFUL INCLUDES */
+
 /* Include some math headers */
 #include <limits.h>
 #include <math.h>
@@ -96,7 +109,64 @@
 /* Include Modelica utilities */
 #include "ModelicaUtilities.h"
 
-/* Low-level time and PID functions */
+
+
+
+
+/* MUTEX DEFINITIONS FOR THREAD-SAFE ACCESS TO STATIC VARIABLES */
+
+/* Include constructor functions */
+#include "gconstructor.h"
+
+/* The standard way to detect posix is to check _POSIX_VERSION,
+ * which is defined in <unistd.h>
+ */
+#if defined(__unix__) || defined(__linux__) || defined(__APPLE_CC__)
+  #include <unistd.h>
+#endif
+#if !defined(_POSIX_) && defined(_POSIX_VERSION)
+  #define _POSIX_ 1
+#endif
+
+/* On Posix systems define a mutex using the single static variable "m" */
+#if defined(_POSIX_)
+#include <pthread.h>
+static pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
+#define MUTEX_LOCK() pthread_mutex_lock(&m)
+#define MUTEX_UNLOCK() pthread_mutex_unlock(&m)
+
+/* On Windows systems define a critical section using the single static variable "cs" */
+#elif defined(_WIN32) && defined(G_HAS_CONSTRUCTORS)
+#include <Windows.h>
+static CRITICAL_SECTION cs;
+#ifdef G_DEFINE_CONSTRUCTOR_NEEDS_PRAGMA
+#pragma G_DEFINE_CONSTRUCTOR_PRAGMA_ARGS(initializeCS)
+#endif
+G_DEFINE_CONSTRUCTOR(initializeCS)
+static void initializeCS(void) {
+    InitializeCriticalSection(&cs);
+}
+#ifdef G_DEFINE_DESTRUCTOR_NEEDS_PRAGMA
+#pragma G_DEFINE_DESTRUCTOR_PRAGMA_ARGS(deleteCS)
+#endif
+G_DEFINE_DESTRUCTOR(deleteCS)
+static void deleteCS(void) {
+    DeleteCriticalSection(&cs);
+}
+#define MUTEX_LOCK() EnterCriticalSection(&cs)
+#define MUTEX_UNLOCK() LeaveCriticalSection(&cs)
+
+/* On other systems do not use a mutex at all */
+#else
+#define MUTEX_LOCK()
+#define MUTEX_UNLOCK()
+#endif
+
+
+
+
+
+/* LOW-LEVEL TIME AND PID FUNCTIONS */
 /* Some parts from: http://nadeausoftware.com/articles/2012/04/c_c_tip_how_measure_elapsed_real_time_benchmarking
 
    Get current time in (ms, sec, min, hour, day, mon, year)
@@ -151,6 +221,12 @@ static void ModelicaRandom_getTime(int* ms, int* sec, int* min, int* hour, int* 
     *year = tlocal->tm_year;
 }
 
+
+
+
+
+/* HASHING ALGORITHM */
+
 static int ModelicaRandom_hashString(const char* str) {
     /* Compute an unsigned int hash code from a character string
      *
@@ -182,7 +258,11 @@ static int ModelicaRandom_hashString(const char* str) {
     return h.is;
 }
 
-/* xorshift algorithms */
+
+
+
+
+/* XORSHIFT ALGORITHMS */
 
 /* For details see http://xorshift.di.unimi.it/
 
@@ -404,10 +484,20 @@ MODELICA_EXPORT void ModelicaRandom_xorshift1024star(int state_in[], int state_o
 
 
 
-/* external seed algorithms */
+
+
+/* EXTERNAL SEED ALGORITHMS */
 
 /* these functions give access to an external random number state
    you should be very careful about using them...
+   
+   The external variables are 
+   - ModelicaRandom_s:  The first part of the internal state of xorshift1024*
+   - ModelicaRandom_p:  The second part of the internal state of xorshift1024*
+   - ModelicaRandom_id: The check variable used for initializing the state
+   
+   We use MUTEX_LOCK() and MUTEX_UNLOCK() as defined above for 
+   thread-safe access to these variables.
 */
 
 /* Internal state of impure random number generator */
@@ -427,13 +517,15 @@ MODELICA_EXPORT void ModelicaRandom_setInternalState_xorshift1024star(int* state
     if ( nState > ModelicaRandom_SIZE ) {
         ModelicaFormatError("External state vector is too large. Should be %d.",ModelicaRandom_SIZE);
     }
-    for (i=0; i<16; i++) {
-        s.s32[0] = state[2*i];
-        s.s32[1] = state[2*i+1];
-        ModelicaRandom_s[i] = s.s64;
-    }
-    ModelicaRandom_p = state[32];
-    ModelicaRandom_id = id;
+    MUTEX_LOCK();
+        for (i=0; i<16; i++) {
+            s.s32[0] = state[2*i];
+            s.s32[1] = state[2*i+1];
+            ModelicaRandom_s[i] = s.s64;
+        }
+        ModelicaRandom_p = state[32];
+        ModelicaRandom_id = id;
+    MUTEX_UNLOCK();
 }
 
 MODELICA_EXPORT double ModelicaRandom_impureRandom_xorshift1024star(int id) {
@@ -467,7 +559,9 @@ MODELICA_EXPORT double ModelicaRandom_impureRandom_xorshift1024star(int id) {
     }
 
     /* Compute random number */
-    ModelicaRandom_xorshift1024star_internal(ModelicaRandom_s, &ModelicaRandom_p, &y);
+    MUTEX_LOCK();
+        ModelicaRandom_xorshift1024star_internal(ModelicaRandom_s, &ModelicaRandom_p, &y);
+    MUTEX_UNLOCK();
     return y;
 }
 
