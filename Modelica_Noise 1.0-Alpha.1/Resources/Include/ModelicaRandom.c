@@ -553,13 +553,13 @@ MODELICA_EXPORT double ModelicaRandom_impureRandom_xorshift1024star(int id) {
 
     double y;
 
-    /* Check that ModelicaRandom_initializeImpureRandome_xorshift1024star was called before */
-    if ( id != ModelicaRandom_id ) {
-        ModelicaError("Function impureRandom not initialized with function initializeImpureRandom");
-    }
-
-    /* Compute random number */
     MUTEX_LOCK();
+        /* Check that ModelicaRandom_initializeImpureRandome_xorshift1024star was called before */
+        if ( id != ModelicaRandom_id ) {
+            ModelicaError("Function impureRandom not initialized with function initializeImpureRandom");
+        }
+
+        /* Compute random number */
         ModelicaRandom_xorshift1024star_internal(ModelicaRandom_s, &ModelicaRandom_p, &y);
     MUTEX_UNLOCK();
     return y;
