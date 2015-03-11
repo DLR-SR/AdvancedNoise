@@ -5,6 +5,8 @@ partial package PartialInterpolatorWithKernel "Generic interpolator interface pr
 
   redeclare replaceable function extends interpolate
   "Interpolates the buffer using a replaceable kernel"
+    input Modelica.SIunits.Duration samplePeriod = 0.1
+    "The sample period of the noise buffer";
 protected
     Real coefficient "The intermediate container for the kernel evaluations";
   algorithm
@@ -66,7 +68,7 @@ protected
     for i in -nPast:nFuture loop
 
       // We use the kernel in -i direction to enable step response kernels
-      coefficient        :=     kernel(t=mod(    offset,1)-i);
+      coefficient        :=     kernel(t=(mod(    offset,1)-i)*samplePeriod);
 
       // We use the kernel in +i direction for the random samples
       // The +1 accounts for one-based indizes
