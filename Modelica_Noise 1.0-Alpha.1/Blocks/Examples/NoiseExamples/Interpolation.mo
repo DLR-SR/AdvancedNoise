@@ -17,7 +17,10 @@ model Interpolation
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
-    y_max=3) annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
+    y_max=3,
+    redeclare package interpolation =
+        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear)
+             annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
   Blocks.Noise.TimeBasedNoise smoothNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
