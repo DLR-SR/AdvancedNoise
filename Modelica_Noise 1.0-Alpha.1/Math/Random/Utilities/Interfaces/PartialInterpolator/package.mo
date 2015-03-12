@@ -18,6 +18,7 @@ partial package PartialInterpolator "Interfaces of an interpolator in a buffer o
     extends Modelica.Icons.Function;
     input Real buffer[:] "Buffer of random numbers";
     input Real offset "Offset from buffer start (0..size(buffer)-1";
+    input Real samplePeriod = 1 "The sample period of the noise buffer";
     output Real y "Interpolated value at position offset";
 protected
     Integer nBuffer = size(buffer,1) "Size of the buffer";

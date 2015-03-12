@@ -3,8 +3,10 @@ function der_interpolate
   extends Modelica.Icons.Function;
   input Real buffer[:] "Buffer of random numbers";
   input Real offset "Offset from buffer start (0..size(buffer)-1";
+  input Real samplePeriod = 1 "The sample period of the noise buffer";
   input Real der_buffer[size(buffer,1)] "Derivatives of buffer values";
   input Real der_offset "Derivative of offset value";
+  input Real der_samplePeriod "Derivative of samplePeriod (unused)";
   output Real der_y "Interpolated value at position offset";
 protected
   Integer ind "Index of buffer element just before offset";

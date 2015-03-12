@@ -187,10 +187,12 @@ equation
   y = if not generateNoise then y_off else
       if interpolation.continuous then
           smooth(interpolation.smoothness,
-                 interpolation.interpolate(buffer=buffer,
-                                           offset=offset - zeroDer(noEvent(integer(offset))) + nPast)) else
-                 interpolation.interpolate(buffer=buffer,
-                                           offset=offset - zeroDer(       (integer(offset))) + nPast);
+                 interpolation.interpolate(buffer=       buffer,
+                                           offset=       offset - zeroDer(noEvent(integer(offset))) + nPast,
+                                           samplePeriod= samplePeriod)) else
+                 interpolation.interpolate(buffer=       buffer,
+                                           offset=       offset - zeroDer(       (integer(offset))) + nPast,
+                                           samplePeriod= samplePeriod);
 
   // We require a few smooth functions for derivatives
 protected

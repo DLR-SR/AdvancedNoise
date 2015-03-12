@@ -66,7 +66,8 @@ protected
     for i in -nPast:nFuture loop
 
       // We use the kernel in -i direction to enable step response kernels
-      coefficient        :=     kernel(t=mod(    offset,1)-i);
+      coefficient        := - kernel(t=(mod(    offset,1)-i-1)*samplePeriod)
+                            + kernel(t=(mod(    offset,1)-i+0)*samplePeriod);
 
       // We use the kernel in +i direction for the random samples
       // The +1 accounts for one-based indizes
