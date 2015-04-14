@@ -12,6 +12,6 @@ LibraryInfoMenuCommand(
   isModel=true,
   description="Modelica_Noise modules for the MSL. Version "+NoiseVersion,
   ModelicaVersion="3.2.1",
-  pos=1111)
+  pos=110)
 
 // LibraryInfoPreload(reference="Modelica_LinearSystems2")
