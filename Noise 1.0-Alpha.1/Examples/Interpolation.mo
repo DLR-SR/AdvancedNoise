@@ -11,7 +11,8 @@ model Interpolation "Tests all interpolators"
     annotation (Placement(transformation(extent={{-60,-80},{-40,-60}})));
   Modelica.Blocks.Continuous.Der derFiltered
     annotation (Placement(transformation(extent={{0,-92},{20,-72}})));
-  Modelica.Blocks.Continuous.FirstOrder filteredFiltered(T=0.00001, y_start=0.2)
+  Modelica.Blocks.Continuous.FirstOrder filteredFiltered(T=0.00001, y_start=0.2,
+    initType=Modelica.Blocks.Types.Init.InitialState)
     annotation (Placement(transformation(extent={{-20,-68},{0,-48}})));
   Modelica.Blocks.Continuous.Der derFilteredFiltered
     annotation (Placement(transformation(extent={{20,-68},{40,-48}})));
@@ -39,7 +40,8 @@ model Interpolation "Tests all interpolators"
     sampleFactor=10,
     redeclare package interpolation = Noise.Interpolators.StepResponse)
     annotation (Placement(transformation(extent={{-60,-130},{-40,-110}})));
-  Modelica.Blocks.Continuous.FirstOrder stepFiltered(T=0.00001, y_start=0.2)
+  Modelica.Blocks.Continuous.FirstOrder stepFiltered(T=0.00001, y_start=0.2,
+    initType=Modelica.Blocks.Types.Init.InitialState)
     annotation (Placement(transformation(extent={{-20,-118},{0,-98}})));
   Modelica.Blocks.Continuous.Der derStepFiltered
     annotation (Placement(transformation(extent={{20,-118},{40,-98}})));
