@@ -1,7 +1,7 @@
 within Noise.Interpolators;
 package StepResponse "A generic filter using a tabulated step response"
-  extends Utilities.Interfaces.PartialInterpolatorWithKernel(final continuous=false,
-                                                             final nFuture=5,
+  extends Utilities.Interfaces.PartialInterpolatorWithKernel(continuous=true,
+                                                             nFuture=5,
                                                              nPast=5,
                                                              varianceFactor=0.900004539919624);
 
