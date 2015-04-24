@@ -146,7 +146,7 @@ protected
     "= true, if continuous interpolation";
   //parameter Real actualSamplePeriod = if continuous then sampleFactor*samplePeriod else samplePeriod
   //  "Sample period of when-clause";
-  parameter Integer nFuture = interpolation.nFuture
+  parameter Integer nFuture = interpolation.nFuture + 1
     "Number of buffer elements to be predicted in the future (+1 for rounding errors)";
   parameter Integer nPast = interpolation.nPast
     "Number of buffer elements to be retained from the past";
