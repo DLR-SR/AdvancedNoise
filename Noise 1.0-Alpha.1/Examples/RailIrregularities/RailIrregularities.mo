@@ -15,8 +15,8 @@ model RailIrregularities
     y_min=-1e10,
     y_max=+1e10,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma
-          =sqrt(0.5)/sqrt(spaceDomainNoise.samplePeriod)))
+        Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
+           sqrt(0.5)/sqrt(spaceDomainNoise.samplePeriod)))
     annotation (Placement(transformation(extent={{-20,20},{0,40}})));
 
   Modelica.Blocks.Continuous.Integrator position(y_start=123)
