@@ -1,7 +1,6 @@
 within Noise.Examples.RailIrregularities.Comparisons;
 model SpaceAndTimeDomain "Compares implementation in space and time domain"
   extends FilterAndConvolution(doMinimum = true, doZero = false, doFilter = false, doTime = true);
-  parameter Real frickel = 1;
   annotation (experiment(
       StopTime=20,
       Interval=0.01,
