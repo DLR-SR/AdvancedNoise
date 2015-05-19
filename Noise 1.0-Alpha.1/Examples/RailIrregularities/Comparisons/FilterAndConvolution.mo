@@ -62,7 +62,8 @@ model FilterAndConvolution
                                                        doTime
     annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
   Modelica_Noise.Blocks.Noise.BandLimitedWhiteNoise bandLimitedWhiteNoise(
-      samplePeriod=spaceDomainNoiseMinimum.samplePeriod*velocity.k) if         doTime
+      samplePeriod=spaceDomainNoiseMinimum.samplePeriod/velocity.k, noisePower=
+        1/(velocity.k)) if                                                     doTime
     annotation (Placement(transformation(extent={{-20,-60},{0,-40}})));
 equation
   connect(velocity.y, position.u) annotation (Line(
@@ -92,7 +93,7 @@ equation
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics), experiment(
       StopTime=20,
-      outputInterval=0.5e-3,
-      Tolerance=0.1),
+      Interval=0.01,
+      Tolerance=0.001),
     __Dymola_experimentSetupOutput);
 end FilterAndConvolution;
