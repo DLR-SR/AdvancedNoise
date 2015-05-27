@@ -1,6 +1,7 @@
 within Noise.Interpolators;
 package StepResponse "A generic filter using a tabulated step response"
   import Modelica.Math.Vectors.length;
+  import integral = Modelica.Math.Nonlinear.quadratureLobatto;
 
 
   extends Utilities.Interfaces.PartialInterpolatorWithKernel(
@@ -9,7 +10,7 @@ package StepResponse "A generic filter using a tabulated step response"
     suggestedSamplePeriod =  (max(T)-min(T)) / (length(T)-1),
     nPast =                  integer(max(T) / suggestedSamplePeriod),
     nFuture =               -integer(min(T) / suggestedSamplePeriod),
-    varianceFactor =         0.900004539919624);
+    varianceFactor =         integral(kernelVariance, min(T), max(T)) / suggestedSamplePeriod);
 
   //t = linspace(0,0.2,101); step = Noise.Interpolators.FirstOrder.kernel(t); plotArray(cat(1,Modelica.Math.Vectors.reverse(-t),t),cat(1,Modelica.Math.Vectors.reverse(-step),step))
   constant Real T[:] =      linspace(0, 0.2, 101) "Time vector";
@@ -31,6 +32,8 @@ package StepResponse "A generic filter using a tabulated step response"
 
     annotation(Inline=true);
   end kernel;
+
+
 
 
 annotation (Icon(graphics={
