@@ -8,6 +8,6 @@ block ColoredSignalBasedNoise
     redeclare replaceable function distribution =
       Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (
         mu =    0,
-        sigma = sqrt(0.5) / sqrt(samplePeriod)),
+        sigma = 1 / sqrt(samplePeriod)),
     samplePeriod = interpolation.suggestedSamplePeriod);
 end ColoredSignalBasedNoise;

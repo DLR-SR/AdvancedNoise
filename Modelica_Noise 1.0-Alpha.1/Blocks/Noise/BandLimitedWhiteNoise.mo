@@ -9,7 +9,7 @@ block BandLimitedWhiteNoise
       Modelica_Noise.Math.Random.Generators.Xorshift128plus,
     redeclare function distribution =
       Modelica_Noise.Math.TruncatedDistributions.Normal.quantile(mu =    0,
-                                                                 sigma = sqrt(0.5)*sqrt(noisePower)/sqrt(samplePeriod)),
+                                                                 sigma = sqrt(noisePower)/sqrt(samplePeriod)),
     redeclare package interpolation =
       Modelica_Noise.Math.Random.Utilities.Interpolators.Constant);
 
