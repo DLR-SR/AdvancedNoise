@@ -2,6 +2,9 @@ within Noise.Interpolators.Utilities.Interfaces;
 partial package PartialInterpolatorWithKernel "Generic interpolator interface providing a kernel function"
   extends Modelica_Noise.Math.Random.Utilities.Interfaces.PartialInterpolator;
 
+  constant Real suggestedSamplePeriod = 0
+  "The appropriate sample period for this filter";
+
 
   redeclare replaceable function extends interpolate
   "Interpolates the buffer using a replaceable kernel"
@@ -81,6 +84,7 @@ protected
     end for;
     annotation(Inline=true);
   end interpolate;
+
 
 
   replaceable partial function kernel "Kernel for interpolation"

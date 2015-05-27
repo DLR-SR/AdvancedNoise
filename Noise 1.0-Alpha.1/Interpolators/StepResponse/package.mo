@@ -1,9 +1,15 @@
 within Noise.Interpolators;
 package StepResponse "A generic filter using a tabulated step response"
-  extends Utilities.Interfaces.PartialInterpolatorWithKernel(continuous=true,
-                                                             nFuture=5,
-                                                             nPast=5,
-                                                             varianceFactor=0.900004539919624);
+  import Modelica.Math.Vectors.length;
+
+
+  extends Utilities.Interfaces.PartialInterpolatorWithKernel(
+    continuous =             true,
+    smoothness =             0,
+    suggestedSamplePeriod =  (max(T)-min(T)) / (length(T)-1),
+    nPast =                  integer(max(T) / suggestedSamplePeriod),
+    nFuture =               -integer(min(T) / suggestedSamplePeriod),
+    varianceFactor =         0.900004539919624);
 
   //t = linspace(0,0.2,101); step = Noise.Interpolators.FirstOrder.kernel(t); plotArray(cat(1,Modelica.Math.Vectors.reverse(-t),t),cat(1,Modelica.Math.Vectors.reverse(-step),step))
   constant Real T[:] =      linspace(0, 0.2, 101) "Time vector";
