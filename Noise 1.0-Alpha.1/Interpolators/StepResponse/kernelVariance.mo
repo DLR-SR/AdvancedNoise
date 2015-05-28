@@ -1,7 +1,6 @@
 within Noise.Interpolators.StepResponse;
-function kernelVariance
-  input Real t;
-  output Real y;
+function kernelVariance "Function to be integrated for the varianceFactor"
+  extends Utilities.Interfaces.partialKernel;
 algorithm
-  y := (kernel(t) - kernel(t-suggestedSamplePeriod))^2;
+  h := (kernel(t) - kernel(t-suggestedSamplePeriod))^2;
 end kernelVariance;

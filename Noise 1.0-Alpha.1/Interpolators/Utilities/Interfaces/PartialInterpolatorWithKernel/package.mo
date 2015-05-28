@@ -82,7 +82,7 @@ protected
       //                                  +"o=" + String(offset)+ ", "
       //                                  +"n=" + String(integer(offset)+i));
     end for;
-    annotation(Inline=true);
+    annotation(derivative(order=1) = der_interpolate, Inline=true);
   end interpolate;
 
 
