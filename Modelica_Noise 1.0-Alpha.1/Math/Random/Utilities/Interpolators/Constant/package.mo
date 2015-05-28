@@ -11,7 +11,7 @@ package Constant "Constant interpolation"
   redeclare function extends interpolate
   "Constant interpolation in a buffer of random values"
   algorithm
-     y :=buffer[ if nBuffer == 1 then 1 else integer(offset) + 1];
+     y := buffer[if nBuffer == 1 then 1 else integer(offset) + 1];
      annotation(Inline=true, Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><code>y = Constant.<b>interpolate</b>(buffer,offset);</code> </blockquote>
