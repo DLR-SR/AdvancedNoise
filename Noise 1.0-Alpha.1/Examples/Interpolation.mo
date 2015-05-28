@@ -45,6 +45,8 @@ model Interpolation "Tests all interpolators"
     annotation (Placement(transformation(extent={{-20,-118},{0,-98}})));
   Modelica.Blocks.Continuous.Der derStepFiltered
     annotation (Placement(transformation(extent={{20,-118},{40,-98}})));
+  Modelica.Blocks.Continuous.Der derStep
+    annotation (Placement(transformation(extent={{0,-140},{20,-120}})));
 equation
   connect(filteredFiltered.y, derFilteredFiltered.u) annotation (Line(
       points={{1,-58},{18,-58}},
@@ -88,6 +90,10 @@ equation
       smooth=Smooth.None));
   connect(stepFiltered.u, stepNoise.y) annotation (Line(
       points={{-22,-108},{-28,-108},{-28,-120},{-39,-120}},
+      color={0,0,127},
+      smooth=Smooth.None));
+  connect(derStep.u, stepNoise.y) annotation (Line(
+      points={{-2,-130},{-28,-130},{-28,-120},{-39,-120}},
       color={0,0,127},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
