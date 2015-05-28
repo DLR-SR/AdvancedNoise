@@ -6,8 +6,8 @@ package StepResponse "A generic filter using a tabulated step response"
   extends Utilities.Interfaces.PartialInterpolatorWithKernel(
     continuous =             true,
     smoothness =             0,
-    suggestedSamplePeriod =  (max(T)-min(T)) / (length(T)-1),
-    nPast =                  integer(max(T) / suggestedSamplePeriod)+1,
+    suggestedSamplePeriod =  (max(T)-min(T)) / (size(T,1)-1),
+    nPast =                  integer(max(T) / suggestedSamplePeriod),
     nFuture =               -integer(min(T) / suggestedSamplePeriod),
     varianceFactor =         integral(kernelVariance, min(T), max(T)) / suggestedSamplePeriod);
 

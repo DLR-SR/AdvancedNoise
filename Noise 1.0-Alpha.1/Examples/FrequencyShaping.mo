@@ -4,11 +4,11 @@ model FrequencyShaping
   extends Modelica.Icons.Example;
   Modelica_Noise.Blocks.Noise.TimeBasedNoise filteredNoise(
     useAutomaticLocalSeed=false,
-    samplePeriod=0.1,
     y_min=-1,
     y_max=3,
     sampleFactor=10,
-    redeclare package interpolation = Noise.Interpolators.FirstOrder)
+    redeclare package interpolation = Noise.Interpolators.FirstOrder,
+    samplePeriod=0.1)
     annotation (Placement(transformation(extent={{-60,40},{-40,60}})));
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
@@ -30,14 +30,16 @@ model FrequencyShaping
     annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
   Modelica_Noise.Blocks.Noise.TimeBasedNoise tabulatedNoise(
     useAutomaticLocalSeed=false,
-    samplePeriod=0.1,
     y_min=-1,
     y_max=3,
     redeclare package interpolation = Noise.Interpolators.StepResponse,
-    sampleFactor=10)
+    sampleFactor=10,
+    samplePeriod=0.1)
     annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   Modelica.Blocks.Continuous.Der derTabulated
     annotation (Placement(transformation(extent={{20,0},{40,20}})));
+  Modelica.Blocks.Sources.RealExpression realExpression(y=tabulatedNoise.interpolation.suggestedSamplePeriod)
+    annotation (Placement(transformation(extent={{-36,-84},{-16,-64}})));
 equation
   connect(rawNoise.y, firstOrder.u) annotation (Line(
       points={{-39,-30},{-22,-30}},

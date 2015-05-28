@@ -23,7 +23,7 @@ block TimeBasedNoise
   parameter Integer sampleFactor(min=1)=100
     "Events only at samplePeriod*sampleFactor if continuous"
     annotation(Evaluate=true,Dialog(tab="Advanced",group="Noise generation", enable=enableNoise));
-  final parameter Integer shift = 10 - interpolation.nPast
+  final parameter Integer shift = 200 - interpolation.nPast
     "Shift noise samples to account for interpolation buffer"
     annotation(Dialog(tab="Advanced",group="Noise generation"));
 
