@@ -83,6 +83,7 @@ equation
 <pre>y = mean(  (u - mean(u))^2  )</pre>
 <p>The <a href=\"ContinuousMean\">ContinuousMean</a> block is used to calculate the mean values in this formula.</p>
 <p>The parameter t_eps is used to conservatively guard against division by zero. You can also set it to zero, if your solver supports this.</p>
+<p>The variance of a signal is also equal to its mean power.</p>
 </html>"),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics),

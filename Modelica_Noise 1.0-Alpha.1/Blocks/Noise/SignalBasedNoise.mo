@@ -146,7 +146,7 @@ protected
     "= true, if continuous interpolation";
   //parameter Real actualSamplePeriod = if continuous then sampleFactor*samplePeriod else samplePeriod
   //  "Sample period of when-clause";
-  parameter Integer nFuture = interpolation.nFuture
+  parameter Integer nFuture = interpolation.nFuture + 1
     "Number of buffer elements to be predicted in the future (+1 for rounding errors)";
   parameter Integer nPast = interpolation.nPast
     "Number of buffer elements to be retained from the past";
@@ -176,10 +176,15 @@ equation
 
   // Continuously fill the buffer with random numbers
   for i in 1:nBuffer loop
-    r[i]      = zeroDer(generator.random(
-                        initialState(localSeed=localSeed,
-                                     globalSeed=actualGlobalSeed,
-                                     signal=(noEvent(integer(offset)) + i + shift) * samplePeriod + signalOffset)));
+    r[i]      = if interpolation.continuous then
+                   zeroDer(generator.random(
+                           initialState(localSeed=localSeed,
+                                        globalSeed=actualGlobalSeed,
+                                        signal=(noEvent(integer(offset)) + i + shift) * samplePeriod + signalOffset))) else
+                   zeroDer(generator.random(
+                           initialState(localSeed=localSeed,
+                                        globalSeed=actualGlobalSeed,
+                                        signal=(       (integer(offset)) + i + shift) * samplePeriod + signalOffset)));
     buffer[i] = distribution(r[i]);
   end for;
 
@@ -191,7 +196,7 @@ equation
                                            offset=       offset - zeroDer(noEvent(integer(offset))) + nPast,
                                            samplePeriod= samplePeriod)) else
                  interpolation.interpolate(buffer=       buffer,
-                                           offset=       offset - zeroDer(       (integer(offset))) + nPast,
+                                           offset=       offset - zeroDer(noEvent(integer(offset))) + nPast,
                                            samplePeriod= samplePeriod);
 
   // We require a few smooth functions for derivatives
