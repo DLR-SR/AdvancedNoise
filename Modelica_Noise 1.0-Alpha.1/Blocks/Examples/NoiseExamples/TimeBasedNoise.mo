@@ -8,12 +8,15 @@ model TimeBasedNoise
   Modelica_Noise.Blocks.Noise.TimeBasedNoise timeBasedNoise(
     samplePeriod=0.02,
     y_min=-1,
-    y_max=3) annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
+    y_max=3,
+    redeclare package interpolation =
+        Modelica_Noise.Math.Random.Interpolators.Linear)
+             annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics),
     Documentation(info="<html>
 <p>
-This example demonstrates the most simplest usage of time based noise blocks:
+This example demonstrates the most simple usage of time based noise blocks:
 </p>
 
 <ul>
@@ -22,19 +25,16 @@ This example demonstrates the most simplest usage of time based noise blocks:
 <li> <b>timeBasedNoise</b> is an instance of
      <a href=\"modelica://Modelica_Noise.Blocks.Noise.TimeBasedNoise\">Noise.TimeBasedNoise</a> with default options,
      with exception of the explicit setting of parameters: samplePeriod=0.02, y_min=-1, y_max=3.</li>
-<li> <b>signalBasedNoise</b> is an instance of
-     <a href=\"modelica://Modelica_Noise.Blocks.Noise.SignalBasedNoise\">Noise.SignalBasedNoise</a> with default options,
-     with exception of the explicit setting of parameters: samplePeriod=0.02, y_min=-1, y_max=3. Note,
-     the default behavior of this block is that no input connector is present, and instead \"time\" is used as \"signal\",
-     so also a time-based noise is generated.</li>
 </ul>
 
 <p>
-For both blocks, linearly interpolated, uniform noise in a band between -1 ... 3 is generated.
+Piece-wise constant, uniform noise in a band between -1 ... 3 is generated.
 The samplePeriod defines the highest frequency f contained in the noise: f = 1/0.02 = 50 Hz.
-The default behavior uses no events for the signalBasedNoise and an event at every hundreds
+The default behavior uses one event at every hundredth
 sample point for the timeBasedNoise block (so time events occur only at 0 s and 2 s).
-The result of a simulation is show in the next diagram:
+This behavior can be changed using the parameter sampleFactor of the TimeBasedNoise block.
+The output of the block does not change, if this parameter is used.
+The result of a simulation is shown in the next diagram:
 </p>
 
 <p><blockquote>
