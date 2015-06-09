@@ -1,4 +1,4 @@
-within Modelica_Noise.Blocks.Examples.NoiseExamples;
+within Noise.Examples;
 model SignalInterpolation
   "Demonstrates signal-based noise with different interpolations"
   import Modelica_Noise;
@@ -10,7 +10,7 @@ model SignalInterpolation
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false, enableNoise=true)
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
 
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise constantNoise(
+  Noise.Sources.SignalBasedNoise constantNoise(
     redeclare package interpolation =
         Modelica_Noise.Math.Random.Utilities.Interpolators.Constant,
     y_min=-1,
@@ -21,7 +21,7 @@ model SignalInterpolation
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
   Modelica.Blocks.Sources.RealExpression signal(y=sin(pi*time))
     annotation (Placement(transformation(extent={{-100,70},{-80,90}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise linearNoise(
+  Noise.Sources.SignalBasedNoise linearNoise(
     useTime=false,
     y_min=-1,
     y_max=+1,
@@ -30,7 +30,7 @@ model SignalInterpolation
     useAutomaticLocalSeed=false,
     samplePeriod=0.1)
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise smoothNoise(
+  Noise.Sources.SignalBasedNoise smoothNoise(
     useTime=false,
     y_min=-1,
     y_max=+1,

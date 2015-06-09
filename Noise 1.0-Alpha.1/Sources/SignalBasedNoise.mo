@@ -1,4 +1,4 @@
-within Modelica_Noise.Blocks.Noise;
+within Noise.Sources;
 block SignalBasedNoise
   "Noise generator for Real numbers associated with the input signal (this block computes always the same (random) output y at the same value of the input signal)"
   import Modelica_Noise.Math.Random;

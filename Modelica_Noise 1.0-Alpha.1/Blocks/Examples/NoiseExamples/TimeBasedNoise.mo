@@ -9,10 +9,6 @@ model TimeBasedNoise
     samplePeriod=0.02,
     y_min=-1,
     y_max=3) annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise signalBasedNoise(
-    samplePeriod=0.02,
-    y_min=-1,
-    y_max=3) annotation (Placement(transformation(extent={{-60,-20},{-40,0}})));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics),
     Documentation(info="<html>

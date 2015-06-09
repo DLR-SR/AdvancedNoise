@@ -1,7 +1,7 @@
 within Noise.Sources;
 block ColoredSignalBasedNoise
   "Implements a filter directly within the (signal-based) noise signal"
-  extends Modelica_Noise.Blocks.Noise.SignalBasedNoise(
+  extends SignalBasedNoise(
     redeclare replaceable package interpolation =
       Noise.Interpolators.FirstOrder constrainedby
       Noise.Interpolators.Utilities.Interfaces.PartialInterpolatorWithKernel,
