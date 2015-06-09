@@ -9,7 +9,7 @@ model Interpolation
     samplePeriod=0.1,
     sampleFactor=10,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Constant,
+        Modelica_Noise.Math.Random.Interpolators.Constant,
     y_min=-1,
     y_max=3) annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
   Blocks.Noise.TimeBasedNoise linearNoise(
@@ -19,13 +19,13 @@ model Interpolation
     y_min=-1,
     y_max=3,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear)
+        Modelica_Noise.Math.Random.Interpolators.Linear)
              annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
   Blocks.Noise.TimeBasedNoise smoothNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass,
+        Modelica_Noise.Math.Random.Interpolators.SmoothIdealLowPass,
     y_min=-1,
     y_max=3,
     sampleFactor=10)

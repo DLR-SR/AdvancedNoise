@@ -1,4 +1,4 @@
-within Modelica_Noise.Math.Random.Utilities;
+within Modelica_Noise.Math.Random;
 package Interpolators "Library of functions to interpolate in a buffer of random numbers"
    extends Modelica.Icons.Package;
 

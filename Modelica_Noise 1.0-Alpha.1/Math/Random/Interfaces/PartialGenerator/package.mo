@@ -1,4 +1,4 @@
-within Modelica_Noise.Math.Random.Utilities.Interfaces;
+within Modelica_Noise.Math.Random.Interfaces;
 partial package PartialGenerator "Interfaces of a uniform random number generator"
   extends Modelica.Icons.Package;
   constant Integer nState=1 "The dimension of the internal state vector";

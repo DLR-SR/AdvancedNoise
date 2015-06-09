@@ -1,4 +1,4 @@
-within Modelica_Noise.Math.Random.Utilities;
+within Modelica_Noise.Math.Random;
 package Interfaces "Library of partial packages and functions for the Random package"
   extends Modelica.Icons.InterfacesPackage;
 

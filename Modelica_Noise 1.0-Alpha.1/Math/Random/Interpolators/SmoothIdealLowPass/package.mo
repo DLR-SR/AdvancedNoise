@@ -1,7 +1,6 @@
-within Modelica_Noise.Math.Random.Utilities.Interpolators;
+within Modelica_Noise.Math.Random.Interpolators;
 package SmoothIdealLowPass "Smooth interpolation (with sinc function)"
-  extends Random.Utilities.Interfaces.PartialInterpolator(
-                                                final continuous=true,
+  extends Interfaces.PartialInterpolator(       final continuous=true,
                                                 final nFuture=n-1,
                                                 final nPast=n,
                                                 final varianceFactor = 0.979776342307764,
@@ -113,80 +112,6 @@ protected
   end interpolate;
 
 
-  function kernel "Kernel for ideal low pass (sinc-function)"
-    import Modelica_Noise.Math.Special.sinc;
-    import Modelica.Constants.pi;
-    input Real t "The (scaled) time for sampling period=1";
-    input Modelica.SIunits.Frequency f=1/2
-    "The cut-off frequency of the filter";
-    output Real h "The impulse response of the convolution filter";
-  algorithm
-    h := 2*f*sinc(2*pi*f*t);
-    annotation(Inline=true, Documentation(info="<html>
-<h4>Syntax</h4>
-<blockquote><code>h = SmoothIdealLowPass.<b>kernel</b>(offset); </code></blockquote>
-<h4>Description</h4>
-<p>This function defines the kernel of the <a href=\"SmoothIdealLowPass\">SmoothIdealLowPass</a> interpolation. It uses the <a href=\"Math.Special.sinc\">sinc</a> function with a specified cut-off frequency.</p>
-</html>", revisions="<html>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
-    <td valign=\"top\"> 
-
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
-</table>
-</p>
-</html>"));
-  end kernel;
-
-
-  function der_kernel_offset
-    input Real t "The (scaled) time for sampling period=1";
-    input Modelica.SIunits.Frequency f=1/2
-    "The cut-off frequency of the filter";
-    output Real h "The impulse response of the convolution filter";
-protected
-    function d = der(kernel, t);
-  algorithm
-    h := d(t,f);
-  annotation (Documentation(info="<html>
-<h4>Syntax</h4>
-<blockquote><code>der_h = SmoothIdealLowPass.<b>der_kernel_offset</b>(offset); </code></blockquote>
-<h4>Description</h4>
-<p>This function defines the derivative of the <a href=\"kernel\">kernel</a> of the <a href=\"SmoothIdealLowPass\">SmoothIdealLowPass</a> interpolation with respect to its input argument offset. This function is used for determining the derivative of the interpolated signal.</p>
-</html>", revisions="<html>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
-    <td valign=\"top\"> 
-
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
-</table>
-</p>
-</html>"));
-  end der_kernel_offset;
 
 
   annotation (Documentation(info="<html>

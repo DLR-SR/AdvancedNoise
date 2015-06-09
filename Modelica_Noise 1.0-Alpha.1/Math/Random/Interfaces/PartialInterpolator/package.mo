@@ -1,4 +1,4 @@
-within Modelica_Noise.Math.Random.Utilities.Interfaces;
+within Modelica_Noise.Math.Random.Interfaces;
 partial package PartialInterpolator "Interfaces of an interpolator in a buffer of random numbers"
   extends Modelica.Icons.Package;
   constant Boolean continuous=false

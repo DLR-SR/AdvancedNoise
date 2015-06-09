@@ -1,6 +1,6 @@
 within Modelica_Noise.Math.Random.Generators;
 package Xorshift128plus "Random number generator xorshift128+"
-  extends Random.Utilities.Interfaces.PartialGenerator(final nState=4);
+  extends Interfaces.PartialGenerator(                 final nState=4);
 
 
   redeclare function extends initialState

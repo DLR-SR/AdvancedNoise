@@ -56,8 +56,8 @@ block TimeBasedNoise
 </p>
 </html>"));
   replaceable package interpolation =
-      Modelica_Noise.Math.Random.Utilities.Interpolators.Constant constrainedby
-    Modelica_Noise.Math.Random.Utilities.Interfaces.PartialInterpolator
+      Modelica_Noise.Math.Random.Interpolators.Constant           constrainedby
+    Modelica_Noise.Math.Random.Interfaces.PartialInterpolator
     "Interpolation method in grid of raw random numbers"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
@@ -83,7 +83,7 @@ block TimeBasedNoise
 </html>"));
   replaceable package generator =
       Modelica_Noise.Math.Random.Generators.Xorshift128plus constrainedby
-    Modelica_Noise.Math.Random.Utilities.Interfaces.PartialGenerator
+    Modelica_Noise.Math.Random.Interfaces.PartialGenerator
     "Random number generator"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>

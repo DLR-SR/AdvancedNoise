@@ -1,4 +1,4 @@
-within Modelica_Noise.Math.Random.Utilities.Interpolators.Linear;
+within Modelica_Noise.Math.Random.Interpolators.Linear;
 function der_interpolate
   extends Modelica.Icons.Function;
   input Real buffer[:] "Buffer of random numbers";

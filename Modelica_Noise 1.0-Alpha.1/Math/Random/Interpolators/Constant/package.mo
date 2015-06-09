@@ -1,7 +1,6 @@
-within Modelica_Noise.Math.Random.Utilities.Interpolators;
+within Modelica_Noise.Math.Random.Interpolators;
 package Constant "Constant interpolation"
-  extends Random.Utilities.Interfaces.PartialInterpolator(
-                                                final continuous=false,
+  extends Interfaces.PartialInterpolator(       final continuous=false,
                                                 final nFuture=0,
                                                 final nPast=0,
                                                 final varianceFactor = 1,

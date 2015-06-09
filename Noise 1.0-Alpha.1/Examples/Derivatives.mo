@@ -12,7 +12,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear)
+        Modelica_Noise.Math.Random.Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
   Modelica_Noise.Blocks.Noise.TimeBasedNoise uniformSmooth(
     useAutomaticLocalSeed=false,
@@ -23,7 +23,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass)
+        Modelica_Noise.Math.Random.Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
   Modelica_Noise.Blocks.Noise.TimeBasedNoise normalLinear(
     useAutomaticLocalSeed=false,
@@ -34,7 +34,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear)
+        Modelica_Noise.Math.Random.Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
   Modelica_Noise.Blocks.Noise.TimeBasedNoise normalSmooth(
     useAutomaticLocalSeed=false,
@@ -45,7 +45,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass)
+        Modelica_Noise.Math.Random.Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-40,40},{-20,60}})));
   Modelica_Noise.Blocks.Noise.TimeBasedNoise weibullLinear(
     useAutomaticLocalSeed=false,
@@ -56,7 +56,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear)
+        Modelica_Noise.Math.Random.Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,10},{-60,30}})));
   Modelica_Noise.Blocks.Noise.TimeBasedNoise weibullSmooth(
     useAutomaticLocalSeed=false,
@@ -67,7 +67,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass)
+        Modelica_Noise.Math.Random.Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-40,10},{-20,30}})));
   Sources.SignalBasedNoise uniformLinear1(
     useAutomaticLocalSeed=false,
@@ -77,7 +77,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear,
+        Modelica_Noise.Math.Random.Interpolators.Linear,
     useTime=false)
     annotation (Placement(transformation(extent={{20,-30},{40,-10}})));
   Sources.SignalBasedNoise uniformSmooth1(
@@ -88,7 +88,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass,
+        Modelica_Noise.Math.Random.Interpolators.SmoothIdealLowPass,
     useTime=false)
     annotation (Placement(transformation(extent={{60,-30},{80,-10}})));
   Sources.SignalBasedNoise normalLinear1(
@@ -99,7 +99,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear,
+        Modelica_Noise.Math.Random.Interpolators.Linear,
     useTime=false)
     annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
   Sources.SignalBasedNoise normalSmooth1(
@@ -110,7 +110,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass,
+        Modelica_Noise.Math.Random.Interpolators.SmoothIdealLowPass,
     useTime=false)
     annotation (Placement(transformation(extent={{60,-60},{80,-40}})));
   Sources.SignalBasedNoise weibullLinear1(
@@ -121,7 +121,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear,
+        Modelica_Noise.Math.Random.Interpolators.Linear,
     useTime=false)
     annotation (Placement(transformation(extent={{20,-90},{40,-70}})));
   Sources.SignalBasedNoise weibullSmooth1(
@@ -132,7 +132,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass,
+        Modelica_Noise.Math.Random.Interpolators.SmoothIdealLowPass,
     useTime=false)
     annotation (Placement(transformation(extent={{60,-90},{80,-70}})));
   Modelica.Blocks.Sources.Sine sine(freqHz=0.3)

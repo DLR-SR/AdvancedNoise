@@ -17,7 +17,7 @@ model UniformNoiseProperties
     y_min=y_min,
     y_max=y_max,
     redeclare replaceable package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear)
+        Modelica_Noise.Math.Random.Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
   Statistics.ContinuousMean mean
     annotation (Placement(transformation(extent={{-40,60},{-20,80}})));

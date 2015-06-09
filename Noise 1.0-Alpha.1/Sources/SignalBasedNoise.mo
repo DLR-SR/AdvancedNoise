@@ -60,8 +60,8 @@ block SignalBasedNoise
 </p>
 </html>"));
   replaceable package interpolation =
-      Modelica_Noise.Math.Random.Utilities.Interpolators.Constant constrainedby
-    Modelica_Noise.Math.Random.Utilities.Interfaces.PartialInterpolator
+      Modelica_Noise.Math.Random.Interpolators.Constant           constrainedby
+    Modelica_Noise.Math.Random.Interfaces.PartialInterpolator
     "Interpolation method in grid of raw random numbers"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
@@ -87,7 +87,7 @@ block SignalBasedNoise
 </html>"));
   replaceable package generator =
       Modelica_Noise.Math.Random.Generators.Xorshift128plus constrainedby
-    Modelica_Noise.Math.Random.Utilities.Interfaces.PartialGenerator
+    Modelica_Noise.Math.Random.Interfaces.PartialGenerator
     "Random number generator"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
@@ -271,7 +271,7 @@ value has a length of 64 bits).
           lineColor={192,192,192},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid),
-        Line(visible = enableNoise,
+        Line(visible=  enableNoise,
            points={{-75,-13},{-61,-13},{-61,3},{-53,3},{-53,-45},{-45,-45},{-45,
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,

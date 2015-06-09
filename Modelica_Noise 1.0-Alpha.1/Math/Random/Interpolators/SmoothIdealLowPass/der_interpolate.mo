@@ -1,4 +1,4 @@
-within Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass;
+within Modelica_Noise.Math.Random.Interpolators.SmoothIdealLowPass;
 function der_interpolate "Interpolates the buffer using a replaceable kernel"
   extends Modelica.Icons.Function;
   input Real buffer[:] "Buffer of random numbers";

@@ -11,7 +11,7 @@ block BandLimitedWhiteNoise
       Modelica_Noise.Math.TruncatedDistributions.Normal.quantile(mu =    0,
                                                                  sigma = sqrt(noisePower)/sqrt(samplePeriod)),
     redeclare package interpolation =
-      Modelica_Noise.Math.Random.Utilities.Interpolators.Constant);
+      Modelica_Noise.Math.Random.Interpolators.Constant);
 
   parameter Real noisePower = 1 "Power of white noise signal";
   annotation (Documentation(info="<html>

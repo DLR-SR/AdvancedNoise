@@ -1,7 +1,6 @@
-within Modelica_Noise.Math.Random.Utilities.Interpolators;
+within Modelica_Noise.Math.Random.Interpolators;
 package Linear "Linear interpolation"
-  extends Random.Utilities.Interfaces.PartialInterpolator(
-                                                final continuous=true,
+  extends Interfaces.PartialInterpolator(       final continuous=true,
                                                 final nFuture=1,
                                                 final nPast=0,
                                                 final varianceFactor = 2/3,
