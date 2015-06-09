@@ -16,6 +16,8 @@ model GlobalSeed
   function random = Modelica_Noise.Math.Random.Utilities.impureRandom (final id=
          id) annotation (Documentation(info="<html>
 <p>The impure function random() can be used to retrieve a random number in when-clauses, so at event instants.</p>
+<h4>Note</h4>
+<p>This function is impure!</p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
