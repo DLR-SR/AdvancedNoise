@@ -41,11 +41,7 @@ model GlobalSeed
 </html>"));
 
 protected
-  Integer id;
-equation
-  when initial() then
-    id = Modelica_Noise.Math.Random.Utilities.initializeImpureRandom(seed);
-  end when;
+  final parameter Integer id = Modelica_Noise.Math.Random.Utilities.initializeImpureRandom(seed);
 
   annotation (
     defaultComponentName="globalSeed",

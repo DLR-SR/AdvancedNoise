@@ -118,7 +118,7 @@ block TimeBasedNoise
   parameter Integer fixedLocalSeed = 10
     "Local seed if useAutomaticLocalSeed = false"
       annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise and not useAutomaticLocalSeed));
-  final parameter Integer localSeed = if useAutomaticLocalSeed then Modelica_Noise.Math.Random.Utilities.automaticLocalSeed(getInstanceName()) else
+  final parameter Integer localSeed = if useAutomaticLocalSeed then integer(globalSeed.random()*2147483647) else
                                                                     fixedLocalSeed;
   parameter Modelica.SIunits.Time startTime = 0.0
     "Start time for sampling the raw random numbers"
