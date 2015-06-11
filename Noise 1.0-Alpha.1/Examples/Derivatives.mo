@@ -3,64 +3,64 @@ model Derivatives "Tests derivatives of the random numbers"
   extends Modelica.Icons.Example;
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise uniformLinear(
+  Sources.TimeBasedNoise uniformLinear(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation = Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise uniformSmooth(
+  Sources.TimeBasedNoise uniformSmooth(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation = Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise normalLinear(
+  Sources.TimeBasedNoise normalLinear(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation = Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise normalSmooth(
+  Sources.TimeBasedNoise normalSmooth(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation = Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-40,40},{-20,60}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise weibullLinear(
+  Sources.TimeBasedNoise weibullLinear(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation = Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,10},{-60,30}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise weibullSmooth(
+  Sources.TimeBasedNoise weibullSmooth(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation = Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-40,10},{-20,30}})));
   Sources.SignalBasedNoise uniformLinear1(
@@ -69,7 +69,7 @@ model Derivatives "Tests derivatives of the random numbers"
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
         Interpolators.Linear,
     useTime=false)
@@ -80,7 +80,7 @@ model Derivatives "Tests derivatives of the random numbers"
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
         Interpolators.SmoothIdealLowPass,
     useTime=false)
@@ -91,7 +91,7 @@ model Derivatives "Tests derivatives of the random numbers"
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
         Interpolators.Linear,
     useTime=false)
@@ -102,7 +102,7 @@ model Derivatives "Tests derivatives of the random numbers"
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
         Interpolators.SmoothIdealLowPass,
     useTime=false)
@@ -113,7 +113,7 @@ model Derivatives "Tests derivatives of the random numbers"
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
         Interpolators.Linear,
     useTime=false)
@@ -124,7 +124,7 @@ model Derivatives "Tests derivatives of the random numbers"
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
         Interpolators.SmoothIdealLowPass,
     useTime=false)

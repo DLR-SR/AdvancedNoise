@@ -33,7 +33,7 @@ block SignalBasedNoise
 
   // Advanced dialog menu: Random number properties
   replaceable function distribution =
-       Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile constrainedby
+       Modelica_Noise.Math.Distributions.Uniform.quantile constrainedby
     Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialQuantile(
       final y_min=y_min, final y_max=y_max)
     "Random number distribution (truncated to y_min..y_max)"

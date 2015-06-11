@@ -56,7 +56,7 @@ model Interpolation "Tests all interpolators"
 </table>
 </p>
 </html>"));
-  Modelica_Noise.Blocks.Noise.GenericNoise filteredNoise(
+  Sources.TimeBasedNoise filteredNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     y_min=-1,
@@ -87,7 +87,7 @@ model Interpolation "Tests all interpolators"
     order=2) annotation (Placement(transformation(extent={{-20,-18},{0,2}})));
   Modelica.Blocks.Continuous.Der derSmoothFiltered
     annotation (Placement(transformation(extent={{20,-18},{40,2}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise stepNoise(
+  Sources.TimeBasedNoise stepNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     y_min=-1,
