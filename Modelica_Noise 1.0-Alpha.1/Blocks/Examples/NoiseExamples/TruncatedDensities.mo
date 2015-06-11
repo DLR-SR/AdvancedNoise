@@ -3,7 +3,7 @@ model TruncatedDensities
   "Demonstrates how to compute truncated probability density functions"
   extends Modelica.Icons.Example;
 
-  Statistics.TruncatedDensity uniformDensity(redeclare function distribution =
+  Statistics.Density uniformDensity(redeclare function distribution =
         Modelica_Noise.Math.Distributions.Uniform.density (u_min=-4, u_max=5))
 annotation (Placement(transformation(extent={{10,20},{30,40}})));
   Modelica.Blocks.Sources.Clock clock
@@ -12,10 +12,10 @@ annotation (Placement(transformation(extent={{-80,10},{-60,30}})));
 annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
   Modelica.Blocks.Math.Add add
 annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
-  Statistics.TruncatedDensity normalDensity(redeclare function distribution =
+  Statistics.Density normalDensity(redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Normal.density (u_min=-3,u_max=3,mu=0, sigma=2))
 annotation (Placement(transformation(extent={{10,-10},{30,10}})));
-  Statistics.TruncatedDensity weibullDensity(redeclare function distribution =
+  Statistics.Density weibullDensity(redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Weibull.density (u_min=0.2, u_max=4, k=1.5, lambda=3))
 annotation (Placement(transformation(extent={{10,-40},{30,-20}})));
 equation
