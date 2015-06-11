@@ -9,82 +9,44 @@ block GenericNoise "Noise generator for arbitrary distributions"
   parameter Modelica.SIunits.Time samplePeriod(start=0.01)
     "Period for sampling the raw random numbers"
     annotation(Dialog(enable=enableNoise));
-  parameter Real y_min(start=0.0) "Minimum value of noise"
-    annotation(Dialog(enable=enableNoise));
-  parameter Real y_max(start=1.0) "Maximum value of noise"
-    annotation(Dialog(enable=enableNoise));
+  replaceable partial function distribution =
+    Modelica_Noise.Math.Distributions.Interfaces.partialQuantile
+    "Random number distribution"
+    annotation(choicesAllMatching=true, Dialog(enable=enableNoise),
+    Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
 
   // Advanced dialog menu: Noise generation
   parameter Boolean enableNoise = true "=true: y = noise, otherwise y = y_off"
     annotation(choices(checkBox=true),Dialog(tab="Advanced",group="Noise generation"));
   parameter Real y_off = 0.0 "Output if time<startTime or enableNoise=false"
     annotation(Dialog(tab="Advanced",group="Noise generation"));
-  parameter Integer sampleFactor(min=1)=100
-    "Events only at samplePeriod*sampleFactor if continuous"
-    annotation(Evaluate=true,Dialog(tab="Advanced",group="Noise generation", enable=enableNoise));
-  final parameter Integer shift = 200 - interpolation.nPast
-    "Shift noise samples to account for interpolation buffer"
-    annotation(Dialog(tab="Advanced",group="Noise generation"));
 
   // Advanced dialog menu: Random number properties
-  replaceable function distribution =
-       Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile constrainedby
-    Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialQuantile(
-      final y_min=y_min, final y_max=y_max)
-    "Random number distribution (truncated to y_min..y_max)"
-    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
-    Documentation(revisions="<html>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
-    <td valign=\"top\"> 
-
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
-</table>
-</p>
-</html>"));
-  replaceable package interpolation =
-      Modelica_Noise.Math.Random.Interpolators.Constant           constrainedby
-    Modelica_Noise.Math.Random.Interfaces.PartialInterpolator
-    "Interpolation method in grid of raw random numbers"
-    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
-    Documentation(revisions="<html>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
-    <td valign=\"top\"> 
-
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
-</table>
-</p>
-</html>"));
   replaceable package generator =
       Modelica_Noise.Math.Random.Generators.Xorshift128plus constrainedby
     Modelica_Noise.Math.Random.Interfaces.PartialGenerator
     "Random number generator"
-    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
+    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number generator",enable=enableNoise),
     Documentation(revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
@@ -111,14 +73,8 @@ block GenericNoise "Noise generator for arbitrary distributions"
   parameter Boolean useGlobalSeed = true
     "= true: use global seed, otherwise ignore it"
     annotation(choices(checkBox=true),Dialog(tab="Advanced",group = "Initialization",enable=enableNoise));
-  parameter Boolean useAutomaticLocalSeed = true
-    "= true: use instance name hash else fixedLocalSeed"
-    annotation(choices(checkBox=true),Dialog(tab="Advanced",group = "Initialization",enable=enableNoise));
-  parameter Integer fixedLocalSeed = 10
-    "Local seed if useAutomaticLocalSeed = false"
-      annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise and not useAutomaticLocalSeed));
-  final parameter Integer localSeed = if useAutomaticLocalSeed then integer(globalSeed.random()*2147483647) else
-                                                                    fixedLocalSeed;
+  parameter Integer localSeed = globalSeed.randomInteger() "Local seed"
+    annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise));
   parameter Modelica.SIunits.Time startTime = 0.0
     "Start time for sampling the raw random numbers"
     annotation(Dialog(tab="Advanced", group="Initialization",enable=enableNoise));
@@ -132,70 +88,30 @@ protected
   parameter Boolean generateNoise = enableNoise and globalSeed.enableNoise
     "= true if noise shall be generated, otherwise no noise";
 
-  // Construct sizes
-  parameter Boolean continuous = interpolation.continuous
-    "= true, if continuous interpolation";
-  parameter Real actualSamplePeriod = if continuous then sampleFactor*samplePeriod else samplePeriod
-    "Sample period of when-clause";
-  parameter Integer nFuture = interpolation.nFuture+1
-    "Number of buffer elements to be predicted in the future (+1 for crossing sample events)";
-  parameter Integer nPast = interpolation.nPast
-    "Number of buffer elements to be retained from the past";
-  parameter Integer nCopy = nPast + nFuture
-    "Number of buffer entries to retain when re-filling buffer";
-  parameter Integer nBuffer = if continuous then nPast+sampleFactor+nFuture
-                                            else nPast+      1     +nFuture
-    "Size of buffer";
-
-  // Declare buffers
+  // Declare state and random number variables
   discrete Integer state[generator.nState]
     "Internal state of random number generator";
-  discrete Real buffer[nBuffer] "Buffer to hold raw random numbers";
-  discrete Real bufferStartTime "The last time we have filled the buffer";
   discrete Real r "Uniform random number in the range (0,1]";
 
 algorithm
-  // During initialization the buffer is filled with random values
+  // We need to initialize the random number generator
   when initial() then
-    state := generator.initialState(localSeed, actualGlobalSeed);
-    bufferStartTime := time;
-    for i in 1:shift loop
-      (r, state) := generator.random(state);
-    end for;
-    for i in 1:nBuffer loop
-      (r, state) := generator.random(state);
-      buffer[i] := distribution(r);
-    end for;
-
-  // At the first sample, we simply use the initial buffer
-  elsewhen generateNoise and time >= startTime then
-    bufferStartTime := time;
+    state      := generator.initialState(localSeed, actualGlobalSeed);
+    (r, state) := generator.random(state);
+    r          := distribution(r);
 
   // At the following samples, we shift the buffer and fill the end up with new random numbers
-  elsewhen generateNoise and sample(startTime+actualSamplePeriod, actualSamplePeriod) then
-    bufferStartTime := time;
-    buffer[1:nCopy] := buffer[nBuffer-nCopy+1:nBuffer];
-    for i in nCopy+1:nBuffer loop
-      (r, state) := generator.random(state);
-      buffer[i]  := distribution(r);
-    end for;
+  elsewhen generateNoise and sample(startTime+samplePeriod, samplePeriod) then
+    (r, state) := generator.random(state);
+    r          := distribution(r);
   end when;
 
 equation
 
   // Generate noise, if requested, and make it smooth, if it is
-  y = if not generateNoise or time < startTime then y_off else
-      if interpolation.continuous then
-          smooth(interpolation.smoothness,
-                 interpolation.interpolate(buffer=       buffer,
-                                           offset=       (time-bufferStartTime) / samplePeriod + nPast,
-                                           samplePeriod= samplePeriod)) else
-                 interpolation.interpolate(buffer=       buffer,
-                                           offset=       (time-bufferStartTime) / samplePeriod + nPast,
-                                           samplePeriod= samplePeriod);
+  y = if not generateNoise or time < startTime then y_off else r;
 
-    annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise),
-              Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
+    annotation(Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
             {100,100}}), graphics={
         Polygon(
           points={{-76,90},{-84,68},{-68,68},{-76,90}},

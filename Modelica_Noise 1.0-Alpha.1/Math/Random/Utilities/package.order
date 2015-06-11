@@ -3,3 +3,4 @@ automaticGlobalSeed
 automaticLocalSeed
 initializeImpureRandom
 impureRandom
+impureRandomInteger

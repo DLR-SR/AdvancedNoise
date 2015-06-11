@@ -13,9 +13,36 @@ model GlobalSeed
   final parameter Integer seed = if useAutomaticSeed then
                                     Modelica_Noise.Math.Random.Utilities.automaticGlobalSeed()
                                  else fixedSeed;
-  function random = Modelica_Noise.Math.Random.Utilities.impureRandom (final id=
-         id) annotation (Documentation(info="<html>
+  function random = Modelica_Noise.Math.Random.Utilities.impureRandom(final id=id)
+    annotation (Documentation(info="<html>
 <p>The impure function random() can be used to retrieve a random number in when-clauses, so at event instants.</p>
+<h4>Note</h4>
+<p>This function is impure!</p>
+</html>", revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
+  function randomInteger =
+      Modelica_Noise.Math.Random.Utilities.impureRandomInteger(final id=id)
+    annotation (Documentation(info="<html>
+    <p>The impure function randomInteger() can be used to retrieve a random integer number in when-clauses, so at event instants.</p>
 <h4>Note</h4>
 <p>This function is impure!</p>
 </html>", revisions="<html>
