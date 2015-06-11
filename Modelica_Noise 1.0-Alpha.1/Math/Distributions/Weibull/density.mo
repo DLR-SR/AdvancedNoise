@@ -2,7 +2,7 @@ within Modelica_Noise.Math.Distributions.Weibull;
 function density "Density of Weibull distribution"
   extends Modelica_Noise.Math.Distributions.Interfaces.partialDensity;
   input Real lambda(min=0) = 1 "Scale parameter of the Weibull distribution" annotation(Dialog);
-  input Real k(min=0) = 1 "Shape parameter of the Weibull distribution" annotation(Dialog);
+  input Real k(min=0) "Shape parameter of the Weibull distribution" annotation(Dialog);
 algorithm
   y :=if u >= 0 then (k/lambda)*(u/lambda)^(k - 1)*exp(-(u/lambda)^k) else 0.0;
 

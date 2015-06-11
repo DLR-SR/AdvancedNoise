@@ -3,7 +3,7 @@ function quantile "Quantile of truncated Weibull distribution"
   import Modelica_Noise.Math.Distributions.Weibull;
   extends Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialQuantile;
   input Real lambda(min=0) = 1 "Scale parameter of the Weibull distribution" annotation(Dialog);
-  input Real k(min=0) = 1 "Shape parameter of the Weibull distribution" annotation(Dialog);
+  input Real k(min=0) "Shape parameter of the Weibull distribution" annotation(Dialog);
 protected
   Real cdf_min = Weibull.cumulative(y_min, lambda=lambda, k=k)
     "Value of cdf at y_min";

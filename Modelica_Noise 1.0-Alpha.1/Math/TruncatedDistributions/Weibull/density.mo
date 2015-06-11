@@ -3,7 +3,7 @@ function density "Density of truncated Weibull distribution"
   import Modelica_Noise.Math.Distributions.Weibull;
   extends Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialDensity;
   input Real lambda(min=0) = 1 "Scale parameter of the Weibull distribution" annotation(Dialog);
-  input Real k(min=0) = 1 "Shape parameter of the Weibull distribution" annotation(Dialog);
+  input Real k(min=0) "Shape parameter of the Weibull distribution" annotation(Dialog);
 protected
   Real pdf;
   Real cdf_min;
