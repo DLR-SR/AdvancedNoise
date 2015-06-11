@@ -1,7 +1,7 @@
 within Modelica_Noise.Blocks.Noise;
 block BandLimitedWhiteNoise
   "A block to produce band-limited white noise with normal distribution"
-  extends TimeBasedNoise(
+  extends GenericNoise(
     final sampleFactor = 1,
     final y_min = -Modelica.Constants.inf,
     final y_max = +Modelica.Constants.inf,

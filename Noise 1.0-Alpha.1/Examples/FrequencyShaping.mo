@@ -2,7 +2,7 @@ within Noise.Examples;
 model FrequencyShaping
   "Demonstrates shaping of the frequency content with a convolution filter"
   extends Modelica.Icons.Example;
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise filteredNoise(
+  Modelica_Noise.Blocks.Noise.GenericNoise filteredNoise(
     useAutomaticLocalSeed=false,
     y_min=-1,
     y_max=3,
@@ -12,7 +12,7 @@ model FrequencyShaping
     annotation (Placement(transformation(extent={{-60,40},{-40,60}})));
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise rawNoise(
+  Modelica_Noise.Blocks.Noise.GenericNoise rawNoise(
     useAutomaticLocalSeed=false,
     y_min=-1,
     y_max=3,
@@ -28,7 +28,7 @@ model FrequencyShaping
     annotation (Placement(transformation(extent={{20,40},{40,60}})));
   Modelica.Blocks.Continuous.Der derFilter
     annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise tabulatedNoise(
+  Modelica_Noise.Blocks.Noise.GenericNoise tabulatedNoise(
     useAutomaticLocalSeed=false,
     y_min=-1,
     y_max=3,

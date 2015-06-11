@@ -1,7 +1,7 @@
 within Noise.Examples;
 model Interpolation "Tests all interpolators"
   extends Modelica_Noise.Blocks.Examples.NoiseExamples.Interpolation;
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise filteredNoise(
+  Modelica_Noise.Blocks.Noise.GenericNoise filteredNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     y_min=-1,
@@ -32,7 +32,7 @@ model Interpolation "Tests all interpolators"
     order=2) annotation (Placement(transformation(extent={{-20,-18},{0,2}})));
   Modelica.Blocks.Continuous.Der derSmoothFiltered
     annotation (Placement(transformation(extent={{20,-18},{40,2}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise stepNoise(
+  Modelica_Noise.Blocks.Noise.GenericNoise stepNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     y_min=-1,

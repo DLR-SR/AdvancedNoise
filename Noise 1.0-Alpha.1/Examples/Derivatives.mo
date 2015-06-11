@@ -3,7 +3,7 @@ model Derivatives "Tests derivatives of the random numbers"
   extends Modelica.Icons.Example;
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise uniformLinear(
+  Modelica_Noise.Blocks.Noise.GenericNoise uniformLinear(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
@@ -14,7 +14,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare package interpolation =
         Modelica_Noise.Math.Random.Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise uniformSmooth(
+  Modelica_Noise.Blocks.Noise.GenericNoise uniformSmooth(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
@@ -25,7 +25,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare package interpolation =
         Modelica_Noise.Math.Random.Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise normalLinear(
+  Modelica_Noise.Blocks.Noise.GenericNoise normalLinear(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
@@ -36,7 +36,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare package interpolation =
         Modelica_Noise.Math.Random.Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise normalSmooth(
+  Modelica_Noise.Blocks.Noise.GenericNoise normalSmooth(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
@@ -47,7 +47,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare package interpolation =
         Modelica_Noise.Math.Random.Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-40,40},{-20,60}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise weibullLinear(
+  Modelica_Noise.Blocks.Noise.GenericNoise weibullLinear(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
@@ -58,7 +58,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare package interpolation =
         Modelica_Noise.Math.Random.Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,10},{-60,30}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise weibullSmooth(
+  Modelica_Noise.Blocks.Noise.GenericNoise weibullSmooth(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,

@@ -9,7 +9,7 @@ model AutomaticSeed
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false, enableNoise=true)
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
 
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise automaticSeed1(
+  Modelica_Noise.Blocks.Noise.GenericNoise automaticSeed1(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
@@ -17,20 +17,20 @@ model AutomaticSeed
     y_max=3,
     enableNoise=true)
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise automaticSeed2(
+  Modelica_Noise.Blocks.Noise.GenericNoise automaticSeed2(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
     y_min=-1,
     y_max=3) annotation (Placement(transformation(extent={{-60,-20},{-40,0}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise automaticSeed3(
+  Modelica_Noise.Blocks.Noise.GenericNoise automaticSeed3(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
     y_min=-1,
     y_max=3)
     annotation (Placement(transformation(extent={{-60,-60},{-40,-40}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise manualSeed1(
+  Modelica_Noise.Blocks.Noise.GenericNoise manualSeed1(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
@@ -40,7 +40,7 @@ model AutomaticSeed
     useAutomaticLocalSeed=false,
     fixedLocalSeed=1)
     annotation (Placement(transformation(extent={{0,20},{20,40}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise manualSeed2(
+  Modelica_Noise.Blocks.Noise.GenericNoise manualSeed2(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
@@ -49,7 +49,7 @@ model AutomaticSeed
     useAutomaticLocalSeed=false,
     fixedLocalSeed=2)
     annotation (Placement(transformation(extent={{0,-20},{20,0}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise manualSeed3(
+  Modelica_Noise.Blocks.Noise.GenericNoise manualSeed3(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,

@@ -1,6 +1,5 @@
 within Modelica_Noise.Blocks.Noise;
-block TimeBasedNoise
-  "Noise generator for Real numbers associated with time (this block computes always the same (random) output y at the same time instant)"
+block GenericNoise "Noise generator for arbitrary distributions"
   import Modelica_Noise.Math.Random;
   import Modelica.Utilities.Streams.print;
 
@@ -497,4 +496,4 @@ For this purpose the following parameters can be defined.
 </table>
 </p>
 </html>"));
-end TimeBasedNoise;
+end GenericNoise;

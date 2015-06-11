@@ -122,11 +122,10 @@ model MotorWithCurrentControl
         origin={110,80}), iconTransformation(extent={{40,70},{60,90}})));
   Modelica.Blocks.Math.Add addNoise
     annotation (Placement(transformation(extent={{60,70},{80,90}})));
-  Noise.TimeBasedNoise                       timeBasedNoise(
+  Noise.GenericNoise timeBasedNoise(
     samplePeriod=1/200,
     y_min=-0.01,
-    y_max=0.01)
-             annotation (Placement(transformation(extent={{26,76},{46,96}})));
+    y_max=0.01) annotation (Placement(transformation(extent={{26,76},{46,96}})));
 equation
   w = speedSensor.w;
   phi_motor = angleSensor.phi;

@@ -7,14 +7,14 @@ model Distributions "Demonstrates noise with different types of distributions"
                annotation (Placement(transformation(extent={{40,60},{60,80}})));
 
                Integer n=if time < 0.5 then 12 else 2;
-  Blocks.Noise.TimeBasedNoise uniformNoise(
+  Noise.GenericNoise uniformNoise(
     y_min=-1,
     y_max=3,
     useAutomaticLocalSeed=false,
     fixedLocalSeed=1,
     samplePeriod=samplePeriod)
-             annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
-  Blocks.Noise.TimeBasedNoise normalNoise(
+    annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
+  Noise.GenericNoise normalNoise(
     y_min=-1,
     y_max=3,
     redeclare function distribution =
@@ -23,7 +23,7 @@ model Distributions "Demonstrates noise with different types of distributions"
     fixedLocalSeed=1,
     samplePeriod=samplePeriod)
     annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
-  Blocks.Noise.TimeBasedNoise weibullNoise(
+  Noise.GenericNoise weibullNoise(
     y_min=-1,
     y_max=3,
     redeclare function distribution =
