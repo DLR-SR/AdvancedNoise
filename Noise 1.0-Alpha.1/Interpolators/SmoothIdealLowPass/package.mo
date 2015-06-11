@@ -1,10 +1,11 @@
-within Modelica_Noise.Math.Random.Interpolators;
+within Noise.Interpolators;
 package SmoothIdealLowPass "Smooth interpolation (with sinc function)"
-  extends Interfaces.PartialInterpolator(       final continuous=true,
-                                                final nFuture=n-1,
-                                                final nPast=n,
-                                                final varianceFactor = 0.979776342307764,
-                                                final smoothness = 1);
+  extends Utilities.Interfaces.PartialInterpolator(
+  final continuous=true,
+  final nFuture=n - 1,
+  final nPast=n,
+  final varianceFactor=0.979776342307764,
+  final smoothness=1);
   constant Integer n = 5 "Number of support points for convolution";
 
 
@@ -110,8 +111,6 @@ protected
 </p>
 </html>"));
   end interpolate;
-
-
 
 
   annotation (Documentation(info="<html>

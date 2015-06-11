@@ -13,50 +13,46 @@ model AutomaticSeed
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
-    y_min=-1,
-    y_max=3,
-    enableNoise=true)
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
   Modelica_Noise.Blocks.Noise.GenericNoise automaticSeed2(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
-    y_min=-1,
-    y_max=3) annotation (Placement(transformation(extent={{-60,-20},{-40,0}})));
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+    annotation (Placement(transformation(extent={{-60,-20},{-40,0}})));
   Modelica_Noise.Blocks.Noise.GenericNoise automaticSeed3(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
-    y_min=-1,
-    y_max=3)
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-60},{-40,-40}})));
   Modelica_Noise.Blocks.Noise.GenericNoise manualSeed1(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
-    y_min=-1,
-    y_max=3,
-    enableNoise=true,
-    useAutomaticLocalSeed=false,
-    fixedLocalSeed=1)
+    localSeed=1,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{0,20},{20,40}})));
   Modelica_Noise.Blocks.Noise.GenericNoise manualSeed2(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
-    y_min=-1,
-    y_max=3,
-    useAutomaticLocalSeed=false,
-    fixedLocalSeed=2)
+    localSeed=2,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{0,-20},{20,0}})));
   Modelica_Noise.Blocks.Noise.GenericNoise manualSeed3(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
-    y_min=-1,
-    y_max=3,
-    useAutomaticLocalSeed=false,
-    fixedLocalSeed=3)
+    localSeed=3,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{0,-60},{20,-40}})));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics),

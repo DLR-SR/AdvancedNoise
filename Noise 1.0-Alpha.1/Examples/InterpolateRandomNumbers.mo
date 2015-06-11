@@ -1,4 +1,4 @@
-within Modelica_Noise.Math.Random.Examples;
+within Noise.Examples;
 model InterpolateRandomNumbers
   "Interpolate random numbers with the various interpolators"
    extends Modelica.Icons.Example;
@@ -8,13 +8,14 @@ model InterpolateRandomNumbers
   parameter Integer seed = 614657 "Seed to initialize random number generator";
 
 protected
-  final parameter Integer id = Utilities.initializeImpureRandom(seed)
+  final parameter Integer id = Modelica_Noise.Math.Random.Utilities.initializeImpureRandom(
+                                                                seed)
     "An identifier to ensure initialization of the impure random number generator";
 public
   parameter Real r[100](fixed = false) "Random number buffer";
 initial algorithm
   for i in 1:100 loop
-    r[i] := Utilities.impureRandom(id);
+    r[i] := Modelica_Noise.Math.Random.Utilities.impureRandom(id);
   end for;
 
 public
@@ -24,12 +25,10 @@ public
   Real rSmooth "Smoothly inteprolated random number";
 equation
   offset    = mod(time / samplePeriod, 90) + 5.0;
-  rConstant = Interpolators.Constant.interpolate(          buffer=r,
-                                                           offset=offset);
-  rLinear   = Interpolators.Linear.interpolate(            buffer=r,
-                                                           offset=offset);
-  rSmooth   = Interpolators.SmoothIdealLowPass.interpolate(buffer=r,
-                                                           offset=offset);
+  rConstant =Noise.Interpolators.Constant.interpolate(buffer=r, offset=offset);
+  rLinear   =Noise.Interpolators.Linear.interpolate(buffer=r, offset=offset);
+  rSmooth   =Noise.Interpolators.SmoothIdealLowPass.interpolate(buffer=r,
+    offset=offset);
 
   annotation (experiment(StopTime=20, NumberOfIntervals=1000),
                                       Documentation(info="<html>

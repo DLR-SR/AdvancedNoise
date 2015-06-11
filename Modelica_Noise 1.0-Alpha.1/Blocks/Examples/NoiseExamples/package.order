@@ -1,9 +1,9 @@
-TimeBasedNoise
+GenericNoise
 AutomaticSeed
-Interpolation
 Distributions
 UniformNoiseProperties
 NormalNoiseProperties
+WeibullNoiseProperties
 Densities
 TruncatedDensities
 ImpureGenerator

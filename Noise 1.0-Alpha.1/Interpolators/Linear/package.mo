@@ -1,10 +1,11 @@
-within Modelica_Noise.Math.Random.Interpolators;
+within Noise.Interpolators;
 package Linear "Linear interpolation"
-  extends Interfaces.PartialInterpolator(       final continuous=true,
-                                                final nFuture=1,
-                                                final nPast=0,
-                                                final varianceFactor = 2/3,
-                                                final smoothness = 0);
+  extends Utilities.Interfaces.PartialInterpolator(
+  final continuous=true,
+  final nFuture=1,
+  final nPast=0,
+  final varianceFactor=2/3,
+  final smoothness=0);
 
 
   redeclare replaceable function extends interpolate

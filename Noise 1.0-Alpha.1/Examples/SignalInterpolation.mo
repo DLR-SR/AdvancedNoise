@@ -12,7 +12,7 @@ model SignalInterpolation
 
   Noise.Sources.SignalBasedNoise constantNoise(
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Interpolators.Constant,
+        Interpolators.Constant,
     y_min=-1,
     y_max=+1,
     useAutomaticLocalSeed=false,
@@ -26,7 +26,7 @@ model SignalInterpolation
     y_min=-1,
     y_max=+1,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Interpolators.Linear,
+        Interpolators.Linear,
     useAutomaticLocalSeed=false,
     samplePeriod=0.1)
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
@@ -36,7 +36,7 @@ model SignalInterpolation
     y_max=+1,
     useAutomaticLocalSeed=false,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Interpolators.SmoothIdealLowPass,
+        Interpolators.SmoothIdealLowPass,
     samplePeriod=0.1)
     annotation (Placement(transformation(extent={{-60,-30},{-40,-10}})));
 equation

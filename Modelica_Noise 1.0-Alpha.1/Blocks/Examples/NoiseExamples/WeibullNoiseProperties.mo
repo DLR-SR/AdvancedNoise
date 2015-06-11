@@ -1,13 +1,15 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
-model NormalNoiseProperties
-  "Demonstrates the computation of properties for normally distributed noise"
-  extends UniformNoiseProperties(pMean = mu, var = sigma^2,
+model WeibullNoiseProperties
+  "Demonstrates the computation of properties for Weibull distributed noise"
+  extends UniformNoiseProperties(pMean = 1, var = 1,
           noise(redeclare function distribution =
-          Modelica_Noise.Math.Distributions.Normal.quantile(mu=mu,sigma=sigma)),
-        y_min = -Modelica.Constants.inf, y_max = Modelica.Constants.inf);
+          Modelica_Noise.Math.Distributions.Weibull.quantile (
+          lambda=lambda,
+          k=k)),
+        y_min = 0, y_max = Modelica.Constants.inf);
 
-  parameter Real mu = 3 "Mean value for normal distribution";
-  parameter Real sigma = 1 "Standard deviation for normal distribution";
+  parameter Real k = 1 "Shape parameter";
+  parameter Real lambda = 1 "Scale parameter";
 
  annotation (experiment(StopTime=20, NumberOfIntervals=5000, Tolerance=1e-009),
                                      Diagram(coordinateSystem(
@@ -65,4 +67,4 @@ becomes better for smaller relative tolerances):
 </table>
 </p>
 </html>"));
-end NormalNoiseProperties;
+end WeibullNoiseProperties;

@@ -1,10 +1,11 @@
-within Modelica_Noise.Math.Random.Interpolators;
+within Noise.Interpolators;
 package Constant "Constant interpolation"
-  extends Interfaces.PartialInterpolator(       final continuous=false,
-                                                final nFuture=0,
-                                                final nPast=0,
-                                                final varianceFactor = 1,
-                                                final smoothness = -1);
+  extends Utilities.Interfaces.PartialInterpolator(
+  final continuous=false,
+  final nFuture=0,
+  final nPast=0,
+  final varianceFactor=1,
+  final smoothness=-1);
 
 
   redeclare function extends interpolate

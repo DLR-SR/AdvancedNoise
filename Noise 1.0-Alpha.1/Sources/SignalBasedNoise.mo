@@ -60,8 +60,8 @@ block SignalBasedNoise
 </p>
 </html>"));
   replaceable package interpolation =
-      Modelica_Noise.Math.Random.Interpolators.Constant           constrainedby
-    Modelica_Noise.Math.Random.Interfaces.PartialInterpolator
+      Interpolators.Constant                                      constrainedby
+    Interpolators.Utilities.Interfaces.PartialInterpolator
     "Interpolation method in grid of raw random numbers"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>

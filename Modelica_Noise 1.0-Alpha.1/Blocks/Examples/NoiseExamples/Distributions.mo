@@ -6,39 +6,29 @@ model Distributions "Demonstrates noise with different types of distributions"
   inner Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
                annotation (Placement(transformation(extent={{40,60},{60,80}})));
 
-               Integer n=if time < 0.5 then 12 else 2;
+  Integer n=if time < 0.5 then 12 else 2;
+
   Noise.GenericNoise uniformNoise(
-    y_min=-1,
-    y_max=3,
-    useAutomaticLocalSeed=false,
-    fixedLocalSeed=1,
-    samplePeriod=samplePeriod)
+    localSeed=1,
+    samplePeriod=samplePeriod,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
   Noise.GenericNoise normalNoise(
-    y_min=-1,
-    y_max=3,
+    localSeed=1,
+    samplePeriod=samplePeriod,
     redeclare function distribution =
-        Math.TruncatedDistributions.Normal.quantile,
-    useAutomaticLocalSeed=false,
-    fixedLocalSeed=1,
-    samplePeriod=samplePeriod)
+        Modelica_Noise.Math.Distributions.Normal.quantile (mu=0, sigma=1))
     annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
   Noise.GenericNoise weibullNoise(
-    y_min=-1,
-    y_max=3,
+    localSeed=1,
+    samplePeriod=samplePeriod,
     redeclare function distribution =
-        Math.TruncatedDistributions.Weibull.quantile,
-    useAutomaticLocalSeed=false,
-    fixedLocalSeed=1,
-    samplePeriod=samplePeriod)
+        Modelica_Noise.Math.Distributions.Weibull.quantile (
+        lamba=1,
+        lambda=1,
+        k=1))
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
-  Blocks.Statistics.ContinuousMean normalMean
-annotation (Placement(transformation(extent={{-20,30},{0,50}})));
-equation
-  connect(normalNoise.y, normalMean.u) annotation (Line(
-  points={{-39,40},{-22,40}},
-  color={0,0,127},
-  smooth=Smooth.None));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>

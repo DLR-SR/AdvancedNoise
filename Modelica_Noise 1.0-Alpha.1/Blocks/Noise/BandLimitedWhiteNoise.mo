@@ -2,16 +2,11 @@ within Modelica_Noise.Blocks.Noise;
 block BandLimitedWhiteNoise
   "A block to produce band-limited white noise with normal distribution"
   extends GenericNoise(
-    final sampleFactor = 1,
-    final y_min = -Modelica.Constants.inf,
-    final y_max = +Modelica.Constants.inf,
     redeclare package generator =
       Modelica_Noise.Math.Random.Generators.Xorshift128plus,
     redeclare function distribution =
-      Modelica_Noise.Math.TruncatedDistributions.Normal.quantile(mu =    0,
-                                                                 sigma = sqrt(noisePower)/sqrt(samplePeriod)),
-    redeclare package interpolation =
-      Modelica_Noise.Math.Random.Interpolators.Constant);
+      Modelica_Noise.Math.Distributions.Normal.quantile(mu =    0,
+                                                                 sigma = sqrt(noisePower)/sqrt(samplePeriod)));
 
   parameter Real noisePower = 1 "Power of white noise signal";
   annotation (Documentation(info="<html>

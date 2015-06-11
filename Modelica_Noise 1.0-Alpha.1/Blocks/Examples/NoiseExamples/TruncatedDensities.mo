@@ -4,9 +4,7 @@ model TruncatedDensities
   extends Modelica.Icons.Example;
 
   Statistics.TruncatedDensity uniformDensity(redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.density (
-        u_min=-4,
-        u_max=5))
+        Modelica_Noise.Math.Distributions.Uniform.density (u_min=-4, u_max=5))
 annotation (Placement(transformation(extent={{10,20},{30,40}})));
   Modelica.Blocks.Sources.Clock clock
 annotation (Placement(transformation(extent={{-80,10},{-60,30}})));

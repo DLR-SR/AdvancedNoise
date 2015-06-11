@@ -1,16 +1,12 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
-model TimeBasedNoise
-  "Demonstrates the most simplest usage of time based noise blocks"
+model GenericNoise "Demonstrates the most simple usage the generic noise block"
    extends Modelica.Icons.Example;
 
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{-20,40},{0,60}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise timeBasedNoise(
-    samplePeriod=0.02,
-    y_min=-1,
-    y_max=3,
-    redeclare package interpolation =
-        Modelica_Noise.Math.Random.Interpolators.Linear)
+  Modelica_Noise.Blocks.Noise.GenericNoise genericNoise(
+    samplePeriod=0.02, redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics),
@@ -62,4 +58,4 @@ The result of a simulation is shown in the next diagram:
 </table>
 </p>
 </html>"));
-end TimeBasedNoise;
+end GenericNoise;

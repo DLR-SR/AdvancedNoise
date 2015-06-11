@@ -30,7 +30,6 @@ package StepResponse "A generic filter using a tabulated step response"
   end kernel;
 
 
-
   redeclare function extends der_kernel_offset
   "Derivative of kernel for a tabulated step response"
   algorithm
