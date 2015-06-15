@@ -6,7 +6,7 @@ function initialStateWithXorshift64star
   input Integer localSeed
     "The local seed to be used for generating initial states";
   input Integer globalSeed "The global seed to be combined with the local seed";
-  input Integer nState(min=1) "The dimension of the state vector (>= 4)";
+  input Integer nState(min=1) "The dimension of the state vector (>= 1)";
   output Integer[nState] state "The generated initial states";
 
 protected
