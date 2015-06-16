@@ -8,8 +8,11 @@ function impureRandomInteger
     "Maximum integer to generate";
   output Integer y
     "A random number with a uniform distribution on the interval (0,1]";
+protected
+  Real r "Impure Real random number";
 algorithm
-  y := imin + integer(impureRandom(id=id)*(imax-imin+1));
-  y := min(imax, max(imin, y));
+  r  := impureRandom(id=id);
+  y  := integer(  r  *imax) + integer((1-r)*imin);
+  y  := min(imax, max(imin, y));
 
 end impureRandomInteger;
