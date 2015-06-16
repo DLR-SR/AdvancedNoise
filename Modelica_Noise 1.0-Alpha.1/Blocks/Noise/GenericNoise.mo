@@ -73,11 +73,19 @@ block GenericNoise "Noise generator for arbitrary distributions"
   parameter Boolean useGlobalSeed = true
     "= true: use global seed, otherwise ignore it"
     annotation(choices(checkBox=true),Dialog(tab="Advanced",group = "Initialization",enable=enableNoise));
-  parameter Integer localSeed = globalSeed.randomInteger() "Local seed"
-    annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise));
+  parameter Boolean useAutomaticLocalSeed = true
+    "= true: use automatic local seed, otherwise use fixedLocalSeed"
+    annotation(choices(checkBox=true),Dialog(tab="Advanced",group = "Initialization",enable=enableNoise));
+  parameter Integer fixedLocalSeed = 1 "Local seed"
+    annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise and not useAutomaticLocalSeed));
   parameter Modelica.SIunits.Time startTime = 0.0
     "Start time for sampling the raw random numbers"
     annotation(Dialog(tab="Advanced", group="Initialization",enable=enableNoise));
+  discrete Integer localSeed "The actual localSeed";
+equation
+  when initial() then
+    localSeed = if useAutomaticLocalSeed then globalSeed.randomInteger() else fixedLocalSeed;
+  end when;
 
   // Retrieve values from outer global seed
 protected

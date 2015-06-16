@@ -9,19 +9,22 @@ model Distributions "Demonstrates noise with different types of distributions"
   Integer n=if time < 0.5 then 12 else 2;
 
   Noise.GenericNoise uniformNoise(
-    localSeed=1,
+    useAutomaticLocalSeed=false,
+    fixedLocalSeed=1,
     samplePeriod=samplePeriod,
     redeclare function distribution =
         Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
   Noise.GenericNoise normalNoise(
-    localSeed=1,
+    useAutomaticLocalSeed=false,
+    fixedLocalSeed=1,
     samplePeriod=samplePeriod,
     redeclare function distribution =
         Modelica_Noise.Math.Distributions.Normal.quantile (mu=0, sigma=1))
     annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
   Noise.GenericNoise weibullNoise(
-    localSeed=1,
+    useAutomaticLocalSeed=false,
+    fixedLocalSeed=1,
     samplePeriod=samplePeriod,
     redeclare function distribution =
         Modelica_Noise.Math.Distributions.Weibull.quantile (

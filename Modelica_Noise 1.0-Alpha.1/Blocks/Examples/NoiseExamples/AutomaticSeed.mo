@@ -34,7 +34,8 @@ model AutomaticSeed
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
-    localSeed=1,
+    useAutomaticLocalSeed=false,
+    fixedLocalSeed=1,
     redeclare function distribution =
         Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{0,20},{20,40}})));
@@ -42,7 +43,8 @@ model AutomaticSeed
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
-    localSeed=2,
+    useAutomaticLocalSeed=false,
+    fixedLocalSeed=2,
     redeclare function distribution =
         Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{0,-20},{20,0}})));
@@ -50,7 +52,8 @@ model AutomaticSeed
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
-    localSeed=3,
+    useAutomaticLocalSeed=false,
+    fixedLocalSeed=3,
     redeclare function distribution =
         Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{0,-60},{20,-40}})));
