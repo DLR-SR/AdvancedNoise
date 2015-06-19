@@ -10,14 +10,12 @@ model UniformNoiseProperties
     "Theoretical variance of uniform distribution";
   parameter Real std =  sqrt(var)
     "Theoretical standard deviation of uniform distribution";
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
-        false) annotation (Placement(transformation(extent={{80,60},{100,80}})));
-  Blocks.Noise.TimeBasedNoise noise(
-    samplePeriod=0.001,
-    y_min=y_min,
-    y_max=y_max,
-    redeclare replaceable package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear)
+  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
+    annotation (Placement(transformation(extent={{80,60},{100,80}})));
+  Noise.GenericNoise noise(
+    samplePeriod=0.001, redeclare replaceable function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=y_min, y_max=
+            y_max))
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
   Statistics.ContinuousMean mean
     annotation (Placement(transformation(extent={{-40,60},{-20,80}})));
@@ -31,7 +29,7 @@ annotation (Placement(transformation(extent={{-40,0},{-20,20}})));
     annotation (Placement(transformation(extent={{-10,40},{10,60}})));
   Modelica.Blocks.Math.Feedback varianceError
     annotation (Placement(transformation(extent={{40,0},{60,20}})));
-  Modelica.Blocks.Sources.Constant theoreticalSigma(k=std*sqrt(noise.interpolation.varianceFactor))
+  Modelica.Blocks.Sources.Constant theoreticalSigma(k=std)
     annotation (Placement(transformation(extent={{-10,-40},{10,-20}})));
   Statistics.StandardDeviation standardDeviation
 annotation (Placement(transformation(extent={{-40,-80},{-20,-60}})));

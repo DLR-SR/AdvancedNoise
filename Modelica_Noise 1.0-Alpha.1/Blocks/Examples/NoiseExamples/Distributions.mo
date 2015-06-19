@@ -6,39 +6,32 @@ model Distributions "Demonstrates noise with different types of distributions"
   inner Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
                annotation (Placement(transformation(extent={{40,60},{60,80}})));
 
-               Integer n=if time < 0.5 then 12 else 2;
-  Blocks.Noise.TimeBasedNoise uniformNoise(
-    y_min=-1,
-    y_max=3,
+  Integer n=if time < 0.5 then 12 else 2;
+
+  Noise.GenericNoise uniformNoise(
     useAutomaticLocalSeed=false,
     fixedLocalSeed=1,
-    samplePeriod=samplePeriod)
-             annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
-  Blocks.Noise.TimeBasedNoise normalNoise(
-    y_min=-1,
-    y_max=3,
+    samplePeriod=samplePeriod,
     redeclare function distribution =
-        Math.TruncatedDistributions.Normal.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+    annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
+  Noise.GenericNoise normalNoise(
     useAutomaticLocalSeed=false,
     fixedLocalSeed=1,
-    samplePeriod=samplePeriod)
+    samplePeriod=samplePeriod,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Normal.quantile (mu=0, sigma=1))
     annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
-  Blocks.Noise.TimeBasedNoise weibullNoise(
-    y_min=-1,
-    y_max=3,
-    redeclare function distribution =
-        Math.TruncatedDistributions.Weibull.quantile,
+  Noise.GenericNoise weibullNoise(
     useAutomaticLocalSeed=false,
     fixedLocalSeed=1,
-    samplePeriod=samplePeriod)
+    samplePeriod=samplePeriod,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Weibull.quantile (
+        lamba=1,
+        lambda=1,
+        k=1))
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
-  Blocks.Statistics.ContinuousMean normalMean
-annotation (Placement(transformation(extent={{-20,30},{0,50}})));
-equation
-  connect(normalNoise.y, normalMean.u) annotation (Line(
-  points={{-39,40},{-22,40}},
-  color={0,0,127},
-  smooth=Smooth.None));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>

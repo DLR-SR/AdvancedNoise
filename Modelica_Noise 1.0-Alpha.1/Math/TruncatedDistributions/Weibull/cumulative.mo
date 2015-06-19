@@ -5,7 +5,7 @@ function cumulative
   extends
     Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialCumulative;
   input Real lambda(min=0) = 1 "Scale parameter of the Weibull distribution" annotation(Dialog);
-  input Real k(min=0) = 1 "Shape parameter of the Weibull distribution" annotation(Dialog);
+  input Real k(min=0) "Shape parameter of the Weibull distribution" annotation(Dialog);
 protected
   Real cdf;
   Real cdf_min;

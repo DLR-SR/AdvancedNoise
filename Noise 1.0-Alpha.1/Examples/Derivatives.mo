@@ -3,136 +3,130 @@ model Derivatives "Tests derivatives of the random numbers"
   extends Modelica.Icons.Example;
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise uniformLinear(
+  Sources.TimeBasedNoise uniformLinear(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
-    redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear)
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
+    redeclare package interpolation = Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,70},{-60,90}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise uniformSmooth(
+  Sources.TimeBasedNoise uniformSmooth(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
-    redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass)
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
+    redeclare package interpolation = Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-40,70},{-20,90}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise normalLinear(
+  Sources.TimeBasedNoise normalLinear(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
-    redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear)
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
+    redeclare package interpolation = Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,40},{-60,60}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise normalSmooth(
+  Sources.TimeBasedNoise normalSmooth(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
-    redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass)
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
+    redeclare package interpolation = Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-40,40},{-20,60}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise weibullLinear(
+  Sources.TimeBasedNoise weibullLinear(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
-    redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear)
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
+    redeclare package interpolation = Interpolators.Linear)
     annotation (Placement(transformation(extent={{-80,10},{-60,30}})));
-  Modelica_Noise.Blocks.Noise.TimeBasedNoise weibullSmooth(
+  Sources.TimeBasedNoise weibullSmooth(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
-    redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass)
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
+    redeclare package interpolation = Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-40,10},{-20,30}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise uniformLinear1(
+  Sources.SignalBasedNoise uniformLinear1(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear,
+        Interpolators.Linear,
     useTime=false)
     annotation (Placement(transformation(extent={{20,-30},{40,-10}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise uniformSmooth1(
+  Sources.SignalBasedNoise uniformSmooth1(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass,
+        Interpolators.SmoothIdealLowPass,
     useTime=false)
     annotation (Placement(transformation(extent={{60,-30},{80,-10}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise normalLinear1(
+  Sources.SignalBasedNoise normalLinear1(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear,
+        Interpolators.Linear,
     useTime=false)
     annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise normalSmooth1(
+  Sources.SignalBasedNoise normalSmooth1(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass,
+        Interpolators.SmoothIdealLowPass,
     useTime=false)
     annotation (Placement(transformation(extent={{60,-60},{80,-40}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise weibullLinear1(
+  Sources.SignalBasedNoise weibullLinear1(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.Linear,
+        Interpolators.Linear,
     useTime=false)
     annotation (Placement(transformation(extent={{20,-90},{40,-70}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise weibullSmooth1(
+  Sources.SignalBasedNoise weibullSmooth1(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     y_min=-1,
     y_max=3,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Uniform.quantile,
+        Modelica_Noise.Math.Distributions.Uniform.quantile,
     redeclare package interpolation =
-        Modelica_Noise.Math.Random.Utilities.Interpolators.SmoothIdealLowPass,
+        Interpolators.SmoothIdealLowPass,
     useTime=false)
     annotation (Placement(transformation(extent={{60,-90},{80,-70}})));
   Modelica.Blocks.Sources.Sine sine(freqHz=0.3)

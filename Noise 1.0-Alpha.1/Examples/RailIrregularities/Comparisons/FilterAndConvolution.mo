@@ -13,7 +13,7 @@ model FilterAndConvolution
 
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
                annotation (Placement(transformation(extent={{60,60},{80,80}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise spaceDomainNoiseMinimum(
+  Sources.SignalBasedNoise spaceDomainNoiseMinimum(
     useTime=false,
     redeclare package interpolation =
         Noise.Examples.RailIrregularities.MinimumPhaseInterpolator,
@@ -34,7 +34,7 @@ model FilterAndConvolution
         4.5134777e-03} ./ {velocity.k,1}, a={1.0000000e+00,3.0670519e+00,2.2183340e-01}
          ./ {velocity.k^2,velocity.k,1}) if doFilter
     annotation (Placement(transformation(extent={{20,-20},{40,0}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise spaceDomainNoiseWhite(
+  Sources.SignalBasedNoise spaceDomainNoiseWhite(
     useTime=false,
     y_min=-1e10,
     y_max=+1e10,
@@ -44,7 +44,7 @@ model FilterAndConvolution
         Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
            sqrt(0.5)/sqrt(spaceDomainNoiseMinimum.samplePeriod))) if doFilter
     annotation (Placement(transformation(extent={{-20,-20},{0,0}})));
-  Modelica_Noise.Blocks.Noise.SignalBasedNoise spaceDomainNoiseZero(
+  Sources.SignalBasedNoise spaceDomainNoiseZero(
     useTime=false,
     y_min=-1e10,
     y_max=+1e10,

@@ -1,4 +1,3 @@
 GlobalSeed
+GenericNoise
 BandLimitedWhiteNoise
-TimeBasedNoise
-SignalBasedNoise

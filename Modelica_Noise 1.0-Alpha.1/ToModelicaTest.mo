@@ -266,20 +266,6 @@ package ToModelicaTest "Functions to be included in package ModelicaTest"
     algorithm
        print("\n... Check Math.TruncatedDistributions");
 
-       // check Uniform
-       y1 := TruncatedDistributions.Uniform.density(u,-1,2);
-       y2 := TruncatedDistributions.Uniform.cumulative(u,-1,2);
-       y3 := Internal.derTwoSided(u,y2);
-       err  := max(abs(y1 - y3));
-       print("Uniform.density: err = " + String(err));
-       assert( err < 0.2, "Uniform.density not correctly computed");
-
-       y1 := TruncatedDistributions.Uniform.quantile(u1,-1,2);
-       u2 := TruncatedDistributions.Uniform.cumulative(y1,-1,2);
-       err :=max(abs(u1 - u2));
-       print("Uniform.cumulative/.quantile: err = " + String(err));
-       assert( err < 1e-14, "Uniform.cumulative or .quantile not correctly computed");
-
        // check Normal
        y1 := TruncatedDistributions.Normal.density(u,u_min=-1.5,u_max=1.5);
        y2 := TruncatedDistributions.Normal.cumulative(u,u_min=-1.5,u_max=1.5);

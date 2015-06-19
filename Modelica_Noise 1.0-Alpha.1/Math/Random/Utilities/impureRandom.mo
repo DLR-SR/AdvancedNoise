@@ -1,5 +1,5 @@
 within Modelica_Noise.Math.Random.Utilities;
-impure function impureRandom
+function impureRandom
   "Impure random number generator (with hidden state vector)"
   input Integer id
     "Identification number from initializeImpureRandom(..) function (is needed for correct sorting)";
@@ -46,6 +46,8 @@ is returned, so the function is impure.
 <a href=\"modelica://Modelica_Noise.Math.Random.Utilities.initializeImpureRandom\">initializeImpureRandom</a>,
 <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Random.Generators</a>
 </p>
+<h4>Note</h4>
+<p>This function is impure!</p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>

@@ -3,9 +3,7 @@ model NormalNoiseProperties
   "Demonstrates the computation of properties for normally distributed noise"
   extends UniformNoiseProperties(pMean = mu, var = sigma^2,
           noise(redeclare function distribution =
-          Modelica_Noise.Math.TruncatedDistributions.Normal.quantile(mu=mu,sigma=sigma),
-        redeclare package interpolation =
-          Modelica_Noise.Math.Random.Utilities.Interpolators.Linear),
+          Modelica_Noise.Math.Distributions.Normal.quantile(mu=mu,sigma=sigma)),
         y_min = -Modelica.Constants.inf, y_max = Modelica.Constants.inf);
 
   parameter Real mu = 3 "Mean value for normal distribution";

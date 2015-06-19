@@ -2,7 +2,7 @@ within Modelica_Noise.Math.Distributions.Weibull;
 function quantile "Quantile of Weibull distribution"
   extends Modelica_Noise.Math.Distributions.Interfaces.partialQuantile;
   input Real lambda(min=0) = 1 "Scale parameter of the Weibull distribution" annotation(Dialog);
-  input Real k(min=0) = 1 "Shape parameter of the Weibull distribution" annotation(Dialog);
+  input Real k(min=0) "Shape parameter of the Weibull distribution" annotation(Dialog);
 algorithm
   y := lambda * (-log( 1-u)) ^(1/k);
 
