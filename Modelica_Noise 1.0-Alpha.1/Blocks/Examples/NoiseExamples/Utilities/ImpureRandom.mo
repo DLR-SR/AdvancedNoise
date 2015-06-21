@@ -15,15 +15,16 @@ equation
    end when;
   annotation (Documentation(info="<html>
 <p>
-This block demonstrates how to implement an block usign the impure
-random number generator.
+This block demonstrates how to implement a block usign the impure
+random number generator. This block is used in the example
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.ImpureGenerator\">Examples.NoiseExamples.ImpureGenerator</a>.
 </p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>

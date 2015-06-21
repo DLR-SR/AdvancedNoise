@@ -13,7 +13,7 @@ Uniform.<b>quantile</b>(u, y_min=0, y_max=1);
 
 <h4>Description</h4>
 <p>
-This function computes the inverse cumulative distribution function (= quantile) according to a <b>uniform</b
+This function computes the inverse cumulative distribution function (= quantile) according to a <b>uniform</b>
 distribution in a band. Input argument u must be in the range:
 </p>
 
@@ -62,7 +62,7 @@ For more details, see
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>

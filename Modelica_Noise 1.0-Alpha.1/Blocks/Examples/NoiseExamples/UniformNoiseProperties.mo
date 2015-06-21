@@ -10,12 +10,13 @@ model UniformNoiseProperties
     "Theoretical variance of uniform distribution";
   parameter Real std =  sqrt(var)
     "Theoretical standard deviation of uniform distribution";
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
+  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{80,60},{100,80}})));
   Noise.GenericNoise noise(
     samplePeriod=0.001, redeclare replaceable function distribution =
         Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=y_min, y_max=
-            y_max))
+            y_max),
+    useAutomaticLocalSeed=false)
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
   Statistics.ContinuousMean mean
     annotation (Placement(transformation(extent={{-40,60},{-20,80}})));
@@ -84,17 +85,31 @@ equation
                                      Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
-<p>This example demonstrates statistical properties of time based noise using a <b>uniform</b> random number distribution. Block &QUOT;noise&QUOT; defines a band of 0 .. 6 and from the generated noise the mean and the variance is computed. In a first experiment, constant interpolation is chosen. Simulation results are shown in the next diagram: </p>
-<blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/UniformNoiseProperties1.png\"/> </blockquote>
-<p>The mean value of a uniform noise in the range 0 .. 6 is 3 and the variance of a uniform noise is half of the band, so 3 as well. The simulation results above show good agreement. </p>
-<p>In a second example linear interpolation is used instead. Since the signal is no longer random between two sample instants (but changes linearly between two random values), the statistical properties might be different: In fact, it can be shown that the mean value still remains the same (so 3 in the example), but the variance of the linearly interpolated signal is only 2/3 of the constantly interpolated signal (so 2 in the example). Simulation results are shown in the next diagram, with good agreement for the mean value and reasonable agreement for the variance (the agreement of the variance becomes better for smaller relative tolerances): </p>
-<blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/UniformNoiseProperties2.png\"/> </blockquote>
+<p>
+This example demonstrates statistical properties of the
+<a href=\"modelica://Modelica_Noise.Blocks.Noise.GenericNoise\">Blocks.Noise.GenericNoise</a> block
+using a <b>uniform</b> random number distribution. 
+Block &quot;noise&quot; defines a band of 0 .. 6 and from the generated noise the mean and the variance
+is computed with blocks of package <a href=\"modelica://Modelica_Noise.Blocks.Statistics\">Blocks.Statistics</a>.
+Simulation results are shown in the next diagram: 
+</p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/UniformNoiseProperties1.png\"/>
+</blockquote></p>
+
+<p>
+The mean value of a uniform noise in the range 0 .. 6 is 3 and the variance of a uniform noise is 
+half of the band, so 3 as well. The simulation results above show good agreement (after a short initial phase). 
+This demonstrates that the random number generator and the mapping to a uniform
+distribution have good statistical properties.
+</p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>

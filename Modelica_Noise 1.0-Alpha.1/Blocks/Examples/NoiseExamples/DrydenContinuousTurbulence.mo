@@ -1,6 +1,6 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
 model DrydenContinuousTurbulence
-  "A simple model of vertical Dryden gust speed at low altitudes < 1000ft"
+  "Demonstrates how to model wind turbulence for aircrafts with the BandLimitedWhiteNoise block (a simple model of vertical Dryden gust speed at low altitudes < 1000 ft)"
   extends Modelica.Icons.Example;
   import SI = Modelica.SIunits;
   import Modelica.Constants.pi;
@@ -30,29 +30,67 @@ equation
       points={{11,10},{38,10}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+  annotation (experiment(StopTime=100),
+              Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics), Documentation(info="<html>
-<p>This example shows how to configure the noise block to feed a Dryden continuous turbulence model.</p>
-<h4><span style=\"color:#008000\">Turbulence model for vertical gust speed at low altitudes</span></h4>
-<p>The turbulence model is given by the following filter:</p>
-<p><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/equation-W0zl2Gay.png\" alt=\"H_w(s) = sigma*sqrt(L_w/(pi*V)) * ((1 + sqrt(3)*L_w/V*s) / (1+L_w/V*s)^2)\"/>.</p>
-<p>The filter is parametrized with the following parameters:</p>
+<p>
+This example shows how to use the
+<a href=\"modelica://Modelica_Noise.Blocks.Noise.BandLimitedWhiteNoise\">BandLimitedWhiteNoise</a>
+to feed a Dryden continuous turbulence model. This model is used to describe turbulent wind at low altitudes
+that varies randomly in space
+(see also <a href=\"https://en.wikipedia.org/wiki/Continuous_gusts\">wikipedia</a>).
+</p>
+
+<h4>
+Turbulence model for vertical gust speed at low altitudes
+</h4>
+
+<p>
+The turbulence model is defined by the following filter:
+</p>
+
+<blockquote><p>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/equation-W0zl2Gay.png\" alt=\"H_w(s) = sigma*sqrt(L_w/(pi*V)) * ((1 + sqrt(3)*L_w/V*s) / (1+L_w/V*s)^2)\"/>.
+</p></blockquote>
+
+<p>
+The filter is parametrized with the following parameters:
+</p>
+
 <ul>
-<li>Lw is the turbulence scale. <br>In low altitudes, it is equal to the flight altitude.</li>
-<li>sigma is the turbulence intensity. <br>In low altitudes, it is equal to 1/10 of the wind speed at 20 ft altitude, which is 30 kts for medium turbulence.</li>
-<li>V is the airspeed of the aircraft.<br>It is approximately 150 kts during the approach (i.e. at low altitudes).</li>
+<li> Lw is the turbulence scale. <br>In low altitudes, it is equal to the flight altitude.</li>
+<li> sigma is the turbulence intensity. <br>In low altitudes, it is equal to 1/10 of the
+     wind speed at 20 ft altitude, which is 30 kts for medium turbulence.</li>
+<li> V is the airspeed of the aircraft.<br>It is approximately 150 kts during the approach (i.e. at low altitudes).</li>
 </ul>
-<h4><span style=\"color:#008000\">The input to the filter</span></h4>
-<p>The input to the filter is white noise with a standard normal distribution, i.e. mean=0 and variance=1.</p>
-<p>However, in order to account for change of noise power due to sampling, the noise must be scaled with sqrt(samplePeriod).</p>
-<p>Additionally, the noise must be scaled with the appropriate factor of the interpolation.</p>
-<h4><span style=\"color:#008000\">Example output</span></h4>
-<p><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/DrydenContinuousTurbulence.PNG\"/></p>
-<h4><span style=\"color:#008000\">Reference</span></h4>
+
+<h4>
+The input to the filter
+</h4>
+
+<p>
+The input to the filter is white noise with a standard normal distribution,
+i.e. mean=0 and variance=1. However, in order to account for change of noise power 
+due to sampling, the noise must be scaled with sqrt(samplePeriod).
+</p>
+
+<h4>Example output</h4>
+
+<blockquote>
+<p>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/DrydenContinuousTurbulence.png\"/>
+</p></blockquote>
+
+<h4>
+Reference
+</h4>
+
 <ol>
+<li>Original source: Dryden Wind Turbulence model in US military standard 
+    <a href=\"http://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-F/MIL-F-8785C_5295/\">MIL-F-8785</a>.</li>
+
 <li>Dryden Wind Turbulence Model in the Matlab Aerospace blockset<br><a href=\"
 http://de.mathworks.com/help/aeroblks/drydenwindturbulencemodelcontinuous.html\">http://de.mathworks.com/help/aeroblks/drydenwindturbulencemodelcontinuous.html</a></li>
-<li>Source of the filter formula:<br><code>H_w(s) = sigma*sqrt(L_w/(pi*V)) * ((1 + sqrt(3)*L_w/V*s) / (1+L_w/V*s)^2)</code></li>
 </ol>
 </html>"));
 end DrydenContinuousTurbulence;

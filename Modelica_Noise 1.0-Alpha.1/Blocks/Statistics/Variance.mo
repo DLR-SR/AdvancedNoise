@@ -8,62 +8,25 @@ block Variance "Calculates the empirical variance of its input signal"
   Modelica.Blocks.Interfaces.RealInput u "Noisy input signal" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput y "Variance of the input signal"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
-
-  ContinuousMean mean1(t_eps=t_eps)
-    annotation (Placement(transformation(extent={{-80,-40},{-60,-20}})));
-  ContinuousMean mean2(t_eps=t_eps)
-    annotation (Placement(transformation(extent={{10,-10},{30,10}})));
-  Modelica.Blocks.Math.MultiProduct squared(nu=2)
-    annotation (Placement(transformation(extent={{-20,-6},{-8,6}})));
-  Modelica.Blocks.Math.Feedback subtract
-    annotation (Placement(transformation(extent={{-54,-10},{-34,10}})));
-  Modelica.Blocks.Math.Max max
-    annotation (Placement(transformation(extent={{52,-10},{72,10}})));
-  Modelica.Blocks.Sources.Constant const(k=0)
-    annotation (Placement(transformation(extent={{10,-40},{30,-20}})));
+protected
+  Real mu "Mean value (state variable)";
+  Real var "Variance (state variable)";
+  parameter Real t_0(fixed=false) "Start time";
+initial equation
+  t_0 = time;
+  mu  = u;
+  var = 0;
 equation
-  connect(mean1.u, u) annotation (Line(
-      points={{-82,-30},{-90,-30},{-90,0},{-120,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(mean1.y, subtract.u2) annotation (Line(
-      points={{-59,-30},{-44,-30},{-44,-8}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(u, subtract.u1) annotation (Line(
-      points={{-120,0},{-52,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(subtract.y, squared.u[1]) annotation (Line(
-      points={{-35,0},{-28,0},{-28,2.1},{-20,2.1}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(subtract.y, squared.u[2]) annotation (Line(
-      points={{-35,0},{-28,0},{-28,-2.1},{-20,-2.1}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(squared.y, mean2.u) annotation (Line(
-      points={{-6.98,0},{8,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(mean2.y, max.u1) annotation (Line(
-      points={{31,0},{40,0},{40,6},{50,6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(const.y, max.u2) annotation (Line(
-      points={{31,-30},{40,-30},{40,-6},{50,-6}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  connect(max.y, y) annotation (Line(
-      points={{73,0},{110,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+  der(mu) = noEvent(if time >= t_0 + t_eps then (u-mu)/(time-t_0) else 0);
+  der(var) = noEvent(if time >= t_0 + t_eps then ((u-mu)^2 - var)/(time - t_0) else 0);
+  y = noEvent(if time >= t_0 + t_eps then max(var,0) else 0);
+
   annotation (Documentation(revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
@@ -79,11 +42,24 @@ equation
 </table>
 </p>
 </html>",                                 info="<html>
-<p>This block calculates the empirical variance of its input signal. It uses the formula:</p>
+<p>
+This block calculates the empirical variance of its input signal. It is based on the formula
+(but implemented in a more reliable numerical way):
+</p>
+<blockquote>
 <pre>y = mean(  (u - mean(u))^2  )</pre>
-<p>The <a href=\"ContinuousMean\">ContinuousMean</a> block is used to calculate the mean values in this formula.</p>
-<p>The parameter t_eps is used to conservatively guard against division by zero. You can also set it to zero, if your solver supports this.</p>
+</blockquote>
+
+<p>The parameter t_eps is used to guard against division by zero (the variance computation
+starts at startTime + t_eps and before that time instant y = 0).</p>
 <p>The variance of a signal is also equal to its mean power.</p>
+
+<p>
+This block is demonstrated in the examples
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.UniformNoiseProperties\">UniformNoiseProperties</a>,
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.NormalNoiseProperties\">NormalNoiseProperties</a> and
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.WeibullNoiseProperties\">WeibullNoiseProperties</a>.
+</p>
 </html>"),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics),

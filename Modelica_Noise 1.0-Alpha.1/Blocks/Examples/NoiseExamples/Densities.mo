@@ -43,7 +43,7 @@ equation
   smooth=Smooth.None));
  annotation (experiment(StopTime=20, NumberOfIntervals=1000),
                                      Diagram(coordinateSystem(
-          preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
+          preserveAspectRatio=false, extent={{-100,-100},{100,100}})),
     Documentation(info="<html>
 <p>
 This example demonstrates how to compute the probability density functions (pdfs) of
@@ -62,7 +62,7 @@ inputs:
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>

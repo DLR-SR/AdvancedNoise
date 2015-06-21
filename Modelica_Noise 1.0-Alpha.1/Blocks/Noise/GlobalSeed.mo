@@ -12,8 +12,9 @@ model GlobalSeed
       annotation(Dialog(enable=not useAutomaticSeed));
   final parameter Integer seed = if useAutomaticSeed then
                                     Modelica_Noise.Math.Random.Utilities.automaticGlobalSeed()
-                                 else fixedSeed;
+                                  else fixedSeed "Actually used global seed";
   function random = Modelica_Noise.Math.Random.Utilities.impureRandom(final id=id)
+    "Impure random number generator function"
     annotation (Documentation(info="<html>
 <p>The impure function random() can be used to retrieve a random number in when-clauses, so at event instants.</p>
 <h4>Note</h4>
@@ -23,7 +24,7 @@ model GlobalSeed
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
@@ -41,6 +42,7 @@ model GlobalSeed
 </html>"));
   function randomInteger =
       Modelica_Noise.Math.Random.Utilities.impureRandomInteger(final id=id)
+    "Impure Integer random number generator function"
     annotation (Documentation(info="<html>
     <p>The impure function randomInteger() can be used to retrieve a random integer number in when-clauses, so at event instants.</p>
 <h4>Note</h4>
@@ -50,7 +52,7 @@ model GlobalSeed
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
@@ -110,7 +112,7 @@ into your model and specify the seed.
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
@@ -128,13 +130,12 @@ into your model and specify the seed.
 </html>", info="<html>
 <p>
 When using one of the blocks of sublibrary <a href=\"modelica://Modelica_Noise.Blocks.Noise\">Noise</a>,
-on the same or a higher hierarchical level,
-block <a href=\"Modelica_Noise.Blocks.Noise.GlobalSeed\">Noise.GlobalSeed</a>
+on the same or a higher hierarchical level, Noise.GlobalSeed
 must be dragged resulting in a declaration
 </p>
 
 <pre>
-   <b>inner</b> Noise.GlobalSeed globalSeed;
+   <b>inner</b> Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed;
 </pre>
 
 <p>
@@ -150,13 +151,13 @@ hierarchical level. The following options can be selected:
 
 <tr><td> <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/GlobalSeed_FixedSeed.png\"> </td>
     <td> <b>useAutomaticSeed=false</b> (= default):<br>
-         A fixed global seed is defined with Integer parameter fixedSeed. The value of the seed
+         A fixed global seed is defined with Integer parameter fixedSeed. The value of fixedSeed
          is displayed in the icon. By default all Noise blocks use fixedSeed for initialization of their
-         pseudo random number generators, in combination with a local seed defined for the every instance
+         pseudo random number generators, in combination with a local seed defined for every instance
          separately. Therefore, whenever a simulation is performed with the
          same fixedSeed exactly the same noise is generated in all instances of the Noise
          blocks (provided the settings of these blocks is not changed as well).<br>
-         This option can be used (a) to design a control system and keep the same
+         This option can be used (a) to design a control system (e.g. by parameter optimization) and keep the same
          noise for all simulations, or (b) perform Monte Carlo Simulations where 
          fixedSeed is changed from the environment for every simulation, in order to
          produce different noise at every simulation run.</td></tr>
@@ -180,19 +181,37 @@ hierarchical level. The following options can be selected:
 </p></blockquote>
 
 <p>
-Additionally, the globalSeed instance provides the impure function <b>random</b>().
-This function uses the <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift1024star\">xorshift1024*</a>
-pseudo random number generator. It is initialized with the global seed defined in globalSeed
-(so either with parameter fixedSeed, or automatically computed by process ID and local time).
-Since random() is an impure function, it can only be called in a when-clause (so at an event).
+Additionally, the globalSeed instance provides the following impure functions
+</p>
+
+<ul>
+<li> <b>random</b>():<br>
+     This function uses the <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift1024star\">xorshift1024*</a>
+     pseudo random number generator to produce random numbers in the range 0 &lt; random numbers &le; 1. 
+     It is initialized with the global seed defined in globalSeed
+     (so either with parameter fixedSeed, or automatically computed by process ID and local time).
+     Since random() is an impure function, it should only be called in a when-clause (so at an event).</li>
+<li> <b>randomInteger</b>(imin=1,imax=Modelica.Constants.Integer_inf):<br>
+     This function uses the random() pseudo random number generator and maps the returned random value
+     into the Integer range imin ... imax. By default, imin=1 and imax=Modelica.Constants.Integer_inf.
+     Since randomInteger() is an impure function, it should only be called in a when-clause 
+     (so at an event).</li>
+</ul>
+
+<p>
+Note, the usage of this block is demonstrated with examples
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.AutomaticSeed\">AutomaticSeed</a> and
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.ImpureGenerator\">ImpureGenerator</a>.
 </p>
 
 <p>
-Remark: Some pseudo-random number generators demand for larger seed values (array of Integers).
-In this case the large seed is automatically generated out of the global and local seed values
-by generating random values with the <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64star</a>
-pseudo random number generator and using the 64-bit state of this generator to fill the elements
-of the state vector of the desired generator.
+Remark: The \"xorshift1024\" pseudo-random number generator has an internal state of 33 Integers.
+This state is initialized in the following way: The pseudo-random number generator
+<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64star</a>
+is used to compute these 33 Integers. This random number generator has a state of 2 Integers which
+is initialized with the global and local seed integers. Afterwards, random values are produced
+with this random number generator and utilized as values for the internal state of
+the Xorshift1024star random number generator.
 </p>
 </html>"));
 end GlobalSeed;

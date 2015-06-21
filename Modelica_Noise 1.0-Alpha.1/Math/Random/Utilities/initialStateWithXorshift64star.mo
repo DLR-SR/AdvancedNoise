@@ -35,7 +35,7 @@ algorithm
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
@@ -60,7 +60,7 @@ state = Utilities.<b>initialStateWithXorshift6star</b>(localSeed, globalSeed, nS
 
 <p>
 The <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64star</a>
-random number generator is used to fill a state vector of length nState (nState &ge;4) with random numbers and return
+random number generator is used to fill a state vector of length nState (nState &ge; 1) with random numbers and return
 this vector. Arguments localSeed and globalSeed are any Integer numbers (including zero or negative number)
 that characterize the initial state.
 If the same localSeed, globalSeed, nState is given, the same state vector is returned.

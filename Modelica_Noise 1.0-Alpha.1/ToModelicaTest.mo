@@ -64,7 +64,7 @@ package ToModelicaTest "Functions to be included in package ModelicaTest"
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
 <table border=0>
@@ -148,7 +148,7 @@ package ToModelicaTest "Functions to be included in package ModelicaTest"
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
 <table border=0>
@@ -231,7 +231,7 @@ package ToModelicaTest "Functions to be included in package ModelicaTest"
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
 <table border=0>
@@ -298,7 +298,7 @@ package ToModelicaTest "Functions to be included in package ModelicaTest"
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
 <table border=0>
@@ -349,7 +349,7 @@ Implementation is according to Abramowitz and Stegun
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
 <table border=0>
@@ -424,7 +424,7 @@ The relative error is less than 1e-9.
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
 <table border=0>
@@ -454,7 +454,7 @@ The relative error is less than 1e-9.
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
 <table border=0>
@@ -473,19 +473,20 @@ The relative error is less than 1e-9.
       end erfInvSimple;
 
       function quantileNormalSimple
-        "Quantile of normal distribution (= inverse cumulative distribution function) with a precision of about 1e-7"
-        extends Modelica_Noise.Math.Distributions.Interfaces.partialQuantile;
+        "Test quantile of normal distribution with reduced precision"
+        extends Modelica.Icons.Function;
+        input Real u(min=0, max=1) "Random number in the range 0 <= u <= 1";
         input Real mu=0 "Expectation (mean) value of the normal distribution" annotation(Dialog);
         input Real sigma=1 "Standard deviation of the normal distribution" annotation(Dialog);
+        output Real y
+          "Random number u transformed according to the given distribution";
       algorithm
         y := mu + sigma*
           Modelica_Noise.ToModelicaTest.Math.Internal.cdfInvNormal(u);
 
-        annotation (Inline=true, Documentation(info=
-                                   "<html>
+        annotation (Inline=true, Documentation(info="<html>
 <p>
-This function returns a random number according to a normal distribution.
-This means that 99.7 % of the returned random numbers are in the range:
+This function returns a random number according to a normal distribution. This means that 99.7 % of the returned random numbers are in the range:
 </p>
 
 <blockquote>
@@ -493,6 +494,10 @@ This means that 99.7 % of the returned random numbers are in the range:
 mu-3*sigma &le; y &le; mu+3*sigma
 </p>
 </blockquote>
+
+<p>
+This function is only for test purposes. It computes the quantile (= inverse cumulative distribution function) of a normal distribution with a reduced precision of about 1e-7. 
+</p>
 
 <p>
 For more details of this distribution see
@@ -503,7 +508,7 @@ For more details of this distribution see
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
 <table border=0>
@@ -545,7 +550,7 @@ For more details of this distribution see
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
 <table border=0>
@@ -586,7 +591,7 @@ For more details of this distribution see
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
 <table border=0>
@@ -608,7 +613,7 @@ For more details of this distribution see
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
 <table border=0>

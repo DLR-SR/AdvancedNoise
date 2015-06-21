@@ -1,6 +1,6 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
 model AutomaticSeed
-  "Demonstrates noise with startTime and automatic local seed for TimeBasedNoise"
+  "Demonstrates noise with startTime and automatic local seed for GenericNoise"
   import Modelica_Noise;
    extends Modelica.Icons.Example;
    parameter Real startTime = 0.5 "Start time of noise";
@@ -37,7 +37,8 @@ model AutomaticSeed
     useAutomaticLocalSeed=false,
     fixedLocalSeed=1,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3),
+    enableNoise=true)
     annotation (Placement(transformation(extent={{0,20},{20,40}})));
   Modelica_Noise.Blocks.Noise.GenericNoise manualSeed2(
     samplePeriod=0.01,
@@ -53,26 +54,25 @@ model AutomaticSeed
     startTime=startTime,
     y_off=y_off,
     useAutomaticLocalSeed=false,
-    fixedLocalSeed=3,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3),
+    fixedLocalSeed=3)
     annotation (Placement(transformation(extent={{0,-60},{20,-40}})));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics),
     Documentation(info="<html>
 <p>
 This example demonstrates manual and automatic seed selection of
-<a href=\"Modelica_Noise.Blocks.Noise.TimeBasedNoise\">TimeBasedNoise</a> blocks, as well
+<a href=\"Modelica_Noise.Blocks.Noise.GenericNoise\">GenericNoise</a> blocks, as well
 as starting the noise at startTime = 0.5 s with an output value of y = -1 before this
-time. All noise blocks in this example generate linearly interpolated uniform noise in the
+time. All noise blocks in this example generate uniform noise in the
 band y_min=-1 .. y_max=3 with samplePeriod = 0.01 s.
 </p>
 
 <p>
 The blocks automaticSeed1, automaticSeed2, automaticSeed3 use the default
 option to automatically initialize the pseudo random number generators
-of the respective block by using a hash value
-of the instance name. As a result, different noise is generated, see next
+of the respective block. As a result, different noise is generated, see next
 diagram:
 </p>
 
@@ -99,7 +99,7 @@ manualSeed2 will produce exactly the same noise.
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>

@@ -1,6 +1,6 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities.Parts;
 model MotorWithCurrentControl
-  "Test example: PermanentMagnetSynchronousInductionMachine fed by current source. Based on Modelica.Electrical.Machines.Examples.SynchronousInductionMachines.SMPM_CurrentSource"
+  "Synchronous induction machine with current controller and measurement noise"
   extends Modelica.Electrical.Machines.Icons.TransientMachine;
   constant Integer m=3 "Number of phases";
   parameter Modelica.SIunits.Voltage VNominal=100
@@ -122,7 +122,7 @@ model MotorWithCurrentControl
         origin={110,80}), iconTransformation(extent={{40,70},{60,90}})));
   Modelica.Blocks.Math.Add addNoise
     annotation (Placement(transformation(extent={{60,70},{80,90}})));
-  Noise.GenericNoise timeBasedNoise(
+  Noise.GenericNoise GenericNoise(
     samplePeriod=1/200, redeclare function distribution =
         Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-0.01, y_max=
             0.01))      annotation (Placement(transformation(extent={{26,76},{46,96}})));
@@ -222,25 +222,37 @@ equation
       points={{81,80},{110,80}},
       color={0,0,127},
       smooth=Smooth.None));
-  connect(timeBasedNoise.y, addNoise.u1) annotation (Line(
+  connect(GenericNoise.y, addNoise.u1) annotation (Line(
       points={{47,86},{58,86}},
       color={0,0,127},
       smooth=Smooth.None));
   annotation (
     Documentation(info="<html>
-<p>A synchronous induction machine with permanent magnets accelerates a quadratic speed dependent load from standstill.
+<p>
+A synchronous induction machine with permanent magnets, current controller and
+measurement noise of &plusmn;0.01 rad accelerates a quadratic speed dependent load from standstill.
 The rms values of d- and q-current in rotor fixed coordinate system are converted to three-phase currents,
 and fed to the machine. The result shows that the torque is influenced by the q-current,
-whereas the stator voltage is influenced by the d-current.</p>
+whereas the stator voltage is influenced by the d-current.
+</p>
+
 <p>
-Default machine parameters of model <a href=\"modelica://Modelica.Electrical.Machines.BasicMachines.SynchronousInductionMachines.SM_PermanentMagnet\">SM_PermanentMagnet</a> are used.
+Default machine parameters of model
+<a href=\"modelica://Modelica.Electrical.Machines.BasicMachines.SynchronousInductionMachines.SM_PermanentMagnet\">SM_PermanentMagnet</a>
+are used.
+</p>
+
+<p>
+This motor is used in the
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.ActuatorWithNoise\">Examples.NoiseExamples.ActuatorWithNoise</a>
+actuator example
 </p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>

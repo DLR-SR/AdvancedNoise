@@ -1,5 +1,6 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities.Parts;
-model Controller
+model Controller "Simple position controller for actuator"
+
   Modelica.Blocks.Continuous.PI speed_PI(k=10, T=5e-2,
     initType=Modelica.Blocks.Types.Init.InitialOutput)
     annotation (Placement(transformation(extent={{38,-10},{58,10}})));
@@ -62,7 +63,9 @@ equation
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics), Icon(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
-        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255}),
+        Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid),
         Text(
           extent={{-40,50},{40,-30}},
           lineColor={0,0,255},
@@ -75,7 +78,7 @@ equation
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
@@ -91,6 +94,11 @@ equation
 </table>
 </p>
 </html>", info="<html>
-<p>A motor controller</p>
+<p>
+A simple position controller for a drive system.
+This controller is used in the
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.ActuatorWithNoise\">Examples.NoiseExamples.ActuatorWithNoise</a>
+actuator example
+</p>
 </html>"));
 end Controller;

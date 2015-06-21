@@ -33,7 +33,7 @@ equation
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
@@ -49,10 +49,24 @@ equation
 </table>
 </p>
 </html>",                                 info="<html>
-<p>This block calculates the standard deviation of its input signal. The standard deviation is the quare root of the signal&apos;s variance:</p>
+<p>This block calculates the standard deviation of its input signal. The standard deviation is the square root of the signal&apos;s variance:</p>
+<blockquote>
 <pre>y = sqrt( variance(u) )</pre>
-<p>The <a href=\"Variance\">Variance</a> block is used to calculate the variance of the signal.</p>
-<p>The parameter t_eps is used to conservatively guard against division by zero. You can also set it to zero, if your solver supports this.</p>
+</blockquote>
+<p>
+The <a href=\"modelica://Modelica_Noise.Blocks.Statistics.Variance\">Variance</a> block is used to 
+calculate variance(u).
+</p>
+<p>The parameter t_eps is used to guard against division by zero (the computation of the standard deviation
+starts at startTime + t_eps and before that time instant y = 0).
+</p>
+
+<p>
+This block is demonstrated in the examples
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.UniformNoiseProperties\">UniformNoiseProperties</a>,
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.NormalNoiseProperties\">NormalNoiseProperties</a> and
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.WeibullNoiseProperties\">WeibullNoiseProperties</a>.
+</p>
 </html>"),
     Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics),

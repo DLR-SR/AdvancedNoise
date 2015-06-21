@@ -1,5 +1,6 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
-model GenericNoise "Demonstrates the most simple usage the generic noise block"
+model GenericNoise
+  "Demonstrates the most simple usage of the GenericNoise block"
    extends Modelica.Icons.Example;
 
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
@@ -12,29 +13,27 @@ model GenericNoise "Demonstrates the most simple usage the generic noise block"
             -100},{100,100}}), graphics),
     Documentation(info="<html>
 <p>
-This example demonstrates the most simple usage of time based noise blocks:
+This example demonstrates the most simple usage of the 
+<a href=\"modelica://Modelica_Noise.Blocks.Noise.GenericNoise\">Noise.GenericNoise</a> 
+block:
 </p>
 
 <ul>
 <li> <b>globalSeed</b> is the <a href=\"modelica://Modelica_Noise.Blocks.Noise.GlobalSeed\">Noise.GlobalSeed</a>
-     with default options (just dragged from sublibrary Noise).</li>
-<li> <b>timeBasedNoise</b> is an instance of
-     <a href=\"modelica://Modelica_Noise.Blocks.Noise.TimeBasedNoise\">Noise.TimeBasedNoise</a> with default options,
-     with exception of the explicit setting of parameters: samplePeriod=0.02, y_min=-1, y_max=3.</li>
+     block with default options (just dragged from sublibrary Noise).</li>
+<li> <b>genericNoise</b> is an instance of
+     <a href=\"modelica://Modelica_Noise.Blocks.Noise.GenericNoise\">Noise.GenericNoise</a> with 
+     samplePeriod = 0.02 s and a Uniform distribution with limits y_min=-1, y_max=3.</li>
 </ul>
 
 <p>
-Piece-wise constant, uniform noise in a band between -1 ... 3 is generated.
-The samplePeriod defines the highest frequency f contained in the noise: f = 1/0.02 = 50 Hz.
-The default behavior uses one event at every hundredth
-sample point for the timeBasedNoise block (so time events occur only at 0 s and 2 s).
-This behavior can be changed using the parameter sampleFactor of the TimeBasedNoise block.
-The output of the block does not change, if this parameter is used.
+At every 0.02 seconds a time event occurs and a uniform random number in the band between
+-1 ... 3 is drawn. This random number is held constant until the next sample instant.
 The result of a simulation is shown in the next diagram:
 </p>
 
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/TimeBasedNoise.png\">
+<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/GenericNoise.png\">
 </blockquote>
 </p>
 </html>", revisions="<html>
@@ -42,7 +41,7 @@ The result of a simulation is shown in the next diagram:
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>

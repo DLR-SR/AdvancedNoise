@@ -1,11 +1,13 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities;
-package Parts "Parts for use in the Noise examples"
+package Parts "Parts for use in the ActuatorWithNoise examples"
+
+
 annotation (Documentation(revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
@@ -21,6 +23,10 @@ annotation (Documentation(revisions="<html>
 </table>
 </p>
 </html>", info="<html>
-<p>Parts used in the Actuator example.</p>
+<p>
+Parts used in the 
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.ActuatorWithNoise\">Examples.NoiseExamples.ActuatorWithNoise</a>
+actuator example
+</p>
 </html>"));
 end Parts;

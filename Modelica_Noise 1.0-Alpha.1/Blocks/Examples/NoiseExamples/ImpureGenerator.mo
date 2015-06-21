@@ -14,14 +14,19 @@ model ImpureGenerator
 This example demonstrates how to use the globalSeed.random() impure function
 to generate random values at event instants. Typically, this approach is only
 used when implementing an own, specialized block that needs a random number
-generator.
+generator. Simulation results are shown in the next figure:
+</p>
+
+<p><blockquote>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/ImpureGenerator.png\">
+</blockquote>
 </p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>

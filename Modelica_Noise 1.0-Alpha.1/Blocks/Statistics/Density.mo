@@ -13,7 +13,7 @@ block Density "Calculates the density of a selected distribution"
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
@@ -63,16 +63,31 @@ equation
           -75.8975},{70,-75.953}},
           color={0,0,0},
           smooth=Smooth.Bezier)}), Documentation(info="<html>
-<p>This block determines the probability density y of a distribution for the given data value u:</p>
+<p>
+This block determines the probability density y of a distribution for the given signal u:
+</p>
+
+<blockquote>
 <pre>y = density(u)</pre>
-<p>The actual density function is replaceable and can be chosen from all available probability density functions extending <code><a href=\"Modelica_Noise.Math.Distributions.Interfaces.partialDensity\">Modelica_Noise.Math.Distributions.Interfaces.partialDensity</a></code>.</p>
-<p>See also <a href=\"TruncatedDensity\">TruncatedDensity</a> for an implementation with truncated densities.</p>
+</blockquote>
+
+<p>
+The actual density function is replaceable and can be chosen from all available
+probability density functions extending from
+<a href=\"modelica://Modelica_Noise.Math.Distributions.Interfaces.partialDensity\">Math.Distributions.Interfaces.partialDensity</a>.
+</p>
+
+<p>
+This block is demonstrated in the examples
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.Densities\">Examples.NoiseExamples.Densities</a> and
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.TruncatedDensities\">Examples.NoiseExamples.TruncatedDensities</a>.
+</p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>

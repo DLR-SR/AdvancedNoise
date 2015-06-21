@@ -7,13 +7,12 @@ package Modelica_Noise "Modelica_Noise version 1.0-Beta.1 (Library for random nu
 
   annotation(preferredView="info",
              version =     "1.0-Beta.1",
-             versionDate =  "2015-06-21",
+             versionDate =  "2015-06-22",
              versionBuild = 0,
              uses(Modelica(version="3.2.1")),
   Documentation(info="<html>
 <p>
-This library contains blocks to generate reproducible noise in an efficient way,
-as well as various utility functions.
+This library contains blocks to generate reproducible noise, as well as various utility functions.
 It is planned to include this library in the Modelica Standard Library.
 The library is structured, so that all parts can be directly copied into
 the Modelica Standard Library by just exchanging \"Modelica_Noise\" with \"Modelica\".
@@ -25,7 +24,7 @@ ModelicaTest library.
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>

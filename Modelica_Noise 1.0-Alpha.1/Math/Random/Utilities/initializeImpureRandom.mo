@@ -35,9 +35,10 @@ id = <b>initializeImpureRandom</b>(seed);
 <h4>Description</h4>
 
 <p>
-Generates a hidden initial state vector for the Xorshift1024star random number generator
-(= xorshift1024* algorithm), from Integer input argument seed. Argument seed
-can be given any value (including zero or negative number).The function returns the
+Generates a hidden initial state vector for the
+<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift1024star\">Xorshift1024star</a>
+random number generator (= xorshift1024* algorithm), from Integer input argument seed. Argument seed
+can be given any value (including zero or negative number). The function returns the
 dummy Integer number id. This number needs to be passed as input to function
 <a href=\"modelica://Modelica_Noise.Math.Random.Utilities.impureRandom\">impureRandom</a>,
 in order that the sorting order is correct (so that impureRandom is always called
@@ -76,7 +77,7 @@ random number generator to fill the internal state vector with 64 bit random num
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
