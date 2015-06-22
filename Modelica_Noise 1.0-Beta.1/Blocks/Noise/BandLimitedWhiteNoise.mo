@@ -30,7 +30,7 @@ parameters:
 
 <p>
 Ideal white noise contains all frequencies, including infinitely high ones.
-However, these usually cannot be observed in physical systems, since all physical system in
+However, these usually cannot be observed in physical systems, since all physical systems in
 one way or the other contain low-pass filters. It is thus sufficient to generate a
 limited range of frequency content in the noise signal, as long as it exceeds the frequencies of
 the subsequent dynamics by a suffiently high factor (of e.g. 100).
@@ -40,7 +40,7 @@ the subsequent dynamics by a suffiently high factor (of e.g. 100).
 
 <p>
 Ideal white noise has a flat, i.e. constant, power spectral density for all frequencies.
-It has thus infinitely high power, because the total power of a signal be obtained by
+It has thus infinitely high power, because the total power of a signal can be obtained by
 integrating the power spectral density over all frequencies. The following three ways to
 think of the power of a signal may be helpful:
 </p>

@@ -1,6 +1,6 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
 model DrydenContinuousTurbulence
-  "Demonstrates how to model wind turbulence for aircrafts with the BandLimitedWhiteNoise block (a simple model of vertical Dryden gust speed at low altitudes < 1000 ft)"
+  "Demonstrates how to model wind turbulence for aircraft with the BandLimitedWhiteNoise block (a simple model of vertical Dryden gust speed at low altitudes < 1000 ft)"
   extends Modelica.Icons.Example;
   import SI = Modelica.SIunits;
   import Modelica.Constants.pi;
@@ -46,32 +46,44 @@ Turbulence model for vertical gust speed at low altitudes
 </h4>
 
 <p>
-The turbulence model is defined by the following filter:
+The turbulence model of the Dryden form is defined by the power spectral density of the vertical turbulent velocity:
 </p>
 
 <blockquote><p>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/equation-W0zl2Gay.png\" alt=\"H_w(s) = sigma*sqrt(L_w/(pi*V)) * ((1 + sqrt(3)*L_w/V*s) / (1+L_w/V*s)^2)\"/>.
+<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/equation-erVWhiWU.png\" alt=\"Phi_w(Omega)=sigma^2*L_w/pi*((1+3*(L_w*Omega)^2)/(1+(L_w*Omega)^2)^2)\"/>
 </p></blockquote>
 
 <p>
-The filter is parametrized with the following parameters:
+The spectrum is parametrized with the following parameters:
 </p>
 
 <ul>
 <li> Lw is the turbulence scale. <br>In low altitudes, it is equal to the flight altitude.</li>
 <li> sigma is the turbulence intensity. <br>In low altitudes, it is equal to 1/10 of the
      wind speed at 20 ft altitude, which is 30 kts for medium turbulence.</li>
-<li> V is the airspeed of the aircraft.<br>It is approximately 150 kts during the approach (i.e. at low altitudes).</li>
+<li> Omega is the spatial frequency. <br> The turbulence model is thus defined in space and the aircraft experiences turbulence as it flies through the defined wind field.</li>
+<li> Omega = s/V will be used to transform the spatial definition into a temporal definition, which can be realized as a state space system.</li>
+<li> V is the airspeed of the aircraft.<br>It is approximately 150 kts during the approach (i.e. at low altitudes).
 </ul>
+
+<p>
+Using spectral factorization and a fixed airspeed V of the aircraft, a concrete forming filter for the vertical turbulence can be found as
+</p>
+
+<blockquote><p>
+<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/equation-W0zl2Gay.png\" alt=\"H_w(s) = sigma*sqrt(L_w/(pi*V)) * ((1 + sqrt(3)*L_w/V*s) / (1+L_w/V*s)^2)\"/>.
+</p></blockquote>
 
 <h4>
 The input to the filter
 </h4>
 
 <p>
-The input to the filter is white noise with a standard normal distribution,
-i.e. mean=0 and variance=1. However, in order to account for change of noise power 
-due to sampling, the noise must be scaled with sqrt(samplePeriod).
+The input to the filter is white noise with a normal distribution, zero mean, and a power spectral density of 1.
+That means, for a sampling time of 1s, it is parameterized with mean=0 and variance=1. 
+However, in order to account for the change of noise power due to sampling, the noise must be scaled with sqrt(samplePeriod).
+This is done automatically in the 
+<a href=\"modelica://Modelica_Noise.Blocks.Noise.BandLimitedWhiteNoise\">BandLimitedWhiteNoise</a> block.
 </p>
 
 <h4>Example output</h4>
@@ -86,11 +98,8 @@ Reference
 </h4>
 
 <ol>
-<li>Original source: Dryden Wind Turbulence model in US military standard 
+<li>Dryden Wind Turbulence model in US military standard 
     <a href=\"http://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-F/MIL-F-8785C_5295/\">MIL-F-8785</a>.</li>
-
-<li>Dryden Wind Turbulence Model in the Matlab Aerospace blockset<br><a href=\"
-http://de.mathworks.com/help/aeroblks/drydenwindturbulencemodelcontinuous.html\">http://de.mathworks.com/help/aeroblks/drydenwindturbulencemodelcontinuous.html</a></li>
 </ol>
 </html>"));
 end DrydenContinuousTurbulence;
