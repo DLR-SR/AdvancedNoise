@@ -3,8 +3,8 @@ package Noise "A library with additional noise modules compatible to the Modelic
   extends Modelica.Icons.Package;
 
 
-  annotation(version =                        "1.0-Alpha.1",
-             versionDate =                    "2015-01-19",
+  annotation(version =                        "1.0-Beta.1",
+             versionDate =                    "2015-06-22",
              versionBuild =                   1,
              uses(Modelica(version="3.2.1"), Modelica_Noise(version=
           "1.0-Alpha.1")),
