@@ -71,8 +71,12 @@ Using spectral factorization and a fixed airspeed V of the aircraft, a concrete 
 </p>
 
 <blockquote><p>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/equation-W0zl2Gay.png\" alt=\"H_w(s) = sigma*sqrt(L_w/(pi*V)) * ((1 + sqrt(3)*L_w/V*s) / (1+L_w/V*s)^2)\"/>.
+<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/equation-W0zl2Gay.png\" alt=\"H_w(s) = sigma*sqrt(L_w/(pi*V)) * ((1 + sqrt(3)*L_w/V*s) / (1+L_w/V*s)^2)\"/>,
 </p></blockquote>
+
+<p>
+for which V * (H_w(i Omega/V) * H_w(-i Omega/V) = Phi_w(Omega).
+</p>
 
 <h4>
 The input to the filter
