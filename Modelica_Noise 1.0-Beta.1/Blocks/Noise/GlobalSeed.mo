@@ -156,7 +156,7 @@ hierarchical level. The following options can be selected:
          pseudo random number generators, in combination with a local seed defined for every instance
          separately. Therefore, whenever a simulation is performed with the
          same fixedSeed exactly the same noise is generated in all instances of the Noise
-         blocks (provided the settings of these blocks is not changed as well).<br>
+         blocks (provided the settings of these blocks are not changed as well).<br>
          This option can be used (a) to design a control system (e.g. by parameter optimization) and keep the same
          noise for all simulations, or (b) perform Monte Carlo Simulations where 
          fixedSeed is changed from the environment for every simulation, in order to
@@ -165,7 +165,7 @@ hierarchical level. The following options can be selected:
 <tr><td> <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/GlobalSeed_AutomaticSeed.png\"> </td>
     <td> <b>useAutomaticSeed=true</b>:<br>
          An automatic global seed is computed by using the ID of the process in which the
-         simulation takes place and the actual local time. As a result, the global seed
+         simulation takes place and the current local time. As a result, the global seed
          is changed automatically for every new simulation, including parallelized
          simulation runs. This option can be used to perform Monte Carlo Simulations
          with minimal effort (just performinng many simulation runs) where

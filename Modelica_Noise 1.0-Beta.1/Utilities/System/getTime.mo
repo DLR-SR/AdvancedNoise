@@ -54,6 +54,8 @@ All returned values are of type Integer and have the following meaning:
 (ms, sec, min, hour, mon, year) = getTime()   // = (281, 30, 13, 10, 15, 2, 2015)
                                               // Feb. 15, 2015 at 10:13 after 30.281 s
 </pre></blockquote>
+<h4>Note</h4>
+<p>This function is impure!</p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>

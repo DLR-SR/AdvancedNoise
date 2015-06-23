@@ -12,7 +12,7 @@ protected
   Real r "Impure Real random number";
 algorithm
   r  := impureRandom(id=id);
-  y  := integer(  r  *imax) + integer((1-r)*imin);
+  y  := integer(r*imax) + integer((1-r)*imin);
   y  := min(imax, max(imin, y));
 
   annotation (Documentation(info="<html>

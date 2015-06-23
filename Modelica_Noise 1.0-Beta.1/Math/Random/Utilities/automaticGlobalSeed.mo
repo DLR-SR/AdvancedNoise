@@ -49,6 +49,8 @@ This function should be only called once during initialization.
 <p>
 <a href=\"modelica://Modelica_Noise.Math.Random.Utilities.automaticLocalSeed\">automaticLocalSeed</a>.
 </p>
+<h4>Note</h4>
+<p>This function is impure!</p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>

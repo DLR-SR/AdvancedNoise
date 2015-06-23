@@ -19,7 +19,7 @@ initial equation
   mu  = u;
 equation
   der(mu) = noEvent(if time >= t_0 + t_eps then (u-mu)/(time-t_0) else 0);
-  y = noEvent(if time >= t_0 + t_eps then mu else u);
+  y       = noEvent(if time >= t_0 + t_eps then mu                else u);
 
   annotation (Documentation(revisions="<html>
 <p>

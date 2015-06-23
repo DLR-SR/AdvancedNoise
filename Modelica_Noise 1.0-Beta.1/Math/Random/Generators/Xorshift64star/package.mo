@@ -46,7 +46,7 @@ a reasonable initial state vector with the following strategy:
 If both input
 arguments are zero, a fixed non-zero value is used internally for localSeed.
 According to <a href=\"http://vigna.di.unimi.it/ftp/papers/xorshift.pdf\">xorshift.pdf</a>, 
-the xorshoft64* random number generator generates statistically random numbers from a
+the xorshift64* random number generator generates statistically random numbers from a
 bad seed within one iteration. To be on the safe side, actually 10 random numbers are generated
 and the returned state is the one from the last iteration.
 </p>

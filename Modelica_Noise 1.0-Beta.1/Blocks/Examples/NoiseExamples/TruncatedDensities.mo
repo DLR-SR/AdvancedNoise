@@ -53,9 +53,9 @@ equation
     Documentation(info="<html>
 <p>
 This example demonstrates how to compute the probability density functions (pdfs) of
-various distributions, by using the block
+various truncated distributions, by using the block
 <a href=\"modelica://Modelica_Noise.Blocks.Statistics.Density\">Blocks.Statistics.Density</a>.
-In the following diagram simulations results for the uniform, normal, and Weibull distribution
+In the following diagram simulations results for the uniform, truncated normal, and truncated Weibull distribution
 are shown. The outputs of the blocks are the pdfs that are plotted over one of the
 inputs:
 </p>

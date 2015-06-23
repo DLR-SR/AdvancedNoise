@@ -19,6 +19,8 @@ operating system.
 <blockquote><pre>
 getPid()   // = 3044
 </pre></blockquote>
+<h4>Note</h4>
+<p>This function is impure!</p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>

@@ -124,19 +124,19 @@ Further explanations of the properties above:
 <li> <b>Big Crush</b> is part of <a href=\"http://simul.iro.umontreal.ca/testu01/tu01.html\">TestU01</a>
      a huge framework for testing random number generators.
      According to these tests, the statistical properties of the xorshift random number
-     generators are better as the Mersenne Twister random number generator.</li>
+     generators are better than the ones of the Mersenne Twister random number generator.</li>
      
 <li> <b>Worst case startup</b> means how many calls are needed until getting
      from a bad seed to random numbers with appropriate statistical properties.
      Here, the xorshift random number suite has much better properties
-     as the Mersenne Twister. When initializing a random number generator, the above property
+     than the Mersenne Twister. When initializing a random number generator, the above property
      is taken into account and appropriate random numbers are generated, so that a subsequent
      call of random(..) will generate statistically relevant random numbers, even if the user
      provides a bad initial seed (such as localSeed=1). This means, any Integer number can be given as
      initial seed without influencing the quality of the generated random numbers.</li>
 
 <li> <b>Run time</b> shows that the xorshift random number generators are
-     all much faster as the Mersenne Twister random number generator, although
+     all much faster than the Mersenne Twister random number generator, although
      this is not really relevant for most simulations, because the execution
      time of the other parts of the simulations is usually much larger. </li>
 </ul>

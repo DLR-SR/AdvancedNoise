@@ -89,13 +89,13 @@ to define reproducible noise with the blocks of this sublibrary:
 <p>
 The core of the noise generation is the computation of uniform random
 numbers in the range 0.0 .. 1.0 (and these random numbers are transformed
-afterwards, see below). This sublibrary uses the xorfshift random number generation
+afterwards, see below). This sublibrary uses the xorshift random number generation
 suite developed in 2014 by Sebastiano Vigna. These random number generators have excellent
 statistical properties, produce quickly statistically relevant random numbers, even if 
 starting from a bad initial seed, and have a reasonable length of the internal state
 vector of 2, 4, and 33 Integer elements. The short length state vectors are especially
 useful if every block instance has its own internal state vector, as needed for
-reproducible noise blocks.The random number generator with a length of 33 Integer
+reproducible noise blocks. The random number generator with a length of 33 Integer
 elements is suited even for massively parallel simulations where every simulation
 computes a large number of random values. More details of the random number
 generators are described in the documentation of package

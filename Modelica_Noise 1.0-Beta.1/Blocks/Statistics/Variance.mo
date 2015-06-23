@@ -17,9 +17,9 @@ initial equation
   mu  = u;
   var = 0;
 equation
-  der(mu) = noEvent(if time >= t_0 + t_eps then (u-mu)/(time-t_0) else 0);
+  der(mu)  = noEvent(if time >= t_0 + t_eps then (u-mu)/(time-t_0)             else 0);
   der(var) = noEvent(if time >= t_0 + t_eps then ((u-mu)^2 - var)/(time - t_0) else 0);
-  y = noEvent(if time >= t_0 + t_eps then max(var,0) else 0);
+  y        = noEvent(if time >= t_0 + t_eps then max(var,0)                    else 0);
 
   annotation (Documentation(revisions="<html>
 <p>

@@ -1,6 +1,9 @@
 within Modelica_Noise.Math;
-package Random "Library of functions for the generation of random numbers"
+package Random "Library of functions for generating random numbers"
    extends Modelica.Icons.Package;
+
+
+
 
 
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,

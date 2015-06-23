@@ -24,7 +24,7 @@ a reasonable initial state vector with the following strategy:
 </p>
 
 <p>
-The <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64start</a>
+The <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64star</a>
 random number generator is used to fill the internal state vector with 64 bit random numbers.
 </p>
 

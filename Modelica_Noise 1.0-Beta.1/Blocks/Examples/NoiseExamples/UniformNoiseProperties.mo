@@ -99,8 +99,8 @@ Simulation results are shown in the next diagram:
 </blockquote></p>
 
 <p>
-The mean value of a uniform noise in the range 0 .. 6 is 3 and the variance of a uniform noise is 
-half of the band, so 3 as well. The simulation results above show good agreement (after a short initial phase). 
+The mean value of a uniform noise in the range 0 .. 6 is 3 and its variance is 
+3 as well. The simulation results above show good agreement (after a short initial phase). 
 This demonstrates that the random number generator and the mapping to a uniform
 distribution have good statistical properties.
 </p>
