@@ -8,7 +8,7 @@ model NormalNoiseProperties
   parameter Real mu = 3 "Mean value for normal distribution";
   parameter Real sigma = 1 "Standard deviation for normal distribution";
 
- annotation (experiment(StopTime=20, Interval=20/5000, Tolerance=1e-009),
+ annotation (experiment(StopTime=20, Interval=0.4e-2, Tolerance=1e-009),
                                      Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
 Documentation(info="<html>
