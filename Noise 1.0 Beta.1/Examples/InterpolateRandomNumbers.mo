@@ -30,7 +30,7 @@ equation
   rSmooth   =Noise.Interpolators.SmoothIdealLowPass.interpolate(buffer=r,
     offset=offset);
 
-  annotation (experiment(StopTime=20, NumberOfIntervals=1000),
+  annotation (experiment(StopTime=20, Interval=20/1000),
                                       Documentation(info="<html>
 <p>
 This example demonstrates how to use the interpolators 
