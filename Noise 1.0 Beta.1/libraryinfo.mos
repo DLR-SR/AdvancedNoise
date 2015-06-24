@@ -2,7 +2,7 @@ LibraryInfoMenuSeparator(
   category="libraries",
   pos=100)
 
-NoiseVersion = "1.0-Beta.1";
+NoiseVersion = "1.0 Beta.1";
 
 LibraryInfoMenuCommand(
   category="libraries",

@@ -6,10 +6,12 @@ model FilterAndConvolution
   constant Real convolutionResolution=MinimumPhaseInterpolator.T[2] -
       MinimumPhaseInterpolator.T[1];
 
-  parameter Boolean doMinimum = true;
-  parameter Boolean doZero =    false;
-  parameter Boolean doFilter =  true;
-  parameter Boolean doTime =    false;
+  parameter Boolean doMinimum = true "Calculate minimum phase filter?";
+  parameter Boolean doZero =    false "Calculate zero phase filter?";
+  parameter Boolean doFilter =  true "Calculate state space phase filter?";
+  parameter Boolean doTime =    false "Calculate time-based noise?";
+
+  parameter Modelica.SIunits.Duration samplePeriod = 0.1 "Common sample period";
 
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
                annotation (Placement(transformation(extent={{60,60},{80,80}})));
@@ -22,7 +24,7 @@ model FilterAndConvolution
     y_max=+1e10,
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
-           sqrt(0.5)/sqrt(spaceDomainNoiseMinimum.samplePeriod)),
+           sqrt(0.5)/sqrt(samplePeriod)),
     useAutomaticLocalSeed=false) if doMinimum
     annotation (Placement(transformation(extent={{-20,20},{0,40}})));
 
@@ -39,22 +41,22 @@ model FilterAndConvolution
     y_min=-1e10,
     y_max=+1e10,
     useAutomaticLocalSeed=false,
-    samplePeriod=spaceDomainNoiseMinimum.samplePeriod,
+    samplePeriod=samplePeriod,
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
-           sqrt(0.5)/sqrt(spaceDomainNoiseMinimum.samplePeriod))) if doFilter
+           sqrt(0.5)/sqrt(samplePeriod))) if doFilter
     annotation (Placement(transformation(extent={{-20,-20},{0,0}})));
   Sources.SignalBasedNoise spaceDomainNoiseZero(
     useTime=false,
     y_min=-1e10,
     y_max=+1e10,
     useAutomaticLocalSeed=false,
-    samplePeriod=spaceDomainNoiseMinimum.samplePeriod,
+    samplePeriod=samplePeriod,
     redeclare package interpolation =
         Noise.Examples.RailIrregularities.ZeroPhaseInterpolator,
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
-           sqrt(0.5)/sqrt(spaceDomainNoiseMinimum.samplePeriod))) if doZero
+           sqrt(0.5)/sqrt(samplePeriod))) if doZero
     annotation (Placement(transformation(extent={{-20,60},{0,80}})));
   Modelica.Blocks.Continuous.TransferFunction timeDomainFilter(b={2.7542724e-04,
         4.5134777e-03} ./ {velocity.k,1}, a={1.0000000e+00,3.0670519e+00,
@@ -62,7 +64,7 @@ model FilterAndConvolution
                                                        doTime
     annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
   Modelica_Noise.Blocks.Noise.BandLimitedWhiteNoise bandLimitedWhiteNoise(
-      samplePeriod=spaceDomainNoiseMinimum.samplePeriod/velocity.k, noisePower=
+      samplePeriod=samplePeriod/velocity.k, noisePower=
         1/(velocity.k)) if                                                     doTime
     annotation (Placement(transformation(extent={{-20,-60},{0,-40}})));
 equation

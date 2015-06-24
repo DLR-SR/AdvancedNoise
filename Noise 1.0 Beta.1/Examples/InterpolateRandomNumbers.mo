@@ -12,7 +12,7 @@ protected
                                                                 seed)
     "An identifier to ensure initialization of the impure random number generator";
 public
-  parameter Real r[100](fixed = false) "Random number buffer";
+  parameter Real r[100](each fixed = false) "Random number buffer";
 initial algorithm
   for i in 1:100 loop
     r[i] := Modelica_Noise.Math.Random.Utilities.impureRandom(id);
@@ -30,7 +30,7 @@ equation
   rSmooth   =Noise.Interpolators.SmoothIdealLowPass.interpolate(buffer=r,
     offset=offset);
 
-  annotation (experiment(StopTime=20, NumberOfIntervals=1000),
+  annotation (experiment(StopTime=20, Interval=2e-2),
                                       Documentation(info="<html>
 <p>
 This example demonstrates how to use the interpolators 

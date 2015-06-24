@@ -6,7 +6,7 @@ package Modelica_Noise "Modelica_Noise version 1.0-Beta.1 (Library for random nu
 
 
   annotation(preferredView="info",
-             version =     "1.0-Beta.1",
+             version =     "1.0 Beta.1",
              versionDate =  "2015-06-22",
              versionBuild = 0,
              uses(Modelica(version="3.2.1")),

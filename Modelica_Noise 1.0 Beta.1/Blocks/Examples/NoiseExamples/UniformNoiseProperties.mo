@@ -81,7 +81,7 @@ equation
       points={{11,-30},{18,-30},{18,-42},{50,-42},{50,-62}},
       color={0,0,127},
       smooth=Smooth.None));
- annotation (experiment(StopTime=20, NumberOfIntervals=5000, Tolerance=1e-009),
+ annotation (experiment(StopTime=20, Interval=0.4e-2, Tolerance=1e-009),
                                      Diagram(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
