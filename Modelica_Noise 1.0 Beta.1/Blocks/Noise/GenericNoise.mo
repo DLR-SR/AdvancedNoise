@@ -55,24 +55,22 @@ protected
     "= true if noise shall be generated, otherwise no noise";
 
   // Declare state and random number variables
-  discrete Integer state[generator.nState]
-    "Internal state of random number generator";
-  discrete Real r "Uniform random number in the range (0,1]";
+  Integer state[generator.nState] "Internal state of random number generator";
+  discrete Real r "Random number according to the desired distribution";
+  discrete Real r_raw "Uniform random number in the range (0,1]";
 
-algorithm
-  when initial() then
-    // Initialize the random number generator
-    state      := generator.initialState(localSeed, actualGlobalSeed);
-    (r, state) := generator.random(state);
-    r          := distribution(r);
-
-  elsewhen generateNoise and sample(startTime+samplePeriod, samplePeriod) then
-    // At every sample instance draw a new random number
-    (r, state) := generator.random(state);
-    r          := distribution(r);
-  end when;
+initial equation
+   pre(state) = generator.initialState(localSeed, actualGlobalSeed);
+   r_raw = generator.random(pre(state));
+   r = distribution(r_raw);
 
 equation
+  // Draw random number at sample times
+  when generateNoise and sample(startTime, samplePeriod) then
+    (r_raw, state) = generator.random(pre(state));
+    r  = distribution(r_raw);
+  end when;
+
   // Generate noise if requested
   y = if not generateNoise or time < startTime then y_off else r;
 

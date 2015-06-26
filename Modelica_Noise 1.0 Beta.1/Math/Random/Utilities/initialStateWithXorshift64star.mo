@@ -11,23 +11,28 @@ function initialStateWithXorshift64star
 
 protected
   Real r "Random number only used inside function";
+  Integer aux[2];
+  Integer nStateEven;
 algorithm
-
   // Set the first 2 states by using the initialState() function
+  aux :=Xorshift64star.initialState(localSeed, globalSeed);
   if nState >= 2 then
-    state[1:2] := Xorshift64star.initialState(localSeed, globalSeed);
+    state[1:2] := aux;
   else
-    state[1]   := Xorshift64star.initialState(localSeed, globalSeed)*{1,0};
+    state[1]   := aux[1];
   end if;
 
-  // Fill the next elements of the state vector (besides last)
-  for i in 3:2:(nState-1) loop
-    (r,state[i:i+1]) := Xorshift64star.random(state[i-2:i-1]);
+  // Fill the next elements of the state vector
+  nStateEven :=2*div(nState, 2);
+  for i in 3:2:nStateEven loop
+    (r,aux) := Xorshift64star.random(state[i-2:i-1]);
+    state[i:i+1] := aux;
   end for;
 
-  // Fill the last element of the state vector (to handle the case if nState is uneven)
-  if nState >= 3 then
-    (r,state[nState-1:nState]) := Xorshift64star.random(state[nState-2:nState-1]);
+  // If nState is uneven, fill the last element as well
+  if nState >= 3 and nState <> nStateEven then
+    (r,aux) := Xorshift64star.random(state[nState-2:nState-1]);
+    state[nState] :=aux[1];
   end if;
 
   annotation (Documentation(revisions="<html>
