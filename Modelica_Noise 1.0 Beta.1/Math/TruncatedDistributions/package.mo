@@ -91,7 +91,7 @@ cdf_max = Distributions.XXX.cumulative(u_max,...);
 
 <p>
 For an example of a truncated distribution, see the following
-plot of the probabibilty density function of a normal distribution
+plot of the probability density function of a normal distribution
 compared with its truncated distribution:
 </p>
 
