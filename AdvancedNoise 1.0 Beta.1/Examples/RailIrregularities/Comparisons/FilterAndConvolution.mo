@@ -18,7 +18,7 @@ model FilterAndConvolution
   Sources.SignalBasedNoise spaceDomainNoiseMinimum(
     useTime=false,
     redeclare package interpolation =
-        Noise.Examples.RailIrregularities.MinimumPhaseInterpolator,
+        AdvancedNoise.Examples.RailIrregularities.MinimumPhaseInterpolator,
     samplePeriod=0.4,
     y_min=-1e10,
     y_max=+1e10,
@@ -53,7 +53,7 @@ model FilterAndConvolution
     useAutomaticLocalSeed=false,
     samplePeriod=samplePeriod,
     redeclare package interpolation =
-        Noise.Examples.RailIrregularities.ZeroPhaseInterpolator,
+        AdvancedNoise.Examples.RailIrregularities.ZeroPhaseInterpolator,
     redeclare function distribution =
         Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
            sqrt(0.5)/sqrt(samplePeriod))) if doZero
