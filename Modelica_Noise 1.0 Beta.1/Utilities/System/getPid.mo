@@ -1,5 +1,5 @@
 within Modelica_Noise.Utilities.System;
-impure function getPid "Retrieves the current process id"
+function getPid "Retrieves the current process id"
   output Integer pid "Process ID";
   external "C" pid = ModelicaRandom_getpid()
   annotation (Include = "#include \"ModelicaRandom.c\"");

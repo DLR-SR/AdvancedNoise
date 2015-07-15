@@ -1,5 +1,5 @@
 within Modelica_Noise.Math.Random.Utilities;
-impure function automaticLocalSeed
+function automaticLocalSeed
   "Creates an automatic local seed from the instance name"
   input String path
     "Full path name of the instance (inquire with getInstanceName())";
