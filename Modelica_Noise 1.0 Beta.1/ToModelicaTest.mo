@@ -249,10 +249,11 @@ package ToModelicaTest "Functions to be included in package ModelicaTest"
 </html>"));
     end distributions;
 
-    function truncatedDistributions "Test Math.TruncatedDistributions"
+    function truncatedDistributions
+      "Test truncated distributions in Math.Distributions"
        import Modelica.Utilities.Streams.print;
-       import Modelica_Noise.Math.TruncatedDistributions;
-      import Modelica_Noise;
+       import Modelica_Noise.Math.Distributions;
+       import Modelica_Noise;
        input Integer nPoints = 1000;
        input Real erfRange = 3.0;
     protected
@@ -265,7 +266,7 @@ package ToModelicaTest "Functions to be included in package ModelicaTest"
        Real y3[nPoints];
        Real err;
     algorithm
-       print("\n... Check Math.TruncatedDistributions");
+       print("\n... Check Math.Distributions (truncated distributions)");
 
        // check Normal
        y1 :=Modelica_Noise.Math.Distributions.TruncatedNormal.density(

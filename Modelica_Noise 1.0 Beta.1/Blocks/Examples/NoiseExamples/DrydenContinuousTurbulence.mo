@@ -21,6 +21,8 @@ model DrydenContinuousTurbulence
     annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   Modelica.Blocks.Math.Gain compareToSpeed(k=1/V)
     annotation (Placement(transformation(extent={{40,0},{60,20}})));
+  inner Noise.GlobalSeed globalSeed
+    annotation (Placement(transformation(extent={{40,60},{60,80}})));
 equation
   connect(whiteNoise.y, Hw.u) annotation (Line(
       points={{-39,10},{-12,10}},

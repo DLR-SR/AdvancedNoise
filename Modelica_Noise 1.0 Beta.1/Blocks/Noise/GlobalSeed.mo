@@ -48,7 +48,7 @@ into your model and specify the seed.
               -21},{41,-21},{41,51},{51,51},{51,17},{59,17},{59,-49},{69,-49}},
             color={215,215,215}),
         Text(visible=enableNoise and not useAutomaticSeed,
-          extent={{-90,8},{88,-18}},
+          extent={{-90,-4},{88,-30}},
           lineColor={255,0,0},
           fillColor={255,255,255},
           fillPattern=FillPattern.Solid,
@@ -56,7 +56,13 @@ into your model and specify the seed.
         Line(visible = not enableNoise,
           points={{-80,-4},{84,-4}},
           color={215,215,215},
-          smooth=Smooth.None)}),
+          smooth=Smooth.None),
+        Text(visible=enableNoise and not useAutomaticSeed,
+          extent={{-84,34},{94,8}},
+          lineColor={255,0,0},
+          fillColor={255,255,255},
+          fillPattern=FillPattern.Solid,
+          textString="fixedSeed =")}),
     Documentation(revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
