@@ -90,7 +90,10 @@ to define reproducible noise with the blocks of this sublibrary:
 The core of the noise generation is the computation of uniform random
 numbers in the range 0.0 .. 1.0 (and these random numbers are transformed
 afterwards, see below). This sublibrary uses the xorshift random number generation
-suite developed in 2014 by Sebastiano Vigna. These random number generators have excellent
+suite developed in 2014 by Sebastiano Vigna (for details see 
+<a href=\"http://xorshift.di.unimi.it\">http://xorshift.di.unimi.it</a> and
+<a href=\"Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>). 
+These random number generators have excellent
 statistical properties, produce quickly statistically relevant random numbers, even if 
 starting from a bad initial seed, and have a reasonable length of the internal state
 vector of 2, 4, and 33 Integer elements. The short length state vectors are especially
@@ -105,7 +108,7 @@ also user-defined generators.
 </p>
 
 
-<h4>Truncated Distributions</h4>
+<h4>Distributions</h4>
 
 <p>
 The uniform random numbers in the range 0.0 .. 1.0 are transformed to a desired
@@ -116,7 +119,7 @@ compared with its truncated version:
 </p>
 
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Math/TruncatedDistributions/Normal.density.png\">
+<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/TruncatedNormal.density.png\">
 </blockquote></p>
 
 <p>
@@ -125,7 +128,7 @@ The corresponding inverse cumulative distribution functions are shown in the nex
  
 
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Math/TruncatedDistributions/Normal.quantile.png\">
+<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/TruncatedNormal.quantile.png\">
 </blockquote></p>
 
 <p>
@@ -133,10 +136,12 @@ When providing an x-value between 0.0 .. 1.0 from a random number generator, the
 inverse cumulative probability density function of a normal distribution transforms this value into the
 desired band (in the diagram above to the range: -1.5 .. 1.5). Contrary to a standard distribution,
 truncated distributions have the advantage that the resulting random values are guaranteed
-to be in the defined band (whereas a standard normal distribution might also result in very large values,
-say, 1e60, which could be very problematic in a simulation). More details of truncated
+to be in the defined band (whereas a standard normal distribution might also result in any value;
+when modeling noise that is known to be in a particular range, say ± 0.1 Volt,
+then with the TruncatedNormal distribution it is guaranted that random values are only
+generated in this band). More details of truncated
 distributions are given in the documentation of package
-<a href=\"Modelica_Noise.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>.
+<a href=\"Modelica_Noise.Math.Distributions\">Math.Distributions</a>.
 In the blocks of this sublibrary, the desired distribution, truncated disribution or also
 a user-defined distribution can be selected.
 </p>

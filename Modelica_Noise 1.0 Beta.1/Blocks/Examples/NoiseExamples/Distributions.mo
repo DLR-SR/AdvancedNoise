@@ -22,7 +22,7 @@ model Distributions "Demonstrates noise with different types of distributions"
     fixedLocalSeed=1,
     samplePeriod=samplePeriod,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (
+        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (
            y_min=y_min, y_max=y_max))
     annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
   Noise.GenericNoise weibullNoise(
@@ -30,7 +30,7 @@ model Distributions "Demonstrates noise with different types of distributions"
     fixedLocalSeed=1,
     samplePeriod=samplePeriod,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Weibull.quantile (
+        Modelica_Noise.Math.Distributions.TruncatedWeibull.quantile (
           y_min=0, y_max=y_max, k=1))
     annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
  annotation (experiment(StopTime=2), Diagram(coordinateSystem(

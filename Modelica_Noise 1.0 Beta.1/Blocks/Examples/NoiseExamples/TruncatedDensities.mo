@@ -13,14 +13,14 @@ annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
   Modelica.Blocks.Math.Add add
 annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
   Statistics.Density truncatedNormalDensity(redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Normal.density (
+        Modelica_Noise.Math.Distributions.TruncatedNormal.density (
         u_min=-3,
         u_max=3,
         mu=0,
         sigma=2))
     annotation (Placement(transformation(extent={{10,-10},{30,10}})));
   Statistics.Density truncatedWeibullDensity(redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Weibull.density (
+        Modelica_Noise.Math.Distributions.TruncatedWeibull.density (
         u_min=0.2,
         u_max=4,
         k=1.5,

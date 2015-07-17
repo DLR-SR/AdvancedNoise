@@ -252,6 +252,7 @@ package ToModelicaTest "Functions to be included in package ModelicaTest"
     function truncatedDistributions "Test Math.TruncatedDistributions"
        import Modelica.Utilities.Streams.print;
        import Modelica_Noise.Math.TruncatedDistributions;
+      import Modelica_Noise;
        input Integer nPoints = 1000;
        input Real erfRange = 3.0;
     protected
@@ -267,29 +268,57 @@ package ToModelicaTest "Functions to be included in package ModelicaTest"
        print("\n... Check Math.TruncatedDistributions");
 
        // check Normal
-       y1 := TruncatedDistributions.Normal.density(u,u_min=-1.5,u_max=1.5);
-       y2 := TruncatedDistributions.Normal.cumulative(u,u_min=-1.5,u_max=1.5);
+       y1 :=Modelica_Noise.Math.Distributions.TruncatedNormal.density(
+            u,
+            u_min=-1.5,
+            u_max=1.5);
+       y2 :=Modelica_Noise.Math.Distributions.TruncatedNormal.cumulative(
+            u,
+            u_min=-1.5,
+            u_max=1.5);
        y3 := Internal.derTwoSided(u,y2);
        err  := max(abs(y1 - y3));
        print("Normal.density: err = " + String(err));
        assert( err < 0.2, "Normal.density not correctly computed");
 
-       y1 := TruncatedDistributions.Normal.quantile(u1,y_min=-1.5,y_max=1.5);
-       u2 := TruncatedDistributions.Normal.cumulative(y1,u_min=-1.5,u_max=1.5);
+       y1 :=Modelica_Noise.Math.Distributions.TruncatedNormal.quantile(
+            u1,
+            y_min=-1.5,
+            y_max=1.5);
+       u2 :=Modelica_Noise.Math.Distributions.TruncatedNormal.cumulative(
+            y1,
+            u_min=-1.5,
+            u_max=1.5);
        err :=max(abs(u1 - u2));
        print("Normal.cumulative/.quantile: err = " + String(err));
        assert( err < 1e-14, "Normal.cumulative or .quantile not correctly computed");
 
        // check Weibull
-       y1 := TruncatedDistributions.Weibull.density(u,u_max=0.8, lambda=0.5, k=2);
-       y2 := TruncatedDistributions.Weibull.cumulative(u,u_max=0.8, lambda=0.5, k=2);
+       y1 :=Modelica_Noise.Math.Distributions.TruncatedWeibull.density(
+            u,
+            u_max=0.8,
+            lambda=0.5,
+            k=2);
+       y2 :=Modelica_Noise.Math.Distributions.TruncatedWeibull.cumulative(
+            u,
+            u_max=0.8,
+            lambda=0.5,
+            k=2);
        y3 := Internal.derTwoSided(u,y2);
        err  := max(abs(y1 - y3));
        print("Weibull.density: err = " + String(err));
        assert( err < 0.2, "Weibull.density not correctly computed");
 
-       y1 := TruncatedDistributions.Weibull.quantile(u1,y_max=0.8, lambda=0.5, k=2);
-       u2 := TruncatedDistributions.Weibull.cumulative(y1,u_max=0.8, lambda=0.5, k=2);
+       y1 :=Modelica_Noise.Math.Distributions.TruncatedWeibull.quantile(
+            u1,
+            y_max=0.8,
+            lambda=0.5,
+            k=2);
+       u2 :=Modelica_Noise.Math.Distributions.TruncatedWeibull.cumulative(
+            y1,
+            u_max=0.8,
+            lambda=0.5,
+            k=2);
        err :=max(abs(u1 - u2));
        print("Weibull.cumulative/.quantile: err = " + String(err));
        assert( err < 1e-14, "Weibull.cumulative or .quantile not correctly computed");

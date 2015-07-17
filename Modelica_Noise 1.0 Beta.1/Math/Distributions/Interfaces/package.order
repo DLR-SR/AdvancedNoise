@@ -1,3 +1,6 @@
 partialDensity
 partialCumulative
 partialQuantile
+partialTruncatedDensity
+partialTruncatedCumulative
+partialTruncatedQuantile

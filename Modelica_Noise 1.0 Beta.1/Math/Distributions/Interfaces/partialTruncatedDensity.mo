@@ -1,13 +1,13 @@
-within Modelica_Noise.Math.TruncatedDistributions.Interfaces;
-partial function partialCumulative
-  "Common interface of truncated cumulative distribution functions"
-  extends Distributions.Interfaces.partialCumulative;
+within Modelica_Noise.Math.Distributions.Interfaces;
+partial function partialTruncatedDensity
+  "Common interface of truncated probability density functions"
+  extends Distributions.Interfaces.partialDensity;
   input Real u_min=0 "Lower limit of u" annotation(Dialog);
   input Real u_max=1 "Upper limit of u" annotation(Dialog);
   annotation (Documentation(info="<html>
 <p>
 A partial function containing the common
-arguments of the cumulative distribution functions.
+arguments of the probability density functions of truncated distributions.
 </p>
 </html>", revisions="<html>
 <p>
@@ -30,4 +30,4 @@ arguments of the cumulative distribution functions.
 </table>
 </p>
 </html>"));
-end partialCumulative;
+end partialTruncatedDensity;
