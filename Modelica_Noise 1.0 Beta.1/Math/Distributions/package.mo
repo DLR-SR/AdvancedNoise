@@ -3,6 +3,11 @@ package Distributions "Library of distribution functions"
    extends Modelica.Icons.Package;
 
 
+
+
+
+
+
 annotation (Icon(graphics={Line(
           points={{-70,-65.953},{-66.5,-65.8975},{-63,-65.7852},{-59.5,
           -65.5674},{-56,-65.1631},{-52.5,-64.4442},{-49,-63.2213},{-45.5,
@@ -37,20 +42,20 @@ In particular also <strong>truncated distributions</strong> are provided (see be
 The main reason to introduce
 truncated distributions is to make the modeling of measurement noise easier, in order to 
 limit the band in which the noise can occur. For example, if a sensor is used and the
-sensor signal has a noise of ± 0.1 Volt (e.g. this can be determined by using a reference
+sensor signal has a noise of Â± 0.1 Volt (e.g. this can be determined by using a reference
 value of 0 V and inspecting the measured signal), then the sensor signal will be often the input
-to an Analog-Digital converter and this converter limits the signal, say to ± 5 Volt. 
-Typically, the user would like to model noise within the noise band (say ± 0.1 Volt),
+to an Analog-Digital converter and this converter limits the signal, say to Â± 5 Volt. 
+Typically, the user would like to model noise within the noise band (say Â± 0.1 Volt),
 and often uses a normal distribution. But a normal distribution is not limited and
 for a small sample time and a long simulation there might be some sample time instants
-where the noise values of the normal signal is outside the ± 0.1 Volt range.
+where the noise values of the normal signal is outside the Â± 0.1 Volt range.
 For some sensor types this is completely unrealistic (e.g. an angle sensor might
-measure ± 0.1 rad, but the sensor will never add, say one revolution (6.28 rad) to it.
+measure Â± 0.1 rad, but the sensor will never add, say one revolution (6.28 rad) to it.
 However, the noise model with a pure normal distribution could give such a value.
 If a modeler would like to guarantee (and not to hope), that the modeled noise is 
-always between ± 0.1 Volt, then there are two main possibilities: (a) The noise is computed
-and the result is then limited to ± 0.1 Volt, or (b) the normal distribution is slightly modified,
-so that it is within the band of ± 0.1 Volt. Approach (a) is a brute force method that
+always between Â± 0.1 Volt, then there are two main possibilities: (a) The noise is computed
+and the result is then limited to Â± 0.1 Volt, or (b) the normal distribution is slightly modified,
+so that it is within the band of Â± 0.1 Volt. Approach (a) is a brute force method that
 changes the statistical properties of the signal in an unknown way. Approach (b)
 is a \"clean\" mathematical description. The blocks in package 
 <a href=\"modelica://Modelica_Noise.Blocks.Noise\">Blocks.Noise</a>

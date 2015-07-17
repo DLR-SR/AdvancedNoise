@@ -137,7 +137,7 @@ inverse cumulative probability density function of a normal distribution transfo
 desired band (in the diagram above to the range: -1.5 .. 1.5). Contrary to a standard distribution,
 truncated distributions have the advantage that the resulting random values are guaranteed
 to be in the defined band (whereas a standard normal distribution might also result in any value;
-when modeling noise that is known to be in a particular range, say ± 0.1 Volt,
+when modeling noise that is known to be in a particular range, say Â± 0.1 Volt,
 then with the TruncatedNormal distribution it is guaranted that random values are only
 generated in this band). More details of truncated
 distributions are given in the documentation of package
