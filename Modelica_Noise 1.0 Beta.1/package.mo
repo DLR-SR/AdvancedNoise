@@ -2,9 +2,6 @@ within ;
 package Modelica_Noise "Modelica_Noise version 1.0-Beta.1 (Library for random numbers and noise signals; planned to be included into the Modelica Standard Library)"
 
 
-
-
-
   annotation(preferredView="info",
              version =     "1.0 Beta.1",
              versionDate =  "2015-06-22",

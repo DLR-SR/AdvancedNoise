@@ -3,23 +3,23 @@ model TruncatedDensities
   "Demonstrates how to compute truncated probability density functions"
   extends Modelica.Icons.Example;
 
-  Statistics.Density uniformDensity(redeclare function distribution =
+  Utilities.Density uniformDensity(redeclare function distribution =
         Modelica_Noise.Math.Distributions.Uniform.density (u_min=-4, u_max=5))
-annotation (Placement(transformation(extent={{10,20},{30,40}})));
+    annotation (Placement(transformation(extent={{10,20},{30,40}})));
   Modelica.Blocks.Sources.Clock clock
 annotation (Placement(transformation(extent={{-80,10},{-60,30}})));
   Modelica.Blocks.Sources.Constant const(k=-6)
 annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
   Modelica.Blocks.Math.Add add
 annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
-  Statistics.Density truncatedNormalDensity(redeclare function distribution =
+  Utilities.Density truncatedNormalDensity(redeclare function distribution =
         Modelica_Noise.Math.Distributions.TruncatedNormal.density (
         u_min=-3,
         u_max=3,
         mu=0,
         sigma=2))
     annotation (Placement(transformation(extent={{10,-10},{30,10}})));
-  Statistics.Density truncatedWeibullDensity(redeclare function distribution =
+  Utilities.Density truncatedWeibullDensity(redeclare function distribution =
         Modelica_Noise.Math.Distributions.TruncatedWeibull.density (
         u_min=0.2,
         u_max=4,
@@ -53,8 +53,7 @@ equation
     Documentation(info="<html>
 <p>
 This example demonstrates how to compute the probability density functions (pdfs) of
-various truncated distributions, by using the block
-<a href=\"modelica://Modelica_Noise.Blocks.Statistics.Density\">Blocks.Statistics.Density</a>.
+various truncated distributions.
 In the following diagram simulations results for the uniform, truncated normal, and truncated Weibull distribution
 are shown. The outputs of the blocks are the pdfs that are plotted over one of the
 inputs:

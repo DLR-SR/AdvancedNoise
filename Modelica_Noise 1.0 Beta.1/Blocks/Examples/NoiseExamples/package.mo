@@ -3,17 +3,6 @@ package NoiseExamples "Library of examples to demonstrate the usage of package B
   extends Modelica.Icons.ExamplesPackage;
 
 
-
-
-
-
-
-
-
-
-
-
-
 annotation (Documentation(info="<html>
 <p>
 This package contains various example models that demonstrates how
