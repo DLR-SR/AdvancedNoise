@@ -4,7 +4,7 @@ package Math "Library of mathematical blocks"
 
   block ContinuousMean
     "Calculates the empirical expectation (mean) value of its input signal"
-    extends Modelica.Blocks.Interfaces.BlockIcon;
+    extends Modelica.Blocks.Icons.Block;
     parameter Modelica.SIunits.Time t_eps(min=0.0)=1e-7
       "Mean value calculation starts at startTime + t_eps"
       annotation(Dialog(group="Advanced"));
@@ -91,7 +91,7 @@ This block is demonstrated in the examples
   end ContinuousMean;
 
   block Variance "Calculates the empirical variance of its input signal"
-    extends Modelica.Blocks.Interfaces.BlockIcon;
+    extends Modelica.Blocks.Icons.Block;
     parameter Modelica.SIunits.Time t_eps(min=0.0)=1e-7
       "Variance calculation starts at startTime + t_eps"
       annotation(Dialog(group="Advanced"));
@@ -192,7 +192,7 @@ This block is demonstrated in the examples
 
   block StandardDeviation
     "Calculates the empirical standard deviation of its input signal"
-    extends Modelica.Blocks.Interfaces.BlockIcon;
+    extends Modelica.Blocks.Icons.Block;
     parameter Modelica.SIunits.Time t_eps(min=0.0)=1e-7
       "Standard deviation calculation starts at startTime + t_eps"
       annotation(Dialog(group="Advanced"));

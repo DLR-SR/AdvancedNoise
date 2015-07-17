@@ -1,6 +1,6 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities;
 block Density "Calculates the density of a selected distribution"
-  extends Modelica.Blocks.Interfaces.BlockIcon;
+  extends Modelica.Blocks.Icons.Block;
 
   replaceable function distribution =
        Modelica_Noise.Math.Distributions.Uniform.density constrainedby
