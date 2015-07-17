@@ -661,4 +661,21 @@ For more details of this distribution see
     end Internal;
   end Math;
 
+  package Strings
+    function hashString
+      "Check function Strings.hashString to compute a hash value from a string"
+      import Modelica.Utilities.Streams.print;
+
+    protected
+      Integer hash1;
+      Integer hash2;
+    algorithm
+      print("\n... Demonstrate how to compute a hash value from a string:");
+      hash1 :=Modelica_Noise.Utilities.Strings.hashString("this is a test");
+      hash2 :=Modelica_Noise.Utilities.Strings.hashString("Controller.noise1");
+      print("    hash1 = " + String(hash1) + "\n" +
+            "    hash2 = " + String(hash2));
+
+    end hashString;
+  end Strings;
 end ToModelicaTest;
