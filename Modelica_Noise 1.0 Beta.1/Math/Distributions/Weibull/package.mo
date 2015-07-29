@@ -3,8 +3,6 @@ package Weibull "Library of Weibull distribution functions"
   extends Modelica.Icons.Package;
 
 
-
-
   annotation (Icon(graphics={Line(
           points={{-72,-60},{-68.5,-60},{-65,-60},{-61.5,-60},{-58,-60},{-54.5,-60},{-51,-60},{-47.5,
               -60},{-44,-60},{-40.5,-60},{-37,-60},{-33.5,-60},{-30,-60},{-26.5,-60},{-23,-60},{-19.5,

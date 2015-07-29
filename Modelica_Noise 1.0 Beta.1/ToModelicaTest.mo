@@ -249,9 +249,11 @@ package ToModelicaTest "Functions to be included in package ModelicaTest"
 </html>"));
     end distributions;
 
-    function truncatedDistributions "Test Math.TruncatedDistributions"
+    function truncatedDistributions
+      "Test truncated distributions in Math.Distributions"
        import Modelica.Utilities.Streams.print;
-       import Modelica_Noise.Math.TruncatedDistributions;
+       import Modelica_Noise.Math.Distributions;
+       import Modelica_Noise;
        input Integer nPoints = 1000;
        input Real erfRange = 3.0;
     protected
@@ -264,32 +266,60 @@ package ToModelicaTest "Functions to be included in package ModelicaTest"
        Real y3[nPoints];
        Real err;
     algorithm
-       print("\n... Check Math.TruncatedDistributions");
+       print("\n... Check Math.Distributions (truncated distributions)");
 
        // check Normal
-       y1 := TruncatedDistributions.Normal.density(u,u_min=-1.5,u_max=1.5);
-       y2 := TruncatedDistributions.Normal.cumulative(u,u_min=-1.5,u_max=1.5);
+       y1 :=Modelica_Noise.Math.Distributions.TruncatedNormal.density(
+            u,
+            u_min=-1.5,
+            u_max=1.5);
+       y2 :=Modelica_Noise.Math.Distributions.TruncatedNormal.cumulative(
+            u,
+            u_min=-1.5,
+            u_max=1.5);
        y3 := Internal.derTwoSided(u,y2);
        err  := max(abs(y1 - y3));
        print("Normal.density: err = " + String(err));
        assert( err < 0.2, "Normal.density not correctly computed");
 
-       y1 := TruncatedDistributions.Normal.quantile(u1,y_min=-1.5,y_max=1.5);
-       u2 := TruncatedDistributions.Normal.cumulative(y1,u_min=-1.5,u_max=1.5);
+       y1 :=Modelica_Noise.Math.Distributions.TruncatedNormal.quantile(
+            u1,
+            y_min=-1.5,
+            y_max=1.5);
+       u2 :=Modelica_Noise.Math.Distributions.TruncatedNormal.cumulative(
+            y1,
+            u_min=-1.5,
+            u_max=1.5);
        err :=max(abs(u1 - u2));
        print("Normal.cumulative/.quantile: err = " + String(err));
        assert( err < 1e-14, "Normal.cumulative or .quantile not correctly computed");
 
        // check Weibull
-       y1 := TruncatedDistributions.Weibull.density(u,u_max=0.8, lambda=0.5, k=2);
-       y2 := TruncatedDistributions.Weibull.cumulative(u,u_max=0.8, lambda=0.5, k=2);
+       y1 :=Modelica_Noise.Math.Distributions.TruncatedWeibull.density(
+            u,
+            u_max=0.8,
+            lambda=0.5,
+            k=2);
+       y2 :=Modelica_Noise.Math.Distributions.TruncatedWeibull.cumulative(
+            u,
+            u_max=0.8,
+            lambda=0.5,
+            k=2);
        y3 := Internal.derTwoSided(u,y2);
        err  := max(abs(y1 - y3));
        print("Weibull.density: err = " + String(err));
        assert( err < 0.2, "Weibull.density not correctly computed");
 
-       y1 := TruncatedDistributions.Weibull.quantile(u1,y_max=0.8, lambda=0.5, k=2);
-       u2 := TruncatedDistributions.Weibull.cumulative(y1,u_max=0.8, lambda=0.5, k=2);
+       y1 :=Modelica_Noise.Math.Distributions.TruncatedWeibull.quantile(
+            u1,
+            y_max=0.8,
+            lambda=0.5,
+            k=2);
+       u2 :=Modelica_Noise.Math.Distributions.TruncatedWeibull.cumulative(
+            y1,
+            u_max=0.8,
+            lambda=0.5,
+            k=2);
        err :=max(abs(u1 - u2));
        print("Weibull.cumulative/.quantile: err = " + String(err));
        assert( err < 1e-14, "Weibull.cumulative or .quantile not correctly computed");
@@ -632,4 +662,21 @@ For more details of this distribution see
     end Internal;
   end Math;
 
+  package Strings
+    function hashString
+      "Check function Strings.hashString to compute a hash value from a string"
+      import Modelica.Utilities.Streams.print;
+
+    protected
+      Integer hash1;
+      Integer hash2;
+    algorithm
+      print("\n... Demonstrate how to compute a hash value from a string:");
+      hash1 :=Modelica_Noise.Utilities.Strings.hashString("this is a test");
+      hash2 :=Modelica_Noise.Utilities.Strings.hashString("Controller.noise1");
+      print("    hash1 = " + String(hash1) + "\n" +
+            "    hash2 = " + String(hash2));
+
+    end hashString;
+  end Strings;
 end ToModelicaTest;

@@ -1,5 +1,5 @@
 within Modelica_Noise.Utilities.System;
-impure function getTime "Retrieves the local time (in the local time zone)"
+function getTime "Retrieves the local time (in the local time zone)"
   output Integer ms "Millisecond";
   output Integer sec "Second";
   output Integer min "Minute";

@@ -1,5 +1,5 @@
 within Modelica_Noise.Math.Random.Utilities;
-impure function automaticGlobalSeed
+function automaticGlobalSeed
   "Creates an automatic integer seed from the current time and process id (= impure function)"
   output Integer seed "Automatically generated seed";
 protected

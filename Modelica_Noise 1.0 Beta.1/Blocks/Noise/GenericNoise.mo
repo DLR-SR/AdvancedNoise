@@ -151,17 +151,17 @@ When using this block, at a minimum the following parameters must be defined:
          Basically, <b>distribution</b> is a replaceable function that
          provides the quantile (= inverse cumulative distribution function) 
          of a random distribution. For simulation models 
-         <a href=\"modelica://Modelica_Noise.Math.TruncatedDistributions\">truncated distributions</a>
+         <a href=\"modelica://Modelica_Noise.Math.Distributions\">truncated distributions</a>
          are of special interest, because the returned random values are guaranteed
          to be in a defined band y_min ... y_max. Often used distributions are:
          <ul>
-         <li> <a href=\"Modelica_Noise.Math.Distributions.Uniform\">Uniform distribution</a>: 
+         <li> <a href=\"modelica://Modelica_Noise.Math.Distributions.Uniform\">Uniform distribution</a>: 
               The random values are mapped <b>uniformly</b> to the band
               y_min ... y_max.</li>
-         <li> <a href=\"Modelica_Noise.Math.TruncatedDistributions.Normal\">Truncated normal distribution</a>:        
+         <li> <a href=\"modelica://Modelica_Noise.Math.Distributions.TruncatedNormal\">Truncated normal distribution</a>:        
               The random values have a <b>normal</b> distribution that
               is truncated to y_min ... y_max. Measurement noise has often this distribution form.
-              By default, the standard parameters of the normal distribution are derived from
+              By default, the standard parameters of the truncated normal distribution are derived from
               y_min ... y_max: mean value = (y_max + y_min)/2, standard deviation 
               = (y_max - y_min)/6 (= 99.7 % of the non-truncated normal distribution are 
               within y_min ... y_max).</li>
@@ -246,7 +246,10 @@ the desired situation. For this purpose the following parameters can be defined:
          This is the default. 
          Note, this means that the noise might change if function randomInteger() is called
          more or less often in the overall model (e.g. because an additional noise block is 
-         introduced or removed).<br>
+         introduced or removed). It is planned to change the automatic local seed function
+         in a future version of package Modelica, once Modelica Language 3.3 language elements
+         can be used (by using a hash value of the instance name of the model that is
+         inquired with the Modelica Language 3.3 function getInstanceName()).<br>
          If <b>useAutomaticLocalSeed = false</b>, the local seed is defined
          explicitly by parameter fixedLocalSeed. It is then guaranteed that the generated noise
          remains always the same (provided the other parameter values are the same).</td></tr>

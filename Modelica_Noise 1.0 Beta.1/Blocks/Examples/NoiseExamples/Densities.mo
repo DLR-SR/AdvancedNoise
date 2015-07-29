@@ -3,23 +3,21 @@ model Densities
   "Demonstrates how to compute distribution densities (= Probability Density Function)"
   extends Modelica.Icons.Example;
 
-  Statistics.Density uniformDensity(redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.density (
-        u_min=-4,
-        u_max=4))
-annotation (Placement(transformation(extent={{10,20},{30,40}})));
+  Utilities.Density uniformDensity(redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.density (u_min=-4, u_max=4))
+    annotation (Placement(transformation(extent={{10,20},{30,40}})));
   Modelica.Blocks.Sources.Clock clock
 annotation (Placement(transformation(extent={{-80,10},{-60,30}})));
   Modelica.Blocks.Sources.Constant const(k=-10)
 annotation (Placement(transformation(extent={{-80,-30},{-60,-10}})));
   Modelica.Blocks.Math.Add add
 annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
-  Statistics.Density normalDensity(redeclare function distribution =
+  Utilities.Density normalDensity(redeclare function distribution =
         Modelica_Noise.Math.Distributions.Normal.density (mu=0, sigma=2))
-annotation (Placement(transformation(extent={{10,-10},{30,10}})));
-  Statistics.Density weibullDensity(redeclare function distribution =
+    annotation (Placement(transformation(extent={{10,-10},{30,10}})));
+  Utilities.Density weibullDensity(redeclare function distribution =
         Modelica_Noise.Math.Distributions.Weibull.density (k=1.5, lambda=3))
-annotation (Placement(transformation(extent={{10,-40},{30,-20}})));
+    annotation (Placement(transformation(extent={{10,-40},{30,-20}})));
 equation
   connect(clock.y, add.u1) annotation (Line(
   points={{-59,20},{-53.5,20},{-53.5,6},{-48,6}},
@@ -47,8 +45,7 @@ equation
     Documentation(info="<html>
 <p>
 This example demonstrates how to compute the probability density functions (pdfs) of
-various distributions, by using the block
-<a href=\"modelica://Modelica_Noise.Blocks.Statistics.Density\">Blocks.Statistics.Density</a>.
+various distributions.
 In the following diagram simulations results for the uniform, normal, and Weibull distribution
 are shown. The outputs of the blocks are the pdfs that are plotted over one of the
 inputs:

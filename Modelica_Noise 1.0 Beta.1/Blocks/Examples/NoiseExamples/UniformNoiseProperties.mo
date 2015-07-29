@@ -18,10 +18,10 @@ model UniformNoiseProperties
             y_max),
     useAutomaticLocalSeed=false)
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
-  Statistics.ContinuousMean mean
+  Math.ContinuousMean mean
     annotation (Placement(transformation(extent={{-40,60},{-20,80}})));
-  Statistics.Variance variance
-annotation (Placement(transformation(extent={{-40,0},{-20,20}})));
+  Math.Variance variance
+    annotation (Placement(transformation(extent={{-40,0},{-20,20}})));
   Modelica.Blocks.Math.MultiProduct theoreticalVariance(nu=2)
     annotation (Placement(transformation(extent={{28,-36},{40,-24}})));
   Modelica.Blocks.Math.Feedback meanError
@@ -32,8 +32,8 @@ annotation (Placement(transformation(extent={{-40,0},{-20,20}})));
     annotation (Placement(transformation(extent={{40,0},{60,20}})));
   Modelica.Blocks.Sources.Constant theoreticalSigma(k=std)
     annotation (Placement(transformation(extent={{-10,-40},{10,-20}})));
-  Statistics.StandardDeviation standardDeviation
-annotation (Placement(transformation(extent={{-40,-80},{-20,-60}})));
+  Math.StandardDeviation standardDeviation
+    annotation (Placement(transformation(extent={{-40,-80},{-20,-60}})));
   Modelica.Blocks.Math.Feedback sigmaError
     annotation (Placement(transformation(extent={{40,-60},{60,-80}})));
 equation

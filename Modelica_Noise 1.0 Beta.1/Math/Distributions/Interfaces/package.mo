@@ -6,7 +6,8 @@ package Interfaces "Library of interfaces for distribution functions"
 annotation (Documentation(info="<html>
 <p>
 This package contains partial functions that describe the
-common interface arguments of the distribution functions.
+common interface arguments of the distribution and 
+truncated distribution functions.
 </p>
 </html>", revisions="<html>
 <p>
