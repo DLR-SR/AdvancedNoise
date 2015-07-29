@@ -4,11 +4,11 @@ LibraryInfoMenuSeparator(
 
 LibraryInfoMenuCommand(
   category="libraries",
-  text="Modelica_Noise "+NoiseVersion,
+  text="Modelica_Noise 1.0 Beta.1",
   reference="Modelica_Noise",
   version="1.0 Beta.1",
   isModel=true,
-  description="Modelica_Noise modules for the MSL. Version "+NoiseVersion,
+  description="Modelica_Noise modules for the MSL. Version 1.0 Beta.1",
   ModelicaVersion="3.2.1",
   pos=110)
 
