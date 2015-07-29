@@ -137,6 +137,9 @@ static pthread_mutex_t m = PTHREAD_MUTEX_INITIALIZER;
 
 /* On Windows systems define a critical section using the single static variable "cs" */
 #elif defined(_WIN32) && defined(G_HAS_CONSTRUCTORS)
+#if !defined(WIN32_LEAN_AND_MEAN)
+#define WIN32_LEAN_AND_MEAN
+#endif
 #include <Windows.h>
 static CRITICAL_SECTION cs;
 #ifdef G_DEFINE_CONSTRUCTOR_NEEDS_PRAGMA
