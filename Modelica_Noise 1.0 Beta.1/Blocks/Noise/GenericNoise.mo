@@ -93,8 +93,7 @@ equation
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,
               55},{13,-1},{23,-1},{23,11},{29,11},{29,-19},{39,-19},{39,53},{49,
-              53},{49,19},{57,19},{57,-47},{67,-47}},
-            color={0,0,0}),
+              53},{49,19},{57,19},{57,-47},{67,-47}}),
         Text(visible=enableNoise,
           extent={{-150,-110},{150,-150}},
           lineColor={0,0,0},
@@ -102,9 +101,7 @@ equation
           fillPattern=FillPattern.Solid,
           textString="%samplePeriod s"),
         Line(visible=not enableNoise,
-          points={{-76,56},{72,56}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          points={{-76,56},{72,56}}),
         Text(visible=not enableNoise,
           extent={{-75,50},{95,10}},
           lineColor={0,0,0},
@@ -142,28 +139,28 @@ When using this block, at a minimum the following parameters must be defined:
 
 <tr><td> samplePeriod </td>
     <td> Random values are drawn periodically at the sample rate in [s]
-         defined with this parameter (time events are generated at the sample instants). 
+         defined with this parameter (time events are generated at the sample instants).
          Between sample instants, the output y is kept constant.</td></tr>
 
 <tr><td> distribution </td>
     <td> Defines the random number distribution to map the drawn random numbers
          from the range 0.0 ... 1.0, to the desired range and distribution.
          Basically, <b>distribution</b> is a replaceable function that
-         provides the quantile (= inverse cumulative distribution function) 
-         of a random distribution. For simulation models 
+         provides the quantile (= inverse cumulative distribution function)
+         of a random distribution. For simulation models
          <a href=\"modelica://Modelica_Noise.Math.Distributions\">truncated distributions</a>
          are of special interest, because the returned random values are guaranteed
          to be in a defined band y_min ... y_max. Often used distributions are:
          <ul>
-         <li> <a href=\"modelica://Modelica_Noise.Math.Distributions.Uniform\">Uniform distribution</a>: 
+         <li> <a href=\"modelica://Modelica_Noise.Math.Distributions.Uniform\">Uniform distribution</a>:
               The random values are mapped <b>uniformly</b> to the band
               y_min ... y_max.</li>
-         <li> <a href=\"modelica://Modelica_Noise.Math.Distributions.TruncatedNormal\">Truncated normal distribution</a>:        
+         <li> <a href=\"modelica://Modelica_Noise.Math.Distributions.TruncatedNormal\">Truncated normal distribution</a>:
               The random values have a <b>normal</b> distribution that
               is truncated to y_min ... y_max. Measurement noise has often this distribution form.
               By default, the standard parameters of the truncated normal distribution are derived from
-              y_min ... y_max: mean value = (y_max + y_min)/2, standard deviation 
-              = (y_max - y_min)/6 (= 99.7 % of the non-truncated normal distribution are 
+              y_min ... y_max: mean value = (y_max + y_min)/2, standard deviation
+              = (y_max - y_min)/6 (= 99.7 % of the non-truncated normal distribution are
               within y_min ... y_max).</li>
          </ul>
          </td></tr>
@@ -210,7 +207,7 @@ as shown in the next table:
 
 <p>
 For every block instance, the internally used pseudo random number generator
-has its own state. This state must be properly initialized, depending on 
+has its own state. This state must be properly initialized, depending on
 the desired situation. For this purpose the following parameters can be defined:
 </p>
 
@@ -226,13 +223,13 @@ the desired situation. For this purpose the following parameters can be defined:
          instance of block GenericNoise.
          Therefore, whenever the globalSeed defines a different number, the noise at every
          instance is changing. This is the default setting and therefore the globalSeed component
-         defines whether every new simulation run shall provide the same noise 
+         defines whether every new simulation run shall provide the same noise
          (e.g. for a parameter optimization of controller parameters), or
          whether every new simulation run shall provide different noise
          (e.g. for a Monte Carlo simulation).<br>
          = false, if the seed defined by globalSeed is ignored. For example, if
          aerodynamic turbulence is modelled with a noise block and this turbulence
-         model shall be used for all simulation runs of a Monte Carlo simulation, then 
+         model shall be used for all simulation runs of a Monte Carlo simulation, then
          useGlobalSeed has to be set to false.</td></tr>
 
 <tr><td> useAutomaticLocalSeed </td>
@@ -243,9 +240,9 @@ the desired situation. For this purpose the following parameters can be defined:
          If <b>useAutomaticLocalSeed = true</b>, the
          local seed is determined automatically from an impure random number generator that
          produces Integer random values (= calling function globalSeed.randomInteger()).
-         This is the default. 
+         This is the default.
          Note, this means that the noise might change if function randomInteger() is called
-         more or less often in the overall model (e.g. because an additional noise block is 
+         more or less often in the overall model (e.g. because an additional noise block is
          introduced or removed). It is planned to change the automatic local seed function
          in a future version of package Modelica, once Modelica Language 3.3 language elements
          can be used (by using a hash value of the instance name of the model that is
@@ -257,7 +254,7 @@ the desired situation. For this purpose the following parameters can be defined:
 <tr><td> fixedLocalSeed </td>
     <td> If useAutomaticLocalSeed = false, the local seed to be used.
          fixedLocalSeed can be any Integer number (including zero or a negative number).
-         The initialization algorithm produces a meaningful initial state of the random 
+         The initialization algorithm produces a meaningful initial state of the random
          number generator from fixedLocalSeed and (if useAutomaticGlobalSeed=true) from globalSeed even for
          bad seeds such as 0 or 1, so the subsequently drawing of random numbers produce always statistically
          meaningful numbers.</td></tr>
@@ -273,9 +270,9 @@ the desired situation. For this purpose the following parameters can be defined:
 
 <h4>Advanced tab: Random number generator</h4>
 <p>
-The (pseudo) random number generator to be used is defined here. 
+The (pseudo) random number generator to be used is defined here.
 The default is random number generator algorithm \"xorshift128+\".
-This random number generator has a period of 2^128, 
+This random number generator has a period of 2^128,
 has an internal state of 4 Integer elements, and has
 excellent statistical properties.
 If the default algorithm is not desired, the
@@ -290,8 +287,8 @@ following parameter can be set:
 
 <tr><td> generator </td>
     <td> Defines the pseudo random number generator to be used. This is
-         a replaceable package. Meaningful random number generators are provided in 
-         package <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>. 
+         a replaceable package. Meaningful random number generators are provided in
+         package <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>.
          Properties of the various generators are described in the package
          description of the Generators package.</td></tr>
 </table>
@@ -302,12 +299,12 @@ following parameter can be set:
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

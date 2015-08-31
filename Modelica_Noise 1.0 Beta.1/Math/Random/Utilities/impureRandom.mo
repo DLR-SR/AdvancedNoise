@@ -29,7 +29,7 @@ is returned, so the function is impure.
   <b>function</b> random = impureRandom (<b>final id=id);
 <b>protected </b>
   Integer id;
-<b>equation</b> 
+<b>equation</b>
   // Initialize the random number generator
   <b>when</b> initial() <b>then</b>
     id = initializeImpureRandom(seed);
@@ -54,12 +54,12 @@ is returned, so the function is impure.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

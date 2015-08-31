@@ -39,59 +39,46 @@ model UniformNoiseProperties
 equation
   connect(noise.y, mean.u) annotation (Line(
       points={{-59,70},{-42,70}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise.y, variance.u) annotation (Line(
       points={{-59,70},{-52,70},{-52,10},{-42,10}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(mean.y, meanError.u1) annotation (Line(
       points={{-19,70},{42,70}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(theoreticalMean.y, meanError.u2) annotation (Line(
       points={{11,50},{50,50},{50,62}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(theoreticalSigma.y, theoreticalVariance.u[1]) annotation (Line(
       points={{11,-30},{24,-30},{24,-27.9},{28,-27.9}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(theoreticalSigma.y, theoreticalVariance.u[2]) annotation (Line(
       points={{11,-30},{24,-30},{24,-32.1},{28,-32.1}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(variance.y, varianceError.u1) annotation (Line(
       points={{-19,10},{42,10}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(theoreticalVariance.y, varianceError.u2) annotation (Line(
       points={{41.02,-30},{50,-30},{50,2}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(noise.y, standardDeviation.u) annotation (Line(
       points={{-59,70},{-52,70},{-52,-70},{-42,-70}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(standardDeviation.y, sigmaError.u1) annotation (Line(
       points={{-19,-70},{42,-70}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(theoreticalSigma.y, sigmaError.u2) annotation (Line(
       points={{11,-30},{18,-30},{18,-42},{50,-42},{50,-62}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
  annotation (experiment(StopTime=20, Interval=0.4e-2, Tolerance=1e-009),
-                                     Diagram(coordinateSystem(
-          preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
 <p>
 This example demonstrates statistical properties of the
 <a href=\"modelica://Modelica_Noise.Blocks.Noise.GenericNoise\">Blocks.Noise.GenericNoise</a> block
-using a <b>uniform</b> random number distribution. 
+using a <b>uniform</b> random number distribution.
 Block &quot;noise&quot; defines a band of 0 .. 6 and from the generated noise the mean and the variance
 is computed with blocks of package <a href=\"modelica://Modelica_Noise.Blocks.Statistics\">Blocks.Statistics</a>.
-Simulation results are shown in the next diagram: 
+Simulation results are shown in the next diagram:
 </p>
 
 <p><blockquote>
@@ -99,8 +86,8 @@ Simulation results are shown in the next diagram:
 </blockquote></p>
 
 <p>
-The mean value of a uniform noise in the range 0 .. 6 is 3 and its variance is 
-3 as well. The simulation results above show good agreement (after a short initial phase). 
+The mean value of a uniform noise in the range 0 .. 6 is 3 and its variance is
+3 as well. The simulation results above show good agreement (after a short initial phase).
 This demonstrates that the random number generator and the mapping to a uniform
 distribution have good statistical properties.
 </p>
@@ -110,12 +97,12 @@ distribution have good statistical properties.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

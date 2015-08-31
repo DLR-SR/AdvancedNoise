@@ -29,27 +29,20 @@ annotation (Placement(transformation(extent={{-46,-10},{-26,10}})));
 equation
   connect(clock.y, add.u1) annotation (Line(
   points={{-59,20},{-53.5,20},{-53.5,6},{-48,6}},
-  color={0,0,127},
-  smooth=Smooth.None));
+  color={0,0,127}));
   connect(const.y, add.u2) annotation (Line(
   points={{-59,-20},{-54,-20},{-54,-6},{-48,-6}},
-  color={0,0,127},
-  smooth=Smooth.None));
+  color={0,0,127}));
   connect(add.y, uniformDensity.u) annotation (Line(
   points={{-25,0},{-14,0},{-14,30},{8,30}},
-  color={0,0,127},
-  smooth=Smooth.None));
+  color={0,0,127}));
   connect(add.y, truncatedNormalDensity.u) annotation (Line(
       points={{-25,0},{8,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(add.y, truncatedWeibullDensity.u) annotation (Line(
       points={{-25,0},{-14,0},{-14,-30},{8,-30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
  annotation (experiment(StopTime=12, Interval=1.2e-2),
-                                     Diagram(coordinateSystem(
-          preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics),
     Documentation(info="<html>
 <p>
 This example demonstrates how to compute the probability density functions (pdfs) of
@@ -69,12 +62,12 @@ inputs:
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

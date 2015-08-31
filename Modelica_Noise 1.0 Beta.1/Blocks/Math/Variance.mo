@@ -27,12 +27,12 @@ equation
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -61,8 +61,6 @@ This block is demonstrated in the examples
 <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.WeibullNoiseProperties\">WeibullNoiseProperties</a>.
 </p>
 </html>"),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={
         Line(points={{-76,68},{-76,-80}}, color={192,192,192}),
@@ -81,12 +79,9 @@ This block is demonstrated in the examples
           fillPattern=FillPattern.Solid),
         Line(
           points={{-76,66},{70,66}},
-          color={215,215,215},
-          smooth=Smooth.None),
+          color={215,215,215}),
         Line(
-          points={{-16,0},{-16,48}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          points={{-16,0},{-16,48}}),
         Polygon(
           points={{-76,90},{-84,68},{-68,68},{-76,90}},
           lineColor={192,192,192},

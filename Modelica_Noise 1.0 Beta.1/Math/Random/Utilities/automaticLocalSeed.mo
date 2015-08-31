@@ -29,7 +29,7 @@ seed = Utilities.<b>automaticLocalSeed</b>(path);
 
 <h4>Description</h4>
 <p>
-Returns an automatically computed seed (Integer) from the hash value of 
+Returns an automatically computed seed (Integer) from the hash value of
 the full path name of an instance (has to be inquired in the model or block
 where this function is called by getInstanceName()). Contrary to automaticGlobalSeed(),
 this is a pure function, that is, the same seed is returned, if an identical
@@ -39,10 +39,10 @@ path is provided.
 <h4>Example</h4>
 <blockquote><pre>
 <b>parameter</b> Boolean useAutomaticLocalSeed = true;
-<b>parameter</b> Integer fixedLocalSeed        = 10; 
-<b>final parameter</b> Integer localSeed = <b>if</b> useAutomaticLocalSeed <b>then</b> 
+<b>parameter</b> Integer fixedLocalSeed        = 10;
+<b>final parameter</b> Integer localSeed = <b>if</b> useAutomaticLocalSeed <b>then</b>
                                        automaticLocalSeed(getInstanceName())
-                                    <b>else</b> 
+                                    <b>else</b>
                                        fixedLocalSeed;
 </pre></blockquote>
 
@@ -56,12 +56,12 @@ path is provided.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

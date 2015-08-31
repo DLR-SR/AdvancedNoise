@@ -29,7 +29,7 @@ Special.<b>erfInv</b>(u);
 
 <h4>Description</h4>
 <p>
-This function computes the inverse of the complementary error function 
+This function computes the inverse of the complementary error function
 erfc(u) = 1 - erf(u) with a relative precision of about 1e-15.
 Therefore, u = erfc(erfcInv(u)) and erfcInv(u) = erfInv(1 - u). Input argument u must be in the range
 (otherwise an assertion is raised):
@@ -74,12 +74,12 @@ For more details, see <a href=\"http://en.wikipedia.org/wiki/Error_function\">Wi
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

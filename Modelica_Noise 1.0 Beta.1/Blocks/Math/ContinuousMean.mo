@@ -27,12 +27,12 @@ equation
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -82,7 +82,5 @@ This block is demonstrated in the examples
               {38,35},{48,35},{48,1},{56,1},{56,-65},{66,-65}},
             color={215,215,215}),
         Line(
-          points={{-76,-24},{70,-24}},
-          color={0,0,0},
-          smooth=Smooth.None)}));
+          points={{-76,-24},{70,-24}})}));
 end ContinuousMean;
