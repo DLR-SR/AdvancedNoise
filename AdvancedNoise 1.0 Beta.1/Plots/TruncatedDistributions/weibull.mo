@@ -1,7 +1,7 @@
 within AdvancedNoise.Plots.TruncatedDistributions;
-function weibull "Plot functions Math.TruncatedDistributions.Weibull"
+function weibull "Plot functions Math.Distributions.TruncatedWeibull"
    import Modelica_Noise.Math.Distributions.Weibull;
-   import T_Weibull = Modelica_Noise.Math.TruncatedDistributions.Weibull;
+   import T_Weibull = Modelica_Noise.Math.Distributions.TruncatedWeibull;
    input Integer nPoints(min=2) = 1000 "Number of evaluation points";
 protected
    Real u[nPoints] = linspace(-1, 2, nPoints);

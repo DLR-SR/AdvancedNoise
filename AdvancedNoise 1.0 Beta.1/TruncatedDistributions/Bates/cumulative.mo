@@ -1,7 +1,7 @@
 within AdvancedNoise.TruncatedDistributions.Bates;
 function cumulative "Cumulative distribution function of Bates distribution"
   extends
-    Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialCumulative;
+    Modelica_Noise.Math.Distributions.Interfaces.partialTruncatedCumulative;
   input Integer n=12 "Number of uniform random values" annotation (Dialog);
 algorithm
   y := Distributions.Bates.cumulative(u, u_min, u_max, n);

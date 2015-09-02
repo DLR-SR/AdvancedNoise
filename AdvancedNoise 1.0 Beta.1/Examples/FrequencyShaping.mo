@@ -7,8 +7,8 @@ model FrequencyShaping
     y_min=-1,
     y_max=3,
     sampleFactor=10,
-    redeclare package interpolation = Noise.Interpolators.FirstOrder,
-    samplePeriod=0.1)
+    samplePeriod=0.1,
+    redeclare package interpolation = AdvancedNoise.Interpolators.FirstOrder)
     annotation (Placement(transformation(extent={{-60,40},{-40,60}})));
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
@@ -32,9 +32,9 @@ model FrequencyShaping
     useAutomaticLocalSeed=false,
     y_min=-1,
     y_max=3,
-    redeclare package interpolation = Noise.Interpolators.StepResponse,
     sampleFactor=10,
-    samplePeriod=0.1)
+    samplePeriod=0.1,
+    redeclare package interpolation = AdvancedNoise.Interpolators.StepResponse)
     annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   Modelica.Blocks.Continuous.Der derTabulated
     annotation (Placement(transformation(extent={{20,0},{40,20}})));

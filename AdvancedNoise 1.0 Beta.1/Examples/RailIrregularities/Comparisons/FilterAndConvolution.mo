@@ -23,7 +23,7 @@ model FilterAndConvolution
     y_min=-1e10,
     y_max=+1e10,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
+        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (mu=0, sigma=
            sqrt(0.5)/sqrt(samplePeriod)),
     useAutomaticLocalSeed=false) if doMinimum
     annotation (Placement(transformation(extent={{-20,20},{0,40}})));
@@ -43,7 +43,7 @@ model FilterAndConvolution
     useAutomaticLocalSeed=false,
     samplePeriod=samplePeriod,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
+        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (mu=0, sigma=
            sqrt(0.5)/sqrt(samplePeriod))) if doFilter
     annotation (Placement(transformation(extent={{-20,-20},{0,0}})));
   Sources.SignalBasedNoise spaceDomainNoiseZero(
@@ -55,7 +55,7 @@ model FilterAndConvolution
     redeclare package interpolation =
         AdvancedNoise.Examples.RailIrregularities.ZeroPhaseInterpolator,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
+        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (mu=0, sigma=
            sqrt(0.5)/sqrt(samplePeriod))) if doZero
     annotation (Placement(transformation(extent={{-20,60},{0,80}})));
   Modelica.Blocks.Continuous.TransferFunction timeDomainFilter(b={2.7542724e-04,

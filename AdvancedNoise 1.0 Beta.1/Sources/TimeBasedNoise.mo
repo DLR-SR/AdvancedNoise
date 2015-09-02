@@ -30,7 +30,7 @@ block TimeBasedNoise
   // Advanced dialog menu: Random number properties
   replaceable function distribution =
        Modelica_Noise.Math.Distributions.Uniform.quantile constrainedby
-    Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialQuantile(
+    Modelica_Noise.Math.Distributions.Interfaces.partialTruncatedQuantile(
       final y_min=y_min, final y_max=y_max)
     "Random number distribution (truncated to y_min..y_max)"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
@@ -210,7 +210,7 @@ equation
           lineColor={192,192,192},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid),
-        Line(visible=  enableNoise,
+        Line(visible = enableNoise,
            points={{-75,-13},{-61,-13},{-61,3},{-53,3},{-53,-45},{-45,-45},{-45,
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,

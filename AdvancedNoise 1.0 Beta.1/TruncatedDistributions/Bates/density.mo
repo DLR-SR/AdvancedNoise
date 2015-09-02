@@ -1,6 +1,6 @@
 within AdvancedNoise.TruncatedDistributions.Bates;
 function density "Density of Bates distribution"
-  extends Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialDensity;
+  extends Modelica_Noise.Math.Distributions.Interfaces.partialTruncatedDensity;
   input Integer n=12 "Number of uniform random values" annotation (Dialog);
 algorithm
   y := Distributions.Bates.density(u, u_min, u_max, n);

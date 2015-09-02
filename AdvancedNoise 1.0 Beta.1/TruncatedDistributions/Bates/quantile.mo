@@ -1,6 +1,6 @@
 within AdvancedNoise.TruncatedDistributions.Bates;
 function quantile "Quantile of Bates distribution"
-  extends Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialQuantile;
+  extends Modelica_Noise.Math.Distributions.Interfaces.partialTruncatedQuantile;
   input Integer n=12 "Number of uniform random values" annotation (Dialog);
 algorithm
   y := Distributions.Bates.quantile(u, y_min, y_max, n);

@@ -8,9 +8,10 @@ model Interpolation "Tests all interpolators"
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
-    redeclare package interpolation = Noise.Interpolators.Constant,
     y_min=-1,
-    y_max=3) annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
+    y_max=3,
+    redeclare package interpolation = AdvancedNoise.Interpolators.Constant)
+             annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
   Sources.TimeBasedNoise
                      linearNoise(
     useAutomaticLocalSeed=false,
@@ -18,16 +19,17 @@ model Interpolation "Tests all interpolators"
     sampleFactor=10,
     y_min=-1,
     y_max=3,
-    redeclare package interpolation = Noise.Interpolators.Linear)
+    redeclare package interpolation = AdvancedNoise.Interpolators.Linear)
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
   Sources.TimeBasedNoise
                      smoothNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
-    redeclare package interpolation = Noise.Interpolators.SmoothIdealLowPass,
     y_min=-1,
     y_max=3,
-    sampleFactor=10)
+    sampleFactor=10,
+    redeclare package interpolation =
+        AdvancedNoise.Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-60,-30},{-40,-10}})));
   Sources.TimeBasedNoise filteredNoise(
     useAutomaticLocalSeed=false,
@@ -35,7 +37,7 @@ model Interpolation "Tests all interpolators"
     y_min=-1,
     y_max=3,
     sampleFactor=10,
-    redeclare package interpolation = Noise.Interpolators.FirstOrder)
+    redeclare package interpolation = AdvancedNoise.Interpolators.FirstOrder)
     annotation (Placement(transformation(extent={{-60,-80},{-40,-60}})));
   Modelica.Blocks.Continuous.Der derFiltered
     annotation (Placement(transformation(extent={{0,-92},{20,-72}})));
@@ -66,7 +68,7 @@ model Interpolation "Tests all interpolators"
     y_min=-1,
     y_max=3,
     sampleFactor=10,
-    redeclare package interpolation = Noise.Interpolators.StepResponse)
+    redeclare package interpolation = AdvancedNoise.Interpolators.StepResponse)
     annotation (Placement(transformation(extent={{-60,-130},{-40,-110}})));
   Modelica.Blocks.Continuous.FirstOrder stepFiltered(T=0.00001, y_start=0.2,
     initType=Modelica.Blocks.Types.Init.InitialState)
@@ -127,7 +129,7 @@ equation
   annotation (experiment(StopTime=2),
     Documentation(info="<html>
 <p>This example demonstrates the different interpolation methods that can be selected for a Noise block.All the blocks use samplePeriod = 0.1 s and generated uniform noise in the band y_min=-1 .. y_max=3. Furhtermore, all blocks use the same fixedLocalSeed, so all blocks generate exactly the same random numbers at the sample instants 0 s, 0.1 s, 0.2 s, ... However, these values are differently interpolated as shown in the next diagram: </p>
-<blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/Interpolation1.png\"/> </blockquote>
+<blockquote><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/Interpolation1.png\"/> </blockquote>
 <p>As can be seen, constant (constantNoise.y) and linear (linearNoise.y) interpolation respects the defined band -1 .. 3. Instead, smooth interpolation with the sinc function (smoothNoise.y) may violate the band slightly in order to be able to smoothly interpolate the random values at the sample instants. In practical applications, this is not an issue because the exact band of the noise is usually not exactly known. </p>
 </html>", revisions="<html>
 <p>
