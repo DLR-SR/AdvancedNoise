@@ -8,3 +8,6 @@
 *.mo text
 *.mos text
 *.order text
+.gitattributes text
+.gitignore text
+*.md text
