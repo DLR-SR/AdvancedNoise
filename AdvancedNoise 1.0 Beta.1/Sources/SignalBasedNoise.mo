@@ -325,8 +325,8 @@ value has a length of 64 bits).
 </p></blockquote>
 
 <p>
-As a simple demonstration, see example <a href=\"Blocks.Examples.NoiseExamples.SignalBasedNoise\">Blocks.Examples.NoiseExamples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!</p>
-<blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/SignalBasedNoise.png\"/> </blockquote>
+As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBasedNoise\">Blocks.Examples.NoiseExamples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!</p>
+<blockquote><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalBasedNoise.png\"/> </blockquote>
 
 <h4>Advanced tab: General settings</h4>
 <p>In the <b>Advanced</b> tab of the parameter menu, further options can be set. The general settings are shown in the next table: </p>
@@ -362,8 +362,8 @@ As a simple demonstration, see example <a href=\"Blocks.Examples.NoiseExamples.S
 </tr>
 <tr>
 <td><p>interpolation </p></td>
-<td><p>Defines the type of interpolation between the random values drawn at sample instants. This is a replaceable package. The following interpolation packages are provided in package <a href=\"modelica://Modelica_Noise.Math.Random.Utilities.Interpolators\">Math.Random.Utilities.Interpolators</a>: </p><ul>
-<li>Constant: The random values are held constant between sample instants. </li><li>Linear: The random values are linearly interpolated between sample instants. </li><li>SmoothIdealLowPass: The random values are smoothly interpolated with the <a href=\"modelica://Modelica_Noise.Math.Special.sinc\">sinc</a> function. This is an approximation of an ideal low pass filter (that would have an infinite steep drop of the frequency response at the cut-off frequency 1/samplePeriod). </li>
+<td><p>Defines the type of interpolation between the random values drawn at sample instants. This is a replaceable package. The following interpolation packages are provided in package <a href=\"modelica://AdvancedNoise.Interpolators\">Interpolators</a>: </p><ul>
+<li>Constant: The random values are held constant between sample instants. </li><li>Linear: The random values are linearly interpolated between sample instants. </li><li>SmoothIdealLowPass: The random values are smoothly interpolated with the sinc function. This is an approximation of an ideal low pass filter (that would have an infinite steep drop of the frequency response at the cut-off frequency 1/samplePeriod). </li>
 </ul></td>
 </tr>
 <tr>
@@ -373,8 +373,8 @@ As a simple demonstration, see example <a href=\"Blocks.Examples.NoiseExamples.S
 </table>
 </p></blockquote>
 
-<p>The different interpolation methods are demonstrated with example <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.Interpolation\">Examples.NoiseExamples.Interpolation</a>. The example uses the block <a href=\"TimeBasedNoise\">TimeBasedNoise</a>, but the results also hold for SignalBasedNoise. A simulation result is shown in the next diagram: </p>
-<blockquote><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/Interpolation1.png\"/> </blockquote>
+<p>The different interpolation methods are demonstrated with example <a href=\"modelica://AdvancedNoise.Examples.Interpolation\">Examples.Interpolation</a>. The example uses the block <a href=\"TimeBasedNoise\">TimeBasedNoise</a>, but the results also hold for SignalBasedNoise. A simulation result is shown in the next diagram: </p>
+<blockquote><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\"/> </blockquote>
 
 <p>As can be seen, constant (constantNoise.y) and linear (linearNoise.y) interpolation respect the defined band -1 .. 3. Instead, smooth interpolation with the sinc function (smoothNoise.y) may violate the band slightly in order to be able to smoothly interpolate the random values at the sample instants. In practical applications, this is not an issue because the exact band of the noise is usually not exactly known. </p>
 
