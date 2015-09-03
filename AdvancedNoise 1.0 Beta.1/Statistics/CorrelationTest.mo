@@ -55,5 +55,7 @@ equation
       smooth=Smooth.None));
 
     annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics));
+            -100},{100,100}}), graphics), Documentation(revisions="<html>
+<p><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
+</html>"));
 end CorrelationTest;

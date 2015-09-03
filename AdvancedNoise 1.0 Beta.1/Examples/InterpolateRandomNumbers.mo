@@ -25,8 +25,8 @@ public
   Real rSmooth "Smoothly inteprolated random number";
 equation
   offset    = mod(time / samplePeriod, 90) + 5.0;
-  rConstant = AdvancedNoise.Interpolators.Constant.interpolate(buffer=r, offset
-    =offset);
+  rConstant = AdvancedNoise.Interpolators.Constant.interpolate(buffer=r, offset=
+     offset);
   rLinear = AdvancedNoise.Interpolators.Linear.interpolate(buffer=r, offset=
     offset);
   rSmooth = AdvancedNoise.Interpolators.SmoothIdealLowPass.interpolate(buffer=r,
@@ -43,7 +43,7 @@ Simulations results are shown in the figure below:
 </p>
 
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Random/InterpolateRandomNumbers.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolateRandomNumbers.png\">
 </blockquote></p>
 </html>", revisions="<html>
 <p>

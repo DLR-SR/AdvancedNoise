@@ -36,5 +36,5 @@ For more details, see
 <a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.cumulative\">Bates.cumulative</a>,
 <a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.quantile\">Bates.quantile</a>.
 </p>
-</html>"));
+</html>", revisions=""));
 end density;

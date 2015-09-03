@@ -282,11 +282,11 @@ When using this block, at a minimum the following parameters must be defined:
 </p></blockquote>
 
 <p>
-As a simple demonstration, see example <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.TimeBasedNoise\">Blocks.Examples.NoiseExamples.TimeBasedNoise</a>.
+As a simple demonstration, see example <a href=\"modelica://AdvancedNoise.Examples.TimeBasedNoise\">Examples.TimeBasedNoise</a>.
 In the next diagram, a simulation result is shown for samplePeriod=0.02 s, y_min=-1, y_max=3:
 </p>
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/SimpleTimeBasedNoise.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TimeBasedNoise.png\">
 </blockquote>
 </p>
 
@@ -389,7 +389,7 @@ A simulation result is shown in the next diagram:
 </p>
 
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/Interpolation1.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\">
 </blockquote></p>
 
 <p>

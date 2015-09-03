@@ -19,13 +19,13 @@ model FilterAndConvolution
     useTime=false,
     redeclare package interpolation =
         AdvancedNoise.Examples.RailIrregularities.MinimumPhaseInterpolator,
-    samplePeriod=0.4,
     y_min=-1e10,
     y_max=+1e10,
     redeclare function distribution =
         Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (mu=0, sigma=
            sqrt(0.5)/sqrt(samplePeriod)),
-    useAutomaticLocalSeed=false) if doMinimum
+    useAutomaticLocalSeed=false,
+    samplePeriod=samplePeriod) if   doMinimum
     annotation (Placement(transformation(extent={{-20,20},{0,40}})));
 
   Modelica.Blocks.Continuous.Integrator position(y_start=123)
@@ -97,5 +97,26 @@ equation
       StopTime=20,
       Interval=0.01,
       Tolerance=0.001),
-    __Dymola_experimentSetupOutput);
+    __Dymola_experimentSetupOutput,
+    Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
 end FilterAndConvolution;

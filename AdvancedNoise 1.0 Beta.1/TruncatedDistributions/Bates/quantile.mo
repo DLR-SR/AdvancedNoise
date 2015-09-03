@@ -55,5 +55,5 @@ For more details, see
 <a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.density\">Bates.density</a>,
 <a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.cumulative\">Bates.cumulative</a>.
 </p>
-</html>"));
+</html>", revisions=""));
 end quantile;

@@ -42,7 +42,7 @@ noise repeats after every second (when the path parameter is reset to s=0):
 </p>
 
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/SignalBasedNoise.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalBasedNoise.png\">
 </blockquote>
 </p>
 </html>", revisions="<html>

@@ -24,4 +24,7 @@ equation
 public
   Real l = H(u);
   Real r = 1-H(u);
+  annotation (Documentation(revisions="<html>
+<p><img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
+</html>"));
 end SignificanceTest;

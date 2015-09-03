@@ -64,7 +64,7 @@ blocks over the sine output:
 </p>
 
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/SignalInterpolation.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalInterpolation.png\">
 </blockquote>
 </p>
 </html>", revisions="<html>
