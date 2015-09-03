@@ -55,8 +55,7 @@ into your model and specify the seed.
           textString="%fixedSeed"),
         Line(visible = not enableNoise,
           points={{-80,-4},{84,-4}},
-          color={215,215,215},
-          smooth=Smooth.None),
+          color={215,215,215}),
         Text(visible=enableNoise and not useAutomaticSeed,
           extent={{-84,34},{94,8}},
           lineColor={255,0,0},
@@ -69,12 +68,12 @@ into your model and specify the seed.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -114,7 +113,7 @@ hierarchical level. The following options can be selected:
          same fixedSeed exactly the same noise is generated in all instances of the Noise
          blocks (provided the settings of these blocks are not changed as well).<br>
          This option can be used (a) to design a control system (e.g. by parameter optimization) and keep the same
-         noise for all simulations, or (b) perform Monte Carlo Simulations where 
+         noise for all simulations, or (b) perform Monte Carlo Simulations where
          fixedSeed is changed from the environment for every simulation, in order to
          produce different noise at every simulation run.</td></tr>
 
@@ -143,14 +142,14 @@ Additionally, the globalSeed instance provides the following impure functions
 <ul>
 <li> <b>random</b>():<br>
      This function uses the <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift1024star\">xorshift1024*</a>
-     pseudo random number generator to produce random numbers in the range 0 &lt; random numbers &le; 1. 
+     pseudo random number generator to produce random numbers in the range 0 &lt; random numbers &le; 1.
      It is initialized with the global seed defined in globalSeed
      (so either with parameter fixedSeed, or automatically computed by process ID and local time).
      Since random() is an impure function, it should only be called in a when-clause (so at an event).</li>
 <li> <b>randomInteger</b>(imin=1,imax=Modelica.Constants.Integer_inf):<br>
      This function uses the random() pseudo random number generator and maps the returned random value
      into the Integer range imin ... imax. By default, imin=1 and imax=Modelica.Constants.Integer_inf.
-     Since randomInteger() is an impure function, it should only be called in a when-clause 
+     Since randomInteger() is an impure function, it should only be called in a when-clause
      (so at an event).</li>
 </ul>
 

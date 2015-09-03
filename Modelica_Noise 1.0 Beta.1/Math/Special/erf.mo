@@ -61,7 +61,7 @@ Special.<b>erf</b>(u);
 <p>
 This function computes the error function erf(u) = 2/sqrt(pi)*Integral_0_u exp(-t^2)*dt numerically with a relative precision of about 1e-15. The implementation utilizes the formulation of the Boost library
 (53-bit implementation of <a href=\"http://www.boost.org/doc/libs/1_57_0/boost/math/special_functions/erf.hpp\">erf.hpp</a>,
-developed by John Maddock). Plot 
+developed by John Maddock). Plot
 of the function:
 </p>
 
@@ -92,12 +92,12 @@ For more details, see <a href=\"http://en.wikipedia.org/wiki/Error_function\">Wi
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

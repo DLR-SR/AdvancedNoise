@@ -24,7 +24,6 @@ extends Modelica.Icons.Example;
   Modelica.Mechanics.Translational.Sources.ConstantForce constantForce(
       f_constant=10000) annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
-        rotation=0,
         origin={86,0})));
   Modelica.Blocks.Nonlinear.SlewRateLimiter slewRateLimiter(Rising=50)
     annotation (Placement(transformation(extent={{-40,66},{-20,86}})));
@@ -40,47 +39,33 @@ extends Modelica.Icons.Example;
 equation
   connect(controller.y1, Motor.iq_rms1) annotation (Line(
       points={{21,70},{30,70},{30,20},{-96,20},{-96,6},{-88,6}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(Motor.phi, controller.positionMeasured) annotation (Line(
       points={{-71,8},{-66,8},{-66,52},{-12,52},{-12,64},{-2,64},{-2,64}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(Motor.flange, gearbox.flange_a) annotation (Line(
-      points={{-66,0},{-60,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      points={{-66,0},{-60,0}}));
   connect(gearbox.flange_b, idealGearR2T.flangeR) annotation (Line(
-      points={{-40,0},{-32,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      points={{-40,0},{-32,0}}));
   connect(constantForce.flange, mass.flange_b) annotation (Line(
       points={{76,0},{70,0}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(Speed.y, slewRateLimiter.u) annotation (Line(
       points={{-51,76},{-42,76}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(slewRateLimiter.y, controller.positionReference) annotation (Line(
       points={{-19,76},{-2,76}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(rodMass.flange_a, idealGearR2T.flangeT) annotation (Line(
       points={{-4,0},{-12,0}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(rodMass.flange_b, elastoGap.flange_a) annotation (Line(
       points={{16,0},{22,0}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(elastoGap.flange_b, mass.flange_a) annotation (Line(
       points={{42,0},{50,0}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   annotation (
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
     experiment(StopTime=8, Interval = 0.01, Tolerance=1e-005),
     Documentation(info="<html>
 <p>
@@ -94,20 +79,20 @@ This example models an actuator with a noisy sensor (which is in the Motor compo
 
 <p>
 The drive train consists of a synchronous motor with a current controller (= Motor) and a gear box.
-The gearbox drives a rod through a linear translation model. Softly attached to the rod is 
+The gearbox drives a rod through a linear translation model. Softly attached to the rod is
 another mass representing the actual actuator (= mass). The actuator is loaded with a constant force.
 </p>
 
 <p>
-The whole drive is steered by a rate limited speed step command through a controller model. 
+The whole drive is steered by a rate limited speed step command through a controller model.
 In the Motor the shaft angle is measured and this measurement signal is modelled by adding
 additive noise to the Motor angle.
 </p>
 
 <p>
-In the following figure, the position of the actuator and the Motor output torque are 
-shown with and without noise. The noise is not very strong, such that it has no visible effect 
-on the position of the actuator. The effect of the noise can be seen in the Motor torque. 
+In the following figure, the position of the actuator and the Motor output torque are
+shown with and without noise. The noise is not very strong, such that it has no visible effect
+on the position of the actuator. The effect of the noise can be seen in the Motor torque.
 </p>
 
 <blockquote><p>
@@ -124,12 +109,12 @@ enableNoise = false in the globalSeed component.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

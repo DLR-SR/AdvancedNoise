@@ -26,15 +26,12 @@ model DrydenContinuousTurbulence
 equation
   connect(whiteNoise.y, Hw.u) annotation (Line(
       points={{-39,10},{-12,10}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(Hw.y, compareToSpeed.u) annotation (Line(
       points={{11,10},{38,10}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   annotation (experiment(StopTime=100),
-              Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics), Documentation(info="<html>
+ Documentation(info="<html>
 <p>
 This example shows how to use the
 <a href=\"modelica://Modelica_Noise.Blocks.Noise.BandLimitedWhiteNoise\">BandLimitedWhiteNoise</a>
@@ -86,9 +83,9 @@ The input to the filter
 
 <p>
 The input to the filter is white noise with a normal distribution, zero mean, and a power spectral density of 1.
-That means, for a sampling time of 1s, it is parameterized with mean=0 and variance=1. 
+That means, for a sampling time of 1s, it is parameterized with mean=0 and variance=1.
 However, in order to account for the change of noise power due to sampling, the noise must be scaled with sqrt(samplePeriod).
-This is done automatically in the 
+This is done automatically in the
 <a href=\"modelica://Modelica_Noise.Blocks.Noise.BandLimitedWhiteNoise\">BandLimitedWhiteNoise</a> block.
 </p>
 
@@ -104,7 +101,7 @@ Reference
 </h4>
 
 <ol>
-<li>Dryden Wind Turbulence model in US military standard 
+<li>Dryden Wind Turbulence model in US military standard
     <a href=\"http://everyspec.com/MIL-SPECS/MIL-SPECS-MIL-F/MIL-F-8785C_5295/\">MIL-F-8785</a>.</li>
 </ol>
 </html>"));

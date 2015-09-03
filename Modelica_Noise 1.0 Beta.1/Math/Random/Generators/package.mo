@@ -5,9 +5,7 @@ package Generators "Library of functions generating uniform random numbers in th
 
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
         -100,-100},{100,100}}), graphics={Line(
-      points={{-90,-54},{-50,-54},{-50,54},{50,54},{50,-54},{84,-54}},
-      color={0,0,0},
-      smooth=Smooth.None)}), Documentation(info="<html>
+      points={{-90,-54},{-50,-54},{-50,54},{50,54},{50,-54},{84,-54}})}), Documentation(info="<html>
 <p>
 This package contains various pseudo random number generators. A random number generator is a package
 that is derived from <a href=\"modelica://Modelica_Noise.Math.Random.Utilities.Interfaces.PartialGenerator\">Random.Utilities.Interfaces.PartialGenerator</a>
@@ -15,12 +13,12 @@ and consists of the following elements:
 </p>
 <ul>
 <li> Integer <b>nState</b> is a constant that defines the length of the internal state vector
-     (in order that an appropriate Integer vector of this length can be declared, depending on 
+     (in order that an appropriate Integer vector of this length can be declared, depending on
      the selected random number generator).</li>
 <li> Function <b>initialState(..)</b> is used to initialize the state of the random number generator
      by providing Integer seeds and calling the random number generator often enough that
      statistically relevant random numbers are returned by every call of function random(..).</li>
-<li> Function <b>random(..)</b> is used to return a random number of type Real in the range 
+<li> Function <b>random(..)</b> is used to return a random number of type Real in the range
      0.0 &lt; random &le; 1.0 for every call.
      Furthermore, the updated (internal) state of the random number generator is returned as well.
     </li>
@@ -42,9 +40,9 @@ articles:
 </p>
 <blockquote>
 <p>
-Sebastiano Vigna: 
+Sebastiano Vigna:
 <a href=\"http://vigna.di.unimi.it/ftp/papers/xorshift.pdf\">An experimental exploration of Marsaglia's xorshift generators, scrambled</a>, 2014.<br>
-Sebastiano Vigna: 
+Sebastiano Vigna:
 <a href=\"http://vigna.di.unimi.it/ftp/papers/xorshiftplus.pdf\">Further scramblings of Marsaglia's xorshift generators</a>, 2014.<br>
 </p>
 </blockquote>
@@ -115,7 +113,7 @@ Further explanations of the properties above:
      \"<a href=\"http://xorshift.di.unimi.it/\">A long period does not imply high quality</a>\"
      a period of 2^1024 is by far large enough for even massively parallel simulations
      with huge number of random number computations per simulation.
-     A period of 2^128 might be not enough for massively parallel simulations. 
+     A period of 2^128 might be not enough for massively parallel simulations.
      </li>
 
 <li> <b>Length of state (# 32 bit integer)</b> defines the number of \"int\" (that is Modelica Integer) elements
@@ -125,7 +123,7 @@ Further explanations of the properties above:
      a huge framework for testing random number generators.
      According to these tests, the statistical properties of the xorshift random number
      generators are better than the ones of the Mersenne Twister random number generator.</li>
-     
+
 <li> <b>Worst case startup</b> means how many calls are needed until getting
      from a bad seed to random numbers with appropriate statistical properties.
      Here, the xorshift random number suite has much better properties
@@ -162,7 +160,7 @@ The xorshift random number generators are used in the following way in the
      which in turn is used with
      <a href=\"modelica://Modelica_Noise.Blocks.Noise.GlobalSeed.random\">Blocks.Noise.GlobalSeed.random</a>.
      The internal state vector is not exposed. It is updated internally, whenever a new random number
-     is drawn.</li> 
+     is drawn.</li>
 </ol>
 
 <p>
@@ -175,12 +173,12 @@ These numbers are mapped to the 52 bit mantissa of double numbers in the range 0
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

@@ -18,28 +18,25 @@ block StandardDeviation
 equation
   connect(variance.u, u) annotation (Line(
       points={{-62,0},{-120,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(sqrt1.u, variance.y) annotation (Line(
       points={{-22,0},{-39,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(sqrt1.y, y) annotation (Line(
       points={{1,0},{110,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   annotation (Documentation(revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -54,7 +51,7 @@ equation
 <pre>y = sqrt( variance(u) )</pre>
 </blockquote>
 <p>
-The <a href=\"modelica://Modelica_Noise.Blocks.Statistics.Variance\">Variance</a> block is used to 
+The <a href=\"modelica://Modelica_Noise.Blocks.Statistics.Variance\">Variance</a> block is used to
 calculate variance(u).
 </p>
 <p>The parameter t_eps is used to guard against division by zero (the computation of the standard deviation
@@ -68,8 +65,6 @@ This block is demonstrated in the examples
 <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.WeibullNoiseProperties\">WeibullNoiseProperties</a>.
 </p>
 </html>"),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-            100}}), graphics),
     Icon(graphics={
         Line(points={{-76,68},{-76,-80}}, color={192,192,192}),
         Line(points={{-86,0},{72,0}}, color={192,192,192}),
@@ -87,12 +82,9 @@ This block is demonstrated in the examples
           fillPattern=FillPattern.Solid),
         Line(
           points={{-76,46},{70,46}},
-          color={215,215,215},
-          smooth=Smooth.None),
+          color={215,215,215}),
         Line(
-          points={{-16,0},{-16,30}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          points={{-16,0},{-16,30}}),
         Polygon(
           points={{-76,90},{-84,68},{-68,68},{-76,90}},
           lineColor={192,192,192},

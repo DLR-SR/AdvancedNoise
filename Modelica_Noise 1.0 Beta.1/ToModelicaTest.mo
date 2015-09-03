@@ -526,7 +526,7 @@ mu-3*sigma &le; y &le; mu+3*sigma
 </blockquote>
 
 <p>
-This function is only for test purposes. It computes the quantile (= inverse cumulative distribution function) of a normal distribution with a reduced precision of about 1e-7. 
+This function is only for test purposes. It computes the quantile (= inverse cumulative distribution function) of a normal distribution with a reduced precision of about 1e-7.
 </p>
 
 <p>

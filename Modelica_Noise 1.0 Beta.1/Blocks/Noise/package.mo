@@ -5,16 +5,14 @@ package Noise "Library of noise blocks"
 
   annotation (Icon(graphics={Line(
       points={{-84,0},{-54,0},{-54,40},{-24,40},{-24,-70},{6,-70},{6,80},
-          {36,80},{36,-20},{66,-20},{66,60}},
-      color={0,0,0},
-      smooth=Smooth.None)}), Documentation(info="<html>
+          {36,80},{36,-20},{66,-20},{66,60}})}), Documentation(info="<html>
 <p>
 This sublibrary contains blocks that generate <b>reproducible noise</b> with pseudo random
 numbers. Reproducibility is important when designing control systems,
 either manually or with optimization methods (for example when changing a parameter or a component
 of a control system and re-simulating, it is important that the noise does not change, because
 otherwise it is hard to determine whether the changed control system or the differently
-computed noise has changed the behaviour of the controlled system). 
+computed noise has changed the behaviour of the controlled system).
 Many examples how to use the Noise blocks are provided in sublibrary
 <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples\">Blocks.Examples.NoiseExamples</a>.
 </p>
@@ -53,7 +51,7 @@ to define reproducible noise with the blocks of this sublibrary:
 <tr><td> GenericNoise </td>
     <td> Random values are drawn periodically according to a given distribution
          (e.g. uniform or normal distribution) at a given sample rate
-         (time events are generated at the sample instants). 
+         (time events are generated at the sample instants).
          Between sample instants, the output is kept constant.</td></tr>
 
 <tr><td> BandLimitedWhiteNoise </td>
@@ -63,21 +61,21 @@ to define reproducible noise with the blocks of this sublibrary:
 
 <tr><td> globalSeed.random() </td>
     <td> Function random() is defined inside the globalSeed component.
-         On a lower hierarchical level, the function can be called via an 
+         On a lower hierarchical level, the function can be called via an
          outer globalSeed declaration. For every call of this function, a new
-         random value is returned in the range 0 ... 1. 
+         random value is returned in the range 0 ... 1.
          Since this is an impure function, it should only
          be called in a when-clause, so at an event instant. This is a more
          traditional random number generator in the seldom cases where it is needed
          to implement a special block.</td></tr>
 
 <tr><td> globalSeed.randomInteger(..) </td>
-    <td> Function randomInteger(imin=1,imax=Modelica.Constants.Integer_inf) is 
+    <td> Function randomInteger(imin=1,imax=Modelica.Constants.Integer_inf) is
          defined inside the globalSeed component. It produces random Integer
          values in the range imin ... imax.
-         On a lower hierarchical level, the function can be called via an 
+         On a lower hierarchical level, the function can be called via an
          outer globalSeed declaration. For every call of this function, a new
-         Integer random value is returned in the range  imin ... imax. 
+         Integer random value is returned in the range  imin ... imax.
          Since this is an impure function, it should only
          be called in a when-clause, so at an event instant.</td></tr>
 </table>
@@ -90,11 +88,11 @@ to define reproducible noise with the blocks of this sublibrary:
 The core of the noise generation is the computation of uniform random
 numbers in the range 0.0 .. 1.0 (and these random numbers are transformed
 afterwards, see below). This sublibrary uses the xorshift random number generation
-suite developed in 2014 by Sebastiano Vigna (for details see 
+suite developed in 2014 by Sebastiano Vigna (for details see
 <a href=\"http://xorshift.di.unimi.it\">http://xorshift.di.unimi.it</a> and
-<a href=\"Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>). 
+<a href=\"Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>).
 These random number generators have excellent
-statistical properties, produce quickly statistically relevant random numbers, even if 
+statistical properties, produce quickly statistically relevant random numbers, even if
 starting from a bad initial seed, and have a reasonable length of the internal state
 vector of 2, 4, and 33 Integer elements. The short length state vectors are especially
 useful if every block instance has its own internal state vector, as needed for
@@ -112,7 +110,7 @@ also user-defined generators.
 
 <p>
 The uniform random numbers in the range 0.0 .. 1.0 are transformed to a desired
-random number distribution by selecting an appropriate <b>distribution</b> or 
+random number distribution by selecting an appropriate <b>distribution</b> or
 <b>truncated distribution</b>. For an example of a truncated distribution, see the following
 diagram of the probabibilty density function of a normal distribution
 compared with its truncated version:
@@ -125,7 +123,7 @@ compared with its truncated version:
 <p>
 The corresponding inverse cumulative distribution functions are shown in the next diagram:
 </p>
- 
+
 
 <p><blockquote>
 <img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/TruncatedNormal.quantile.png\">
@@ -151,12 +149,12 @@ a user-defined distribution can be selected.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
