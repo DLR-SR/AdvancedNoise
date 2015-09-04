@@ -3,8 +3,16 @@ package AdvancedNoise "A library with additional noise modules compatible to the
   extends Modelica.Icons.Package;
 
 
-  annotation(version =                        "1.0 Beta.1",
-             versionDate =                    "2015-06-22",
+
+
+
+
+
+
+
+
+  annotation(version =                        "1.0 Beta.2",
+             versionDate =                    "2015-09-01",
              versionBuild =                   1,
              uses(Modelica(version="3.2.1"), Modelica_Noise(version=
           "1.0 Beta.1")),
@@ -14,13 +22,27 @@ package AdvancedNoise "A library with additional noise modules compatible to the
       color={0,0,0},
       smooth=Smooth.None)}),
   Documentation(revisions="<html>
-<table border=0 cellspacing=0 cellpadding=0>
-  <tr><td valign=\"center\"> <img src=\"modelica://Actuator/Resources/Images/logo_dlr.png\" width=60></td>
-    <td valign=\"center\"><p>Initial version implemented by A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.</p><p><a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a> </p></td>
-  </tr>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Sep. 4, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
 </table>
-</html>
-", info="<html>
+</p>
+</html>",
+   info="<html>
 <p>This library contains components that can be used to efficiently generate noise which can be used in simulations. Examples of the these components are:</p>
 <ul>
 <li>Sample-free <a href=\"AdvancedNoise.Sources.TimeBasedNoise\">TimeBasedNoise</a> which allows for faster system simulations </li>
@@ -28,6 +50,7 @@ package AdvancedNoise "A library with additional noise modules compatible to the
 <li><a href=\"AdvancedNoise.Sources.ColoredSignalBasedNoise\">Colored noise</a></li>
 </ul>
 <p>The AdvancedNoise library is developed at the DLR Institute of System Dynamics and Control. </p>
+<p><img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\"/></p>
 <p>The autors of the library are: <span style=\"font-family: MS Shell Dlg 2;\">A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.</span></p>
 <h4>Acknowledgments</h4>
 <p><span style=\"font-family: MS Shell Dlg 2;\">Many thanks goes to T. Beutlich for his help in cleaing up the library.</span></p>

@@ -30,8 +30,7 @@ equation
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics), Icon(coordinateSystem(
-          preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics=
-         {
+          preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
         Line(
           points={{-80,80},{-80,-80},{80,-80}},
           color={0,0,0},

@@ -39,12 +39,12 @@ block TimeBasedNoise
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -65,12 +65,12 @@ block TimeBasedNoise
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -91,12 +91,12 @@ block TimeBasedNoise
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -481,12 +481,12 @@ For this purpose the following parameters can be defined.
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
