@@ -7,8 +7,8 @@ model FrequencyShaping
     y_min=-1,
     y_max=3,
     sampleFactor=10,
-    redeclare package interpolation = Noise.Interpolators.FirstOrder,
-    samplePeriod=0.1)
+    samplePeriod=0.1,
+    redeclare package interpolation = AdvancedNoise.Interpolators.FirstOrder)
     annotation (Placement(transformation(extent={{-60,40},{-40,60}})));
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
@@ -32,9 +32,9 @@ model FrequencyShaping
     useAutomaticLocalSeed=false,
     y_min=-1,
     y_max=3,
-    redeclare package interpolation = Noise.Interpolators.StepResponse,
     sampleFactor=10,
-    samplePeriod=0.1)
+    samplePeriod=0.1,
+    redeclare package interpolation = AdvancedNoise.Interpolators.StepResponse)
     annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   Modelica.Blocks.Continuous.Der derTabulated
     annotation (Placement(transformation(extent={{20,0},{40,20}})));
@@ -58,5 +58,32 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics));
+            -100},{100,100}}), graphics),
+    Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Sep. 4, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>", info="<html>
+<p>This example demonstrated different noise filtering methods using a convolution, a tabulated method and using a filter.</p>
+</html>"),
+    experiment(
+      StopTime=20,
+      Interval=0.01,
+      Tolerance=1e-006));
 end FrequencyShaping;

@@ -30,7 +30,7 @@ block TimeBasedNoise
   // Advanced dialog menu: Random number properties
   replaceable function distribution =
        Modelica_Noise.Math.Distributions.Uniform.quantile constrainedby
-    Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialQuantile(
+    Modelica_Noise.Math.Distributions.Interfaces.partialTruncatedQuantile(
       final y_min=y_min, final y_max=y_max)
     "Random number distribution (truncated to y_min..y_max)"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
@@ -39,12 +39,12 @@ block TimeBasedNoise
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -65,12 +65,12 @@ block TimeBasedNoise
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -91,12 +91,12 @@ block TimeBasedNoise
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -210,7 +210,7 @@ equation
           lineColor={192,192,192},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid),
-        Line(visible=  enableNoise,
+        Line(visible = enableNoise,
            points={{-75,-13},{-61,-13},{-61,3},{-53,3},{-53,-45},{-45,-45},{-45,
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,
@@ -282,11 +282,11 @@ When using this block, at a minimum the following parameters must be defined:
 </p></blockquote>
 
 <p>
-As a simple demonstration, see example <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.TimeBasedNoise\">Blocks.Examples.NoiseExamples.TimeBasedNoise</a>.
+As a simple demonstration, see example <a href=\"modelica://AdvancedNoise.Examples.TimeBasedNoise\">Examples.TimeBasedNoise</a>.
 In the next diagram, a simulation result is shown for samplePeriod=0.02 s, y_min=-1, y_max=3:
 </p>
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/SimpleTimeBasedNoise.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TimeBasedNoise.png\">
 </blockquote>
 </p>
 
@@ -389,7 +389,7 @@ A simulation result is shown in the next diagram:
 </p>
 
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Examples/NoiseExamples/Interpolation1.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\">
 </blockquote></p>
 
 <p>
@@ -481,12 +481,12 @@ For this purpose the following parameters can be defined.
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
-<tr><td valign=\"top\"> Feb. 18, 2015 </td>
+<tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\"> 
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

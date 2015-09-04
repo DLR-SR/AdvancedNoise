@@ -1,7 +1,7 @@
 within AdvancedNoise.TruncatedDistributions.Discrete;
 function cumulative "Cumulative distribution function of discrete distribution"
   extends
-    Modelica_Noise.Math.TruncatedDistributions.Interfaces.partialCumulative;
+    Modelica_Noise.Math.Distributions.Interfaces.partialTruncatedCumulative;
   input Real x[:] = {0,1} "Discrete values to be chosen from" annotation(Dialog);
   input Real p[size(x,1)] = ones(size(x,1))/size(x,1)
     "The probabilities of the discrete values" annotation(Dialog);

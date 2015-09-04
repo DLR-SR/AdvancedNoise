@@ -19,13 +19,13 @@ model FilterAndConvolution
     useTime=false,
     redeclare package interpolation =
         AdvancedNoise.Examples.RailIrregularities.MinimumPhaseInterpolator,
-    samplePeriod=0.4,
     y_min=-1e10,
     y_max=+1e10,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
+        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (mu=0, sigma=
            sqrt(0.5)/sqrt(samplePeriod)),
-    useAutomaticLocalSeed=false) if doMinimum
+    useAutomaticLocalSeed=false,
+    samplePeriod=samplePeriod) if   doMinimum
     annotation (Placement(transformation(extent={{-20,20},{0,40}})));
 
   Modelica.Blocks.Continuous.Integrator position(y_start=123)
@@ -43,7 +43,7 @@ model FilterAndConvolution
     useAutomaticLocalSeed=false,
     samplePeriod=samplePeriod,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
+        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (mu=0, sigma=
            sqrt(0.5)/sqrt(samplePeriod))) if doFilter
     annotation (Placement(transformation(extent={{-20,-20},{0,0}})));
   Sources.SignalBasedNoise spaceDomainNoiseZero(
@@ -55,7 +55,7 @@ model FilterAndConvolution
     redeclare package interpolation =
         AdvancedNoise.Examples.RailIrregularities.ZeroPhaseInterpolator,
     redeclare function distribution =
-        Modelica_Noise.Math.TruncatedDistributions.Normal.quantile (mu=0, sigma=
+        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (mu=0, sigma=
            sqrt(0.5)/sqrt(samplePeriod))) if doZero
     annotation (Placement(transformation(extent={{-20,60},{0,80}})));
   Modelica.Blocks.Continuous.TransferFunction timeDomainFilter(b={2.7542724e-04,
@@ -97,5 +97,26 @@ equation
       StopTime=20,
       Interval=0.01,
       Tolerance=0.001),
-    __Dymola_experimentSetupOutput);
+    __Dymola_experimentSetupOutput,
+    Documentation(revisions="<html>
+<p>
+<table border=1 cellspacing=0 cellpadding=2>
+<tr><th>Date</th> <th align=\"left\">Description</th></tr>
+
+<tr><td valign=\"top\"> Sep. 4, 2015 </td>
+    <td valign=\"top\"> 
+
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         Initial version implemented by
+         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</td></tr>
+
+</table>
+</p>
+</html>"));
 end FilterAndConvolution;

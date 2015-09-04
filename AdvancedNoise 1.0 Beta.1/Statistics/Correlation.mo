@@ -70,6 +70,6 @@ equation
   y=r;
 
   annotation (    Documentation(revisions="<html>
-<p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of SYstem DYnamics and Control</b> </p>
+<p><img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>"));
 end Correlation;
