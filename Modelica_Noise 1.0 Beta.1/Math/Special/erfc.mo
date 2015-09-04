@@ -34,7 +34,7 @@ Special.<b>erfc</b>(u);
 <p>
 This function computes the complementary error function erfc(u) = 1 - erf(u) with a relative precision of about 1e-15. The implementation utilizes the formulation of the Boost library
 (53-bit implementation of <a href=\"http://www.boost.org/doc/libs/1_57_0/boost/math/special_functions/erf.hpp\">erf.hpp</a>
-developed by John Maddock). Plot 
+developed by John Maddock). Plot
 of the function:
 </p>
 
@@ -44,7 +44,7 @@ of the function:
 
 <p>
 If u is large and erf(u) is subtracted from 1.0, the result is not accurate.
-It is then better to use erfc(u). For more details, 
+It is then better to use erfc(u). For more details,
 see <a href=\"http://en.wikipedia.org/wiki/Error_function\">Wikipedia</a>.
 </p>
 
@@ -67,12 +67,12 @@ see <a href=\"http://en.wikipedia.org/wiki/Error_function\">Wikipedia</a>.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

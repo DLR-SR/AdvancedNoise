@@ -66,12 +66,12 @@ of truncated distributions, see
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -159,12 +159,12 @@ of truncated distributions, see
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -246,7 +246,7 @@ of truncated distributions, see
 </p>
 
 <h4>Example</h4>
-<blockquote><pre> 
+<blockquote><pre>
   quantile(0.001)           // = 0.0006323204312624211;
   quantile(0.5,0,1,0.5,0.9) // = 0.256951787882498
 </pre></blockquote>
@@ -262,12 +262,12 @@ of truncated distributions, see
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -290,16 +290,11 @@ of truncated distributions, see
               69.1658},{8.5,78},{12,75.3585},{15.5,65.6645},{19,52.0082},{
               22.5,36.6157},{26,21.0458},{29.5,6.3239},{33,-6.9424},{36.5,
               -18.4596},{40,-28.1579},{43.5,-36.1153}},
-          color={0,0,0},
           smooth=Smooth.Bezier),
         Line(
-          points={{43.5,-36},{43.5,-63}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          points={{43.5,-36},{43.5,-63}}),
         Line(
-          points={{43.5,-63},{79.5,-63}},
-          color={0,0,0},
-          smooth=Smooth.None)}),
+          points={{43.5,-63},{79.5,-63}})}),
     Documentation(info="<html>
 <p>
 This package provides
@@ -338,12 +333,12 @@ of truncated distributions, see
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -352,9 +347,5 @@ of truncated distributions, see
 
 </table>
 </p>
-</html>"),
-    Diagram(coordinateSystem(
-        preserveAspectRatio=false,
-        extent={{-100,-100},{100,100}},
-        grid={1,1})));
+</html>"));
 end TruncatedWeibull;

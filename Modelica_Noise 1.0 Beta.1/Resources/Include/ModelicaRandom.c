@@ -511,13 +511,13 @@ MODELICA_EXPORT void ModelicaRandom_xorshift1024star(int state_in[], int state_o
 
 /* these functions give access to an external random number state
    you should be very careful about using them...
-   
-   The external variables are 
+
+   The external variables are
    - ModelicaRandom_s:  The first part of the internal state of xorshift1024*
    - ModelicaRandom_p:  The second part of the internal state of xorshift1024*
    - ModelicaRandom_id: The check variable used for initializing the state
-   
-   We use MUTEX_LOCK() and MUTEX_UNLOCK() as defined above for 
+
+   We use MUTEX_LOCK() and MUTEX_UNLOCK() as defined above for
    thread-safe access to these variables.
 */
 

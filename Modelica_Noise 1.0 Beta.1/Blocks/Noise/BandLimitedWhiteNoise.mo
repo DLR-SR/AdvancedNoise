@@ -8,7 +8,7 @@ block BandLimitedWhiteNoise
   parameter Real noisePower = 1 "Power of white noise signal";
   annotation (Documentation(info="<html>
 <p>
-This block configures the <a href=\"GenericNoise\">GenericNoise</a> block to produce 
+This block configures the <a href=\"GenericNoise\">GenericNoise</a> block to produce
 band-limited white noise. This is performed by using a normal distribution with mu=0 and
 sigma = sqrt(noisePower/samplePeriod).
 </p>
@@ -19,7 +19,7 @@ parameters:
 </p>
 
 <ul>
-<li> The <b>samplePeriod</b> of the block should be much faster (say by a factor of 100) 
+<li> The <b>samplePeriod</b> of the block should be much faster (say by a factor of 100)
      than the fastest dynamics of the system fed by the block&apos;s outputs. </li>
 <li> The <b>noisePower</b> of the signal should be set to the expected power per frequency
      of the white noise. Since many system models assume a noise power of 1,

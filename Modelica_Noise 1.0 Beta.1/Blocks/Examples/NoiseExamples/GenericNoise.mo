@@ -9,12 +9,10 @@ model GenericNoise
     samplePeriod=0.02, redeclare function distribution =
         Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
- annotation (experiment(StopTime=2), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics),
-    Documentation(info="<html>
+ annotation (experiment(StopTime=2),    Documentation(info="<html>
 <p>
-This example demonstrates the most simple usage of the 
-<a href=\"modelica://Modelica_Noise.Blocks.Noise.GenericNoise\">Noise.GenericNoise</a> 
+This example demonstrates the most simple usage of the
+<a href=\"modelica://Modelica_Noise.Blocks.Noise.GenericNoise\">Noise.GenericNoise</a>
 block:
 </p>
 
@@ -22,7 +20,7 @@ block:
 <li> <b>globalSeed</b> is the <a href=\"modelica://Modelica_Noise.Blocks.Noise.GlobalSeed\">Noise.GlobalSeed</a>
      block with default options (just dragged from sublibrary Noise).</li>
 <li> <b>genericNoise</b> is an instance of
-     <a href=\"modelica://Modelica_Noise.Blocks.Noise.GenericNoise\">Noise.GenericNoise</a> with 
+     <a href=\"modelica://Modelica_Noise.Blocks.Noise.GenericNoise\">Noise.GenericNoise</a> with
      samplePeriod = 0.02 s and a Uniform distribution with limits y_min=-1, y_max=3.</li>
 </ul>
 
@@ -42,12 +40,12 @@ The result of a simulation is shown in the next diagram:
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

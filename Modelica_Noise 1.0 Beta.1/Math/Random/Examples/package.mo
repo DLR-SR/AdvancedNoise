@@ -6,7 +6,7 @@ package Examples "Examples demonstrating the usage of the functions in package R
 annotation (Documentation(info="<html>
 <p>
 This package contains examples demonstrating the usage of the functions in package
-<b>Random</b>. 
+<b>Random</b>.
 </p>
 </html>", revisions="<html>
 <p>
@@ -14,12 +14,12 @@ This package contains examples demonstrating the usage of the functions in packa
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

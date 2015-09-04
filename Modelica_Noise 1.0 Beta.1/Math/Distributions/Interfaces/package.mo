@@ -6,7 +6,7 @@ package Interfaces "Library of interfaces for distribution functions"
 annotation (Documentation(info="<html>
 <p>
 This package contains partial functions that describe the
-common interface arguments of the distribution and 
+common interface arguments of the distribution and
 truncated distribution functions.
 </p>
 </html>", revisions="<html>
@@ -15,12 +15,12 @@ truncated distribution functions.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

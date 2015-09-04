@@ -26,42 +26,32 @@ model Controller "Simple position controller for actuator"
 equation
   connect(speedFeedback.y, speed_PI.u) annotation (Line(
       points={{29,0},{36,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(positionFeedback.u2, positionToSpeed.u) annotation (Line(
       points={{-80,52},{-80,-60},{-62,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(positionReference, positionFeedback.u1) annotation (Line(
       points={{-120,60},{-88,60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(positionFeedback.y, position_PI.u) annotation (Line(
       points={{-71,60},{-62,60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(position_PI.y, speedFeedback.u1) annotation (Line(
       points={{-39,60},{0,60},{0,0},{12,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(speed_PI.y, busdelay.u) annotation (Line(
       points={{59,0},{66,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(y1, busdelay.y) annotation (Line(
       points={{110,0},{89,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(positionMeasured, positionToSpeed.u) annotation (Line(
       points={{-120,-60},{-62,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(positionToSpeed.y, speedFeedback.u2) annotation (Line(
       points={{-39,-60},{20,-60},{20,-8}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics), Icon(coordinateSystem(
+      color={0,0,127}));
+  annotation ( Icon(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
         Rectangle(extent={{-100,100},{100,-100}}, lineColor={0,0,255},
           fillColor={255,255,255},
@@ -79,12 +69,12 @@ equation
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

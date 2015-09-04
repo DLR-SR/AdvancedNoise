@@ -42,15 +42,14 @@ model MotorWithCurrentControl
     alpha20s=smpmData.alpha20s,
     TrOperational=293.15,
     alpha20r=smpmData.alpha20r)
-    annotation (Placement(transformation(extent={{-20,-50},{0,-30}}, rotation=0)));
+    annotation (Placement(transformation(extent={{-20,-50},{0,-30}})));
   Modelica.Electrical.MultiPhase.Sources.SignalCurrent signalCurrent(final m=m)
     annotation (Placement(transformation(
         origin={-10,50},
         extent={{-10,10},{10,-10}},
         rotation=270)));
   Modelica.Electrical.MultiPhase.Basic.Star star(final m=m)
-    annotation (Placement(transformation(extent={{-50,80},{-70,100}},
-          rotation=0)));
+    annotation (Placement(transformation(extent={{-50,80},{-70,100}})));
   Modelica.Electrical.Analog.Basic.Ground ground
     annotation (Placement(transformation(
         origin={-90,90},
@@ -74,7 +73,7 @@ model MotorWithCurrentControl
         rotation=270)));
   Modelica.Electrical.Machines.Utilities.TerminalBox terminalBox(
       terminalConnection="Y") annotation (Placement(transformation(extent={{-20,
-            -30},{0,-10}}, rotation=0)));
+            -30},{0,-10}})));
   Modelica.Electrical.Machines.Sensors.RotorDisplacementAngle rotorDisplacementAngle(p=smpm.p)
     annotation (Placement(transformation(
         origin={20,-40},
@@ -118,7 +117,6 @@ model MotorWithCurrentControl
     "Absolute angle of flange as output signal" annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
-        rotation=0,
         origin={110,80}), iconTransformation(extent={{40,70},{60,90}})));
   Modelica.Blocks.Math.Add addNoise
     annotation (Placement(transformation(extent={{60,70},{80,90}})));
@@ -137,95 +135,67 @@ equation
         points={{14,-30},{-4,-30}}, color={0,0,255}));
   connect(terminalBox.plug_sn, smpm.plug_sn)   annotation (Line(
       points={{-16,-30},{-16,-30}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(terminalBox.plug_sp, smpm.plug_sp)   annotation (Line(
       points={{-4,-30},{-4,-30}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(smpm.flange, rotorDisplacementAngle.flange) annotation (Line(
-      points={{0,-40},{10,-40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      points={{0,-40},{10,-40}}));
   connect(signalCurrent.plug_p, star.plug_p) annotation (Line(
       points={{-10,60},{-10,90},{-50,90}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(angleSensor.flange, rotorDisplacementAngle.flange) annotation (Line(
-      points={{10,-10},{10,-40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      points={{10,-10},{10,-40}}));
   connect(angleSensor.phi, currentController.phi) annotation (Line(
       points={{10,11},{10,30},{-40,30},{-40,38}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(groundM.p, terminalBox.starpoint) annotation (Line(
       points={{-70,-28},{-19,-28}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(smpm.flange, torqueSensor.flange_a) annotation (Line(
-      points={{0,-40},{30,-40},{30,-60}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      points={{0,-40},{30,-40},{30,-60}}));
   connect(voltageQuasiRMSSensor.plug_p, terminalBox.plugSupply) annotation (
       Line(
       points={{-20,-10},{-10,-10},{-10,-28}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(starM.plug_p, voltageQuasiRMSSensor.plug_n) annotation (Line(
       points={{-50,-10},{-40,-10}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(starM.pin_n, groundM.p) annotation (Line(
       points={{-70,-10},{-70,-28}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(currentController.y, signalCurrent.i) annotation (Line(
       points={{-29,50},{-17,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(speedSensor.flange, smpm.flange) annotation (Line(
-      points={{30,-10},{30,-40},{0,-40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      points={{30,-10},{30,-40},{0,-40}}));
   connect(torqueSensor.flange_b, inertiaLoad.flange_a) annotation (Line(
-      points={{50,-60},{50,-40}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      points={{50,-60},{50,-40}}));
   connect(signalCurrent.plug_n, currentQuasiRMSSensor.plug_p) annotation (
      Line(
       points={{-10,40},{-10,10}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(currentQuasiRMSSensor.plug_n, voltageQuasiRMSSensor.plug_p)
     annotation (Line(
       points={{-10,-10},{-20,-10}},
-      color={0,0,255},
-      smooth=Smooth.None));
+      color={0,0,255}));
   connect(id.y, currentController.id_rms) annotation (Line(
       points={{-79,30},{-70,30},{-70,56},{-52,56}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(currentController.iq_rms, iq_rms1) annotation (Line(
       points={{-52,44},{-76,44},{-76,60},{-120,60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(inertiaLoad.flange_b, flange) annotation (Line(
-      points={{70,-40},{86,-40},{86,0},{100,0}},
-      color={0,0,0},
-      smooth=Smooth.None));
+      points={{70,-40},{86,-40},{86,0},{100,0}}));
   connect(angleSensor.phi, addNoise.u2) annotation (Line(
       points={{10,11},{10,30},{52,30},{52,74},{58,74}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(addNoise.y, phi) annotation (Line(
       points={{81,80},{110,80}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(GenericNoise.y, addNoise.u1) annotation (Line(
       points={{47,86},{58,86}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   annotation (
     Documentation(info="<html>
 <p>
@@ -253,12 +223,12 @@ actuator example
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -268,8 +238,6 @@ actuator example
 </table>
 </p>
 </html>"),
-    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{
-            100,100}}), graphics),
     Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
             100}}), graphics={Rectangle(
           extent={{40,50},{-100,100}},

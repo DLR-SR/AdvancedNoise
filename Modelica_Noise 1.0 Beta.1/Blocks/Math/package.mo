@@ -17,7 +17,6 @@ package Math "Library of mathematical blocks"
           -56.1385},{43.5,-59.2318},{47,-61.2213},{50.5,-62.4442},{54,
           -63.1631},{57.5,-63.5674},{61,-63.7852},{64.5,-63.8975},{68,
           -63.953}},
-          color={0,0,0},
           smooth=Smooth.Bezier)}), Documentation(info="<html>
 </html>", revisions="<html>
 <p>
@@ -25,12 +24,12 @@ package Math "Library of mathematical blocks"
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

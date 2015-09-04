@@ -15,7 +15,7 @@ Normal.<b>cumulative</b>(u, mu=0, sigma=1);
 
 <h4>Description</h4>
 <p>
-This function computes the cumulative distribution function according to a <b>normal</b> distribution 
+This function computes the cumulative distribution function according to a <b>normal</b> distribution
 with mean value <b>mu</b> and standard deviation <b>sigma</b> (variance = sigma<sup>2</sup>).
 The returned value y is in the range:
 </p>
@@ -33,7 +33,7 @@ Plot of the function:
 </blockquote></p>
 
 <p>
-For more details, see 
+For more details, see
 <a href=\"http://en.wikipedia.org/wiki/Normal_distribution\">Wikipedia</a>.
 </p>
 
@@ -54,12 +54,12 @@ For more details, see
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
