@@ -1,6 +1,10 @@
 within AdvancedNoise;
 package UsersGuide "User's guide"
-  extends FaultTriggering.Utilities.Icons.InformationPackage;
+  extends Modelica.Icons.IconsPackage;
+
+
+
+
 
 
   annotation (__Dymola_DocumentationClass=true, Documentation(info="<html>
@@ -13,7 +17,7 @@ package UsersGuide "User's guide"
 </ul>
 <p>The library gives the user acces to a high quality noise source with good statistcal properties.</p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
-  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+  <tr><td valign=\"center\"> <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>
       <br><b>&copy; 2012-2015, DLR Institute of System Dynamics and Control</b></td>
   </tr>

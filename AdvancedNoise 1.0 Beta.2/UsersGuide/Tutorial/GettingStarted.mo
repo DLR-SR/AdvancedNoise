@@ -1,6 +1,6 @@
 within AdvancedNoise.UsersGuide.Tutorial;
 class GettingStarted "Getting started"
-extends FaultTriggering.Utilities.Icons.Information;
+extends Modelica.Icons.IconsPackage;
     annotation (Documentation(info="<html>
 <p>The <b>AdvancedNoise</b> Toolbox has 3 main sources of noise:</p>
 <ol>
@@ -10,7 +10,7 @@ extends FaultTriggering.Utilities.Icons.Information;
 </ol>
 <p>If the supplied noise distributions are not suitable for the needed application, the user can generate custom distributions. </p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
-  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+  <tr><td valign=\"center\"> <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>
       <br><b>&copy; 2012-2015, DLR Institute of System Dynamics and Control</b></td>
   </tr>

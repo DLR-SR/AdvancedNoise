@@ -3,7 +3,7 @@ class ModelicaLicense2 "Modelica License 2"
   extends Modelica.Icons.Information;
 
   annotation (Documentation(info="<html>
-<p><span style=\"font-family: Arial,sans-serif; font-size: 10pt;\">All files in this directory (FaultTriggering) and in all subdirectories, especially all files that build package &QUOT;<a href=\"AdvancedNoise\">AdvancedNoise</a>&QUOT; and all files in &QUOT;AdvancedNoise/Resources/*&QUOT; and &QUOT;<a href=\"AdvancedNoise/UsersGuide\">AdvancedNoise/UsersGuide</a>&QUOT; are licensed by the <u><b>DLR German Aerospace Center</b></u> under the <u><b>Modelica License 2</b></u>. </span></p>
+<p><span style=\"font-family: Arial,sans-serif; font-size: 10pt;\">All files in this directory (AdvancedNoise) and in all subdirectories, especially all files that build package &QUOT;<a href=\"AdvancedNoise\">AdvancedNoise</a>&QUOT; and all files in &QUOT;AdvancedNoise/Resources/*&QUOT; and &QUOT;<a href=\"AdvancedNoise/UsersGuide\">AdvancedNoise/UsersGuide</a>&QUOT; are licensed by the <u><b>DLR German Aerospace Center</b></u> under the <u><b>Modelica License 2</b></u>. </span></p>
 <p style=\"margin-left: 40px;\"><b><span style=\"font-family: Arial,sans-serif; font-size: 10pt;\">Licensor:</span></b></p>
 <p style=\"margin-left: 40px;\">DLR German Aerospace Center </p>
 <p style=\"margin-left: 40px;\">Oberpfaffenhofen </p>
