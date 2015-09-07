@@ -27,7 +27,7 @@ The master branch of this library is currently reviewed for inclusion in the MSL
 
 ## Current release
 
-Download  [Noise 0.1 Beta.1 (2015-09-07)](../../archive/v1.0-beta.1.zip)
+Download  [Noise 1.0 Beta.1 (2015-09-07)](../../archive/v1.0-beta.1.zip)
 
 ## License
 
