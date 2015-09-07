@@ -11,7 +11,7 @@ model FilterAndConvolution
   parameter Boolean doFilter =  true "Calculate state space phase filter?";
   parameter Boolean doTime =    false "Calculate time-based noise?";
 
-  parameter Modelica.SIunits.Duration samplePeriod = 0.1 "Common sample period";
+  parameter Modelica.SIunits.Duration samplePeriod = 0.2 "Common sample period";
 
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
                annotation (Placement(transformation(extent={{60,60},{80,80}})));
@@ -36,7 +36,7 @@ model FilterAndConvolution
         4.5134777e-03} ./ {velocity.k,1}, a={1.0000000e+00,3.0670519e+00,2.2183340e-01}
          ./ {velocity.k^2,velocity.k,1},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=-0.003) if                      doFilter
+    y_start=-0.00279) if                    doFilter
     annotation (Placement(transformation(extent={{20,-20},{40,0}})));
   Sources.SignalBasedNoise spaceDomainNoiseWhite(
     useTime=false,
@@ -64,7 +64,7 @@ model FilterAndConvolution
         4.5134777e-03} ./ {velocity.k,1}, a={1.0000000e+00,3.0670519e+00,
         2.2183340e-01} ./ {velocity.k^2,velocity.k,1},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=-0.003) if                                 doTime
+    y_start=-0.00279) if                               doTime
     annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
   Modelica_Noise.Blocks.Noise.BandLimitedWhiteNoise bandLimitedWhiteNoise(
       samplePeriod=samplePeriod/velocity.k, noisePower=
@@ -97,7 +97,7 @@ equation
       smooth=Smooth.None));
   annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics), experiment(
-      StopTime=20,
+      StopTime=5,
       Interval=0.01,
       Tolerance=0.001),
     __Dymola_experimentSetupOutput,
