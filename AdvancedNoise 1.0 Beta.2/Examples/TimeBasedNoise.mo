@@ -5,15 +5,13 @@ model TimeBasedNoise "Demonstrates the a simple case of a timel based noise"
   constant Real pi = Modelica.Constants.pi "Constant pi";
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{-20,40},{0,60}})));
-  Sources.TimeBasedNoise timeBasedNoise(
-    y_min=-0.05,
-    y_max=0.05,
-    samplePeriod=0.5)
+  Sources.TimeBasedNoise timeBasedNoise(redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3),
+      samplePeriod=0.05)
     annotation (Placement(transformation(extent={{-20,0},{0,20}})));
-  Sources.TimeBasedNoise timeBasedNoise1(
-    y_min=-0.05,
-    y_max=0.05,
-    samplePeriod=0.5)
+  Sources.TimeBasedNoise timeBasedNoise1(redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3),
+      samplePeriod=0.05)
     annotation (Placement(transformation(extent={{-20,-40},{0,-20}})));
  annotation (experiment(StopTime=4), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics),

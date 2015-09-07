@@ -19,13 +19,14 @@ model FilterAndConvolution
     useTime=false,
     redeclare package interpolation =
         AdvancedNoise.Examples.RailIrregularities.RailMinimumPhaseInterpolator,
-    y_min=-1e10,
-    y_max=+1e10,
-    redeclare function distribution =
-        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (mu=0, sigma=
-           sqrt(0.5)/sqrt(samplePeriod)),
     useAutomaticLocalSeed=false,
-    samplePeriod=samplePeriod) if   doMinimum
+    samplePeriod=samplePeriod,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (
+        mu=0,
+        sigma=sqrt(0.5)/sqrt(samplePeriod),
+        y_min=-1e10,
+        y_max=1e10)) if             doMinimum
     annotation (Placement(transformation(extent={{-20,20},{0,40}})));
 
   Modelica.Blocks.Continuous.Integrator position(y_start=123)
@@ -40,25 +41,27 @@ model FilterAndConvolution
     annotation (Placement(transformation(extent={{20,-20},{40,0}})));
   Sources.SignalBasedNoise spaceDomainNoiseWhite(
     useTime=false,
-    y_min=-1e10,
-    y_max=+1e10,
     useAutomaticLocalSeed=false,
     samplePeriod=samplePeriod,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (mu=0, sigma=
-           sqrt(0.5)/sqrt(samplePeriod))) if doFilter
+        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (
+        mu=0,
+        sigma=sqrt(0.5)/sqrt(samplePeriod),
+        y_min=-1e10,
+        y_max=1e10)) if                      doFilter
     annotation (Placement(transformation(extent={{-20,-20},{0,0}})));
   Sources.SignalBasedNoise spaceDomainNoiseZero(
     useTime=false,
-    y_min=-1e10,
-    y_max=+1e10,
     useAutomaticLocalSeed=false,
     samplePeriod=samplePeriod,
     redeclare package interpolation =
         AdvancedNoise.Examples.RailIrregularities.RailZeroPhaseInterpolator,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (mu=0, sigma=
-           sqrt(0.5)/sqrt(samplePeriod))) if doZero
+        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (
+        mu=0,
+        sigma=sqrt(0.5)/sqrt(samplePeriod),
+        y_min=-1e10,
+        y_max=1e10)) if                                              doZero
     annotation (Placement(transformation(extent={{-20,60},{0,80}})));
   Modelica.Blocks.Continuous.TransferFunction timeDomainFilter(b={2.7542724e-04,
         4.5134777e-03} ./ {velocity.k,1}, a={1.0000000e+00,3.0670519e+00,

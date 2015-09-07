@@ -4,8 +4,6 @@ model TimeBasedCorrelations "Tests for uncorrelated noise signals"
 
   Sources.TimeBasedNoise noise1(
     samplePeriod=0.01,
-    y_min=0,
-    y_max=1,
     useAutomaticLocalSeed=false,
     fixedLocalSeed=11)
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
@@ -13,8 +11,6 @@ model TimeBasedCorrelations "Tests for uncorrelated noise signals"
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
   Sources.TimeBasedNoise noise2(
     samplePeriod=0.01,
-    y_min=0,
-    y_max=1,
     useAutomaticLocalSeed=false)
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
   Statistics.CorrelationTest crossCorrelationTest

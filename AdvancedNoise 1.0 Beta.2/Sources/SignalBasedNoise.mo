@@ -14,11 +14,6 @@ block SignalBasedNoise
   parameter Real samplePeriod(start=0.01)
     "Period in signal for pseudo-sampling the raw random numbers"
     annotation(Dialog(enable=enableNoise));
-  parameter Real y_min(start=0.0) "Minimum value of noise"
-    annotation(Dialog(enable=enableNoise));
-  parameter Real y_max(start=1.0) "Maximum value of noise"
-    annotation(Dialog(enable=enableNoise));
-
   // Advanced dialog menu: Noise generation
   parameter Boolean enableNoise = true "=true: y = noise, otherwise y = y_off"
     annotation(choices(checkBox=true),Dialog(tab="Advanced",group="Noise generation"));
@@ -34,9 +29,8 @@ block SignalBasedNoise
   // Advanced dialog menu: Random number properties
   replaceable function distribution =
        Modelica_Noise.Math.Distributions.Uniform.quantile constrainedby
-    Modelica_Noise.Math.Distributions.Interfaces.partialTruncatedQuantile(
-      final y_min=y_min, final y_max=y_max)
-    "Random number distribution (truncated to y_min..y_max)"
+    Modelica_Noise.Math.Distributions.Interfaces.partialQuantile
+    "Random number distribution"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
 <p>

@@ -8,36 +8,37 @@ model TimeBasedInterpolation "Shows using the interpolators with derivatives"
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
-    y_min=-1,
-    y_max=3,
-    redeclare package interpolation = AdvancedNoise.Interpolators.Constant)
+    redeclare package interpolation = AdvancedNoise.Interpolators.Constant,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
              annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
   Sources.TimeBasedNoise
                      linearNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
-    y_min=-1,
-    y_max=3,
-    redeclare package interpolation = AdvancedNoise.Interpolators.Linear)
+    redeclare package interpolation = AdvancedNoise.Interpolators.Linear,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
   Sources.TimeBasedNoise
                      smoothNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
-    y_min=-1,
-    y_max=3,
     sampleFactor=10,
     redeclare package interpolation =
-        AdvancedNoise.Interpolators.SmoothIdealLowPass)
+        AdvancedNoise.Interpolators.SmoothIdealLowPass,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-30},{-40,-10}})));
   Sources.TimeBasedNoise filteredNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
-    y_min=-1,
-    y_max=3,
     sampleFactor=10,
-    redeclare package interpolation = AdvancedNoise.Interpolators.FirstOrder)
+    redeclare package interpolation =
+        AdvancedNoise.Interpolators.FirstOrder,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-80},{-40,-60}})));
   Modelica.Blocks.Continuous.Der derFiltered
     annotation (Placement(transformation(extent={{0,-92},{20,-72}})));
@@ -65,11 +66,11 @@ model TimeBasedInterpolation "Shows using the interpolators with derivatives"
   Sources.TimeBasedNoise stepNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
-    y_min=-1,
-    y_max=3,
     sampleFactor=10,
     redeclare package interpolation =
-        AdvancedNoise.Interpolators.TabulatedStepResponse)
+        AdvancedNoise.Interpolators.TabulatedStepResponse,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-130},{-40,-110}})));
   Modelica.Blocks.Continuous.FirstOrder stepFiltered(T=0.00001, y_start=0.2,
     initType=Modelica.Blocks.Types.Init.InitialState)

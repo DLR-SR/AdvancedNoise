@@ -6,8 +6,6 @@ model SignalBasedCorrelations
   Sources.SignalBasedNoise
                          noise1(
     samplePeriod=0.01,
-    y_min=0,
-    y_max=1,
     useAutomaticLocalSeed=false,
     fixedLocalSeed=11,
     useTime=false)
@@ -17,8 +15,6 @@ model SignalBasedCorrelations
   Sources.SignalBasedNoise
                          noise2(
     samplePeriod=0.01,
-    y_min=0,
-    y_max=1,
     useAutomaticLocalSeed=false,
     useTime=false)
     annotation (Placement(transformation(extent={{-40,20},{-20,40}})));

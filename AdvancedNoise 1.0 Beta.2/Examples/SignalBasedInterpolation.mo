@@ -12,29 +12,29 @@ model SignalBasedInterpolation
 
   AdvancedNoise.Sources.SignalBasedNoise constantNoise(
     redeclare package interpolation = Interpolators.Constant,
-    y_min=-1,
-    y_max=+1,
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
-    useTime=false)
+    useTime=false,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=1))
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
   Modelica.Blocks.Sources.RealExpression signal(y=sin(pi*time))
     annotation (Placement(transformation(extent={{-100,70},{-80,90}})));
   AdvancedNoise.Sources.SignalBasedNoise linearNoise(
     useTime=false,
-    y_min=-1,
-    y_max=+1,
     redeclare package interpolation = Interpolators.Linear,
     useAutomaticLocalSeed=false,
-    samplePeriod=0.1)
+    samplePeriod=0.1,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=1))
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
   AdvancedNoise.Sources.SignalBasedNoise smoothNoise(
     useTime=false,
-    y_min=-1,
-    y_max=+1,
     useAutomaticLocalSeed=false,
     redeclare package interpolation = Interpolators.SmoothIdealLowPass,
-    samplePeriod=0.1)
+    samplePeriod=0.1,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=1))
     annotation (Placement(transformation(extent={{-60,-30},{-40,-10}})));
 equation
   connect(signal.y, constantNoise.u) annotation (Line(
