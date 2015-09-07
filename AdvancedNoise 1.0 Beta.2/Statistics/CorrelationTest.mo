@@ -57,5 +57,9 @@ equation
     annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}}), graphics), Documentation(revisions="<html>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
+</html>",
+        info="<html>
+<p>This block first calculates the <a href=\"Correlation\">Correlation</a> of its two input signals (with delta_t=0) and performs a <a href=\"SignificanceTest\">SignificanceTest</a> against the null-hypothesis that the signals are uncorrelated. If the output of this block is lower than a threshold of p&LT;0.05 or p&LT;0.01, the two inputs must be assumed to be correlated. If the output is higher than this treshold, the two inputs are probably not correlated. For more information see models linked above.</p>
+<p>This correlation test uses a Fisher transformation to shape the correlation coefficient r to a more normally distributed number. More information on this procedure can be found e.g. on Wikipedia: <a href=\"https://en.wikipedia.org/wiki/Fisher_transformation\">https://en.wikipedia.org/wiki/Fisher_transformation</a>.</p>
 </html>"));
 end CorrelationTest;

@@ -1,5 +1,5 @@
 within AdvancedNoise.Statistics;
-block Correlation
+block Correlation "Calculates the correlation of two signals"
   extends Modelica.Blocks.Interfaces.SI2SO;
 
 // Parameters
@@ -71,5 +71,13 @@ equation
 
   annotation (    Documentation(revisions="<html>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
+</html>",
+        info="<html>
+<p>This block calculates the correlation coefficient r between its two input signals. It should be r=1, if you use the same signal on both inputs. You can however also set the time delay delta_t, in order to perform an auto-correlation of the same signal. </p>
+<p>Both properties are important for random numbers, as these numbers should be uncorrelated </p>
+<ol>
+<li>for different seeds and </li>
+<li>for time delays greater than the sample time.</li>
+</ol>
 </html>"));
 end Correlation;

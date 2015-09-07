@@ -8,7 +8,9 @@ public
        Modelica_Noise.Math.Distributions.Normal.cumulative constrainedby
     Modelica_Noise.Math.Distributions.Interfaces.partialCumulative
     "Cumulative density function of the null hypothesis"
-    annotation(choicesAllMatching=true);
+    annotation(choicesAllMatching=true, Documentation(info="<html>
+<p>This cumulative density function should be set to the expected distribution of the input value. The default is a standard normal distribution.</p>
+</html>"));
 
 // Parameters
 public
@@ -26,7 +28,8 @@ public
   Real r = 1-H(u);
   annotation (Documentation(revisions="<html>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
-</html>", info="<html>
+</html>",
+        info="<html>
 <p>The significance test is used to test wether a given <i>null-hypothesis</i> is to be abandoned; in favor of the alternative hypothesis. In this case, the null-hypothesis is that the <i>input u</i> of this block is a realization of a random number distributed with a given <i>cumulative density function H</i>. The alternative hypothesis is then that the input u is NOT such a realization, i.e. it has a different probability distribution.</p>
 <p>The test is carried out by comparing the size of the input u with the probability (given the null-hypothesis H) that this can input occur. The further the input is away from the expected mean value (of H), the more improbable it becomes that the null-hypothesis is true. This can be carried out on both ends, i.e. very high and very low values. The low values are tested against using the parameter setting leftTail=true, i.e. a test is carried out that the input is lower than the assumed distribution. The high values are tested against using the parameter setting rightTail=true, i.e. a test is carried that the input is higher than the assumed distribution. If you set both values to true, a test is carried out that the input is simply not from the assumed distribution.</p>
 <p>If the input is very high (or very low), the null-hypothesis is to be abandoned. However, the assumed distributions are typically not bounded, such that abandoning the null-hypothesis may always be a wrong decision. The output of this block is the probability of committing this error. </p>
