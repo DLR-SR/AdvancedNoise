@@ -34,12 +34,13 @@ model FrequencyShaping
     y_max=3,
     sampleFactor=10,
     samplePeriod=0.1,
-    redeclare package interpolation = AdvancedNoise.Interpolators.StepResponse)
+    redeclare package interpolation =
+        AdvancedNoise.Interpolators.TabulatedStepResponse)
     annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   Modelica.Blocks.Continuous.Der derTabulated
     annotation (Placement(transformation(extent={{20,0},{40,20}})));
   Modelica.Blocks.Sources.RealExpression realExpression(y=tabulatedNoise.interpolation.suggestedSamplePeriod)
-    annotation (Placement(transformation(extent={{-36,-84},{-16,-64}})));
+    annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
 equation
   connect(rawNoise.y, firstOrder.u) annotation (Line(
       points={{-39,-30},{-22,-30}},

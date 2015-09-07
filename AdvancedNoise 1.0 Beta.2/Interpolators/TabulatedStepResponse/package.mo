@@ -1,5 +1,5 @@
 within AdvancedNoise.Interpolators;
-package StepResponse "A generic filter using a tabulated step response"
+package TabulatedStepResponse "A generic filter using a tabulated step response"
 
 
   extends Utilities.Interfaces.PartialInterpolatorWithKernel(
@@ -68,4 +68,4 @@ annotation (Icon(graphics={
 </table>
 </p>
 </html>"));
-end StepResponse;
+end TabulatedStepResponse;
