@@ -1,6 +1,6 @@
 within AdvancedNoise.UsersGuide;
 class Overview
-  extends FaultTriggering.Utilities.Icons.Information;
+  extends Modelica.Icons.IconsPackage;
   annotation (__Dymola_DocumentationClass=true, Documentation(info="<html>
 <h4>Information</h4>
 <p>The blocks in this library can be used to generate accurate noise without further modifications. The functionality of the library consists of:</p>
@@ -11,7 +11,7 @@ class Overview
 <li>Calculation of <a href=\"Statistics\">statistical properties</a>.</li>
 </ul>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
-  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+  <tr><td valign=\"center\"> <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>
       <br><b>&copy; 2012-2015, DLR Institute of System Dynamics and Control</b></td>
   </tr>
