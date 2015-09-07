@@ -18,7 +18,7 @@
 
    This file is licensed under the BSD 2-Clause License:
  
-   Copyright (C) 2015, DLR.
+   Copyright (C) 2015, DLR and Modelica Association.
   
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are met:
