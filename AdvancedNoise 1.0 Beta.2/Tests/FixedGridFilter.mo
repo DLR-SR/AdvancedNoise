@@ -59,5 +59,5 @@ equation
 </html>", info="<html>
 <p>This is only used for checking the correct implementation of the faster convolution algorithm.</p>
 </html>"),
-    experiment(Interval=0.01, Tolerance=1e-006));
+    experiment(Interval=0.001, Tolerance=1e-006));
 end FixedGridFilter;

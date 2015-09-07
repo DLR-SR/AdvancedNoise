@@ -79,8 +79,7 @@ block SignalBasedNoise
 </table>
 </p>
 </html>"));
-  replaceable package generator =
-      Modelica_Noise.Math.Random.Generators.Xorshift128plus constrainedby
+  replaceable package generator = AdvancedNoise.Generators.QuickXorshift64star constrainedby
     Modelica_Noise.Math.Random.Interfaces.PartialGenerator
     "Random number generator"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
