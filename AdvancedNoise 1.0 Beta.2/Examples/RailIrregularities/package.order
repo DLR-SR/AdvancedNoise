@@ -1,5 +1,5 @@
 TrainOnTrack
 Comparisons
-MinimumPhaseInterpolator
-ZeroPhaseInterpolator
+RailMinimumPhaseInterpolator
+RailZeroPhaseInterpolator
 Parts
