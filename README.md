@@ -16,9 +16,7 @@ Potential applications of the library are
 
 ## Current release
 
-Currently, there is not yet a release. Please refer to the release of the original Noise library:
-
-[Noise 0.2.0 (2014-06-13)](https://github.com/DLR-SR/Noise/archive/v0.2.0.zip)
+[Noise 1.0.0 (2015-09-07)](https://github.com/DLR-SR/AdvancedNoise/archive/v1.0.0.zip)
 
 ## License
 
@@ -35,6 +33,7 @@ The library is developed and maintained developed by the **DLR** German Aerospac
  - Andreas Klöckner
  - Franciscus van der Linden
  - Dirk Zimmer
+ - Martin Otter
 
 You may report any issues with using the [Issues](../../issues) button.
 
