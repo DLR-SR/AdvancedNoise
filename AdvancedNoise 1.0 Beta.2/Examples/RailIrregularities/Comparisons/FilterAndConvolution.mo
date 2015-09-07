@@ -3,8 +3,8 @@ model FilterAndConvolution
   "Compares implementation with filter and convolution"
   extends Modelica.Icons.Example;
 
-  constant Real convolutionResolution=MinimumPhaseInterpolator.T[2] -
-      MinimumPhaseInterpolator.T[1];
+  constant Real convolutionResolution=RailMinimumPhaseInterpolator.T[2] -
+      RailMinimumPhaseInterpolator.T[1];
 
   parameter Boolean doMinimum = true "Calculate minimum phase filter?";
   parameter Boolean doZero =    false "Calculate zero phase filter?";
@@ -18,7 +18,7 @@ model FilterAndConvolution
   Sources.SignalBasedNoise spaceDomainNoiseMinimum(
     useTime=false,
     redeclare package interpolation =
-        AdvancedNoise.Examples.RailIrregularities.MinimumPhaseInterpolator,
+        AdvancedNoise.Examples.RailIrregularities.RailMinimumPhaseInterpolator,
     y_min=-1e10,
     y_max=+1e10,
     redeclare function distribution =
@@ -55,7 +55,7 @@ model FilterAndConvolution
     useAutomaticLocalSeed=false,
     samplePeriod=samplePeriod,
     redeclare package interpolation =
-        AdvancedNoise.Examples.RailIrregularities.ZeroPhaseInterpolator,
+        AdvancedNoise.Examples.RailIrregularities.RailZeroPhaseInterpolator,
     redeclare function distribution =
         Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (mu=0, sigma=
            sqrt(0.5)/sqrt(samplePeriod))) if doZero
