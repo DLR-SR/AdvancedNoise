@@ -2,5 +2,6 @@ Constant
 Linear
 SmoothIdealLowPass
 FirstOrder
-StepResponse
+TabulatedStepResponse
+FixedGridStepResponse
 Utilities

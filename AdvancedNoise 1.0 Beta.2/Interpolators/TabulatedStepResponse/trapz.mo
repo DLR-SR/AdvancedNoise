@@ -1,4 +1,4 @@
-within AdvancedNoise.Interpolators.StepResponse;
+within AdvancedNoise.Interpolators.TabulatedStepResponse;
 function trapz "Integral of a time signal using trapezium rule"
   input Real[:] T "Time vector";
   input Real[size(T,1)] X "Values vector";

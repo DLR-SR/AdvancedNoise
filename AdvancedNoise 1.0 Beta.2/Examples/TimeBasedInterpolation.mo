@@ -68,7 +68,8 @@ model TimeBasedInterpolation "Shows using the interpolators with derivatives"
     y_min=-1,
     y_max=3,
     sampleFactor=10,
-    redeclare package interpolation = AdvancedNoise.Interpolators.StepResponse)
+    redeclare package interpolation =
+        AdvancedNoise.Interpolators.TabulatedStepResponse)
     annotation (Placement(transformation(extent={{-60,-130},{-40,-110}})));
   Modelica.Blocks.Continuous.FirstOrder stepFiltered(T=0.00001, y_start=0.2,
     initType=Modelica.Blocks.Types.Init.InitialState)
