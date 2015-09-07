@@ -16,7 +16,7 @@ Potential applications of the library are
 
 ## Current release
 
-[Noise 1.0.0 (2015-09-07)](https://github.com/DLR-SR/AdvancedNoise/archive/v1.0.0.zip)
+[Noise 0.9.0 (2015-09-07)](https://github.com/DLR-SR/AdvancedNoise/archive/v0.9.0.zip)
 
 ## License
 
