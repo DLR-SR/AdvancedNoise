@@ -1,4 +1,4 @@
-within AdvancedNoise.TruncatedDistributions.Discrete;
+within AdvancedNoise.Distributions.TruncatedDiscrete;
 function density "Density of discrete distribution (undefined!)"
   extends Modelica_Noise.Math.Distributions.Interfaces.partialTruncatedDensity;
   input Real x[:] = {0,1} "Discrete values to be chosen from" annotation(Dialog);

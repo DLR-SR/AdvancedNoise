@@ -1,5 +1,5 @@
 within AdvancedNoise.Examples;
-model SignalInterpolation
+model SignalBasedInterpolation
   "Demonstrates signal-based noise with different interpolations"
   import Modelica_Noise;
    extends Modelica.Icons.Example;
@@ -88,4 +88,4 @@ blocks over the sine output:
 </table>
 </p>
 </html>"));
-end SignalInterpolation;
+end SignalBasedInterpolation;

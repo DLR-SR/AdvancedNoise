@@ -1,4 +1,4 @@
-within AdvancedNoise.Examples;
+within AdvancedNoise.Tests;
 model Derivatives "Tests derivatives of the random numbers"
   extends Modelica.Icons.Example;
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=

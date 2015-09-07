@@ -34,7 +34,9 @@ model FilterAndConvolution
     annotation (Placement(transformation(extent={{-100,20},{-80,40}})));
   Modelica.Blocks.Continuous.TransferFunction spaceDomainFilter(b={2.7542724e-04,
         4.5134777e-03} ./ {velocity.k,1}, a={1.0000000e+00,3.0670519e+00,2.2183340e-01}
-         ./ {velocity.k^2,velocity.k,1}) if doFilter
+         ./ {velocity.k^2,velocity.k,1},
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    y_start=-0.003) if                      doFilter
     annotation (Placement(transformation(extent={{20,-20},{40,0}})));
   Sources.SignalBasedNoise spaceDomainNoiseWhite(
     useTime=false,
@@ -60,8 +62,9 @@ model FilterAndConvolution
     annotation (Placement(transformation(extent={{-20,60},{0,80}})));
   Modelica.Blocks.Continuous.TransferFunction timeDomainFilter(b={2.7542724e-04,
         4.5134777e-03} ./ {velocity.k,1}, a={1.0000000e+00,3.0670519e+00,
-        2.2183340e-01} ./ {velocity.k^2,velocity.k,1}) if
-                                                       doTime
+        2.2183340e-01} ./ {velocity.k^2,velocity.k,1},
+    initType=Modelica.Blocks.Types.Init.InitialOutput,
+    y_start=-0.003) if                                 doTime
     annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
   Modelica_Noise.Blocks.Noise.BandLimitedWhiteNoise bandLimitedWhiteNoise(
       samplePeriod=samplePeriod/velocity.k, noisePower=

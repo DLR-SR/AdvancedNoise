@@ -72,6 +72,9 @@ equation
 
 </table>
 </p>
+</html>", info="<html>
+<p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrack.PNG\"/></p>
+<p>This type of excitation is usually analysed in the frequency domain. The above plot compares this well-trusted solution (blue curve) with the convolution implementation of this model. The plot shows spectral density of the model&apos;s acceleration output (red curve). Both curves agree very well.</p>
 </html>"));
 
 initial equation

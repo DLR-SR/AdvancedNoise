@@ -1,5 +1,5 @@
 within AdvancedNoise.Examples;
-model Interpolation "Tests all interpolators"
+model TimeBasedInterpolation "Shows using the interpolators with derivatives"
   extends Modelica.Icons.Example;
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
@@ -154,4 +154,4 @@ equation
 </html>"),Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -140},{100,100}}), graphics), Icon(coordinateSystem(extent={{-100,
             -140},{100,100}})));
-end Interpolation;
+end TimeBasedInterpolation;

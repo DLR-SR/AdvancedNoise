@@ -1,5 +1,5 @@
-within AdvancedNoise.TruncatedDistributions;
-package Discrete "Library of truncated discrete distribution functions"
+within AdvancedNoise.Distributions;
+package TruncatedDiscrete "Library of truncated discrete distribution functions"
   extends Modelica.Icons.Package;
 
 
@@ -35,4 +35,4 @@ annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
           lineColor={0,0,0},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid)}));
-end Discrete;
+end TruncatedDiscrete;

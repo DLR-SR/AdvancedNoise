@@ -8,8 +8,7 @@ model InterpolateRandomNumbers
   parameter Integer seed = 614657 "Seed to initialize random number generator";
 
 protected
-  final parameter Integer id = Modelica_Noise.Math.Random.Utilities.initializeImpureRandom(
-                                                                seed)
+  final parameter Integer id = Modelica_Noise.Math.Random.Utilities.initializeImpureRandom(seed)
     "An identifier to ensure initialization of the impure random number generator";
 public
   parameter Real r[100](each fixed = false) "Random number buffer";
@@ -25,12 +24,9 @@ public
   Real rSmooth "Smoothly inteprolated random number";
 equation
   offset    = mod(time / samplePeriod, 90) + 5.0;
-  rConstant = AdvancedNoise.Interpolators.Constant.interpolate(buffer=r, offset=
-     offset);
-  rLinear = AdvancedNoise.Interpolators.Linear.interpolate(buffer=r, offset=
-    offset);
-  rSmooth = AdvancedNoise.Interpolators.SmoothIdealLowPass.interpolate(buffer=r,
-    offset=offset);
+  rConstant = AdvancedNoise.Interpolators.Constant.interpolate(        buffer=r, offset=offset);
+  rLinear = AdvancedNoise.Interpolators.Linear.interpolate(            buffer=r, offset=offset);
+  rSmooth = AdvancedNoise.Interpolators.SmoothIdealLowPass.interpolate(buffer=r, offset=offset);
 
   annotation (experiment(StopTime=20, Interval=2e-2),
                                       Documentation(info="<html>

@@ -1,9 +1,8 @@
 TimeBasedNoise
 SignalBasedNoise
-SignalInterpolation
-FrequencyShaping
-Interpolation
-Correlations
-Derivatives
+TimeBasedInterpolation
+SignalBasedInterpolation
+TimeBasedCorrelations
+SignalBasedCorrelations
 InterpolateRandomNumbers
 RailIrregularities

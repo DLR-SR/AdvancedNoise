@@ -1,6 +1,6 @@
 within AdvancedNoise.Statistics;
 block CorrelationTest
-  "Tests the null hypothesis that two signals have a given true correlation coefficient"
+  "Tests the null hypothesis that two signals are uncorrelated"
   extends Modelica.Blocks.Interfaces.SI2SO;
 
 // The start time of the simulation

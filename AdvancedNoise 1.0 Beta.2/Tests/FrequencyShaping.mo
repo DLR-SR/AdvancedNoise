@@ -1,6 +1,6 @@
-within AdvancedNoise.Examples;
+within AdvancedNoise.Tests;
 model FrequencyShaping
-  "Demonstrates shaping of the frequency content with a convolution filter"
+  "Validates the step response filter (and its derivative) against an actual filter"
   extends Modelica.Icons.Example;
   AdvancedNoise.Sources.TimeBasedNoise filteredNoise(
     useAutomaticLocalSeed=false,
