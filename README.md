@@ -25,11 +25,9 @@ Potential applications of the provided elements are:
 
 The master branch of this library is currently reviewed for inclusion in the MSL.
 
-## Original release
+## Current release
 
-The original version of this library was released after the Modelica conference in 2014:
-
-Download  [Noise 0.2.0 (2014-06-13)](../../archive/v0.2.0.zip)
+Download  [Noise 0.1 Beta.1 (2015-09-07)](../../archive/v1.0-beta.1.zip)
 
 ## License
 
