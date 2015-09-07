@@ -30,5 +30,7 @@ block ColoredSignalBasedNoise
 
 </table>
 </p>
+</html>", info="<html>
+<p>This block extends the block <a href=\"SignalBasedNoise\">SignalBasedNoise</a> and uses presets for custom colored noise.</p>
 </html>"));
 end ColoredSignalBasedNoise;

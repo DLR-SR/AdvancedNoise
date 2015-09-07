@@ -39,31 +39,22 @@ equation
           {-54,70},{-42,70}}, color={0,0,127}));
   connect(noise2.u, inputSignal.y) annotation (Line(points={{-42,30},{-54,30},{
           -54,50},{-66.4,50}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+  annotation (experiment(StopTime=100, Interval=1e-2), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}})),           Documentation(revisions="<html>
 <p>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
-
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
+         <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</td></tr>
-
-</table>
 </p>
 </html>", info="<html>
 <p>This example demonstrates the auto and cross correlation using different seeds.</p>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalBasedCorrelations.png\"/></p>
 <p>Both p-values for corss- and autocorrelation are high. This means, we can assume uncorrelated signals; between two different seeds as well as within a single noise signal.</p>
-</html>"),
-    experiment(StopTime=100));
+</html>"));
 end SignalBasedCorrelations;

@@ -269,10 +269,6 @@ When using this block, at a minimum the following parameters must be defined:
          By default, time events are generated only at every 100 sample instant.
          In between, the noise is linearly interpolated at the drawn random
          values.</td></tr>
-
-<tr><td> y_min, y_max</td>
-    <td> Upper and lower bounds for the noise. With the default setting,
-         uniform noise is generated within these bounds.</td></tr>
 </table>
 </p></blockquote>
 

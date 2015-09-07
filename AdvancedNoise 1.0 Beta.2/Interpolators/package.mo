@@ -6,5 +6,7 @@ package Interpolators "Additional interpolation packages"
   annotation (Icon(graphics={             Line(
       points={{-92,-32},{-52,-32},{-30,48},{30,48},{50,-32},{94,-32}},
       color={0,0,0},
-      smooth=Smooth.Bezier)}));
+      smooth=Smooth.Bezier)}), Documentation(info="<html>
+<p>Different interpolators are in this package to interpolate the noise output.</p>
+</html>"));
 end Interpolators;

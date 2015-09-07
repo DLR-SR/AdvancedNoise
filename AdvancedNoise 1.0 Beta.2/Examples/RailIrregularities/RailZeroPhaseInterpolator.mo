@@ -10,4 +10,19 @@ package RailZeroPhaseInterpolator
    nFuture=150,
    nPast=150);
 
+  annotation (Documentation(revisions="<html>
+<p>
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
+         Initial version implemented by
+         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</p>
+</html>", info="<html>
+<p><span style=\"font-family: MS Shell Dlg 2;\">This package provides&nbsp;a&nbsp;filter&nbsp;function&nbsp;for&nbsp;rail&nbsp;irregularities&nbsp;(zero&nbsp;phase). </span></p>
+</html>"));
 end RailZeroPhaseInterpolator;

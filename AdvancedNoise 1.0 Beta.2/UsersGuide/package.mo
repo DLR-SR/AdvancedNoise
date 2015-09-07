@@ -1,10 +1,6 @@
 within AdvancedNoise;
 package UsersGuide "User's guide"
-  extends Modelica.Icons.IconsPackage;
-
-
-
-
+  extends Modelica.Icons.Information;
 
 
   annotation (__Dymola_DocumentationClass=true, Documentation(info="<html>
@@ -16,11 +12,17 @@ package UsersGuide "User's guide"
 <li>Inputs for Monte-Carlo analysis</li>
 </ul>
 <p>The library gives the user acces to a high quality noise source with good statistcal properties.</p>
-</html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
-  <tr><td valign=\"center\"> <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" width=60></td>
-    <td valign=\"center\"><b>Copyright</b>
-      <br><b>&copy; 2012-2015, DLR Institute of System Dynamics and Control</b></td>
-  </tr>
- </table>
+</html>", revisions="<html>
+<p>
+<table border=0>
+<tr><td valign=\"top\">
+         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+</td><td valign=\"bottom\"> 
+         <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
+         Initial version implemented by
+         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+</td></tr></table>
+</p>
 </html>"));
 end UsersGuide;

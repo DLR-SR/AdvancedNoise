@@ -26,20 +26,8 @@ algorithm
     p0);
 
   annotation (Inline=true,Documentation(info="<html>
-<p>
-This function returns a number according to a uniform distribution in a band.
-This means the returned number is in the range:
-</p>
-
-<blockquote>
-<p>
-y_min &le; y &le; y_max
-</p>
-</blockquote>
-
-<p>
-For more details of this distribution see
-<a href=\"http://en.wikipedia.org/wiki/Uniform_distribution_(continuous)\">Wikipedia</a>.
-</p>
+<p>This function returns a number according to a uniform discrete in a band. This means the returned number is in the range: </p>
+<blockquote>y_min &le; y &le; y_max </blockquote>
+<p><span style=\"font-family: MS Shell Dlg 2;\">For more details of this distribution see <a href=\"https://en.wikipedia.org/wiki/Uniform_distribution_(discrete)\">Wikipedia</a>. </span></p>
 </html>"));
 end quantile;

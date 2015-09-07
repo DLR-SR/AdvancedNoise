@@ -310,10 +310,6 @@ value has a length of 64 bits).
 <td><p>samplePeriod </p></td>
 <td><p>Random values are drawn on a periodic grid over the input signal. The period of this grid is defined with this parameter. The unit of the samplePeriod corresponds to the unit of the input signal. If useTime=true, then the samplePeriod defines a sample Period in [s]. As a result of this pseudo-sampling, the highest frequency f<sub>max</sub> contained in the generated noise is f<sub>max</sub> = 1/samplePeriod. By default, no events are generated. In between, the noise is linearly interpolated at the drawn random values.</p></td>
 </tr>
-<tr>
-<td><p>y_min, y_max</p></td>
-<td><p>Upper and lower bounds for the noise. With the default setting, uniform noise is generated within these bounds.</p></td>
-</tr>
 </table>
 </p></blockquote>
 

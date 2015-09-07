@@ -1,9 +1,11 @@
-within AdvancedNoise.UsersGuide;
-package ReleaseNotes "Release notes"
-extends Modelica.Icons.ReleaseNotes;
+within AdvancedNoise.UsersGuide.ReleaseNotes;
+class Version_1_0_0 "Version 1.0.0 (2015-09-07)"
+  extends Modelica.Icons.ReleaseNotes;
 
-
-annotation (Documentation(revisions="<html>
+    annotation (Documentation(info="<html>
+<p>First official version for Modelica Conference 2015.</p>
+</html>",
+revisions="<html>
 <p>
 <table border=0>
 <tr><td valign=\"top\">
@@ -16,4 +18,5 @@ annotation (Documentation(revisions="<html>
 </td></tr></table>
 </p>
 </html>"));
-end ReleaseNotes;
+
+end Version_1_0_0;

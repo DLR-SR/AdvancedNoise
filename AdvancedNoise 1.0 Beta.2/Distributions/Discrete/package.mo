@@ -34,5 +34,7 @@ annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
           extent={{58,18},{66,10}},
           lineColor={0,0,0},
           fillColor={0,0,0},
-          fillPattern=FillPattern.Solid)}));
+          fillPattern=FillPattern.Solid)}), Documentation(info="<html>
+<p>Package with fuctions for a discrete distribution. <span style=\"font-family: MS Shell Dlg 2;\">For more details of this distribution see <a href=\"http://en.wikipedia.org/wiki/Uniform_distribution_(continuous)\">Wikipedia</a>. </span></p>
+</html>"));
 end Discrete;

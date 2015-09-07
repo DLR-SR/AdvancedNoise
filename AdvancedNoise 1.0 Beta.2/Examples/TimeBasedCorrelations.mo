@@ -28,26 +28,18 @@ equation
       smooth=Smooth.None));
   connect(autoCorrelationTest.u, noise2.y) annotation (Line(points={{-22,10},{-40,
           10},{-40,30},{-59,30}}, color={0,0,127}));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+  annotation (experiment(StopTime=100, Interval=1e-2),Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -100},{100,100}})),           Documentation(revisions="<html>
 <p>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
-
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\"> 
+         <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</td></tr>
-
-</table>
 </p>
 </html>", info="<html>
 <p>This example demonstrates the auto and cross correlation using different seeds.</p>

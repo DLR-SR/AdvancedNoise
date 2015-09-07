@@ -67,5 +67,7 @@ annotation (Icon(graphics={
 
 </table>
 </p>
+</html>", info="<html>
+<p><span style=\"font-family: MS Shell Dlg 2;\">This interpolation uses a first order filter to smooth the data just as <a href=\"FirstOrder\">FirstOrder</a>. However, the calculation is based on a table interpolation.</span></p>
 </html>"));
 end TabulatedStepResponse;

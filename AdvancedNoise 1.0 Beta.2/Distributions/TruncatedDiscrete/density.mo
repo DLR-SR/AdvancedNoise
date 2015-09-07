@@ -8,13 +8,7 @@ algorithm
   assert(false, "The density of the discrete distribution is not defined.");
 
   annotation (Inline=true,Documentation(info="<html>
-<p>
-This function returns the probability density according to a uniform distribution in a band.
-</p>
-
-<p>
-For more details of this distribution see
-<a href=\"http://en.wikipedia.org/wiki/Uniform_distribution_(continuous)\">Wikipedia</a>.
-</p>
+<p>This function returns the probability density according to a discrete distribution in a band. </p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">For more details of this distribution see <a href=\"https://en.wikipedia.org/wiki/Uniform_distribution_(discrete)\">Wikipedia</a>. </span></p>
 </html>"));
 end density;

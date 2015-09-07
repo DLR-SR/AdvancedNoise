@@ -5,12 +5,12 @@ model FixedGridFilter "Validates the fixed grid filter against the free grid"
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
   AdvancedNoise.Sources.TimeBasedNoise tabulatedNoise(
     useAutomaticLocalSeed=false,
-    y_min=-1,
-    y_max=3,
     sampleFactor=10,
     redeclare package interpolation =
         AdvancedNoise.Interpolators.TabulatedStepResponse,
-    samplePeriod=tabulatedNoise.interpolation.suggestedSamplePeriod)
+    samplePeriod=tabulatedNoise.interpolation.suggestedSamplePeriod,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   Modelica.Blocks.Continuous.Der derTabulated
     annotation (Placement(transformation(extent={{20,0},{40,20}})));
@@ -18,12 +18,12 @@ model FixedGridFilter "Validates the fixed grid filter against the free grid"
     annotation (Placement(transformation(extent={{-100,80},{-80,100}})));
   AdvancedNoise.Sources.TimeBasedNoise fixedGridNoise(
     useAutomaticLocalSeed=false,
-    y_min=-1,
-    y_max=3,
     sampleFactor=10,
     samplePeriod=fixedGridNoise.interpolation.suggestedSamplePeriod,
     redeclare package interpolation =
-        AdvancedNoise.Interpolators.FixedGridStepResponse)
+        AdvancedNoise.Interpolators.FixedGridStepResponse,
+    redeclare function distribution =
+        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-40},{-40,-20}})));
   Modelica.Blocks.Continuous.Der derFixedGrid
     annotation (Placement(transformation(extent={{18,-40},{38,-20}})));
@@ -59,5 +59,8 @@ equation
 </html>", info="<html>
 <p>This is only used for checking the correct implementation of the faster convolution algorithm.</p>
 </html>"),
-    experiment(Interval=0.001, Tolerance=1e-006));
+    experiment(
+      StopTime=20,
+      Interval=0.01,
+      Tolerance=1e-006));
 end FixedGridFilter;

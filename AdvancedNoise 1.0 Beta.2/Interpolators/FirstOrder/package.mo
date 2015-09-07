@@ -73,5 +73,7 @@ annotation (Icon(graphics={
 
 </table>
 </p>
+</html>", info="<html>
+<p>This interpolation uses a first order filter to smooth the data.</p>
 </html>"));
 end FirstOrder;

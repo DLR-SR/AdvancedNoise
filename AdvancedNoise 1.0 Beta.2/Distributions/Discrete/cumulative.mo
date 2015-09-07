@@ -14,13 +14,7 @@ algorithm
   y := y / sum(p);
 
   annotation (Inline=true,Documentation(info="<html>
-<p>
-This function returns the cumulative distribution function according to a uniform distribution in a band.
-</p>
-
-<p>
-For more details of this distribution see
-<a href=\"http://en.wikipedia.org/wiki/Uniform_distribution_(continuous)\">Wikipedia</a>.
-</p>
+<p>This function returns the cumulative distribution function according to a discrete distribution. </p>
+<p><span style=\"font-family: MS Shell Dlg 2;\">For more details of this distribution see <a href=\"https://en.wikipedia.org/wiki/Uniform_distribution_(discrete)\">Wikipedia</a>. </span></p>
 </html>"));
 end cumulative;
