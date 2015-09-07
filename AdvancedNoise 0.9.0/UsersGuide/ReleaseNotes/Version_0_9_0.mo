@@ -1,5 +1,5 @@
 within AdvancedNoise.UsersGuide.ReleaseNotes;
-class Version_1_0_0 "Version 1.0.0 (2015-09-07)"
+class Version_0_9_0 "Version 0.9.0 (2015-09-07)"
   extends Modelica.Icons.ReleaseNotes;
 
     annotation (Documentation(info="<html>
@@ -19,4 +19,4 @@ revisions="<html>
 </p>
 </html>"));
 
-end Version_1_0_0;
+end Version_0_9_0;
