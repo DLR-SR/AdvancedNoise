@@ -18,6 +18,10 @@ Potential applications of the library are
 
 [Noise 0.9.0 (2015-09-07)](https://github.com/DLR-SR/AdvancedNoise/archive/v0.9.0.zip)
 
+## Modelica Library Award
+
+[Version 0.9.0](https://github.com/DLR-SR/AdvancedNoise/archive/v0.9.0.zip) of this library won the second price of the Modelica Library Award on 22 September 2015. We thank all our supporters for contributing to this success! We also congratulate the first price winner, the Modelica [Chemical](https://github.com/MarekMatejak/Chemical) library!
+
 ## License
 
 This Modelica package is free software and the use is completely at your own risk;
