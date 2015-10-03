@@ -116,7 +116,7 @@
 
 
 /* USEFUL INCLUDES */
-
+#include <stdlib.h>
 /* Include some math headers */
 #include <limits.h>
 #include <math.h>
