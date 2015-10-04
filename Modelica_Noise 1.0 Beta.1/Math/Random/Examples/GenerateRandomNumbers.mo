@@ -16,9 +16,9 @@ model GenerateRandomNumbers
   discrete Real r128 "Random number generated with Xorshift128plus";
   discrete Real r1024 "Random number generated with Xorshift1024star";
 protected
-  discrete Integer state64[2](   each start=0, fixed = true);
-  discrete Integer state128[4](  each start=0, fixed = true);
-  discrete Integer state1024[33](each start=0, fixed = true);
+  discrete Integer state64[2](   each start=0, each fixed = true);
+  discrete Integer state128[4](  each start=0, each fixed = true);
+  discrete Integer state1024[33](each start=0, each fixed = true);
 algorithm
   when initial() then
     // Generate initial state from localSeed and globalSeed
