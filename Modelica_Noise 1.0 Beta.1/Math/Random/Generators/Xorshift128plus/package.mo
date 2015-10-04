@@ -66,9 +66,9 @@ random number generator is used to fill the internal state vector with 64 bit ra
 
   redeclare function extends random
   "Returns a uniform random number with the xorshift128+ algorithm"
-     external "C" ModelicaRandom_xorshift128plus(stateIn, stateOut, result)
-       annotation (Include = "#include \"ModelicaRandom.c\"");
-  annotation (Documentation(info="<html>
+    external "C" ModelicaRandom_xorshift128plus(stateIn, stateOut, result)
+      annotation (Include = "#include \"ModelicaRandom.c\"");
+    annotation (Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
 (r, stateOut) = Xorshift128plus.<b>random</b>(stateIn);

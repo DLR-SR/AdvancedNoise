@@ -15,8 +15,8 @@ protected
     "Stores the given state vector in an external static variable"
     input Integer[33] state "The initial state";
     input Integer id;
-    external "C" ModelicaRandom_setInternalState_xorshift1024star(state, size(state,1), id);
-    annotation (Include = "#include \"ModelicaRandom.c\"");
+    external "C" ModelicaRandom_setInternalState_xorshift1024star(state, size(state,1), id)
+      annotation (Include = "#include \"ModelicaRandom.c\"");
   end setInternalState;
 
 algorithm
