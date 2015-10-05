@@ -13,7 +13,7 @@
                        functions shall be visible outside of the DLL
 
    Release Notes:
-      Feb. 17, 2015: by Andreas Klöckner and Martin Otter, DLR-SR.
+      Feb. 17, 2015: by Andreas Kloeckner and Martin Otter, DLR-SR.
                      Implemented a first version.
 
    This file is licensed under the BSD 2-Clause License:
@@ -295,7 +295,7 @@ static int ModelicaRandom_hashString(const char* str) {
 
    See <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-   Adapted by Martin Otter and Andreas Klöckner for use with Modelica:
+   Adapted by Martin Otter and Andreas Kloeckner for use with Modelica:
    - Inputs and outputs must be int's, that is int32_t.
    - Inputs are casted accordingly.
    - Outputs are casted accordingly.
@@ -321,7 +321,7 @@ MODELICA_EXPORT void ModelicaRandom_xorshift64star(int state_in[], int state_out
 
         See <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-        Adapted by Martin Otter and Andreas Klöckner (DLR)
+        Adapted by Martin Otter and Andreas Kloeckner (DLR)
         for the Modelica external function interface.
     */
 
@@ -373,7 +373,7 @@ MODELICA_EXPORT void ModelicaRandom_xorshift128plus(int state_in[], int state_ou
 
         See <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-        Adapted by Martin Otter and Andreas Klöckner (DLR)
+        Adapted by Martin Otter and Andreas Kloeckner (DLR)
         for the Modelica external function interface.
     */
 
@@ -428,7 +428,7 @@ static void ModelicaRandom_xorshift1024star_internal(uint64_t s[], int* p, doubl
 
         See <http://creativecommons.org/publicdomain/zero/1.0/>.
 
-        Adapted by Martin Otter and Andreas Klöckner (DLR)
+        Adapted by Martin Otter and Andreas Kloeckner (DLR)
         for the Modelica external function interface.
     */
 
@@ -469,7 +469,7 @@ MODELICA_EXPORT void ModelicaRandom_xorshift1024star(int state_in[], int state_o
 
         This function uses ModelicaRandom_xorshift1024star_internal as generator and adapts inputs and outputs.
 
-        Adapted by Martin Otter and Andreas Klöckner (DLR)
+        Adapted by Martin Otter and Andreas Kloeckner (DLR)
         for the Modelica external function interface.
     */
 
