@@ -15,7 +15,7 @@ equation
    end when;
   annotation (Documentation(info="<html>
 <p>
-This block demonstrates how to implement a block usign the impure
+This block demonstrates how to implement a block using the impure
 random number generator. This block is used in the example
 <a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.ImpureGenerator\">Examples.NoiseExamples.ImpureGenerator</a>.
 </p>
