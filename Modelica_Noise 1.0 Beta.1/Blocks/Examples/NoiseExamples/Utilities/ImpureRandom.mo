@@ -3,7 +3,7 @@ block ImpureRandom
   "Block generating random numbers with the impure random number generator"
   extends Modelica.Blocks.Interfaces.SO;
 
-  parameter Modelica.SIunits.Time samplePeriod
+  parameter Modelica.SIunits.Period samplePeriod
     "Sample period for random number generation";
 
 protected
