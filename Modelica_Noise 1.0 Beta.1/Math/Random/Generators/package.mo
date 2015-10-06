@@ -144,18 +144,18 @@ The xorshift random number generators are used in the following way in the
 <a href=\"Modelica_Noise.Blocks.Noise\">Blocks.Noise</a> package:
 </p>
 <ol>
-<li> Xorshift64start (xorshift64*) is used to generate the initial internal state vectors of the
+<li> Xorshift64star (xorshift64*) is used to generate the initial internal state vectors of the
      other generators from two Integer values, due
      to the very good startup properties.</li>
 
-<li> Xorshit128plus (xorshift128+) is the default random number generator
+<li> Xorshift128plus (xorshift128+) is the default random number generator
      used by the blocks in <a href=\"Modelica_Noise.Blocks.Noise\">Blocks.Noise</a>.
      Since these blocks hold the internal state vector for every block instance, and the
      internal state vector is copied whenever a new random number is drawn, it is important
      that the internal state vector is short (and still has good statistical properties
      as shown in the table above).</li>
 
-<li> Xorshit12024star (xorshift1024*) is the basis of the impure function
+<li> Xorshift1024star (xorshift1024*) is the basis of the impure function
      <a href=\"Modelica_Noise.Math.Random.Utilities.impureRandom\">Math.Random.Utilities.impureRandom</a>
      which in turn is used with
      <a href=\"modelica://Modelica_Noise.Blocks.Noise.GlobalSeed.random\">Blocks.Noise.GlobalSeed.random</a>.

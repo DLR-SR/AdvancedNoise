@@ -123,7 +123,7 @@ hierarchical level. The following options can be selected:
          simulation takes place and the current local time. As a result, the global seed
          is changed automatically for every new simulation, including parallelized
          simulation runs. This option can be used to perform Monte Carlo Simulations
-         with minimal effort (just performinng many simulation runs) where
+         with minimal effort (just performing many simulation runs) where
          every simulation run uses a different noise.</td></tr>
 
 
