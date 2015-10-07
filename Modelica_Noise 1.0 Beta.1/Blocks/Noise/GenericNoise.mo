@@ -4,7 +4,7 @@ block GenericNoise "Noise generator for arbitrary distributions"
   extends Modelica.Blocks.Interfaces.SO;
 
   // Main dialog menu
-  parameter Modelica.SIunits.Time samplePeriod(start=0.01)
+  parameter Modelica.SIunits.Period samplePeriod(start=0.01)
     "Period for sampling the raw random numbers"
     annotation(Dialog(enable=enableNoise));
   replaceable partial function distribution =

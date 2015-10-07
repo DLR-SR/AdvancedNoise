@@ -1,7 +1,7 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
 model Distributions "Demonstrates noise with different types of distributions"
   extends Modelica.Icons.Example;
-  parameter Modelica.SIunits.Time samplePeriod=0.02
+  parameter Modelica.SIunits.Period samplePeriod=0.02
     "Sample period of all blocks";
   parameter Real y_min = -1 "Minimum value of band for random values";
   parameter Real y_max = 3 "Maximum value of band for random values";
