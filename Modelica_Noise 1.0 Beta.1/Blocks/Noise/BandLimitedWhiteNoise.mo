@@ -23,7 +23,7 @@ parameters:
      than the fastest dynamics of the system fed by the block&apos;s outputs. </li>
 <li> The <b>noisePower</b> of the signal should be set to the expected power per frequency
      of the white noise. Since many system models assume a noise power of 1,
-     this preset may be a reasonable first choice (= defautl).</li>
+     this preset may be a reasonable first choice (= default).</li>
 </ul>
 
 <h4>About sampling frequencies</h4>
