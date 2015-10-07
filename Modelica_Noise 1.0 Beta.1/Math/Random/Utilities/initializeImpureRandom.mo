@@ -44,7 +44,7 @@ dummy Integer number id. This number needs to be passed as input to function
 in order that the sorting order is correct (so that impureRandom is always called
 after initializeImpureRandom). The function stores a reasonable initial state vector
 in a C-static memory by using the
-<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64start</a>
+<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64star</a>
 random number generator to fill the internal state vector with 64 bit random numbers.
 </p>
 
