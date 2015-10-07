@@ -99,7 +99,7 @@ equation
           lineColor={0,0,0},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid,
-          textString="%samplePeriod s"),
+          textString="%samplePeriod"),
         Line(visible=not enableNoise,
           points={{-76,56},{72,56}}),
         Text(visible=not enableNoise,
