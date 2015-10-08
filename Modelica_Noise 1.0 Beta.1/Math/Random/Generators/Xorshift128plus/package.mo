@@ -1,10 +1,11 @@
 within Modelica_Noise.Math.Random.Generators;
 package Xorshift128plus "Random number generator xorshift128+"
-  extends Interfaces.PartialGenerator(                 final nState=4);
+  extends Interfaces.PartialGenerator(final nState = 4);
 
 
-  redeclare function extends initialState
+  redeclare function initialState
   "Returns an initial state for the xorshift128+ algorithm"
+    extends Interfaces.initialState(final stateSize=Xorshift128plus.nState);
   algorithm
     state := Random.Utilities.initialStateWithXorshift64star(localSeed,globalSeed,size(state, 1));
     annotation(Inline=true, Documentation(info="<html>
@@ -64,8 +65,9 @@ random number generator is used to fill the internal state vector with 64 bit ra
   end initialState;
 
 
-  redeclare function extends random
+  redeclare function random
   "Returns a uniform random number with the xorshift128+ algorithm"
+    extends Interfaces.random(final stateSize=Xorshift128plus.nState);
     external "C" ModelicaRandom_xorshift128plus(stateIn, stateOut, result)
       annotation (Include = "#include \"ModelicaRandom.c\"");
     annotation (Documentation(info="<html>

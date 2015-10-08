@@ -5,7 +5,7 @@ package Interfaces "Library of partial packages and functions for the Random pac
 
 annotation (Documentation(info="<html>
 <p>
-This sub-library contains partial packages and functions that define the interfaces
+This sub-library contains partial functions that define the interfaces
 of functions of the same kind (like random(..) function).
 </p>
 </html>", revisions="<html>

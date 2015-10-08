@@ -1,7 +1,7 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
 model GenericNoise
   "Demonstrates the most simple usage of the GenericNoise block"
-   extends Modelica.Icons.Example;
+  extends Modelica.Icons.Example;
 
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{-20,40},{0,60}})));
