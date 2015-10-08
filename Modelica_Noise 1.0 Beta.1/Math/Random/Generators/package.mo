@@ -1,6 +1,6 @@
 within Modelica_Noise.Math.Random;
 package Generators "Library of functions generating uniform random numbers in the range 0 < random <= 1.0 (with exposed state vectors)"
-   extends Modelica.Icons.Package;
+  extends Modelica.Icons.Package;
 
 
 
