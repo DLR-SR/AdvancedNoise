@@ -8,7 +8,7 @@ public
     "Time delay for auto-correlation of signal";
 
 // The start time of the simulation
-public
+protected
   parameter Real t_0(fixed=false) "Start time of the simulation";
 initial equation
   t_0 = time;

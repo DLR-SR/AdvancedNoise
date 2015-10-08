@@ -4,15 +4,17 @@ block CorrelationTest
   extends Modelica.Blocks.Interfaces.SI2SO;
 
 // The start time of the simulation
-public
+protected
   parameter Real t_0(fixed=false) "Start time of the simulation";
-  parameter Real t_eps = 0.001 "Start time of the simulation";
+public
+  parameter Real t_eps = 0.001
+    "Start evaluating shortly after simulation start";
 initial equation
   t_0 = time;
 
 // The distribution parameters
 public
-  parameter Real rho = 0.0;
+  final parameter Real rho = 0.0 "Expected correlation of null hypothesis (=0)";
   Real sigma = if time-t_0 > t_eps then 1 / sqrt(time-t_0) else 1/sqrt(t_eps);
 protected
   encapsulated model FisherTransformation
