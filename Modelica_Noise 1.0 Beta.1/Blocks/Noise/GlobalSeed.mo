@@ -167,6 +167,8 @@ is used to compute these 33 Integers. This random number generator has a state o
 is initialized with the global and local seed integers. Afterwards, random values are produced
 with this random number generator and utilized as values for the internal state of
 the Xorshift1024star random number generator.
+Due to the implementation with an external state vector, this block may only be instantiated once
+in a model! So, the block will usually reside on the top level of the model.
 </p>
 </html>"));
 end GlobalSeed;
