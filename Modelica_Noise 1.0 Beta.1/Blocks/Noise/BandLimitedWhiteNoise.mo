@@ -33,7 +33,7 @@ Ideal white noise contains all frequencies, including infinitely high ones.
 However, these usually cannot be observed in physical systems, since all physical systems in
 one way or the other contain low-pass filters. It is thus sufficient to generate a
 limited range of frequency content in the noise signal, as long as it exceeds the frequencies of
-the subsequent dynamics by a suffiently high factor (of e.g. 100).
+the subsequent dynamics by a sufficiently high factor (of e.g. 100).
 </p>
 
 <h4>About noise power</h4>
