@@ -7,7 +7,7 @@ algorithm
   y := lambda * (-log( 1-u)) ^(1/k);
 
   annotation (Inline=true, Documentation(info="<html>
-<p>
+
 <h4>Syntax</h4>
 <blockquote><pre>
 Weibull.<b>quantile</b>(u, lambda=1, k=1);

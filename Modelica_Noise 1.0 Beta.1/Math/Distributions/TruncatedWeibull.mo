@@ -197,7 +197,7 @@ of truncated distributions, see
     y := min(y_max,max(y_min,y));
 
     annotation (smoothOrder=1,Documentation(info="<html>
-<p>
+
 <h4>Syntax</h4>
 <blockquote><pre>
 Weibull.<b>quantile</b>(u, y_min=0, y_max=1, lambda=1, k=1);

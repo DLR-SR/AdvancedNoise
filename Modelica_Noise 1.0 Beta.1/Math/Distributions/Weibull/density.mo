@@ -7,7 +7,7 @@ algorithm
   y :=if u >= 0 then (k/lambda)*(u/lambda)^(k - 1)*exp(-(u/lambda)^k) else 0.0;
 
   annotation (Inline=true, Documentation(info="<html>
-<p>
+
 <h4>Syntax</h4>
 <blockquote><pre>
 Weibull.<b>density</b>(u, lambda=1, k=1);

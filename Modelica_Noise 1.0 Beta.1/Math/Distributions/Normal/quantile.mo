@@ -8,7 +8,7 @@ algorithm
   y :=mu + sigma*sqrt(2)*Special.erfInv(2*u-1);
 
   annotation (Inline=true, Documentation(info="<html>
-<p>
+
 <h4>Syntax</h4>
 <blockquote><pre>
 Normal.<b>quantile</b>(u, y_min=0, y_max=1);

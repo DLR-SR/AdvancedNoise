@@ -34,16 +34,18 @@ must be dragged resulting in a declaration
 This block is used to define global options that hold for all Noise block
 instances (such as a global seed for initializing the random number generators,
 and a flag to switch off noise).
+</p>
 
 <p>
 Please note that only one globalSeed instance may be defined in the model due to the block's implementation! So, the block will usually reside on the top level of the model.
+</p>
 
 <h4>Reproducible Noise</h4>
 
 <p>
 In the following table the different ways are summarized
 to define reproducible noise with the blocks of this sublibrary:
-<p>
+</p>
 
 <blockquote>
 <p>
