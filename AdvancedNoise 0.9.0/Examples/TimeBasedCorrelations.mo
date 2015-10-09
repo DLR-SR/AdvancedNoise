@@ -42,9 +42,9 @@ equation
 </td></tr></table>
 </p>
 </html>", info="<html>
-<p>This example demonstrates the auto and cross correlation using different seeds.</p>
+<p>This example demonstrates the autocorrelation and cross correlation of two time based noises using different seeds.</p>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TimeBasedCorrelations.png\"/></p>
-<p>Both p-values for corss- and autocorrelation are high. This means, we can assume uncorrelated signals; between two different seeds as well as within a single noise signal.</p>
+<p>p-values for both cross correlation and autocorrelation are high. This means, we can assume uncorrelated signals &ndash; between two different seeds as well as within a single noise signal.</p>
 </html>"),
     experiment(StopTime=100));
 end TimeBasedCorrelations;
