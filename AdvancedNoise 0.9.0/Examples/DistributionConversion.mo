@@ -35,5 +35,13 @@ equation
     annotation (Line(points={{-19,60},{-10.5,60},{-2,60}}, color={0,0,127}));
   connect(toWeibull.y, fromWeibull.u)
     annotation (Line(points={{-19,30},{-2,30},{-2,30}}, color={0,0,127}));
-  annotation (experiment);
+  annotation (experiment, Documentation(info="<html>
+
+<p>
+This examples demonstrates how the two blocks <a href=\"Statistics.FromUniform\">FromUniform</a> and <a href=\"Statistics.ToUniform\">ToUniform</a> can be used to convert uniformly distributed numbers to different distributions and vice versa. See image below for an example:
+</p>
+<p>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/DistributionConversion.png\">
+</p>
+</html>"));
 end DistributionConversion;
