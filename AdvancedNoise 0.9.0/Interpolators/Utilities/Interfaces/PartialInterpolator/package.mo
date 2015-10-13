@@ -15,13 +15,8 @@ partial package PartialInterpolator "Interfaces of an interpolator in a buffer o
 
   replaceable partial function interpolate
   "Interface of a function to interpolate in a buffer of random numbers"
-    extends Modelica.Icons.Function;
-    input Real buffer[:] "Buffer of random numbers";
-    input Real offset "Offset from buffer start (0..size(buffer)-1";
-    input Real samplePeriod = 1 "The sample period of the noise buffer";
-    output Real y "Interpolated value at position offset";
-protected
-    Integer nBuffer = size(buffer,1) "Size of the buffer";
+  import AdvancedNoise;
+    extends AdvancedNoise.Interpolators.Utilities.Interfaces.interpolate;
     annotation (Documentation(info="<html>
 <p>
 This partial function defines the input and output arguments of 

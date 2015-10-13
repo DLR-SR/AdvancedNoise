@@ -14,7 +14,7 @@ protected
 public 
   redeclare replaceable function interpolate
   "Interpolates the buffer using a kernel on a pre-tabulated fixed grid"
-    extends Utilities.Interfaces.PartialInterpolator.interpolate;
+    extends Utilities.Interfaces.interpolate;
 protected
     Real leftValue "The value to the left of the current interval";
     Real rightValue "The value to the right of the current interval";
