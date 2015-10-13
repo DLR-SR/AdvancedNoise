@@ -6,3 +6,4 @@ TimeBasedCorrelations
 SignalBasedCorrelations
 InterpolateRandomNumbers
 RailIrregularities
+FaultTrigger
