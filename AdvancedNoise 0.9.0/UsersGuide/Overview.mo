@@ -1,7 +1,7 @@
 within AdvancedNoise.UsersGuide;
 class Overview
   extends Modelica.Icons.Information;
-  annotation (__Dymola_DocumentationClass=true, Documentation(info="<html>
+  annotation (DocumentationClass=true, Documentation(info="<html>
 <h4>Information</h4>
 <p>The blocks in this library can be used to generate accurate noise without further modifications. The functionality of the library consists of:</p>
 <ul>

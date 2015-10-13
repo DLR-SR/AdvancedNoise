@@ -1,7 +1,7 @@
 within AdvancedNoise.UsersGuide;
 class ModelicaAward "Modelica Award"
   extends Modelica.Icons.Information;
-  annotation (__Dymola_DocumentationClass=true, Documentation(info="<html>
+  annotation (DocumentationClass=true, Documentation(info="<html>
 <h4>Modelica 2015 Library Award</h4>
 <p>This library won the second price of the Modelica Library Award during the 2015 conference!</p>
 <p><a href=\"ReleaseNotes.Version_0_9_0\">Version 0.9.0</a> was submitted to the commitee and awarded the second price during the ceremony on 22 September 2015. We thank all our supporters for their contribution to this success!</p>
