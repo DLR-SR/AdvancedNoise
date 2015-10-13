@@ -5,7 +5,7 @@ function quantile "Quantile of Bates distribution"
   input Real y_max=1 "Upper limit of band" annotation (Dialog);
   input Integer n=12 "Number of uniform random values" annotation (Dialog);
 protected
-  Real tol = 1e-6 "Required acuracy of the quantile";
+  Real tol = 1e-6 "Required accuracy of the quantile";
   Real y_l, y_m, y_h "Random values during search";
   Real p_l, p_m, p_h "Probabilities during search";
   Integer i "A counter for debugging";

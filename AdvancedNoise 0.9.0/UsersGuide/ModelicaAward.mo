@@ -4,7 +4,7 @@ class ModelicaAward "Modelica Award"
   annotation (__Dymola_DocumentationClass=true, Documentation(info="<html>
 <h4>Modelica 2015 Library Award</h4>
 <p>This library won the second price of the Modelica Library Award during the 2015 conference!</p>
-<p><a href=\"ReleaseNotes.Version_0_9_0\">Version 0.9.0</a> was submitted to the commitee and awarded the second price during the ceremony on 22 September 2015. We thank all our supporters for their contribution to this success!</p>
+<p><a href=\"ReleaseNotes.Version_0_9_0\">Version 0.9.0</a> was submitted to the committee and awarded the second price during the ceremony on 22 September 2015. We thank all our supporters for their contribution to this success!</p>
 <p>We also congratulate the first price winners of the award, the Modelica <a href=\"https://github.com/MarekMatejak/Chemical\">Chemical</a> library. All competing libraries for the award were:<p>
 <ul>
  <li>AdvancedNoise</a>

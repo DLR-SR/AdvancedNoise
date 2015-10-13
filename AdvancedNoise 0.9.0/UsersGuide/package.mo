@@ -8,7 +8,7 @@ package UsersGuide "User's guide"
 <ul>
 <li>Sensor noise</li>
 <li>Rail irregulatities in train simulations</li>
-<li>Gust loads on aircrafts</li>
+<li>Gust loads on aircraft</li>
 <li>Inputs for Monte-Carlo analysis</li>
 </ul>
 <p>The library gives the user acces to a high quality noise source with good statistcal properties.</p>
