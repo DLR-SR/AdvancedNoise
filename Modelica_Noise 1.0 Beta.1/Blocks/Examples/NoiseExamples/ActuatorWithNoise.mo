@@ -2,9 +2,9 @@ within Modelica_Noise.Blocks.Examples.NoiseExamples;
 model ActuatorWithNoise
   "Demonstrates how to model measurement noise in an actuator"
 extends Modelica.Icons.Example;
-  Blocks.Examples.NoiseExamples.Utilities.Parts.MotorWithCurrentControl Motor
+  Utilities.Parts.MotorWithCurrentControl Motor
     annotation (Placement(transformation(extent={{-86,-10},{-66,10}})));
-  Blocks.Examples.NoiseExamples.Utilities.Parts.Controller controller
+  Utilities.Parts.Controller controller
     annotation (Placement(transformation(extent={{0,60},{20,80}})));
   Modelica.Blocks.Sources.Step     Speed(startTime=0.5, height=50)
     annotation (Placement(transformation(extent={{-72,66},{-52,86}})));

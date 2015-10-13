@@ -5,8 +5,8 @@ model Distributions "Demonstrates noise with different types of distributions"
     "Sample period of all blocks";
   parameter Real y_min = -1 "Minimum value of band for random values";
   parameter Real y_max = 3 "Maximum value of band for random values";
-  inner Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
-               annotation (Placement(transformation(extent={{40,60},{60,80}})));
+  inner Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
+    annotation (Placement(transformation(extent={{40,60},{60,80}})));
 
   Integer n=if time < 0.5 then 12 else 2;
 
