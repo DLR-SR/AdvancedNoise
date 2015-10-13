@@ -1,4 +1,4 @@
-within AdvancedNoise.Sources;
+within AdvancedNoise.Statistics;
 model FaultTrigger "Triggers a fault given a time history of the failure rate"
   extends Modelica.Blocks.Interfaces.partialBooleanSO(y(start=false,fixed=true));
 
@@ -38,6 +38,22 @@ public
         Line(points={{-54,74},{-54,-50},{80,-50}}, color={28,108,200}),
         Line(points={{-54,-50},{-50,-34},{-38,-2},{-24,20},{-6,40},{10,52},{26,60},
               {48,64},{64,66},{70,66}}, color={28,108,200}),
-        Line(points={{-54,38},{72,38}}, color={255,0,0})}));
+        Line(points={{-54,38},{72,38}}, color={255,0,0})}), Documentation(info="<html>
+<p>
+This block uses a given failure rate at its input port to determine a discrete fault event.
+It uses the method described by Boui&szlig;ou et. al. (2014):
+The current failure rate f is used to determine the probability F that the fault has occured at a time t:
+der(F) = (1-F)*f.
+The value F is then compared to a random threshold r drawn with a uniform distribution between 0 and 1.
+<p>
+
+<blockcite>
+Marc Boui&szlig;ou, Hilding Elmqvist, Martin Otter, Albert Benveniste (2014). 
+Efficient Monte Carlo simulation of stochastic hybrid systems, 
+Proceedings of the 10<sup>th</sup> International Modelica Conference, March 10-12, 2014, Lund, Sweden.
+DOI: <a href=\"http://dx.doi.org/10.3384/ecp14096715\">10.3384/ecp14096715</a>
+
+</blockcite>
+</html>"));
 
 end FaultTrigger;

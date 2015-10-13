@@ -1,7 +1,7 @@
 within AdvancedNoise.Examples;
 model FaultTrigger "Demonstrates using the fault trigger model"
   extends Modelica.Icons.Example;
-  Sources.FaultTrigger faultTrigger
+  Statistics.FaultTrigger faultTrigger
     annotation (Placement(transformation(extent={{-20,20},{0,40}})));
   Modelica.Blocks.Sources.Constant failureRate(k=10)
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
@@ -22,5 +22,11 @@ equation
           {12,30},{24,30},{24,58}}, color={255,0,255}));
   connect(one.y, countFaults.u)
     annotation (Line(points={{1,70},{8,70},{16,70}}, color={255,127,0}));
-  annotation (experiment(StopTime=10));
+  annotation (experiment(StopTime=10), Documentation(info="<html>
+
+The example uses the <a href=\"Statistics.FaultTrigger\">FaultTrigger</a> model to simulate failures of a component with a given failure rate.
+The resulting failure rate compares well to the theoretical value.
+See image below:
+
+</html>"));
 end FaultTrigger;
