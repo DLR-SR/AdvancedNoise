@@ -4,13 +4,12 @@ model SpaceAndTimeDomain "Compares implementation in space and time domain"
   annotation (experiment(
       StopTime=5,
       Interval=0.01,
-      Tolerance=0.001), __Dymola_experimentSetupOutput,
-    Documentation(revisions="<html>
+      Tolerance=0.001),Documentation(revisions="<html>
 <p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

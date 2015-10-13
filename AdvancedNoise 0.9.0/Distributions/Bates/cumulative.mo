@@ -50,7 +50,7 @@ Bates.<b>cumulative</b>(u, y_min=0, y_max=1, n=12);
 
 <h4>Description</h4>
 <p>
-This function computes the cumulative distribution function 
+This function computes the cumulative distribution function
 according to a <b>Bates</b> distribution (= mean of n uniform distributions).
 The returned value y is in the range:
 </p>
@@ -68,7 +68,7 @@ Plot of the function:
 </blockquote></p>
 
 <p>
-For more details, see 
+For more details, see
 <a href=\"http://en.wikipedia.org/wiki/Bates_distribution\">Wikipedia</a>.
 </p>
 

@@ -13,9 +13,7 @@ model TimeBasedNoise "Demonstrates the a simple case of a timel based noise"
         Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3),
       samplePeriod=0.05)
     annotation (Placement(transformation(extent={{-20,-40},{0,-20}})));
- annotation (experiment(StopTime=4), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics),
-    Documentation(info="<html>
+ annotation (experiment(StopTime=4),    Documentation(info="<html>
 <p>This example demonstrates a simple use of the time based noise block. The result of a simulation is show in the next diagram. Both the noise blocks give different results due to the automatic seeding of the blocks: </p>
 <blockquote><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TimeBasedNoise.png\"/> </blockquote>
 </html>", revisions="<html>
@@ -23,7 +21,7 @@ model TimeBasedNoise "Demonstrates the a simple case of a timel based noise"
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

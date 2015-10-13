@@ -76,40 +76,32 @@ model FilterAndConvolution
 equation
   connect(velocity.y, position.u) annotation (Line(
       points={{-79,30},{-62,30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(position.y, spaceDomainNoiseMinimum.u) annotation (Line(
       points={{-39,30},{-22,30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(spaceDomainNoiseWhite.u, position.y) annotation (Line(
       points={{-22,-10},{-30,-10},{-30,30},{-39,30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(spaceDomainFilter.u, spaceDomainNoiseWhite.y) annotation (Line(
       points={{18,-10},{1,-10}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(spaceDomainNoiseZero.u, position.y) annotation (Line(
       points={{-22,70},{-30,70},{-30,30},{-39,30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(bandLimitedWhiteNoise.y, timeDomainFilter.u) annotation (Line(
       points={{1,-50},{18,-50}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics), experiment(
+      color={0,0,127}));
+  annotation ( experiment(
       StopTime=5,
       Interval=0.01,
       Tolerance=0.001),
-    __Dymola_experimentSetupOutput,
-    Documentation(revisions="<html>
+Documentation(revisions="<html>
 <p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

@@ -1,5 +1,5 @@
 within AdvancedNoise.Plots;
-package TruncatedDistributions 
+package TruncatedDistributions
      extends Modelica.Icons.Package;
 
 

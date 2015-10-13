@@ -13,24 +13,17 @@ model Displacement "Inserts a fixed displacement"
 equation
   connect(position.support, flange_a) annotation (Line(
       points={{20,10},{20,0},{-100,0}},
-      color={0,0,0},
-      pattern=LinePattern.None,
-      smooth=Smooth.None));
+      pattern=LinePattern.None));
   connect(position.flange, flange_b) annotation (Line(
       points={{30,20},{40,20},{40,0},{100,0}},
-      color={0,127,0},
-      smooth=Smooth.None));
+      color={0,127,0}));
   connect(u, position.s_ref) annotation (Line(
       points={{0,120},{0,20},{8,20}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics), Icon(coordinateSystem(
+      color={0,0,127}));
+  annotation ( Icon(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
           Line(
-          points={{-70,10},{-90,0},{-70,-10},{-90,0},{90,0},{70,10},{90,0},{70,-10}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          points={{-70,10},{-90,0},{-70,-10},{-90,0},{90,0},{70,10},{90,0},{70,-10}}),
         Text(
           extent={{-150,120},{150,80}},
           textString="%name",

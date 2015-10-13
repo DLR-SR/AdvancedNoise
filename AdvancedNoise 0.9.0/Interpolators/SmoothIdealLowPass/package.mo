@@ -95,12 +95,12 @@ protected
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -117,7 +117,7 @@ protected
 <p>
 This Interpolation package provides <b>smooth</b> interpolation in a buffer
 by approximating an ideal low pass filter (with an infinite steep drop of the
-frequency response at the cut-off frequency) using an interpolation with 
+frequency response at the cut-off frequency) using an interpolation with
 the <a href=\"modelica://Modelica_Noise.Math.Special.sinc\">sinc</a> function over
 a finite number of support points (the ideal low pass filter would require
 an infinite number of support points).
@@ -128,12 +128,12 @@ an infinite number of support points).
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -145,6 +145,5 @@ an infinite number of support points).
 </html>"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
         graphics={Line(
       points={{-90,-50},{-22,-50},{6,44},{88,44}},
-      color={0,0,0},
       smooth=Smooth.Bezier)}));
 end SmoothIdealLowPass;

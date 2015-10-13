@@ -37,27 +37,21 @@ public
 equation
   connect(correlation.u1, u1) annotation (Line(
       points={{-82,6},{-100,6},{-100,60},{-120,60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(correlation.u2, u2) annotation (Line(
       points={{-82,-6},{-100,-6},{-100,-60},{-120,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(correlation.y, fisherTransformation.u) annotation (Line(
       points={{-59,0},{-22,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(fisherTransformation.y, significanceTest.u) annotation (Line(
       points={{1,0},{58,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(significanceTest.y, y) annotation (Line(
       points={{81,0},{110,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
 
-    annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics), Documentation(revisions="<html>
+    annotation ( Documentation(revisions="<html>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>",
         info="<html>

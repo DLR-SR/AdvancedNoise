@@ -19,7 +19,7 @@ partial package PartialInterpolator "Interfaces of an interpolator in a buffer o
     extends AdvancedNoise.Interpolators.Utilities.Interfaces.interpolate;
     annotation (Documentation(info="<html>
 <p>
-This partial function defines the input and output arguments of 
+This partial function defines the input and output arguments of
 the function to interpolate in a buffer of random values.
 </p>
 </html>", revisions="<html>
@@ -28,12 +28,12 @@ the function to interpolate in a buffer of random values.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -51,7 +51,7 @@ the function to interpolate in a buffer of random values.
 This partial package defines the elements and function interface of a package
 to interpolate in buffer of random values. It is assumed that at one point in
 time, a buffer is filled with random values. In order to interpolate in the
-buffer, the following constants need to be defined: 
+buffer, the following constants need to be defined:
 </p>
 
 <blockquote>
@@ -91,12 +91,12 @@ buffer, the following constants need to be defined:
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

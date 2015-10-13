@@ -91,7 +91,7 @@ Plot of the function:
 </blockquote></p>
 
 <p>
-For more details, see 
+For more details, see
 <a href=\"http://en.wikipedia.org/wiki/Bates_distribution\">Wikipedia</a>.
 </p>
 

@@ -39,21 +39,16 @@ model SignalBasedInterpolation
 equation
   connect(signal.y, constantNoise.u) annotation (Line(
       points={{-79,80},{-62,80}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(linearNoise.u, signal.y) annotation (Line(
       points={{-62,30},{-72,30},{-72,80},{-79,80}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(smoothNoise.u, signal.y) annotation (Line(
       points={{-62,-20},{-72,-20},{-72,80},{-79,80}},
-      color={0,0,127},
-      smooth=Smooth.None));
- annotation (experiment(StopTime=2), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics),
-    Documentation(info="<html>
+      color={0,0,127}));
+ annotation (experiment(StopTime=2),    Documentation(info="<html>
 <p>
-This example demonstrates the  
+This example demonstrates the
 <a href=\"modelica://Modelica_Noise.Blocks.Noise.SignalBasedNoise\">Blocks.Noise.SignalBasedNoise</a>
 block by using various interpolation methods. The input to the blocks is a sine and
 the argument of the sine, as well as the sample periods of the blocks are selected in such a way
@@ -72,7 +67,7 @@ blocks over the sine output:
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

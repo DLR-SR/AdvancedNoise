@@ -132,9 +132,8 @@ protected
   annotation (Documentation(info=
                              "<html>
 <p>
-For details of the xorshift64* algorithm see 
+For details of the xorshift64* algorithm see
 <a href=\"http://xorshift.di.unimi.it/\">http://xorshift.di.unimi.it/</a> .
 </p>
-</html>"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
-        graphics));
+</html>"));
 end PartialInterpolatorWithKernel;

@@ -134,89 +134,70 @@ model Derivatives "Tests derivatives of the random numbers"
 equation
   connect(sine.y, uniformLinear1.u) annotation (Line(
       points={{-75,-10},{-70,-10},{-70,-30},{-62,-30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(sine.y, normalLinear1.u) annotation (Line(
       points={{-75,-10},{-70,-10},{-70,-60},{-62,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(sine.y, weibullLinear1.u) annotation (Line(
       points={{-75,-10},{-70,-10},{-70,-90},{-62,-90}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(sine.y, uniformSmooth1.u) annotation (Line(
       points={{-75,-10},{-20,-10},{-20,-30},{-2,-30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(sine.y, normalSmooth1.u) annotation (Line(
       points={{-75,-10},{-20,-10},{-20,-60},{-2,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(sine.y, weibullSmooth1.u) annotation (Line(
       points={{-75,-10},{-20,-10},{-20,-90},{-2,-90}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(weibullLinear.y, der1.u) annotation (Line(
       points={{-39,20},{-32.8,20}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(normalLinear.y, der2.u) annotation (Line(
       points={{-39,50},{-32.8,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(uniformLinear.y, der3.u) annotation (Line(
       points={{-39,80},{-32.8,80}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(uniformSmooth.y, der4.u) annotation (Line(
       points={{1,80},{7.2,80}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(normalSmooth.y, der5.u) annotation (Line(
       points={{1,50},{7.2,50}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(weibullSmooth.y, der6.u) annotation (Line(
       points={{1,20},{7.2,20}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(uniformLinear1.y, der7.u) annotation (Line(
       points={{-39,-30},{-34.8,-30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(normalLinear1.y, der8.u) annotation (Line(
       points={{-39,-60},{-34.8,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(weibullLinear1.y, der9.u) annotation (Line(
       points={{-39,-90},{-34.8,-90}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(uniformSmooth1.y, der10.u) annotation (Line(
       points={{21,-30},{25.2,-30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(normalSmooth1.y, der11.u) annotation (Line(
       points={{21,-60},{25.2,-60}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(weibullSmooth1.y, der12.u) annotation (Line(
       points={{21,-90},{25.2,-90}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics), Documentation(revisions="<html>
+      color={0,0,127}));
+  annotation ( Documentation(revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

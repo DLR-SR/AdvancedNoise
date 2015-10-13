@@ -10,7 +10,7 @@ protected
   Integer nBuffer = size(buffer,1) "Size of the buffer";
   annotation (Documentation(info="<html>
 <p>
-This partial function defines the input and output arguments of 
+This partial function defines the input and output arguments of
 the function to interpolate in a buffer of random values.
 </p>
 </html>",
@@ -20,12 +20,12 @@ the function to interpolate in a buffer of random values.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

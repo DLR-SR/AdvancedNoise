@@ -38,12 +38,12 @@ block SignalBasedNoise
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -64,12 +64,12 @@ block SignalBasedNoise
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -88,12 +88,12 @@ block SignalBasedNoise
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -122,7 +122,7 @@ block SignalBasedNoise
 
   Modelica.Blocks.Interfaces.RealInput u if not useTime
     "Input signal (the noise depends on the value of u at the actual time instant"
-    annotation (Placement(transformation(extent={{-140,-20},{-100,20}}, rotation=0)));
+    annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
 
   // Retrieve values from outer global seed
 protected
@@ -268,8 +268,7 @@ value has a length of 64 bits).
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,
               55},{13,-1},{23,-1},{23,11},{29,11},{29,-19},{39,-19},{39,53},{49,
-              53},{49,19},{57,19},{57,-47},{67,-47}},
-            color={0,0,0}),
+              53},{49,19},{57,19},{57,-47},{67,-47}}),
         Text(visible=enableNoise,
           extent={{-150,-110},{150,-150}},
           lineColor={0,0,0},
@@ -277,9 +276,7 @@ value has a length of 64 bits).
           fillPattern=FillPattern.Solid,
           textString=if useTime then "%samplePeriod s" else "%samplePeriod"),
         Line(visible=not enableNoise,
-          points={{-76,56},{72,56}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          points={{-76,56},{72,56}}),
         Text(visible=not enableNoise,
           extent={{-75,50},{95,10}},
           lineColor={0,0,0},
@@ -425,12 +422,12 @@ The above table holds only if an event is generated at every sample instant, or 
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

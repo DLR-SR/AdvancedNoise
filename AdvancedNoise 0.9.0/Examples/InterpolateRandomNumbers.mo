@@ -31,7 +31,7 @@ equation
   annotation (experiment(StopTime=20, Interval=2e-2),
                                       Documentation(info="<html>
 <p>
-This example demonstrates how to use the interpolators 
+This example demonstrates how to use the interpolators
 of package <a href=\"AdvancedNoise.Interpolators\">Interpolators</a> in a Modelica model.
 The example uses the <a href=\"Modelica_Noise.Math.Random.Utilities.impureRandom\">impure random function</a> to generate a series of random numbers.
 These are then interpolated piece-wise constantly, linearly and using the smooth interpolation of truncated ideal low-pass.
@@ -46,13 +46,12 @@ Simulations results are shown in the figure below:
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
 </p>
-</html>"),
-    __Dymola_experimentSetupOutput);
+</html>"));
 end InterpolateRandomNumbers;

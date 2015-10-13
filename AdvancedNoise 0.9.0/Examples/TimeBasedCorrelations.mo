@@ -20,21 +20,18 @@ model TimeBasedCorrelations "Tests for uncorrelated noise signals"
 equation
   connect(crossCorrelationTest.u1, noise1.y) annotation (Line(
       points={{-22,56},{-40,56},{-40,70},{-59,70}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(crossCorrelationTest.u2, noise2.y) annotation (Line(
       points={{-22,44},{-40,44},{-40,30},{-59,30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(autoCorrelationTest.u, noise2.y) annotation (Line(points={{-22,10},{-40,
           10},{-40,30},{-59,30}}, color={0,0,127}));
-  annotation (experiment(StopTime=100, Interval=1e-2),Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})),           Documentation(revisions="<html>
+  annotation (experiment(StopTime=100, Interval=1e-2),           Documentation(revisions="<html>
 <p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

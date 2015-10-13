@@ -35,12 +35,12 @@ block TimeBasedNoise
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -61,12 +61,12 @@ block TimeBasedNoise
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -86,12 +86,12 @@ block TimeBasedNoise
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -209,8 +209,7 @@ equation
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,
               55},{13,-1},{23,-1},{23,11},{29,11},{29,-19},{39,-19},{39,53},{49,
-              53},{49,19},{57,19},{57,-47},{67,-47}},
-            color={0,0,0}),
+              53},{49,19},{57,19},{57,-47},{67,-47}}),
         Text(visible=enableNoise,
           extent={{-150,-110},{150,-150}},
           lineColor={0,0,0},
@@ -218,9 +217,7 @@ equation
           fillPattern=FillPattern.Solid,
           textString="%samplePeriod s"),
         Line(visible=not enableNoise,
-          points={{-76,56},{72,56}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          points={{-76,56},{72,56}}),
         Text(visible=not enableNoise,
           extent={{-75,50},{95,10}},
           lineColor={0,0,0},
@@ -321,7 +318,7 @@ The general settings are shown in the next table:
 <h4>Advanced tab: Random number properties</h4>
 <p>
 In the group \"Random number properties\", the properties of the random number
-generation are defined. By default, uniform random numbers with linear 
+generation are defined. By default, uniform random numbers with linear
 interpolation are used, and the random numbers are drawn with the pseudo
 random number generator algorithm \"xorshift128+\". This random number generator
 has a period of 2^128, has an internal state of 4 Integer elements, and has
@@ -339,7 +336,7 @@ following parameters can be set:
     <td> Defines the random number distribution to map random numbers
          from the range 0.0 ... 1.0, to the desired range and distribution.
          Basically, <b>distribution</b> is a replaceable function that
-         provides the truncated quantile (= truncated 
+         provides the truncated quantile (= truncated
          inverse cumulative distribution function) of a random distribution.
          More details of truncated distributions can be found in the
          documentation of package
@@ -357,14 +354,14 @@ following parameters can be set:
          <li> SmoothIdealLowPass: The random values are smoothly interpolated with the
               <a href=\"modelica://Modelica_Noise.Math.Special.sinc\">sinc</a> function.
               This is an approximation of an ideal low pass filter
-              (that would have an infinite steep drop of the frequency response at 
+              (that would have an infinite steep drop of the frequency response at
                the cut-off frequency 1/samplePeriod).</li>
          </ul>
          </td></tr>
 
 <tr><td> generator </td>
     <td> Defines the pseudo random number generator to be used. This is
-         a replaceable package. The random number generators that are provided in 
+         a replaceable package. The random number generators that are provided in
          package <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>
          can be used here. Properties of the various generators are described in the package
          description of the Generators package.</td></tr>
@@ -384,7 +381,7 @@ A simulation result is shown in the next diagram:
 
 <p>
 As can be seen, constant (constantNoise.y) and linear (linearNoise.y) interpolation
-respects the defined band -1 .. 3. 
+respects the defined band -1 .. 3.
 Instead, smooth interpolation with the sinc function (smoothNoise.y) may violate the band
 slightly in order to be able to smoothly interpolate the random values at the sample instants.
 In practical applications, this is not an issue because the exact band of the noise
@@ -440,7 +437,7 @@ For this purpose the following parameters can be defined.
          instance is changing.<br>
          = false, if the seed defined by globalSeed is ignored. For example, if
          aerodynamic turbulence is modelled with a noise block and this turbulence
-         model shall be used for all simulation runs of a Monte Carlo simulation, then 
+         model shall be used for all simulation runs of a Monte Carlo simulation, then
          useGlobalSeed has to be set to false.</td></tr>
 
 <tr><td> useAutomaticLocalSeed </td>
@@ -455,7 +452,7 @@ For this purpose the following parameters can be defined.
 <tr><td> fixedLocalSeed </td>
     <td> If useAutomaticLocalSeed = false, the local seed to be used.
          fixedLocalSeed can be any Integer number (including zero or a negative number).
-         The initialization algorithm produces a meaningful initial state of the random 
+         The initialization algorithm produces a meaningful initial state of the random
          number generator, so the subsequently drawing of random numbers produce statistically
          meaningful numbers</td></tr>
 
@@ -472,12 +469,12 @@ For this purpose the following parameters can be defined.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
