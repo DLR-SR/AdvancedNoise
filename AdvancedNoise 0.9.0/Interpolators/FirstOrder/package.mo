@@ -52,19 +52,18 @@ protected
 annotation (Icon(graphics={
                   Line(
       points={{-90,-48},{-22,-48},{-22,-48},{6,46},{88,46}},
-      color={0,0,0},
       smooth=Smooth.Bezier)}), Documentation(revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>

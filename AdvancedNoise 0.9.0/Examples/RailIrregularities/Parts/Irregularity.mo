@@ -14,27 +14,20 @@ equation
       or not doMinimum and not doZero and not doFilter and     doTime, "May only use one noise generator!");
   connect(spaceDomainNoiseZero.y, y) annotation (Line(
       points={{1,70},{50,70},{50,0},{110,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(spaceDomainNoiseMinimum.y, y) annotation (Line(
       points={{1,30},{50,30},{50,0},{110,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(spaceDomainFilter.y, y) annotation (Line(
       points={{41,-10},{50,-10},{50,0},{110,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(timeDomainFilter.y, y) annotation (Line(
       points={{41,-50},{50,-50},{50,0},{110,0}},
-      color={0,0,127},
-      smooth=Smooth.None));
-  annotation (Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics), Icon(coordinateSystem(
+      color={0,0,127}));
+  annotation ( Icon(coordinateSystem(
           preserveAspectRatio=false, extent={{-100,-100},{100,100}}), graphics={
         Line(
-          points={{-80,80},{-80,-80},{80,-80}},
-          color={0,0,0},
-          smooth=Smooth.None),
+          points={{-80,80},{-80,-80},{80,-80}}),
         Line(
           points={{-76,46},{-22,46},{42,-20},{74,-54}},
           color={0,0,255},
@@ -52,7 +45,7 @@ equation
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

@@ -20,9 +20,7 @@ package AdvancedNoise "A library with additional noise modules compatible to the
           "1.0 Beta.1")),
   Icon(graphics={            Line(
       points={{-84,0},{-54,0},{-54,40},{-24,40},{-24,-70},{6,-70},{6,80},{36,80},
-            {36,-20},{66,-20},{66,60}},
-      color={0,0,0},
-      smooth=Smooth.None)}),
+            {36,-20},{66,-20},{66,60}})}),
   Documentation(revisions="",
    info="<html>
 <p>This library contains components that can be used to efficiently generate noise which can be used in simulations. Examples of the these components are:</p>

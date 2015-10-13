@@ -49,7 +49,7 @@ This function computes the probability density function according to a <b>Bates<
 </blockquote></p>
 
 <p>
-For more details, see 
+For more details, see
 <a href=\"http://en.wikipedia.org/wiki/Bates_distribution\">Wikipedia</a>.
 </p>
 

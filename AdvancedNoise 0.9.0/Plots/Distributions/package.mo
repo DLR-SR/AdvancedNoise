@@ -1,5 +1,5 @@
 within AdvancedNoise.Plots;
-package Distributions 
+package Distributions
   extends Modelica.Icons.Package;
 
 end Distributions;

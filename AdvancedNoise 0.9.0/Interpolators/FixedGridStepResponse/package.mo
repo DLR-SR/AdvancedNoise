@@ -2,7 +2,7 @@ within AdvancedNoise.Interpolators;
 package FixedGridStepResponse "A filter using a tabulated step response on a fixed grid for efficiency reasons"
   extends TabulatedStepResponse;
 
-protected 
+protected
   constant Real leftVector[:] =  - kernel((-(-nPast:nFuture)-fill(1,nPast+nFuture+1))*suggestedSamplePeriod)
                                  + kernel((-(-nPast:nFuture)+fill(0,nPast+nFuture+1))*suggestedSamplePeriod)
   "Helper vector for convolution of left interval boundary";
@@ -11,7 +11,7 @@ protected
   "Helper vector for convolution of right interval boundary";
 
 
-public 
+public
   redeclare replaceable function interpolate
   "Interpolates the buffer using a kernel on a pre-tabulated fixed grid"
     extends Utilities.Interfaces.interpolate;

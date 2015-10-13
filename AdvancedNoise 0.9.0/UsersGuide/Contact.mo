@@ -17,7 +17,7 @@ class Contact "Contact information"
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

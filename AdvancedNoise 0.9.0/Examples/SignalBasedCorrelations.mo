@@ -27,25 +27,22 @@ model SignalBasedCorrelations
 equation
   connect(crossCorrelationTest.u1, noise1.y) annotation (Line(
       points={{18,56},{0,56},{0,70},{-19,70}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(crossCorrelationTest.u2, noise2.y) annotation (Line(
       points={{18,44},{0,44},{0,30},{-19,30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(autoCorrelationTest.u, noise2.y) annotation (Line(points={{18,10},{0,10},
           {0,30},{-19,30}},       color={0,0,127}));
   connect(inputSignal.y, noise1.u) annotation (Line(points={{-66.4,50},{-54,50},
           {-54,70},{-42,70}}, color={0,0,127}));
   connect(noise2.u, inputSignal.y) annotation (Line(points={{-42,30},{-54,30},{
           -54,50},{-66.4,50}}, color={0,0,127}));
-  annotation (experiment(StopTime=100, Interval=1e-2), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}})),           Documentation(revisions="<html>
+  annotation (experiment(StopTime=100, Interval=1e-2),           Documentation(revisions="<html>
 <p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

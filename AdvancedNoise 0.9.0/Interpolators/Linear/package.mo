@@ -37,12 +37,12 @@ protected
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -65,12 +65,12 @@ This Interpolation package provides <b>linear</b> interpolation in a buffer.
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
-    <td valign=\"top\"> 
+    <td valign=\"top\">
 
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
@@ -82,7 +82,5 @@ This Interpolation package provides <b>linear</b> interpolation in a buffer.
 </html>"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
         -100},{100,100}}),
         graphics={Line(
-      points={{-86,-48},{-26,-48},{26,46},{92,46}},
-      color={0,0,0},
-      smooth=Smooth.None)}));
+      points={{-86,-48},{-26,-48},{26,46},{92,46}})}));
 end Linear;

@@ -15,7 +15,6 @@ annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
               {28,-25.0617},{31.5,-36.2849},{35,-45.0467},{38.5,-51.5468},{42,-56.1385},
               {45.5,-59.2318},{49,-61.2213},{52.5,-62.4442},{56,-63.1631},{59.5,
               -63.5674},{63,-63.7852},{66.5,-63.8975},{70,-63.953}},
-          color={0,0,0},
           smooth=Smooth.Bezier)}), Documentation(info="<html>
 <p>
 This package provides

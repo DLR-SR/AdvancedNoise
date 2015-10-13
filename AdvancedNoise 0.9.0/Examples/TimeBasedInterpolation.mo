@@ -82,52 +82,40 @@ model TimeBasedInterpolation "Shows using the interpolators with derivatives"
 equation
   connect(filteredFiltered.y, derFilteredFiltered.u) annotation (Line(
       points={{1,-58},{18,-58}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(filteredFiltered.u, filteredNoise.y) annotation (Line(
       points={{-22,-58},{-28,-58},{-28,-70},{-39,-70}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(derFiltered.u, filteredNoise.y) annotation (Line(
       points={{-2,-82},{-28,-82},{-28,-70},{-39,-70}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(linearFiltered.u, linearNoise.y) annotation (Line(
       points={{-22,42},{-30,42},{-30,30},{-39,30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(linearFiltered.y, derLinearFiltered.u) annotation (Line(
       points={{1,42},{18,42}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(derLinear.u, linearNoise.y) annotation (Line(
       points={{-2,18},{-30,18},{-30,30},{-39,30}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(smoothFiltered.y, derSmoothFiltered.u) annotation (Line(
       points={{1,-8},{18,-8}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(smoothFiltered.u, smoothNoise.y) annotation (Line(
       points={{-22,-8},{-32,-8},{-32,-20},{-39,-20}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(derSmooth.u, smoothNoise.y) annotation (Line(
       points={{-2,-32},{-32,-32},{-32,-20},{-39,-20}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(stepFiltered.y, derStepFiltered.u) annotation (Line(
       points={{1,-108},{18,-108}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(stepFiltered.u, stepNoise.y) annotation (Line(
       points={{-22,-108},{-28,-108},{-28,-120},{-39,-120}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   connect(derStep.u, stepNoise.y) annotation (Line(
       points={{-2,-130},{-28,-130},{-28,-120},{-39,-120}},
-      color={0,0,127},
-      smooth=Smooth.None));
+      color={0,0,127}));
   annotation (experiment(StopTime=2),
     Documentation(info="<html>
 <p>This example demonstrates the different interpolation methods that can be selected for a Noise block.All the blocks use samplePeriod = 0.1 s and generated uniform noise in the band y_min=-1 .. y_max=3. Furhtermore, all blocks use the same fixedLocalSeed, so all blocks generate exactly the same random numbers at the sample instants 0 s, 0.1 s, 0.2 s, ... However, these values are differently interpolated as shown in the next diagram: </p>
@@ -138,7 +126,7 @@ equation
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

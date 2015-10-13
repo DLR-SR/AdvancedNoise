@@ -17,11 +17,8 @@ model SignalBasedNoise "Demonstrates the a simple case of signal based noise"
 equation
   connect(pathParameter.y, signalBasedNoise.u) annotation (Line(
       points={{-38.4,10},{-22,10}},
-      color={0,0,127},
-      smooth=Smooth.None));
- annotation (experiment(StopTime=4), Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
-            -100},{100,100}}), graphics),
-    Documentation(info="<html>
+      color={0,0,127}));
+ annotation (experiment(StopTime=4),    Documentation(info="<html>
 <p>
 This example demonstrates a simple use of the signal based noise block:
 </p>
@@ -32,7 +29,7 @@ This example demonstrates a simple use of the signal based noise block:
      (default: r=1).
      The simulation scenario is defined so that the path parameter increases with time until it reaches
      s=2*pi*r at every second and then the path parameter is reset to s=0.</li>
-<li> The signalBasedNoise block defines a noise band of -0.05 .. 0.05. This could be interpreted as 
+<li> The signalBasedNoise block defines a noise band of -0.05 .. 0.05. This could be interpreted as
      the height of a rough circle surface. A sample period of 0.5 in the input (so in the path parameter)
      is used. This means that along the circle 2*pi*r / 0.5 + 1 random values are drawn.</li>
 </ul>
@@ -51,7 +48,7 @@ noise repeats after every second (when the path parameter is reset to s=0):
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\"> 
+</td><td valign=\"bottom\">
          <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
