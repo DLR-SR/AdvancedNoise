@@ -8,24 +8,24 @@ function initializeImpureRandom
 protected
   constant Integer localSeed = 715827883
     "Since there is no local seed, a large prime number is used";
-  Integer state[33]
+  Integer rngState[33]
     "The internal state vector of the impure random number generator";
 
   function setInternalState
     "Stores the given state vector in an external static variable"
-    input Integer[33] state "The initial state";
+    input Integer[33] rngState "The initial state";
     input Integer id;
-    external "C" ModelicaRandom_setInternalState_xorshift1024star(state, size(state,1), id)
+    external "C" ModelicaRandom_setInternalState_xorshift1024star(rngState, size(rngState,1), id)
       annotation (Include = "#include \"ModelicaRandom.c\"");
   end setInternalState;
 
 algorithm
   // Determine the internal state (several iterations with a generator that quickly generates good numbers
-  state := Random.Utilities.initialStateWithXorshift64star(localSeed,seed,size(state, 1));
+  rngState := Random.Utilities.initialStateWithXorshift64star(localSeed,seed,size(rngState, 1));
   id :=localSeed;
 
   // Copy the internal state into the internal C static memory
-  setInternalState(state, id);
+  setInternalState(rngState, id);
   annotation (Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
