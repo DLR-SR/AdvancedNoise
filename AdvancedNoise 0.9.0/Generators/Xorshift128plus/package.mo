@@ -1,68 +1,45 @@
 within AdvancedNoise.Generators;
-package QuickXorshift64star "Random number generator xorshift64* with quicker initialization"
-  extends Utilities.Interfaces.PartialGenerator(final nState=2);
+package Xorshift128plus "Random number generator xorshift128+"
+  extends Utilities.Interfaces.PartialGenerator(final nState=4);
+  import generator = Modelica_Noise.Math.Random.Generators.Xorshift128plus;
 
 
   redeclare function extends initialState
-  "Returns an initial state for the xorshift64* algorithm"
-
-    /* According to http://vigna.di.unimi.it/ftp/papers/xorshift.pdf, the xorshoft*
-     random number generator generates statistically random numbers from a bad seed
-     within one iteration.
-    */
-    parameter Integer p = 1 "The number of iterations to use";
-protected
-    Real r "Random number not used outside the function";
-
+  "Returns an initial state for the xorshift128+ algorithm"
   algorithm
-    // If seed=0 use a large prime number as seed (seed must be different from 0).
-    if localSeed == 0 and globalSeed == 0 then
-      state := {126247697,globalSeed};
-    else
-      state := {localSeed,globalSeed};
-    end if;
-
-    // Generate p-times a random number, in order to get a "good" state
-    // even if starting from a bad seed.
-    for i in 1:p loop
-      (r,state) := random(state);
-    end for;
-  annotation (Documentation(info="<html>
+    state := generator.initialState(localSeed,globalSeed);
+    annotation(Inline=true, Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-state = Xorshift64star.<b>initialState</b>(localSeed, globalSeed);
+state = Xorshift128plus.<b>initialState</b>(localSeed, globalSeed);
 </pre></blockquote>
 
 <h4>Description</h4>
 <p>
-Generates the initial state vector <b>state</b> for the Xorshift64star random number generator
-(= xorshift64* algorithm), from
+Generates an initial state vector for the Xorshift128plus random number generator
+(= xorshift128+ algorithm), from
 two Integer numbers given as input (arguments localSeed, globalSeed). Any Integer numbers
 can be given (including zero or negative number). The function returns
 a reasonable initial state vector with the following strategy:
 </p>
 
 <p>
-If both input
-arguments are zero, a fixed non-zero value is used internally for localSeed.
-According to <a href=\"http://vigna.di.unimi.it/ftp/papers/xorshift.pdf\">xorshift.pdf</a>,
-the xorshift64* random number generator generates statistically random numbers from a
-bad seed within one iteration. To be on the safe side, actually 10 random numbers are generated
-and the returned state is the one from the last iteration.
+The <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64star</a>
+random number generator is used to fill the internal state vector with 64 bit random numbers.
 </p>
 
 <h4>Example</h4>
 <blockquote><pre>
   <b>parameter</b> Integer localSeed;
   <b>parameter</b> Integer globalSeed;
-  Integer state[Xorshift64star.nState];
+  Integer state[Xorshift128plus.nState];
 <b>initial equation</b>
   state = initialState(localSeed, globalSeed);
 </pre></blockquote>
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star.random\">Random.Generators.Xorshift64star.random</a>.
+<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift128plus.random\">Random.Generators.Xorshift128plus.random</a>.
 </p>
 </html>", revisions="<html>
 <p>
@@ -89,17 +66,18 @@ and the returned state is the one from the last iteration.
 
 
   redeclare function extends random
-  "Returns a uniform random number with the xorshift64* algorithm"
-    external "C" ModelicaRandom_xorshift64star(stateIn, stateOut, result);
-    annotation (Include = "#include \"ModelicaRandom.c\"", Documentation(info="<html>
+  "Returns a uniform random number with the xorshift128+ algorithm"
+  algorithm
+    (result, stateOut) := generator.random(stateIn);
+    annotation (Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-(r, stateOut) = Xorshift64star.<b>random</b>(stateIn);
+(r, stateOut) = Xorshift128plus.<b>random</b>(stateIn);
 </pre></blockquote>
 
 <h4>Description</h4>
 <p>
-Returns a uniform random number r in the range 0 &lt; r &le; 1 with the xorshift64* algorithm.
+Returns a uniform random number in the range 0 &lt; random &le; 1 with the xorshift128+ algorithm.
 Input argument <b>stateIn</b> is the state vector of the previous call.
 Output argument <b>stateOut</b> is the updated state vector.
 If the function is called with identical stateIn vectors, exactly the
@@ -111,7 +89,7 @@ same random number r is returned.
   <b>parameter</b> Integer localSeed;
   <b>parameter</b> Integer globalSeed;
   Real r;
-  Integer state[Xorshift64star.nState];
+  Integer state[Xorshift128plus.nState];
 <b>initial equation</b>
   state = initialState(localSeed, globalSeed);
 <b>equation</b>
@@ -122,7 +100,7 @@ same random number r is returned.
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star.initialState\">Random.Generators.Xorshift64star.initialState</a>.
+<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift128plus.initialState\">Random.Generators.Xorshift128plus.initialState</a>.
 </p>
 </html>", revisions="<html>
 <p>
@@ -149,8 +127,13 @@ same random number r is returned.
 
 
   annotation (Documentation(info="<html>
-<p>Random number generator <b>xorshift64*</b>. This generator has a period of 2^64 (the period defines the number of random numbers generated before the sequence begins to repeat itself). In contrast to the <a href=\"Modelica_Noise.Math.Random.Generators.Xorshift64star\">version</a> in Modelica_Noise, this version of the generator uses a single iteration to generate a new random number.  </p>
-<p>For an overview, comparison with other random number generators, and links to articles, see <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>. </p>
+<p>
+Random number generator <b>xorshift128+</b>. This generator has a period of 2^128
+(the period defines the number of random numbers generated before the sequence begins to repeat itself).
+For an overview, comparison with
+other random number generators, and links to articles, see
+<a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>.
+</p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
@@ -171,16 +154,21 @@ same random number r is returned.
 
 </table>
 </p>
-</html>"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
-        graphics={
+</html>"),
+ Icon(graphics={
     Ellipse(
-      extent={{-64,0},{-14,-50}},
+      extent={{-70,60},{-20,10}},
       lineColor={0,0,0},
       fillColor={215,215,215},
       fillPattern=FillPattern.Solid),
     Ellipse(
-      extent={{12,52},{62,2}},
+      extent={{32,58},{82,8}},
+      lineColor={0,0,0},
+      fillColor={215,215,215},
+      fillPattern=FillPattern.Solid),
+    Ellipse(
+      extent={{-20,-12},{30,-62}},
       lineColor={0,0,0},
       fillColor={215,215,215},
       fillPattern=FillPattern.Solid)}));
-end QuickXorshift64star;
+end Xorshift128plus;
