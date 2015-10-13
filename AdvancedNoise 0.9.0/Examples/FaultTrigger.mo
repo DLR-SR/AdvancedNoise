@@ -28,5 +28,7 @@ The example uses the <a href=\"Statistics.FaultTrigger\">FaultTrigger</a> model 
 The resulting failure rate compares well to the theoretical value.
 See image below:
 
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/FaultTrigger.png\">
+
 </html>"));
 end FaultTrigger;
