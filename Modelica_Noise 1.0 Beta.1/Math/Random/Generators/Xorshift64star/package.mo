@@ -1,9 +1,11 @@
 within Modelica_Noise.Math.Random.Generators;
 package Xorshift64star "Random number generator xorshift64*"
-  extends Interfaces.PartialGenerator(final nState = 2);
+  constant Integer nState=2 "The dimension of the internal state vector";
+
+  extends Modelica.Icons.Package;
 
 
-  redeclare function initialState
+  function initialState
   "Returns an initial state for the xorshift64* algorithm"
     extends Interfaces.initialState(final stateSize=Xorshift64star.nState);
 protected
@@ -89,7 +91,7 @@ and the returned state is the one from the last iteration.
   end initialState;
 
 
-  redeclare function random
+  function random
   "Returns a uniform random number with the xorshift64* algorithm"
     extends Interfaces.random(final stateSize=Xorshift64star.nState);
     external "C" ModelicaRandom_xorshift64star(stateIn, stateOut, result)

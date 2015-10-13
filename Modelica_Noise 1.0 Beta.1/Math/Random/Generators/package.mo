@@ -3,16 +3,12 @@ package Generators "Library of functions generating uniform random numbers in th
   extends Modelica.Icons.Package;
 
 
-
-
-
   annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
         -100,-100},{100,100}}), graphics={Line(
       points={{-90,-54},{-50,-54},{-50,54},{50,54},{50,-54},{84,-54}})}), Documentation(info="<html>
 <p>
 This package contains various pseudo random number generators. A random number generator is a package
-that is derived from <a href=\"modelica://Modelica_Noise.Math.Random.Utilities.Interfaces.PartialGenerator\">Random.Utilities.Interfaces.PartialGenerator</a>
-and consists of the following elements:
+that consists of the following elements:
 </p>
 <ul>
 <li> Integer <b>nState</b> is a constant that defines the length of the internal state vector
@@ -28,8 +24,8 @@ and consists of the following elements:
 </ul>
 
 <p>
-A modeler can use a replaceable Generator package in his model, in order to easily select the desired
-random number generator from the parameter menu.
+In order to have consistent interfaces, the function explained above should be extended from the Interfaces provided in
+package <a href=\"Interfaces\">Interfaces</a>.
 </p>
 
 <p>

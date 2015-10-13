@@ -1,6 +1,6 @@
 within Modelica_Noise.Blocks.Noise;
 block GenericNoise "Noise generator for arbitrary distributions"
-  import Modelica_Noise.Math.Random;
+  import generator = Modelica_Noise.Math.Random.Generators.Xorshift128plus;
   extends Modelica.Blocks.Interfaces.SO;
 
   // Main dialog menu
@@ -32,13 +32,7 @@ block GenericNoise "Noise generator for arbitrary distributions"
     "Start time for sampling the raw random numbers"
     annotation(Dialog(tab="Advanced", group="Initialization",enable=enableNoise));
 
-  // Advanced dialog menu: Random number properties
-  replaceable package generator =
-      Modelica_Noise.Math.Random.Generators.Xorshift128plus constrainedby
-    Modelica_Noise.Math.Random.Interfaces.PartialGenerator
-    "Random number generator"
-    annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number generator",enable=enableNoise));
-
+  // Generate the actually used local seed
   discrete Integer localSeed "The actual localSeed";
 equation
   when initial() then
@@ -268,31 +262,22 @@ the desired situation. For this purpose the following parameters can be defined:
 </table>
 </p></blockquote>
 
-<h4>Advanced tab: Random number generator</h4>
+<h4>Random number generator</h4>
 <p>
-The (pseudo) random number generator to be used is defined here.
+The (pseudo) random number generator to be used is defined via an import clause at the beginning of this block.
 The default is random number generator algorithm \"xorshift128+\".
 This random number generator has a period of 2^128,
 has an internal state of 4 Integer elements, and has
 excellent statistical properties.
-If the default algorithm is not desired, the
-following parameter can be set:
+It is a good trade-off between simulation performance and random number quality.
+If the default algorithm is not desired, 
+a new model needs to be created by duplicating this block and exchanging the import clause.
+Meaningful random number generators are provided in
+package <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>.
+Properties of the various generators are described in the package
+description of the Generators package.
 </p>
 
-<blockquote>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Parameter</th>
-    <th>Description</th></tr>
-
-<tr><td> generator </td>
-    <td> Defines the pseudo random number generator to be used. This is
-         a replaceable package. Meaningful random number generators are provided in
-         package <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>.
-         Properties of the various generators are described in the package
-         description of the Generators package.</td></tr>
-</table>
-</p></blockquote>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
