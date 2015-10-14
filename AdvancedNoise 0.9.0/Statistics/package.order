@@ -4,3 +4,4 @@ CorrelationTest
 AutoCorrelationTest
 FromUniform
 ToUniform
+FaultTrigger
