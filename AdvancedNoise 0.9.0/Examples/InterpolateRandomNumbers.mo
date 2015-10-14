@@ -1,7 +1,7 @@
 within AdvancedNoise.Examples;
 model InterpolateRandomNumbers
   "Interpolate random numbers with the various interpolators"
-   extends Modelica.Icons.Example;
+  extends Modelica.Icons.Example;
 
   parameter Modelica.SIunits.Time samplePeriod = 1.0
     "Sample period for the generation of random numbers";

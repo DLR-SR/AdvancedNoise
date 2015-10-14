@@ -1,6 +1,6 @@
 within AdvancedNoise.Examples;
 model SignalBasedNoise "Demonstrates the a simple case of signal based noise"
-   extends Modelica.Icons.Example;
+  extends Modelica.Icons.Example;
   parameter Modelica.SIunits.Radius r = 1 "Radius of circle";
   constant Real pi = Modelica.Constants.pi "Constant pi";
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed

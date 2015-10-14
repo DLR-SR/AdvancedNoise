@@ -2,10 +2,10 @@ within AdvancedNoise.Examples;
 model SignalBasedInterpolation
   "Demonstrates signal-based noise with different interpolations"
   import Modelica_Noise;
-   extends Modelica.Icons.Example;
-   parameter Real startTime = 0.5;
-   parameter Real y_off = -1.0;
-   constant Real pi = Modelica.Constants.pi "Constant pi";
+  extends Modelica.Icons.Example;
+  parameter Real startTime = 0.5;
+  parameter Real y_off = -1.0;
+  constant Real pi = Modelica.Constants.pi "Constant pi";
 
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false, enableNoise=true)
     annotation (Placement(transformation(extent={{60,60},{80,80}})));

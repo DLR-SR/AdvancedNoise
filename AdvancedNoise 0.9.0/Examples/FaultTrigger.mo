@@ -7,8 +7,7 @@ model FaultTrigger "Demonstrates using the fault trigger model"
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=true)
     annotation (Placement(transformation(extent={{-50,60},{-30,80}})));
-  Modelica.Blocks.MathInteger.TriggeredAdd countFaults(use_reset=false, use_set
-      =false) annotation (Placement(transformation(extent={{20,60},{40,80}})));
+  Modelica.Blocks.MathInteger.TriggeredAdd countFaults(use_reset=false, use_set=false) annotation (Placement(transformation(extent={{20,60},{40,80}})));
   Modelica.Blocks.Sources.IntegerExpression one(y=1)
     annotation (Placement(transformation(extent={{-20,60},{0,80}})));
   Modelica.Blocks.Sources.RealExpression reconstructedFailureRate(y=if
