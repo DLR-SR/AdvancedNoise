@@ -70,9 +70,9 @@ equation
 
 initial equation
   simpleRailwayTrack.track.a = 0;
-  //simpleRailwayTrack.track.v = 0;
+  //simpleRailwayTrack.track.v = 0; // is given by spring-damper
   quarterRailwayCar.wheel.a  = 0;
-  //quarterRailwayCar.wheel.v  = 0;
-  quarterRailwayCar.body.a   = 0;
-  //quarterRailwayCar.body.v   = 0;
+  //quarterRailwayCar.wheel.v  = 0; // is given by spring-damper
+  //quarterRailwayCar.body.a   = 0; // is given by spring-damper zero forces and wheel.a=0
+  //quarterRailwayCar.body.v   = 0; // is given by spring-damper
 end TrainOnTrack;
