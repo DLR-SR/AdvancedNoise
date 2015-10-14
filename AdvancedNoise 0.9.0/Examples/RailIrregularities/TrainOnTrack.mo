@@ -15,7 +15,7 @@ model TrainOnTrack
         extent={{-10,-10},{10,10}},
         rotation=90,
         origin={0,40})));
-  Parts.Displacement displacement(position(v(fixed=true), a(fixed=true)))
+  Parts.Displacement displacement(position(v(fixed=true)))
                                   annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=90)));

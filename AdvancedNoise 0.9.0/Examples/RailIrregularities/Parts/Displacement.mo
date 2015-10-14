@@ -13,7 +13,7 @@ model Displacement "Inserts a fixed displacement"
 equation
   connect(position.support, flange_a) annotation (Line(
       points={{20,10},{20,0},{-100,0}},
-      pattern=LinePattern.None));
+      color={0,127,0}));
   connect(position.flange, flange_b) annotation (Line(
       points={{30,20},{40,20},{40,0},{100,0}},
       color={0,127,0}));
