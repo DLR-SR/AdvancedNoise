@@ -1,3 +1,5 @@
 GlobalSeed
-GenericNoise
+UniformNoise
+NormalNoise
+TruncatedNormalNoise
 BandLimitedWhiteNoise

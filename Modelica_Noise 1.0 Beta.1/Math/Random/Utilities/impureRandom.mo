@@ -27,7 +27,7 @@ is returned, so the function is impure.
 <blockquote><pre>
   <b>parameter</b> Integer seed;
   Real r;
-  <b>function</b> random = impureRandom (<b>final id=id);
+  <b>function</b> random = impureRandom (<b>final</b> id=id);
 <b>protected </b>
   Integer id;
 <b>equation</b>

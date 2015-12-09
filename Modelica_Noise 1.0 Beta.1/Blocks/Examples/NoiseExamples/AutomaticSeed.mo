@@ -1,6 +1,6 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples;
 model AutomaticSeed
-  "Demonstrates noise with startTime and automatic local seed for GenericNoise"
+  "Demonstrates noise with startTime and automatic local seed for UniformNoise"
   import Modelica_Noise;
    extends Modelica.Icons.Example;
    parameter Real startTime = 0.5 "Start time of noise";
@@ -9,59 +9,48 @@ model AutomaticSeed
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false, enableNoise=true)
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
 
-  Modelica_Noise.Blocks.Noise.GenericNoise automaticSeed1(
+  Modelica_Noise.Blocks.Noise.UniformNoise automaticSeed1(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
-    redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+    y_min=-1, y_max=3)
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise automaticSeed2(
+  Modelica_Noise.Blocks.Noise.UniformNoise automaticSeed2(
     samplePeriod=0.01,
     startTime=startTime,
-    y_off=y_off,
-    redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+    y_off=y_off,y_min=-1, y_max=3)
     annotation (Placement(transformation(extent={{-60,-20},{-40,0}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise automaticSeed3(
+  Modelica_Noise.Blocks.Noise.UniformNoise automaticSeed3(
     samplePeriod=0.01,
     startTime=startTime,
-    y_off=y_off,
-    redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+    y_off=y_off, y_min=-1, y_max=3)
     annotation (Placement(transformation(extent={{-60,-60},{-40,-40}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise manualSeed1(
+  Modelica_Noise.Blocks.Noise.UniformNoise manualSeed1(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
     useAutomaticLocalSeed=false,
-    fixedLocalSeed=1,
-    redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3),
+    fixedLocalSeed=1,y_min=-1, y_max=3,
     enableNoise=true)
     annotation (Placement(transformation(extent={{0,20},{20,40}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise manualSeed2(
+  Modelica_Noise.Blocks.Noise.UniformNoise manualSeed2(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
     useAutomaticLocalSeed=false,
-    fixedLocalSeed=2,
-    redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+    fixedLocalSeed=2,y_min=-1, y_max=3)
     annotation (Placement(transformation(extent={{0,-20},{20,0}})));
-  Modelica_Noise.Blocks.Noise.GenericNoise manualSeed3(
+  Modelica_Noise.Blocks.Noise.UniformNoise manualSeed3(
     samplePeriod=0.01,
     startTime=startTime,
     y_off=y_off,
-    useAutomaticLocalSeed=false,
-    redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3),
+    useAutomaticLocalSeed=false,y_min=-1, y_max=3,
     fixedLocalSeed=3)
     annotation (Placement(transformation(extent={{0,-60},{20,-40}})));
  annotation (experiment(StopTime=2),    Documentation(info="<html>
 <p>
 This example demonstrates manual and automatic seed selection of
-<a href=\"Modelica_Noise.Blocks.Noise.GenericNoise\">GenericNoise</a> blocks, as well
+<a href=\"Modelica_Noise.Blocks.Noise.UniformNoise\">UniformNoise</a> blocks, as well
 as starting the noise at startTime = 0.5 s with an output value of y = -1 before this
 time. All noise blocks in this example generate uniform noise in the
 band y_min=-1 .. y_max=3 with samplePeriod = 0.01 s.

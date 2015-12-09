@@ -1,41 +1,18 @@
 within Modelica_Noise.Blocks.Examples.NoiseExamples.Utilities;
-block Density "Calculates the density of a selected distribution"
+block WeibullDensity "Calculates the density of a Weibull distribution"
+  import distribution = Modelica_Noise.Math.Distributions.Weibull.density;
   extends Modelica.Blocks.Icons.Block;
 
-  replaceable function distribution =
-       Modelica_Noise.Math.Distributions.Uniform.density constrainedby
-    Modelica_Noise.Math.Distributions.Interfaces.partialDensity
-    "Probability density function"
-    annotation(choicesAllMatching=true, Documentation(info="<html>
-<p>This is the probability density function to be used in the Density block.</p>
-</html>", revisions="<html>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> June 22, 2015 </td>
-    <td valign=\"top\">
-
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
-</table>
-</p>
-</html>"));
+  parameter Real lambda(min=0) "Scale parameter of the Weibull distribution";
+  parameter Real k(min=0) "Shape parameter of the Weibull distribution";
 
   Modelica.Blocks.Interfaces.RealInput u "Real input signal" annotation (Placement(transformation(extent={{-140,-20},{-100,20}})));
   Modelica.Blocks.Interfaces.RealOutput y
-    "Density of the input signal according to the selected probability density function"
+    "Density of the input signal according to the Weibull probability density function"
     annotation (Placement(transformation(extent={{100,-10},{120,10}})));
 equation
-  y = distribution(u);
+  y = distribution(u, lambda, k);
+
   annotation (Icon(graphics={
         Polygon(
           points={{0,94},{-8,72},{8,72},{0,94}},
@@ -63,23 +40,14 @@ equation
           -75.8975},{70,-75.953}},
           smooth=Smooth.Bezier)}), Documentation(info="<html>
 <p>
-This block determines the probability density y of a distribution for the given signal u:
-</p>
-
-<blockquote>
-<pre>y = density(u)</pre>
-</blockquote>
-
-<p>
-The actual density function is replaceable and can be chosen from all available
-probability density functions extending from
-<a href=\"modelica://Modelica_Noise.Math.Distributions.Interfaces.partialDensity\">Math.Distributions.Interfaces.partialDensity</a>.
+This block determines the probability density y of a Weibull distribution for the given input signal u
+(for details of this density function see
+<a href=\"Modelica_Noise.Math.Distributions.Weibull.density\">Math.Distributions.Weibull.density</a>).
 </p>
 
 <p>
-This block is demonstrated in the examples
-<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.Densities\">Examples.NoiseExamples.Densities</a> and
-<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.TruncatedDensities\">Examples.NoiseExamples.TruncatedDensities</a>.
+This block is demonstrated in the example
+<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.Densities\">Examples.NoiseExamples.Densities</a> .
 </p>
 </html>", revisions="<html>
 <p>
@@ -102,4 +70,4 @@ This block is demonstrated in the examples
 </table>
 </p>
 </html>"));
-end Density;
+end WeibullDensity;

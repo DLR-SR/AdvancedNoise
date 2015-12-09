@@ -12,10 +12,8 @@ model UniformNoiseProperties
     "Theoretical standard deviation of uniform distribution";
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{80,60},{100,80}})));
-  Noise.GenericNoise noise(
-    samplePeriod=0.001, redeclare replaceable function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=y_min, y_max=
-            y_max),
+  Noise.UniformNoise noise(
+    samplePeriod=0.001, y_min=y_min, y_max=y_max,
     useAutomaticLocalSeed=false)
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
   Math.ContinuousMean mean

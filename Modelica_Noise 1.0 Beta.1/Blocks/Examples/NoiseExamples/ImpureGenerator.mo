@@ -9,7 +9,8 @@ model ImpureGenerator
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
  annotation (experiment(StopTime=2),    Documentation(info="<html>
 <p>
-This example demonstrates how to use the globalSeed.random() impure function
+This example demonstrates how to use the 
+<a href=\"modelica://Modelica_Noise.Math.Random.Utilities.impureRandom\">impureRandom(..)</a> function
 to generate random values at event instants. Typically, this approach is only
 used when implementing an own, specialized block that needs a random number
 generator. Simulation results are shown in the next figure:

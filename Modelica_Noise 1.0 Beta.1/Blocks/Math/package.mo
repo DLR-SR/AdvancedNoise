@@ -3,8 +3,6 @@ package Math "Library of mathematical blocks"
   extends Modelica.Icons.Package;
 
 
-
-
   annotation (Icon(graphics={Line(
           points={{-72,-63.953},{-68.5,-63.8975},{-65,-63.7852},{-61.5,
           -63.5674},{-58,-63.1631},{-54.5,-62.4442},{-51,-61.2213},{-47.5,

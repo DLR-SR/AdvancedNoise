@@ -1,11 +1,9 @@
-GenericNoise
+UniformNoise
 AutomaticSeed
 Distributions
 UniformNoiseProperties
 NormalNoiseProperties
-WeibullNoiseProperties
 Densities
-TruncatedDensities
 ImpureGenerator
 ActuatorWithNoise
 DrydenContinuousTurbulence

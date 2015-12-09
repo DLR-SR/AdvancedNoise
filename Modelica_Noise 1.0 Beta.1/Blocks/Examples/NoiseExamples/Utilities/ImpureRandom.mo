@@ -11,7 +11,7 @@ protected
 
 equation
    when {initial(), sample(samplePeriod,samplePeriod)} then
-      y = globalSeed.random();
+      y = Modelica_Noise.Math.Random.Utilities.impureRandom(globalSeed.id_impure);
    end when;
   annotation (Documentation(info="<html>
 <p>

@@ -10,36 +10,23 @@ model Distributions "Demonstrates noise with different types of distributions"
 
   Integer n=if time < 0.5 then 12 else 2;
 
-  Noise.GenericNoise uniformNoise(
+  Noise.UniformNoise uniformNoise(
     useAutomaticLocalSeed=false,
     fixedLocalSeed=1,
-    samplePeriod=samplePeriod,
-    redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=y_min, y_max=y_max))
+    samplePeriod=samplePeriod,y_min=y_min, y_max=y_max)
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
-  Noise.GenericNoise normalNoise(
+  Noise.TruncatedNormalNoise truncatedNormalNoise(
     useAutomaticLocalSeed=false,
     fixedLocalSeed=1,
-    samplePeriod=samplePeriod,
-    redeclare function distribution =
-        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (
-           y_min=y_min, y_max=y_max))
-    annotation (Placement(transformation(extent={{-60,30},{-40,50}})));
-  Noise.GenericNoise weibullNoise(
-    useAutomaticLocalSeed=false,
-    fixedLocalSeed=1,
-    samplePeriod=samplePeriod,
-    redeclare function distribution =
-        Modelica_Noise.Math.Distributions.TruncatedWeibull.quantile (
-          y_min=0, y_max=y_max, k=1))
-    annotation (Placement(transformation(extent={{-60,-10},{-40,10}})));
+    samplePeriod=samplePeriod, y_min=y_min, y_max=y_max)
+    annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
  annotation (experiment(StopTime=2),    Documentation(info="<html>
 <p>
 This example demonstrates different noise distributions methods that can be selected
-for a Noise block. All the blocks use samplePeriod = 0.02 s, y_min=-1, y_max=3, and have
+for a Noise block. Both noise blocks use samplePeriod = 0.02 s, y_min=-1, y_max=3, and have
 identical fixedLocalSeed. This means that the same random numbers are drawn for the blocks.
-However, the random numbers are differently transformed according to the selected
-truncated distributions, and therefore the blocks have different output values.
+However, the random numbers are differently transformed according to the selected distributions 
+(uniform and truncated normal distribution), and therefore the blocks have different output values.
 Simulation results are shown in the next diagram:
 </p>
 
@@ -48,9 +35,8 @@ Simulation results are shown in the next diagram:
 </blockquote></p>
 
 <p>
-As can be seen, uniform noise is distributed evenly between -1 and 3,
-truncated normal distriution has more values centered around the mean value 1,
-and truncated Weibull distribution has no values below zero.
+As can be seen, uniform noise is distributed evenly between -1 and 3, and
+truncated normal distriution has more values centered around the mean value 1.
 </p>
 </html>", revisions="<html>
 <p>

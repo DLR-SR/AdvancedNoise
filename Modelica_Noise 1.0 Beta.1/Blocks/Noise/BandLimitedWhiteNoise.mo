@@ -1,12 +1,38 @@
 within Modelica_Noise.Blocks.Noise;
 block BandLimitedWhiteNoise
   "Noise generator to produce band-limited white noise with normal distribution"
-  extends GenericNoise(
-    redeclare function distribution =
-      Modelica_Noise.Math.Distributions.Normal.quantile(mu =    0,
-                                                        sigma = sqrt(noisePower/samplePeriod)));
-  parameter Real noisePower = 1 "Power of white noise signal";
-  annotation (Documentation(info="<html>
+  import distribution = Modelica_Noise.Math.Distributions.Normal.quantile;
+  extends Modelica_Noise.Blocks.Interfaces.PartialNoise;
+
+  // Main dialog menu
+  parameter Real noisePower = 1 "Power of white noise signal" annotation(Dialog(enable=enableNoise));
+
+protected
+  parameter Real mu=0;
+  parameter Real sigma=sqrt(noisePower/samplePeriod);
+
+initial equation
+   r = distribution(r_raw, mu, sigma);
+
+equation
+  // Draw random number at sample times
+  when generateNoise and sample(startTime, samplePeriod) then
+    r = distribution(r_raw, mu, sigma);
+  end when;
+                                                                                      annotation(Dialog(enable=enableNoise), Icon(
+        graphics={Text(
+          extent={{-70,96},{92,60}},
+          lineColor={175,175,175},
+          textString="%noisePower"),
+        Text(
+          extent={{-96,11},{96,-11}},
+          lineColor={175,175,175},
+          fillColor={192,192,192},
+          fillPattern=FillPattern.Solid,
+          origin={-87,0},
+          rotation=90,
+          textString="white noise")}),
+              Documentation(info="<html>
 <p>
 This block configures the <a href=\"GenericNoise\">GenericNoise</a> block to produce
 band-limited white noise. This is performed by using a normal distribution with mu=0 and

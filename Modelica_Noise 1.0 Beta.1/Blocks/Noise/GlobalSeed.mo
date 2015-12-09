@@ -13,14 +13,9 @@ model GlobalSeed
   final parameter Integer seed = if useAutomaticSeed then
                                     Modelica_Noise.Math.Random.Utilities.automaticGlobalSeed()
                                   else fixedSeed "Actually used global seed";
-  function random = Modelica_Noise.Math.Random.Utilities.impureRandom(final id=id_impure)
-    "Impure random number generator function";
-  function randomInteger =
-      Modelica_Noise.Math.Random.Utilities.impureRandomInteger(final id=id_impure)
-    "Impure Integer random number generator function";
-
-protected
-  parameter Integer id_impure = Modelica_Noise.Math.Random.Utilities.initializeImpureRandom(seed);
+  final parameter Integer id_impure = Modelica_Noise.Math.Random.Utilities.initializeImpureRandom(seed)
+    "ID for impure random number generators Modelica_Noise.Math.Random.Utilities.impureXXX"
+                                                                                             annotation(HideResult=true);
 
   annotation (
     defaultComponentName="globalSeed",
@@ -136,22 +131,14 @@ hierarchical level. The following options can be selected:
 </p></blockquote>
 
 <p>
-Additionally, the globalSeed instance provides the following impure functions
+Additionally, the globalSeed instance calls function
+<a href=\"modelica://Modelica_Noise.Math.Random.Utilities.initializeImpureRandom\">initializeImpureRandom</a>
+to initialize the impure random number generators
+(<a href=\"modelica://Modelica_Noise.Math.Random.Utilities.impureRandom\">impureRandom</a> and 
+<a href=\"modelica://Modelica_Noise.Math.Random.Utilities.impureRandomInteger\">impureRandomInteger</a>).
+The return value of this function is stored in parameter <b>id_impure</b>. Whenever one of the impure
+random number generators need to be called, \"globalSeed.id_impure\" has to be given as input argument.
 </p>
-
-<ul>
-<li> <b>random</b>():<br>
-     This function uses the <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift1024star\">xorshift1024*</a>
-     pseudo random number generator to produce random numbers in the range 0 &lt; random numbers &le; 1.
-     It is initialized with the global seed defined in globalSeed
-     (so either with parameter fixedSeed, or automatically computed by process ID and local time).
-     Since random() is an impure function, it should only be called in a when-clause (so at an event).</li>
-<li> <b>randomInteger</b>(imin=1,imax=Modelica.Constants.Integer_inf):<br>
-     This function uses the random() pseudo random number generator and maps the returned random value
-     into the Integer range imin ... imax. By default, imin=1 and imax=Modelica.Constants.Integer_inf.
-     Since randomInteger() is an impure function, it should only be called in a when-clause
-     (so at an event).</li>
-</ul>
 
 <p>
 Note, the usage of this block is demonstrated with examples
@@ -160,15 +147,9 @@ Note, the usage of this block is demonstrated with examples
 </p>
 
 <p>
-Remark: The \"xorshift1024\" pseudo-random number generator has an internal state of 33 Integers.
-This state is initialized in the following way: The pseudo-random number generator
-<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64star</a>
-is used to compute these 33 Integers. This random number generator has a state of 2 Integers which
-is initialized with the global and local seed integers. Afterwards, random values are produced
-with this random number generator and utilized as values for the internal state of
-the Xorshift1024star random number generator.
-Due to the implementation with an external state vector, this block may only be instantiated once
-in a model! So, the block will usually reside on the top level of the model.
+Please note that only one globalSeed instance may be defined in the model due to the initialization
+of the impure random number generators with <a href=\"modelica://Modelica_Noise.Math.Random.Utilities.initializeImpureRandom\">initializeImpureRandom</a>! 
+So, the block will usually reside on the top level of the model.
 </p>
 </html>"));
 end GlobalSeed;

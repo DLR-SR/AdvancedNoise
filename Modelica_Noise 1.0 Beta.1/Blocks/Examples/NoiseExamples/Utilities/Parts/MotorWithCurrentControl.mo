@@ -120,10 +120,10 @@ model MotorWithCurrentControl
         origin={110,80}), iconTransformation(extent={{40,70},{60,90}})));
   Modelica.Blocks.Math.Add addNoise
     annotation (Placement(transformation(extent={{60,70},{80,90}})));
-  Noise.GenericNoise GenericNoise(
-    samplePeriod=1/200, redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-0.01, y_max=
-            0.01))      annotation (Placement(transformation(extent={{26,76},{46,96}})));
+  Noise.UniformNoise UniformNoise(
+    samplePeriod=1/200,
+    y_min=-0.01,
+    y_max=0.01)         annotation (Placement(transformation(extent={{26,76},{46,96}})));
 equation
   w = speedSensor.w;
   phi_motor = angleSensor.phi;
@@ -193,7 +193,7 @@ equation
   connect(addNoise.y, phi) annotation (Line(
       points={{81,80},{110,80}},
       color={0,0,127}));
-  connect(GenericNoise.y, addNoise.u1) annotation (Line(
+  connect(UniformNoise.y, addNoise.u1) annotation (Line(
       points={{47,86},{58,86}},
       color={0,0,127}));
   annotation (
