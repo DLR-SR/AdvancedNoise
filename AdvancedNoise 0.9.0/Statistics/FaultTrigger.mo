@@ -24,7 +24,7 @@ public
   Real r(min=0,max=1) "Value to trigger the fault";
 equation
   when {initial(), reset and pre(y)} then
-    r = globalSeed.random();
+    r = Modelica_Noise.Math.Random.Utilities.impureRandom(globalSeed.id_impure);
     reinit(F, 0.0);
   end when;
 
