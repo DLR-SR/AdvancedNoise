@@ -42,7 +42,7 @@ public
 <p>
 This block uses a given failure rate at its input port to determine a discrete fault event.
 It uses the method described by Boui&szlig;ou et. al. (2014):
-The current failure rate f is used to determine the probability F that the fault has occured at a time t:
+The current failure rate f is used to determine the probability F that the fault has occurred at a time t:
 der(F) = (1-F)*f.
 The value F is then compared to a random threshold r drawn with a uniform distribution between 0 and 1.
 <p>
