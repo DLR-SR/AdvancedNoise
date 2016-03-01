@@ -10,7 +10,7 @@ model SignalBasedCorrelations
     fixedLocalSeed=11,
     useTime=false)
     annotation (Placement(transformation(extent={{-40,60},{-20,80}})));
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
+  inner Modelica.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
   Sources.SignalBasedNoise
                          noise2(

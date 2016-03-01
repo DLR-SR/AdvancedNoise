@@ -1,6 +1,6 @@
 within AdvancedNoise.Distributions.Bates;
 function quantile "Quantile of Bates distribution"
-  extends Modelica_Noise.Math.Distributions.Interfaces.partialQuantile;
+  extends Modelica.Math.Distributions.Interfaces.partialQuantile;
   input Real y_min=0 "Lower limit of band" annotation (Dialog);
   input Real y_max=1 "Upper limit of band" annotation (Dialog);
   input Integer n=12 "Number of uniform random values" annotation (Dialog);
@@ -87,7 +87,7 @@ Plot of the function:
 </p>
 
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/Bates.quantile.png\">
+<img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.quantile.png\">
 </blockquote></p>
 
 <p>
@@ -102,8 +102,8 @@ For more details, see
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.density\">Bates.density</a>,
-<a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.cumulative\">Bates.cumulative</a>.
+<a href=\"modelica://Modelica.Math.Distributions.Bates.density\">Bates.density</a>,
+<a href=\"modelica://Modelica.Math.Distributions.Bates.cumulative\">Bates.cumulative</a>.
 </p>
 </html>"));
 end quantile;

@@ -1,7 +1,7 @@
 within AdvancedNoise.Distributions.Discrete;
 function quantile
   "Quantile of discrete distribution (= inverse cumulative distribution function)"
-  extends Modelica_Noise.Math.Distributions.Interfaces.partialQuantile;
+  extends Modelica.Math.Distributions.Interfaces.partialQuantile;
   input Real x[:] = {0,1} "Discrete values to be chosen from" annotation(Dialog);
   input Real p[size(x,1)] = ones(size(x,1))/size(x,1)
     "The probabilities of the discrete values" annotation(Dialog);

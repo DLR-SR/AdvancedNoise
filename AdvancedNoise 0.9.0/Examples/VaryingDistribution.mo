@@ -1,14 +1,14 @@
 within AdvancedNoise.Examples;
 model VaryingDistribution "Shows how distributions can vary in time"
   extends Modelica.Icons.Example;
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
+  inner Modelica.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{-20,40},{0,60}})));
   Real t = time;
   Sources.TimeBasedNoise discreteNoise(samplePeriod=0.001, redeclare function
       distribution = Distributions.Discrete.quantile (p=if t < 1 then {0.2,0.8}
              else {0.8,0.2}))
     annotation (Placement(transformation(extent={{-20,0},{0,20}})));
-  Modelica_Noise.Blocks.Math.ContinuousMean continuousMean
+  Modelica.Blocks.Math.ContinuousMean continuousMean
     annotation (Placement(transformation(extent={{20,0},{40,20}})));
 equation
   connect(continuousMean.u, discreteNoise.y)

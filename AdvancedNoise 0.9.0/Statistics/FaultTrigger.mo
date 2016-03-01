@@ -18,13 +18,13 @@ equation
 
 // We need a random number to determine the trigger for F
 protected
-  outer Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
+  outer Modelica.Blocks.Noise.GlobalSeed globalSeed
     "Definition of global seed via inner/outer";
 public
   Real r(min=0,max=1) "Value to trigger the fault";
 equation
   when {initial(), reset and pre(y)} then
-    r = globalSeed.random();
+    r = Modelica.Math.Random.Utilities.impureRandom(globalSeed.id_impure);
     reinit(F, 0.0);
   end when;
 

@@ -1,7 +1,7 @@
 within AdvancedNoise.Tests;
 model Derivatives "Tests derivatives of the random numbers"
   extends Modelica.Icons.Example;
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
+  inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
   Sources.TimeBasedNoise uniformLinear(
     useAutomaticLocalSeed=false,
@@ -9,7 +9,7 @@ model Derivatives "Tests derivatives of the random numbers"
     sampleFactor=10,
     redeclare package interpolation = Interpolators.Linear,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
   Sources.TimeBasedNoise uniformSmooth(
     useAutomaticLocalSeed=false,
@@ -17,7 +17,7 @@ model Derivatives "Tests derivatives of the random numbers"
     sampleFactor=10,
     redeclare package interpolation = Interpolators.SmoothIdealLowPass,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-20,70},{0,90}})));
   Sources.TimeBasedNoise normalLinear(
     useAutomaticLocalSeed=false,
@@ -25,14 +25,14 @@ model Derivatives "Tests derivatives of the random numbers"
     sampleFactor=10,
     redeclare package interpolation = Interpolators.Linear,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,40},{-40,60}})));
   Sources.TimeBasedNoise normalSmooth(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile,
+        Modelica.Math.Distributions.Uniform.quantile,
     redeclare package interpolation = Interpolators.SmoothIdealLowPass)
     annotation (Placement(transformation(extent={{-20,40},{0,60}})));
   Sources.TimeBasedNoise weibullLinear(
@@ -41,7 +41,7 @@ model Derivatives "Tests derivatives of the random numbers"
     sampleFactor=10,
     redeclare package interpolation = Interpolators.Linear,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,10},{-40,30}})));
   Sources.TimeBasedNoise weibullSmooth(
     useAutomaticLocalSeed=false,
@@ -49,7 +49,7 @@ model Derivatives "Tests derivatives of the random numbers"
     sampleFactor=10,
     redeclare package interpolation = Interpolators.SmoothIdealLowPass,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-20,10},{0,30}})));
   Sources.SignalBasedNoise uniformLinear1(
     useAutomaticLocalSeed=false,
@@ -58,7 +58,7 @@ model Derivatives "Tests derivatives of the random numbers"
         Interpolators.Linear,
     useTime=false,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-40},{-40,-20}})));
   Sources.SignalBasedNoise uniformSmooth1(
     useAutomaticLocalSeed=false,
@@ -67,7 +67,7 @@ model Derivatives "Tests derivatives of the random numbers"
         Interpolators.SmoothIdealLowPass,
     useTime=false,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{0,-40},{20,-20}})));
   Sources.SignalBasedNoise normalLinear1(
     useAutomaticLocalSeed=false,
@@ -76,7 +76,7 @@ model Derivatives "Tests derivatives of the random numbers"
         Interpolators.Linear,
     useTime=false,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-70},{-40,-50}})));
   Sources.SignalBasedNoise normalSmooth1(
     useAutomaticLocalSeed=false,
@@ -85,7 +85,7 @@ model Derivatives "Tests derivatives of the random numbers"
         Interpolators.SmoothIdealLowPass,
     useTime=false,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{0,-70},{20,-50}})));
   Sources.SignalBasedNoise weibullLinear1(
     useAutomaticLocalSeed=false,
@@ -94,7 +94,7 @@ model Derivatives "Tests derivatives of the random numbers"
         Interpolators.Linear,
     useTime=false,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-100},{-40,-80}})));
   Sources.SignalBasedNoise weibullSmooth1(
     useAutomaticLocalSeed=false,
@@ -103,7 +103,7 @@ model Derivatives "Tests derivatives of the random numbers"
         Interpolators.SmoothIdealLowPass,
     useTime=false,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{0,-100},{20,-80}})));
   Modelica.Blocks.Sources.Sine sine(freqHz=0.3)
     annotation (Placement(transformation(extent={{-96,-20},{-76,0}})));

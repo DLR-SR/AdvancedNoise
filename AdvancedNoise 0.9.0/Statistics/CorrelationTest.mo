@@ -30,7 +30,7 @@ public
   Correlation correlation
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   SignificanceTest significanceTest(redeclare function H =
-        Modelica_Noise.Math.Distributions.Normal.cumulative (mu=rho, sigma=sigma))
+        Modelica.Math.Distributions.Normal.cumulative (mu=rho, sigma=sigma))
     annotation (Placement(transformation(extent={{60,-10},{80,10}})));
   FisherTransformation fisherTransformation
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));

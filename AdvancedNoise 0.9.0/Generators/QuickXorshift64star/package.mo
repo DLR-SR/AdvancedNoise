@@ -62,7 +62,7 @@ and the returned state is the one from the last iteration.
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star.random\">Random.Generators.Xorshift64star.random</a>.
+<a href=\"modelica://Modelica.Math.Random.Generators.Xorshift64star.random\">Random.Generators.Xorshift64star.random</a>.
 </p>
 </html>", revisions="<html>
 <p>
@@ -74,7 +74,7 @@ and the returned state is the one from the last iteration.
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -122,7 +122,7 @@ same random number r is returned.
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star.initialState\">Random.Generators.Xorshift64star.initialState</a>.
+<a href=\"modelica://Modelica.Math.Random.Generators.Xorshift64star.initialState\">Random.Generators.Xorshift64star.initialState</a>.
 </p>
 </html>", revisions="<html>
 <p>
@@ -134,7 +134,7 @@ same random number r is returned.
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -149,8 +149,8 @@ same random number r is returned.
 
 
   annotation (Documentation(info="<html>
-<p>Random number generator <b>xorshift64*</b>. This generator has a period of 2^64 (the period defines the number of random numbers generated before the sequence begins to repeat itself). In contrast to the <a href=\"Modelica_Noise.Math.Random.Generators.Xorshift64star\">version</a> in Modelica_Noise, this version of the generator uses a single iteration to generate a new random number.  </p>
-<p>For an overview, comparison with other random number generators, and links to articles, see <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>. </p>
+<p>Random number generator <b>xorshift64*</b>. This generator has a period of 2^64 (the period defines the number of random numbers generated before the sequence begins to repeat itself). In contrast to the <a href=\"Modelica.Math.Random.Generators.Xorshift64star\">version</a> in Modelica, this version of the generator uses a single iteration to generate a new random number.  </p>
+<p>For an overview, comparison with other random number generators, and links to articles, see <a href=\"modelica://Modelica.Math.Random.Generators\">Math.Random.Generators</a>. </p>
 </html>", revisions="<html>
 <p>
 <table border=1 cellspacing=0 cellpadding=2>
@@ -161,7 +161,7 @@ same random number r is returned.
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

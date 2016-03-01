@@ -1,8 +1,9 @@
 within AdvancedNoise.Sources;
 block SignalBasedNoise
   "Noise generator for Real numbers associated with the input signal (this block computes always the same (random) output y at the same value of the input signal)"
-  import Modelica_Noise.Math.Random;
+  import Modelica.Math.Random;
   import Modelica.Utilities.Streams.print;
+  import Modelica.Math.Random.Utilities.impureRandomInteger;
 
   extends Modelica.Blocks.Interfaces.SO;
 
@@ -28,8 +29,8 @@ block SignalBasedNoise
 
   // Advanced dialog menu: Random number properties
   replaceable function distribution =
-       Modelica_Noise.Math.Distributions.Uniform.quantile constrainedby
-    Modelica_Noise.Math.Distributions.Interfaces.partialQuantile
+       Modelica.Math.Distributions.Uniform.quantile constrainedby
+    Modelica.Math.Distributions.Interfaces.partialQuantile
     "Random number distribution"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
@@ -114,8 +115,15 @@ block SignalBasedNoise
   parameter Integer fixedLocalSeed = 10
     "Local seed if useAutomaticLocalSeed = false"
       annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise and not useAutomaticLocalSeed));
-  final parameter Integer localSeed = if useAutomaticLocalSeed then Modelica_Noise.Math.Random.Utilities.automaticLocalSeed(getInstanceName()) else
-                                                                    fixedLocalSeed;
+
+  // Generate the actually used local seed
+  discrete Integer localSeed "The actual localSeed";
+equation
+  when initial() then
+    localSeed = if useAutomaticLocalSeed then impureRandomInteger(globalSeed.id_impure) else fixedLocalSeed;
+  end when;
+
+public
   parameter Real signalOffset = 0.0
     "Offset in signal for sampling the raw random numbers"
     annotation(Dialog(tab="Advanced", group="Initialization",enable=enableNoise));
@@ -126,7 +134,7 @@ block SignalBasedNoise
 
   // Retrieve values from outer global seed
 protected
-  outer Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
+  outer Modelica.Blocks.Noise.GlobalSeed globalSeed
     "Definition of global seed via inner/outer";
   parameter Integer actualGlobalSeed = if useGlobalSeed then globalSeed.seed else 0
     "The global seed, which is atually used";
@@ -184,11 +192,11 @@ equation
   y = if not generateNoise then y_off else
       if interpolation.continuous then
           smooth(interpolation.smoothness,
-                 interpolation.interpolate(buffer=       buffer,
-                                           offset=       offset - zeroDer(noEvent(integer(offset))) + nPast,
+                 interpolation.interpolate(buffer =      buffer,
+                                           offset =      offset - zeroDer(noEvent(integer(offset))) + nPast,
                                            samplePeriod= samplePeriod)) else
-                 interpolation.interpolate(buffer=       buffer,
-                                           offset=       offset - zeroDer(noEvent(integer(offset))) + nPast,
+                 interpolation.interpolate(buffer =      buffer,
+                                           offset =      offset - zeroDer(noEvent(integer(offset))) + nPast,
                                            samplePeriod= samplePeriod);
 
   // We require a few smooth functions for derivatives
@@ -263,7 +271,7 @@ value has a length of 64 bits).
           lineColor={192,192,192},
           fillColor={192,192,192},
           fillPattern=FillPattern.Solid),
-        Line(visible=  enableNoise,
+        Line(visible = enableNoise,
            points={{-75,-13},{-61,-13},{-61,3},{-53,3},{-53,-45},{-45,-45},{-45,
               -23},{-37,-23},{-37,61},{-29,61},{-29,29},{-29,29},{-29,-31},{-19,
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,
@@ -284,7 +292,7 @@ value has a length of 64 bits).
           fillPattern=FillPattern.Solid,
           textString="%y_off")}),
     Documentation(info="<html>
-<p>A summary of the properties of the noise blocks is provided in the documentation of package <a href=\"modelica://Modelica_Noise.Blocks.Noise\">Blocks.Noise</a>. This SignalBasedNoise block generates reproducible noise at its output. The block can only be used if on the same or a higher hierarchical level, model <a href=\"modelica://Modelica_Noise.Blocks.Noise.GlobalSeed\">Blocks.Noise.GlobalSeed</a> is dragged to provide global settings for all instances. </p>
+<p>A summary of the properties of the noise blocks is provided in the documentation of package <a href=\"modelica://Modelica.Blocks.Noise\">Blocks.Noise</a>. This SignalBasedNoise block generates reproducible noise at its output. The block can only be used if on the same or a higher hierarchical level, model <a href=\"modelica://Modelica.Blocks.Noise.GlobalSeed\">Blocks.Noise.GlobalSeed</a> is dragged to provide global settings for all instances. </p>
 <p>The generated random numbers of this block are a function of the input signal. Blocks with different input signals produce uncorrelated noise. This can be used to define e.g. the roughness of a railway track. The random values provided at the output of a SignalBasedNoise instance depend (a) on the <b>actual input signal</b> in the current time instant, (b) on the instance name, and (c) on the settings of the respective instance (as well as the seetings in globalSeed, see above and below). By default, two or more instances produce different, uncorrelated noise for the same input signal. </p>
 
 
@@ -343,7 +351,7 @@ As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBa
 </tr>
 <tr>
 <td><p>distribution </p></td>
-<td><p>Defines the random number distribution to map random numbers from the range 0.0 ... 1.0, to the desired range and distribution. Basically, <b>distribution</b> is a replaceable function that provides the truncated quantile (= truncated inverse cumulative distribution function) of a random distribution. More details of truncated distributions can be found in the documentation of package <a href=\"modelica://Modelica_Noise.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>. </p></td>
+<td><p>Defines the random number distribution to map random numbers from the range 0.0 ... 1.0, to the desired range and distribution. Basically, <b>distribution</b> is a replaceable function that provides the truncated quantile (= truncated inverse cumulative distribution function) of a random distribution. More details of truncated distributions can be found in the documentation of package <a href=\"modelica://Modelica.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>. </p></td>
 </tr>
 <tr>
 <td><p>interpolation </p></td>
@@ -353,7 +361,7 @@ As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBa
 </tr>
 <tr>
 <td><p>generator </p></td>
-<td><p>Defines the pseudo random number generator to be used. This is a replaceable package. The random number generators that are provided in package <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a> can be used here. Properties of the various generators are described in the package description of the Generators package.</p></td>
+<td><p>Defines the pseudo random number generator to be used. This is a replaceable package. The random number generators that are provided in package <a href=\"modelica://Modelica.Math.Random.Generators\">Math.Random.Generators</a> can be used here. Properties of the various generators are described in the package description of the Generators package.</p></td>
 </tr>
 </table>
 </p></blockquote>

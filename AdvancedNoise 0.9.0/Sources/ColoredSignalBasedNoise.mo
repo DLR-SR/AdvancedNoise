@@ -6,7 +6,7 @@ block ColoredSignalBasedNoise
       AdvancedNoise.Interpolators.FirstOrder constrainedby
       AdvancedNoise.Interpolators.Utilities.Interfaces.PartialInterpolatorWithKernel,
     redeclare replaceable function distribution =
-      Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (
+      Modelica.Math.Distributions.TruncatedNormal.quantile (
         mu =    0,
         sigma = 1 / sqrt(samplePeriod)),
     samplePeriod = interpolation.suggestedSamplePeriod);

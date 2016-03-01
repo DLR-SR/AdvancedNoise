@@ -8,13 +8,16 @@ model InterpolateRandomNumbers
   parameter Integer seed = 614657 "Seed to initialize random number generator";
 
 protected
-  final parameter Integer id = Modelica_Noise.Math.Random.Utilities.initializeImpureRandom(seed)
+  final parameter Integer id(fixed=false)
     "An identifier to ensure initialization of the impure random number generator";
+initial equation
+  id = Modelica.Math.Random.Utilities.initializeImpureRandom(seed, time);
+
 public
   parameter Real r[100](each fixed = false) "Random number buffer";
 initial algorithm
   for i in 1:100 loop
-    r[i] := Modelica_Noise.Math.Random.Utilities.impureRandom(id);
+    r[i] := Modelica.Math.Random.Utilities.impureRandom(id);
   end for;
 
 public
@@ -33,7 +36,7 @@ equation
 <p>
 This example demonstrates how to use the interpolators
 of package <a href=\"AdvancedNoise.Interpolators\">Interpolators</a> in a Modelica model.
-The example uses the <a href=\"Modelica_Noise.Math.Random.Utilities.impureRandom\">impure random function</a> to generate a series of random numbers.
+The example uses the <a href=\"Modelica.Math.Random.Utilities.impureRandom\">impure random function</a> to generate a series of random numbers.
 These are then interpolated piece-wise constantly, linearly and using the smooth interpolation of truncated ideal low-pass.
 Simulations results are shown in the figure below:
 </p>

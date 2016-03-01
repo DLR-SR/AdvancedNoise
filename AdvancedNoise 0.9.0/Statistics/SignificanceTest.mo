@@ -5,8 +5,8 @@ model SignificanceTest "Tests the input against a null hypothesis"
 // Null hypothesis
 public
   replaceable function H =
-       Modelica_Noise.Math.Distributions.Normal.cumulative constrainedby
-    Modelica_Noise.Math.Distributions.Interfaces.partialCumulative
+       Modelica.Math.Distributions.Normal.cumulative constrainedby
+    Modelica.Math.Distributions.Interfaces.partialCumulative
     "Cumulative density function of the null hypothesis"
     annotation(choicesAllMatching=true, Documentation(info="<html>
 <p>This cumulative density function should be set to the expected distribution of the input value. The default is a standard normal distribution.</p>
