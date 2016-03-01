@@ -90,8 +90,9 @@ and the returned state is the one from the last iteration.
 
   redeclare function extends random
   "Returns a uniform random number with the xorshift64* algorithm"
-    external "C" ModelicaRandom_xorshift64star(stateIn, stateOut, result);
-    annotation (Include = "#include \"ModelicaRandom.c\"", Documentation(info="<html>
+    external "C" ModelicaRandom_xorshift64star(stateIn, stateOut, result)
+      annotation (Library="ModelicaExternalC");
+    annotation (Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
 (r, stateOut) = Xorshift64star.<b>random</b>(stateIn);

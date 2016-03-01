@@ -205,9 +205,10 @@ protected
   input Real real "The Real value";
   output Integer[2] int "The Integer values";
 
-  external "C" ModelicaRandom_convertRealToIntegers(real,int);
+  external "C" ModelicaRandom_convertRealToIntegers(real,int)
+      annotation (Library="ModelicaExternalC");
 
-  annotation (Include = "#include \"ModelicaRandom.c\"", Documentation(revisions="<html>
+  annotation (Documentation(revisions="<html>
 <p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
 </html>", info="<html>
 <h4>Syntax</h4>
