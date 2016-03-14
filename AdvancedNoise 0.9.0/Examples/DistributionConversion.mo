@@ -5,8 +5,10 @@ model DistributionConversion "Demonstrates how distributions can be converted"
   inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
 
-  Modelica_Noise.Blocks.Noise.NormalNoise  genericNoise(
-      samplePeriod=0.001, sigma=1)
+  Modelica_Noise.Blocks.Noise.UniformNoise  genericNoise(
+    samplePeriod=0.001,
+    y_min=0,
+    y_max=1)
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
   Statistics.FromUniform toNormal(redeclare function distribution =
         Modelica_Noise.Math.Distributions.Normal.quantile)
