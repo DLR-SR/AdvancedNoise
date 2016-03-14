@@ -6,7 +6,9 @@ model DistributionConversion "Demonstrates how distributions can be converted"
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
 
   Modelica.Blocks.Noise.UniformNoise genericNoise(
-      samplePeriod=0.001,y_min=0,y_max=1)
+    samplePeriod=0.001,
+    y_min=0,
+    y_max=1)
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
   Statistics.FromUniform toNormal(redeclare function distribution =
         Modelica.Math.Distributions.Normal.quantile)
