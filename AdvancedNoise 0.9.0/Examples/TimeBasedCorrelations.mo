@@ -7,7 +7,7 @@ model TimeBasedCorrelations "Tests for uncorrelated noise signals"
     useAutomaticLocalSeed=false,
     fixedLocalSeed=11)
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
+  inner Modelica.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
   Sources.TimeBasedNoise noise2(
     samplePeriod=0.01,

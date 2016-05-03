@@ -8,16 +8,16 @@ model FrequencyShaping
     samplePeriod=0.1,
     redeclare package interpolation = AdvancedNoise.Interpolators.FirstOrder,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,40},{-40,60}})));
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
+  inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
   AdvancedNoise.Sources.TimeBasedNoise rawNoise(
     useAutomaticLocalSeed=false,
     sampleFactor=10,
     samplePeriod=filteredNoise.samplePeriod,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-40},{-40,-20}})));
   Modelica.Blocks.Continuous.FirstOrder firstOrder(
     k=filteredNoise.interpolation.k,
@@ -35,7 +35,7 @@ model FrequencyShaping
     redeclare package interpolation =
         AdvancedNoise.Interpolators.TabulatedStepResponse,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   Modelica.Blocks.Continuous.Der derTabulated
     annotation (Placement(transformation(extent={{20,0},{40,20}})));

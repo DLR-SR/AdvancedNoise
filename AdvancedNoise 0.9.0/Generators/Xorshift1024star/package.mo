@@ -1,7 +1,7 @@
 within AdvancedNoise.Generators;
 package Xorshift1024star "Random number generator xorshift1024*"
   extends Utilities.Interfaces.PartialGenerator(final nState=33);
-  import generator = Modelica_Noise.Math.Random.Generators.Xorshift1024star;
+  import generator = Modelica.Math.Random.Generators.Xorshift1024star;
 
 
   redeclare function extends initialState
@@ -25,7 +25,7 @@ a reasonable initial state vector with the following strategy:
 </p>
 
 <p>
-The <a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift64star\">Xorshift64star</a>
+The <a href=\"modelica://Modelica.Math.Random.Generators.Xorshift64star\">Xorshift64star</a>
 random number generator is used to fill the internal state vector with 64 bit random numbers.
 </p>
 
@@ -40,7 +40,7 @@ random number generator is used to fill the internal state vector with 64 bit ra
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift1024star.random\">Random.Generators.Xorshift1024star.random</a>.
+<a href=\"modelica://Modelica.Math.Random.Generators.Xorshift1024star.random\">Random.Generators.Xorshift1024star.random</a>.
 </p>
 </html>", revisions="<html>
 <p>
@@ -52,7 +52,7 @@ random number generator is used to fill the internal state vector with 64 bit ra
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -101,7 +101,7 @@ same random number r is returned.
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica_Noise.Math.Random.Generators.Xorshift1024star.initialState\">Random.Generators.Xorshift1024star.initialState</a>.
+<a href=\"modelica://Modelica.Math.Random.Generators.Xorshift1024star.initialState\">Random.Generators.Xorshift1024star.initialState</a>.
 </p>
 </html>", revisions="<html>
 <p>
@@ -113,7 +113,7 @@ same random number r is returned.
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
@@ -132,7 +132,7 @@ same random number r is returned.
 Random number generator <b>xorshift1024*</b>. This generator has a period of 2^1024
 (the period defines the number of random numbers generated before the sequence begins to repeat itself).
 For an overview, comparison with other random number generators, and links to articles, see
-<a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>.
+<a href=\"modelica://Modelica.Math.Random.Generators\">Math.Random.Generators</a>.
 </p>
 </html>", revisions="<html>
 <p>
@@ -144,7 +144,7 @@ For an overview, comparison with other random number generators, and links to ar
 
 <table border=0>
 <tr><td valign=\"top\">
-         <img src=\"modelica://Modelica_Noise/Resources/Images/Blocks/Noise/dlr_logo.png\">
+         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
 </td><td valign=\"bottom\">
          Initial version implemented by
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>

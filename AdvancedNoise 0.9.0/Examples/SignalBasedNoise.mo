@@ -3,13 +3,13 @@ model SignalBasedNoise "Demonstrates the a simple case of signal based noise"
   extends Modelica.Icons.Example;
   parameter Modelica.SIunits.Radius r = 1 "Radius of circle";
   constant Real pi = Modelica.Constants.pi "Constant pi";
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
+  inner Modelica.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{-20,40},{0,60}})));
   AdvancedNoise.Sources.SignalBasedNoise signalBasedNoise(
     useTime=false,
     samplePeriod=0.5,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-0.05, y_max=
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-0.05, y_max=
             0.05))
     annotation (Placement(transformation(extent={{-20,0},{0,20}})));
   Modelica.Blocks.Sources.RealExpression pathParameter(y=r*mod(2*pi*time, 2*pi))

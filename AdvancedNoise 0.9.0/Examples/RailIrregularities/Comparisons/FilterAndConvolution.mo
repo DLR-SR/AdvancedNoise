@@ -13,7 +13,7 @@ model FilterAndConvolution
 
   parameter Modelica.SIunits.Duration samplePeriod = 0.2 "Common sample period";
 
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
+  inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
                annotation (Placement(transformation(extent={{60,60},{80,80}})));
   Sources.SignalBasedNoise spaceDomainNoiseMinimum(
     useTime=false,
@@ -22,7 +22,7 @@ model FilterAndConvolution
     useAutomaticLocalSeed=false,
     samplePeriod=samplePeriod,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (
+        Modelica.Math.Distributions.TruncatedNormal.quantile (
         mu=0,
         sigma=sqrt(0.5)/sqrt(samplePeriod),
         y_min=-1e10,
@@ -44,7 +44,7 @@ model FilterAndConvolution
     useAutomaticLocalSeed=false,
     samplePeriod=samplePeriod,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (
+        Modelica.Math.Distributions.TruncatedNormal.quantile (
         mu=0,
         sigma=sqrt(0.5)/sqrt(samplePeriod),
         y_min=-1e10,
@@ -57,7 +57,7 @@ model FilterAndConvolution
     redeclare package interpolation =
         AdvancedNoise.Examples.RailIrregularities.RailZeroPhaseInterpolator,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.TruncatedNormal.quantile (
+        Modelica.Math.Distributions.TruncatedNormal.quantile (
         mu=0,
         sigma=sqrt(0.5)/sqrt(samplePeriod),
         y_min=-1e10,
@@ -69,7 +69,7 @@ model FilterAndConvolution
     initType=Modelica.Blocks.Types.Init.InitialOutput,
     y_start=-0.00279) if                               doTime
     annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
-  Modelica_Noise.Blocks.Noise.BandLimitedWhiteNoise bandLimitedWhiteNoise(
+  Modelica.Blocks.Noise.BandLimitedWhiteNoise bandLimitedWhiteNoise(
       samplePeriod=samplePeriod/velocity.k, noisePower=
         1/(velocity.k)) if                                                     doTime
     annotation (Placement(transformation(extent={{-20,-60},{0,-40}})));

@@ -1,6 +1,6 @@
 within AdvancedNoise.Plots.Distributions;
 function normal "Plot functions Math.Distributions.Normal"
-   import Modelica_Noise.Math.Distributions.Normal;
+   import Modelica.Math.Distributions.Normal;
    input Integer nPoints(min=2) = 1000 "Number of evaluation points";
 protected
    Real u[nPoints] = linspace(-3, 3, nPoints);

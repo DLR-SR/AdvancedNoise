@@ -1,7 +1,7 @@
 within AdvancedNoise.Plots;
 function special "Plot functions Math.Special"
    import Modelica.Utilities.Streams.print;
-   import Modelica_Noise.Math.Special;
+   import Modelica.Math.Special;
    input Integer nPoints = 1000;
    input Real erfRange = 3.0;
    input Real sincRange = 20.0;

@@ -1,6 +1,6 @@
 within AdvancedNoise.Interpolators.SmoothIdealLowPass;
 function kernel "Kernel for ideal low pass (sinc-function)"
-  import Modelica_Noise.Math.Special.sinc;
+  import Modelica.Math.Special.sinc;
   import Modelica.Constants.pi;
   input Real t "The (scaled) time for sampling period=1";
   input Modelica.SIunits.Frequency f=1/2 "The cut-off frequency of the filter";

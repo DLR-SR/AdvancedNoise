@@ -1,7 +1,7 @@
 within AdvancedNoise.Tests;
 model FixedGridFilter "Validates the fixed grid filter against the free grid"
   extends Modelica.Icons.Example;
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
+  inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
   AdvancedNoise.Sources.TimeBasedNoise tabulatedNoise(
     useAutomaticLocalSeed=false,
@@ -10,7 +10,7 @@ model FixedGridFilter "Validates the fixed grid filter against the free grid"
         AdvancedNoise.Interpolators.TabulatedStepResponse,
     samplePeriod=tabulatedNoise.interpolation.suggestedSamplePeriod,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
   Modelica.Blocks.Continuous.Der derTabulated
     annotation (Placement(transformation(extent={{20,0},{40,20}})));
@@ -23,7 +23,7 @@ model FixedGridFilter "Validates the fixed grid filter against the free grid"
     redeclare package interpolation =
         AdvancedNoise.Interpolators.FixedGridStepResponse,
     redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-40},{-40,-20}})));
   Modelica.Blocks.Continuous.Der derFixedGrid
     annotation (Placement(transformation(extent={{18,-40},{38,-20}})));

@@ -2,28 +2,28 @@ within AdvancedNoise.Examples;
 model DistributionConversion "Demonstrates how distributions can be converted"
   extends Modelica.Icons.Example;
 
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
+  inner Modelica.Blocks.Noise.GlobalSeed globalSeed
     annotation (Placement(transformation(extent={{-80,60},{-60,80}})));
 
-  Modelica_Noise.Blocks.Noise.UniformNoise  genericNoise(
+  Modelica.Blocks.Noise.UniformNoise genericNoise(
     samplePeriod=0.001,
     y_min=0,
     y_max=1)
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
   Statistics.FromUniform toNormal(redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Normal.quantile)
+        Modelica.Math.Distributions.Normal.quantile)
     annotation (Placement(transformation(extent={{-40,50},{-20,70}})));
   Statistics.FromUniform toWeibull(redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Weibull.quantile (k=2))
+        Modelica.Math.Distributions.Weibull.quantile (k=2))
     annotation (Placement(transformation(extent={{-40,20},{-20,40}})));
   Statistics.FromUniform toDiscrete(redeclare function distribution =
         Distributions.Discrete.quantile (x={1,2,3,4,5}))
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
   Statistics.ToUniform fromNormal(redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Normal.cumulative)
+        Modelica.Math.Distributions.Normal.cumulative)
     annotation (Placement(transformation(extent={{0,50},{20,70}})));
   Statistics.ToUniform fromWeibull(redeclare function distribution =
-        Modelica_Noise.Math.Distributions.Weibull.cumulative (k=2))
+        Modelica.Math.Distributions.Weibull.cumulative (k=2))
     annotation (Placement(transformation(extent={{0,20},{20,40}})));
 equation
   connect(toNormal.u, genericNoise.y) annotation (Line(points={{-42,60},{-52,60},

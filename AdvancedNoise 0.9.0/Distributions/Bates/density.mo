@@ -2,7 +2,7 @@ within AdvancedNoise.Distributions.Bates;
 function density "Density of Bates distribution"
   import AdvancedNoise.Math.factorial;
   import AdvancedNoise.Math.binomial;
-  extends Modelica_Noise.Math.Distributions.Interfaces.partialDensity;
+  extends Modelica.Math.Distributions.Interfaces.partialDensity;
   input Real y_min=0 "Lower limit of band" annotation (Dialog);
   input Real y_max=1 "Upper limit of band" annotation (Dialog);
   input Integer n=12 "Number of uniform random values" annotation (Dialog);
@@ -45,7 +45,7 @@ This function computes the probability density function according to a <b>Bates<
 </p>
 
 <p><blockquote>
-<img src=\"modelica://Modelica_Noise/Resources/Images/Math/Distributions/Bates.density.png\">
+<img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.density.png\">
 </blockquote></p>
 
 <p>
@@ -60,8 +60,8 @@ For more details, see
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.cumulative\">Bates.cumulative</a>,
-<a href=\"modelica://Modelica_Noise.Math.Distributions.Bates.quantile\">Bates.quantile</a>.
+<a href=\"modelica://Modelica.Math.Distributions.Bates.cumulative\">Bates.cumulative</a>,
+<a href=\"modelica://Modelica.Math.Distributions.Bates.quantile\">Bates.quantile</a>.
 </p>
 </html>"));
 end density;

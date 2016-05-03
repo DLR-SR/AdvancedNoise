@@ -1,8 +1,9 @@
 within AdvancedNoise.Sources;
 block TimeBasedNoise
   "Noise generator for Real numbers associated with time (this block computes always the same (random) output y at the same time instant)"
-  import Modelica_Noise.Math.Random;
+  import Modelica.Math.Random;
   import Modelica.Utilities.Streams.print;
+  import Modelica.Math.Random.Utilities.impureRandomInteger;
 
   extends Modelica.Blocks.Interfaces.SO;
 
@@ -25,8 +26,8 @@ block TimeBasedNoise
 
   // Advanced dialog menu: Random number properties
   replaceable function distribution =
-       Modelica_Noise.Math.Distributions.Uniform.quantile constrainedby
-    Modelica_Noise.Math.Distributions.Interfaces.partialQuantile
+       Modelica.Math.Distributions.Uniform.quantile constrainedby
+    Modelica.Math.Distributions.Interfaces.partialQuantile
     "Random number distribution"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
@@ -77,7 +78,7 @@ block TimeBasedNoise
 </p>
 </html>"));
   replaceable package generator =
-      Modelica_Noise.Math.Random.Generators.Xorshift128plus constrainedby
+      Modelica.Math.Random.Generators.Xorshift128plus constrainedby
     Generators.Utilities.Interfaces.PartialGenerator "Random number generator"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
@@ -112,15 +113,22 @@ block TimeBasedNoise
   parameter Integer fixedLocalSeed = 10
     "Local seed if useAutomaticLocalSeed = false"
       annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise and not useAutomaticLocalSeed));
-  final parameter Integer localSeed = if useAutomaticLocalSeed then Modelica_Noise.Math.Random.Utilities.automaticLocalSeed(getInstanceName()) else
-                                                                    fixedLocalSeed;
-  parameter Modelica.SIunits.Time startTime = 0.0
+
+  // Generate the actually used local seed
+  discrete Integer localSeed "The actual localSeed";
+equation
+  when initial() then
+    localSeed = if useAutomaticLocalSeed then impureRandomInteger(globalSeed.id_impure) else fixedLocalSeed;
+  end when;
+
+public
+    parameter Modelica.SIunits.Time startTime = 0.0
     "Start time for sampling the raw random numbers"
     annotation(Dialog(tab="Advanced", group="Initialization",enable=enableNoise));
 
   // Retrieve values from outer global seed
 protected
-  outer Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed
+  outer Modelica.Blocks.Noise.GlobalSeed globalSeed
     "Definition of global seed via inner/outer";
   parameter Integer actualGlobalSeed = if useGlobalSeed then globalSeed.seed else 0
     "The global seed, which is atually used";
@@ -182,11 +190,11 @@ equation
   y = if not generateNoise or time < startTime then y_off else
       if interpolation.continuous then
           smooth(interpolation.smoothness,
-                 interpolation.interpolate(buffer=       buffer,
-                                           offset=       (time-bufferStartTime) / samplePeriod + nPast,
+                 interpolation.interpolate(buffer =      buffer,
+                                           offset =      (time-bufferStartTime) / samplePeriod + nPast,
                                            samplePeriod= samplePeriod)) else
-                 interpolation.interpolate(buffer=       buffer,
-                                           offset=       (time-bufferStartTime) / samplePeriod + nPast,
+                 interpolation.interpolate(buffer =      buffer,
+                                           offset =      (time-bufferStartTime) / samplePeriod + nPast,
                                            samplePeriod= samplePeriod);
 
     annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise),
@@ -228,10 +236,10 @@ equation
 <p>
 A summary of the properties of the noise blocks is provided
 in the documentation of package
-<a href=\"modelica://Modelica_Noise.Blocks.Noise\">Blocks.Noise</a>.
+<a href=\"modelica://Modelica.Blocks.Noise\">Blocks.Noise</a>.
 This TimeBasedNoise block generates reproducible noise at its output.
 The block can only be used if on the same or a higher hierarchical level,
-model <a href=\"modelica://Modelica_Noise.Blocks.Noise.GlobalSeed\">Blocks.Noise.GlobalSeed</a>
+model <a href=\"modelica://Modelica.Blocks.Noise.GlobalSeed\">Blocks.Noise.GlobalSeed</a>
 is dragged to provide global settings for all instances.
 </p>
 
@@ -340,19 +348,19 @@ following parameters can be set:
          inverse cumulative distribution function) of a random distribution.
          More details of truncated distributions can be found in the
          documentation of package
-         <a href=\"modelica://Modelica_Noise.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>.
+         <a href=\"modelica://Modelica.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>.
          </td></tr>
 
 <tr><td> interpolation </td>
     <td> Defines the type of interpolation between the random values drawn
          at sample instants. This is a replaceable package.
          The following interpolation packages are provided in package
-         <a href=\"modelica://Modelica_Noise.Math.Random.Utilities.Interpolators\">Math.Random.Utilities.Interpolators</a>:
+         <a href=\"modelica://Modelica.Math.Random.Utilities.Interpolators\">Math.Random.Utilities.Interpolators</a>:
          <ul>
          <li> Constant: The random values are hold constant between sample instants.</li>
          <li> Linear: The random values are linearly interpolated between sample instants.</li>
          <li> SmoothIdealLowPass: The random values are smoothly interpolated with the
-              <a href=\"modelica://Modelica_Noise.Math.Special.sinc\">sinc</a> function.
+              <a href=\"modelica://Modelica.Math.Special.sinc\">sinc</a> function.
               This is an approximation of an ideal low pass filter
               (that would have an infinite steep drop of the frequency response at
                the cut-off frequency 1/samplePeriod).</li>
@@ -362,7 +370,7 @@ following parameters can be set:
 <tr><td> generator </td>
     <td> Defines the pseudo random number generator to be used. This is
          a replaceable package. The random number generators that are provided in
-         package <a href=\"modelica://Modelica_Noise.Math.Random.Generators\">Math.Random.Generators</a>
+         package <a href=\"modelica://Modelica.Math.Random.Generators\">Math.Random.Generators</a>
          can be used here. Properties of the various generators are described in the package
          description of the Generators package.</td></tr>
 
@@ -371,7 +379,7 @@ following parameters can be set:
 
 <p>
 The different interpolation methods are demonstrated with example
-<a href=\"modelica://Modelica_Noise.Blocks.Examples.NoiseExamples.Interpolation\">Examples.NoiseExamples.Interpolation</a>.
+<a href=\"modelica://Modelica.Blocks.Examples.NoiseExamples.Interpolation\">Examples.NoiseExamples.Interpolation</a>.
 A simulation result is shown in the next diagram:
 </p>
 
