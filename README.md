@@ -1,9 +1,7 @@
 AdvancedNoise
 =====
 
-This library is an extension of the basic noise generation contained in [Modelica_Noise](https://github.com/DLR-SR/Noise).
-
-In addition to the standard random number generation contained in Modelica_Noise, this library provides:
+In addition to the standard random number generation contained in the Modelica standard library, this library provides:
 - an event-free noise generator using DIRCS Immediate Random with Continuous Seed,
 - additional distributions and statistics tools,
 - smooth interpolation methods for noise sources,
