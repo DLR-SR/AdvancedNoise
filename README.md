@@ -14,9 +14,12 @@ Potential applications of the library are
 - unsampled stochastic excitations such as as rail roughness or turbulence
 - ...
 
-## Current release
-
-[Noise 0.9.0 (2015-09-07)](https://github.com/DLR-SR/AdvancedNoise/archive/v0.9.0.zip)
+## Current releases
+### MSL 3.2.2
+Coming soon
+### MSL 3.2.1
+[Noise 0.9.1 (2016-05-03)](https://github.com/DLR-SR/AdvancedNoise/archive/v0.9.1.zip):
+ This version is the last version to correctly work with MSL 3.2.1
 
 ## Modelica Library Award
 
