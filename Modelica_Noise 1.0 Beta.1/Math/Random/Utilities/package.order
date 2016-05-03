@@ -1,0 +1,6 @@
+initialStateWithXorshift64star
+automaticGlobalSeed
+automaticLocalSeed
+initializeImpureRandom
+impureRandom
+impureRandomInteger
