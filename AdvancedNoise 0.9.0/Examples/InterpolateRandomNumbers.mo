@@ -11,7 +11,7 @@ protected
   final parameter Integer id(fixed=false)
     "An identifier to ensure initialization of the impure random number generator";
 initial equation
-  id = Modelica.Math.Random.Utilities.initializeImpureRandom(seed, time);
+  id = Modelica.Math.Random.Utilities.initializeImpureRandom(seed);
 
 public
   parameter Real r[100](each fixed = false) "Random number buffer";
