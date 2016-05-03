@@ -2,25 +2,6 @@ within ;
 package AdvancedNoise "A library with additional noise modules compatible to the Modelica standard library"
   extends Modelica.Icons.Package;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   annotation(preferredView="info",
              version =                        "1.0.0",
              versionDate =                    "2016-05-03",
