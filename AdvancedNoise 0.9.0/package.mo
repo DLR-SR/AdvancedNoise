@@ -12,9 +12,18 @@ package AdvancedNoise "A library with additional noise modules compatible to the
 
 
 
+
+
+
+
+
+
+
+
+
   annotation(preferredView="info",
              version =                        "1.0.0",
-             versionDate =                    "2016-09-07",
+             versionDate =                    "2016-05-03",
              versionBuild =                   1,
              uses(Modelica(version="3.2.2")),
   Icon(graphics={            Line(

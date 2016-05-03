@@ -45,6 +45,14 @@ equation
   connect(accSensor.flange, quarterRailwayCar.flange_b) annotation (Line(
       points={{40,90},{0,90},{0,50}},
       color={0,127,0}));
+
+initial equation
+  simpleRailwayTrack.track.a = 0;
+  //simpleRailwayTrack.track.v = 0; // is given by spring-damper
+  quarterRailwayCar.wheel.a  = 0;
+  //quarterRailwayCar.wheel.v  = 0; // is given by spring-damper
+  //quarterRailwayCar.body.a   = 0; // is given by spring-damper zero forces and wheel.a=0
+  //quarterRailwayCar.body.v   = 0; // is given by spring-damper
   annotation ( Documentation(revisions="<html>
 <p>
 <table border=0>
@@ -67,12 +75,4 @@ equation
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrack.PNG\"/></p>
 <p>For more information please see the publication <span style=\"font-family: MS Shell Dlg 2;\">Kl&ouml;ckner, A., Knoblach, A. &AMP; Heckmann, A. (2015). How to Shape Noise Spectra for Continuous System Simulation. In Proceedings of the 11th International Modelica Conference (pp. 837&ndash;846). Versailles, France. In Press</span></p>
 </html>"));
-
-initial equation
-  simpleRailwayTrack.track.a = 0;
-  //simpleRailwayTrack.track.v = 0; // is given by spring-damper
-  quarterRailwayCar.wheel.a  = 0;
-  //quarterRailwayCar.wheel.v  = 0; // is given by spring-damper
-  //quarterRailwayCar.body.a   = 0; // is given by spring-damper zero forces and wheel.a=0
-  //quarterRailwayCar.body.v   = 0; // is given by spring-damper
 end TrainOnTrack;

@@ -10,20 +10,20 @@ protected
    Real y3[nPoints];
 algorithm
    y1 := Normal.density(u);
-   y2 := Normal.density(u, mu=  1);
-   y3 := Normal.density(u, mu=  0, sigma=  0.5);
+   y2 := Normal.density(u, mu = 1);
+   y3 := Normal.density(u, mu = 0, sigma = 0.5);
    plotArrays(u, [y1,y2,y3], title="Densities of Normal distribution",
               legend={"density(u,0,1)", "density(u,1,1)", "density(u,0,0.5)"},id=1);
 
    y1 := Normal.cumulative(u);
    y2 := Normal.cumulative(u, mu=1);
-   y3 := Normal.cumulative(u, mu=0, sigma=  0.5);
+   y3 := Normal.cumulative(u, mu=0, sigma = 0.5);
    plotArrays(u, [y1,y2,y3], title="Cumulative distribution functions of Normal distribution",
               legend={"cumulative(u,0,1)", "cumulative(u,1,1)", "cumulative(u,0,0.5)"}, id=10);
 
    y1 := Normal.quantile(u2);
    y2 := Normal.quantile(u2, mu=1);
-   y3 := Normal.quantile(u2, mu=0, sigma=  0.5);
+   y3 := Normal.quantile(u2, mu=0, sigma = 0.5);
    plotArrays(u2, [y1,y2,y3], title="Inverse cumulative distribution function of Normal distribution",
               legend={"quantile(u,0,1)", "quantile(u,1,1)", "quantile(u,0,0.5)"}, id=20);
 
