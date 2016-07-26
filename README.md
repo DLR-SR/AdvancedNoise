@@ -13,11 +13,18 @@ Potential applications of the library are
 - ...
 
 ## Current releases
-### MSL 3.2.2
-[Noise 1.0.0 (2016-05-03)](https://github.com/DLR-SR/AdvancedNoise/archive/v1.0.0.zip)
-### MSL 3.2.1
+### If your tool supports MSL 3.2.2 or higher:
+[Noise 1.0.0 (2016-05-03)](https://github.com/DLR-SR/AdvancedNoise/archive/v1.0.0.zip):
+ Basic noise generation is already included in the MSL 3.2.2 and it is tested with a range of tools including Dymola and OpenModelica.
+ This version of AdvancedNoise contains additional features, which are basically developed and tested with the Dymola tool only.
+ Your pull requests with fixes for different tools are highly welcome!
+ 
+### If your tool supports MSL 3.2.1 or lower:
 [Noise 0.9.1 (2016-05-03)](https://github.com/DLR-SR/AdvancedNoise/archive/v0.9.1.zip):
- This version is the last version to correctly work with MSL 3.2.1
+ This version is the last version to correctly work with MSL 3.2.1.
+ It contains a copy of the Modelica_Noise library as well as the additional features of the AdvancedNoise library.
+ This version of AdvancedNoise is not maintained further.
+ It is provided for legacy systems only.
 
 ## Modelica Library Award
 
