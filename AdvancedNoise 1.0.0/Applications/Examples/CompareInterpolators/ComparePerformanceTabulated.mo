@@ -1,7 +1,7 @@
 within AdvancedNoise.Applications.Examples.CompareInterpolators;
 model ComparePerformanceTabulated
   "Compare noise signal quality and simulation performance - signal by tabulated interpolation"
-  extends VehicleControls2.Utilities.Icons.ExecutableModel;
+  extends Modelica.Icons.Example;
 
   AdvancedNoise.Sources.SignalBasedNoise noise(
     redeclare package interpolation =

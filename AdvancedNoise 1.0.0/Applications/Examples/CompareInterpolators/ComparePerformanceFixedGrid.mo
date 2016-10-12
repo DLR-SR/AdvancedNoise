@@ -1,7 +1,7 @@
 within AdvancedNoise.Applications.Examples.CompareInterpolators;
 model ComparePerformanceFixedGrid
   "Compare noise signal quality and simulation performance - signal by fixed grid interpolation"
-  extends VehicleControls2.Utilities.Icons.ExecutableModel;
+  extends Modelica.Icons.Example;
 
   Sources.ColoredSignalBasedNoise noise(
     useTime=false,
