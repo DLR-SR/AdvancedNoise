@@ -29,7 +29,7 @@ package AdvancedNoise "A library with additional noise modules compatible to the
 <ol>
 <li>Kl&ouml;ckner, A., Linden, F. L. J. van der, &AMP; Zimmer, D. (2014). Noise Generation for Continuous System Simulation. In <i>Proceedings of the 10th International Modelica Conference</i> (pp. 837&ndash;846). Lund, Sweden: Link&ouml;ping University Electronic Press, Link&ouml;pings universitet. <a href=\"http://doi.org/10.3384/ecp14096837\">doi:10.3384/ecp14096837</a></li>
 <li>Linden, F. L. J. van der, Kl&ouml;ckner, A., &AMP; Zimmer, D. (2015). Effects of Event-Free Noise Signals on Continuous-Time Simulation Performance. <i>IFAC-PapersOnLine</i>, <i>48</i>(1), 280&ndash;285. <a href=\"http://doi.org/10.1016/j.ifacol.2015.05.039\">doi:10.1016/j.ifacol.2015.05.039</a></li>
-<li><span style=\"font-family: MS Shell Dlg 2;\">Kl&ouml;ckner, A., Knoblach, A. &AMP; Heckmann, A. (2015). How to Shape Noise Spectra for Continuous System Simulation. In Proceedings of the 11th International Modelica Conference (pp. 837&ndash;846). Versailles, France. In Press</span></li>
+<li>Kl&ouml;ckner, A., Knoblach, A. &AMP; Heckmann, A. (2015). How to Shape Noise Spectra for Continuous System Simulation. In Proceedings of the 11th International Modelica Conference (pp. 837&ndash;846). Versailles, France. <a href=\"http://doi.org/10.3384/ecp15118411\">doi:10.3384/ecp15118411</a></li>
 </ol>
 <p><br><b><span style=\"font-family: MS Shell Dlg 2;\">Copyright</span></b> <b>&copy; DLR Institute of System Dynamics and Control</b></p>
 <p><span style=\"font-family: MS Shell Dlg 2;\"><img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\"/> </span></p>

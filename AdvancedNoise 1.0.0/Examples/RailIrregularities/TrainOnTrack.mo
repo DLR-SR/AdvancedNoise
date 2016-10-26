@@ -73,6 +73,6 @@ initial equation
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrackSettings.png\"/></p>
 <p>Using the minimum phase filter a comparison is made between a <span style=\"font-family: MS Shell Dlg 2;\">well-trusted solution with the convolution implementation of this model. The plot shows spectral density of the model&apos;s acceleration output (red curve) compared to the trusted frequency-domain solution (blue curve). Both curves agree very well.</span></p>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrack.PNG\"/></p>
-<p>For more information please see the publication <span style=\"font-family: MS Shell Dlg 2;\">Kl&ouml;ckner, A., Knoblach, A. &AMP; Heckmann, A. (2015). How to Shape Noise Spectra for Continuous System Simulation. In Proceedings of the 11th International Modelica Conference (pp. 837&ndash;846). Versailles, France. In Press</span></p>
+<p>For more information please see the publication <span style=\"font-family: MS Shell Dlg 2;\">Kl&ouml;ckner, A., Knoblach, A. &AMP; Heckmann, A. (2015). How to Shape Noise Spectra for Continuous System Simulation. In Proceedings of the 11th International Modelica Conference (pp. 837&ndash;846). Versailles, France. <a href=\"http://doi.org/10.3384/ecp15118411\">doi:10.3384/ecp15118411</a></span></p>
 </html>"));
 end TrainOnTrack;
