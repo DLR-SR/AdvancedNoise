@@ -28,7 +28,7 @@ Potential applications of the library are
 
 ## Modelica Library Award
 
-[Version 0.9.0](https://github.com/DLR-SR/AdvancedNoise/archive/v0.9.0.zip) of this library won the second price of the [Modelica Library Award](https://github.com/DLR-SR/AdvancedNoise/blob/master/AdvancedNoise%200.9.0/Resources/Images/General/ModelicaAward.png) on 22 September 2015. We thank all our supporters for contributing to this success! We also congratulate the first price winner, the Modelica [Chemical](https://github.com/MarekMatejak/Chemical) library!
+[Version 0.9.0](https://github.com/DLR-SR/AdvancedNoise/archive/v0.9.0.zip) of this library won the second price of the [Modelica Library Award](https://github.com/DLR-SR/AdvancedNoise/tree/v1.0.0/AdvancedNoise%201.0.0/Resources/Images/General/ModelicaAward.png) on 22 September 2015. We thank all our supporters for contributing to this success! We also congratulate the first price winner, the Modelica [Chemical](https://github.com/MarekMatejak/Chemical) library!
 
 ## License
 
