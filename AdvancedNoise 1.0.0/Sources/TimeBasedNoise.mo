@@ -25,9 +25,8 @@ block TimeBasedNoise
     annotation(Dialog(tab="Advanced",group="Noise generation"));
 
   // Advanced dialog menu: Random number properties
-  replaceable function distribution =
-       Modelica.Math.Distributions.Uniform.quantile constrainedby
-    Modelica.Math.Distributions.Interfaces.partialQuantile
+  replaceable function distribution = Modelica.Math.Distributions.Uniform.quantile
+    constrainedby Modelica.Math.Distributions.Interfaces.partialQuantile
     "Random number distribution"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
@@ -51,9 +50,8 @@ block TimeBasedNoise
 </table>
 </p>
 </html>"));
-  replaceable package interpolation =
-      Interpolators.Constant                                      constrainedby
-    Interpolators.Utilities.Interfaces.PartialInterpolator
+  replaceable package interpolation = Interpolators.Constant
+    constrainedby Interpolators.Utilities.Interfaces.PartialInterpolator
     "Interpolation method in grid of raw random numbers"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
@@ -77,9 +75,9 @@ block TimeBasedNoise
 </table>
 </p>
 </html>"));
-  replaceable package generator =
-      Modelica.Math.Random.Generators.Xorshift128plus constrainedby
-    Generators.Utilities.Interfaces.PartialGenerator "Random number generator"
+  replaceable package generator = Modelica.Math.Random.Generators.Xorshift128plus
+    constrainedby Generators.Utilities.Interfaces.PartialGenerator
+    "Random number generator"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
 <p>
@@ -112,17 +110,15 @@ block TimeBasedNoise
     annotation(choices(checkBox=true),Dialog(tab="Advanced",group = "Initialization",enable=enableNoise));
   parameter Integer fixedLocalSeed = 10
     "Local seed if useAutomaticLocalSeed = false"
-      annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise and not useAutomaticLocalSeed));
+    annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise and not useAutomaticLocalSeed));
 
   // Generate the actually used local seed
-  discrete Integer localSeed "The actual localSeed";
-equation
-  when initial() then
-    localSeed = if useAutomaticLocalSeed then impureRandomInteger(globalSeed.id_impure) else fixedLocalSeed;
-  end when;
+  final parameter Integer localSeed(fixed = false) "The actual localSeed";
+initial equation
+  localSeed = if useAutomaticLocalSeed then impureRandomInteger(globalSeed.id_impure) else fixedLocalSeed;
 
 public
-    parameter Modelica.SIunits.Time startTime = 0.0
+  parameter Modelica.SIunits.Time startTime = 0.0
     "Start time for sampling the raw random numbers"
     annotation(Dialog(tab="Advanced", group="Initialization",enable=enableNoise));
 
@@ -197,9 +193,10 @@ equation
                                            offset =      (time-bufferStartTime) / samplePeriod + nPast,
                                            samplePeriod= samplePeriod);
 
-    annotation(Dialog(tab="Advanced",group = "Initialization",enable=enableNoise),
-              Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},
-            {100,100}}), graphics={
+  annotation (
+    Dialog(tab="Advanced",group = "Initialization",enable=enableNoise),
+    Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
+      graphics={
         Polygon(
           points={{-76,90},{-84,68},{-68,68},{-76,90}},
           lineColor={192,192,192},
