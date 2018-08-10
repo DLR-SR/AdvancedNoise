@@ -10,8 +10,8 @@ package QuickXorshift64star "Random number generator xorshift64* with quicker in
      random number generator generates statistically random numbers from a bad seed
      within one iteration.
     */
-    parameter Integer p = 1 "The number of iterations to use";
 protected
+    parameter Integer p = 1 "The number of iterations to use";
     Real r "Random number not used outside the function";
 
   algorithm
