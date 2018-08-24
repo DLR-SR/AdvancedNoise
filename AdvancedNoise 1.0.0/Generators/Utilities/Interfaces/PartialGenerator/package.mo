@@ -5,14 +5,16 @@ partial package PartialGenerator "Interfaces of a uniform random number generato
 
 
   replaceable partial function initialState
-  "Return the initial internal states for the uniform random number generator"
+    "Return the initial internal states for the uniform random number generator"
     extends Modelica.Icons.Function;
+
     input Integer localSeed
-    "The local seed to be used for generating initial states";
+      "The local seed to be used for generating initial states";
     input Integer globalSeed
-    "The global seed to be combined with the local seed";
+      "The global seed to be combined with the local seed";
     output Integer[nState] state "The generated initial states";
-  annotation (Documentation(info="<html>
+
+    annotation (Documentation(info="<html>
 <p>
 This partial function defines the input and output arguments of an
 initialState(..) function of a random number generator package.

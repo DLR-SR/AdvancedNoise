@@ -28,9 +28,8 @@ block SignalBasedNoise
     annotation(Dialog(tab="Advanced",group="Noise generation"));
 
   // Advanced dialog menu: Random number properties
-  replaceable function distribution =
-       Modelica.Math.Distributions.Uniform.quantile constrainedby
-    Modelica.Math.Distributions.Interfaces.partialQuantile
+  replaceable function distribution = Modelica.Math.Distributions.Uniform.quantile
+    constrainedby Modelica.Math.Distributions.Interfaces.partialQuantile
     "Random number distribution"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
@@ -54,9 +53,8 @@ block SignalBasedNoise
 </table>
 </p>
 </html>"));
-  replaceable package interpolation =
-      Interpolators.Constant                                      constrainedby
-    Interpolators.Utilities.Interfaces.PartialInterpolator
+  replaceable package interpolation = Interpolators.Constant
+    constrainedby Interpolators.Utilities.Interfaces.PartialInterpolator
     "Interpolation method in grid of raw random numbers"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
@@ -80,8 +78,9 @@ block SignalBasedNoise
 </table>
 </p>
 </html>"));
-  replaceable package generator = AdvancedNoise.Generators.QuickXorshift64star constrainedby
-    Generators.Utilities.Interfaces.PartialGenerator "Random number generator"
+  replaceable package generator = AdvancedNoise.Generators.QuickXorshift64star
+    constrainedby Generators.Utilities.Interfaces.PartialGenerator
+    "Random number generator"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
 <p>
@@ -226,11 +225,11 @@ value has a length of 64 bits).
   end convertRealToIntegers;
 
   function initialState "Combine Real signal with Integer seeds"
-    input Integer localSeed "The local seed";
-    input Integer globalSeed "the global seed";
-    input Real signal "The Real signal";
+    input Integer localSeed "Local seed";
+    input Integer globalSeed "Global seed";
+    input Real signal "Real signal";
     output Integer state[generator.nState]
-      "The initial state of random number generator";
+      "Initial state of random number generator";
   protected
     Integer ints[2] "Real signal casted to integers";
   algorithm
