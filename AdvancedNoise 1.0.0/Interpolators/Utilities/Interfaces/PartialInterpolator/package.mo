@@ -23,25 +23,24 @@ This partial function defines the input and output arguments of
 the function to interpolate in a buffer of random values.
 </p>
 </html>", revisions="<html>
-<p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
 
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+    <table border=0>
+    <tr><td valign=\"top\">
+             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+    </td><td valign=\"bottom\">
+             Initial version implemented by
+             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td></tr>
+    </table>
+    </td>
+</tr>
 </table>
-</p>
 </html>"));
   end interpolate;
 
@@ -86,24 +85,23 @@ buffer, the following constants need to be defined:
 </table>
 </blockquote>
 </html>", revisions="<html>
-<p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
 
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+    <table border=0>
+    <tr><td valign=\"top\">
+             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+    </td><td valign=\"bottom\">
+             Initial version implemented by
+             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td></tr>
+    </table>
+    </td>
+</tr>
 </table>
-</p>
 </html>"));
 end PartialInterpolator;
