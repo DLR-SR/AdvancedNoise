@@ -55,25 +55,24 @@ equation
       points={{18,10},{-39,10}},
       color={0,0,127}));
   annotation (    Documentation(revisions="<html>
-<p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
 
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+    <table border=0>
+    <tr><td valign=\"top\">
+             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+    </td><td valign=\"bottom\">
+             Initial version implemented by
+             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td></tr>
+    </table>
+    </td>
+</tr>
 </table>
-</p>
 </html>", info="<html>
 <p>This example demonstrated different noise filtering methods using a convolution, a tabulated method and using a filter.</p>
 </html>"),
