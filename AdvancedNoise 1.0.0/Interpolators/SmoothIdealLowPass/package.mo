@@ -86,29 +86,48 @@ protected
     end for;
     annotation(derivative(order=1) = der_interpolate, Documentation(info="<html>
 <h4>Syntax</h4>
-<blockquote><code>y = SmoothIdealLowPass.<b>interpolate</b>(buffer,offset);</code> </blockquote>
+<blockquote><pre>
+y = SmoothIdealLowPass.<b>interpolate</b>(buffer,offset);
+</pre></blockquote>
+
 <h4>Description</h4>
-<p>Interpolate in buffer by using the <a href=\"modelica://Modelica.Math.Special.sinc\">sinc</a> function. This is an approximation of an ideal low pass filter that completely blocks frequencies above the cut-off frequency f = 1/T (where T is the sample period with which the buffer was filled). Input argument offset is a Real number marking the point at which interpolation shall take place. offset=0 is the first buffer value buffer[1]. offset=size(buffer,1)-1 is the last buffer value buffer[size(buffer,1)]. It is required that 0 &le; offset &LT; size(buffer,1)-1. The function returns the interpolated value. The interpolation is continuous with a continuous first derivative. In order to avoid issues at the end of the buffer (where a minimally too large offset value triggers an assert), it is best to make the buffer one element larger as needed. For example, if the buffer is filled with a sample period of 1 ms and every 100 samples an event occurs, then the buffer should have length 102 for the samples 0 ms, 1 ms, 2 ms, ...., 100 ms, 101 ms. </p>
-</html>", revisions="<html>
 <p>
+Interpolate in buffer by using the <a href=\"modelica://Modelica.Math.Special.sinc\">sinc</a> function.
+This is an approximation of an ideal low pass filter that completely blocks
+frequencies above the cut-off frequency f&nbsp;=&nbsp;1/T (where T is
+the sample period with which the buffer was filled). Input argument
+offset is a Real number marking the point at which interpolation shall
+take place.
+offset=0 is the first buffer value buffer[1].
+offset=size(buffer,1)-1 is the last buffer value buffer[size(buffer,1)].
+It is required that 0&nbsp;&le;&nbsp;offset&nbsp;&lt;&nbsp;size(buffer,1)-1.
+The function returns the interpolated value. The interpolation is continuous
+with a continuous first derivative. In order to avoid issues at the end
+of the buffer (where a minimally too large offset value triggers an assert),
+it is best to make the buffer one element larger as needed.
+For example, if the buffer is filled with a sample period of 1&nbsp;ms
+and every 100 samples an event occurs, then the buffer should have length 102
+for the samples 0&nbsp;ms, 1&nbsp;ms, 2&nbsp;ms, ...., 100&nbsp;ms, 101&nbsp;ms.
+</p>
+</html>", revisions="<html>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
 
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+    <table border=0>
+    <tr><td valign=\"top\">
+             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+    </td><td valign=\"bottom\">
+             Initial version implemented by
+             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td></tr>
+    </table>
+    </td>
+</tr>
 </table>
-</p>
 </html>"));
   end interpolate;
 
@@ -123,25 +142,24 @@ a finite number of support points (the ideal low pass filter would require
 an infinite number of support points).
 </p>
 </html>", revisions="<html>
-<p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
 
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+    <table border=0>
+    <tr><td valign=\"top\">
+             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+    </td><td valign=\"bottom\">
+             Initial version implemented by
+             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td></tr>
+    </table>
+    </td>
+</tr>
 </table>
-</p>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
         graphics={Line(
       points={{-90,-50},{-22,-50},{6,44},{88,44}},
