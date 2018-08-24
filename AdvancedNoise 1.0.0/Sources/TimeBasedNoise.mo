@@ -258,8 +258,7 @@ When using this block, at a minimum the following parameters must be defined:
 </p>
 
 <blockquote>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>Parameter</th>
     <th>Description</th></tr>
 
@@ -271,16 +270,15 @@ When using this block, at a minimum the following parameters must be defined:
          In between, the noise is linearly interpolated at the drawn random
          values.</td></tr>
 </table>
-</p></blockquote>
+</blockquote>
 
 <p>
 As a simple demonstration, see example <a href=\"modelica://AdvancedNoise.Examples.TimeBasedNoise\">Examples.TimeBasedNoise</a>.
 In the next diagram, a simulation result is shown for samplePeriod=0.02 s, y_min=-1, y_max=3:
 </p>
-<p><blockquote>
+<blockquote>
 <img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TimeBasedNoise.png\">
 </blockquote>
-</p>
 
 <h4>Advanced tab: General settings</h4>
 <p>
@@ -289,8 +287,7 @@ The general settings are shown in the next table:
 </p>
 
 <blockquote>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>Parameter</th>
     <th>Description</th></tr>
 
@@ -318,7 +315,7 @@ The general settings are shown in the next table:
          the selected interpolation method (which leads usually to a slow
          simulation). </td></tr>
 </table>
-</p></blockquote>
+</blockquote>
 
 <h4>Advanced tab: Random number properties</h4>
 <p>
@@ -332,8 +329,7 @@ following parameters can be set:
 </p>
 
 <blockquote>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>Parameter</th>
     <th>Description</th></tr>
 
@@ -372,7 +368,7 @@ following parameters can be set:
          description of the Generators package.</td></tr>
 
 </table>
-</p></blockquote>
+</blockquote>
 
 <p>
 The different interpolation methods are demonstrated with example
@@ -380,9 +376,9 @@ The different interpolation methods are demonstrated with example
 A simulation result is shown in the next diagram:
 </p>
 
-<p><blockquote>
+<blockquote>
 <img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\">
-</blockquote></p>
+</blockquote>
 
 <p>
 As can be seen, constant (constantNoise.y) and linear (linearNoise.y) interpolation
@@ -399,8 +395,7 @@ noise signal, but it changes its variance with the following factors:
 </p>
 
 <blockquote>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>interpolation</th>
     <th>variance factor</th></tr>
 <tr><td> Constant </td>
@@ -410,7 +405,7 @@ noise signal, but it changes its variance with the following factors:
 <tr><td> SmoothIdealLowPass </td>
     <td> 0.979776342307764 (actual variance = 0.97..*&lt;variance of constantly interpolated noise&gt;)</td></tr>
 </table>
-</p></blockquote>
+</blockquote>
 
 <p>
 The above table holds only if an event is generated at every sample instant
@@ -430,8 +425,7 @@ For this purpose the following parameters can be defined.
 </p>
 
 <blockquote>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>Parameter</th>
     <th>Description</th></tr>
 
@@ -467,26 +461,25 @@ For this purpose the following parameters can be defined.
          a certain duration until an approximate steady-state is reached. In such a case
          startTime should be set to a time instant after this duration.</td></tr>
 </table>
-</p></blockquote>
+</blockquote>
 </html>", revisions="<html>
-<p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
 
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+    <table border=0>
+    <tr><td valign=\"top\">
+             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+    </td><td valign=\"bottom\">
+             Initial version implemented by
+             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td></tr>
+    </table>
+    </td>
+</tr>
 </table>
-</p>
 </html>"));
 end TimeBasedNoise;

@@ -292,42 +292,44 @@ value has a length of 64 bits).
           fillPattern=FillPattern.Solid,
           textString="%y_off")}),
     Documentation(info="<html>
-<p>A summary of the properties of the noise blocks is provided in the documentation of package <a href=\"modelica://Modelica.Blocks.Noise\">Blocks.Noise</a>. This SignalBasedNoise block generates reproducible noise at its output. The block can only be used if on the same or a higher hierarchical level, model <a href=\"modelica://Modelica.Blocks.Noise.GlobalSeed\">Blocks.Noise.GlobalSeed</a> is dragged to provide global settings for all instances. </p>
-<p>The generated random numbers of this block are a function of the input signal. Blocks with different input signals produce uncorrelated noise. This can be used to define e.g. the roughness of a railway track. The random values provided at the output of a SignalBasedNoise instance depend (a) on the <b>actual input signal</b> in the current time instant, (b) on the instance name, and (c) on the settings of the respective instance (as well as the seetings in globalSeed, see above and below). By default, two or more instances produce different, uncorrelated noise for the same input signal. </p>
+<p>A summary of the properties of the noise blocks is provided in the documentation of package <a href=\"modelica://Modelica.Blocks.Noise\">Blocks.Noise</a>. This SignalBasedNoise block generates reproducible noise at its output. The block can only be used if on the same or a higher hierarchical level, model <a href=\"modelica://Modelica.Blocks.Noise.GlobalSeed\">Blocks.Noise.GlobalSeed</a> is dragged to provide global settings for all instances.</p>
+<p>The generated random numbers of this block are a function of the input signal. Blocks with different input signals produce uncorrelated noise. This can be used to define e.g. the roughness of a railway track. The random values provided at the output of a SignalBasedNoise instance depend (a) on the <b>actual input signal</b> in the current time instant, (b) on the instance name, and (c) on the settings of the respective instance (as well as the seetings in globalSeed, see above and below). By default, two or more instances produce different, uncorrelated noise for the same input signal.</p>
 
 
 <h4>Parameters that need to be defined</h4>
 
-<p>When using this block, at a minimum the following parameters must be defined: </p>
+<p>When using this block, at a minimum the following parameters must be defined:</p>
 
 <blockquote>
-<p>
-<table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
-<td><p align=\"center\"><h4>Parameter</h4></p></td>
-<td><p align=\"center\"><h4>Description</h4></p></td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+<tr><th>Parameter</th>
+    <th>Description</th>
 </tr>
 <tr>
-<td><p>useTime </p></td>
-<td><p>If useTime=true, then the input signal is replaced by the current simulation time. This is the default. If useTime=false, then an input connector is used, which defines the ordinate of the random signal. For each value of the input signal, a different random number is generated.</p></td>
+<td>useTime</td>
+<td>If useTime=true, then the input signal is replaced by the current simulation time. This is the default. If useTime=false, then an input connector is used, which defines the ordinate of the random signal. For each value of the input signal, a different random number is generated.</td>
 </tr>
 <tr>
-<td><p>samplePeriod </p></td>
-<td><p>Random values are drawn on a periodic grid over the input signal. The period of this grid is defined with this parameter. The unit of the samplePeriod corresponds to the unit of the input signal. If useTime=true, then the samplePeriod defines a sample Period in [s]. As a result of this pseudo-sampling, the highest frequency f<sub>max</sub> contained in the generated noise is f<sub>max</sub> = 1/samplePeriod. By default, no events are generated. In between, the noise is linearly interpolated at the drawn random values.</p></td>
+<td>samplePeriod</td>
+<td>Random values are drawn on a periodic grid over the input signal. The period of this grid is defined with this parameter. The unit of the samplePeriod corresponds to the unit of the input signal. If useTime=true, then the samplePeriod defines a sample Period in [s]. As a result of this pseudo-sampling, the highest frequency f<sub>max</sub> contained in the generated noise is f<sub>max</sub> = 1/samplePeriod. By default, no events are generated. In between, the noise is linearly interpolated at the drawn random values.</td>
 </tr>
 </table>
-</p></blockquote>
+</blockquote>
 
 <p>
-As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBasedNoise\">Blocks.Examples.NoiseExamples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!</p>
-<blockquote><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalBasedNoise.png\"/> </blockquote>
+As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBasedNoise\">Blocks.Examples.NoiseExamples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!
+</p>
+<blockquote>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalBasedNoise.png\"/>
+</blockquote>
 
 <h4>Advanced tab: General settings</h4>
-<p>In the <b>Advanced</b> tab of the parameter menu, further options can be set. The general settings are shown in the next table: </p>
+<p>In the <b>Advanced</b> tab of the parameter menu, further options can be set. The general settings are shown in the next table:</p>
 
-<blockquote><p>
-<table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
-<td><p align=\"center\"><h4>Parameter</h4></p></td>
-<td><p align=\"center\"><h4>Description</h4></p></td>
+<blockquote>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+<tr><th>Parameter</th>
+    <th>Description</th>
 </tr>
 <tr>
 <td>enableNoise</td>
@@ -338,111 +340,116 @@ As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBa
 <td>If enableNoise = false, the output of the block instance has the value y_off. Default is y_off = 0.0. Furthermore, if time&LT;startTime, the output of the block is also y_off.</td>
 </tr>
 </table>
-</p></blockquote>
+</blockquote>
 
 <h4>Advanced tab: Random number properties</h4>
 
-<p>In the group &QUOT;Random number properties&QUOT;, the properties of the random number generation are defined. By default, uniform random numbers with linear interpolation are used, and the random numbers are drawn with the pseudo random number generator algorithm &QUOT;xorshift128+&QUOT;. This random number generator has a period of 2^128, has an internal state of 4 Integer elements, and has excellent statistical properties. If the default behavior is not desired, the following parameters can be set: </p>
+<p>In the group &QUOT;Random number properties&QUOT;, the properties of the random number generation are defined. By default, uniform random numbers with linear interpolation are used, and the random numbers are drawn with the pseudo random number generator algorithm &QUOT;xorshift128+&QUOT;. This random number generator has a period of 2^128, has an internal state of 4 Integer elements, and has excellent statistical properties. If the default behavior is not desired, the following parameters can be set:</p>
 
-<blockquote><p>
-<table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
-<td><p align=\"center\"><h4>Parameter</h4></p></td>
-<td><p align=\"center\"><h4>Description</h4></p></td>
+<blockquote>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+<tr><th>Parameter</th>
+    <th>Description</th>
 </tr>
 <tr>
-<td><p>distribution </p></td>
-<td><p>Defines the random number distribution to map random numbers from the range 0.0 ... 1.0, to the desired range and distribution. Basically, <b>distribution</b> is a replaceable function that provides the truncated quantile (= truncated inverse cumulative distribution function) of a random distribution. More details of truncated distributions can be found in the documentation of package <a href=\"modelica://Modelica.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>. </p></td>
+<td>distribution</td>
+<td>Defines the random number distribution to map random numbers from the range 0.0 ... 1.0, to the desired range and distribution. Basically, <b>distribution</b> is a replaceable function that provides the truncated quantile (= truncated inverse cumulative distribution function) of a random distribution. More details of truncated distributions can be found in the documentation of package <a href=\"modelica://Modelica.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>.</td>
 </tr>
 <tr>
-<td><p>interpolation </p></td>
-<td><p>Defines the type of interpolation between the random values drawn at sample instants. This is a replaceable package. The following interpolation packages are provided in package <a href=\"modelica://AdvancedNoise.Interpolators\">Interpolators</a>: </p><ul>
+<td>interpolation</td>
+<td>Defines the type of interpolation between the random values drawn at sample instants. This is a replaceable package. The following interpolation packages are provided in package <a href=\"modelica://AdvancedNoise.Interpolators\">Interpolators</a>:<ul>
 <li>Constant: The random values are held constant between sample instants. </li><li>Linear: The random values are linearly interpolated between sample instants. </li><li>SmoothIdealLowPass: The random values are smoothly interpolated with the sinc function. This is an approximation of an ideal low pass filter (that would have an infinite steep drop of the frequency response at the cut-off frequency 1/samplePeriod). </li>
 </ul></td>
 </tr>
 <tr>
-<td><p>generator </p></td>
-<td><p>Defines the pseudo random number generator to be used. This is a replaceable package. The random number generators that are provided in package <a href=\"modelica://Modelica.Math.Random.Generators\">Math.Random.Generators</a> can be used here. Properties of the various generators are described in the package description of the Generators package.</p></td>
+<td>generator</td>
+<td>Defines the pseudo random number generator to be used. This is a replaceable package. The random number generators that are provided in package <a href=\"modelica://Modelica.Math.Random.Generators\">Math.Random.Generators</a> can be used here. Properties of the various generators are described in the package description of the Generators package.</td>
 </tr>
 </table>
-</p></blockquote>
+</blockquote>
 
-<p>The different interpolation methods are demonstrated with example <a href=\"modelica://AdvancedNoise.Examples.Interpolation\">Examples.Interpolation</a>. The example uses the block <a href=\"TimeBasedNoise\">TimeBasedNoise</a>, but the results also hold for SignalBasedNoise. A simulation result is shown in the next diagram: </p>
-<blockquote><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\"/> </blockquote>
+<p>The different interpolation methods are demonstrated with example <a href=\"modelica://AdvancedNoise.Examples.Interpolation\">Examples.Interpolation</a>. The example uses the block <a href=\"TimeBasedNoise\">TimeBasedNoise</a>, but the results also hold for SignalBasedNoise. A simulation result is shown in the next diagram:</p>
+<blockquote>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\"/>
+</blockquote>
 
-<p>As can be seen, constant (constantNoise.y) and linear (linearNoise.y) interpolation respect the defined band -1 .. 3. Instead, smooth interpolation with the sinc function (smoothNoise.y) may violate the band slightly in order to be able to smoothly interpolate the random values at the sample instants. In practical applications, this is not an issue because the exact band of the noise is usually not exactly known. </p>
+<p>As can be seen, constant (constantNoise.y) and linear (linearNoise.y) interpolation respect the defined band -1 .. 3. Instead, smooth interpolation with the sinc function (smoothNoise.y) may violate the band slightly in order to be able to smoothly interpolate the random values at the sample instants. In practical applications, this is not an issue because the exact band of the noise is usually not exactly known.</p>
 
-<p>The selected interpolation method does not change the mean value of the noise signal, but it changes its variance with the following factors: </p>
+<p>The selected interpolation method does not change the mean value of the noise signal, but it changes its variance with the following factors:</p>
 
-<blockquote><p>
-<table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
-<td><p align=\"center\"><h4>interpolation</h4></p></td>
-<td><p align=\"center\"><h4>variance factor</h4></p></td>
+<blockquote>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+<tr><th>Interpolation</th>
+    <th>Variance factor</th>
 </tr>
 <tr>
-<td><p>Constant </p></td>
-<td><p>1.0</p></td>
+<td>Constant</td>
+<td>1.0</td>
 </tr>
 <tr>
-<td><p>Linear </p></td>
-<td><p>2/3 (actual variance = 2/3*&LT;variance of constantly interpolated noise&GT;)</p></td>
+<td>Linear</td>
+<td>2/3 (actual variance = 2/3*&LT;variance of constantly interpolated noise&GT;)</td>
 </tr>
 <tr>
-<td><p>SmoothIdealLowPass </p></td>
-<td><p>0.979776342307764 (actual variance = 0.97..*&LT;variance of constantly interpolated noise&GT;)</p></td>
+<td>SmoothIdealLowPass</td>
+<td>0.979776342307764 (actual variance = 0.97..*&LT;variance of constantly interpolated noise&GT;)</td>
 </tr>
 </table>
-</p></blockquote>
+</blockquote>
 
 <p>
-The above table holds only if an event is generated at every sample instant, or for very small relative tolerances. Otherwise, the variance depends also slightly on the step-size and the interpolation method of the integrator. Therefore, if the variance of the noise is important for your application, either change the distribution definition to take the factors above into account, or use only constant interpolation. </p>
+The above table holds only if an event is generated at every sample instant, or for very small relative tolerances. Otherwise, the variance depends also slightly on the step-size and the interpolation method of the integrator. Therefore, if the variance of the noise is important for your application, either change the distribution definition to take the factors above into account, or use only constant interpolation.
+</p>
 
 
 <h4>Advanced tab: Initialization</h4>
 
-<p>The random number generators must be properly initialized, especially that different instances of the noise block generate uncorrelated noise. For this purpose the following parameters can be defined. </p>
+<p>
+The random number generators must be properly initialized, especially that different instances of the noise block generate uncorrelated noise. For this purpose the following parameters can be defined.
+</p>
 
-<blockquote><p>
-<table cellspacing=\"0\" cellpadding=\"2\" border=\"1\"><tr>
-<td><p align=\"center\"><h4>Parameter</h4></p></td>
-<td><p align=\"center\"><h4>Description</h4></p></td>
+<blockquote>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+<tr><th>Parameter</th>
+    <th>Description</th>
 </tr>
 <tr>
-<td><p>useGlobalSeed </p></td>
-<td><p>= true, if the seed (= Integer number) defined in the &QUOT;inner GlobalSeed globalSeed&QUOT; component is used for the initialization of the random number generators. Therefore, whenever the globalSeed defines a different number, the noise at every instance is changing.</p><p>= false, if the seed defined by globalSeed is ignored. For example, if aerodynamic turbulence is modelled with a noise block and this turbulence model shall be used for all simulation runs of a Monte Carlo simulation, then useGlobalSeed has to be set to false.</p></td>
+<td>useGlobalSeed</td>
+<td>= true, if the seed (= Integer number) defined in the &QUOT;inner GlobalSeed globalSeed&QUOT; component is used for the initialization of the random number generators. Therefore, whenever the globalSeed defines a different number, the noise at every instance is changing.
+<br>= false, if the seed defined by globalSeed is ignored. For example, if aerodynamic turbulence is modelled with a noise block and this turbulence model shall be used for all simulation runs of a Monte Carlo simulation, then useGlobalSeed has to be set to false.</td>
 </tr>
 <tr>
-<td><p>useAutomaticLocalSeed </p></td>
-<td><p>An Integer number, called local seed, is needed to generate different random signals with every block instance. Instances using the same local seed produce exactly the same random number values (so the same noise, if the other settings of the instances are the same). If useAutomaticLocalSeed = true, the local seed is determined automatically as hash value of the instance name of the noise block. If useAutomaticLocalSeed = false, the local seed is defined explicitly by parameter fixedLocalSeed. This might be useful, if you use the noise block to model the roughness of a road and the road should be the same for every vehicle.</p></td>
+<td>useAutomaticLocalSeed</td>
+<td>An Integer number, called local seed, is needed to generate different random signals with every block instance. Instances using the same local seed produce exactly the same random number values (so the same noise, if the other settings of the instances are the same). If useAutomaticLocalSeed = true, the local seed is determined automatically as hash value of the instance name of the noise block. If useAutomaticLocalSeed = false, the local seed is defined explicitly by parameter fixedLocalSeed. This might be useful, if you use the noise block to model the roughness of a road and the road should be the same for every vehicle.</td>
 </tr>
 <tr>
-<td><p>fixedLocalSeed </p></td>
-<td><p>If useAutomaticLocalSeed = false, the local seed to be used. fixedLocalSeed can be any Integer number (including zero or a negative number). The initialization algorithm produces a meaningful initial state of the random number generator, so subsequently drawing random numbers produces statistically meaningful numbers.</p></td>
+<td>fixedLocalSeed</td>
+<td>If useAutomaticLocalSeed = false, the local seed to be used. fixedLocalSeed can be any Integer number (including zero or a negative number). The initialization algorithm produces a meaningful initial state of the random number generator, so subsequently drawing random numbers produces statistically meaningful numbers.</td>
 </tr>
 <tr>
-<td><p>signalOffset </p></td>
-<td><p>The signalOffset parameter can be used to shift the input signal. This can be used, if you wish the pseudo-sampling (see parameter samplePeriod) to happen at specific values of the input signal.</p></td>
+<td>signalOffset</td>
+<td>The signalOffset parameter can be used to shift the input signal. This can be used, if you wish the pseudo-sampling (see parameter samplePeriod) to happen at specific values of the input signal.</td>
 </tr>
 </table>
-</p></blockquote>
+</blockquote>
 </html>", revisions="<html>
-<p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
 
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+    <table border=0>
+    <tr><td valign=\"top\">
+             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+    </td><td valign=\"bottom\">
+             Initial version implemented by
+             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td></tr>
+    </table>
+    </td>
+</tr>
 </table>
-</p>
 </html>"));
 end SignalBasedNoise;
