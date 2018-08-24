@@ -4,7 +4,6 @@ extends Modelica.Icons.ReleaseNotes;
 
 
 annotation (Documentation(revisions="<html>
-<p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
@@ -14,6 +13,5 @@ annotation (Documentation(revisions="<html>
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</p>
 </html>"));
 end ReleaseNotes;

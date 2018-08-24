@@ -13,7 +13,6 @@ class Contact "Contact information"
 <p>Web: <a href=\"http://www.dlr.de/sr\">http://www.dlr.de/sr</a></p>
 <p>Please register any issues with the library at the the <a href=\"https://github.com/DLR-SR/AdvancedNoise/issues\">issue tracker</a>.</p>
 </html>", revisions="<html>
-<p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
@@ -23,6 +22,5 @@ class Contact "Contact information"
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</p>
 </html>"));
 end Contact;

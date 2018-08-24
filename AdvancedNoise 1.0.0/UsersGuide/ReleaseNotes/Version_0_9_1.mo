@@ -7,7 +7,6 @@ annotation (Documentation(info="<html>
 <p>In this version, Modelica_Noise is provided for easier access.</p>
 </html>",
 revisions="<html>
-<p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
@@ -17,7 +16,6 @@ revisions="<html>
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</p>
 </html>"));
 
 end Version_0_9_1;
