@@ -55,17 +55,17 @@ according to a <b>Bates</b> distribution (= mean of n uniform distributions).
 The returned value y is in the range:
 </p>
 
-<p><blockquote>
+<blockquote><p>
 0 &le; y &le; 1
-</blockquote></p>
+</p></blockquote>
 
 <p>
 Plot of the function:
 </p>
 
-<p><blockquote>
+<blockquote>
 <img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.cumulative.png\">
-</blockquote></p>
+</blockquote>
 
 <p>
 For more details, see

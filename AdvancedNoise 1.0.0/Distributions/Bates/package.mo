@@ -29,17 +29,17 @@ of the <b>Bates</b> distribution (= <b>mean</b> of n <b>uniform</b>
 distributions). Examples:
 </p>
 
-<p><blockquote>
+<blockquote>
 <img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.density.png\">
-</blockquote></p>
+</blockquote>
 
-<p><blockquote>
+<blockquote>
 <img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.cumulative.png\">
-</blockquote></p>
+</blockquote>
 
-<p><blockquote>
+<blockquote>
 <img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.quantile.png\">
-</blockquote></p>
+</blockquote>
 
 <p>
 For more details of this distribution see

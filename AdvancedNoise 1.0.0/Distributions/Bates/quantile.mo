@@ -86,9 +86,9 @@ y_min &le; y &le; y_max
 Plot of the function:
 </p>
 
-<p><blockquote>
+<blockquote>
 <img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.quantile.png\">
-</blockquote></p>
+</blockquote>
 
 <p>
 For more details, see

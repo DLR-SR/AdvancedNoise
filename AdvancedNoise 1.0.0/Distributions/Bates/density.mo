@@ -44,9 +44,9 @@ This function computes the probability density function according to a <b>Bates<
 (= mean of n uniform distributions). Plot of the function:
 </p>
 
-<p><blockquote>
+<blockquote>
 <img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.density.png\">
-</blockquote></p>
+</blockquote>
 
 <p>
 For more details, see
