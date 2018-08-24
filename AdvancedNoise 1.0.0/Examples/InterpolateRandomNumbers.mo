@@ -45,7 +45,6 @@ Simulations results are shown in the figure below:
 <img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolateRandomNumbers.png\">
 </blockquote></p>
 </html>", revisions="<html>
-<p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
@@ -55,6 +54,5 @@ Simulations results are shown in the figure below:
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</p>
 </html>"));
 end InterpolateRandomNumbers;

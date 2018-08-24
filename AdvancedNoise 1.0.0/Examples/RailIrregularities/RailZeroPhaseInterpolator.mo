@@ -23,6 +23,8 @@ package RailZeroPhaseInterpolator
 </td></tr></table>
 </p>
 </html>", info="<html>
-<p><span style=\"font-family: MS Shell Dlg 2;\">This package provides&nbsp;a&nbsp;filter&nbsp;function&nbsp;for&nbsp;rail&nbsp;irregularities&nbsp;(zero&nbsp;phase). </span></p>
+<p>
+This package provides a filter function for rail irregularities (zero phase).
+</p>
 </html>"));
 end RailZeroPhaseInterpolator;

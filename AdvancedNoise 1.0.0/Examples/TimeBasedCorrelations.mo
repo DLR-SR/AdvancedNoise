@@ -27,7 +27,6 @@ equation
   connect(autoCorrelationTest.u, noise2.y) annotation (Line(points={{-22,10},{-40,
           10},{-40,30},{-59,30}}, color={0,0,127}));
   annotation (experiment(StopTime=100, Interval=1e-2),           Documentation(revisions="<html>
-<p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
@@ -37,7 +36,6 @@ equation
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</p>
 </html>", info="<html>
 <p>This example demonstrates the autocorrelation and cross correlation of two time based noises using different seeds.</p>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TimeBasedCorrelations.png\"/></p>

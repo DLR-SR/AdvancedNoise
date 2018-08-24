@@ -97,7 +97,6 @@ equation
       Interval=0.01,
       Tolerance=0.001),
 Documentation(revisions="<html>
-<p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
@@ -107,8 +106,9 @@ Documentation(revisions="<html>
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</p>
 </html>", info="<html>
-<p>This example compares the&nbsp;implementation&nbsp;of a&nbsp;filter&nbsp;and&nbsp;the convolution method</p>
+<p>
+This example compares the implementation of a filter and the convolution method.
+</p>
 </html>"));
 end FilterAndConvolution;

@@ -11,7 +11,6 @@ package RailMinimumPhaseInterpolator
    nPast=200);
 
   annotation (Documentation(revisions="<html>
-<p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
@@ -21,8 +20,9 @@ package RailMinimumPhaseInterpolator
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</p>
 </html>", info="<html>
-<p>This package provides&nbsp;a&nbsp;filter&nbsp;function&nbsp;for&nbsp;rail&nbsp;irregularities&nbsp;(minimum&nbsp;phase). </p>
+<p>
+This package provides a filter function for rail irregularities (minimum phase).
+</p>
 </html>"));
 end RailMinimumPhaseInterpolator;

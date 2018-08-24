@@ -1,7 +1,6 @@
 within AdvancedNoise.Examples.RailIrregularities.Parts;
 model Irregularity "Source of track irregularity"
-  extends
-    AdvancedNoise.Examples.RailIrregularities.Comparisons.FilterAndConvolution(
+  extends AdvancedNoise.Examples.RailIrregularities.Comparisons.FilterAndConvolution(
     doMinimum=true,
     doZero=false,
     doFilter=false,
@@ -41,7 +40,6 @@ equation
           color={0,127,0},
           smooth=Smooth.Bezier)}),
     Documentation(revisions="<html>
-<p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
@@ -51,6 +49,5 @@ equation
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</p>
 </html>"));
 end Irregularity;

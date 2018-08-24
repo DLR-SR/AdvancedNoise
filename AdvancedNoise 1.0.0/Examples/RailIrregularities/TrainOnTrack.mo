@@ -2,10 +2,9 @@ within AdvancedNoise.Examples.RailIrregularities;
 model TrainOnTrack
   "This examples simulates a simple train on a track with irregularities"
   extends Modelica.Icons.Example;
-  Modelica.Mechanics.Translational.Components.Fixed
-                                                  earth
-  annotation (Placement(transformation(extent={{-10,-90},{10,-70}})));
-  Parts.SimpleRailwayTrack simpleRailwayTrack                  annotation (Placement(
+  Modelica.Mechanics.Translational.Components.Fixed earth
+    annotation (Placement(transformation(extent={{-10,-90},{10,-70}})));
+  Parts.SimpleRailwayTrack simpleRailwayTrack annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=90,
@@ -54,7 +53,6 @@ initial equation
   //quarterRailwayCar.body.a   = 0; // is given by spring-damper zero forces and wheel.a=0
   //quarterRailwayCar.body.v   = 0; // is given by spring-damper
   annotation ( Documentation(revisions="<html>
-<p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
@@ -64,7 +62,6 @@ initial equation
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</p>
 </html>", info="<html>
 <p>In literature, the excitation of railway vehicles by the rail is usualy given in the frequency domain. Below an example of such an excitation as found in literature is given.</p>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/RailExcitationSpatial.PNG\"/></p>
@@ -73,6 +70,6 @@ initial equation
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrackSettings.png\"/></p>
 <p>Using the minimum phase filter a comparison is made between a <span style=\"font-family: MS Shell Dlg 2;\">well-trusted solution with the convolution implementation of this model. The plot shows spectral density of the model&apos;s acceleration output (red curve) compared to the trusted frequency-domain solution (blue curve). Both curves agree very well.</span></p>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrack.PNG\"/></p>
-<p>For more information please see the publication <span style=\"font-family: MS Shell Dlg 2;\">Kl&ouml;ckner, A., Knoblach, A. &AMP; Heckmann, A. (2015). How to Shape Noise Spectra for Continuous System Simulation. In Proceedings of the 11th International Modelica Conference (pp. 837&ndash;846). Versailles, France. <a href=\"http://doi.org/10.3384/ecp15118411\">doi:10.3384/ecp15118411</a></span></p>
+<p>For more information please see the publication <span style=\"font-family: MS Shell Dlg 2;\">Kl&ouml;ckner, A., Knoblach, A.  &#38; Heckmann, A. (2015). How to Shape Noise Spectra for Continuous System Simulation. In Proceedings of the 11th International Modelica Conference (pp. 837&ndash;846). Versailles, France. <a href=\"http://doi.org/10.3384/ecp15118411\">doi:10.3384/ecp15118411</a></span></p>
 </html>"));
 end TrainOnTrack;

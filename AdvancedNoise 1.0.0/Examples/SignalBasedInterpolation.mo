@@ -58,12 +58,10 @@ The result of a simulation is show in the next diagram, plotting the (noise) out
 blocks over the sine output:
 </p>
 
-<p><blockquote>
+<blockquote>
 <img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalInterpolation.png\">
 </blockquote>
-</p>
 </html>", revisions="<html>
-<p>
 <table border=0>
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
@@ -73,6 +71,5 @@ blocks over the sine output:
          A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
          <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
 </td></tr></table>
-</p>
 </html>"));
 end SignalBasedInterpolation;
