@@ -65,25 +65,24 @@ and the returned state is the one from the last iteration.
 <a href=\"modelica://Modelica.Math.Random.Generators.Xorshift64star.random\">Random.Generators.Xorshift64star.random</a>.
 </p>
 </html>", revisions="<html>
-<p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+    <table border=0>
+    <tr><td valign=\"top\">
+             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+    </td><td valign=\"bottom\">
+             Initial version implemented by
+             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td></tr>
+    </table>
+    </td>
+</tr>
 </table>
-</p>
 </html>"));
   end initialState;
 
@@ -100,7 +99,7 @@ and the returned state is the one from the last iteration.
 
 <h4>Description</h4>
 <p>
-Returns a uniform random number r in the range 0 &lt; r &le; 1 with the xorshift64* algorithm.
+Returns a uniform random number r in the range 0&nbsp;&lt;&nbsp;r&nbsp;&le;&nbsp;1 with the xorshift64* algorithm.
 Input argument <b>stateIn</b> is the state vector of the previous call.
 Output argument <b>stateOut</b> is the updated state vector.
 If the function is called with identical stateIn vectors, exactly the
@@ -126,52 +125,50 @@ same random number r is returned.
 <a href=\"modelica://Modelica.Math.Random.Generators.Xorshift64star.initialState\">Random.Generators.Xorshift64star.initialState</a>.
 </p>
 </html>", revisions="<html>
-<p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+    <table border=0>
+    <tr><td valign=\"top\">
+             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+    </td><td valign=\"bottom\">
+             Initial version implemented by
+             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td></tr>
+    </table>
+    </td>
+</tr>
 </table>
-</p>
 </html>"));
   end random;
 
 
   annotation (Documentation(info="<html>
-<p>Random number generator <b>xorshift64*</b>. This generator has a period of 2^64 (the period defines the number of random numbers generated before the sequence begins to repeat itself). In contrast to the <a href=\"Modelica.Math.Random.Generators.Xorshift64star\">version</a> in Modelica, this version of the generator uses a single iteration to generate a new random number.  </p>
+<p>Random number generator <b>xorshift64*</b>. This generator has a period of 2^64 (the period defines the number of random numbers generated before the sequence begins to repeat itself). In contrast to the <a href=\"modelica://Modelica.Math.Random.Generators.Xorshift64star\">version</a> in Modelica, this version of the generator uses a single iteration to generate a new random number.</p>
 <p>For an overview, comparison with other random number generators, and links to articles, see <a href=\"modelica://Modelica.Math.Random.Generators\">Math.Random.Generators</a>. </p>
 </html>", revisions="<html>
-<p>
 <table border=1 cellspacing=0 cellpadding=2>
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
 
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://Modelica/Resources/Images/Blocks/Noise/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+    <table border=0>
+    <tr><td valign=\"top\">
+             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+    </td><td valign=\"bottom\">
+             Initial version implemented by
+             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td></tr>
+    </table>
+    </td>
+</tr>
 </table>
-</p>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
         graphics={
     Ellipse(
