@@ -1,10 +1,9 @@
 within AdvancedNoise;
 package Examples "Examples for the Noise library"
-  extends Modelica.Icons.ExamplesPackage;
+extends Modelica.Icons.ExamplesPackage;
 
 
-  annotation (
-    Documentation(revisions="<html>
+annotation (Documentation(revisions="<html>
 <table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">

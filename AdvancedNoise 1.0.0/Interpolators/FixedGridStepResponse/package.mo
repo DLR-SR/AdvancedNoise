@@ -10,7 +10,6 @@ protected
                                  + kernel((-(-nPast:nFuture)+fill(1,nPast+nFuture+1))*suggestedSamplePeriod)
   "Helper vector for convolution of right interval boundary";
 
-
 public
   redeclare replaceable function interpolate
   "Interpolates the buffer using a kernel on a pre-tabulated fixed grid"

@@ -12,7 +12,7 @@ package Constant "Constant interpolation"
   "Constant interpolation in a buffer of random values"
   algorithm
     y := buffer[if nBuffer == 1 then 1 else integer(offset) + 1];
-    annotation(
+    annotation (
       Inline=true,
       Documentation(info="<html>
 <h4>Syntax</h4>

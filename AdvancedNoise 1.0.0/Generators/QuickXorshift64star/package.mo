@@ -11,7 +11,7 @@ package QuickXorshift64star "Random number generator xorshift64* with quicker in
      within one iteration.
     */
     parameter Integer p = 1 "The number of iterations to use";
-  protected
+protected
     Real r "Random number not used outside the function";
 
   algorithm
