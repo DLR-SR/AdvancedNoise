@@ -7,7 +7,7 @@ annotation (Documentation(info="<html>
 <p>In this version, Modelica_Noise is provided for easier access.</p>
 </html>",
 revisions="<html>
-<table border=0>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">

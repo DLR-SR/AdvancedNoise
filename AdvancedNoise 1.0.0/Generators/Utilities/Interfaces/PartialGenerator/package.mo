@@ -20,23 +20,28 @@ This partial function defines the input and output arguments of an
 initialState(..) function of a random number generator package.
 </p>
 </html>", revisions="<html>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> June 22, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
-
-    <table border=0>
-    <tr><td valign=\"top\">
-             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-    </td><td valign=\"bottom\">
-             Initial version implemented by
-             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-    </td></tr>
-    </table>
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
     </td>
-</tr>
+  </tr>
 </table>
 </html>"));
   end initialState;
@@ -57,23 +62,28 @@ This partial function defines the input and output arguments of a
 random(..) function of a random number generator package.
 </p>
 </html>", revisions="<html>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> June 22, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
-
-    <table border=0>
-    <tr><td valign=\"top\">
-             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-    </td><td valign=\"bottom\">
-             Initial version implemented by
-             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-    </td></tr>
-    </table>
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
     </td>
-</tr>
+  </tr>
 </table>
 </html>"));
   end random;
@@ -87,23 +97,28 @@ inherit from this partial package and adapt the constant <b>nState</b>
 to the correct length of the state vector.
 </p>
 </html>", revisions="<html>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> June 22, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
-
-    <table border=0>
-    <tr><td valign=\"top\">
-             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-    </td><td valign=\"bottom\">
-             Initial version implemented by
-             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-    </td></tr>
-    </table>
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
     </td>
-</tr>
+  </tr>
 </table>
 </html>"));
 end PartialGenerator;

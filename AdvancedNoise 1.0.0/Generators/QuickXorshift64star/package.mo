@@ -11,7 +11,7 @@ package QuickXorshift64star "Random number generator xorshift64* with quicker in
      within one iteration.
     */
     parameter Integer p = 1 "The number of iterations to use";
-protected
+  protected
     Real r "Random number not used outside the function";
 
   algorithm
@@ -65,23 +65,28 @@ and the returned state is the one from the last iteration.
 <a href=\"modelica://Modelica.Math.Random.Generators.Xorshift64star.random\">Random.Generators.Xorshift64star.random</a>.
 </p>
 </html>", revisions="<html>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> June 22, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
-
-    <table border=0>
-    <tr><td valign=\"top\">
-             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-    </td><td valign=\"bottom\">
-             Initial version implemented by
-             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-    </td></tr>
-    </table>
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
     </td>
-</tr>
+  </tr>
 </table>
 </html>"));
   end initialState;
@@ -125,23 +130,28 @@ same random number r is returned.
 <a href=\"modelica://Modelica.Math.Random.Generators.Xorshift64star.initialState\">Random.Generators.Xorshift64star.initialState</a>.
 </p>
 </html>", revisions="<html>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> June 22, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
-
-    <table border=0>
-    <tr><td valign=\"top\">
-             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-    </td><td valign=\"bottom\">
-             Initial version implemented by
-             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-    </td></tr>
-    </table>
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
     </td>
-</tr>
+  </tr>
 </table>
 </html>"));
   end random;
@@ -151,23 +161,28 @@ same random number r is returned.
 <p>Random number generator <b>xorshift64*</b>. This generator has a period of 2^64 (the period defines the number of random numbers generated before the sequence begins to repeat itself). In contrast to the <a href=\"modelica://Modelica.Math.Random.Generators.Xorshift64star\">version</a> in Modelica, this version of the generator uses a single iteration to generate a new random number.</p>
 <p>For an overview, comparison with other random number generators, and links to articles, see <a href=\"modelica://Modelica.Math.Random.Generators\">Math.Random.Generators</a>. </p>
 </html>", revisions="<html>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> June 22, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> June 22, 2015 </td>
     <td valign=\"top\">
-
-    <table border=0>
-    <tr><td valign=\"top\">
-             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-    </td><td valign=\"bottom\">
-             Initial version implemented by
-             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-    </td></tr>
-    </table>
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
     </td>
-</tr>
+  </tr>
 </table>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,100}}),
         graphics={

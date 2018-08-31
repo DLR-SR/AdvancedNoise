@@ -53,23 +53,28 @@ function. Please see the description there for an introduction to
 the interpolation method used and specific remerks in the buffer and offset values.
 </p>
 </html>", revisions="<html>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Sep. 4, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
-
-    <table border=0>
-    <tr><td valign=\"top\">
-             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-    </td><td valign=\"bottom\">
-             Initial version implemented by
-             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-    </td></tr>
-    </table>
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
     </td>
-</tr>
+  </tr>
 </table>
 </html>"));
 end der_interpolate;

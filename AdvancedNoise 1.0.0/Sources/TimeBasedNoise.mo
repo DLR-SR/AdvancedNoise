@@ -30,75 +30,87 @@ block TimeBasedNoise
     "Random number distribution"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Sep. 4, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
-
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 </table>
-</p>
 </html>"));
   replaceable package interpolation = Interpolators.Constant
     constrainedby Interpolators.Utilities.Interfaces.PartialInterpolator
     "Interpolation method in grid of raw random numbers"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Sep. 4, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
-
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 </table>
-</p>
 </html>"));
   replaceable package generator = Modelica.Math.Random.Generators.Xorshift128plus
     constrainedby Generators.Utilities.Interfaces.PartialGenerator
     "Random number generator"
     annotation(choicesAllMatching=true, Dialog(tab="Advanced",group="Random number properties",enable=enableNoise),
     Documentation(revisions="<html>
-<p>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Sep. 4, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
-
-<table border=0>
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
-</td></tr>
-
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
 </table>
-</p>
 </html>"));
 
   // Advanced dialog menu: Initialization
@@ -463,23 +475,28 @@ For this purpose the following parameters can be defined.
 </table>
 </blockquote>
 </html>", revisions="<html>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Sep. 4, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
-
-    <table border=0>
-    <tr><td valign=\"top\">
-             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-    </td><td valign=\"bottom\">
-             Initial version implemented by
-             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-    </td></tr>
-    </table>
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
     </td>
-</tr>
+  </tr>
 </table>
 </html>"));
 end TimeBasedNoise;

@@ -97,7 +97,7 @@ equation
       Interval=0.01,
       Tolerance=0.001),
 Documentation(revisions="<html>
-<table border=0>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">

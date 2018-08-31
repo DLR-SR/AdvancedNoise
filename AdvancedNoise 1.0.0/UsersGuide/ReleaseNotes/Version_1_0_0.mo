@@ -6,7 +6,7 @@ class Version_1_0_0 "Version 1.0.0 (2016-05-03)"
 <p>First official version of the AdvancedNoise Library working with the newly released MSL 3.2.2.</p>
 </html>",
 revisions="<html>
-<table border=0>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">

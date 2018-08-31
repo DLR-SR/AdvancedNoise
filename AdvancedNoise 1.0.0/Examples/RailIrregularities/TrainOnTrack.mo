@@ -53,7 +53,7 @@ initial equation
   //quarterRailwayCar.body.a   = 0; // is given by spring-damper zero forces and wheel.a=0
   //quarterRailwayCar.body.v   = 0; // is given by spring-damper
   annotation ( Documentation(revisions="<html>
-<table border=0>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">

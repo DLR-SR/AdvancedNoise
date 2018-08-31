@@ -3,7 +3,9 @@ package UsersGuide "User's guide"
   extends Modelica.Icons.Information;
 
 
-  annotation (DocumentationClass=true, Documentation(info="<html>
+  annotation (
+    DocumentationClass=true,
+    Documentation(info="<html>
 <p>The AdvancedNoise Library is a library that is used to supply Modelica models of a high-quality noise input. By using different distributions, interpolation methods and the possibility to use time or a signal as the base of the noise, most cases of real-life system noise can be modeled. Examples of such noise inputs are:</p>
 <ul>
 <li>Sensor noise</li>
@@ -13,7 +15,7 @@ package UsersGuide "User's guide"
 </ul>
 <p>The library gives the user acces to a high quality noise source with good statistcal properties.</p>
 </html>", revisions="<html>
-<table border=0>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">

@@ -38,7 +38,7 @@ equation
   connect(noise2.u, inputSignal.y) annotation (Line(points={{-42,30},{-54,30},{
           -54,50},{-66.4,50}}, color={0,0,127}));
   annotation (experiment(StopTime=100, Interval=1e-2),           Documentation(revisions="<html>
-<table border=0>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">

@@ -11,8 +11,10 @@ package Constant "Constant interpolation"
   redeclare function extends interpolate
   "Constant interpolation in a buffer of random values"
   algorithm
-     y := buffer[if nBuffer == 1 then 1 else integer(offset) + 1];
-     annotation(Inline=true, Documentation(info="<html>
+    y := buffer[if nBuffer == 1 then 1 else integer(offset) + 1];
+    annotation(
+      Inline=true,
+      Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
 y = Constant.<b>interpolate</b>(buffer,offset);
@@ -30,23 +32,28 @@ If the buffer has length&nbsp;1, the function always returns y=buffer[1].
 Otherwise the function returns y = buffer[integer(offset)+1].
 </p>
 </html>", revisions="<html>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Sep. 4, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
-
-    <table border=0>
-    <tr><td valign=\"top\">
-             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-    </td><td valign=\"bottom\">
-             Initial version implemented by
-             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-    </td></tr>
-    </table>
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
     </td>
-</tr>
+  </tr>
 </table>
 </html>"));
   end interpolate;
@@ -57,23 +64,28 @@ Otherwise the function returns y = buffer[integer(offset)+1].
 This Interpolation package provides <b>constant</b> interpolation in a buffer.
 </p>
 </html>", revisions="<html>
-<table border=1 cellspacing=0 cellpadding=2>
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> Sep. 4, 2015 </td>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <th>Date</th>
+    <th align=\"left\">Description</th>
+  </tr>
+  <tr>
+    <td valign=\"top\"> Sep. 4, 2015 </td>
     <td valign=\"top\">
-
-    <table border=0>
-    <tr><td valign=\"top\">
-             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-    </td><td valign=\"bottom\">
-             Initial version implemented by
-             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-    </td></tr>
-    </table>
+      <table border=\"0\">
+        <tr>
+          <td valign=\"top\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+          </td>
+          <td valign=\"bottom\">
+            Initial version implemented by
+            A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+          </td>
+        </tr>
+      </table>
     </td>
-</tr>
+  </tr>
 </table>
 </html>"), Icon(coordinateSystem(preserveAspectRatio=false, extent={{-100,
         -100},{100,100}}),

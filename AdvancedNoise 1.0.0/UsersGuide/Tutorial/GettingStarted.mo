@@ -11,7 +11,7 @@ extends Modelica.Icons.Information;
 <p>Please refer to the documentation of these blocks to understand their working. </p>
 <p>If the supplied noise distributions or interpolation algorithms are not suitable for the needed application, the user can generate custom distributions and interpolation algorithms that can be used with this library.</p>
 </html>", revisions="<html>
-<table border=0>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">

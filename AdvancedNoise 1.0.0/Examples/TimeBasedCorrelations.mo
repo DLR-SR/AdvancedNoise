@@ -26,8 +26,10 @@ equation
       color={0,0,127}));
   connect(autoCorrelationTest.u, noise2.y) annotation (Line(points={{-22,10},{-40,
           10},{-40,30},{-59,30}}, color={0,0,127}));
-  annotation (experiment(StopTime=100, Interval=1e-2),           Documentation(revisions="<html>
-<table border=0>
+  annotation (
+    experiment(StopTime=100, Interval=1e-2),
+    Documentation(revisions="<html>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">

@@ -7,7 +7,7 @@ class Version_0_9_0 "Version 0.9.0 (2015-09-07)"
 <p>This version won the second price of the Modelica <a href=\"ModelicaAward\">Library Award</a>.</p>
 </html>",
 revisions="<html>
-<table border=0>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">

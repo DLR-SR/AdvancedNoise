@@ -24,14 +24,14 @@ All competing libraries for the award were:
 </ul>
 
 <blockquote>
-<table border=1>
+<table border=\"1\">
 <tr><td>
 <img width=\"600\" src=\"modelica://AdvancedNoise/Resources/Images/General/ModelicaAward.png\">
 </td></tr>
 </table>
 </blockquote>
 </html>", revisions="<html>
-<table border=0>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">

@@ -26,13 +26,13 @@ public
   Real l = H(u);
   Real r = 1-H(u);
   annotation (Documentation(revisions="<html>
-<table border=1 cellspacing=0 cellpadding=2>
+<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>Date</th> <th align=\"left\">Description</th></tr>
 
 <tr><td valign=\"top\"> 2014 </td>
     <td valign=\"top\">
 
-    <table border=0>
+    <table border=\"0\">
     <tr><td valign=\"top\">
              <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
     </td><td valign=\"bottom\">

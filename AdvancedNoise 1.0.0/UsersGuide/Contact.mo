@@ -13,7 +13,7 @@ class Contact "Contact information"
 <p>Web: <a href=\"http://www.dlr.de/sr\">http://www.dlr.de/sr</a></p>
 <p>Please register any issues with the library at the the <a href=\"https://github.com/DLR-SR/AdvancedNoise/issues\">issue tracker</a>.</p>
 </html>", revisions="<html>
-<table border=0>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">

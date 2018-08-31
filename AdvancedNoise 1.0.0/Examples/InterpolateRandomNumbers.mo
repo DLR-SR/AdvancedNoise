@@ -45,7 +45,7 @@ Simulations results are shown in the figure below:
 <img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolateRandomNumbers.png\">
 </blockquote></p>
 </html>", revisions="<html>
-<table border=0>
+<table border=\"0\">
 <tr><td valign=\"top\">
          <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
 </td><td valign=\"bottom\">
