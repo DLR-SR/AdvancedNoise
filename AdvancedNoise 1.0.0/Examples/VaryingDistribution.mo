@@ -25,5 +25,19 @@ This can be seen in the random numbers generated, as well as in the mean estimat
 
 <img src=\"modelica://AdvancedNoise/Resources/Images/Examples/VaryingDistribution.png\">
 
+</html>", revisions="<html>
+<table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <td valign=\"top\">
+      <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
+    </td>
+    <td valign=\"bottom\">
+      <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
+      Initial version implemented by
+      A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+      <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td>
+  </tr>
+</table>
 </html>"));
 end VaryingDistribution;

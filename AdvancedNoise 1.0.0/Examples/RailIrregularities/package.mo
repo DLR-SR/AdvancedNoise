@@ -4,15 +4,19 @@ package RailIrregularities "A package of examples demonstrating the shaping of r
 
 
 annotation (Documentation(revisions="<html>
-<table border=\"0\">
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
+<table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <td valign=\"top\">
+      <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
+    </td>
+    <td valign=\"bottom\">
+      <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
+      Initial version implemented by
+      A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+      <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td>
+  </tr>
+</table>
 </html>", info="<html>
 <p>This package demonstrates actual frequency shaping of noise signals with the example of rail track irregularities. The method is described in the paper:</p>
 <p style=\"margin-left: 30px;\">Kl&ouml;ckner, A., Linden, F. L. J. van der, &#38; Zimmer, D. (2015). How to Shape Noise Spectra for Continuous System Simulation. In Proceedings of the 11th International Modelica Conference (pp. 837&ndash;846). Versailles, France. In Press</p>

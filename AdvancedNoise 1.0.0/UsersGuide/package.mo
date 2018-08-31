@@ -15,14 +15,18 @@ package UsersGuide "User's guide"
 </ul>
 <p>The library gives the user acces to a high quality noise source with good statistcal properties.</p>
 </html>", revisions="<html>
-<table border=\"0\">
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
+<table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <td valign=\"top\">
+      <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
+    </td>
+    <td valign=\"bottom\">
+      <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
+      Initial version implemented by
+      A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+      <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td>
+  </tr>
+</table>
 </html>"));
 end UsersGuide;

@@ -44,7 +44,7 @@ block SignalBasedNoise
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by
@@ -73,7 +73,7 @@ block SignalBasedNoise
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by
@@ -102,7 +102,7 @@ block SignalBasedNoise
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by
@@ -220,7 +220,17 @@ protected
       annotation (Library="ModelicaExternalC");
 
   annotation (Documentation(revisions="<html>
-<p><img src=\"modelica://Noise/Resources/Images/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
+<table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <td valign=\"top\">
+      <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
+    </td>
+    <td valign=\"bottom\">
+      Developed 2014 at the
+      <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td>
+  </tr>
+</table>
 </html>", info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
@@ -456,7 +466,7 @@ The random number generators must be properly initialized, especially that diffe
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by

@@ -38,15 +38,19 @@ equation
   connect(noise2.u, inputSignal.y) annotation (Line(points={{-42,30},{-54,30},{
           -54,50},{-66.4,50}}, color={0,0,127}));
   annotation (experiment(StopTime=100, Interval=1e-2),           Documentation(revisions="<html>
-<table border=\"0\">
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
+<table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <td valign=\"top\">
+      <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
+    </td>
+    <td valign=\"bottom\">
+      <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
+      Initial version implemented by
+      A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+      <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td>
+  </tr>
+</table>
 </html>", info="<html>
 <p>This example demonstrates the autocorrelation and cross correlation of two signal based noises using different seeds.</p>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalBasedCorrelations.png\"/></p>

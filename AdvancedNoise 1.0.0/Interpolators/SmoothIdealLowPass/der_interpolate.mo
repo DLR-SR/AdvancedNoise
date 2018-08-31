@@ -54,7 +54,7 @@ used and specific remerks in the buffer and offset values.
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by

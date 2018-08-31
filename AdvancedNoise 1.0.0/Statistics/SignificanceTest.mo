@@ -26,22 +26,16 @@ public
   Real l = H(u);
   Real r = 1-H(u);
   annotation (Documentation(revisions="<html>
-<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
-<tr><th>Date</th> <th align=\"left\">Description</th></tr>
-
-<tr><td valign=\"top\"> 2014 </td>
+<table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
     <td valign=\"top\">
-
-    <table border=\"0\">
-    <tr><td valign=\"top\">
-             <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-    </td><td valign=\"bottom\">
-             Developed 2014 at the
-             <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-    </td></tr>
-    </table>
+      <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
     </td>
-</tr>
+    <td valign=\"bottom\">
+      Developed 2014 at the
+      <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td>
+  </tr>
 </table>
 </html>",
         info="<html>

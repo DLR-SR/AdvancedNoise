@@ -31,7 +31,7 @@ initialState(..) function of a random number generator package.
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by
@@ -73,7 +73,7 @@ random(..) function of a random number generator package.
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by
@@ -108,7 +108,7 @@ to the correct length of the state vector.
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by

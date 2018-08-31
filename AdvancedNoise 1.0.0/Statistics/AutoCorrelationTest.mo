@@ -15,10 +15,26 @@ equation
           0},{-120,0}}, color={0,0,127}));
   connect(correlationTest.y, y)
     annotation (Line(points={{11,0},{110,0},{110,0}}, color={0,0,127}));
-    annotation (           Documentation(revisions="<html>
-<p><img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
+
+  annotation (
+    Documentation(
+      info="<html>
+<p>
+This block uses the <a href=\"CorrelationTest\">CorrelationTest</a> block to
+test for an auto-correlation of the same signal and a fixed time offset delta_t.
+</p>
 </html>",
-        info="<html>
-<p>This block uses the <a href=\"CorrelationTest\">CorrelationTest</a> block to test for an auto-correlation of the same signal and a fixed time offset delta_t.</p>
+      revisions="<html>
+<table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <td valign=\"top\">
+      <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
+    </td>
+    <td valign=\"bottom\">
+      Developed 2014 at the
+      <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td>
+  </tr>
+</table>
 </html>"));
 end AutoCorrelationTest;

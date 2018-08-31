@@ -61,7 +61,7 @@ length 102 for the samples 0&nbsp;ms, 1&nbsp;ms, 2&nbsp;ms, ...., 100&nbsp;ms, 1
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by
@@ -94,7 +94,7 @@ This Interpolation package provides <b>linear</b> interpolation in a buffer.
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by

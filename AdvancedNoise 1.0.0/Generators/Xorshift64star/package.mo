@@ -57,7 +57,7 @@ and the returned state is the one from the last iteration.
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by
@@ -122,7 +122,7 @@ same random number&nbsp;r is returned.
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by
@@ -157,7 +157,7 @@ For an overview, comparison with other random number generators, and links to ar
       <table border=\"0\">
         <tr>
           <td valign=\"top\">
-            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
+            <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
           </td>
           <td valign=\"bottom\">
             Initial version implemented by

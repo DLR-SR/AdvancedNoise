@@ -70,7 +70,17 @@ equation
   y=r;
 
   annotation (    Documentation(revisions="<html>
-<p><img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\"/> <b>Developed 2014 at the DLR Institute of System Dynamics and Control</b> </p>
+<table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <td valign=\"top\">
+      <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
+    </td>
+    <td valign=\"bottom\">
+      Developed 2014 at the
+      <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td>
+  </tr>
+</table>
 </html>",
         info="<html>
 <p>This block calculates the correlation coefficient r between its two input signals. It should be r=1, if you use the same signal on both inputs. You can however also set the time delay delta_t, in order to perform an auto-correlation of the same signal. </p>

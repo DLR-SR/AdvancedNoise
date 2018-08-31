@@ -53,15 +53,19 @@ initial equation
   //quarterRailwayCar.body.a   = 0; // is given by spring-damper zero forces and wheel.a=0
   //quarterRailwayCar.body.v   = 0; // is given by spring-damper
   annotation ( Documentation(revisions="<html>
-<table border=\"0\">
-<tr><td valign=\"top\">
-         <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\">
-</td><td valign=\"bottom\">
-         <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
-         Initial version implemented by
-         A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-         <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
-</td></tr></table>
+<table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
+  <tr>
+    <td valign=\"top\">
+      <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
+    </td>
+    <td valign=\"bottom\">
+      <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
+      Initial version implemented by
+      A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
+      <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+    </td>
+  </tr>
+</table>
 </html>", info="<html>
 <p>In literature, the excitation of railway vehicles by the rail is usualy given in the frequency domain. Below an example of such an excitation as found in literature is given.</p>
 <p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/RailExcitationSpatial.PNG\"/></p>
