@@ -10,20 +10,20 @@ model DistributionConversion "Demonstrates how distributions can be converted"
     y_min=0,
     y_max=1)
     annotation (Placement(transformation(extent={{-80,20},{-60,40}})));
-  Statistics.FromUniform toNormal(redeclare function distribution =
-        Modelica.Math.Distributions.Normal.quantile)
+  Statistics.FromUniform toNormal(
+    redeclare function distribution = Modelica.Math.Distributions.Normal.quantile)
     annotation (Placement(transformation(extent={{-40,50},{-20,70}})));
-  Statistics.FromUniform toWeibull(redeclare function distribution =
-        Modelica.Math.Distributions.Weibull.quantile (k=2))
+  Statistics.FromUniform toWeibull(
+    redeclare function distribution = Modelica.Math.Distributions.Weibull.quantile(k=2))
     annotation (Placement(transformation(extent={{-40,20},{-20,40}})));
-  Statistics.FromUniform toDiscrete(redeclare function distribution =
-        Distributions.Discrete.quantile (x={1,2,3,4,5}))
+  Statistics.FromUniform toDiscrete(
+    redeclare function distribution = Distributions.Discrete.quantile (x={1,2,3,4,5}))
     annotation (Placement(transformation(extent={{-40,-10},{-20,10}})));
-  Statistics.ToUniform fromNormal(redeclare function distribution =
-        Modelica.Math.Distributions.Normal.cumulative)
+  Statistics.ToUniform fromNormal(
+    redeclare function distribution = Modelica.Math.Distributions.Normal.cumulative)
     annotation (Placement(transformation(extent={{0,50},{20,70}})));
-  Statistics.ToUniform fromWeibull(redeclare function distribution =
-        Modelica.Math.Distributions.Weibull.cumulative (k=2))
+  Statistics.ToUniform fromWeibull(
+    redeclare function distribution = Modelica.Math.Distributions.Weibull.cumulative(k=2))
     annotation (Placement(transformation(extent={{0,20},{20,40}})));
 equation
   connect(toNormal.u, genericNoise.y) annotation (Line(points={{-42,60},{-52,60},
@@ -36,15 +36,23 @@ equation
     annotation (Line(points={{-19,60},{-10.5,60},{-2,60}}, color={0,0,127}));
   connect(toWeibull.y, fromWeibull.u)
     annotation (Line(points={{-19,30},{-2,30},{-2,30}}, color={0,0,127}));
-  annotation (experiment, Documentation(info="<html>
 
+  annotation (
+    experiment,
+    Documentation(
+      info="<html>
 <p>
-This examples demonstrates how the two blocks <a href=\"Statistics.FromUniform\">FromUniform</a> and <a href=\"Statistics.ToUniform\">ToUniform</a> can be used to convert uniformly distributed numbers to different distributions and vice versa. See image below for an example:
+This examples demonstrates how the two blocks
+<a href=\"Statistics.FromUniform\">FromUniform</a> and
+<a href=\"Statistics.ToUniform\">ToUniform</a> can be used
+to convert uniformly distributed numbers to different
+distributions and vice versa. See image below for an example:
 </p>
-<p>
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/DistributionConversion.png\">
-</p>
-</html>", revisions="<html>
+<blockquote>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/DistributionConversion.png\" alt=\"Diagram DistributionConversion.png\">
+</blockquote>
+</html>",
+      revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <td valign=\"top\">

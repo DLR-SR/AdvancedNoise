@@ -45,7 +45,7 @@ This function computes the probability density function according to a <b>Bates<
 </p>
 
 <blockquote>
-<img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.density.png\">
+<img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.density.png\" alt=\"Diagram density.png\">
 </blockquote>
 
 <p>

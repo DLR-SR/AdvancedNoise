@@ -3,17 +3,15 @@ model TimeBasedInterpolation "Shows using the interpolators with derivatives"
   extends Modelica.Icons.Example;
   inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=
         false) annotation (Placement(transformation(extent={{60,60},{80,80}})));
-  Sources.TimeBasedNoise
-                     constantNoise(
+  Sources.TimeBasedNoise constantNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     redeclare package interpolation = AdvancedNoise.Interpolators.Constant,
     redeclare function distribution =
-        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
-             annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
-  Sources.TimeBasedNoise
-                     linearNoise(
+      Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+    annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
+  Sources.TimeBasedNoise linearNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
@@ -21,28 +19,29 @@ model TimeBasedInterpolation "Shows using the interpolators with derivatives"
     redeclare function distribution =
         Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,20},{-40,40}})));
-  Sources.TimeBasedNoise
-                     smoothNoise(
+  Sources.TimeBasedNoise smoothNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     redeclare package interpolation =
-        AdvancedNoise.Interpolators.SmoothIdealLowPass,
+      AdvancedNoise.Interpolators.SmoothIdealLowPass,
     redeclare function distribution =
-        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+      Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-30},{-40,-10}})));
   Sources.TimeBasedNoise filteredNoise(
     useAutomaticLocalSeed=false,
     samplePeriod=0.1,
     sampleFactor=10,
     redeclare package interpolation =
-        AdvancedNoise.Interpolators.FirstOrder,
+      AdvancedNoise.Interpolators.FirstOrder,
     redeclare function distribution =
-        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+      Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-80},{-40,-60}})));
   Modelica.Blocks.Continuous.Der derFiltered
     annotation (Placement(transformation(extent={{0,-92},{20,-72}})));
-  Modelica.Blocks.Continuous.FirstOrder filteredFiltered(T=0.00001, y_start=0.2,
+  Modelica.Blocks.Continuous.FirstOrder filteredFiltered(
+    T=0.00001,
+    y_start=0.2,
     initType=Modelica.Blocks.Types.Init.InitialState)
     annotation (Placement(transformation(extent={{-20,-68},{0,-48}})));
   Modelica.Blocks.Continuous.Der derFilteredFiltered
@@ -68,11 +67,13 @@ model TimeBasedInterpolation "Shows using the interpolators with derivatives"
     samplePeriod=0.1,
     sampleFactor=10,
     redeclare package interpolation =
-        AdvancedNoise.Interpolators.TabulatedStepResponse,
+      AdvancedNoise.Interpolators.TabulatedStepResponse,
     redeclare function distribution =
-        Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
+      Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-130},{-40,-110}})));
-  Modelica.Blocks.Continuous.FirstOrder stepFiltered(T=0.00001, y_start=0.2,
+  Modelica.Blocks.Continuous.FirstOrder stepFiltered(
+    T=0.00001,
+    y_start=0.2,
     initType=Modelica.Blocks.Types.Init.InitialState)
     annotation (Placement(transformation(extent={{-20,-118},{0,-98}})));
   Modelica.Blocks.Continuous.Der derStepFiltered
@@ -116,13 +117,31 @@ equation
   connect(derStep.u, stepNoise.y) annotation (Line(
       points={{-2,-130},{-28,-130},{-28,-120},{-39,-120}},
       color={0,0,127}));
-  annotation (experiment(StopTime=2),
+
+  annotation (
+    experiment(StopTime=2),
     Documentation(info="<html>
-<p>This example demonstrates the different interpolation methods that can be selected for a Noise block.All the blocks use samplePeriod = 0.1 s and generated uniform noise in the band y_min=-1 .. y_max=3. Furhtermore, all blocks use the same fixedLocalSeed, so all blocks generate exactly the same random numbers at the sample instants 0 s, 0.1 s, 0.2 s, ... However, these values are differently interpolated as shown in the next diagram: </p>
-<blockquote>
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\"/>
-</blockquote>
-<p>As can be seen, constant (constantNoise.y) and linear (linearNoise.y) interpolation respects the defined band -1 .. 3. Instead, smooth interpolation with the sinc function (smoothNoise.y) may violate the band slightly in order to be able to smoothly interpolate the random values at the sample instants. In practical applications, this is not an issue because the exact band of the noise is usually not exactly known. </p>
+<p>
+This example demonstrates the different interpolation methods that
+can be selected for a Noise block. All the blocks use
+samplePeriod&nbsp;=&nbsp;0.1&nbsp;s and generated uniform noise in
+the band y_min=-1&nbsp;..&nbsp;y_max=3. Furhtermore, all blocks use
+the same fixedLocalSeed, so all blocks generate exactly the same random
+numbers at the sample instants 0&nbsp;s, 0.1&nbsp;s, 0.2&nbsp;s, ...
+However, these values are differently interpolated as shown in the next diagram:
+</p>
+
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\" alt=\"Diagram InterpolationInterpolators.png\">
+
+<p>
+As can be seen, constant (constantNoise.y) and linear (linearNoise.y)
+interpolation respects the defined band -1&nbsp;..&nbsp;3.
+Instead, smooth interpolation with the sinc function (smoothNoise.y)
+may violate the band slightly in order to be able to smoothly interpolate
+the random values at the sample instants. In practical applications,
+this is not an issue because the exact band of the noise is usually
+not exactly known.
+</p>
 </html>", revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
@@ -137,7 +156,8 @@ equation
     </td>
   </tr>
 </table>
-</html>"),Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
+</html>"),
+    Diagram(coordinateSystem(preserveAspectRatio=false, extent={{-100,
             -140},{100,100}}), graphics), Icon(coordinateSystem(extent={{-100,
             -140},{100,100}})));
 end TimeBasedInterpolation;

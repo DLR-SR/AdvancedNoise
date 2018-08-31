@@ -10,8 +10,8 @@ model FaultTrigger "Demonstrates using the fault trigger model"
   Modelica.Blocks.MathInteger.TriggeredAdd countFaults(use_reset=false, use_set=false) annotation (Placement(transformation(extent={{20,60},{40,80}})));
   Modelica.Blocks.Sources.IntegerExpression one(y=1)
     annotation (Placement(transformation(extent={{-20,60},{0,80}})));
-  Modelica.Blocks.Sources.RealExpression reconstructedFailureRate(y=if
-        countFaults.y < 1 then 0 else countFaults.y/time)
+  Modelica.Blocks.Sources.RealExpression reconstructedFailureRate(
+    y=if countFaults.y < 1 then 0 else countFaults.y/time)
     "The failure rate reconstructed from the simulation"
     annotation (Placement(transformation(extent={{-20,-20},{80,0}})));
 equation
@@ -21,15 +21,23 @@ equation
           {12,30},{24,30},{24,58}}, color={255,0,255}));
   connect(one.y, countFaults.u)
     annotation (Line(points={{1,70},{8,70},{16,70}}, color={255,127,0}));
-  annotation (experiment(StopTime=10), Documentation(info="<html>
 
-The example uses the <a href=\"Statistics.FaultTrigger\">FaultTrigger</a> model to simulate failures of a component with a given failure rate.
+  annotation (
+    experiment(StopTime=10),
+    Documentation(
+      info="<html>
+<p>
+The example uses the <a href=\"Statistics.FaultTrigger\">FaultTrigger</a>
+model to simulate failures of a component with a given failure rate.
 The resulting failure rate compares well to the theoretical value.
 See image below:
+<p>
 
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/FaultTrigger.png\">
-
-</html>", revisions="<html>
+<blockquote>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/FaultTrigger.png\" alt=\"Diagram FaultTrigger.png\">
+</blockquote>
+</html>",
+      revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <td valign=\"top\">

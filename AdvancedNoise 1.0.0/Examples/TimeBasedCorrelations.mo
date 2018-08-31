@@ -26,7 +26,10 @@ equation
       color={0,0,127}));
   connect(autoCorrelationTest.u, noise2.y) annotation (Line(points={{-22,10},{-40,
           10},{-40,30},{-59,30}}, color={0,0,127}));
-  annotation (experiment(StopTime=100, Interval=1e-2),           Documentation(revisions="<html>
+  annotation (
+    experiment(StopTime=100, Interval=1e-2),
+    Documentation(
+      revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <td valign=\"top\">
@@ -40,9 +43,19 @@ equation
     </td>
   </tr>
 </table>
-</html>", info="<html>
-<p>This example demonstrates the autocorrelation and cross correlation of two time based noises using different seeds.</p>
-<p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TimeBasedCorrelations.png\"/></p>
-<p>p-values for both cross correlation and autocorrelation are high. This means, we can assume uncorrelated signals &ndash; between two different seeds as well as within a single noise signal.</p>
+</html>",
+      info="<html>
+<p>
+This example demonstrates the autocorrelation and cross correlation
+of two time based noises using different seeds.
+</p>
+<blockquote>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TimeBasedCorrelations.png\" alt=\"Diagram TimeBasedCorrelations.png\">
+</blockquote>
+<p>
+p-values for both cross correlation and autocorrelation are high.
+This means, we can assume uncorrelated signals &ndash; between two
+different seeds as well as within a single noise signal.
+</p>
 </html>"));
 end TimeBasedCorrelations;

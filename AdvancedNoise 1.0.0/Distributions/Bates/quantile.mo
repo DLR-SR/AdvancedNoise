@@ -87,7 +87,7 @@ Plot of the function:
 </p>
 
 <blockquote>
-<img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.quantile.png\">
+<img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.quantile.png\" alt=\"Diagram quantile.png\">
 </blockquote>
 
 <p>

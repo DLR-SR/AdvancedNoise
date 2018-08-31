@@ -342,7 +342,7 @@ value has a length of 64 bits).
 As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBasedNoise\">Blocks.Examples.NoiseExamples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!
 </p>
 <blockquote>
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalBasedNoise.png\"/>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalBasedNoise.png\" alt=\"Diagram SignalBasedNoise.png\">
 </blockquote>
 
 <h4>Advanced tab: General settings</h4>
@@ -392,7 +392,7 @@ As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBa
 
 <p>The different interpolation methods are demonstrated with example <a href=\"modelica://AdvancedNoise.Examples.Interpolation\">Examples.Interpolation</a>. The example uses the block <a href=\"TimeBasedNoise\">TimeBasedNoise</a>, but the results also hold for SignalBasedNoise. A simulation result is shown in the next diagram:</p>
 <blockquote>
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\"/>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\" alt=\"Diagram InterpolationInterpolators.png\">
 </blockquote>
 
 <p>As can be seen, constant (constantNoise.y) and linear (linearNoise.y) interpolation respect the defined band -1 .. 3. Instead, smooth interpolation with the sinc function (smoothNoise.y) may violate the band slightly in order to be able to smoothly interpolate the random values at the sample instants. In practical applications, this is not an issue because the exact band of the noise is usually not exactly known.</p>

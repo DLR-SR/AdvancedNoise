@@ -67,13 +67,42 @@ initial equation
   </tr>
 </table>
 </html>", info="<html>
-<p>In literature, the excitation of railway vehicles by the rail is usualy given in the frequency domain. Below an example of such an excitation as found in literature is given.</p>
-<p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/RailExcitationSpatial.PNG\"/></p>
-<p>In this example, the average excitation is used to analyze a train on a track in the frequency domain. </p>
-<p>The settings from irragulatities as highlighted below can be used to select the wanted method to generate the track irregulatities.</p>
-<p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrackSettings.png\"/></p>
-<p>Using the minimum phase filter a comparison is made between a <span style=\"font-family: MS Shell Dlg 2;\">well-trusted solution with the convolution implementation of this model. The plot shows spectral density of the model&apos;s acceleration output (red curve) compared to the trusted frequency-domain solution (blue curve). Both curves agree very well.</span></p>
-<p><img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrack.PNG\"/></p>
-<p>For more information please see the publication <span style=\"font-family: MS Shell Dlg 2;\">Kl&ouml;ckner, A., Knoblach, A.  &#38; Heckmann, A. (2015). How to Shape Noise Spectra for Continuous System Simulation. In Proceedings of the 11th International Modelica Conference (pp. 837&ndash;846). Versailles, France. <a href=\"http://doi.org/10.3384/ecp15118411\">doi:10.3384/ecp15118411</a></span></p>
+<p>
+In literature, the excitation of railway vehicles by the rail
+is usualy given in the frequency domain. Below an example of
+such an excitation as found in literature is given.
+</p>
+<blockquote>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/RailExcitationSpatial.PNG\" alt=\"Diagram RailExcitationSpatial.png\">
+</blockquote>
+<p>
+In this example, the average excitation is used to analyze
+a train on a track in the frequency domain.
+</p>
+<p>
+The settings from irragulatities as highlighted below can be used
+to select the wanted method to generate the track irregulatities.
+</p>
+<blockquote>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrackSettings.png\" alt=\"Diagram TrainOnTrackSettings.png\">
+</blockquote>
+<p>
+Using the minimum phase filter a comparison is made between a 
+well-trusted solution with the convolution implementation of this model.
+The plot shows spectral density of the model&#39;s acceleration output
+(red curve) compared to the trusted frequency-domain solution (blue curve).
+Both curves agree very well.
+</p>
+<blockquote>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrack.PNG\" alt=\"Diagram TrainOnTrack.png\">
+</blockquote>
+<p>
+For more information please see the publication
+Kl&ouml;ckner, A., Knoblach, A. &amp; Heckmann, A. (2015).
+How to Shape Noise Spectra for Continuous System Simulation.
+In Proceedings of the 11th International Modelica Conference
+(pp. 837&ndash;846). Versailles, France.
+<a href=\"http://doi.org/10.3384/ecp15118411\">doi:10.3384/ecp15118411</a>
+</p>
 </html>"));
 end TrainOnTrack;

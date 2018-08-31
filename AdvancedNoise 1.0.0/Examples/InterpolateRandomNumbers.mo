@@ -31,8 +31,12 @@ equation
   rLinear = AdvancedNoise.Interpolators.Linear.interpolate(            buffer=r, offset=offset);
   rSmooth = AdvancedNoise.Interpolators.SmoothIdealLowPass.interpolate(buffer=r, offset=offset);
 
-  annotation (experiment(StopTime=20, Interval=2e-2),
-                                      Documentation(info="<html>
+  annotation (
+    experiment(
+      StopTime=20,
+      Interval=2e-2),
+    Documentation(
+      info="<html>
 <p>
 This example demonstrates how to use the interpolators
 of package <a href=\"AdvancedNoise.Interpolators\">Interpolators</a> in a Modelica model.
@@ -41,10 +45,11 @@ These are then interpolated piece-wise constantly, linearly and using the smooth
 Simulations results are shown in the figure below:
 </p>
 
-<p><blockquote>
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolateRandomNumbers.png\">
-</blockquote></p>
-</html>", revisions="<html>
+<blockquote>
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolateRandomNumbers.png\" alt=\"Diagram InterpolateRandomNumbers.png\">
+</blockquote>
+</html>",
+      revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <td valign=\"top\">

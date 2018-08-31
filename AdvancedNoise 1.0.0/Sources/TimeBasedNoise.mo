@@ -289,7 +289,7 @@ As a simple demonstration, see example <a href=\"modelica://AdvancedNoise.Exampl
 In the next diagram, a simulation result is shown for samplePeriod=0.02 s, y_min=-1, y_max=3:
 </p>
 <blockquote>
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TimeBasedNoise.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TimeBasedNoise.png\" alt=\"Diagram TimeBasedNoise.png\">
 </blockquote>
 
 <h4>Advanced tab: General settings</h4>
@@ -389,7 +389,7 @@ A simulation result is shown in the next diagram:
 </p>
 
 <blockquote>
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\" alt=\"Diagram InterpolationInterpolators.png\">
 </blockquote>
 
 <p>

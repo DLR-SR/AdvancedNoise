@@ -59,7 +59,7 @@ blocks over the sine output:
 </p>
 
 <blockquote>
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalInterpolation.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalInterpolation.png\" alt=\"Diagram SignalInterpolation.png\">
 </blockquote>
 </html>", revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
