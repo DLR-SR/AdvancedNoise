@@ -64,7 +64,7 @@ Plot of the function:
 </p>
 
 <blockquote>
-<img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.cumulative.png\" alt=\"Diagram cumulative.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Distributions/Bates.cumulative.png\" alt=\"Diagram cumulative.png\">
 </blockquote>
 
 <p>
