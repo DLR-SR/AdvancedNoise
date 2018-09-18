@@ -73,7 +73,7 @@ is usualy given in the frequency domain. Below an example of
 such an excitation as found in literature is given.
 </p>
 <blockquote>
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/RailIrregularities/RailExcitationSpatial.png\" alt=\"Diagram RailExcitationSpatial.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/RailExcitationSpatial.PNG\" alt=\"Diagram RailExcitationSpatial.png\">
 </blockquote>
 <p>
 In this example, the average excitation is used to analyze
@@ -84,7 +84,7 @@ The settings from irragulatities as highlighted below can be used
 to select the wanted method to generate the track irregulatities.
 </p>
 <blockquote>
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/RailIrregularities/TrainOnTrackSettings.png\" alt=\"Diagram TrainOnTrackSettings.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrackSettings.png\" alt=\"Diagram TrainOnTrackSettings.png\">
 </blockquote>
 <p>
 Using the minimum phase filter a comparison is made between a 
@@ -94,7 +94,7 @@ The plot shows spectral density of the model&#39;s acceleration output
 Both curves agree very well.
 </p>
 <blockquote>
-<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/RailIrregularities/TrainOnTrack.png\" alt=\"Diagram TrainOnTrack.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Examples/TrainOnTrack.PNG\" alt=\"Diagram TrainOnTrack.png\">
 </blockquote>
 <p>
 For more information please see the publication
