@@ -26,7 +26,7 @@ All competing libraries for the award were:
 <blockquote>
 <table border=\"1\">
 <tr><td>
-<img width=\"600\" src=\"modelica://AdvancedNoise/Resources/Images/General/ModelicaAward.png\">
+<img width=\"600\" src=\"modelica://AdvancedNoise/Resources/Images/General/ModelicaAward.png\" alt=\"Library award certificate\">
 </td></tr>
 </table>
 </blockquote>
