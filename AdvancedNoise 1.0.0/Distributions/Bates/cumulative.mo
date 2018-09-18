@@ -79,8 +79,8 @@ cumulative(0,-3,3,12) // = 0.5
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica.Math.Distributions.Bates.density\">Bates.density</a>,
-<a href=\"modelica://Modelica.Math.Distributions.Bates.quantile\">Bates.quantile</a>.
+<a href=\"modelica://AdvancedNoise.Distributions.Bates.density\">Bates.density</a>,
+<a href=\"modelica://AdvancedNoise.Distributions.Bates.quantile\">Bates.quantile</a>.
 </p>
 </html>"));
 end cumulative;

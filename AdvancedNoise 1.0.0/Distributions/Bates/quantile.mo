@@ -102,8 +102,8 @@ quantile(0.5,-3,3,12) // = -7.450831063238184E-010
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica.Math.Distributions.Bates.density\">Bates.density</a>,
-<a href=\"modelica://Modelica.Math.Distributions.Bates.cumulative\">Bates.cumulative</a>.
+<a href=\"modelica://AdvancedNoise.Distributions.Bates.density\">Bates.density</a>,
+<a href=\"modelica://AdvancedNoise.Distributions.Bates.cumulative\">Bates.cumulative</a>.
 </p>
 </html>"));
 end quantile;

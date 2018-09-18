@@ -60,8 +60,8 @@ density(0, -3, 3, 12) // = 4.7271067821068185
 
 <h4>See also</h4>
 <p>
-<a href=\"modelica://Modelica.Math.Distributions.Bates.cumulative\">Bates.cumulative</a>,
-<a href=\"modelica://Modelica.Math.Distributions.Bates.quantile\">Bates.quantile</a>.
+<a href=\"modelica://AdvancedNoise.Distributions.Bates.cumulative\">Bates.cumulative</a>,
+<a href=\"modelica://AdvancedNoise.Distributions.Bates.quantile\">Bates.quantile</a>.
 </p>
 </html>"));
 end density;
