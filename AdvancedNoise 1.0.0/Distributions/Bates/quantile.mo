@@ -97,7 +97,7 @@ For more details, see
 
 <h4>Example</h4>
 <blockquote><pre>
-  quantile(0.5,-3,3,12) // = -7.450831063238184E-010
+quantile(0.5,-3,3,12) // = -7.450831063238184E-010
 </pre></blockquote>
 
 <h4>See also</h4>

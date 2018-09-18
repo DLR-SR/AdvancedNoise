@@ -55,7 +55,7 @@ For more details, see
 
 <h4>Example</h4>
 <blockquote><pre>
-  density(0, -3, 3, 12) // = 4.7271067821068185
+density(0, -3, 3, 12) // = 4.7271067821068185
 </pre></blockquote>
 
 <h4>See also</h4>

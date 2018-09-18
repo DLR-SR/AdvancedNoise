@@ -55,9 +55,9 @@ according to a <b>Bates</b> distribution (= mean of n uniform distributions).
 The returned value y is in the range:
 </p>
 
-<blockquote><p>
+<blockquote>
 0 &le; y &le; 1
-</p></blockquote>
+</blockquote>
 
 <p>
 Plot of the function:
@@ -74,7 +74,7 @@ For more details, see
 
 <h4>Example</h4>
 <blockquote><pre>
-  cumulative(0,-3,3,12) // = 0.5
+cumulative(0,-3,3,12) // = 0.5
 </pre></blockquote>
 
 <h4>See also</h4>
