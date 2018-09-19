@@ -30,15 +30,15 @@ distributions). Examples:
 </p>
 
 <blockquote>
-<img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.density.png\" alt=\"Diagram density.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Distributions/Bates/density.png\" alt=\"Diagram density.png\">
 </blockquote>
 
 <blockquote>
-<img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.cumulative.png\" alt=\"Diagram cumulative.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Distributions/Bates/cumulative.png\" alt=\"Diagram cumulative.png\">
 </blockquote>
 
 <blockquote>
-<img src=\"modelica://Modelica/Resources/Images/Math/Distributions/Bates.quantile.png\" alt=\"Diagram quantile.png\">
+<img src=\"modelica://AdvancedNoise/Resources/Images/Distributions/Bates/quantile.png\" alt=\"Diagram quantile.png\">
 </blockquote>
 
 <p>
