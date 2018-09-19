@@ -23,10 +23,11 @@ All competing libraries for the award were:
  <li><a href=\"https://github.com/christiankral/WindPowerPlants\">WindPowerPlants</a></li>
 </ul>
 
+
 <blockquote>
 <table border=\"1\">
 <tr><td>
-<img width=\"600\" src=\"modelica://AdvancedNoise/Resources/Images/General/ModelicaAward.png\" alt=\"Library award certificate\">
+<img width=\"600\" src=\"modelica://AdvancedNoise/Resources/Images/UsersGuide/ModelicaAward.png\" alt=\"Library award certificate\">
 </td></tr>
 </table>
 </blockquote>
