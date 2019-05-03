@@ -33,7 +33,7 @@ class ModelicaLicense2 "Modelica License 2"
     web: <a href=\"https://www.DLR.de/SR\">https://www.DLR.de/SR</a></p>
     <p style=\"margin-left: 40px;\"><strong>Copyright notices of the
     files:</strong><br>
-    Copyright &copy; 2015-2018 DLR German Aerospace Center</p>
+    Copyright &copy; 2015-2019 DLR German Aerospace Center</p>
     <p><a href=\"#The_Modelica_License_2-outline\">The Modelica
     License&nbsp;2</a><br>
     <a href=\"#Frequently_Asked_Questions-outline\">Frequently Asked
