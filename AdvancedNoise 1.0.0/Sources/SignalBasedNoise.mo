@@ -256,7 +256,7 @@ value has a length of 64 bits).
     Integer ints[2] "Real signal casted to integers";
   algorithm
     ints  := convertRealToIntegers(signal);
-    state := generator.initialState(localSeed+ints[1], globalSeed+ints[2]);
+    state := generator.initialState(localSeed+ints[1], globalSeed+ints[2], 1);
   end initialState;
 
   function zeroDer "Declare an expression to have zero derivative"
