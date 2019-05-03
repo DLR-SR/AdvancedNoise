@@ -2,16 +2,19 @@ within ;
 package AdvancedNoise "A library with additional noise modules compatible to the Modelica standard library"
   extends Modelica.Icons.Package;
 
-  annotation(preferredView="info",
-             version =                        "1.0.0",
-             versionDate =                    "2016-05-03",
-             versionBuild =                   1,
-             uses(Modelica(version="3.2.2")),
-  Icon(graphics={            Line(
+  annotation(
+    preferredView="info",
+    version =      "1.0.1",
+    versionDate =  "2019-05-31",
+    versionBuild = 1,
+    dateModified = "2019-05-31 12:00:00Z",
+    uses(Modelica(version="3.2.2")),
+    Icon(graphics={Line(
       points={{-84,0},{-54,0},{-54,40},{-24,40},{-24,-70},{6,-70},{6,80},{36,80},
             {36,-20},{66,-20},{66,60}})}),
-  Documentation(revisions="",
-   info="<html>
+    Documentation(
+      revisions="",
+      info="<html>
 <p>
 This library contains components that can be used to efficiently
 generate noise which can be used in simulations.
