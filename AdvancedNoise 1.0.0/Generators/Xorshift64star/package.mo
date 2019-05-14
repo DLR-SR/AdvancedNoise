@@ -62,7 +62,7 @@ and the returned state is the one from the last iteration.
           <td valign=\"bottom\">
             Initial version implemented by
             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+            <a href=\"http://www.dlr.de/sr/en\">DLR Institute of System Dynamics and Control</a>
           </td>
         </tr>
       </table>
@@ -127,7 +127,7 @@ same random number&nbsp;r is returned.
           <td valign=\"bottom\">
             Initial version implemented by
             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+            <a href=\"http://www.dlr.de/sr/en\">DLR Institute of System Dynamics and Control</a>
           </td>
         </tr>
       </table>
@@ -162,7 +162,7 @@ For an overview, comparison with other random number generators, and links to ar
           <td valign=\"bottom\">
             Initial version implemented by
             A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-            <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+            <a href=\"http://www.dlr.de/sr/en\">DLR Institute of System Dynamics and Control</a>
           </td>
         </tr>
       </table>

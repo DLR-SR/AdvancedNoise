@@ -19,7 +19,7 @@ revisions="<html>
     </td>
     <td valign=\"top\">
       <b>Copyright</b> <b>&copy;</b>
-      <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+      <a href=\"http://www.dlr.de/sr/en\">DLR Institute of System Dynamics and Control</a>
     </td>
   </tr>
 </table>

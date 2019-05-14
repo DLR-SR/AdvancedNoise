@@ -32,7 +32,7 @@ test for an auto-correlation of the same signal and a fixed time offset delta_t.
     </td>
     <td valign=\"bottom\">
       Developed 2014 at the
-      <a href=\"http://www.dlr.de/rmc/sr/en\">DLR Institute of System Dynamics and Control</a>
+      <a href=\"http://www.dlr.de/sr/en\">DLR Institute of System Dynamics and Control</a>
     </td>
   </tr>
 </table>
