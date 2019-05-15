@@ -112,7 +112,8 @@ Documentation(revisions="<html>
 </table>
 </html>", info="<html>
 <p>
-This example compares the implementation of a filter and the convolution method.
+This example compares the implementation of a filter and the convolution method
+on the background of a railway application.
 </p>
 </html>"));
 end FilterAndConvolution;

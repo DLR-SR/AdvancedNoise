@@ -53,5 +53,10 @@ equation
     </td>
   </tr>
 </table>
+</html>", info="<html>
+<p>
+A model enabling application of various models
+of a railway track irregularities.
+</p>
 </html>"));
 end Irregularity;

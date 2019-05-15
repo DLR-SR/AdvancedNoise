@@ -20,7 +20,8 @@ model SpaceAndTimeDomain "Compares implementation in space and time domain"
 </table>
 </html>", info="<html>
 <p>
-This example compares the implementation in space and time domain.
+This example compares the implementation in space and time domain
+on the background of a railway application.
 </p>
 </html>"));
 end SpaceAndTimeDomain;

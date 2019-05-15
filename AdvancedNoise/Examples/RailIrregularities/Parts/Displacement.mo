@@ -27,5 +27,10 @@ equation
         Text(
           extent={{-150,120},{150,80}},
           textString="%name",
-          lineColor={0,0,255})}));
+          lineColor={0,0,255})}),
+    Documentation(info="<html>
+<p>
+This model implements a simple one-dimensional displacement of a track.
+</p>
+</html>"));
 end Displacement;

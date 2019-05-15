@@ -21,7 +21,9 @@ model MinimumAndZeroPhase
 </table>
 </html>", info="<html>
 <p>
-This examnple compares the implementation of convolution with minim and zero phase filters.
+This example compares the implementation of convolution with
+minimum and zero phase filters
+on the background of a railway application.
 </p>
 </html>"));
 end MinimumAndZeroPhase;
