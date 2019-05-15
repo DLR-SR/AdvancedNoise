@@ -14,5 +14,14 @@ package Distributions "Additional distributions"
               {28,-27.0617},{31.5,-38.2849},{35,-47.0467},{38.5,-53.5468},{42,-58.1385},
               {45.5,-61.2318},{49,-63.2213},{52.5,-64.4442},{56,-65.1631},{59.5,
               -65.5674},{63,-65.7852},{66.5,-65.8975},{70,-65.953}},
-          smooth=Smooth.Bezier)}));
+          smooth=Smooth.Bezier)}), Documentation(info="<html>
+<p>
+In this package, the distribution functions for noise signals generators are located.
+</p>
+
+<h4>See also</h4>
+<p>
+<a href=\"modelica://Modelica.Math.Distributions\">Modelica.Math.Distributions</a>
+</p>
+</html>"));
 end Distributions;

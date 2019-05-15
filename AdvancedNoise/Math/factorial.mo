@@ -1,7 +1,7 @@
 within AdvancedNoise.Math;
 function factorial "The product of all integer <= the input"
-  input Integer n;
-  output Integer f;
+  input Integer n(min=0) "Positive integer";
+  output Integer f "Factorial of n";
 algorithm
   f := 1;
   for i in 1:n loop
@@ -19,5 +19,24 @@ algorithm
     </td>
   </tr>
 </table>
+</html>", info="<html>
+<h4>Syntax</h4>
+<blockquote><pre>
+f = Math.<strong>factorial</strong>(n);
+</pre></blockquote>
+
+<h4>Description</h4>
+<p>
+This function returns product of all positive integers less
+then or equal to input <code>n</code>.
+</p>
+
+<h4>Example</h4>
+<blockquote><pre>
+<strong>factorial</strong>(5);
+// = 120
+<strong>factorial</strong>(0);
+// = 1
+</pre></blockquote>
 </html>"));
 end factorial;

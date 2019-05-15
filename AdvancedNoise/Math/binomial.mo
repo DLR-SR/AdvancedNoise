@@ -17,5 +17,15 @@ algorithm
     </td>
   </tr>
 </table>
+</html>", info="<html>
+<h4>Syntax</h4>
+<blockquote><pre>
+b = Math.<strong>binomial</strong>(n, k);
+</pre></blockquote>
+
+<h4>Description</h4>
+<p>
+...tbd...
+</p>
 </html>"));
 end binomial;
