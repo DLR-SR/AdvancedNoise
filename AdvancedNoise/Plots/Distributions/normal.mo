@@ -1,5 +1,5 @@
 within AdvancedNoise.Plots.Distributions;
-function normal "Plot functions Math.Distributions.Normal"
+function normal "Plot functions Modelica.Math.Distributions.Normal"
    import Modelica.Math.Distributions.Normal;
    input Integer nPoints(min=2) = 1000 "Number of evaluation points";
 protected
@@ -27,5 +27,12 @@ algorithm
    plotArrays(u2, [y1,y2,y3], title="Inverse cumulative distribution function of Normal distribution",
               legend={"quantile(u,0,1)", "quantile(u,1,1)", "quantile(u,0,0.5)"}, id=20);
 
-   annotation(__Dymola_interactive = true);
+   annotation(__Dymola_interactive = true, Documentation(info="<html>
+<p>
+Plot results of calling functions from
+<a href=\"modelica://Modelica.Math.Distributions.Normal\">Modelica.Math.Distributions.Normal</a>,
+i.e. <code>Normal.density()</code>, <code>Normal.cumulative()</code>
+and <code>Normal.quantile()</code>, each for the same arguments.
+</p>
+</html>"));
 end normal;

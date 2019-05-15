@@ -1,5 +1,5 @@
 within AdvancedNoise.Plots.Distributions;
-function bates "Plot functions Math.Distributions.Bates"
+function bates "Plot functions AdvancedNoise.Distributions.Bates"
    import AdvancedNoise.Distributions.Bates;
    input Integer nPoints(min=2) = 500 "Number of evaluation points";
 protected
@@ -27,5 +27,12 @@ algorithm
    plotArrays(u2, [y1,y2,y3], title="Inverse cumulative distribution function of Bates distribution with y_min=-3, y_max=3",
               legend={"n = 12", "n = 6", "n = 2"}, id=30);
 
-   annotation(__Dymola_interactive = true);
+   annotation(__Dymola_interactive = true, Documentation(info="<html>
+<p>
+Plot results of calling functions from
+<a href=\"modelica://AdvancedNoise.Distributions.Bates\">AdvancedNoise.Distributions.Bates</a>,
+i.e. <code>Bates.density()</code>, <code>Bates.cumulative()</code>
+and <code>Bates.quantile()</code>, each for the same arguments.
+</p>
+</html>"));
 end bates;

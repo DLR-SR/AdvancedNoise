@@ -14,6 +14,10 @@ package Statistics "Contains statistical blocks"
               {45.5,-59.2318},{49,-61.2213},{52.5,-62.4442},{56,-63.1631},{59.5,
               -63.5674},{63,-63.7852},{66.5,-63.8975},{70,-63.953}},
           smooth=Smooth.Bezier)}), Documentation(info="<html>
-<p>This package contains statistical blocks, e.g. calculation of the <a href=\"Correlation\">Correlation</a> coefficient or a <a href=\"SignificanceTest\">SignificanceTest</a>.</p>
+<p>
+This package contains statistical blocks, e.g. calculation of the
+<a href=\"Correlation\">Correlation</a> coefficient or 
+a&nbsp;<a href=\"SignificanceTest\">SignificanceTest</a>.
+</p>
 </html>"));
 end Statistics;

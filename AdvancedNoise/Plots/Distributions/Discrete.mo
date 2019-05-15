@@ -1,5 +1,5 @@
 within AdvancedNoise.Plots.Distributions;
-function Discrete "Plot functions Math.Distributions.Discrete"
+function Discrete "Plot functions AdvancedNoise.Distributions.Discrete"
    import AdvancedNoise.Distributions.Discrete;
    input Integer nPoints(min=2) = 1000 "Number of evaluation points";
 protected
@@ -21,5 +21,12 @@ algorithm
    plotArrays(u2, [y1,y2,y3], title="Inverse cumulative distribution function of Discrete distribution",
               legend={"quantile(u,-3,3)", "quantile(u,-1,3)", "quantile(u,1,3)"}, id=3);
 
-   annotation(__Dymola_interactive = true);
+   annotation(__Dymola_interactive = true, Documentation(info="<html>
+<p>
+Plot results of calling functions from
+<a href=\"modelica://AdvancedNoise.Distributions.Discrete\">AdvancedNoise.Distributions.Discrete</a>,
+i.e. <code>Discrete.cumulative()</code>
+and <code>Discrete.quantile()</code>, each for the same arguments.
+</p>
+</html>"));
 end Discrete;

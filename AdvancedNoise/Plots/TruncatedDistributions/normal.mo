@@ -1,5 +1,5 @@
 within AdvancedNoise.Plots.TruncatedDistributions;
-function normal "Plot functions Math.Distributions.TruncatedNormal"
+function normal "Plot functions Modelica.Math.Distributions.Normal"
    import Modelica.Math.Distributions.Normal;
    import T_Normal = Modelica.Math.Distributions.TruncatedNormal;
    input Integer nPoints(min=2) = 1000 "Number of evaluation points";
@@ -24,5 +24,13 @@ algorithm
    plotArrays(u2, [y1,y2], title="Inverse cumulative distribution function of Normal distribution",
               legend={"mu=0, sigma=1", "truncated to u_min=-1.5, u_max=1.5"}, id=20);
 
-   annotation(__Dymola_interactive = true);
+   annotation(__Dymola_interactive = true, Documentation(info="<html>
+<p>
+Compare results of functions from
+<a href=\"modelica://Modelica.Math.Distributions.Normal\">Modelica.Math.Distributions.Normal</a>
+with those from 
+<a href=\"modelica://Modelica.Math.Distributions.TruncatedNormal\">Modelica.Math.Distributions.TruncatedNormal</a>,
+each for the same arguments.
+</p>
+</html>"));
 end normal;

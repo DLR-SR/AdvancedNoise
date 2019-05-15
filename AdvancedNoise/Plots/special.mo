@@ -1,5 +1,5 @@
 within AdvancedNoise.Plots;
-function special "Plot functions Math.Special"
+function special "Plot functions Modelica.Math.Special"
    import Modelica.Utilities.Streams.print;
    import Modelica.Math.Special;
    input Integer nPoints = 1000;
@@ -31,5 +31,10 @@ algorithm
    rn :=Special.sinc(r);
    plotArray(r,rn,legend="y=sinc(u)",id=5);
 
-   annotation(__Dymola_interactive = true);
+   annotation(__Dymola_interactive = true, Documentation(info="<html>
+<p>
+Plot results of calling functions from
+<a href=\"modelica://Modelica.Math.Special\">Modelica.Math.Special</a>.
+</p>
+</html>"));
 end special;

@@ -1,5 +1,5 @@
 within AdvancedNoise.Plots.Distributions;
-function uniform "Plot functions Math.Distributions.Uniform"
+function uniform "Plot functions Modelica.Math.Distributions.Uniform"
    import Modelica.Math.Distributions.Uniform;
    input Integer nPoints(min=2) = 1000 "Number of evaluation points";
 protected
@@ -27,5 +27,12 @@ algorithm
    plotArrays(u2, [y1,y2,y3], title="Inverse cumulative distribution function of uniform distribution",
               legend={"quantile(u,-3,3)", "quantile(u,-1,3)", "quantile(u,1,3)"}, id=3);
 
-   annotation(__Dymola_interactive = true);
+   annotation(__Dymola_interactive = true, Documentation(info="<html>
+<p>
+Plot results of calling functions from
+<a href=\"modelica://Modelica.Math.Distributions.Uniform\">Modelica.Math.Distributions.Uniform</a>,
+i.e. <code>Uniform.density()</code>, <code>Uniform.cumulative()</code>
+and <code>Uniform.quantile()</code>, each for the same arguments.
+</p>
+</html>"));
 end uniform;
