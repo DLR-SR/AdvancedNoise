@@ -3,7 +3,8 @@ package ReleaseNotes "Release notes"
 extends Modelica.Icons.ReleaseNotes;
 
 
-annotation (Documentation(revisions="<html>
+  annotation (
+    Documentation(revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <td valign=\"top\">
@@ -16,5 +17,11 @@ annotation (Documentation(revisions="<html>
     </td>
   </tr>
 </table>
+</html>", info="<html>
+<p>
+This section summarizes changes that have been performed on the AdvancedNoise library.
+The development and maintenance of the library is performed
+on the public <a href=\"https://github.com/DLR-SR/AdvancedNoise.git\">GitHub repository</a>.
+</p>
 </html>"));
 end ReleaseNotes;

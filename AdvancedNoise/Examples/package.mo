@@ -3,7 +3,9 @@ package Examples "Examples for the Noise library"
 extends Modelica.Icons.ExamplesPackage;
 
 
-annotation (Documentation(revisions="<html>
+  annotation (
+    Documentation(
+      revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <td valign=\"top\">
@@ -17,5 +19,11 @@ annotation (Documentation(revisions="<html>
     </td>
   </tr>
 </table>
+</html>",
+      info="<html>
+<p>
+This package contains example models to demonstrate the
+usage of library classes.
+</p>
 </html>"));
 end Examples;
