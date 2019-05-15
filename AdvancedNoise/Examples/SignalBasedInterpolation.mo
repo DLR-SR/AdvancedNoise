@@ -3,13 +3,10 @@ model SignalBasedInterpolation
   "Demonstrates signal-based noise with different interpolations"
   import Modelica;
   extends Modelica.Icons.Example;
-  parameter Real startTime = 0.5;
-  parameter Real y_off = -1.0;
   constant Real pi = Modelica.Constants.pi "Constant pi";
 
   inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false, enableNoise=true)
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
-
   AdvancedNoise.Sources.SignalBasedNoise constantNoise(
     redeclare package interpolation = Interpolators.Constant,
     useAutomaticLocalSeed=false,
@@ -18,8 +15,6 @@ model SignalBasedInterpolation
     redeclare function distribution =
         Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=1))
     annotation (Placement(transformation(extent={{-60,70},{-40,90}})));
-  Modelica.Blocks.Sources.RealExpression signal(y=sin(pi*time))
-    annotation (Placement(transformation(extent={{-100,70},{-80,90}})));
   AdvancedNoise.Sources.SignalBasedNoise linearNoise(
     useTime=false,
     redeclare package interpolation = Interpolators.Linear,
@@ -36,6 +31,8 @@ model SignalBasedInterpolation
     redeclare function distribution =
         Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=1))
     annotation (Placement(transformation(extent={{-60,-30},{-40,-10}})));
+  Modelica.Blocks.Sources.RealExpression signal(y=sin(pi*time))
+    annotation (Placement(transformation(extent={{-100,70},{-80,90}})));
 equation
   connect(signal.y, constantNoise.u) annotation (Line(
       points={{-79,80},{-62,80}},
@@ -46,7 +43,9 @@ equation
   connect(smoothNoise.u, signal.y) annotation (Line(
       points={{-62,-20},{-72,-20},{-72,80},{-79,80}},
       color={0,0,127}));
- annotation (experiment(StopTime=2),    Documentation(info="<html>
+  annotation (
+    experiment(StopTime=2),
+    Documentation(info="<html>
 <p>
 This example demonstrates the
 <a href=\"modelica://Modelica.Blocks.Noise.SignalBasedNoise\">Blocks.Noise.SignalBasedNoise</a>
