@@ -25,7 +25,25 @@ b = Math.<strong>binomial</strong>(n, k);
 
 <h4>Description</h4>
 <p>
-...tbd...
+This function returns positive integer being a coefficient in the binominal theorem,
+i.e. it is the coefficient of the <var>x</var><sup><var>k</var></sup> term
+of the binomial power (1 + <var>x</var>)<sup><var>n</var></sup>,
+see also <a href=\"https://en.wikipedia.org/wiki/Binomial_coefficient\">Wikipedia</a>.
+The coefficient is given by
 </p>
+<blockquote><pre>
+        n!
+b = -----------
+    k! (n - k)!
+</pre></blockquote>
+
+
+<h4>Example</h4>
+<blockquote><pre>
+<strong>binomial</strong>(3, 0);
+// = 1.0
+<strong>binomial</strong>(4, 2);
+// = 6.0
+</pre></blockquote>
 </html>"));
 end binomial;
