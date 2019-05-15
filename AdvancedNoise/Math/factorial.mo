@@ -3,6 +3,8 @@ function factorial "The product of all integer <= the input"
   input Integer n(min=0) "Positive integer";
   output Integer f "Factorial of n";
 algorithm
+  assert(
+    n>=0, "Integer input n must be >= 0.");
   f := 1;
   for i in 1:n loop
     f := f*i;

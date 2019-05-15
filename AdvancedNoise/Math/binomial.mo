@@ -1,9 +1,15 @@
 within AdvancedNoise.Math;
 function binomial "Binomial coefficient"
-  input Integer n;
-  input Integer k;
+  input Integer n(min=0) "Binominal power (positive integer)";
+  input Integer k(max=n, min=0) "Positive integer for coefficient";
   output Real b;
 algorithm
+  assert(
+    n>=0, "Integer input n must be >= 0.");
+  assert(
+    k>=0, "Integer input k must be >= 0.");
+  assert(
+    k<=n, "Integer input k must be <= n.");
   b :=(factorial(n)/factorial(n - k)/factorial(k));
   annotation (Documentation(revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
