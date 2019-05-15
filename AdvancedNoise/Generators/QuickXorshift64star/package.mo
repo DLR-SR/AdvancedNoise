@@ -10,7 +10,7 @@ package QuickXorshift64star "Random number generator xorshift64* with quicker in
      random number generator generates statistically random numbers from a bad seed
      within one iteration.
     */
-    parameter Integer p = 1 "The number of iterations to use";
+    input Integer p = 5 "The number of iterations to use";
 protected
     Real r "Random number not used outside the function";
 
@@ -30,7 +30,7 @@ protected
   annotation (Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-state = Xorshift64star.<b>initialState</b>(localSeed, globalSeed);
+state = Xorshift64star.<b>initialState</b>(localSeed, globalSeed, p);
 </pre></blockquote>
 
 <h4>Description</h4>
@@ -47,8 +47,9 @@ If both input
 arguments are zero, a fixed non-zero value is used internally for localSeed.
 According to <a href=\"http://vigna.di.unimi.it/ftp/papers/xorshift.pdf\">xorshift.pdf</a>,
 the xorshift64* random number generator generates statistically random numbers from a
-bad seed within one iteration. To be on the safe side, actually 10 random numbers are generated
-and the returned state is the one from the last iteration.
+bad seed within one iteration. To be on the safe side, actually 5 random numbers are generated
+and the returned state is the one from the last iteration. 
+The number of iterations can be modified by input&nbsp;<code>p</code>.
 </p>
 
 <h4>Example</h4>
