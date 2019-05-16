@@ -1,5 +1,5 @@
 within AdvancedNoise.UsersGuide;
-class Contact "Contact information"
+class Contact "Contact"
   extends Modelica.Icons.Contact;
 
   annotation (Documentation(info="<html>
@@ -9,11 +9,12 @@ class Contact "Contact information"
     <a href=\"http://www.robotic.dlr.de/dirk.zimmer\">D. Zimmer</a>,
     <a href=\"http://www.robotic.dlr.de/martin.otter\">M. Otter</a>,
     J. Tobolar</dd>
-<dd>Deutsches Zentrum f&uuml;r Luft und Raumfahrt e.V. (DLR)</dd>
-<dd>Robotic and Mechatronic Centre</dd>
-<dd><a href=\"https://www.dlr.de/sr/en\">Institute of Sytem Dynamics and Control</<></dd>
+<dd>German Aerospace Center (DLR)</dd>
+<dd>Robotics and Mechatronics Center (RMC)</dd>
+<dd><a href=\"https://www.dlr.de/sr/en\">Institute of Sytem Dynamics and Control</a> (SR)</dd>
 <dd>M&uuml;nchner Strasse 20, D-82234 Wessling</dd>
 <dd>Germany</dd>
+<dd>e-mail: <a href=\"mailto:sr-modelica@dlr.de\">sr-modelica@dlr.de</a></dd>
 </dl>
 
 <p>

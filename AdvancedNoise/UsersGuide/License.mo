@@ -16,7 +16,6 @@ are licensed by <strong><u>DLR</u></strong> under the
 <dd><a href=\"https://www.dlr.de/sr/en\">Institute of Sytem Dynamics and Control</a> (SR)</dd>
 <dd>M&uuml;nchner Strasse 20, D-82234 Wessling</dd>
 <dd>Germany</dd>
-<dd>email: <a href=\"mailto:sr-modelica@dlr.de\">sr-modelica@dlr.de</a></dd>
 </dl>
 
 
