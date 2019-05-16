@@ -2,20 +2,19 @@ within AdvancedNoise.UsersGuide.ReleaseNotes;
 class Version_1_0_0 "Version 1.0.0 (2016-05-03)"
   extends Modelica.Icons.ReleaseNotes;
 
-    annotation (Documentation(info="<html>
+  annotation (
+    Documentation(
+      info="<html>
 <p>First official version of the AdvancedNoise Library working with the newly released MSL 3.2.2.</p>
 </html>",
-revisions="<html>
+      revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <td valign=\"top\">
       <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
     </td>
-    <td valign=\"bottom\">
-      <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
-       Initial version implemented by
-       A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
-      <a href=\"http://www.dlr.de/sr/en\">DLR Institute of System Dynamics and Control</a>
+    <td valign=\"top\">
+      <b>Copyright</b> &copy; DLR Institute of System Dynamics and Control
     </td>
   </tr>
 </table>
