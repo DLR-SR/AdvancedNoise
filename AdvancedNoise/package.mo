@@ -76,14 +76,16 @@ are always welcome.
 </ol>
 
 
-<h4>Copyright &copy; DLR Institute of System Dynamics and Control</h4>
-<p>&nbsp;</p>
+<h4>Copyright</h4>
+<p>
+<b>&copy;</b>
+<a href=\"http://www.dlr.de/sr/en\">DLR Institute of System Dynamics and Control</a>
+</p>
+<div>
 <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
+</div>
 <p>
 Initial version implemented by A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.
-</p>
-<p>
-<a href=\"http://www.dlr.de/sr/en\">DLR Institute of System Dynamics and Control</a>
 </p>
 </html>"));
 end AdvancedNoise;
