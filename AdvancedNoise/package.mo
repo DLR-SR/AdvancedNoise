@@ -34,21 +34,14 @@ Examples of the these components are:
 <li>
   <a href=\"AdvancedNoise.Sources.ColoredSignalBasedNoise\">Colored noise</a>.</li>
 </ul>
-
-<p>
-The AdvancedNoise library is developed at the DLR Institute of System Dynamics and Control.
-</p>
-<p>
-The autors of the library are: A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.
-</p>
 <p>
 
 
 <h4>Acknowledgments</h4>
 <p>
-Many thanks goes to T. Beutlich for his help in cleaing up the library,
-M. Sjoelund for his help with OpenModelica tests and D. Winkler for his
-advice with the Noise C code.
+Many thanks goes to T.&nbsp;Beutlich for his help in cleaing up the library,
+M.&nbsp;Sjoelund for his help with OpenModelica tests and D.&nbsp;Winkler for his
+advice with the Noise C&nbsp;code.
 </p>
 
 
@@ -78,14 +71,37 @@ are always welcome.
 
 <h4>Copyright</h4>
 <p>
-<b>&copy;</b>
-<a href=\"http://www.dlr.de/sr/en\">DLR Institute of System Dynamics and Control</a>
+<strong>Licensed by DLR under the 3-Clause BSD License</strong><br>
 </p>
-<div>
-<img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
-</div>
+
+<table border=\"0\" cellpadding=\"2\" cellspacing=\"2\">
+<tr>
+  <td colspan=\"1\" rowspan=\"2\" style=\"vertical-align: middle;\">
+    <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
+  </td>
+</tr>
+<tr>
+  <td style=\"vertical-align: top;\">Copyright &copy; DLR Institute of System Dynamics and Control</td>
+</tr>
+</table>
 <p>
-Initial version implemented by A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.
+Initial version implemented by A.&nbsp;Kl&ouml;ckner,
+F.&nbsp;v.d.&nbsp;Linden, D.&nbsp;Zimmer, M.&nbsp;Otter.
+</p>
+
+<p>
+<em>
+This Modelica package is <u>free</u> software and
+the use is completely at <u>your own risk</u>;
+it can be redistributed and/or modified under the terms of the
+3-Clause BSD license, see the license conditions (including the
+disclaimer of warranty) in the
+<a href=\"modelica://AdvancedNoise.UsersGuide.License\">User&apos;s Guide</a>.
+</em>
+</p>
+
+<p>
+<strong>Modelica&reg;</strong> is a registered trademark of the Modelica Association.
 </p>
 </html>"));
 end AdvancedNoise;
