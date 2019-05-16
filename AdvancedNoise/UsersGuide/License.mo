@@ -1,5 +1,5 @@
 within AdvancedNoise.UsersGuide;
-class ModelicaLicense2 "Modelica License 2"
+class License "Modelica License 2"
   extends Modelica.Icons.Information;
 
   annotation (Documentation(info="<html>
@@ -481,4 +481,4 @@ class ModelicaLicense2 "Modelica License 2"
     printing and shipping costs may be recovered.</p>
 </body>
 </html>"));
-end ModelicaLicense2;
+end License;
