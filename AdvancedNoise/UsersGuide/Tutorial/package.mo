@@ -9,6 +9,5 @@ package Tutorial "Tutorial"
 <ul>
 <li><a href=\"AdvancedNoise.UsersGuide.Tutorial.GettingStarted\">Getting Started</a> describes how to get started with the modelling of noise.</li>
 </ul>
-
 </html>", revisions=""));
 end Tutorial;

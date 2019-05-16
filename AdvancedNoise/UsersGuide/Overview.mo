@@ -4,7 +4,6 @@ class Overview "Overview"
   annotation (
     DocumentationClass=true,
     Documentation(info="<html>
-<h4>Information</h4>
 <p>The blocks in this library can be used to generate accurate noise without further modifications. The functionality of the library consists of:</p>
 <ul>
 <li>Different <a href=\"Generators\">random number generators</a> can be chosen and custom generators implemented.</li>
