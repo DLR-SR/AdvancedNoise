@@ -329,7 +329,7 @@ value has a length of 64 bits).
 </tr>
 <tr>
 <td>useTime</td>
-<td>If useTime=true, then the input signal is replaced by the current simulation time. This is the default. If useTime=false, then an input connector is used, which defines the ordinate of the random signal. For each value of the input signal, a different random number is generated.</td>
+<td>If useTime&nbsp;=&nbsp;true, then the input signal is replaced by the current simulation time. This is the default. If useTime&nbsp;=&nbsp;false, then an input connector is used, which defines the ordinate of the random signal. For each value of the input signal, a different random number is generated.</td>
 </tr>
 <tr>
 <td>samplePeriod</td>
@@ -359,14 +359,14 @@ As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBa
 </tr>
 <tr>
 <td>y_off</td>
-<td>If enableNoise = false, the output of the block instance has the value y_off. Default is y_off = 0.0. Furthermore, if time&LT;startTime, the output of the block is also y_off.</td>
+<td>If enableNoise&nbsp;=&nbsp;false, the output of the block instance has the value y_off. Default is y_off&nbsp;=&nbsp;0.0. Furthermore, if time&lt;startTime, the output of the block is also y_off.</td>
 </tr>
 </table>
 </blockquote>
 
 <h4>Advanced tab: Random number properties</h4>
 
-<p>In the group &QUOT;Random number properties&QUOT;, the properties of the random number generation are defined. By default, uniform random numbers with linear interpolation are used, and the random numbers are drawn with the pseudo random number generator algorithm &QUOT;xorshift128+&QUOT;. This random number generator has a period of 2^128, has an internal state of 4 Integer elements, and has excellent statistical properties. If the default behavior is not desired, the following parameters can be set:</p>
+<p>In the group &quot;Random number properties&quot;, the properties of the random number generation are defined. By default, uniform random numbers with linear interpolation are used, and the random numbers are drawn with the pseudo random number generator algorithm &quot;xorshift128+&quot;. This random number generator has a period of 2^128, has an internal state of 4 Integer elements, and has excellent statistical properties. If the default behavior is not desired, the following parameters can be set:</p>
 
 <blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
@@ -410,11 +410,11 @@ As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBa
 </tr>
 <tr>
 <td>Linear</td>
-<td>2/3 (actual variance = 2/3*&LT;variance of constantly interpolated noise&GT;)</td>
+<td>2/3 (actual variance = 2/3*&lt;variance of constantly interpolated noise&gt;)</td>
 </tr>
 <tr>
 <td>SmoothIdealLowPass</td>
-<td>0.979776342307764 (actual variance = 0.97..*&LT;variance of constantly interpolated noise&GT;)</td>
+<td>0.979776342307764 (actual variance = 0.97..*&lt;variance of constantly interpolated noise&gt;)</td>
 </tr>
 </table>
 </blockquote>
@@ -437,16 +437,16 @@ The random number generators must be properly initialized, especially that diffe
 </tr>
 <tr>
 <td>useGlobalSeed</td>
-<td>= true, if the seed (= Integer number) defined in the &QUOT;inner GlobalSeed globalSeed&QUOT; component is used for the initialization of the random number generators. Therefore, whenever the globalSeed defines a different number, the noise at every instance is changing.
+<td>= true, if the seed (= Integer number) defined in the &quot;inner GlobalSeed globalSeed&quot; component is used for the initialization of the random number generators. Therefore, whenever the globalSeed defines a different number, the noise at every instance is changing.
 <br>= false, if the seed defined by globalSeed is ignored. For example, if aerodynamic turbulence is modelled with a noise block and this turbulence model shall be used for all simulation runs of a Monte Carlo simulation, then useGlobalSeed has to be set to false.</td>
 </tr>
 <tr>
 <td>useAutomaticLocalSeed</td>
-<td>An Integer number, called local seed, is needed to generate different random signals with every block instance. Instances using the same local seed produce exactly the same random number values (so the same noise, if the other settings of the instances are the same). If useAutomaticLocalSeed = true, the local seed is determined automatically as hash value of the instance name of the noise block. If useAutomaticLocalSeed = false, the local seed is defined explicitly by parameter fixedLocalSeed. This might be useful, if you use the noise block to model the roughness of a road and the road should be the same for every vehicle.</td>
+<td>An Integer number, called local seed, is needed to generate different random signals with every block instance. Instances using the same local seed produce exactly the same random number values (so the same noise, if the other settings of the instances are the same). If useAutomaticLocalSeed =&nbsp;true, the local seed is determined automatically as hash value of the instance name of the noise block. If useAutomaticLocalSeed =&nbsp;false, the local seed is defined explicitly by parameter fixedLocalSeed. This might be useful, if you use the noise block to model the roughness of a road and the road should be the same for every vehicle.</td>
 </tr>
 <tr>
 <td>fixedLocalSeed</td>
-<td>If useAutomaticLocalSeed = false, the local seed to be used. fixedLocalSeed can be any Integer number (including zero or a negative number). The initialization algorithm produces a meaningful initial state of the random number generator, so subsequently drawing random numbers produces statistically meaningful numbers.</td>
+<td>If useAutomaticLocalSeed =&nbsp;false, the local seed to be used. fixedLocalSeed can be any Integer number (including zero or a negative number). The initialization algorithm produces a meaningful initial state of the random number generator, so subsequently drawing random numbers produces statistically meaningful numbers.</td>
 </tr>
 <tr>
 <td>signalOffset</td>
