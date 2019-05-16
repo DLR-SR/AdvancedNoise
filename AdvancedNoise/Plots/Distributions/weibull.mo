@@ -1,5 +1,6 @@
 within AdvancedNoise.Plots.Distributions;
 function weibull "Plot functions Modelica.Math.Distributions.Weibull"
+  extends Modelica.Icons.Function;
    import Modelica.Math.Distributions.Weibull;
    input Integer nPoints(min=2) = 1000 "Number of evaluation points";
 protected

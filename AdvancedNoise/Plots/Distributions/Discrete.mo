@@ -1,5 +1,6 @@
 within AdvancedNoise.Plots.Distributions;
 function Discrete "Plot functions AdvancedNoise.Distributions.Discrete"
+  extends Modelica.Icons.Function;
    import AdvancedNoise.Distributions.Discrete;
    input Integer nPoints(min=2) = 1000 "Number of evaluation points";
 protected

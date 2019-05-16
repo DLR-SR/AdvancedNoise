@@ -1,5 +1,6 @@
 within AdvancedNoise.Plots.Distributions;
 function bates "Plot functions AdvancedNoise.Distributions.Bates"
+  extends Modelica.Icons.Function;
    import AdvancedNoise.Distributions.Bates;
    input Integer nPoints(min=2) = 500 "Number of evaluation points";
 protected

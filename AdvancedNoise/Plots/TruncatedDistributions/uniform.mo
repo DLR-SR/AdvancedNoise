@@ -1,5 +1,6 @@
 within AdvancedNoise.Plots.TruncatedDistributions;
 function uniform "Plot functions Modelica.Math.Distributions.Uniform"
+  extends Modelica.Icons.Function;
    import Modelica.Math.Distributions.Uniform;
    input Integer nPoints(min=2) = 1000 "Number of evaluation points";
 protected

@@ -1,5 +1,6 @@
 within AdvancedNoise.Plots.TruncatedDistributions;
 function normal "Plot functions Modelica.Math.Distributions.Normal"
+  extends Modelica.Icons.Function;
    import Modelica.Math.Distributions.Normal;
    import T_Normal = Modelica.Math.Distributions.TruncatedNormal;
    input Integer nPoints(min=2) = 1000 "Number of evaluation points";

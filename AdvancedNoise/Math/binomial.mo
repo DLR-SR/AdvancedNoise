@@ -1,5 +1,6 @@
 within AdvancedNoise.Math;
 function binomial "Binomial coefficient"
+  extends Modelica.Icons.Function;
   input Integer n(min=0) "Binominal power (positive integer)";
   input Integer k(max=n, min=0) "Positive integer for coefficient";
   output Real b;

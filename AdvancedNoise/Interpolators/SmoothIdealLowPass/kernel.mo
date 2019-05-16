@@ -1,5 +1,6 @@
 within AdvancedNoise.Interpolators.SmoothIdealLowPass;
 function kernel "Kernel for ideal low pass (sinc-function)"
+  extends Modelica.Icons.Function;
   import Modelica.Math.Special.sinc;
   import Modelica.Constants.pi;
   input Real t "The (scaled) time for sampling period=1";

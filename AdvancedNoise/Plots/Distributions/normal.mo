@@ -1,5 +1,6 @@
 within AdvancedNoise.Plots.Distributions;
 function normal "Plot functions Modelica.Math.Distributions.Normal"
+  extends Modelica.Icons.Function;
    import Modelica.Math.Distributions.Normal;
    input Integer nPoints(min=2) = 1000 "Number of evaluation points";
 protected

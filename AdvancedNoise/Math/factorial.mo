@@ -1,5 +1,6 @@
 within AdvancedNoise.Math;
 function factorial "The product of all integer <= the input"
+  extends Modelica.Icons.Function;
   input Integer n(min=0) "Positive integer";
   output Integer f "Factorial of n";
 algorithm

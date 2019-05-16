@@ -1,5 +1,6 @@
 within AdvancedNoise.Interpolators.TabulatedStepResponse;
 function trapz "Integral of a time signal using trapezium rule"
+  extends Modelica.Icons.Function;
   input Real[:] T "Time vector";
   input Real[size(T,1)] X "Values vector";
   output Real Y "Integral";
