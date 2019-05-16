@@ -9,13 +9,13 @@ public
 
 // The start time of the simulation
 protected
-  parameter Real t_0(fixed=false) "Start time of the simulation";
+  parameter Modelica.SIunits.Time t_0(fixed=false) "Start time of the simulation";
 initial equation
   t_0 = time;
 
 // The local integration time
 public
-  Real t = max(0, time - delta_t - t_0)
+  Modelica.SIunits.Time t = max(0, time - delta_t - t_0)
     "The local integration time (starts only after an offset of delta_t";
 
 // The actual signals to correlate
