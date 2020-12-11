@@ -3,7 +3,7 @@ model InterpolateRandomNumbers
   "Interpolate random numbers with the various interpolators"
   extends Modelica.Icons.Example;
 
-  parameter Modelica.SIunits.Time samplePeriod = 1.0
+  parameter Modelica.Units.SI.Time samplePeriod = 1.0
     "Sample period for the generation of random numbers";
   parameter Integer seed = 614657 "Seed to initialize random number generator";
 

@@ -11,7 +11,7 @@ model FilterAndConvolution
   parameter Boolean doFilter =  true "Calculate state space phase filter?";
   parameter Boolean doTime =    false "Calculate time-based noise?";
 
-  parameter Modelica.SIunits.Duration samplePeriod = 0.2 "Common sample period";
+  parameter Modelica.Units.SI.Duration samplePeriod = 0.2 "Common sample period";
 
   inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=false)
                annotation (Placement(transformation(extent={{60,60},{80,80}})));

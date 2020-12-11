@@ -105,7 +105,7 @@ model Derivatives "Tests derivatives of the random numbers"
     redeclare function distribution =
         Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{0,-100},{20,-80}})));
-  Modelica.Blocks.Sources.Sine sine(freqHz=0.3)
+  Modelica.Blocks.Sources.Sine sine(f=0.3)
     annotation (Placement(transformation(extent={{-96,-20},{-76,0}})));
   Modelica.Blocks.Continuous.Der der1
     annotation (Placement(transformation(extent={{-32,16},{-24,24}})));

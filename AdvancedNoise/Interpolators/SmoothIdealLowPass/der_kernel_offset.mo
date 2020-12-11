@@ -2,7 +2,7 @@ within AdvancedNoise.Interpolators.SmoothIdealLowPass;
 function der_kernel_offset
   extends Modelica.Icons.Function;
   input Real t "The (scaled) time for sampling period=1";
-  input Modelica.SIunits.Frequency f=1/2 "The cut-off frequency of the filter";
+  input Modelica.Units.SI.Frequency f=1/2 "The cut-off frequency of the filter";
   output Real h "The impulse response of the convolution filter";
 protected
   function d = der(kernel, t);

@@ -46,7 +46,6 @@ initialState(..) function of a random number generator package.
 </html>"));
   end initialState;
 
-
   replaceable partial function random
   "Return a random number with a uniform distribution in the range 0.0 < result <= 1.0"
     extends Modelica.Icons.Function;
@@ -87,7 +86,6 @@ random(..) function of a random number generator package.
 </table>
 </html>"));
   end random;
-
 
 annotation (Documentation(info="<html>
 <p>

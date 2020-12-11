@@ -7,7 +7,7 @@ package FirstOrder "A linear first order filter (k / (Ts + 1))"
                                                              suggestedSamplePeriod=0.1);
 
   constant Real k=1 "Gain";
-  constant Modelica.SIunits.Period T=0.01 "Time Constant";
+  constant Modelica.Units.SI.Period T=0.01 "Time Constant";
 
 
   redeclare function extends kernel

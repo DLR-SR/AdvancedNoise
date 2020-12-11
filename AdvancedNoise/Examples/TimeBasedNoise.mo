@@ -2,7 +2,7 @@ within AdvancedNoise.Examples;
 model TimeBasedNoise "Demonstrates the a simple case of a timel based noise"
   extends Modelica.Icons.Example;
 
-  parameter Modelica.SIunits.Radius r = 1 "Radius of circle";
+  parameter Modelica.Units.SI.Radius r = 1 "Radius of circle";
   constant Real pi = Modelica.Constants.pi "Constant pi";
 
   inner Modelica.Blocks.Noise.GlobalSeed globalSeed

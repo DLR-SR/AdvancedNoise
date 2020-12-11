@@ -3,7 +3,7 @@ block AutoCorrelationTest
   "Tests the null hypothesis that a signal is uncorrelated with a given offset"
   extends Modelica.Blocks.Interfaces.SISO;
 
-  parameter Modelica.SIunits.Time delta_t(min=0) = 0.1
+  parameter Modelica.Units.SI.Time delta_t(min=0) = 0.1
     "Time delay for auto-correlation of signal";
 
   CorrelationTest correlationTest(correlation(delta_t=delta_t))

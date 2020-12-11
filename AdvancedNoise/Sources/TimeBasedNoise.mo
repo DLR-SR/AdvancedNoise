@@ -8,7 +8,7 @@ block TimeBasedNoise
   extends Modelica.Blocks.Interfaces.SO;
 
   // Main dialog menu
-  parameter Modelica.SIunits.Time samplePeriod(start=0.01)
+  parameter Modelica.Units.SI.Time samplePeriod(start=0.01)
     "Period for sampling the raw random numbers"
     annotation(Dialog(enable=enableNoise));
 
@@ -130,7 +130,7 @@ initial equation
   localSeed = if useAutomaticLocalSeed then impureRandomInteger(globalSeed.id_impure) else fixedLocalSeed;
 
 public
-  parameter Modelica.SIunits.Time startTime = 0.0
+  parameter Modelica.Units.SI.Time startTime = 0.0
     "Start time for sampling the raw random numbers"
     annotation(Dialog(tab="Advanced", group="Initialization",enable=enableNoise));
 
