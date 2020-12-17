@@ -5,9 +5,9 @@ block CorrelationTest
 
 // The start time of the simulation
 protected
-  parameter Modelica.SIunits.Time t_0(fixed=false) "Start time of the simulation";
+  parameter Modelica.Units.SI.Time t_0(fixed=false) "Start time of the simulation";
 public
-  parameter Modelica.SIunits.Time t_eps = 0.001
+  parameter Modelica.Units.SI.Time t_eps = 0.001
     "Start evaluating shortly after simulation start";
 initial equation
   t_0 = time;

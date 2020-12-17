@@ -8,7 +8,7 @@ package AdvancedNoise "A library with additional noise modules compatible to the
     versionDate =  "2019-05-31",
     versionBuild = 1,
     dateModified = "2019-05-31 12:00:00Z",
-    uses(Modelica(version="3.2.3")),
+    uses(Modelica(version="4.0.0")),
     Icon(graphics={Line(
       points={{-84,0},{-54,0},{-54,40},{-24,40},{-24,-70},{6,-70},{6,80},{36,80},
             {36,-20},{66,-20},{66,60}})}),

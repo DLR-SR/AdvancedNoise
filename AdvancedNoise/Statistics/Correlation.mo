@@ -4,18 +4,18 @@ block Correlation "Calculates the correlation of two signals"
 
 // Parameters
 public
-  parameter Modelica.SIunits.Time delta_t(min=0) = 0.0
+  parameter Modelica.Units.SI.Time delta_t(min=0) = 0.0
     "Time delay for auto-correlation of signal";
 
 // The start time of the simulation
 protected
-  parameter Modelica.SIunits.Time t_0(fixed=false) "Start time of the simulation";
+  parameter Modelica.Units.SI.Time t_0(fixed=false) "Start time of the simulation";
 initial equation
   t_0 = time;
 
 // The local integration time
 public
-  Modelica.SIunits.Time t = max(0, time - delta_t - t_0)
+  Modelica.Units.SI.Time t = max(0, time - delta_t - t_0)
     "The local integration time (starts only after an offset of delta_t";
 
 // The actual signals to correlate
