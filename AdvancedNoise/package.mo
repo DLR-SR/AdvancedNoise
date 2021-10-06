@@ -27,19 +27,19 @@ Examples of the these components are:
 </p>
 
 <ul>
-<li>
-  Sample-free <a href=\"AdvancedNoise.Sources.TimeBasedNoise\">TimeBasedNoise</a>
-  which allows for faster system simulations.
-</li>
-<li>
-  <a href=\"AdvancedNoise.Sources.SignalBasedNoise\">Signal-based noise</a>
-  which allows a noise that is based on a system input.
-  This signal-based noise can be for example as a source of road-irragularities.
-</li>
-<li>
-  <a href=\"AdvancedNoise.Sources.ColoredSignalBasedNoise\">Colored noise</a>.</li>
+  <li>
+    Sample-free <a href=\"AdvancedNoise.Sources.TimeBasedNoise\">TimeBasedNoise</a>
+    which allows for faster system simulations.
+  </li>
+  <li>
+    <a href=\"AdvancedNoise.Sources.SignalBasedNoise\">Signal-based noise</a>
+    which allows a noise that is based on a system input.
+    This signal-based noise can be for example as a source of road-irragularities.
+  </li>
+  <li>
+    <a href=\"AdvancedNoise.Sources.ColoredSignalBasedNoise\">Colored noise</a>.
+  </li>
 </ul>
-<p>
 
 <h4>Copyright</h4>
 <p>
