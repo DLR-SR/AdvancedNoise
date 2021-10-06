@@ -87,7 +87,7 @@ protected
     annotation(derivative(order=1) = der_interpolate, Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-y = SmoothIdealLowPass.<b>interpolate</b>(buffer,offset);
+y = SmoothIdealLowPass.<strong>interpolate</strong>(buffer,offset);
 </pre></blockquote>
 
 <h4>Description</h4>
@@ -139,7 +139,7 @@ for the samples 0&nbsp;ms, 1&nbsp;ms, 2&nbsp;ms, ...., 100&nbsp;ms, 101&nbsp;ms.
 
   annotation (Documentation(info="<html>
 <p>
-This Interpolation package provides <b>smooth</b> interpolation in a buffer
+This Interpolation package provides <strong>smooth</strong> interpolation in a buffer
 by approximating an ideal low pass filter (with an infinite steep drop of the
 frequency response at the cut-off frequency) using an interpolation with
 the <a href=\"modelica://Modelica.Math.Special.sinc\">sinc</a> function over

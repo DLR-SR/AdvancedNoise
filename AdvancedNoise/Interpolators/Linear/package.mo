@@ -31,7 +31,7 @@ package Linear "Linear interpolation"
       Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-y = Linear.<b>interpolate</b>(buffer,offset);
+y = Linear.<strong>interpolate</strong>(buffer,offset);
 </pre></blockquote>
 
 <h4>Description</h4>
@@ -80,7 +80,7 @@ length 102 for the samples 0&nbsp;ms, 1&nbsp;ms, 2&nbsp;ms, ...., 100&nbsp;ms, 1
   annotation(
     Documentation(info="<html>
 <p>
-This Interpolation package provides <b>linear</b> interpolation in a buffer.
+This Interpolation package provides <strong>linear</strong> interpolation in a buffer.
 </p>
 </html>", revisions="<html>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">

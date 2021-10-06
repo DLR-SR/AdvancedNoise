@@ -27,7 +27,7 @@ This example demonstrates a simple use of the signal based noise block:
 </p>
 
 <ul>
-<li> The input to block <b>signalBasedNoise</b> is the path parameter of a circle: The path parameter s
+<li> The input to block <strong>signalBasedNoise</strong> is the path parameter of a circle: The path parameter s
      starts at s=0 and continuously increases until it arrives at s=2*pi*r at the same point again
      (default: r=1).
      The simulation scenario is defined so that the path parameter increases with time until it reaches
@@ -53,7 +53,7 @@ noise repeats after every second (when the path parameter is reset to s=0):
       <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
     </td>
     <td valign=\"bottom\">
-      <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
+      <strong>Copyright</strong> <strong>&copy; DLR Institute of System Dynamics and Control</strong><br>
       Initial version implemented by
       A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
       <a href=\"http://www.dlr.de/sr/en\">DLR Institute of System Dynamics and Control</a>

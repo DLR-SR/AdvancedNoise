@@ -93,7 +93,7 @@ annotation (Documentation(info="<html>
 <p>
 This partial package defines the elements and function interfaces of a
 pseudo random number generator package. A random number generator package must
-inherit from this partial package and adapt the constant <b>nState</b>
+inherit from this partial package and adapt the constant <strong>nState</strong>
 to the correct length of the state vector.
 </p>
 </html>", revisions="<html>

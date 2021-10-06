@@ -35,12 +35,12 @@ algorithm
   annotation (Inline=true,Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-Bates.<b>density</b>(u, y_min=0, y_max=1, n=12);
+Bates.<strong>density</strong>(u, y_min=0, y_max=1, n=12);
 </pre></blockquote>
 
 <h4>Description</h4>
 <p>
-This function computes the probability density function according to a <b>Bates</b> distribution
+This function computes the probability density function according to a <strong>Bates</strong> distribution
 (= mean of n uniform distributions). Plot of the function:
 </p>
 

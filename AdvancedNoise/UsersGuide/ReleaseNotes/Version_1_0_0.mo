@@ -14,7 +14,7 @@ class Version_1_0_0 "Version 1.0.0 (2016-05-03)"
       <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
     </td>
     <td valign=\"top\">
-      <b>Copyright</b> &copy; DLR Institute of System Dynamics and Control
+      <strong>Copyright</strong> &copy; DLR Institute of System Dynamics and Control
     </td>
   </tr>
 </table>

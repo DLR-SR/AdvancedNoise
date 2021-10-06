@@ -28,7 +28,7 @@ algorithm
   annotation (Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-der_y = SmoothIdealLowPass.der_<b>interpolate</b>(buffer,offset,der_buffer,der_offset);
+der_y = SmoothIdealLowPass.der_<strong>interpolate</strong>(buffer,offset,der_buffer,der_offset);
 </pre></blockquote>
 
 <h4>Description</h4>

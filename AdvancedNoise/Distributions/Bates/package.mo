@@ -25,7 +25,7 @@ This package provides
 <li> quantile (= inverse cumulative distribution function).</li>
 </ul>
 <p>
-of the <b>Bates</b> distribution (= <b>mean</b> of n <b>uniform</b>
+of the <strong>Bates</strong> distribution (= <strong>mean</strong> of n <strong>uniform</strong>
 distributions). Examples:
 </p>
 

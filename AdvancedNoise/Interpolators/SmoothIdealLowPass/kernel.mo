@@ -10,7 +10,7 @@ algorithm
   h := 2*f*sinc(2*pi*f*t);
   annotation(Inline=true, Documentation(info="<html>
 <h4>Syntax</h4>
-<blockquote><code>h = SmoothIdealLowPass.<b>kernel</b>(offset); </code></blockquote>
+<blockquote><code>h = SmoothIdealLowPass.<strong>kernel</strong>(offset); </code></blockquote>
 <h4>Description</h4>
 <p>This function defines the kernel of the <a href=\"SmoothIdealLowPass\">SmoothIdealLowPass</a> interpolation. It uses the <a href=\"Math.Special.sinc\">sinc</a> function with a specified cut-off frequency.</p>
 </html>",

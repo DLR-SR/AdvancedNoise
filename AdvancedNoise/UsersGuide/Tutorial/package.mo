@@ -4,8 +4,8 @@ package Tutorial "Tutorial"
 
 
     annotation (Documentation(info="<html>
-<p><b>Information</b> </p>
-<p>The <b>AdvancedNoise</b> Toolbox is designed to implement a high quality noise source.</p>
+<p><strong>Information</strong> </p>
+<p>The <strong>AdvancedNoise</strong> Toolbox is designed to implement a high quality noise source.</p>
 <ul>
 <li><a href=\"AdvancedNoise.UsersGuide.Tutorial.GettingStarted\">Getting Started</a> describes how to get started with the modelling of noise.</li>
 </ul>

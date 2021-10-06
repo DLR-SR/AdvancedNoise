@@ -11,7 +11,7 @@ algorithm
 annotation (Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-der_h = SmoothIdealLowPass.<b>der_kernel_offset</b>(offset);
+der_h = SmoothIdealLowPass.<strong>der_kernel_offset</strong>(offset);
 </pre></blockquote>
 
 <h4>Description</h4>

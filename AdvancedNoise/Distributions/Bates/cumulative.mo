@@ -45,13 +45,13 @@ algorithm
   annotation (Inline=true,Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-Bates.<b>cumulative</b>(u, y_min=0, y_max=1, n=12);
+Bates.<strong>cumulative</strong>(u, y_min=0, y_max=1, n=12);
 </pre></blockquote>
 
 <h4>Description</h4>
 <p>
 This function computes the cumulative distribution function
-according to a <b>Bates</b> distribution (= mean of n uniform distributions).
+according to a <strong>Bates</strong> distribution (= mean of n uniform distributions).
 The returned value y is in the range:
 </p>
 

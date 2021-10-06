@@ -57,12 +57,12 @@ algorithm
   annotation (Inline=true,Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-Bates.<b>quantile</b>(u, y_min=0, y_max=1, n=12);
+Bates.<strong>quantile</strong>(u, y_min=0, y_max=1, n=12);
 </pre></blockquote>
 
 <h4>Description</h4>
 <p>
-This function computes the inverse cumulative distribution function (= quantile) according to a <b>Bates</b>
+This function computes the inverse cumulative distribution function (= quantile) according to a <strong>Bates</strong>
 distribution (= mean of n uniform distributions). Input argument u must be in the range:
 </p>
 

@@ -38,7 +38,7 @@ This can be seen in the random numbers generated, as well as in the mean estimat
       <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
     </td>
     <td valign=\"bottom\">
-      <b>Copyright</b> <b>&copy; DLR Institute of System Dynamics and Control</b><br>
+      <strong>Copyright</strong> <strong>&copy; DLR Institute of System Dynamics and Control</strong><br>
       Initial version implemented by
       A. Kl&ouml;ckner, F. v.d. Linden, D. Zimmer, M. Otter.<br>
       <a href=\"http://www.dlr.de/sr/en\">DLR Institute of System Dynamics and Control</a>

@@ -3,7 +3,7 @@ class GettingStarted "Getting started"
 extends Modelica.Icons.Information;
     annotation (Documentation(info="<html>
 <p>
-The <b>AdvancedNoise</b> Toolbox has 3 main sources of noise:
+The <strong>AdvancedNoise</strong> Toolbox has 3 main sources of noise:
 </p>
 <ol>
 <li>

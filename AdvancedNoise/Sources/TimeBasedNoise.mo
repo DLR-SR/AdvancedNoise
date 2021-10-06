@@ -257,7 +257,7 @@ For every block instance,
 the internally used pseudo random number generator has its own state, and therefore
 the random values computed in different instances of the TimeBasedNoise block are uncorrelated.
 The random values provided at the output of a TimeBasedNoise instance depend (a)
-on the <b>actual time</b> instant, (b) on the instance name, and (c) on the settings of
+on the <strong>actual time</strong> instant, (b) on the instance name, and (c) on the settings of
 the respective instance (as well as the seetings in globalSeed, see above and below).
 By default, two or more instances produce different, uncorrelated noise at the same time instant.
 </p>
@@ -294,7 +294,7 @@ In the next diagram, a simulation result is shown for samplePeriod=0.02 s, y_min
 
 <h4>Advanced tab: General settings</h4>
 <p>
-In the <b>Advanced</b> tab of the parameter menu, further options can be set.
+In the <strong>Advanced</strong> tab of the parameter menu, further options can be set.
 The general settings are shown in the next table:
 </p>
 
@@ -348,7 +348,7 @@ following parameters can be set:
 <tr><td> distribution </td>
     <td> Defines the random number distribution to map random numbers
          from the range 0.0 ... 1.0, to the desired range and distribution.
-         Basically, <b>distribution</b> is a replaceable function that
+         Basically, <strong>distribution</strong> is a replaceable function that
          provides the truncated quantile (= truncated
          inverse cumulative distribution function) of a random distribution.
          More details of truncated distributions can be found in the

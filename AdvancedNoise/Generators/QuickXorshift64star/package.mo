@@ -30,12 +30,12 @@ protected
   annotation (Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-state = Xorshift64star.<b>initialState</b>(localSeed, globalSeed, p);
+state = Xorshift64star.<strong>initialState</strong>(localSeed, globalSeed, p);
 </pre></blockquote>
 
 <h4>Description</h4>
 <p>
-Generates the initial state vector <b>state</b> for the Xorshift64star random number generator
+Generates the initial state vector <strong>state</strong> for the Xorshift64star random number generator
 (= xorshift64* algorithm), from
 two Integer numbers given as input (arguments localSeed, globalSeed). Any Integer numbers
 can be given (including zero or negative number). The function returns
@@ -54,10 +54,10 @@ The number of iterations can be modified by input&nbsp;<code>p</code>.
 
 <h4>Example</h4>
 <blockquote><pre>
-  <b>parameter</b> Integer localSeed;
-  <b>parameter</b> Integer globalSeed;
+  <strong>parameter</strong> Integer localSeed;
+  <strong>parameter</strong> Integer globalSeed;
   Integer state[Xorshift64star.nState];
-<b>initial equation</b>
+<strong>initial equation</strong>
   state = initialState(localSeed, globalSeed);
 </pre></blockquote>
 
@@ -100,30 +100,30 @@ The number of iterations can be modified by input&nbsp;<code>p</code>.
     annotation (Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-(r, stateOut) = Xorshift64star.<b>random</b>(stateIn);
+(r, stateOut) = Xorshift64star.<strong>random</strong>(stateIn);
 </pre></blockquote>
 
 <h4>Description</h4>
 <p>
 Returns a uniform random number r in the range 0&nbsp;&lt;&nbsp;r&nbsp;&le;&nbsp;1 with the xorshift64* algorithm.
-Input argument <b>stateIn</b> is the state vector of the previous call.
-Output argument <b>stateOut</b> is the updated state vector.
+Input argument <strong>stateIn</strong> is the state vector of the previous call.
+Output argument <strong>stateOut</strong> is the updated state vector.
 If the function is called with identical stateIn vectors, exactly the
 same random number r is returned.
 </p>
 
 <h4>Example</h4>
 <blockquote><pre>
-  <b>parameter</b> Integer localSeed;
-  <b>parameter</b> Integer globalSeed;
+  <strong>parameter</strong> Integer localSeed;
+  <strong>parameter</strong> Integer globalSeed;
   Real r;
   Integer state[Xorshift64star.nState];
-<b>initial equation</b>
+<strong>initial equation</strong>
   state = initialState(localSeed, globalSeed);
-<b>equation</b>
-  <b>when</b> sample(0,0.1) <b>then</b>
-    (r, state) = random(<b>pre</b>(state));
-  <b>end when</b>;
+<strong>equation</strong>
+  <strong>when</strong> sample(0,0.1) <strong>then</strong>
+    (r, state) = random(<strong>pre</strong>(state));
+  <strong>end when</strong>;
 </pre></blockquote>
 
 <h4>See also</h4>
@@ -159,7 +159,7 @@ same random number r is returned.
 
 
   annotation (Documentation(info="<html>
-<p>Random number generator <b>xorshift64*</b>. This generator has a period of 2^64 (the period defines the number of random numbers generated before the sequence begins to repeat itself). In contrast to the <a href=\"modelica://Modelica.Math.Random.Generators.Xorshift64star\">version</a> in Modelica, this version of the generator uses a single iteration to generate a new random number.</p>
+<p>Random number generator <strong>xorshift64*</strong>. This generator has a period of 2^64 (the period defines the number of random numbers generated before the sequence begins to repeat itself). In contrast to the <a href=\"modelica://Modelica.Math.Random.Generators.Xorshift64star\">version</a> in Modelica, this version of the generator uses a single iteration to generate a new random number.</p>
 <p>For an overview, comparison with other random number generators, and links to articles, see <a href=\"modelica://Modelica.Math.Random.Generators\">Math.Random.Generators</a>. </p>
 </html>", revisions="<html>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">

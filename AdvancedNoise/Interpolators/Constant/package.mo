@@ -17,7 +17,7 @@ package Constant "Constant interpolation"
       Documentation(info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-y = Constant.<b>interpolate</b>(buffer,offset);
+y = Constant.<strong>interpolate</strong>(buffer,offset);
 </pre></blockquote>
 
 <h4>Description</h4>
@@ -61,7 +61,7 @@ Otherwise the function returns y = buffer[integer(offset)+1].
 
   annotation (Documentation(info="<html>
 <p>
-This Interpolation package provides <b>constant</b> interpolation in a buffer.
+This Interpolation package provides <strong>constant</strong> interpolation in a buffer.
 </p>
 </html>", revisions="<html>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">

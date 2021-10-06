@@ -234,7 +234,7 @@ protected
 </html>", info="<html>
 <h4>Syntax</h4>
 <blockquote><pre>
-int = <b>convertRealToInteger</b>(real);
+int = <strong>convertRealToInteger</strong>(real);
 </pre></blockquote>
 <h4>Description</h4>
 <p>
@@ -327,7 +327,7 @@ The generated random numbers of this block are a function of the input signal.
 Blocks with different input signals produce uncorrelated noise.
 This can be used to define e.g. the roughness of a railway track.
 The random values provided at the output of a SignalBasedNoise instance depend
-(a)&nbsp;on the <b>actual input signal</b> in the current time instant,
+(a)&nbsp;on the <strong>actual input signal</strong> in the current time instant,
 (b)&nbsp;on the instance name, and (c)&nbsp;on the settings of the respective
 instance (as well as the seetings in globalSeed, see above and below).
 By default, two or more instances produce different, uncorrelated noise
@@ -379,7 +379,7 @@ As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBa
 
 <h4>Advanced tab: General settings</h4>
 <p>
-In the <b>Advanced</b> tab of the parameter menu, further options can be set.
+In the <strong>Advanced</strong> tab of the parameter menu, further options can be set.
 The general settings are shown in the next table:
 </p>
 
@@ -428,7 +428,7 @@ If the default behavior is not desired, the following parameters can be set:
     <td>distribution</td>
     <td>Defines the random number distribution to map random numbers from the
         range 0.0 ... 1.0, to the desired range and distribution.
-        Basically, <b>distribution</b> is a replaceable function that provides
+        Basically, <strong>distribution</strong> is a replaceable function that provides
         the truncated quantile (= truncated inverse cumulative distribution
         function) of a random distribution. More details of truncated
         distributions can be found in the documentation of package
