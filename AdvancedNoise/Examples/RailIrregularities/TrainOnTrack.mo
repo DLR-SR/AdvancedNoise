@@ -98,11 +98,7 @@ Both curves agree very well.
 </blockquote>
 <p>
 For more information please see the publication
-Kl&ouml;ckner, A., Knoblach, A. &amp; Heckmann, A. (2015).
-How to Shape Noise Spectra for Continuous System Simulation.
-In Proceedings of the 11th International Modelica Conference
-(pp. 837&ndash;846). Versailles, France.
-<a href=\"http://doi.org/10.3384/ecp15118411\">doi:10.3384/ecp15118411</a>
+[<a href=\"modelica://AdvancedNoise.UsersGuide.References\">Kloeckner2015</a>].
 </p>
 </html>"));
 end TrainOnTrack;

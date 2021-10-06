@@ -20,11 +20,8 @@ annotation (Documentation(revisions="<html>
 </html>", info="<html>
 <p>
 This package demonstrates actual frequency shaping of noise signals with the example
-of rail track irregularities. The method is described in the paper:
-</p>
-<p>
-Kl&ouml;ckner, A., Linden, F. L. J. van der, &#38; Zimmer, D. (2015).
-How to Shape Noise Spectra for Continuous System Simulation. In Proceedings of the 11th International Modelica Conference (pp. 837&ndash;846). Versailles, France. In Press
+of rail track irregularities. The method is described in
+[<a href=\"modelica://AdvancedNoise.UsersGuide.References\">Kloeckner2015</a>].
 </p>
 <p>
 The models contained in this package can be used to generate results presented in

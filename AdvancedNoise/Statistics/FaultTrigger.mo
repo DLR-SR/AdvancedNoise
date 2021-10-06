@@ -40,21 +40,15 @@ public
               {48,64},{64,66},{70,66}}, color={28,108,200}),
         Line(points={{-54,38},{72,38}}, color={255,0,0})}), Documentation(info="<html>
 <p>
-This block uses a given failure rate at its input port to determine a discrete fault event.
-It uses the method described by Boui&szlig;ou et. al. (2014):
+This block uses a given failure rate at its input port to determine a&nbsp;discrete fault event.
+It uses the method described by 
+[<a href=\"modelica://AdvancedNoise.UsersGuide.References\">Bouissou2014</a>]:
 The current failure rate&nbsp;f is used to determine the probability&nbsp;F
 that the fault has occurred at a time&nbsp;t:
 der(F)&nbsp;=&nbsp;(1-F)*f.
 The value&nbsp;F is then compared to a random threshold&nbsp;r drawn with
 a uniform distribution between 0 and&nbsp;1.
 </p>
-
-<blockquote>
-Marc Boui&szlig;ou, Hilding Elmqvist, Martin Otter, Albert Benveniste (2014). 
-<em>Efficient Monte Carlo simulation of stochastic hybrid systems</em>, 
-Proceedings of the 10<sup>th</sup> International Modelica Conference, March 10-12, 2014, Lund, Sweden.
-DOI: <a href=\"http://dx.doi.org/10.3384/ecp14096715\">10.3384/ecp14096715</a>
-</blockquote>
 </html>"));
 
 end FaultTrigger;
