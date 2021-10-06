@@ -26,7 +26,7 @@ model FilterAndConvolution
         mu=0,
         sigma=sqrt(0.5)/sqrt(samplePeriod),
         y_min=-1e10,
-        y_max=1e10)) if             doMinimum
+        y_max=1e10)) if doMinimum
     annotation (Placement(transformation(extent={{-20,20},{0,40}})));
 
   Modelica.Blocks.Continuous.Integrator position(y_start=123)
@@ -37,7 +37,7 @@ model FilterAndConvolution
         4.5134777e-03} ./ {velocity.k,1}, a={1.0000000e+00,3.0670519e+00,2.2183340e-01}
          ./ {velocity.k^2,velocity.k,1},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=-0.00279) if                    doFilter
+    y_start=-0.00279) if doFilter
     annotation (Placement(transformation(extent={{20,-20},{40,0}})));
   Sources.SignalBasedNoise spaceDomainNoiseWhite(
     useTime=false,
@@ -48,7 +48,7 @@ model FilterAndConvolution
         mu=0,
         sigma=sqrt(0.5)/sqrt(samplePeriod),
         y_min=-1e10,
-        y_max=1e10)) if                      doFilter
+        y_max=1e10)) if doFilter
     annotation (Placement(transformation(extent={{-20,-20},{0,0}})));
   Sources.SignalBasedNoise spaceDomainNoiseZero(
     useTime=false,
@@ -61,17 +61,17 @@ model FilterAndConvolution
         mu=0,
         sigma=sqrt(0.5)/sqrt(samplePeriod),
         y_min=-1e10,
-        y_max=1e10)) if                                              doZero
+        y_max=1e10)) if doZero
     annotation (Placement(transformation(extent={{-20,60},{0,80}})));
   Modelica.Blocks.Continuous.TransferFunction timeDomainFilter(b={2.7542724e-04,
         4.5134777e-03} ./ {velocity.k,1}, a={1.0000000e+00,3.0670519e+00,
         2.2183340e-01} ./ {velocity.k^2,velocity.k,1},
     initType=Modelica.Blocks.Types.Init.InitialOutput,
-    y_start=-0.00279) if                               doTime
+    y_start=-0.00279) if doTime
     annotation (Placement(transformation(extent={{20,-60},{40,-40}})));
   Modelica.Blocks.Noise.BandLimitedWhiteNoise bandLimitedWhiteNoise(
       samplePeriod=samplePeriod/velocity.k, noisePower=
-        1/(velocity.k)) if                                                     doTime
+        1/(velocity.k)) if doTime
     annotation (Placement(transformation(extent={{-20,-60},{0,-40}})));
 equation
   connect(velocity.y, position.u) annotation (Line(
