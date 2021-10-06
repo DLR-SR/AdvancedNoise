@@ -2,7 +2,7 @@ LibraryInfoMenuSeparator(
   category="libraries",
   pos=100)
 
-NoiseVersion = "1.0.1";
+NoiseVersion = "1.1.0";
 
 LibraryInfoMenuCommand(
   category="libraries",
@@ -11,7 +11,7 @@ LibraryInfoMenuCommand(
   version=NoiseVersion,
   isModel=true,
   description="Additional noise modules for Modelica. Version "+NoiseVersion,
-  ModelicaVersion="3.2.3",
+  ModelicaVersion="4.0.0",
   pos=1080)
 
 // LibraryInfoPreload(reference="Modelica_LinearSystems2")
