@@ -31,7 +31,7 @@ The example uses the <a href=\"Statistics.FaultTrigger\">FaultTrigger</a>
 model to simulate failures of a component with a given failure rate.
 The resulting failure rate compares well to the theoretical value.
 See image below:
-<p>
+</p>
 
 <blockquote>
 <img src=\"modelica://AdvancedNoise/Resources/Images/Examples/FaultTrigger.png\" alt=\"Diagram FaultTrigger.png\">

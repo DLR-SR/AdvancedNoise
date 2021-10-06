@@ -7,6 +7,7 @@ class License "Copyright and License"
 subdirectories, especially all files that build package &quot;AdvancedNoise&quot; and all
 files in &quot;AdvancedNoise/Resources/&quot; and &quot;AdvancedNoise/help/&quot;
 are licensed under following license.
+</p>
 
 <h4>Copyright</h4>
 <div>

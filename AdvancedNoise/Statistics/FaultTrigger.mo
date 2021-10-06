@@ -47,7 +47,7 @@ that the fault has occurred at a time&nbsp;t:
 der(F)&nbsp;=&nbsp;(1-F)*f.
 The value&nbsp;F is then compared to a random threshold&nbsp;r drawn with
 a uniform distribution between 0 and&nbsp;1.
-<p>
+</p>
 
 <blockquote>
 Marc Boui&szlig;ou, Hilding Elmqvist, Martin Otter, Albert Benveniste (2014). 
