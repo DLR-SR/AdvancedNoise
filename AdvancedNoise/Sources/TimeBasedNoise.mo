@@ -269,7 +269,6 @@ By default, two or more instances produce different, uncorrelated noise at the s
 When using this block, at a minimum the following parameters must be defined:
 </p>
 
-<blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>Parameter</th>
     <th>Description</th></tr>
@@ -282,7 +281,6 @@ When using this block, at a minimum the following parameters must be defined:
          In between, the noise is linearly interpolated at the drawn random
          values.</td></tr>
 </table>
-</blockquote>
 
 <p>
 As a simple demonstration, see example <a href=\"modelica://AdvancedNoise.Examples.TimeBasedNoise\">Examples.TimeBasedNoise</a>.
@@ -298,7 +296,6 @@ In the <strong>Advanced</strong> tab of the parameter menu, further options can 
 The general settings are shown in the next table:
 </p>
 
-<blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>Parameter</th>
     <th>Description</th></tr>
@@ -327,7 +324,6 @@ The general settings are shown in the next table:
          the selected interpolation method (which leads usually to a slow
          simulation). </td></tr>
 </table>
-</blockquote>
 
 <h4>Advanced tab: Random number properties</h4>
 <p>
@@ -340,7 +336,6 @@ excellent statistical properties. If the default behavior is not desired, the
 following parameters can be set:
 </p>
 
-<blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>Parameter</th>
     <th>Description</th></tr>
@@ -380,7 +375,6 @@ following parameters can be set:
          description of the Generators package.</td></tr>
 
 </table>
-</blockquote>
 
 <p>
 The different interpolation methods are demonstrated with example
@@ -406,7 +400,6 @@ The selected interpolation method does not change the mean value of the
 noise signal, but it changes its variance with the following factors:
 </p>
 
-<blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>interpolation</th>
     <th>variance factor</th></tr>
@@ -417,7 +410,6 @@ noise signal, but it changes its variance with the following factors:
 <tr><td> SmoothIdealLowPass </td>
     <td> 0.979776342307764 (actual variance = 0.97..*&lt;variance of constantly interpolated noise&gt;)</td></tr>
 </table>
-</blockquote>
 
 <p>
 The above table holds only if an event is generated at every sample instant
@@ -436,7 +428,6 @@ different instances of the noise block generate uncorrelated noise.
 For this purpose the following parameters can be defined.
 </p>
 
-<blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>Parameter</th>
     <th>Description</th></tr>
@@ -473,7 +464,6 @@ For this purpose the following parameters can be defined.
          a certain duration until an approximate steady-state is reached. In such a case
          startTime should be set to a time instant after this duration.</td></tr>
 </table>
-</blockquote>
 </html>", revisions="<html>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>

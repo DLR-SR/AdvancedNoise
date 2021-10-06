@@ -58,7 +58,6 @@ time, a buffer is filled with random values. In order to interpolate in the
 buffer, the following constants need to be defined:
 </p>
 
-<blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
 <tr><th>Name of constant</th>
     <th>Description</th></tr>
@@ -88,7 +87,6 @@ buffer, the following constants need to be defined:
         = 0: continuous<br>
         = 1: continuous and differentiable</td></tr>
 </table>
-</blockquote>
 </html>", revisions="<html>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>

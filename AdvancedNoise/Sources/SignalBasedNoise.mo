@@ -236,6 +236,7 @@ protected
 <blockquote><pre>
 int = <strong>convertRealToInteger</strong>(real);
 </pre></blockquote>
+
 <h4>Description</h4>
 <p>
 The Real input argument real is mapped to two Integer values int[1] and int[2].
@@ -340,7 +341,6 @@ for the same input signal.
 When using this block, at a minimum the following parameters must be defined:
 </p>
 
-<blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <th>Parameter</th>
@@ -367,7 +367,6 @@ When using this block, at a minimum the following parameters must be defined:
     </td>
   </tr>
 </table>
-</blockquote>
 
 <p>
 As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBasedNoise\">Blocks.Examples.NoiseExamples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!
@@ -383,7 +382,6 @@ In the <strong>Advanced</strong> tab of the parameter menu, further options can 
 The general settings are shown in the next table:
 </p>
 
-<blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <th>Parameter</th>
@@ -404,7 +402,6 @@ The general settings are shown in the next table:
     </td>
   </tr>
 </table>
-</blockquote>
 
 
 <h4>Advanced tab: Random number properties</h4>
@@ -418,7 +415,6 @@ This random number generator has a period of 2^128, has an internal state of
 If the default behavior is not desired, the following parameters can be set:
 </p>
 
-<blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <th>Parameter</th>
@@ -463,7 +459,6 @@ If the default behavior is not desired, the following parameters can be set:
     </td>
   </tr>
 </table>
-</blockquote>
 
 <p>
 The different interpolation methods are demonstrated with example
@@ -491,7 +486,6 @@ The selected interpolation method does not change the mean value of the noise
 signal, but it changes its variance with the following factors:
 </p>
 
-<blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <th>Interpolation</th>
@@ -510,7 +504,6 @@ signal, but it changes its variance with the following factors:
     <td>0.979776342307764 (actual variance = 0.97..*&lt;variance of constantly interpolated noise&gt;)</td>
   </tr>
 </table>
-</blockquote>
 
 <p>
 The above table holds only if an event is generated at every sample instant,
@@ -529,7 +522,6 @@ different instances of the noise block generate uncorrelated noise.
 For this purpose the following parameters can be defined.
 </p>
 
-<blockquote>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
     <th>Parameter</th>
@@ -578,7 +570,6 @@ For this purpose the following parameters can be defined.
     </td>
   </tr>
 </table>
-</blockquote>
 </html>", revisions="<html>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
