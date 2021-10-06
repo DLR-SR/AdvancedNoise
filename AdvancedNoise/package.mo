@@ -4,11 +4,16 @@ package AdvancedNoise "A library with additional noise modules compatible to the
 
   annotation(
     preferredView="info",
-    version =      "1.0.1",
-    versionDate =  "2019-05-31",
-    versionBuild = 1,
-    dateModified = "2019-05-31 12:00:00Z",
-    uses(Modelica(version="4.0.0")),
+    version =      "1.1.0-alpha",
+    versionDate =  "2021-11-30",
+    dateModified = "2021-10-06 12:00:00Z",
+    revisionId="$Format:%h %ci$",
+    uses(
+      Modelica(version="4.0.0")),
+    conversion(
+      noneFromVersion(version="0.9.0"),
+      noneFromVersion(version="0.9.1"),
+      noneFromVersion(version="1.0.0")),
     Icon(graphics={Line(
       points={{-84,0},{-54,0},{-54,40},{-24,40},{-24,-70},{6,-70},{6,80},{36,80},
             {36,-20},{66,-20},{66,60}})}),
@@ -35,20 +40,6 @@ Examples of the these components are:
   <a href=\"AdvancedNoise.Sources.ColoredSignalBasedNoise\">Colored noise</a>.</li>
 </ul>
 <p>
-
-<h4>Literature</h4>
-<ol>
-<li>
-  Kl&ouml;ckner, A., Linden, F. L. J. van der, &amp; Zimmer, D. (2014). Noise Generation for Continuous System Simulation. In <i>Proceedings of the 10th International Modelica Conference</i> (pp. 837&ndash;846). Lund, Sweden: Link&ouml;ping University Electronic Press, Link&ouml;pings universitet. <a href=\"http://doi.org/10.3384/ecp14096837\">doi:10.3384/ecp14096837</a>
-</li>
-<li>
-  Linden, F. L. J. van der, Kl&ouml;ckner, A., &amp; Zimmer, D. (2015). Effects of Event-Free Noise Signals on Continuous-Time Simulation Performance. <i>IFAC-PapersOnLine</i>, <i>48</i>(1), 280&ndash;285. <a href=\"http://doi.org/10.1016/j.ifacol.2015.05.039\">doi:10.1016/j.ifacol.2015.05.039</a>
-</li>
-<li>
-  Kl&ouml;ckner, A., Knoblach, A. &amp; Heckmann, A. (2015). How to Shape Noise Spectra for Continuous System Simulation. In Proceedings of the 11th International Modelica Conference (pp. 837&ndash;846). Versailles, France. <a href=\"http://doi.org/10.3384/ecp15118411\">doi:10.3384/ecp15118411</a>
-</li>
-</ol>
-
 
 <h4>Copyright</h4>
 <p>
