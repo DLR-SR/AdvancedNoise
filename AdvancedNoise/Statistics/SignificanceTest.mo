@@ -40,11 +40,11 @@ public
 </html>",
         info="<html>
 <p>
-The significance test is used to test whether a given <i>null-hypothesis</i>
+The significance test is used to test whether a given <em>null-hypothesis</em>
 is to be abandoned; in favor of the alternative hypothesis.
-In this case, the null-hypothesis is that the <i>input&nbsp;u</i>
+In this case, the null-hypothesis is that the <em>input&nbsp;u</em>
 of this block is a realization of a random number distributed with
-a given <i>cumulative density function&nbsp;H</i>. The alternative
+a given <em>cumulative density function&nbsp;H</em>. The alternative
 hypothesis is then that the input&nbsp;u is NOT such a realization,
 i.e. it has a different probability distribution.
 </p>
@@ -68,7 +68,7 @@ abandoning the null-hypothesis may always be a wrong decision.
 The output of this block is the probability of committing this error.
 </p>
 <p>
-The output of this block is known as the <i>p-value</i>. If the p-value is low,
+The output of this block is known as the <em>p-value</em>. If the p-value is low,
 the null-hypothesis should be abandoned. It is therefore usually comapred
 against a threshold, e.g. p&nbsp;&lt;&nbsp;0.05 or p&nbsp;&lt;&nbsp;0.01.
 In order to be more accurate, the p-value is usually also given along with
