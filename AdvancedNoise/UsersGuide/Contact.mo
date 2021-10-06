@@ -4,18 +4,19 @@ class Contact "Contact"
 
   annotation (Documentation(info="<html>
 <h4>Development</h4>
-<dl>
-<dd>A. Kl&ouml;ckner, F. v.d. Linden,
-    <a href=\"http://www.robotic.dlr.de/dirk.zimmer\">D. Zimmer</a>,
-    <a href=\"http://www.robotic.dlr.de/martin.otter\">M. Otter</a>,
-    J. Tobolar</dd>
-<dd>German Aerospace Center (DLR)</dd>
-<dd>Robotics and Mechatronics Center (RMC)</dd>
-<dd><a href=\"https://www.dlr.de/sr/en\">Institute of Sytem Dynamics and Control</a> (SR)</dd>
-<dd>M&uuml;nchner Strasse 20, D-82234 Wessling</dd>
-<dd>Germany</dd>
-<dd>e-mail: <a href=\"mailto:sr-modelica@dlr.de\">sr-modelica@dlr.de</a></dd>
-</dl>
+
+<blockquote>
+A. Kl&ouml;ckner, F. v.d. Linden,
+<a href=\"http://www.robotic.dlr.de/dirk.zimmer\">D. Zimmer</a>,
+<a href=\"http://www.robotic.dlr.de/martin.otter\">M. Otter</a>,
+J. Tobolar<br>
+Deutsches Zentrum f&uuml;r Luft- und Raumfahrt (DLR)<br>
+<a href=\"https://www.dlr.de/sr/en\">Institut f&uuml;r Systemdynamik und Regelungstechnik (SR)</a><br>
+M&uuml;nchener Stra&szlig;e 20<br>
+D-82234 We&szlig;ling<br>
+Germany<br>
+email:  <a href=\"mailto:sr-modelica@dlr.de\">sr-modelica@dlr.de</a>
+</blockquote>
 
 <p>
 Please register any issues with the library at the the
