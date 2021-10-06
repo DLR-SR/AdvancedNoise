@@ -18,9 +18,24 @@ Germany<br>
 email:  <a href=\"mailto:sr-modelica@dlr.de\">sr-modelica@dlr.de</a>
 </blockquote>
 
+<h4>Acknowledgements</h4>
+<ul>
+  <li> Initial version implemented by A.&nbsp;Kl&ouml;ckner,
+       F.&nbsp;v.d.&nbsp;Linden, D.&nbsp;Zimmer, M.&nbsp;Otter.
+  </li>
+  <li> Many thanks goes to T.&nbsp;Beutlich for his help in cleaing up the library,
+       M.&nbsp;Sjoelund for his help with OpenModelica tests and
+       D.&nbsp;Winkler for his advice with the Noise C&nbsp;code.
+  </li>
+</ul>
+
+<h4>Contributions welcome!</h4>
 <p>
-Please register any issues with the library at the the
-<a href=\"https://github.com/DLR-SR/AdvancedNoise/issues\">issue tracker</a>.
+This library is free software and maintained on GitHub. You may report any issue with
+using the <a href=\"https://github.com/DLR-SR/AdvancedNoise/issues\">Issues</a> button.
+Contributions in the form of
+<a href=\"https://github.com/DLR-SR/AdvancedNoise/pulls\">Pull Requests</a>
+are always welcome.
 </p>
 </html>"));
 end Contact;

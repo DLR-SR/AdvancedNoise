@@ -36,25 +36,6 @@ Examples of the these components are:
 </ul>
 <p>
 
-
-<h4>Acknowledgments</h4>
-<p>
-Many thanks goes to T.&nbsp;Beutlich for his help in cleaing up the library,
-M.&nbsp;Sjoelund for his help with OpenModelica tests and D.&nbsp;Winkler for his
-advice with the Noise C&nbsp;code.
-</p>
-
-
-<h4>Contributions welcome!</h4>
-<p>
-This library is free software and maintained on GitHub. You may reportany issue with
-using the <a href=\"https://github.com/DLR-SR/AdvancedNoise/issues\">Issues</a> button.
-Contributions in the form of
-<a href=\"https://github.com/DLR-SR/AdvancedNoise/pulls\">Pull Requests</a>
-are always welcome.
-</p>
-
-
 <h4>Literature</h4>
 <ol>
 <li>
@@ -71,24 +52,8 @@ are always welcome.
 
 <h4>Copyright</h4>
 <p>
-<strong>Licensed by DLR under the 3-Clause BSD License</strong><br>
+<strong>Licensed by DLR&nbsp;SR under the 3-Clause BSD License</strong><br>
 </p>
-
-<table border=\"0\" cellpadding=\"2\" cellspacing=\"2\">
-<tr>
-  <td colspan=\"1\" rowspan=\"2\" style=\"vertical-align: middle;\">
-    <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
-  </td>
-</tr>
-<tr>
-  <td style=\"vertical-align: top;\">Copyright &copy; DLR Institute of System Dynamics and Control</td>
-</tr>
-</table>
-<p>
-Initial version implemented by A.&nbsp;Kl&ouml;ckner,
-F.&nbsp;v.d.&nbsp;Linden, D.&nbsp;Zimmer, M.&nbsp;Otter.
-</p>
-
 <p>
 <em>
 This Modelica package is <u>free</u> software and
