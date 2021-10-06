@@ -63,5 +63,19 @@ The above is the license, and is the standard
 <a href=\"https://opensource.org/licenses/BSD-3-Clause\">3-clause BSD-license</a>
 with DLR&nbsp;SR as copyright holder.
 </p>
-</html>"));
+</html>"),
+    Icon(graphics={
+        Ellipse(
+          extent={{-100,100},{100,-100}},
+          lineColor={0,0,0},
+          fillColor={245,245,245},
+          fillPattern=FillPattern.Solid),
+        Ellipse(
+          extent={{-50,50},{50,-54}},
+          lineColor={0,0,0}),
+        Rectangle(
+          extent={{38,22},{74,-20}},
+          lineColor={245,245,245},
+          fillColor={245,245,245},
+          fillPattern=FillPattern.Solid)}));
 end License;
