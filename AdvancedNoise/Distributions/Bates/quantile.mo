@@ -63,22 +63,22 @@ Bates.<strong>quantile</strong>(u, y_min=0, y_max=1, n=12);
 <h4>Description</h4>
 <p>
 This function computes the inverse cumulative distribution function (= quantile) according to a <strong>Bates</strong>
-distribution (= mean of n uniform distributions). Input argument u must be in the range:
+distribution (= mean of n uniform distributions). Input argument&nbsp;<var>u</var> must be in the range:
 </p>
 
 <blockquote>
 <p>
-0 &le; u &le; 1
+0 &le; <var>u</var> &le; 1
 </p>
 </blockquote>
 
 <p>
-The returned number y is in the range:
+The returned number&nbsp;<var>y</var> is in the range:
 </p>
 
 <blockquote>
 <p>
-y_min &le; y &le; y_max
+<var>y</var><sub>min</sub> &le; <var>y</var> &le; <var>y</var><sub>max</sub>
 </p>
 </blockquote>
 
