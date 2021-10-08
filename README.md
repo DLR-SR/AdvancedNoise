@@ -12,6 +12,17 @@ Potential applications of the library are
 - unsampled stochastic excitations such as as rail roughness or turbulence
 - ...
 
+### Release schedule v1.1.0
+
+We plan to release the v1.1.0 by end of November 2021.
+
+| Version | Date | Comment |
+|---| ---| ---|
+| [Alpha](../../releases/tag/v1.1.0-alpha)  |  2021-10-06 | First drop of the library |
+| Beta 1 |  2021-10-26 |  |
+| Beta 2 |  2021-11-15 | Release-ready version |
+| Final  |  2021-11-30 | Release |
+
 ## Current releases
 ### If your tool supports MSL 3.2.2 or higher:
 [Noise 1.0.0 (2016-05-03)](https://github.com/DLR-SR/AdvancedNoise/archive/v1.0.0.zip):
