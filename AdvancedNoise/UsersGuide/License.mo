@@ -3,12 +3,6 @@ class License "Copyright and License"
     extends Modelica.Icons.Information;
 
     annotation (Documentation(info="<html>
-<p>All files in this directory (AdvancedNoise) and in all
-subdirectories, especially all files that build package &quot;AdvancedNoise&quot; and all
-files in &quot;AdvancedNoise/Resources/&quot; and &quot;AdvancedNoise/help/&quot;
-are licensed under following license.
-</p>
-
 <h4>Copyright</h4>
 <div>
 <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
@@ -25,6 +19,14 @@ Deutsches Zentrum f&uuml;r Luft- und Raumfahrt (DLR)<br>
 M&uuml;nchener Stra&szlig;e 20<br>
 D-82234 We&szlig;ling<br>
 Germany
+</p>
+
+<h4>Disclaimer</h4>
+<p>
+All files in this directory (AdvancedNoise) and in all
+subdirectories, especially all files that build package &quot;AdvancedNoise&quot;
+and all files in &quot;AdvancedNoise/Resources/&quot; and
+&quot;AdvancedNoise/help/&quot; are licensed under following license.
 </p>
 
 <h4><a name=\"3clauseBSD_License-outline\"></a>License</h4>
