@@ -463,7 +463,7 @@ If the default behavior is not desired, the following parameters can be set:
 <p>
 The different interpolation methods are demonstrated with example
 <a href=\"modelica://AdvancedNoise.Examples.InterpolateRandomNumbers\">Examples.InterpolateRandomNumbers</a>.
-The example uses the block <a href=\"TimeBasedNoise\">TimeBasedNoise</a>,
+The example uses the block <a href=\"modelica://AdvancedNoise.Sources.TimeBasedNoise\">TimeBasedNoise</a>,
 but the results also hold for SignalBasedNoise.
 A&nbsp;simulation result is shown in the next diagram:
 </p>

@@ -43,8 +43,8 @@ equation
       info="<html>
 <p>
 This examples demonstrates how the two blocks
-<a href=\"Statistics.FromUniform\">FromUniform</a> and
-<a href=\"Statistics.ToUniform\">ToUniform</a> can be used
+<a href=\"modelica://AdvancedNoise.Statistics.FromUniform\">FromUniform</a> and
+<a href=\"modelica://AdvancedNoise.Statistics.ToUniform\">ToUniform</a> can be used
 to convert uniformly distributed numbers to different
 distributions and vice versa. See image below for an example:
 </p>

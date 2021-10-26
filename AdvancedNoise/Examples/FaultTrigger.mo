@@ -27,7 +27,7 @@ equation
     Documentation(
       info="<html>
 <p>
-The example uses the <a href=\"Statistics.FaultTrigger\">FaultTrigger</a>
+The example uses the <a href=\"modelica://AdvancedNoise.Statistics.FaultTrigger\">FaultTrigger</a>
 model to simulate failures of a component with a given failure rate.
 The resulting failure rate compares well to the theoretical value.
 See image below:
