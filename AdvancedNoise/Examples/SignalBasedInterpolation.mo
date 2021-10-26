@@ -48,7 +48,7 @@ equation
     Documentation(info="<html>
 <p>
 This example demonstrates the
-<a href=\"modelica://Modelica.Blocks.Noise.SignalBasedNoise\">Blocks.Noise.SignalBasedNoise</a>
+<a href=\"modelica://AdvancedNoise.Sources.SignalBasedNoise\">SignalBasedNoise</a>
 block by using various interpolation methods. The input to the blocks is a sine and
 the argument of the sine, as well as the sample periods of the blocks are selected in such a way
 that a sample instant hits the sine for every full period.
