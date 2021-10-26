@@ -131,7 +131,9 @@ numbers at the sample instants 0&nbsp;s, 0.1&nbsp;s, 0.2&nbsp;s, ...
 However, these values are differently interpolated as shown in the next diagram:
 </p>
 
+<blockquote>
 <img src=\"modelica://AdvancedNoise/Resources/Images/Examples/InterpolationInterpolators.png\" alt=\"Diagram InterpolationInterpolators.png\">
+</blockquote>
 
 <p>
 As can be seen, constant (constantNoise.y) and linear (linearNoise.y)
