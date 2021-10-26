@@ -4,9 +4,9 @@ package AdvancedNoise "A library with additional noise modules compatible to the
 
   annotation(
     preferredView="info",
-    version =      "1.1.0-alpha",
-    versionDate =  "2021-11-30",
-    dateModified = "2021-10-06 12:00:00Z",
+    version =      "1.1.0",
+    versionDate =  "2021-10-29",
+    dateModified = "2021-10-26 12:00:00Z",
     revisionId="$Format:%h %ci$",
     uses(
       Modelica(version="4.0.0")),

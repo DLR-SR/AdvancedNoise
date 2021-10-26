@@ -1,5 +1,5 @@
 within AdvancedNoise.UsersGuide.ReleaseNotes;
-class Version_1_1_0 "Version 1.1.0 (2021-11-30)"
+class Version_1_1_0 "Version 1.1.0 (2021-10-29)"
   extends Modelica.Icons.ReleaseNotes;
 
   annotation (
@@ -10,7 +10,7 @@ This version uses Modelica&nbsp;4.0.0 and is backward compatible
 to previous version of the library.
 </p>
 
-<h4>Improvements in this version:</h4>
+<h4>Improvements in this version</h4>
 
 <ul>
   <li>
@@ -31,7 +31,6 @@ to previous version of the library.
 <!--
 <h4>Bug fixes performed in this version:</h4>
 -->
-
 </html>",
 revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
