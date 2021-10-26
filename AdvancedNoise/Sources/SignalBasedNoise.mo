@@ -338,7 +338,7 @@ for the same input signal.
 
 <h4>Parameters that need to be defined</h4>
 <p>
-When using this block, at a minimum the following parameters must be defined:
+When using this block, at a&nbsp;minimum the following parameters must be defined:
 </p>
 
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
@@ -441,14 +441,19 @@ If the default behavior is not desired, the following parameters can be set:
          interpolation packages are provided in package
          <a href=\"modelica://AdvancedNoise.Interpolators\">Interpolators</a>:
          <ul>
-           <li> Constant: The random values are held constant between sample instants.</li>
-           <li> Linear: The random values are linearly interpolated between sample instants.</li>
-           <li> SmoothIdealLowPass: The random values are smoothly interpolated with the
-                <a href=\"modelica://Modelica.Math.Special.sinc\">sinc</a> function.
-                This is an approximation of an ideal low pass filter
-                (that would have an infinite steep drop of the frequency response at
-                the cut-off frequency 1/samplePeriod).
-         </li>
+           <li>
+             Constant: The random values are held constant between sample instants.
+           </li>
+           <li>
+             Linear: The random values are linearly interpolated between sample instants.
+           </li>
+           <li>
+             SmoothIdealLowPass: The random values are smoothly interpolated with the
+             <a href=\"modelica://Modelica.Math.Special.sinc\">sinc</a> function.
+             This is an approximation of an ideal low pass filter
+             (that would have an infinite steep drop of the frequency response at
+             the cut-off frequency 1/samplePeriod).
+           </li>
          </ul>
     </td>
   </tr>
