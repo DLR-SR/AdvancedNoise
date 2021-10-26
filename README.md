@@ -19,9 +19,7 @@ We plan to release the v1.1.0 by end of November 2021.
 | Version | Date | Comment |
 |---| ---| ---|
 | [Alpha](../../releases/tag/v1.1.0-alpha)  |  2021-10-06 | First drop of the library |
-| Beta 1 |  2021-10-26 |  |
-| Beta 2 |  2021-11-15 | Release-ready version |
-| Final  |  2021-11-30 | Release |
+| Beta 1 |  2021-10-26 | Release |
 
 ## Current releases
 ### If your tool supports MSL 3.2.2 or higher:
