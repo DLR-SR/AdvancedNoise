@@ -34,6 +34,6 @@ annotation (Icon(coordinateSystem(preserveAspectRatio=false, extent={{
           lineColor={0,0,0},
           fillColor={0,0,0},
           fillPattern=FillPattern.Solid)}), Documentation(info="<html>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Package with fuctions for a truncated discrete distribution. For more details of this distribution see <a href=\"http://en.wikipedia.org/wiki/Uniform_distribution_(continuous)\">Wikipedia</a>. </span></p>
+<p>Package with fuctions for a truncated discrete distribution. For more details of this distribution see <a href=\"http://en.wikipedia.org/wiki/Uniform_distribution_(continuous)\">Wikipedia</a>.</p>
 </html>"));
 end TruncatedDiscrete;

@@ -26,6 +26,6 @@ algorithm
 
   annotation (Inline=true,Documentation(info="<html>
 <p>This function returns the cumulative distribution function according to a discrete distribution in a band. </p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">For more details of this distribution see <a href=\"https://en.wikipedia.org/wiki/Uniform_distribution_(discrete)\">Wikipedia</a>. </span></p>
+<p>For more details of this distribution see <a href=\"https://en.wikipedia.org/wiki/Uniform_distribution_(discrete)\">Wikipedia</a>.</p>
 </html>"));
 end cumulative;

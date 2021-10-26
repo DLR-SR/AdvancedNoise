@@ -22,7 +22,7 @@ algorithm
   end for;
 
   annotation (Inline=true,Documentation(info="<html>
-<p>This function returns a number according to a discrete distribution. </p>
-<p><span style=\"font-family: MS Shell Dlg 2;\">For more details of this distribution see <a href=\"https://en.wikipedia.org/wiki/Uniform_distribution_(discrete)\">Wikipedia</a>. </span></p>
+<p>This function returns a number according to a discrete distribution.</p>
+<p>For more details of this distribution see <a href=\"https://en.wikipedia.org/wiki/Uniform_distribution_(discrete)\">Wikipedia</a>.</p>
 </html>"));
 end quantile;
