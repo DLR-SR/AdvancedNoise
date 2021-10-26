@@ -287,7 +287,7 @@ When using this block, at a&nbsp;minimum the following parameters must be define
 </table>
 
 <p>
-As a simple demonstration, see example <a href=\"modelica://AdvancedNoise.Examples.TimeBasedNoise\">Examples.TimeBasedNoise</a>.
+As a&nbsp;simple demonstration, see example <a href=\"modelica://AdvancedNoise.Examples.TimeBasedNoise\">Examples.TimeBasedNoise</a>.
 In the next diagram, a&nbsp;simulation result is shown for
 samplePeriod&nbsp;=&nbsp;0.02&nbsp;s, y_min&nbsp;=&nbsp;-1, y_max&nbsp;=&nbsp;3:
 </p>
@@ -324,16 +324,16 @@ The general settings are shown in the next table:
   <tr>
     <td> sampleFactor</td>
     <td> If the drawn random numbers are continuously interpolated
-         (so interpolation &ne; Constant), then a time event is only
+         (so interpolation &ne; Constant), then a&nbsp;time event is only
          generated at every sampleFactor sample instant. At such an event a
          buffer is filled with the next sampleFactor random values and
          interpolation takes place in this buffer. This approach speeds up the
          simulation considerably, in many cases (provided not too small relative
          tolerance is selected for the integrator).
-         If interpolation = Constant, then sampleFactor is ignored and a time
+         If interpolation = Constant, then sampleFactor is ignored and a&nbsp;time
          event is generated at every sample instant. If sampleFactor = 1, then
-         a time event is also generated at every sample instant, independently of
-         the selected interpolation method (which leads usually to a slow
+         a&nbsp;time event is also generated at every sample instant, independently of
+         the selected interpolation method (which leads usually to a&nbsp;slow
          simulation). 
     </td>
   </tr>
@@ -345,7 +345,7 @@ In the group \"Random number properties\", the properties of the random number
 generation are defined. By default, uniform random numbers with linear
 interpolation are used, and the random numbers are drawn with the pseudo
 random number generator algorithm \"xorshift128+\". This random number generator
-has a period of 2^128, has an internal state of 4 Integer elements, and has
+has a&nbsp;period of 2^128, has an internal state of 4 Integer elements, and has
 excellent statistical properties. If the default behavior is not desired, the
 following parameters can be set:
 </p>
@@ -493,8 +493,8 @@ For this purpose the following parameters can be defined.
   <tr>
     <td> fixedLocalSeed</td>
     <td> If useAutomaticLocalSeed&nbsp;= false, the local seed to be used.
-         fixedLocalSeed can be any Integer number (including zero or a negative
-         number). The initialization algorithm produces a meaningful initial state
+         fixedLocalSeed can be any Integer number (including zero or a&nbsp;negative
+         number). The initialization algorithm produces a&nbsp;meaningful initial state
          of the random number generator, so the subsequently drawing of random
          numbers produce statistically meaningful numbers.
     </td>

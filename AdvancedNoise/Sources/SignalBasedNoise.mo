@@ -316,18 +316,18 @@ value has a length of 64 bits).
           textString="%y_off")}),
     Documentation(info="<html>
 <p>
-A summary of the properties of the noise blocks is provided in the documentation
+A&nbsp;summary of the properties of the noise blocks is provided in the documentation
 of package <a href=\"modelica://Modelica.Blocks.Noise\">Modelica.Blocks.Noise</a>.
 This SignalBasedNoise block generates reproducible noise at its output.
-The block can only be used if on the same or a higher hierarchical level,
+The block can only be used if on the same or a&nbsp;higher hierarchical level,
 model <a href=\"modelica://Modelica.Blocks.Noise.GlobalSeed\">Modelica.Blocks.Noise.GlobalSeed</a>
 is dragged to provide global settings for all instances.
 </p>
 <p>
-The generated random numbers of this block are a function of the input signal.
+The generated random numbers of this block are a&nbsp;function of the input signal.
 Blocks with different input signals produce uncorrelated noise.
-This can be used to define e.g. the roughness of a railway track.
-The random values provided at the output of a SignalBasedNoise instance depend
+This can be used to define e.g. the roughness of a&nbsp;railway track.
+The random values provided at the output of a&nbsp;SignalBasedNoise instance depend
 (a)&nbsp;on the <strong>actual input signal</strong> in the current time instant,
 (b)&nbsp;on the instance name, and (c)&nbsp;on the settings of the respective
 instance (as well as the seetings in globalSeed, see above and below).
@@ -351,16 +351,16 @@ When using this block, at a&nbsp;minimum the following parameters must be define
     <td> If useTime&nbsp;=&nbsp;true, then the input signal is replaced by the current
          simulation time. This is the default. If useTime&nbsp;=&nbsp;false, then an
          input connector is used, which defines the ordinate of the random signal.
-         For each value of the input signal, a different random number is generated.
+         For each value of the input signal, a&nbsp;different random number is generated.
     </td>
   </tr>
   <tr>
     <td> samplePeriod</td>
-    <td> Random values are drawn on a periodic grid over the input signal.
+    <td> Random values are drawn on a&nbsp;periodic grid over the input signal.
          The period of this grid is defined with this parameter. The unit of the
          samplePeriod corresponds to the unit of the input signal.
-         If useTime=true, then the samplePeriod defines a sample Period in [s].
-         As a result of this pseudo-sampling, the highest frequency f<sub>max</sub>
+         If useTime=true, then the samplePeriod defines a&nbsp;sample Period in&nbsp;[s].
+         As a&nbsp;result of this pseudo-sampling, the highest frequency f<sub>max</sub>
          contained in the generated noise is f<sub>max</sub> = 1/samplePeriod.
          By default, no events are generated. In between, the noise is linearly
          interpolated at the drawn random values.
@@ -369,8 +369,8 @@ When using this block, at a&nbsp;minimum the following parameters must be define
 </table>
 
 <p>
-As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBasedNoise\">Examples.SignalBasedNoise</a>.
-In the next diagram, a&nbsp;simulation result is shown with a ramped input signal
+As a&nbsp;simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBasedNoise\">Examples.SignalBasedNoise</a>.
+In the next diagram, a&nbsp;simulation result is shown with a&nbsp;ramped input signal
 repeated every second. The generated random numbers then also repeat every second!
 </p>
 <blockquote>
