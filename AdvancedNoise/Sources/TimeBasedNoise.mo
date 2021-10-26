@@ -341,11 +341,11 @@ The general settings are shown in the next table:
 
 <h4>Advanced tab: Random number properties</h4>
 <p>
-In the group \"Random number properties\", the properties of the random number
+In the group &quot;Random number properties&quot;, the properties of the random number
 generation are defined. By default, uniform random numbers with linear
 interpolation are used, and the random numbers are drawn with the pseudo
-random number generator algorithm \"xorshift128+\". This random number generator
-has a&nbsp;period of 2^128, has an internal state of 4 Integer elements, and has
+random number generator algorithm &quot;xorshift128+&quot;. This random number generator
+has a&nbsp;period of 2^128, has an internal state of 4&nbsp;Integer elements, and has
 excellent statistical properties. If the default behavior is not desired, the
 following parameters can be set:
 </p>
