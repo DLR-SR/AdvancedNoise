@@ -39,8 +39,8 @@ equation
       info="<html>
 <p>
 This example demonstrates how to use the interpolators
-of package <a href=\"AdvancedNoise.Interpolators\">Interpolators</a> in a Modelica model.
-The example uses the <a href=\"Modelica.Math.Random.Utilities.impureRandom\">impure random function</a> to generate a series of random numbers.
+of package <a href=\"modelica://AdvancedNoise.Interpolators\">Interpolators</a> in a Modelica model.
+The example uses the <a href=\"modelica://Modelica.Math.Random.Utilities.impureRandom\">impure random function</a> to generate a series of random numbers.
 These are then interpolated piece-wise constantly, linearly and using the smooth interpolation of truncated ideal low-pass.
 Simulations results are shown in the figure below:
 </p>
