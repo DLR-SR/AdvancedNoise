@@ -317,10 +317,10 @@ value has a length of 64 bits).
     Documentation(info="<html>
 <p>
 A summary of the properties of the noise blocks is provided in the documentation
-of package <a href=\"modelica://Modelica.Blocks.Noise\">Blocks.Noise</a>.
+of package <a href=\"modelica://Modelica.Blocks.Noise\">Modelica.Blocks.Noise</a>.
 This SignalBasedNoise block generates reproducible noise at its output.
 The block can only be used if on the same or a higher hierarchical level,
-model <a href=\"modelica://Modelica.Blocks.Noise.GlobalSeed\">Blocks.Noise.GlobalSeed</a>
+model <a href=\"modelica://Modelica.Blocks.Noise.GlobalSeed\">Modelica.Blocks.Noise.GlobalSeed</a>
 is dragged to provide global settings for all instances.
 </p>
 <p>
@@ -369,7 +369,7 @@ When using this block, at a minimum the following parameters must be defined:
 </table>
 
 <p>
-As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBasedNoise\">Blocks.Examples.NoiseExamples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!
+As a simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBasedNoise\">Examples.SignalBasedNoise</a>. In the next diagram, a simulation result is shown with a ramped input signal repeated every second. The generated random numbers then also repeat every second!
 </p>
 <blockquote>
 <img src=\"modelica://AdvancedNoise/Resources/Images/Examples/SignalBasedNoise.png\" alt=\"Diagram SignalBasedNoise.png\">
@@ -428,7 +428,7 @@ If the default behavior is not desired, the following parameters can be set:
         the truncated quantile (= truncated inverse cumulative distribution
         function) of a random distribution. More details of truncated
         distributions can be found in the documentation of package
-        <a href=\"modelica://Modelica.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>.
+        <a href=\"modelica://AdvancedNoise.Distributions\">Distributions</a>.
     </td>
   </tr>
   <tr>
@@ -453,7 +453,7 @@ If the default behavior is not desired, the following parameters can be set:
     <td>Defines the pseudo random number generator to be used.
         This is a replaceable package. The random number generators that are
         provided in package
-        <a href=\"modelica://Modelica.Math.Random.Generators\">Math.Random.Generators</a>
+        <a href=\"modelica://AdvancedNoise.Generators\">Generators</a>
         can be used here. Properties of the various generators are described
         in the package description of the Generators package.
     </td>
@@ -462,7 +462,7 @@ If the default behavior is not desired, the following parameters can be set:
 
 <p>
 The different interpolation methods are demonstrated with example
-<a href=\"modelica://AdvancedNoise.Examples.Interpolation\">Examples.Interpolation</a>.
+<a href=\"modelica://AdvancedNoise.Examples.InterpolateRandomNumbers\">Examples.InterpolateRandomNumbers</a>.
 The example uses the block <a href=\"TimeBasedNoise\">TimeBasedNoise</a>,
 but the results also hold for SignalBasedNoise.
 A&nbsp;simulation result is shown in the next diagram:

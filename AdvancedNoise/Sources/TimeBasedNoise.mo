@@ -245,10 +245,10 @@ equation
 <p>
 A summary of the properties of the noise blocks is provided
 in the documentation of package
-<a href=\"modelica://Modelica.Blocks.Noise\">Blocks.Noise</a>.
+<a href=\"modelica://Modelica.Blocks.Noise\">Modelica.Blocks.Noise</a>.
 This TimeBasedNoise block generates reproducible noise at its output.
 The block can only be used if on the same or a higher hierarchical level,
-model <a href=\"modelica://Modelica.Blocks.Noise.GlobalSeed\">Blocks.Noise.GlobalSeed</a>
+model <a href=\"modelica://Modelica.Blocks.Noise.GlobalSeed\">Modelica.Blocks.Noise.GlobalSeed</a>
 is dragged to provide global settings for all instances.
 </p>
 
@@ -348,14 +348,14 @@ following parameters can be set:
          inverse cumulative distribution function) of a random distribution.
          More details of truncated distributions can be found in the
          documentation of package
-         <a href=\"modelica://Modelica.Math.TruncatedDistributions\">Math.TruncatedDistributions</a>.
+         <a href=\"modelica://AdvancedNoise.Distributions\">Distributions</a>.
          </td></tr>
 
 <tr><td> interpolation </td>
     <td> Defines the type of interpolation between the random values drawn
          at sample instants. This is a replaceable package.
          The following interpolation packages are provided in package
-         <a href=\"modelica://Modelica.Math.Random.Utilities.Interpolators\">Math.Random.Utilities.Interpolators</a>:
+         <a href=\"modelica://AdvancedNoise.Interpolators\">Interpolators</a>:
          <ul>
          <li> Constant: The random values are hold constant between sample instants.</li>
          <li> Linear: The random values are linearly interpolated between sample instants.</li>
@@ -370,7 +370,7 @@ following parameters can be set:
 <tr><td> generator </td>
     <td> Defines the pseudo random number generator to be used. This is
          a replaceable package. The random number generators that are provided in
-         package <a href=\"modelica://Modelica.Math.Random.Generators\">Math.Random.Generators</a>
+         package <a href=\"modelica://AdvancedNoise.Generators\">Generators</a>
          can be used here. Properties of the various generators are described in the package
          description of the Generators package.</td></tr>
 
@@ -378,7 +378,7 @@ following parameters can be set:
 
 <p>
 The different interpolation methods are demonstrated with example
-<a href=\"modelica://Modelica.Blocks.Examples.NoiseExamples.Interpolation\">Examples.NoiseExamples.Interpolation</a>.
+<a href=\"modelica://AdvancedNoise.Examples.InterpolateRandomNumbers\">Examples.InterpolateRandomNumbers</a>.
 A simulation result is shown in the next diagram:
 </p>
 
