@@ -36,10 +36,10 @@ This version of AdvancedNoise contains additional features which are basically d
 ## License
 
 This Modelica package is free software and the use is completely at your own risk;
-it can be redistributed and/or modified under the terms of the [Modelica License 2](https://modelica.org/licenses/ModelicaLicense2).
+it can be redistributed and/or modified under the terms of the [3-Clause BSD license](https://modelica.org/licenses/modelica-3-clause-bsd).
 
 
-Copyright (C) 2015, **DLR** German Aerospace Center
+Copyright (C) 2015-2021, Deutsches Zentrum für Luft- und Raumfahrt (DLR)
 
 ## Development and contribution
 
