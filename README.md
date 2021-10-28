@@ -12,21 +12,15 @@ Potential applications of the library are
 - unsampled stochastic excitations such as as rail roughness or turbulence
 - ...
 
-### Release schedule v1.1.0
-
-We plan to release the v1.1.0 by end of November 2021.
-
-| Version | Date | Comment |
-|---| ---| ---|
-| [Alpha](../../releases/tag/v1.1.0-alpha)  |  2021-10-06 | First drop of the library |
-| Release |  2021-10-26 | Release |
-
 ## Current releases
+### If your tool supports MSL 4.0.0 or higher:
+Use [current release](https://github.com/DLR-SR/AdvancedNoise/releases) of the library.
+Your pull requests with fixes for different tools are highly welcome!
+
 ### If your tool supports MSL 3.2.2 or higher:
 [Noise 1.0.0 (2016-05-03)](https://github.com/DLR-SR/AdvancedNoise/archive/v1.0.0.zip):
- Basic noise generation is already included in the MSL 3.2.2 and it is tested with a range of tools including Dymola and OpenModelica.
- This version of AdvancedNoise contains additional features, which are basically developed and tested with the Dymola tool only.
- Your pull requests with fixes for different tools are highly welcome!
+Basic noise generation is already included in the MSL 3.2.2 (_Modelica.Blocks.Noise_) and it is tested with a range of tools including Dymola and OpenModelica.
+This version of AdvancedNoise contains additional features which are basically developed and tested with the Dymola tool only.
  
 ### If your tool supports MSL 3.2.1 or lower:
 [Noise 0.9.1 (2016-05-03)](https://github.com/DLR-SR/AdvancedNoise/archive/v0.9.1.zip):
@@ -42,10 +36,10 @@ We plan to release the v1.1.0 by end of November 2021.
 ## License
 
 This Modelica package is free software and the use is completely at your own risk;
-it can be redistributed and/or modified under the terms of the [Modelica License 2](https://modelica.org/licenses/ModelicaLicense2).
+it can be redistributed and/or modified under the terms of the [3-Clause BSD license](https://modelica.org/licenses/modelica-3-clause-bsd).
 
 
-Copyright (C) 2015, **DLR** German Aerospace Center
+Copyright (C) 2015-2021, Deutsches Zentrum für Luft- und Raumfahrt (DLR)
 
 ## Development and contribution
 
