@@ -4,12 +4,29 @@ class Overview "Overview"
   annotation (
     DocumentationClass=true,
     Documentation(info="<html>
-<p>The blocks in this library can be used to generate accurate noise without further modifications. The functionality of the library consists of:</p>
+<p>
+The blocks in this library can be used to generate accurate noise without
+further modifications. The functionality of the library consists of:
+</p>
 <ul>
-<li>Different <a href=\"Generators\">random number generators</a> can be chosen and custom generators implemented.</li>
-<li>Multiple <a href=\"Distributions\">distibutions</a> are supplied, but also own distributions can be added.</li>
-<li>Different<a href=\"Interpolators\"> interpolation algorithms</a> can be used to smooth the noise signal, which can improve the system simulation performance. Furthermore this allows to model a &quot;continuous noise&quot;.</li>
-<li>Calculation of <a href=\"Statistics\">statistical properties</a>.</li>
+  <li>
+    Different <a href=\"modelica://AdvancedNoise.Generators\">random number generators</a>
+    can be chosen and custom generators implemented. See also
+    <a href=\"modelica://Modelica.Math.Random.Generators\">Modelica.Math.Random.Generators</a>.
+  </li>
+  <li>
+    Multiple <a href=\"modelica://AdvancedNoise.Distributions\">distibutions</a> are
+    supplied, but also own distributions can be added. See also
+    <a href=\"modelica://Modelica.Math.Distributions\">Modelica.Math.Distributions</a>.
+  </li>
+  <li>
+    Different <a href=\"modelica://AdvancedNoise.Interpolators\">interpolation algorithms</a>
+    can be used to smooth the noise signal, which can improve the system simulation
+    performance. Furthermore this allows to model a &quot;continuous noise&quot;.
+  </li>
+  <li>
+    Calculation of <a href=\"modelica://AdvancedNoise.Statistics\">statistical properties</a>.
+  </li>
 </ul>
 </html>", revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">

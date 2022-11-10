@@ -8,7 +8,7 @@ class License "Copyright and License"
 <img src=\"modelica://AdvancedNoise/Resources/Images/General/dlr_logo.png\" alt=\"DLR logo\">
 </div>
 <p>
-&copy; 2015-2021, DLR&nbsp;SR <br>
+&copy; 2015-2022, DLR&nbsp;SR <br>
 All rights reserved.
 </p>
 

@@ -3,24 +3,24 @@ class GettingStarted "Getting started"
 extends Modelica.Icons.Information;
     annotation (Documentation(info="<html>
 <p>
-The <strong>AdvancedNoise</strong> Toolbox has 3 main sources of noise:
+The AdvancedNoise Library has three main sources of noise:
 </p>
 <ol>
 <li>
   <a href=\"AdvancedNoise.Sources.TimeBasedNoise\">TimeBasedNoise</a>:
-  This block generated a noise output based on the simulation time.
+  This block generated a&nbsp;noise output based on the simulation time.
 </li>
 <li>
   <a href=\"AdvancedNoise.Sources.SignalBasedNoise\">SignalBasedNoise</a>:
-  This block generates a noise output based on a given input variable.
-  One of the main applications of this block is a position dependant noise.
-  Such position dependant noise is used e.g. for rail irregulatities in
+  This block generates a&nbsp;noise output based on a&nbsp;given input variable.
+  One of the main applications of this block is a&nbsp;position dependent noise.
+  Such position dependent noise is used e.g. for rail irregularities in
   railway vehicles or road irragularities in road vehicles.
 </li>
 <li>
   <a href=\"AdvancedNoise.Sources.ColoredSignalBasedNoise\">ColoredSignalBasedNoise</a>:
-  This block is used if a colored noise is needed when. Using this block,
-  a specified frequency spectrum can be suppliedby the user.
+  This block is used if a&nbsp;colored noise is needed when. Using this block,
+  a&nbsp;specified frequency spectrum can be suppliedby the user.
 </li>
 </ol>
 

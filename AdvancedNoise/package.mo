@@ -2,7 +2,7 @@ within ;
 package AdvancedNoise "A library with additional noise modules compatible to the Modelica standard library"
   extends Modelica.Icons.Package;
 
-  annotation(
+  annotation (
     preferredView="info",
     version =      "1.1.0",
     versionDate =  "2021-10-29",
@@ -34,7 +34,8 @@ Examples of the these components are:
   <li>
     <a href=\"AdvancedNoise.Sources.SignalBasedNoise\">Signal-based noise</a>
     which allows a noise that is based on a system input.
-    This signal-based noise can be for example as a source of road-irragularities.
+    This signal-based noise can be used for example as a&nbsp;source of road-irregularities
+    in automotive applications.
   </li>
   <li>
     <a href=\"AdvancedNoise.Sources.ColoredSignalBasedNoise\">Colored noise</a>.
