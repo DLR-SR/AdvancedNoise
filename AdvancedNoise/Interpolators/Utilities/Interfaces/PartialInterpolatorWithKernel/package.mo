@@ -3,11 +3,11 @@ partial package PartialInterpolatorWithKernel "Generic interpolator interface pr
   extends PartialInterpolator;
 
   constant Real suggestedSamplePeriod = 0
-  "The appropriate sample period for this filter";
+    "The appropriate sample period for this filter";
 
 
   redeclare replaceable function extends interpolate
-  "Interpolates the buffer using a replaceable kernel"
+    "Interpolates the buffer using a replaceable kernel"
 protected
     Real coefficient "The intermediate container for the kernel evaluations";
   algorithm
@@ -124,13 +124,14 @@ protected
 
 
   replaceable partial function der_kernel_offset
-  "Partial derivative of the kernel with respect to the offset"
+    "Partial derivative of the kernel with respect to the offset"
     extends partialKernel;
   end der_kernel_offset;
 
 
-  annotation (Documentation(info=
-                             "<html>
+  annotation (
+    Documentation(
+      info="<html>
 <p>
 For details of the xorshift64* algorithm see
 <a href=\"http://xorshift.di.unimi.it/\">http://xorshift.di.unimi.it/</a> .

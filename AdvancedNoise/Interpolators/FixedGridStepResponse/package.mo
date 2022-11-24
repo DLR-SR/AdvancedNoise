@@ -12,7 +12,7 @@ protected
 
 public 
   redeclare replaceable function interpolate
-  "Interpolates the buffer using a kernel on a pre-tabulated fixed grid"
+    "Interpolates the buffer using a kernel on a pre-tabulated fixed grid"
     extends Utilities.Interfaces.interpolate;
 protected
     Real leftValue "The value to the left of the current interval";

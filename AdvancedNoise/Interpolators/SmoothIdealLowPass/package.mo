@@ -1,16 +1,17 @@
 within AdvancedNoise.Interpolators;
 package SmoothIdealLowPass "Smooth interpolation (with sinc function)"
   extends Utilities.Interfaces.PartialInterpolator(
-  final continuous=true,
-  final nFuture=n - 1,
-  final nPast=n,
-  final varianceFactor=0.979776342307764,
-  final smoothness=1);
+    final continuous=true,
+    final nFuture=n - 1,
+    final nPast=n,
+    final varianceFactor=0.979776342307764,
+    final smoothness=1);
+
   constant Integer n = 5 "Number of support points for convolution";
 
 
   redeclare function extends interpolate
-  "Smooth interpolation in a buffer of random values (using the sinc-function that approximates an ideal low pass filter)"
+    "Smooth interpolation in a buffer of random values (using the sinc-function that approximates an ideal low pass filter)"
 protected
     Real coefficient "The intermediate container for the kernel evaluations";
   algorithm

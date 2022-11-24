@@ -1,7 +1,6 @@
 within AdvancedNoise.Interpolators;
 package TabulatedStepResponse "A generic filter using a tabulated step response"
 
-
   extends Utilities.Interfaces.PartialInterpolatorWithKernel(
     continuous =             true,
     smoothness =             0,
@@ -30,7 +29,7 @@ package TabulatedStepResponse "A generic filter using a tabulated step response"
 
 
   redeclare function extends der_kernel_offset
-  "Derivative of kernel for a tabulated step response"
+    "Derivative of kernel for a tabulated step response"
   algorithm
     if     t <= T[1] then
       h := 0;

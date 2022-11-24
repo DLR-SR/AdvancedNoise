@@ -1,17 +1,18 @@
 within AdvancedNoise.Interpolators;
 package FirstOrder "A linear first order filter (k / (Ts + 1))"
-  extends Utilities.Interfaces.PartialInterpolatorWithKernel(final continuous=true,
-                                                             final nFuture=0,
-                                                             nPast=5,
-                                                             varianceFactor=0.900004539919624,
-                                                             suggestedSamplePeriod=0.1);
+  extends Utilities.Interfaces.PartialInterpolatorWithKernel(
+    final continuous=true,
+    final nFuture=0,
+    nPast=5,
+    varianceFactor=0.900004539919624,
+    suggestedSamplePeriod=0.1);
 
   constant Real k=1 "Gain";
   constant Modelica.Units.SI.Period T=0.01 "Time Constant";
 
 
   redeclare function extends kernel
-  "Kernel for first-order ideal low pass (k / (Ts + 1))"
+    "Kernel for first-order ideal low pass (k / (Ts + 1))"
 protected
     Real a;
     Real b;
