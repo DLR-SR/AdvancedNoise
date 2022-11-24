@@ -26,13 +26,13 @@ model FixedGridFilter "Validates the fixed grid filter against the free grid"
         Modelica.Math.Distributions.Uniform.quantile (y_min=-1, y_max=3))
     annotation (Placement(transformation(extent={{-60,-40},{-40,-20}})));
   Modelica.Blocks.Continuous.Der derFixedGrid
-    annotation (Placement(transformation(extent={{18,-40},{38,-20}})));
+    annotation (Placement(transformation(extent={{20,-40},{40,-20}})));
 equation
   connect(derTabulated.u, tabulatedNoise.y) annotation (Line(
       points={{18,10},{-39,10}},
       color={0,0,127}));
   connect(derFixedGrid.u, fixedGridNoise.y)
-    annotation (Line(points={{16,-30},{-39,-30}}, color={0,0,127}));
+    annotation (Line(points={{18,-30},{-39,-30}}, color={0,0,127}));
   annotation (    Documentation(revisions="<html>
 <table border=\"1\" cellspacing=\"0\" cellpadding=\"2\">
   <tr>
@@ -63,5 +63,5 @@ equation
     experiment(
       StopTime=20,
       Interval=0.01,
-      Tolerance=1e-006));
+      Tolerance=1e-06));
 end FixedGridFilter;
