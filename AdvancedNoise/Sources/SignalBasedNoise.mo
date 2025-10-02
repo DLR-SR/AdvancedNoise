@@ -303,7 +303,7 @@ value has a length of 64 bits).
         Text(
           visible=enableNoise,
           extent={{-150,-110},{150,-150}},
-          lineColor={0,0,0},
+          textColor={0,0,0},
           textString=if useTime then "%samplePeriod s" else "%samplePeriod"),
         Line(
           visible=not enableNoise,
@@ -311,7 +311,7 @@ value has a length of 64 bits).
         Text(
           visible=not enableNoise,
           extent={{-75,50},{95,10}},
-          lineColor={0,0,0},
+          textColor={0,0,0},
           textString="%y_off")}),
     Documentation(info="<html>
 <p>
