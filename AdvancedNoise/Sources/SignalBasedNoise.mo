@@ -300,19 +300,18 @@ value has a length of 64 bits).
               -31},{-19,-13},{-9,-13},{-9,-41},{1,-41},{1,41},{7,41},{7,55},{13,
               55},{13,-1},{23,-1},{23,11},{29,11},{29,-19},{39,-19},{39,53},{49,
               53},{49,19},{57,19},{57,-47},{67,-47}}),
-        Text(visible=enableNoise,
+        Text(
+          visible=enableNoise,
           extent={{-150,-110},{150,-150}},
           lineColor={0,0,0},
-          fillColor={192,192,192},
-          fillPattern=FillPattern.Solid,
           textString=if useTime then "%samplePeriod s" else "%samplePeriod"),
-        Line(visible=not enableNoise,
+        Line(
+          visible=not enableNoise,
           points={{-76,56},{72,56}}),
-        Text(visible=not enableNoise,
+        Text(
+          visible=not enableNoise,
           extent={{-75,50},{95,10}},
           lineColor={0,0,0},
-          fillColor={192,192,192},
-          fillPattern=FillPattern.Solid,
           textString="%y_off")}),
     Documentation(info="<html>
 <p>
