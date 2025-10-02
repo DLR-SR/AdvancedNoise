@@ -1,7 +1,6 @@
 within AdvancedNoise.Plots;
 function special "Plot functions Modelica.Math.Special"
   extends Modelica.Icons.Function;
-  import Modelica.Utilities.Streams.print;
   import Modelica.Math.Special;
   input Integer nPoints = 1000;
   input Real erfRange = 3.0;
