@@ -1,8 +1,6 @@
 within AdvancedNoise.Sources;
 block TimeBasedNoise
   "Noise generator for Real numbers associated with time (this block computes always the same (random) output y at the same time instant)"
-  import Modelica.Math.Random;
-  import Modelica.Utilities.Streams.print;
   import Modelica.Math.Random.Utilities.impureRandomInteger;
 
   extends Modelica.Blocks.Interfaces.SO;

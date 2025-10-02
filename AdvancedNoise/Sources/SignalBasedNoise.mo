@@ -1,8 +1,6 @@
 within AdvancedNoise.Sources;
 block SignalBasedNoise
   "Noise generator for Real numbers associated with the input signal (this block computes always the same (random) output y at the same value of the input signal)"
-  import Modelica.Math.Random;
-  import Modelica.Utilities.Streams.print;
   import Modelica.Math.Random.Utilities.impureRandomInteger;
 
   extends Modelica.Blocks.Interfaces.SO;
