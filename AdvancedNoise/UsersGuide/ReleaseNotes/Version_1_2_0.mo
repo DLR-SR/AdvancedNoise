@@ -8,8 +8,17 @@ class Version_1_2_0 "Version 1.2.0 (2025-10-02)"
 <p>
 This version uses Modelica&nbsp;4.1.0 and is backward compatible
 to previous version of the library.
-No other changes done.
 </p>
+
+<h4>Improvements</h4>
+<ul>
+  <li>
+    Fix deprecated or false attributes of annotation <code>Text</code>.
+  </li>
+  <li>
+    Fix non-URI references in documentation links.
+  </li>
+</ul>
 </html>",
 revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
