@@ -4,18 +4,20 @@ package AdvancedNoise "A library with additional noise modules compatible to the
 
   annotation (
     preferredView="info",
-    version =      "1.1.0",
-    versionDate =  "2021-10-29",
-    dateModified = "2021-10-26 12:00:00Z",
+    version =      "1.2.0",
+    versionDate =  "2025-10-02",
+    dateModified = "2025-10-02 12:00:00Z",
     revisionId="$Format:%h %ci$",
     uses(
-      Modelica(version="4.0.0")),
+      Modelica(version="4.1.0")),
     conversion(
-      noneFromVersion(version="0.9.0"),
-      noneFromVersion(version="0.9.1"),
-      noneFromVersion(version="1.0.0")),
-    Icon(graphics={Line(
-      points={{-84,0},{-54,0},{-54,40},{-24,40},{-24,-70},{6,-70},{6,80},{36,80},
+      noneFromVersion="0.9.0",
+      noneFromVersion="0.9.1",
+      noneFromVersion="1.0.0",
+      noneFromVersion="1.1.0"),
+    Icon(graphics={
+        Line(
+          points={{-84,0},{-54,0},{-54,40},{-24,40},{-24,-70},{6,-70},{6,80},{36,80},
             {36,-20},{66,-20},{66,60}})}),
     Documentation(
       revisions="",
