@@ -34,11 +34,11 @@ der_y = SmoothIdealLowPass.der_<strong>interpolate</strong>(buffer,offset,der_bu
 <h4>Description</h4>
 <p>
 Determine the derivative of a signal interpolated smoothly in a buffer
-(see <a href=\"interpolate\">interpolate</a>).
+(see <a href=\"modelica://AdvancedNoise.Interpolators.SmoothIdealLowPass.interpolate\">interpolate</a>).
 Input argument offset is a Real number marking the point at which interpolation
 shall take place. Input arguments der_buffer and der_offset are the derivatives
 of the input arguments buffer and offset. This function is used as derivative
-of the <a href=\"interpolate\">interpolate</a> function.
+of the <a href=\"modelica://AdvancedNoise.Interpolators.SmoothIdealLowPass.interpolate\">interpolate</a> function.
 Please see the description there for an introduction to the interpolation method
 used and specific remerks in the buffer and offset values.
 </p>

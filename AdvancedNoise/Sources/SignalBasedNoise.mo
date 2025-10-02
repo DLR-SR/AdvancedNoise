@@ -369,7 +369,7 @@ When using this block, at a&nbsp;minimum the following parameters must be define
 </table>
 
 <p>
-As a&nbsp;simple demonstration, see example <a href=\"AdvancedNoise.Examples.SignalBasedNoise\">Examples.SignalBasedNoise</a>.
+As a&nbsp;simple demonstration, see example <a href=\"modelica://AdvancedNoise.Examples.SignalBasedNoise\">Examples.SignalBasedNoise</a>.
 In the next diagram, a&nbsp;simulation result is shown with a&nbsp;ramped input signal
 repeated every second. The generated random numbers then also repeat every second!
 </p>

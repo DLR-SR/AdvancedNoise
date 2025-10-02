@@ -9,7 +9,7 @@ The AdvancedNoise is designed to implement a high quality noise source.
 </p>
 <ul>
   <li>
-    <a href=\"AdvancedNoise.UsersGuide.Tutorial.GettingStarted\">Getting Started</a>
+    <a href=\"modelica://AdvancedNoise.UsersGuide.Tutorial.GettingStarted\">Getting Started</a>
     describes how to get started with the modelling of noise.
   </li>
 </ul>

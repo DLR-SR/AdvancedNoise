@@ -16,8 +16,8 @@ package Statistics "Contains statistical blocks"
           smooth=Smooth.Bezier)}), Documentation(info="<html>
 <p>
 This package contains statistical blocks, e.g. calculation of the
-<a href=\"Correlation\">Correlation</a> coefficient or 
-a&nbsp;<a href=\"SignificanceTest\">SignificanceTest</a>.
+<a href=\"modelica://AdvancedNoise.Statistics.Correlation\">Correlation</a> coefficient or 
+a&nbsp;<a href=\"modelica://AdvancedNoise.Statistics.SignificanceTest\">SignificanceTest</a>.
 </p>
 </html>"));
 end Statistics;

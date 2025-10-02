@@ -30,17 +30,17 @@ Examples of the these components are:
 
 <ul>
   <li>
-    Sample-free <a href=\"AdvancedNoise.Sources.TimeBasedNoise\">TimeBasedNoise</a>
+    Sample-free <a href=\"modelica://AdvancedNoise.Sources.TimeBasedNoise\">TimeBasedNoise</a>
     which allows for faster system simulations.
   </li>
   <li>
-    <a href=\"AdvancedNoise.Sources.SignalBasedNoise\">Signal-based noise</a>
+    <a href=\"modelica://AdvancedNoise.Sources.SignalBasedNoise\">Signal-based noise</a>
     which allows a noise that is based on a system input.
     This signal-based noise can be used for example as a&nbsp;source of road-irregularities
     in automotive applications.
   </li>
   <li>
-    <a href=\"AdvancedNoise.Sources.ColoredSignalBasedNoise\">Colored noise</a>.
+    <a href=\"modelica://AdvancedNoise.Sources.ColoredSignalBasedNoise\">Colored noise</a>.
   </li>
 </ul>
 

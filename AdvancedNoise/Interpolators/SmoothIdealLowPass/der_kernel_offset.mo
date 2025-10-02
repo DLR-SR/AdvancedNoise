@@ -16,9 +16,8 @@ der_h = SmoothIdealLowPass.<strong>der_kernel_offset</strong>(offset);
 
 <h4>Description</h4>
 <p>
-This function defines the derivative of the <a href=\"kernel\">kernel</a>
-of the <a href=\"SmoothIdealLowPass\">SmoothIdealLowPass</a>
-interpolation with respect to its input argument offset.
+This function defines the derivative of the <a href=\"modelica://AdvancedNoise.Interpolators.SmoothIdealLowPass.kernel\">kernel</a>
+of the SmoothIdealLowPass interpolation with respect to its input argument offset.
 This function is used for determining the derivative of the interpolated signal.
 </p>
 </html>",
