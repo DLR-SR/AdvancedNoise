@@ -1,6 +1,6 @@
 BSD 3-Clause License
 
-Copyright (c) 2015-2023, DLR Institute of System Dynamics and Control
+Copyright (c) 2015-2025, DLR Institute of System Dynamics and Control
 
 All rights reserved.
 
