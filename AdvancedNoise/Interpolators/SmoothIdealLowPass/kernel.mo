@@ -16,10 +16,9 @@ h = SmoothIdealLowPass.<strong>kernel</strong>(offset);
 
 <h4>Description</h4>
 <p>
-This function defines the kernel of the
-<a href=\"SmoothIdealLowPass\">SmoothIdealLowPass</a> interpolation.
-It uses the <a href=\"Math.Special.sinc\">sinc</a> function with
-a&nbsp;specified cut-off frequency.
+This function defines the kernel of the SmoothIdealLowPass interpolation.
+It uses the <a href=\"modelica://Modelica.Math.Special.sinc\">Modelica.Math.Special.sinc</a>
+function with a&nbsp;specified cut-off frequency.
 </p>
 </html>",
         revisions="<html>

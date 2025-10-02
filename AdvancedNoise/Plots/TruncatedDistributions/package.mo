@@ -7,7 +7,7 @@ package TruncatedDistributions "Plot truncated distribution functions"
 <p>
 This package facilitate functions for plotting results of 
 <strong>truncated distributions</strong> provided by the package
-<a href=\"Modelica.Math.Distributions\">Modelica.Math.Distributions</a>.
+<a href=\"modelica://Modelica.Math.Distributions\">Modelica.Math.Distributions</a>.
 </p>
 </html>"));
 end TruncatedDistributions;

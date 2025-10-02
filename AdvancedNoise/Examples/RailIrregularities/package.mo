@@ -28,12 +28,13 @@ The models contained in this package can be used to generate results presented i
 this paper. See also: <a href=\"http://dlr-sr.github.io/\">http://dlr-sr.github.io/</a>.
 </p>
 <p>
-The example <a href=\"TrainOnTrack\">TrainOnTrack</a> shows the complete simulation
-of railway track irregularities together with a simplified quarter railway car model.
-This shows that the approach is applicable to a relevant example.
+The example <a href=\"modelica://AdvancedNoise.Examples.RailIrregularities.TrainOnTrack\">TrainOnTrack</a>
+shows the complete simulation of railway track irregularities together with a&nbsp;simplified
+quarter railway car model. This shows that the approach is applicable to a relevant example.
 </p>
 <p>
-The package <a href=\"Comparisons\">Comparisons</a> contains a step-wise comparison of
+The package <a href=\"modelica://AdvancedNoise.Examples.RailIrregularities.Comparisons\">Comparisons</a>
+contains a&nbsp;step-wise comparison of
 </p>
 <ol>
   <li>an actual filter implementation against the convolution approach,</li>

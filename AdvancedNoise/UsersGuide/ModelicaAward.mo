@@ -6,7 +6,7 @@ class ModelicaAward "Modelica Award"
 This library won the second price of the Modelica Library Award during the 2015 conference!
 </p>
 <p>
-<a href=\"ReleaseNotes.Version_0_9_0\">Version 0.9.0</a> was submitted to the committee
+<a href=\"modelica://AdvancedNoise.UsersGuide.ReleaseNotes.Version_0_9_0\">Version 0.9.0</a> was submitted to the committee
 and awarded the second price during the ceremony on 2015, September&nbsp;22.
 We thank all our supporters for their contribution to this success!
 </p>

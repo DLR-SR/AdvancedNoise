@@ -72,7 +72,7 @@ annotation (Icon(graphics={
 </html>", info="<html>
 <p>
 This interpolation uses a first order filter to smooth the data just as
-<a href=\"FirstOrder\">FirstOrder</a>.
+<a href=\"modelica://AdvancedNoise.Interpolators.FirstOrder\">FirstOrder</a>.
 However, the calculation is based on a table interpolation.
 </p>
 </html>"));

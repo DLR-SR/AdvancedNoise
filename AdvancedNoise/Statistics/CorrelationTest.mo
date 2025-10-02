@@ -66,9 +66,9 @@ equation
 </html>",
         info="<html>
 <p>
-This block first calculates the <a href=\"Correlation\">Correlation</a>
+This block first calculates the <a href=\"modelica://AdvancedNoise.Statistics.Correlation\">Correlation</a>
 of its two input signals (with delta_t&nbsp;=&nbsp;0) and performs a
-<a href=\"SignificanceTest\">SignificanceTest</a> against the null-hypothesis
+<a href=\"modelica://AdvancedNoise.Statistics.SignificanceTest\">SignificanceTest</a> against the null-hypothesis
 that the signals are uncorrelated. If the output of this block is lower
 than a threshold of p&nbsp;&lt;&nbsp;0.05 or p&nbsp;&lt;&nbsp;0.01,
 the two inputs must be assumed to be correlated. If the output is higher

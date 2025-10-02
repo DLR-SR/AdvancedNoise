@@ -20,8 +20,8 @@ equation
     Documentation(
       info="<html>
 <p>
-This block uses the <a href=\"CorrelationTest\">CorrelationTest</a> block to
-test for an auto-correlation of the same signal and a fixed time offset delta_t.
+This block uses the <a href=\"modelica://AdvancedNoise.Statistics.CorrelationTest\">CorrelationTest</a>
+block to test for an auto-correlation of the same signal and a fixed time offset delta_t.
 </p>
 </html>",
       revisions="<html>

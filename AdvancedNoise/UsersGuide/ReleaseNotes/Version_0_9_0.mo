@@ -6,7 +6,7 @@ class Version_0_9_0 "Version 0.9.0 (2015-09-07)"
     Documentation(
       info="<html>
 <p>First official version for Modelica Conference 2015.</p>
-<p>This version won the second price of the Modelica <a href=\"ModelicaAward\">Library Award</a>.</p>
+<p>This version won the second price of the Modelica Library Award.</p>
 </html>",
       revisions="<html>
 <table border=\"0\" cellspacing=\"0\" cellpadding=\"2\">
